@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cố đô Hoa Lư — Dấu ấn lịch sử ngàn năm | GO FAR</title>
+    <meta name="description" content="Hướng dẫn chi tiết tham quan Cố đô Hoa Lư, Ninh Bình: Đền thờ vua Đinh - vua Lê, bảo vật Long Sàng đá cổ kính, cầu đá rêu phong và kinh nghiệm chuẩn bị.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .nav-logo img { height: 40px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        .hero {
+            position: relative;
+            height: 45vh;
+            min-height: 300px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.1) 0%, rgba(26,55,77,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 2rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            border: 1px solid rgba(255,140,50,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            margin-bottom: 0.6rem;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+
+        /* 2-COLUMN DASHBOARD LAYOUT */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 2.5rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-self: start;
+        }
+
+        /* GLASS CARD STYLING */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 140, 50, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(255, 140, 50, 0.05);
+        }
+
+        .glass-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding-bottom: 0.5rem;
+        }
+
+        /* SPOT CARDS GRID */
+        .spot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .spot-card {
+            position: relative;
+            height: 320px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            cursor: pointer;
+        }
+        .spot-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .spot-card:hover img {
+            transform: scale(1.08);
+        }
+        .spot-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.95) 90%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            transition: background 0.3s ease;
+        }
+        .spot-card:hover .spot-card-overlay {
+            background: linear-gradient(180deg, rgba(22, 44, 62, 0.2) 20%, rgba(22, 44, 62, 0.98) 85%);
+        }
+        .spot-card-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .spot-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .spot-card p {
+            font-size: 0.8rem;
+            color: var(--text-sec);
+            margin: 0;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .spot-card:hover p {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* LIST STYLING INSIDE SIDEBAR */
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+        }
+        .sidebar-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            line-height: 1.5;
+        }
+        .sidebar-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 950px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .sidebar-sticky {
+                position: static;
+            }
+        }
+    
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text-sec);
+            padding: 1.5rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+</style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
+            <a href="destination-ninh-binh.html" class="nav-back">← Về Ninh Bình</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="images/hoa_lu_temple_1783443696229.png" alt="Cố đô Hoa Lư Ninh Bình">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">🏯 Dấu ấn lịch sử</span>
+            <h1>Cố đô Hoa Lư</h1>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> › <a href="destination-ninh-binh.html">Ninh Bình</a> › <strong>Cố đô Hoa Lư</strong>
+    </div>
+
+    <div class="article-layout">
+        <div class="dashboard-layout">
+            <!-- SIDEBAR TRÁI: CẨM NANG & LƯU Ý (STICKY) -->
+            <div class="sidebar-sticky">
+                <!-- Box 1: Vé tham quan -->
+                <div class="glass-card">
+                    <h3>🎫 Vé thắng cảnh</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-sec); line-height: 1.6; margin-bottom: 0.75rem;">Vé tham quan cố đô Hoa Lư được bán trực tiếp tại quầy ở lối vào di tích.</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Ban+quan+ly+Co+do+Hoa+Lu" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255, 140, 50, 0.12); color: var(--accent); padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); text-decoration: none; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; border: 1px solid rgba(255, 140, 50, 0.25); width: 100%; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 140, 50, 0.22)'" onmouseout="this.style.background='rgba(255, 140, 50, 0.12)'">
+                        📍 Định vị Quầy vé Cố đô Hoa Lư trên Google Maps
+                    </a>
+                    <div style="background: rgba(255,140,50,0.05); border: 1px dashed rgba(255,140,50,0.2); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-sec); line-height: 1.5;">
+                        💳 Quầy vé có hỗ trợ quét mã QR thanh toán chuyển khoản nhanh chóng và tiện lợi.
+                    </div>
+                </div>
+
+                <!-- Box 2: Trang phục tôn kính -->
+                <div class="glass-card" style="border-left: 3px solid #ef4444;">
+                    <h3 style="color: #ef4444;">⚠️ Trang phục tôn kính</h3>
+                    <ul class="sidebar-list">
+                        <li>Cố đô Hoa Lư là nơi thờ phụng tôn kính tổ tiên anh linh dân tộc. Bạn **bắt buộc mặc trang phục kín đáo** khi đi sâu vào lòng điện thờ vua Đinh và vua Lê.</li>
+                    </ul>
+                </div>
+
+                <!-- Box 3: Góc chụp ảnh đẹp -->
+                <div class="glass-card" style="border-left: 3px solid var(--accent-gold);">
+                    <h3 style="color: var(--accent-gold);">💡 Góc chụp ảnh hoài cổ</h3>
+                    <ul class="sidebar-list">
+                        <li><strong>Cầu đá rêu phong:</strong> Cây cầu đá bắc qua dòng kênh ngập bóng cây xanh ngay trước cổng vào đền thờ vua Lê Đại Hành là góc chụp ảnh mang đậm màu sắc hoài cổ trầm mặc rất riêng của cố đô.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- NỘI DUNG PHẢI: TỔNG QUAN & TỌA ĐỘ TRẢI NGHIỆM -->
+            <article class="article-main">
+                <!-- Thẻ Tổng quan -->
+                <div class="glass-card" style="margin-bottom: 2rem; padding: 2rem;">
+                    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.5rem; margin-top: 0 !important;">📋 Tổng quan kinh đô cổ</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.8; margin-bottom: 1rem;">Cố đô Hoa Lư là kinh đô đầu tiên của nhà nước phong kiến trung ương tập quyền Việt Nam dưới ba triều đại nhà Đinh, nhà Tiền Lê và khởi đầu thời Lý (thế kỷ X - XI). Toàn bộ khu di tích được bao bọc bởi những bức tường thành núi đá vôi dựng đứng tự nhiên, tạo nên một căn cứ địa quân sự vững chãi hiểm trở.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.8; margin-bottom: 1rem;">Hiện nay, trung tâm di tích cố đô gồm hai ngôi đền thờ cổ kính linh thiêng nằm nép mình trầm mặc dưới tán cây cổ thụ: Đền thờ vua Đinh Tiên Hoàng và đền thờ vua Lê Đại Hành, được xây dựng ngay trên nền cung điện hoàng gia cũ từ ngàn năm trước.</p>
+                </div>
+
+                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--text); margin-top: 2rem; margin-bottom: 1rem;">📸 Các tọa độ di tích cổ kính nổi bật</h2>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Cảm nhận chiều sâu lịch sử qua 4 dấu tích cổ kính tại Cố đô Hoa Lư:</p>
+
+                <!-- Grid Tọa độ -->
+                <div class="spot-grid">
+                    <!-- Spot 1: Đền thờ vua Đinh -->
+                    <div class="spot-card">
+                        <img src="images/hoa_lu_temple_1783443696229.png" alt="Đền vua Đinh Tiên Hoàng">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Di tích thờ tự</span>
+                            <h4>Đền thờ vua Đinh Tiên Hoàng</h4>
+                            <p>Ngôi đền cổ thờ vị vua thống nhất 12 sứ quân, xây dựng theo kiểu "Nội công ngoại quốc" với các mảng điêu khắc gỗ rồng bay phượng múa tinh xảo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spot 2: Long sàng đá -->
+                    <div class="spot-card">
+                        <img src="images/hoa_lu_gate_1783494480835.png" alt="Sập đá rồng Hoa Lư">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Báu vật quốc gia</span>
+                            <h4>Sập đá rồng (Long sàng) cổ</h4>
+                            <p>Chiếc sập bằng đá xanh nguyên khối đặt giữa sân chầu, điêu khắc hình rồng uốn lượn oai nghiêm thể hiện trình độ nghệ thuật tạc đá đỉnh cao thế kỷ XVII.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spot 3: Cầu đá rêu phong -->
+                    <div class="spot-card">
+                        <img src="images/hoa_lu_bridge_1785485553625.jpg" alt="Cầu đá đền vua Lê">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Check-in hoài cổ</span>
+                            <h4>Cầu đá cổ đền vua Lê</h4>
+                            <p>Cây cầu đá rêu phong bắc qua mương nước nhỏ, mang vẻ tĩnh mịch trầm mặc của dòng chảy thời gian ngàn năm.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spot 4: Thung lũng Cố đô -->
+                    <div class="spot-card">
+                        <img src="images/hoa_lu_valley_1783494509574.png" alt="Thung lũng Hoa Lư">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Toàn cảnh cố đô</span>
+                            <h4>Thung lũng Cố đô bao bọc</h4>
+                            <p>Vùng lòng chảo rộng lớn được ôm trọn bởi những ngọn núi tai mèo sừng sững dốc đứng — thành lũy tự nhiên bất khả xâm phạm thời trung cổ.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spot 5: Đền thờ Vua Lê Đại Hành -->
+                    <div class="spot-card">
+                        <img src="images/hoa_lu_le_temple_1785641745937.jpg" alt="Đền thờ Vua Lê Đại Hành">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Di tích thờ tự</span>
+                            <h4>Đền thờ Vua Lê Đại Hành</h4>
+                            <p>Nằm cách đền Vua Đinh 200m, đền thờ vị vua khởi lập triều Tiền Lê nổi tiếng với nghệ thuật chạm khắc gỗ thế kỷ XVII tinh xảo và gian hậu cung linh thiêng.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spot 6: Chùa Nhất Trụ -->
+                    <div class="spot-card">
+                        <img src="images/hoa_lu_nhat_tru_pagoda_1785641760454.jpg" alt="Chùa Nhất Trụ và Cột kinh đá">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Bảo vật quốc gia</span>
+                            <h4>Chùa Nhất Trụ & Cột kinh đá</h4>
+                            <p>Ngôi chùa cổ sở hữu cột kinh Phật bằng đá bát giác cao 4,16m dựng từ năm 981 bởi Vua Lê Đại Hành, khắc kinh Thủ Lăng Nghiêm tôn kính, là Bảo vật quốc gia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spot 7: Động Am Tiên -->
+                    <div class="spot-card">
+                        <img src="images/hoa_lu_am_tien_cave_1785641773711.jpg" alt="Động Am Tiên Tuyệt Tình Cốc">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Di sản thiên nhiên</span>
+                            <h4>Động Am Tiên (Tuyệt Tình Cốc)</h4>
+                            <p>Thung lũng ngập nước nằm khép mình giữa vách đá vôi dựng đứng, xưa kia là nơi Vua Đinh nuôi hổ dữ và giam giữ tội nhân, nay là chốn bồng lai tiên cảnh.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <a href="destination-ninh-binh.html">← Quay lại Ninh Bình</a>
+        <span>🎨 Ảnh: AI-generated · © 2026 GO FAR</span>
+    </footer>
+
+
+    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // Lightbox Zoom functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const spotCards = document.querySelectorAll('.spot-card');
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if (spotCards.length && lightboxModal && lightboxImg) {
+                spotCards.forEach(card => {
+                    card.style.cursor = 'zoom-in';
+                    card.addEventListener('click', () => {
+                        const img = card.querySelector('img');
+                        if (!img) return;
+
+                        let titleText = "";
+                        let descText = "";
+
+                        // 1. Check if inside .story-grid-internal (Tràng An)
+                        const parentGrid = card.closest('.story-grid-internal');
+                        if (parentGrid) {
+                            const h3 = parentGrid.querySelector('.story-text h3');
+                            const p = parentGrid.querySelector('.story-text p');
+                            if (h3) titleText = h3.textContent;
+                            if (p) descText = p.textContent;
+                        }
+
+                        // 2. Check if spot-card has overlay (Hang Múa, Tam Cốc, Bái Đính, Hoa Lư, Vân Long)
+                        const overlayH4 = card.querySelector('.spot-card-overlay h4');
+                        const overlayP = card.querySelector('.spot-card-overlay p');
+                        if (overlayH4) titleText = overlayH4.textContent;
+                        if (overlayP) descText = overlayP.textContent;
+
+                        // 3. Fallback to image alt
+                        if (!titleText && !descText) {
+                            titleText = img.alt || "Chi tiết hình ảnh";
+                        }
+
+                        lightboxModal.style.display = 'flex';
+                        lightboxImg.src = img.src;
+                        
+                        let captionHTML = "";
+                        if (titleText) {
+                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                        }
+                        if (descText) {
+                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                        }
+                        lightboxCaption.innerHTML = captionHTML;
+                    });
+                });
+
+                lightboxClose.addEventListener('click', () => {
+                    lightboxModal.style.display = 'none';
+                });
+
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal || e.target === lightboxClose) {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

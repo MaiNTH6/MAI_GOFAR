@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cầu Rồng & Sông Hàn — Biểu tượng ánh sáng Đà Nẵng | GO FAR</title>
+    <meta name="description" content="Cẩm nang xem Cầu Rồng Đà Nẵng phun lửa và nước: Thời gian diễn ra, địa điểm xem đẹp nhất, kinh nghiệm đi du thuyền sông Hàn.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .nav-logo img { height: 40px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        .hero {
+            position: relative;
+            height: 45vh;
+            min-height: 300px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.1) 0%, rgba(26,55,77,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 2rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            border: 1px solid rgba(255,140,50,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            margin-bottom: 0.6rem;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        /* 2-COLUMN DASHBOARD LAYOUT */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 2.5rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-self: start;
+        }
+
+        /* LIST STYLING INSIDE SIDEBAR */
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+        }
+        .sidebar-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            line-height: 1.5;
+        }
+        .sidebar-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 950px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .sidebar-sticky {
+                position: static;
+            }
+        }
+        .article-main {
+            min-width: 0;
+        }
+        /* GLASS CARD STYLING */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 140, 50, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(255, 140, 50, 0.05);
+        }
+
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+        .article-main ul {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        .article-main li { margin-bottom: 0.4rem; }
+
+        .tip-box {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+            font-size: 0.88rem;
+        }
+        .tip-box p { margin: 0; }
+
+        /* SPOT GRID STYLING */
+        .spot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .spot-card {
+            position: relative;
+            height: 320px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            cursor: pointer;
+        }
+        .spot-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .spot-card:hover img {
+            transform: scale(1.08);
+        }
+        .spot-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.95) 90%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            transition: background 0.3s ease;
+        }
+        .spot-card:hover .spot-card-overlay {
+            background: linear-gradient(180deg, rgba(22, 44, 62, 0.2) 20%, rgba(22, 44, 62, 0.98) 85%);
+        }
+        .spot-card-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .spot-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .spot-card p {
+            font-size: 0.8rem;
+            color: var(--text-sec);
+            margin: 0;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .spot-card:hover p {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text-sec);
+            padding: 1.5rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    
+        .sidebar-sticky a:hover {
+            background: rgba(255, 140, 50, 0.22) !important;
+            color: #fff !important;
+        }</style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
+            <a href="destination-da-nang.html" class="nav-back">← Về Đà Nẵng</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="images/danang_cau_rong.jpg" alt="Cầu Rồng & Sông Hàn">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">🌉 Biểu tượng · Thành phố</span>
+            <h1>Cầu Rồng & Sông Hàn</h1>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> › <a href="destination-da-nang.html">Đà Nẵng</a> › <strong>Cầu Rồng & Sông Hàn</strong>
+    </div>
+
+    <div class="article-layout">
+        <div class="dashboard-layout">
+            <!-- SIDEBAR STICKY -->
+            <div class="sidebar-sticky">
+                <div class="glass-card">
+                    <h3>⏰ Lịch phun lửa</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-sec); line-height: 1.6; margin-top: 0.5rem;">Cầu Rồng phun lửa và nước vào lúc **21h00 tối Thứ Sáu, Thứ Bảy và Chủ Nhật** hàng tuần, cùng các ngày lễ lớn trong năm. Buổi trình diễn kéo dài khoảng 15 phút.</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Cau+Rong+Da+Nang" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255, 140, 50, 0.12); color: var(--accent); padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); text-decoration: none; font-size: 0.8rem; font-weight: 500; transition: background 0.3s, color 0.3s; margin-top: 0.75rem;">
+                        📍 Định vị vị trí
+                    </a>
+                </div>
+                <div class="glass-card">
+                    <h3>⚠️ Lưu ý xem phun lửa</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-sec); line-height: 1.6; margin-top: 0.5rem;">Hãy đứng tránh đầu Rồng một khoảng vừa phải hoặc tránh hướng gió thổi để không bị nước và bụi khói từ đầu rồng bay vào mắt khi rồng phun nước. Giao thông quanh cầu sẽ tạm dừng lúc 20h45.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>📸 Góc chụp ảnh đẹp</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-sec); line-height: 1.6; margin-top: 0.5rem;">Góc chụp Cầu Rồng phun lửa đẹp nhất là từ khu vực tượng Cá Chép Hóa Rồng hoặc từ ban công của các quán cafe dọc đường Bạch Đằng hướng nhìn xéo qua cầu.</p>
+                </div>
+            </div>
+
+            <!-- MAIN ARTICLE -->
+            <article class="article-main">
+                <h2>📋 Tổng quan điểm đến</h2>
+                <p>Cầu Rồng bắc qua dòng sông Hàn thơ mộng là biểu tượng kiến trúc lộng lẫy và đáng tự hào nhất của thành phố Đà Nẵng. Cây cầu mô phỏng hình dáng con rồng thời Lý mạnh mẽ vươn mình ra biển lớn, phát sáng rực rỡ với hàng nghìn bóng đèn LED đổi màu lung linh về đêm. Sông Hàn tĩnh mịch về đêm cũng là nơi diễn ra các hoạt động du thuyền thưởng ngoạn lộng lẫy.</p>
+                <p>Mỗi dịp cuối tuần, đầu rồng phun những luồng lửa rực rỡ xen kẽ những tia nước trắng xóa mát mẻ, biến khu vực quanh cầu thành lễ hội đường phố nhộn nhịp, vui tươi bậc nhất.</p>
+
+                <h2>📸 Tọa độ Check-in Nổi bật</h2>
+                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại điểm đến. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
+
+                <div class="spot-grid">
+                    
+                    <div class="spot-card">
+                        <img src="images/danang_cau_rong.jpg" alt="Cầu Rồng phun lửa & nước">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Biểu diễn</span>
+                            <h4>Cầu Rồng phun lửa & nước</h4>
+                            <p>Màn trình diễn độc đáo độc nhất vô nhị thắp sáng bầu trời sông Hàn, thu hút hàng ngàn người dân và du khách chiêm ngưỡng mỗi cuối tuần.</p>
+                        </div>
+                    </div>
+
+                    <div class="spot-card">
+                        <img src="images/rong_love_bridge.jpg" alt="Cầu Tình Yêu lãng mạn">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Lãng mạn</span>
+                            <h4>Cầu Tình Yêu lãng mạn</h4>
+                            <p>Điểm hẹn hò của các cặp đôi với những ổ khóa khắc tên treo dọc lan can thành cầu và bức tượng Cá Chép Hóa Rồng phun nước oai nghiêm.</p>
+                        </div>
+                    </div>
+
+                    <div class="spot-card">
+                        <img src="images/rong_han_cruise.jpg" alt="Du thuyền sông Hàn ngắm cảnh">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Trải nghiệm</span>
+                            <h4>Du thuyền sông Hàn ngắm cảnh</h4>
+                            <p>Hành trình ngồi du thuyền lướt qua những cây cầu biểu tượng rực rỡ ánh đèn màu lung linh và thưởng thức vũ điệu Chăm-pa truyền thống.</p>
+                        </div>
+                    </div>
+
+                    <div class="spot-card">
+                        <img src="images/rong_son_tra_market.jpg" alt="Chợ đêm Sơn Trà nhộn nhịp">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Ẩm thực</span>
+                            <h4>Chợ đêm Sơn Trà nhộn nhịp</h4>
+                            <p>Nằm ngay sát chân Cầu Rồng, khu chợ mua sắm và thưởng thức ẩm thực đường phố, hải sản nướng thơm nức mũi giá cả bình dân cho khách vi vu.</p>
+                        </div>
+                    </div>
+
+                    <div class="spot-card">
+                        <img src="images/rong_han_bridge.jpg" alt="Cầu Sông Hàn quay 90 độ">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Cầu quay</span>
+                            <h4>Cầu Sông Hàn quay 90 độ</h4>
+                            <p>Cây cầu quay duy nhất tại Việt Nam tự quay trục giữa 90 độ mở lối đi cho tàu lớn qua sông vào lúc nửa đêm kỳ thú.</p>
+                        </div>
+                    </div>
+
+                    <div class="spot-card">
+                        <img src="images/rong_thuan_phuoc_bridge.jpg" alt="Cầu Thuận Phước dài nhất">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Cầu treo</span>
+                            <h4>Cầu Thuận Phước dài nhất</h4>
+                            <p>Cây cầu treo võng dài nhất Việt Nam bắc qua cửa sông Hàn đổ ra biển vịnh Đà Nẵng hùng vĩ đón gió thổi lộng lẫy.</p>
+                        </div>
+                    </div>
+
+                    <div class="spot-card">
+                        <img src="images/rong_tran_thi_ly_bridge.jpg" alt="Cầu Trần Thị Lý (Cánh buồm)">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Kiến trúc</span>
+                            <h4>Cầu Trần Thị Lý (Cánh buồm)</h4>
+                            <p>Cầu dây văng hình cánh buồm căng gió màu cam đỏ rực rỡ đổi màu lung linh tựa như cánh buồm chiêm phục biển khơi bao la.</p>
+                        </div>
+                    </div>
+
+                    <div class="spot-card">
+                        <img src="images/rong_bach_dang_street.jpg" alt="Đường đi bộ Bạch Đằng">
+                        <div class="spot-card-overlay">
+                            <span class="spot-card-tag">Dạo mát</span>
+                            <h4>Đường đi bộ Bạch Đằng</h4>
+                            <p>Con đường dạo mát ven sông Bạch Đằng rợp bóng cây xanh quán cafe sầm uất điểm thưởng ngoạn thành phố đáng sống về đêm.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <div>
+            <a href="destination-da-nang.html">← Về Đà Nẵng</a> · <a href="index.html">Về trang chủ</a>
+        </div>
+        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // Lightbox Zoom functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const spotCards = document.querySelectorAll('.spot-card');
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if (spotCards.length && lightboxModal && lightboxImg) {
+                spotCards.forEach(card => {
+                    card.style.cursor = 'zoom-in';
+                    card.addEventListener('click', () => {
+                        const img = card.querySelector('img');
+                        if (!img) return;
+
+                        let titleText = "";
+                        let descText = "";
+
+                        const overlayH4 = card.querySelector('.spot-card-overlay h4');
+                        const overlayP = card.querySelector('.spot-card-overlay p');
+                        if (overlayH4) titleText = overlayH4.textContent;
+                        if (overlayP) descText = overlayP.textContent;
+
+                        if (!titleText && !descText) {
+                            titleText = img.alt || "Chi tiết hình ảnh";
+                        }
+
+                        lightboxModal.style.display = 'flex';
+                        lightboxImg.src = img.src;
+                        
+                        let captionHTML = "";
+                        if (titleText) {
+                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                        }
+                        if (descText) {
+                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                        }
+                        lightboxCaption.innerHTML = captionHTML;
+                    });
+                });
+
+                lightboxClose.addEventListener('click', () => {
+                    lightboxModal.style.display = 'none';
+                });
+
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal || e.target === lightboxClose) {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

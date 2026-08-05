@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đà Lạt — Thành phố sương mù, săn mây & ngàn hoa | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Đà Lạt tự túc: Đỉnh Langbiang, hồ Xuân Hương, đồi chè Cầu Đất, ga Đà Lạt, thác Datanla, thiền viện Trúc Lâm, hồ Tuyền Lâm. Ăn uống, đi lại.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            border: 1px solid rgba(255,140,50,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+        .hero-meta-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            flex-wrap: wrap;
+        }
+        .hero-meta-line .rating { color: var(--accent-gold); }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        /* CONTENT LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        /* MAIN CONTENT */
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .article-main h2 .icon { font-size: 1.3rem; }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-main ul, .article-main ol {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        .article-main li { margin-bottom: 0.4rem; }
+
+        /* INFO TABLE */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.88rem;
+        }
+        .info-table th, .info-table td {
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .info-table th {
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+            width: 35%;
+        }
+        .info-table td { color: var(--text-sec); }
+        .info-table tr:hover { background: var(--bg-glass); }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(255,140,50,0.12);
+            color: var(--accent);
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* HIGHLIGHT BOX */
+        .tip-box {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .tip-box p { margin: 0; font-size: 0.88rem; }
+        .tip-box strong { color: var(--text); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
+
+        /* PREMIUM CHECKIN CARDS */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.1);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.75) saturate(1.2);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-sm);
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .dest-card-tags .tag-hot {
+            background: rgba(255, 140, 50, 0.25);
+            border: 1px solid rgba(255, 140, 50, 0.4);
+            color: var(--accent) !important;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text) !important;
+        }
+        .dest-card-desc {
+            font-size: 0.82rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 0.75rem;
+        }
+        .dest-card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .dest-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .dest-rating .stars {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .dest-rating span:last-child {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .dest-reviews {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .dest-card-credits {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 0.4rem;
+        }
+        
+        /* FOOD ITEM */
+        .food-list { margin: 1rem 0; }
+        .food-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+        }
+        .food-item .name { color: var(--text); font-weight: 500; }
+        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            align-self: start;
+        }
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            margin-bottom: 0.6rem;
+        }
+        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
+
+        .toc-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .toc-list li { margin-bottom: 0.4rem; }
+        .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.2s;
+        }
+        .toc-list a:hover { color: var(--accent); }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 40vh; min-height: 280px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+
+        .dest-card-meta, 
+        .dest-card-credits {
+            display: none !important;
+        }
+
+        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text-sec);
+            padding: 1.5rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
+            <a href="index.html" class="nav-back">← Về trang chủ</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="images/dalat_hero.jpg" alt="Đà Lạt — Thành phố sương mù">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">📍 Tây Nguyên · Lâm Đồng</span>
+            <h1>Đà Lạt<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Thành phố sương mù</span></h1>
+            <div class="hero-meta-line">
+                <span class="rating">⭐ 4.6 / 5.0</span>
+                <span>·</span>
+                <span>Tỉnh Lâm Đồng, Việt Nam</span>
+                <span>·</span>
+                <span>Cập nhật: 08/2026</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Đà Lạt</strong>
+    </div>
+
+    <div class="article-layout">
+        <div class="dashboard-layout">
+            <!-- MAIN ARTICLE -->
+            <article class="article-main">
+
+                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
+                <p>Nằm trên cao nguyên Lâm Viên ở độ cao 1.500m so với mực nước biển, thành phố Đà Lạt (Lâm Đồng) được thiên nhiên ban tặng khí hậu ôn đới mát mẻ quanh năm cùng không khí dịu mát trong lành. Nơi đây từ lâu đã nổi tiếng với tên gọi "Thành phố sương mù", "Thành phố ngàn hoa" hay "Tiểu Paris" nhờ các kiến trúc biệt thự Pháp cổ kính lãng mạn ẩn mình dưới rừng thông xanh ngắt bao phủ khắp đồi núi.</p>
+                <p>Du lịch Đà Lạt cuốn hút mọi du khách bởi vẻ đẹp lãng mạn nhẹ nhàng từ những hồ nước phẳng lặng phản chiếu rặng liễu rủ, những đồi chè xanh mướt ngút ngàn lộng gió, những quán cà phê nghệ thuật ẩn mình trong sương sớm cùng văn hóa bản địa vùng cao Tây Nguyên phong phú, mến khách.</p>
+
+                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
+                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Đà Lạt. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
+
+                <div class="checkin-grid">
+                    
+                    <div class="dest-card double-col">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_langbiang.jpg" alt="Đỉnh Langbiang" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Hùng vĩ</span>
+                                <span class="tag">Nóc nhà Đà Lạt</span>
+                            </div>
+                            <h3 class="dest-card-title">Đỉnh Langbiang</h3>
+                            <p class="dest-card-desc">Ngọn núi huyền thoại cao hơn 2.100m, nơi bạn có thể đi xe Jeep lên đỉnh ngắm trọn thung lũng Trăm Năm, suối Vàng suối Bạc thơ mộng.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_xuan_huong.jpg" alt="Hồ Xuân Hương" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Trái tim thành phố</span>
+                                <span class="tag">Thơ mộng</span>
+                            </div>
+                            <h3 class="dest-card-title">Hồ Xuân Hương</h3>
+                            <p class="dest-card-desc">Hồ nước hình trăng lưỡi liềm thơ mộng ngay trung tâm thành phố, lãng mạn nhất lúc chiều tà khi rặng liễu nhuộm sắc hoàng hôn hồng cam.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_cau_dat.jpg" alt="Đồi chè Cầu Đất" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Săn mây</span>
+                                <span class="tag">Xanh ngắt</span>
+                            </div>
+                            <h3 class="dest-card-title">Đồi chè Cầu Đất</h3>
+                            <p class="dest-card-desc">Thung lũng chè hơn 100 tuổi trải dài ngút tầm mắt xanh mướt, điểm săn mây sớm hoàn hảo kết hợp check-in những tuabin gió khổng lồ.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card double-col">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_railway.jpg" alt="Ga Đà Lạt" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di sản Pháp</span>
+                                <span class="tag">Art Deco</span>
+                            </div>
+                            <h3 class="dest-card-title">Ga Đà Lạt</h3>
+                            <p class="dest-card-desc">Nhà ga xe lửa cổ kính và đẹp nhất Đông Dương với kiến trúc răng cưa độc đáo mô phỏng đỉnh Langbiang hùng vĩ cùng đầu máy hơi nước cổ xưa.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_datanla.jpg" alt="Thác Datanla" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Trải nghiệm</span>
+                                <span class="tag">Thác nước</span>
+                            </div>
+                            <h3 class="dest-card-title">Thác Datanla</h3>
+                            <p class="dest-card-desc">Ngọn thác hùng vĩ hoang sơ ẩn mình trong rừng thông, nổi tiếng với hệ thống máng trượt alpine coaster xuyên rừng dài nhất Đông Nam Á.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_truc_lam.jpg" alt="Thiền viện Trúc Lâm" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Tâm linh</span>
+                                <span class="tag">Thanh tịnh</span>
+                            </div>
+                            <h3 class="dest-card-title">Thiền viện Trúc Lâm</h3>
+                            <p class="dest-card-desc">Ngôi thiền viện thuộc thiền phái Trúc Lâm Yên Tử nằm thanh tịnh bên sườn đồi, rợp bóng ngàn thông và rực rỡ sắc màu trăm hoa đua nở.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_tuyen_lam.jpg" alt="Hồ Tuyền Lâm" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Mặt hồ xanh</span>
+                                <span class="tag">Bình yên</span>
+                            </div>
+                            <h3 class="dest-card-title">Hồ Tuyền Lâm</h3>
+                            <p class="dest-card-desc">"Nam thiên đệ nhất hồ" với làn nước xanh phẳng lặng ôm trọn những ốc đảo thông xanh, chìm đắm trong sương sớm tĩnh mịch như cõi mơ.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_night_market.jpg" alt="Chợ đêm Đà Lạt" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Ẩm thực</span>
+                                <span class="tag">Nhộn nhịp</span>
+                            </div>
+                            <h3 class="dest-card-title">Chợ đêm Đà Lạt</h3>
+                            <p class="dest-card-desc">Không gian ẩm thực đường phố ấm cúng, thưởng thức bánh tráng nướng nóng hổi, sữa đậu nành bốc khói giữa không khí se lạnh đêm đồi.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & CHI PHÍ -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
+                <p>Nằm trên vùng cao nguyên miền Nam Tây Nguyên, giao thông đến Đà Lạt vô cùng đa dạng:</p>
+                
+                <h3>1. Các phương tiện đến Đà Lạt</h3>
+                <ul>
+                    <li><strong>Máy bay:</strong> Đáp xuống sân bay Liên Khương (cách trung tâm thành phố 30km), sau đó bắt xe buýt sân bay hoặc taxi chạy cao tốc Liên Khương - Prenn vào thành phố.</li>
+                    <li><strong>Xe limousine giường phòng:</strong> Rất nhiều hãng xe chạy tuyến TP.HCM - Đà Lạt đón trả tận nơi cực kỳ tiện lợi qua đèo Bảo Lộc thơ mộng.</li>
+                    <li><strong>Xe máy phượt:</strong> Dành cho những ai thích thử thách chinh phục những con đèo uốn lượn đẹp mắt từ Nha Trang (đèo Khánh Lê) hoặc từ Phan Thiết (đèo Đại Ninh).</li>
+                </ul>
+
+                <h3>2. Giá vé tham khảo một số điểm vui chơi</h3>
+                <p>Hầu hết các danh thắng tự nhiên tại Đà Lạt đều thu phí vào cổng nhỏ bảo tồn cảnh quan. Giá vé cáp treo hoặc máng trượt được mua trực tiếp tại bến dịch vụ.</p>
+
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Điểm tham quan / Trải nghiệm</th>
+                            <th>Mức giá tham khảo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Máng trượt Alpine Coaster tại Thác Datanla (Khứ hồi)</td>
+                            <td><span class="price-tag">Theo giá dịch vụ tại thác</span></td>
+                        </tr>
+                        <tr>
+                            <td>Thuê xe Jeep khứ hồi lên đỉnh núi Langbiang</td>
+                            <td><span class="price-tag">Tính theo chuyến / ghép khách</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cáp treo đồi Robin sang Thiền viện Trúc Lâm (Khứ hồi)</td>
+                            <td><span class="price-tag">Giá vé khứ hồi niêm yết</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vé tàu cổ Ga Đà Lạt đi Trại Mát (Khứ hồi)</td>
+                            <td><span class="price-tag">Theo hạng ghế ngồi tàu cổ</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực phố núi</h2>
+                
+                <h3>1. Gợi ý lựa chọn nơi lưu trú</h3>
+                <ul>
+                    <li><strong>Khu vực trung tâm (Bao quanh hồ Xuân Hương, chợ Đà Lạt):</strong> Phù hợp cho những ai thích dạo phố đi bộ, gần chợ đêm ăn uống tấp nập và tiện bắt xe.</li>
+                    <li><strong>Khu vực đồi thông ngoại ô (Tuyền Lâm, phường 11):</strong> Thích hợp cho nghỉ dưỡng homestay nhà kính ngắm đồi thông mộng mơ, resort biệt thự cổ biệt lập mát mẻ.</li>
+                </ul>
+
+                <h3>2. Ẩm thực đồi núi Đà Lạt ấm nồng</h3>
+                <div class="food-list">
+                    <div class="food-item"><span class="name">🥞 Lẩu gà lá é thơm nồng cay nhẹ (Thịt gà ngọt dai ngập trong nước lẩu măng chua cay sả lá é thơm nồng)</span></div>
+                    <div class="food-item"><span class="name">🍕 Bánh tráng nướng Đà Lạt (Được mệnh danh "pizza Việt Nam" nóng hổi giòn rụm béo ngậy trứng phô mai)</span></div>
+                    <div class="food-item"><span class="name">🍳 Bánh căn xíu mại nóng hổi (Vỏ bánh căn giòn rụm chấm nước xíu mại hành hoa thơm lừng béo ngậy)</span></div>
+                    <div class="food-item"><span class="name">🥖 Bánh mì xíu mại chén (Chén xíu mại nóng hổi chấm bánh mì giòn rụm ăn sáng cực ấm lòng)</span></div>
+                </div>
+
+                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
+                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
+                
+                <h3>1. Mùa nào Đà Lạt đẹp nhất trong năm?</h3>
+                <ul>
+                    <li><strong>Tháng 11 – 3 năm sau:</strong> Mùa khô lạnh. Tiết trời se lạnh dưới 15°C vào ban đêm cực kỳ dễ chịu, dã quỳ vàng rực nở dọc các con đèo và mùa hoa mai anh đào hồng thắm ngập tràn phố xá đầu xuân.</li>
+                    <li><strong>Tháng 4 – 6:</strong> Thời điểm hoa phượng tím nhuộm màu hoài niệm phố núi, nắng dịu nhẹ, khô ráo rất đẹp.</li>
+                    <li><strong>Tháng 7 – 10:</strong> Mùa mưa Đà Lạt. Thường có mưa rào vào đầu giờ chiều, tuy nhiên đây lại là mùa săn mây đỉnh nhất năm do độ ẩm không khí rất cao tạo ra những biển mây dày đặc bồng bềnh.</li>
+                </ul>
+
+                <h3>2. Mẹo nhỏ an toàn sống còn</h3>
+                <ul>
+                    <li><strong>Lái xe cẩn thận đường trơn đèo dốc:</strong> Đường đèo Prenn, đèo Mimosa hay đèo Bảo Lộc có độ dốc cao và cua gấp, rất trơn trượt khi trời mưa. Tuyệt đối không phóng nhanh vượt ẩu.</li>
+                    <li><strong>Mang đủ đồ giữ ấm:</strong> Nhiệt độ Đà Lạt đột ngột giảm sâu khi chiều tối xuống, chênh lệch nhiệt độ ngày và đêm rất lớn. Hãy luôn chuẩn bị sẵn áo khoác dày, khăn len ấm.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ Lưu ý bảo vệ cảnh quan du lịch: Đà Lạt kêu gọi du khách không vứt rác bừa bãi tại các khu vực cắm trại đồi cỏ hồng hay hồ Tuyền Lâm hoang sơ. Hãy cùng chung tay giữ gìn màu xanh trong lành của thành phố sương mù!</p>
+                </div>
+
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <!-- QUICK INFO -->
+                <div class="sidebar-card">
+                    <h4>📌 Thông tin nhanh</h4>
+                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Tỉnh Lâm Đồng, Việt Nam</div>
+                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 2 – 3 ngày</div>
+                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 11 – 3 năm sau & Mùa mây</div>
+                </div>
+
+                <!-- TOC -->
+                <div class="sidebar-card">
+                    <h4>📖 Mục lục</h4>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
+                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
+                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
+                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
+                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <div>
+            <a href="index.html">← Về trang chủ</a>
+        </div>
+        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // Lightbox Zoom functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const destCards = document.querySelectorAll('.dest-card');
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if (destCards.length && lightboxModal && lightboxImg) {
+                destCards.forEach(card => {
+                    card.style.cursor = 'zoom-in';
+                    card.addEventListener('click', () => {
+                        const img = card.querySelector('.dest-card-img img');
+                        if (!img) return;
+
+                        let titleText = "";
+                        let descText = "";
+
+                        const overlayH3 = card.querySelector('.dest-card-content h3');
+                        const overlayP = card.querySelector('.dest-card-content p');
+                        if (overlayH3) titleText = overlayH3.textContent;
+                        if (overlayP) descText = overlayP.textContent;
+
+                        if (!titleText && !descText) {
+                            titleText = img.alt || "Chi tiết hình ảnh";
+                        }
+
+                        lightboxModal.style.display = 'flex';
+                        lightboxImg.src = img.src;
+                        
+                        let captionHTML = "";
+                        if (titleText) {
+                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                        }
+                        if (descText) {
+                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                        }
+                        lightboxCaption.innerHTML = captionHTML;
+                    });
+                });
+
+                lightboxClose.addEventListener('click', () => {
+                    lightboxModal.style.display = 'none';
+                });
+
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal || e.target === lightboxClose) {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

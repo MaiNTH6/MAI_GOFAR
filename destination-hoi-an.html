@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hội An — Phố cổ đèn lồng & Di sản văn hóa thế giới | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Hội An tự túc chi tiết: Chùa Cầu, hội quán Phúc Kiến, nhà cổ Tấn Ký, phố cổ đèn lồng, thả đèn hoa đăng sông Hoài. Đi lại, lưu trú, ăn uống.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            border: 1px solid rgba(255,140,50,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+        .hero-meta-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            flex-wrap: wrap;
+        }
+        .hero-meta-line .rating { color: var(--accent-gold); }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        /* CONTENT LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        /* MAIN CONTENT */
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .article-main h2 .icon { font-size: 1.3rem; }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-main ul, .article-main ol {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        .article-main li { margin-bottom: 0.4rem; }
+
+        /* INFO TABLE */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.88rem;
+        }
+        .info-table th, .info-table td {
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .info-table th {
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+            width: 35%;
+        }
+        .info-table td { color: var(--text-sec); }
+        .info-table tr:hover { background: var(--bg-glass); }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(255,140,50,0.12);
+            color: var(--accent);
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* HIGHLIGHT BOX */
+        .tip-box {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .tip-box p { margin: 0; font-size: 0.88rem; }
+        .tip-box strong { color: var(--text); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
+
+        /* PREMIUM CHECKIN CARDS */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.1);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.75) saturate(1.2);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-sm);
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .dest-card-tags .tag-hot {
+            background: rgba(255, 140, 50, 0.25);
+            border: 1px solid rgba(255, 140, 50, 0.4);
+            color: var(--accent) !important;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text) !important;
+        }
+        .dest-card-desc {
+            font-size: 0.82rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 0.75rem;
+        }
+        .dest-card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .dest-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .dest-rating .stars {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .dest-rating span:last-child {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .dest-reviews {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .dest-card-credits {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 0.4rem;
+        }
+        
+        /* FOOD ITEM */
+        .food-list { margin: 1rem 0; }
+        .food-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+        }
+        .food-item .name { color: var(--text); font-weight: 500; }
+        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            align-self: start;
+        }
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            margin-bottom: 0.6rem;
+        }
+        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
+
+        .toc-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .toc-list li { margin-bottom: 0.4rem; }
+        .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.2s;
+        }
+        .toc-list a:hover { color: var(--accent); }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 40vh; min-height: 280px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+
+        .dest-card-meta, 
+        .dest-card-credits {
+            display: none !important;
+        }
+
+        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text-sec);
+            padding: 1.5rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
+            <a href="index.html" class="nav-back">← Về trang chủ</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="images/hoian_hero.jpg" alt="Hội An — Phố cổ đèn lồng">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">📍 Miền Trung · Di sản Văn hóa Thế giới</span>
+            <h1>Hội An<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Phố cổ đèn lồng</span></h1>
+            <div class="hero-meta-line">
+                <span class="rating">⭐ 4.9 / 5.0</span>
+                <span>·</span>
+                <span>Tỉnh Quảng Nam, Việt Nam</span>
+                <span>·</span>
+                <span>Cập nhật: 08/2026</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Hội An</strong>
+    </div>
+
+    <div class="article-layout">
+        <div class="dashboard-layout">
+            <!-- MAIN ARTICLE -->
+            <article class="article-main">
+
+                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
+                <p>Hội An là một đô thị cổ nằm ở hạ lưu sông Thu Bồn, thuộc vùng đồng bằng ven biển tỉnh Quảng Nam, cách thành phố Đà Nẵng khoảng 30km về phía Nam. Nhờ những chính sách bảo tồn lịch sử xuất sắc, Hội An gần như giữ được nguyên vẹn hơn 1.000 di tích kiến trúc cổ xưa như phố xá, nhà cửa, hội quán, đình chùa, giếng cổ...</p>
+                <p>Được UNESCO công nhận là Di sản Văn hóa Thế giới từ năm 1999, phố cổ Hội An mê hoặc lòng người bởi vẻ đẹp mộc mạc của những mảng tường vàng rêu phong cổ kính, mái ngói âm dương xám xịt và sắc màu rực rỡ ấm cúng của hàng ngàn chiếc đèn lồng thủ công thắp sáng lung linh khi màn đêm buông xuống.</p>
+
+                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
+                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Hội An. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
+
+                <div class="checkin-grid">
+                    
+                    <div class="dest-card double-col">
+                        <div class="dest-card-img">
+                            <img src="images/hoian_chua_cau.jpg" alt="Chùa Cầu (Japanese Covered Bridge)" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Biểu tượng</span>
+                                <span class="tag">Lịch sử</span>
+                            </div>
+                            <h3 class="dest-card-title">Chùa Cầu (Japanese Covered Bridge)</h3>
+                            <p class="dest-card-desc">Cây cầu cổ kính xây từ thế kỷ XVII bởi các thương nhân Nhật Bản, kiến trúc độc đáo vắt ngang qua lạch nước nhỏ tĩnh mịch.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/hoian_phuc_kien.jpg" alt="Hội quán Phúc Kiến" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Tâm linh</span>
+                                <span class="tag">Kiến trúc</span>
+                            </div>
+                            <h3 class="dest-card-title">Hội quán Phúc Kiến</h3>
+                            <p class="dest-card-desc">Công trình tâm linh Trung Hoa uy nghiêm lộng lẫy với cổng tam quan rực đỏ, hồ cá chép và các khoanh nhang vòng lớn tỏa hương thơm nhẹ.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/hoian_tan_ky.jpg" alt="Nhà cổ Tấn Ký" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di sản</span>
+                                <span class="tag">Nhà cổ</span>
+                            </div>
+                            <h3 class="dest-card-title">Nhà cổ Tấn Ký</h3>
+                            <p class="dest-card-desc">Ngôi nhà cổ hơn 200 năm tuổi đại diện tiêu biểu cho kiến trúc nhà phố cổ kết hợp gỗ lim bền chắc giao thoa văn hóa Việt - Hoa - Nhật.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card double-col">
+                        <div class="dest-card-img">
+                            <img src="images/hoian_lantern_street.jpg" alt="Phố cổ đèn lồng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Lãng mạn</span>
+                                <span class="tag">Check-in</span>
+                            </div>
+                            <h3 class="dest-card-title">Phố cổ đèn lồng</h3>
+                            <p class="dest-card-desc">Những ngõ nhỏ rợp bóng đèn lồng đủ kiểu dáng thắp sáng rực rỡ rực rỡ sắc màu, mang lại vẻ đẹp cổ tích huyền ảo lung linh.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/hoian_hoai_river.jpg" alt="Sông Hoài & Thả đèn hoa đăng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Dòng sông</span>
+                                <span class="tag">Trải nghiệm</span>
+                            </div>
+                            <h3 class="dest-card-title">Sông Hoài & Thả đèn hoa đăng</h3>
+                            <p class="dest-card-desc">Trải nghiệm ngồi thuyền gỗ lững lờ trôi và tự tay thả những chiếc đèn giấy hoa đăng nhỏ lấp lánh mang theo ước nguyện bình an.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/hoian_market.jpg" alt="Chợ Hội An nhộn nhịp" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Ẩm thực</span>
+                                <span class="tag">Đời sống</span>
+                            </div>
+                            <h3 class="dest-card-title">Chợ Hội An nhộn nhịp</h3>
+                            <p class="dest-card-desc">Khu chợ ẩm thực phong phú tấp nập với những sạp hàng bày bán hoa quả tươi ngon, quà lưu niệm và các món ăn đường phố hấp dẫn.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/hoian_thanh_ha.jpg" alt="Làng gốm Thanh Hà" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Làng nghề</span>
+                                <span class="tag">Đất nung</span>
+                            </div>
+                            <h3 class="dest-card-title">Làng gốm Thanh Hà</h3>
+                            <p class="dest-card-desc">Làng nghề gốm đất nung truyền thống hơn 500 tuổi nằm yên bình ven sông Thu Bồn với các sản phẩm gốm mộc mạc tinh xảo.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/hoian_tra_que.jpg" alt="Làng rau Trà Quế" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Sinh thái</span>
+                                <span class="tag">Nông nghiệp</span>
+                            </div>
+                            <h3 class="dest-card-title">Làng rau Trà Quế</h3>
+                            <p class="dest-card-desc">Làng trồng rau thơm xanh mát sạch bằng phương pháp bón rong biển độc đáo, mang đến hương vị thảo mộc nồng nàn đặc trưng.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & CHI PHÍ -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
+                <p>Nằm sát thành phố Đà Nẵng, việc di chuyển đến Hội An vô cùng dễ dàng và linh hoạt bằng nhiều loại phương tiện:</p>
+                
+                <h3>1. Gợi ý di chuyển từ Đà Nẵng đến Hội An</h3>
+                <ul>
+                    <li><strong>Thuê xe máy tự lái:</strong> Lựa chọn phổ biến nhất của các bạn trẻ, chạy xe dọc theo tuyến đường biển Võ Nguyên Giáp chỉ mất khoảng 40 - 50 phút ngắm biển lộng gió.</li>
+                    <li><strong>Taxi / Grab:</strong> Thích hợp cho gia đình hoặc nhóm bạn đi đông, chi phí vừa phải, di chuyển an toàn và thoải mái.</li>
+                    <li><strong>Xe buýt:</strong> Tuyến xe buýt nội đô Đà Nẵng - Hội An tiết kiệm chi phí nhưng thời gian di chuyển lâu hơn.</li>
+                </ul>
+
+                <h3>2. Giá vé tham khảo khu phố cổ</h3>
+                <p>Khách du lịch nước ngoài và nội địa được khuyến khích mua vé tham quan phố cổ Hội An tại các quầy bán vé. Tấm vé này cho phép bạn tham quan các di tích tiêu biểu tự chọn như nhà cổ, hội quán và chùa Cầu cổ kính.</p>
+
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ tham quan</th>
+                            <th>Chi phí tham khảo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vé tham quan phố cổ Hội An (Bao gồm 3 điểm di tích tùy chọn)</td>
+                            <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                        </tr>
+                        <tr>
+                            <td>Đi thuyền gỗ trên sông Hoài ngắm cảnh (Khứ hồi)</td>
+                            <td><span class="price-tag">Theo quy định bến thuyền</span> (Khoảng 15 - 20 phút ngoạn cảnh)</td>
+                        </tr>
+                        <tr>
+                            <td>Mua đèn hoa đăng bằng giấy thả sông</td>
+                            <td><span class="price-tag">Tự do mua lẻ</span> tại ven sông Hoài</td>
+                        </tr>
+                        <tr>
+                            <td>Vé tham quan Làng gốm Thanh Hà (Có tặng kèm sản phẩm đất nung nhỏ)</td>
+                            <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực cổ trấn</h2>
+                
+                <h3>1. Gợi ý lưu trú nghỉ ngơi</h3>
+                <ul>
+                    <li><strong>Trong khu vực cận rìa Phố cổ:</strong> Các khách sạn 3 sao nhỏ xinh, homestay kiến trúc thô mộc bằng gỗ, giúp bạn đi bộ vào phố cổ chỉ mất 5 - 10 phút.</li>
+                    <li><strong>Khu vực ven sông hoặc biển An Bàng:</strong> Thích hợp nghỉ dưỡng bungalow thoáng đãng yên tĩnh, đạp xe ra biển đón gió mát buổi chiều.</li>
+                </ul>
+
+                <h3>2. Các món ngon Hội An trứ danh</h3>
+                <div class="food-list">
+                    <div class="food-item"><span class="name">🍜 Cao lầu Hội An (Sợi mì dai giòn màu vàng đục, thịt xá xíu ăn kèm rau sống Trà Quế và tóp mỡ)</span></div>
+                    <div class="food-item"><span class="name">🥯 Bánh mì Hội An (Bánh mì Phượng hoặc bánh mì Madam Khánh nổi tiếng vỏ giòn rụm nhân đậm đà)</span></div>
+                    <div class="food-item"><span class="name">🐔 Cơm gà Hội An (Cơm gà bà Buội hạt dẻo thơm màu nghệ vàng, thịt gà xé phay trộn gỏi chua ngọt)</span></div>
+                    <div class="food-item"><span class="name">🥟 Bánh vạc / Bánh bao hoa hồng trắng (Vỏ bột lọc mỏng trong vắt nhân tôm thơm ngọt chấm mắm ngọt)</span></div>
+                </div>
+
+                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
+                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
+                
+                <h3>1. Thời điểm du lịch Hội An đẹp nhất</h3>
+                <ul>
+                    <li><strong>Tháng 2 – 4:</strong> Thời điểm vàng của năm. Thời tiết cuối xuân mát mẻ, trời nắng ấm tạnh ráo, độ ẩm thấp, lý tưởng tuyệt đối để tham quan đi bộ.</li>
+                    <li><strong>Tháng 5 – 8:</strong> Mùa hè nắng đẹp rực rỡ, thích hợp kết hợp đi biển An Bàng hoặc lặn biển ngắm san hô tại Cù Lao Chàm.</li>
+                    <li><strong>Tối ngày Rằm (14 âm lịch hàng tháng):</strong> Lễ hội Đêm rằm phố cổ. Toàn bộ khu phố sẽ tắt đèn điện, thắp đèn lồng lung linh huyền ảo và thả hoa đăng dọc sông Hoài rất đẹp.</li>
+                </ul>
+
+                <h3>2. Một số mẹo nhỏ an toàn</h3>
+                <ul>
+                    <li><strong>Tránh mùa mưa lũ:</strong> Tháng 10 – 11 là mùa mưa bão lớn miền Trung. Nước sông Thu Bồn dâng cao có thể gây ngập lụt các ngõ phố cổ sát sông Hoài. Hãy tránh thời điểm này.</li>
+                    <li><strong>Thuê xe đạp dạo phố:</strong> Phố cổ cấm các phương tiện động cơ chạy vào các khung giờ cao điểm (sáng và chiều tối). Bạn nên thuê xe đạp của homestay để tự do vi vu.</li>
+                    <li><strong>Giữ trật tự tôn nghiêm:</strong> Vui lòng mặc đồ lịch sự kín kẽ khi vào tham quan các di tích tâm linh như chùa Cầu, nhà cổ hay các hội quán linh thiêng.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ Lưu ý bảo tồn di sản: Hãy giữ gìn vệ sinh chung, không viết vẽ lên các bức tường vàng cổ kính của phố cổ. Không mua bán đèn hoa đăng từ những người chèo kéo dọc đường không có thẻ đăng ký bến thuyền.</p>
+                </div>
+
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <!-- QUICK INFO -->
+                <div class="sidebar-card">
+                    <h4>📌 Thông tin nhanh</h4>
+                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Tỉnh Quảng Nam, Việt Nam</div>
+                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 1 – 2 ngày</div>
+                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 2 – 4 & Đêm Rằm</div>
+                </div>
+
+                <!-- TOC -->
+                <div class="sidebar-card">
+                    <h4>📖 Mục lục</h4>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
+                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
+                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
+                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
+                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <div>
+            <a href="index.html">← Về trang chủ</a>
+        </div>
+        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // Lightbox Zoom functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const destCards = document.querySelectorAll('.dest-card');
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if (destCards.length && lightboxModal && lightboxImg) {
+                destCards.forEach(card => {
+                    card.style.cursor = 'zoom-in';
+                    card.addEventListener('click', () => {
+                        const img = card.querySelector('.dest-card-img img');
+                        if (!img) return;
+
+                        let titleText = "";
+                        let descText = "";
+
+                        const overlayH3 = card.querySelector('.dest-card-content h3');
+                        const overlayP = card.querySelector('.dest-card-content p');
+                        if (overlayH3) titleText = overlayH3.textContent;
+                        if (overlayP) descText = overlayP.textContent;
+
+                        if (!titleText && !descText) {
+                            titleText = img.alt || "Chi tiết hình ảnh";
+                        }
+
+                        lightboxModal.style.display = 'flex';
+                        lightboxImg.src = img.src;
+                        
+                        let captionHTML = "";
+                        if (titleText) {
+                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                        }
+                        if (descText) {
+                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                        }
+                        lightboxCaption.innerHTML = captionHTML;
+                    });
+                });
+
+                lightboxClose.addEventListener('click', () => {
+                    lightboxModal.style.display = 'none';
+                });
+
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal || e.target === lightboxClose) {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

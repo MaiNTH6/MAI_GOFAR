@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tà Xùa — Thiên đường săn mây & Sống lưng khủng long | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Tà Xùa chi tiết: Sống lưng khủng long Háng Đồng, Mỏm cá heo, Cây cô đơn, Đỉnh gió. Lịch trình, đi lại, món ăn đặc sản.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            border: 1px solid rgba(255,140,50,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+        .hero-meta-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            flex-wrap: wrap;
+        }
+        .hero-meta-line .rating { color: var(--accent-gold); }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        /* CONTENT LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        /* MAIN CONTENT */
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .article-main h2 .icon { font-size: 1.3rem; }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-main ul, .article-main ol {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        .article-main li { margin-bottom: 0.4rem; }
+
+        /* INFO TABLE */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.88rem;
+        }
+        .info-table th, .info-table td {
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .info-table th {
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+            width: 35%;
+        }
+        .info-table td { color: var(--text-sec); }
+        .info-table tr:hover { background: var(--bg-glass); }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(255,140,50,0.12);
+            color: var(--accent);
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* HIGHLIGHT BOX */
+        .tip-box {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .tip-box p { margin: 0; font-size: 0.88rem; }
+        .tip-box strong { color: var(--text); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
+
+        /* PREMIUM CHECKIN CARDS */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.1);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.75) saturate(1.2);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-sm);
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .dest-card-tags .tag-hot {
+            background: rgba(255, 140, 50, 0.25);
+            border: 1px solid rgba(255, 140, 50, 0.4);
+            color: var(--accent) !important;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text) !important;
+        }
+        .dest-card-desc {
+            font-size: 0.82rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 0.75rem;
+        }
+        .dest-card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .dest-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .dest-rating .stars {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .dest-rating span:last-child {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .dest-reviews {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .dest-card-credits {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 0.4rem;
+        }
+        
+        /* FOOD ITEM */
+        .food-list { margin: 1rem 0; }
+        .food-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+        }
+        .food-item .name { color: var(--text); font-weight: 500; }
+        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            align-self: start;
+        }
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            margin-bottom: 0.6rem;
+        }
+        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
+
+        .toc-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .toc-list li { margin-bottom: 0.4rem; }
+        .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.2s;
+        }
+        .toc-list a:hover { color: var(--accent); }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 40vh; min-height: 280px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+
+        .dest-card-meta, 
+        .dest-card-credits {
+            display: none !important;
+        }
+
+        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text-sec);
+            padding: 1.5rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
+            <a href="index.html" class="nav-back">← Về trang chủ</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="images/taxua_dinosaur_backbone.jpg" alt="Tà Xùa — Thiên đường săn mây">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">📍 Miền Bắc · Săn mây Tây Bắc</span>
+            <h1>Tà Xùa<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Thiên đường săn mây</span></h1>
+            <div class="hero-meta-line">
+                <span class="rating">⭐ 4.9 / 5.0</span>
+                <span>·</span>
+                <span>Cách Hà Nội ~220 km</span>
+                <span>·</span>
+                <span>Cập nhật: 08/2026</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Tà Xùa</strong>
+    </div>
+
+    <div class="article-layout">
+        <div class="dashboard-layout">
+            <!-- MAIN ARTICLE -->
+            <article class="article-main">
+
+                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
+                <p>Tà Xùa là một xã vùng cao thuộc huyện Bắc Yên, tỉnh Sơn La, giáp ranh với Yên Bái. Nằm ở độ cao từ 1.500m đến 1.800m so với mực nước biển, Tà Xùa được mệnh danh là thiên đường mây của Việt Nam với các biển mây cuồn cuộn xuất hiện quanh năm bao bọc lấy thung lũng trập trùng.</p>
+                <p>Nơi đây thu hút đông đảo du khách trẻ tuổi tới chinh phục Sống Lưng Khủng Long Háng Đồng đầy thử thách, check-in Mỏm Cá Heo, Cây cô đơn và ngắm nhìn những ruộng chè cổ thụ Shan Tuyết hàng trăm năm tuổi ẩn hiện trong sương mờ.</p>
+
+                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
+                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Tà Xùa. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
+
+                <div class="checkin-grid">
+                    
+                    <div class="dest-card double-col">
+                        <div class="dest-card-img">
+                            <img src="images/taxua_dinosaur_backbone.jpg" alt="Sống lưng khủng long Háng Đồng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Chinh phục</span>
+                                <span class="tag">Biển mây</span>
+                            </div>
+                            <h3 class="dest-card-title">Sống lưng khủng long Háng Đồng</h3>
+                            <p class="dest-card-desc">Sống núi đá nhô thẳng ra giữa thung lũng sâu thẳm, bao bọc bởi biển mây bồng bềnh tuyệt mỹ mỗi sớm bình minh.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/taxua_dolphin_rock.jpg" alt="Mỏm cá heo Tà Xùa" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Độc đáo</span>
+                                <span class="tag">Sườn núi</span>
+                            </div>
+                            <h3 class="dest-card-title">Mỏm cá heo Tà Xùa</h3>
+                            <p class="dest-card-desc">Tảng đá nhô ra khỏi sườn núi có hình thù tựa như miệng một chú cá heo khổng lồ đang bơi giữa đại dương mây.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/taxua_lonely_tree.jpg" alt="Cây cô đơn Tà Xùa" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Thơ mộng</span>
+                                <span class="tag">Vách vực</span>
+                            </div>
+                            <h3 class="dest-card-title">Cây cô đơn Tà Xùa</h3>
+                            <p class="dest-card-desc">Cây thông cô đơn kiên cường vươn mình trên vách đá ngắm dòng sông xanh mát uốn lượn dưới đáy vực sâu.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card double-col">
+                        <div class="dest-card-img">
+                            <img src="images/taxua_dinh_gio.jpg" alt="Đỉnh gió Tà Xùa" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Hoàng hôn</span>
+                                <span class="tag">Ngắm mây</span>
+                            </div>
+                            <h3 class="dest-card-title">Đỉnh gió Tà Xùa</h3>
+                            <p class="dest-card-desc">Điểm ngắm hoàng hôn đỉnh nhất với biển mây rực sắc hồng cam rực rỡ lãng mạn vô cùng.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/taxua_meadow.jpg" alt="Thảo nguyên Tà Xùa" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Thiên nhiên</span>
+                                <span class="tag">Cắm trại</span>
+                            </div>
+                            <h3 class="dest-card-title">Thảo nguyên Tà Xùa</h3>
+                            <p class="dest-card-desc">Thảo nguyên cỏ xanh mướt rộng lớn lộng gió trên đỉnh núi mang phong vị khoáng đạt phóng khoáng.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/taxua_hang_dong_village.jpg" alt="Xã Háng Đồng hoang sơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Bản làng</span>
+                                <span class="tag">Văn hóa</span>
+                            </div>
+                            <h3 class="dest-card-title">Xã Háng Đồng hoang sơ</h3>
+                            <p class="dest-card-desc">Bản làng người H'Mông bình yên với những mái nhà gỗ đơn sơ mộc mạc nép mình bên triền dốc mây mù.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/taxua_cloud_hunting.jpg" alt="Cafe săn mây trung tâm" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Check-in</span>
+                                <span class="tag">Thư giãn</span>
+                            </div>
+                            <h3 class="dest-card-title">Cafe săn mây trung tâm</h3>
+                            <p class="dest-card-desc">Những quán cafe ban công bằng gỗ ấm cúng ngắm nhìn biển mây cuồn cuộn ngay dưới chân thoải mái vô cùng.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/taxua_turtle_rock.jpg" alt="Mỏm đá đầu rùa" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Kỳ quan</span>
+                                <span class="tag">Độc đáo</span>
+                            </div>
+                            <h3 class="dest-card-title">Mỏm đá đầu rùa</h3>
+                            <p class="dest-card-desc">Khối đá tự nhiên nhô thẳng ra khoảng không có hình dáng đầu rùa ngắm nhìn thung lũng sâu hun hút sương mờ.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & CHI PHÍ -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
+                <p>Khám phá vùng cao Tà Xùa đòi hỏi sự chuẩn bị kỹ càng về phương tiện di chuyển do địa hình đèo dốc đặc trưng của Tây Bắc:</p>
+                
+                <h3>1. Phương tiện di chuyển đến Tà Xùa</h3>
+                <ul>
+                    <li><strong>Xe limousine chạy thẳng:</strong> Rất nhiều hãng xe Limousine đưa đón trực tiếp từ trung tâm Hà Nội lên thẳng trung tâm xã Tà Xùa chỉ trong vòng 5 - 6 tiếng, vô cùng tiện lợi.</li>
+                    <li><strong>Xe khách giường nằm:</strong> Bạn bắt xe khách giường nằm từ bến xe Mỹ Đình đi thị trấn Bắc Yên, sau đó thuê xe máy hoặc bắt taxi di chuyển thêm 15km lên Tà Xùa.</li>
+                </ul>
+
+                <h3>2. Di chuyển tại Tà Xùa</h3>
+                <p><strong>Thuê xe máy tự lái</strong> ngay tại trung tâm xã Tà Xùa hoặc Bắc Yên là cách tốt nhất để cảm nhận trọn vẹn biển mây. Hãy chọn những chiếc xe số hoặc xe côn còn mới, phanh tốt để đảm bảo an toàn vượt các dốc cua cực kỳ dựng đứng.</p>
+
+                <h3>3. Giá vé tham quan một số điểm chính</h3>
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Địa điểm tham quan</th>
+                            <th>Giá vé tham khảo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sống lưng khủng long Háng Đồng</td>
+                            <td><span class="price-tag">Miễn phí</span> (Chỉ mất phí gửi xe máy tại bãi đỗ)</td>
+                        </tr>
+                        <tr>
+                            <td>Mỏm cá heo & Cây cô đơn</td>
+                            <td><span class="price-tag">Miễn phí</span> tự do chụp ảnh</td>
+                        </tr>
+                        <tr>
+                            <td>Thảo nguyên Tà Xùa</td>
+                            <td><span class="price-tag">Miễn phí</span> (Có khu vực cắm trại tự túc tính phí nhỏ bảo vệ môi trường)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực săn mây</h2>
+                
+                <h3>1. Lựa chọn nơi lưu trú</h3>
+                <ul>
+                    <li><strong>Homestay view biển mây:</strong> Tập trung dọc sườn núi trung tâm xã Tà Xùa hoặc đường đi Háng Đồng. Phòng nghỉ bằng gỗ, bungalow lãng mạn giúp bạn ngắm mây ngay khi vừa mở cửa sổ phòng ngủ.</li>
+                    <li><strong>Nhà nghỉ trung tâm:</strong> Các nhà nghỉ bình dân ấm cúng ngay trung tâm xã, thuận tiện ăn uống và mua sắm nhu yếu phẩm.</li>
+                </ul>
+
+                <h3>2. Món ngon ẩm thực Tây Bắc</h3>
+                <div class="food-list">
+                    <div class="food-item"><span class="name">🍲 Lẩu gà đen Tà Xùa (Gà đen bản địa ngọt ngọt nấu cùng lá ngải thuốc bắc)</span></div>
+                    <div class="food-item"><span class="name">🍢 Thịt lợn bản nướng mắc khén (Thịt lợn rừng thơm ngọt nướng than củi)</span></div>
+                    <div class="food-item"><span class="name">🍵 Trà Shan Tuyết cổ thụ (Búp chè Shan tuyết hàng trăm năm tuổi vị thanh ngọt)</span></div>
+                </div>
+
+                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
+                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
+                
+                <h3>1. Mùa săn mây lý tưởng nhất</h3>
+                <ul>
+                    <li><strong>Tháng 10 – 4 năm sau:</strong> Mùa đông và mùa xuân Tây Bắc là thời gian vàng để săn mây. Xác suất gặp biển mây bồng bềnh cuộn trào dày đặc rất cao, đặc biệt sau những ngày mưa ẩm nhiệt độ giảm sâu.</li>
+                    <li><strong>Tháng 5 – 8:</strong> Mùa hè trời trong xanh lộng gió, thích hợp đi trốn nóng ngắm thảo nguyên xanh và những dải núi trập trùng kỳ vĩ.</li>
+                </ul>
+
+                <h3>2. Lưu ý an toàn sống còn</h3>
+                <ul>
+                    <li><strong>Hạn chế tự lái xe máy xuống sống lưng:</strong> Đoạn dốc đi xuống Sống Lưng Khủng Long cực kỳ hẹp, dốc và hai bên là vực sâu gió thổi mạnh. Nếu không phải tay lái bản địa quen đường, khuyên bạn nên đi bộ hoặc thuê xe ôm của bà con H'Mông chở khứ hồi.</li>
+                    <li><strong>Theo dõi thời tiết liên tục:</strong> Không nên đi vào những ngày mưa lớn sạt lở đèo dốc Bắc Yên - Tà Xùa vô cùng nguy hiểm.</li>
+                    <li><strong>Trang bị đồ ấm đầy đủ:</strong> Nhiệt độ ban đêm ở Tà Xùa xuống rất thấp (có thể dưới 10 độ C vào mùa đông). Hãy mang theo áo phao dày, găng tay và khăn len ấm.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ Lưu ý bảo vệ thiên nhiên: Hãy mang rác về sau khi tham quan Sống Lưng Khủng Long hoặc cắm trại ở thảo nguyên Tà Xùa. Không bẻ cành cây cô đơn để leo trèo chụp hình gây hư hại biểu tượng cảnh quan.</p>
+                </div>
+
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <!-- QUICK INFO -->
+                <div class="sidebar-card">
+                    <h4>📌 Thông tin nhanh</h4>
+                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Vùng cao Sơn La, Việt Nam</div>
+                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 2 – 3 ngày</div>
+                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 10 – 4 năm sau</div>
+                </div>
+
+                <!-- TOC -->
+                <div class="sidebar-card">
+                    <h4>📖 Mục lục</h4>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
+                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
+                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
+                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
+                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <div>
+            <a href="index.html">← Về trang chủ</a>
+        </div>
+        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // Lightbox Zoom functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const destCards = document.querySelectorAll('.dest-card');
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if (destCards.length && lightboxModal && lightboxImg) {
+                destCards.forEach(card => {
+                    card.style.cursor = 'zoom-in';
+                    card.addEventListener('click', () => {
+                        const img = card.querySelector('.dest-card-img img');
+                        if (!img) return;
+
+                        let titleText = "";
+                        let descText = "";
+
+                        const overlayH3 = card.querySelector('.dest-card-content h3');
+                        const overlayP = card.querySelector('.dest-card-content p');
+                        if (overlayH3) titleText = overlayH3.textContent;
+                        if (overlayP) descText = overlayP.textContent;
+
+                        if (!titleText && !descText) {
+                            titleText = img.alt || "Chi tiết hình ảnh";
+                        }
+
+                        lightboxModal.style.display = 'flex';
+                        lightboxImg.src = img.src;
+                        
+                        let captionHTML = "";
+                        if (titleText) {
+                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                        }
+                        if (descText) {
+                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                        }
+                        lightboxCaption.innerHTML = captionHTML;
+                    });
+                });
+
+                lightboxClose.addEventListener('click', () => {
+                    lightboxModal.style.display = 'none';
+                });
+
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal || e.target === lightboxClose) {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

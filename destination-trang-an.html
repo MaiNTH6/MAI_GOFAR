@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tràng An — Hành trình thung lũng nước xuyên sơn | GO FAR</title>
+    <meta name="description" content="Hướng dẫn chi tiết du ngoạn Tràng An, Ninh Bình: 3 tuyến chèo thuyền, giá vé mới nhất, kinh nghiệm chuẩn bị và góc chụp ảnh đẹp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .nav-logo img { height: 40px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        .hero {
+            position: relative;
+            height: 45vh;
+            min-height: 300px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.1) 0%, rgba(26,55,77,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 2rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            border: 1px solid rgba(255,140,50,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            margin-bottom: 0.6rem;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        /* 2-COLUMN DASHBOARD LAYOUT */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 2.5rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-self: start;
+        }
+
+        /* LIST STYLING INSIDE SIDEBAR */
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+        }
+        .sidebar-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            line-height: 1.5;
+        }
+        .sidebar-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 950px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .sidebar-sticky {
+                position: static;
+            }
+        }
+        .article-main {
+            min-width: 0;
+        }
+        /* GLASS CARD STYLING */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 140, 50, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(255, 140, 50, 0.05);
+        }
+
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+        .article-main ul {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        .article-main li { margin-bottom: 0.4rem; }
+
+        .route-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .route-card:hover {
+            border-color: rgba(255, 140, 50, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(255, 140, 50, 0.05);
+        }
+        .route-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.88rem;
+        }
+        .info-table th, .info-table td {
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .info-table th { color: var(--text-muted); font-weight: 500; }
+        .info-table td { color: var(--text-sec); }
+
+        .price-tag {
+            background: rgba(255,140,50,0.12);
+            color: var(--accent);
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .tip-box {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+            font-size: 0.88rem;
+        }
+        .tip-box p { margin: 0; }
+
+        /* GALLERY GRID */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.85), transparent);
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 0.5rem 0.8rem;
+            font-weight: 500;
+        }
+
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+
+        /* STORIES TABS SYSTEM */
+        .interactive-stories-widget {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            gap: 2rem;
+            align-items: start;
+        }
+        .interactive-stories-widget:hover {
+            border-color: rgba(255, 140, 50, 0.1);
+            box-shadow: 0 20px 40px -15px rgba(255, 140, 50, 0.03);
+        }
+        .stories-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            border-right: 1px solid rgba(255,255,255,0.08);
+            padding-right: 1.25rem;
+            width: 190px;
+            flex-shrink: 0;
+        }
+        .tab-btn {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-sec);
+            padding: 0.7rem 1.25rem;
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: normal;
+            line-height: 1.3;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            width: 100%;
+            text-align: left;
+            flex-shrink: 0;
+        }
+        .tab-btn:hover {
+            background: rgba(255,140,50,0.08);
+            border-color: rgba(255,140,50,0.25);
+            color: var(--text);
+        }
+        .tab-btn.active {
+            background: rgba(255, 140, 50, 0.15);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 15px rgba(255, 140, 50, 0.15);
+            font-weight: 600;
+        }
+        
+        .story-content-panel {
+            display: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            flex-grow: 1;
+            min-width: 0;
+        }
+        .story-content-panel.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: fadeInTab 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInTab {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* INTERNAL GRID FOR TAB STORIES */
+        .story-grid-internal {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+        .story-media-col .spot-card {
+            height: 400px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            position: relative;
+        }
+        .story-media-col .spot-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .story-media-col .spot-card:hover img {
+            transform: scale(1.05);
+        }
+        .story-media-col .spot-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(22, 44, 62, 0.9) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem 1.25rem;
+        }
+        .story-media-col .gallery-caption {
+            font-size: 0.8rem;
+            color: #fff;
+            margin: 0;
+            line-height: 1.4;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .story-text-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .history-block {
+            background: rgba(255,255,255,0.01);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+        }
+        .history-block p {
+            font-size: 0.92rem;
+            color: var(--text-sec);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .wish-block {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.03) 0%, rgba(255, 140, 50, 0.01) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.12);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.7;
+            position: relative;
+            box-shadow: inset 0 0 15px rgba(251, 191, 36, 0.01);
+        }
+        .wish-block strong {
+            color: var(--accent-gold);
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
+        }
+
+        .story-content-panel h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 850px) {
+            .interactive-stories-widget {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .stories-tabs {
+                flex-direction: row;
+                width: 100%;
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+                padding-bottom: 1rem;
+                margin-bottom: 1.5rem;
+                overflow-x: auto;
+            }
+            .tab-btn {
+                width: auto;
+                text-align: center;
+                border-radius: 99px;
+            }
+            .story-grid-internal {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .story-media-col .spot-card {
+                height: 250px;
+            }
+        }
+
+        /* SPLIT LAYOUT FOR ROUTES & TICKETS */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 2.5rem;
+            margin: 2.5rem 0;
+            align-items: start;
+        }
+        .split-col h2 {
+            margin-top: 0 !important;
+        }
+
+        @media (max-width: 900px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text-sec);
+            padding: 1.5rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+</style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
+            <a href="destination-ninh-binh.html" class="nav-back">← Về Ninh Bình</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="images/ninh_binh_hero_1783439944952.png" alt="Tràng An Ninh Bình">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">🚣 Di sản thế giới</span>
+            <h1>Quần thể danh thắng Tràng An</h1>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> › <a href="destination-ninh-binh.html">Ninh Bình</a> › <strong>Tràng An</strong>
+    </div>
+
+    <div class="article-layout">
+        <div class="dashboard-layout">
+            <!-- SIDEBAR TRÁI: CẨM NANG & LƯU Ý (STICKY) -->
+            <div class="sidebar-sticky">
+                <!-- Box 1: Vé & Đò -->
+                <div class="glass-card">
+                    <h3>🎫 Dịch vụ đò Tràng An</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-sec); line-height: 1.6; margin-bottom: 0.75rem;">Vé tham quan và dịch vụ chèo thuyền nan được bán gộp chung dưới dạng trọn gói tại quầy vé trung tâm bến thuyền Tràng An.</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Ben+thuyen+Trang+An+Ninh+Binh" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255, 140, 50, 0.12); color: var(--accent); padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); text-decoration: none; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; border: 1px solid rgba(255, 140, 50, 0.25); width: 100%; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 140, 50, 0.22)'" onmouseout="this.style.background='rgba(255, 140, 50, 0.12)'">
+                        📍 Định vị Bến thuyền trên Google Maps
+                    </a>
+                    <div style="background: rgba(255,140,50,0.05); border: 1px dashed rgba(255,140,50,0.2); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-sec); line-height: 1.5;">
+                        🎫 <strong>Hình thức bán vé tại quầy:</strong>
+                        <br>• Vé người lớn & trẻ em tính theo lượt khách.
+                        <br>• Dịch vụ bao trọn thuyền riêng dành cho đoàn hoặc chụp ảnh tự do.
+                    </div>
+                </div>
+
+                <!-- Box 2: Hướng dẫn chọn tuyến chèo thuyền -->
+                <div class="glass-card" style="border-left: 3px solid var(--accent); margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.5rem;">🗺️ Chọn tuyến chèo thuyền</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-sec); line-height: 1.5; margin-bottom: 1rem;">Tại bến thuyền Tràng An, bạn mua vé chung và tự chọn 1 trong 3 lộ trình du ngoạn sau (kéo dài 2.5 - 3 tiếng):</p>
+                    
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 0.85rem; border-radius: var(--radius-sm); margin-bottom: 0.75rem; font-size: 0.82rem; color: var(--text-sec); line-height: 1.5;">
+                        <strong style="color: var(--accent-gold); display: block; margin-bottom: 0.25rem;">Tuyến 1: Hang động & Tâm linh (Phù hợp người lớn tuổi)</strong>
+                        Đưa bạn đi qua <strong>9 hang động</strong> liên tiếp (Hang Địa Linh, Hang Tối, Hang Sáng, Hang Sính...) và 3 đền cổ linh thiêng (Đền Trình, Đền Trần, Phủ Khống). Lộ trình này đi sâu vào hang nhất.
+                    </div>
+
+                    <div style="background: rgba(255, 140, 50, 0.03); border: 1px solid rgba(255, 140, 50, 0.2); padding: 0.85rem; border-radius: var(--radius-sm); margin-bottom: 0.75rem; font-size: 0.82rem; color: var(--text-sec); line-height: 1.5;">
+                        <strong style="color: var(--accent); display: block; margin-bottom: 0.25rem;">🔥 Tuyến 2: Hang & Check-in (Khuyên đi)</strong>
+                        Đi qua 4 hang động, Đền Cao Sơn, Đền Suối Tiên và khu thủy đình check-in tuyệt mỹ giữa hồ nước rộng lớn. Lộ trình cân bằng ngắm hang và chụp ảnh tốt nhất.
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 0.85rem; border-radius: var(--radius-sm); font-size: 0.82rem; color: var(--text-sec); line-height: 1.5;">
+                        <strong style="color: var(--accent-gold); display: block; margin-bottom: 0.25rem;">Tuyến 3: Hang dài nhất & Thủy cung</strong>
+                        Điểm nhấn là xuyên qua <strong>Hang Mây dài hơn 1km</strong> (hang dài nhất Tràng An), Hang Địa Linh, Đền Trình và Đền Suối Tiên. Phù hợp cho ai thích khám phá lòng hang sâu.
+                    </div>
+                </div>
+
+                <!-- Box 3: Kinh nghiệm chuẩn bị -->
+                <div class="glass-card" style="border-left: 3px solid var(--accent-gold);">
+                    <h3 style="color: var(--accent-gold);">💡 Kinh nghiệm chuẩn bị</h3>
+                    <ul class="sidebar-list">
+                        <li>Nên đi vào sáng sớm (7h30) để tránh nắng gắt và tránh cảnh chen chúc xếp hàng giờ cao điểm trưa.</li>
+                        <li>Trang bị mũ rộng vành, kính râm, kem chống nắng và chuẩn bị sẵn chai nước suối mang theo.</li>
+                        <li>Chuẩn bị sẵn một ít tiền lẻ (khoảng 50k - 100k) để gửi tip cảm ơn các bác lái đò chèo thuyền thủ công rất vất vả trong suốt 3 tiếng.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- NỘI DUNG PHẢI: TỔNG QUAN, TRUYỆN TÍCH & TUYẾN ĐỒ -->
+            <article class="article-main" style="margin-top: 0;">
+                <div class="glass-card" style="margin-bottom: 2rem; padding: 2rem;">
+                    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.5rem; margin-top: 0 !important;">📋 Tổng quan di sản</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.8; margin-bottom: 1rem;">Năm 2014, Tràng An chính thức được UNESCO vinh danh là <strong>Di sản Thế giới kép (hỗn hợp) đầu tiên và duy nhất</strong> của Đông Nam Á, đáp ứng cả ba tiêu chí khắt khe về Văn hóa, Thẩm mỹ và Địa chất địa mạo.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.8; margin-bottom: 1rem;">Khác với những khu du lịch thông thường, giá trị di sản đặc biệt của Tràng An nằm ở hai lớp trầm tích:
+                    <br>• <strong>Lớp trầm tích địa chất triệu năm:</strong> Là một "bảo tàng địa chất ngoài trời" lưu giữ dấu vết biến đổi vỏ Trái Đất và các đợt biển tiến, biển thoái kiến tạo nên tháp karst đá vôi đứng độc lập, bao quanh bởi các thung lũng ngập nước lững lờ trong vắt.
+                    <br>• <strong>Lớp lịch sử nhân loại 30.000 năm:</strong> Các đợt khai quật khảo cổ tại các hang động (như hang Bói, hang Trống) đã phát hiện vỏ ốc biển, xương thú, công cụ đá cổ xưa — minh chứng cho thấy tổ tiên người Việt cổ đã cư trú tại đây, thích nghi vượt qua các thời kỳ biển dâng khắc nghiệt của biến đổi khí hậu toàn cầu.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.8;">Trải nghiệm Tràng An không có chỗ cho sự vội vã. Xuôi theo những chiếc thuyền nan nhỏ do người dân địa phương chèo tay mộc mạc xuyên qua các hang động ngầm hẹp tối, chạm tay vào những khối nhũ đá rủ tí tách nước, bạn sẽ cảm nhận rõ ràng linh hồn của một di sản sống động đang thở nhịp nhàng giữa bốn bề vách đá sừng sững.</p>
+                </div>
+
+                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--text); margin-top: 2rem; margin-bottom: 1rem;">Những câu chuyện lịch sử & Lời nguyện ước gửi gắm</h2>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Mỗi bước chân đi qua non nước Tràng An không chỉ là một chuyến vãn cảnh, mà là một hành trình chạm vào linh hồn của lịch sử. Hãy chọn một điểm đến dưới đây để lắng nghe câu chuyện ngàn năm, và gửi gắm những nguyện ước của riêng bạn:</p>
+
+                <div class="interactive-stories-widget">
+                <div class="stories-tabs">
+                    <button class="tab-btn active" data-tab="story-1">🧭 1. Vũ Lâm</button>
+                    <button class="tab-btn" data-tab="story-2">⛩️ 2. Đền Trần</button>
+                    <button class="tab-btn" data-tab="story-3">🍁 3. Phủ Khống</button>
+                    <button class="tab-btn" data-tab="story-4">💧 4. Suối Tiên</button>
+                    <button class="tab-btn" data-tab="story-5">🕯️ 5. Đền Trình</button>
+                    <button class="tab-btn" data-tab="story-6">⛰️ 6. Cao Sơn</button>
+                    <button class="tab-btn" data-tab="story-7">💎 7. Hang Động</button>
+                    <button class="tab-btn" data-tab="story-8">☁️ 8. Hang Mây & Sính</button>
+                </div>
+
+                <!-- STORY PANEL 1 -->
+                <div class="story-content-panel active" id="story-1">
+                    <h3>1. Hành cung Vũ Lâm — Từ chiến trường oai hùng đến cõi lòng tự tại</h3>
+                    <div class="story-grid-internal">
+                        <div class="story-media-col">
+                            <div class="spot-card">
+                                <img src="images/thuy_dinh_trang_an_1783491538832.png" alt="Thủy Đình Vũ Lâm">
+                                <div class="spot-card-overlay">
+                                    <p class="gallery-caption">Thủy Đình cổ kính giữa lòng hồ tại phân khu Hành cung Vũ Lâm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-text-col">
+                            <div class="history-block">
+                                <p><strong>Câu chuyện lịch sử:</strong> Vào thế kỷ XIII, giữa tiếng vó ngựa dồn dập và khói lửa của cuộc kháng chiến chống Nguyên - Mông lần thứ hai, hoàng đế Trần Thái Tông đã chọn những thung lũng dốc đá vôi ngập nước của Tràng An để lập nên <em>Hành cung Vũ Lâm</em>. Nơi đây từng là một căn cứ quân sự ngầm hiểm trở đầy mưu lược, giúp quân dân nhà Trần bảo toàn lực lượng trước kẻ thù hung hãn nhất thế giới thời bấy giờ. Khi giặc tan, chính vị vua oai hùng ấy đã trút bỏ hoàng bào, buông bỏ mọi vinh hoa phú quý để khoác lên mình tấm áo nâu sồng, xuất gia tu hành tại Am Vũ Lâm, đặt những viên gạch đầu tiên cho sự ra đời của Thiền phái Trúc Lâm Yên Tử.</p>
+                            </div>
+                            <div class="wish-block">
+                                <strong>✨ Lời nguyện ước khi ghé thăm:</strong> Bước vào không gian tĩnh lặng của hành cung giữa bốn bề vách núi, du khách thường nhắm mắt, hít một hơi thật sâu để cầu xin sự <strong>bình yên trong tâm hồn, lòng can đảm để buông bỏ những muộn phiền</strong> và tìm lại sự tự tại, thăng bằng sau những sóng gió của cuộc sống hiện đại.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORY PANEL 2 -->
+                <div class="story-content-panel" id="story-2">
+                    <h3>2. Đền Trần (Đền Nội Lâm) — Sự bảo hộ vững chãi qua thăng trầm</h3>
+                    <div class="story-grid-internal">
+                        <div class="story-media-col">
+                            <div class="spot-card">
+                                <img src="images/den_tran_trang_an_1785312211935.jpg" alt="Đền Trần Tràng An">
+                                <div class="spot-card-overlay">
+                                    <p class="gallery-caption">Cổng đá uy nghiêm rêu phong của Đền Trần ẩn sâu giữa lòng núi đá vôi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-text-col">
+                            <div class="history-block">
+                                <p><strong>Câu chuyện lịch sử:</strong> Ngôi đền đá cổ kính này được vua Đinh Tiên Hoàng xây dựng làm trấn ải phía Nam của kinh đô Hoa Lư cổ, thờ vị tướng <strong>Quý Minh Đại Vương</strong> trấn giữ biên thùy. Trải qua ngàn năm dông bão, đền được dựng lại bằng đá xanh nguyên khối chạm khắc rồng cuộn tinh xảo từ thời nhà Trần. Hình ảnh những cột đá vững chãi gánh vác mái đền rêu phong qua bao thế kỷ chính là biểu tượng cho sự kiên trung, bảo hộ vững chắc cho giang sơn bờ cõi.</p>
+                            </div>
+                            <div class="wish-block">
+                                <strong>✨ Lời nguyện ước khi ghé thăm:</strong> Khi chạm tay vào những cột đá rêu phong tại Đền Trần, người lữ hành thành tâm cầu nguyện cho <strong>gia đình luôn được bình an, tai qua nạn khỏi</strong>, và cầu xin <strong>sức mạnh nội tại kiên cường</strong> để vững vàng chèo lái con thuyền cuộc đời vượt qua mọi giông bão thử thách.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORY PANEL 3 -->
+                <div class="story-content-panel" id="story-3">
+                    <h3>3. Phủ Khống — Tấm lòng son sắt và tình tri kỷ ngàn năm</h3>
+                    <div class="story-grid-internal">
+                        <div class="story-media-col">
+                            <div class="spot-card">
+                                <img src="images/phu_khong_trang_an_1785312228974.jpg" alt="Phủ Khống Tràng An">
+                                <div class="spot-card-overlay">
+                                    <p class="gallery-caption">Phủ Khống trầm mặc nép mình dưới chân vách đá karst bên mặt nước phẳng lặng</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-text-col">
+                            <div class="history-block">
+                                <p><strong>Câu chuyện lịch sử:</strong> Nép mình bên vách hang Khống rậm rạp cây lá, Phủ Khống thờ 7 vị quan trung thần triều Đinh. Khi vua Đinh Tiên Hoàng bị sát hại, để giữ bí mật tuyệt đối về ngôi mộ thật của nhà vua, 7 vị quan đã tự tay an táng đức vua tại các hướng khác nhau rồi cùng tuẫn tiết để mang bí mật ấy xuống lòng đất. Người giữ đền Phủ Khống sau này vì cảm động trước nghĩa khí son sắt ấy đã lập đền thờ phụng họ. Ngay bên cạnh phủ là cây thị cổ thụ ngàn năm tuổi, kỳ lạ thay lại sinh ra hai loại quả (tròn và dẹt) trên cùng một cành, như sự hòa hợp âm dương, tượng trưng cho sự sắt son và lòng trung trinh bất tử.</p>
+                            </div>
+                            <div class="wish-block">
+                                <strong>✨ Lời nguyện ước khi ghé thăm:</strong> Đứng dưới bóng cây thị cổ thụ ngàn năm tỏa hương thơm ngát, người ta thường gửi gắm ước nguyện về <strong>lòng trung thành, tình tri kỷ bền chặt, sự gắn kết sắt son</strong> trong tình bạn, tình yêu và sự tin tưởng tuyệt đối lẫn nhau giữa người với người.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORY PANEL 4 -->
+                <div class="story-content-panel" id="story-4">
+                    <h3>4. Đền Suối Tiên — Nơi dấu chân Tiên cảnh & Uy danh Đức Thánh Quý Minh</h3>
+                    <div class="story-grid-internal">
+                        <div class="story-media-col">
+                            <div class="spot-card">
+                                <img src="images/suoi_tien_trang_an_1783491573360.png" alt="Đền Suối Tiên Tràng An">
+                                <div class="spot-card-overlay">
+                                    <p class="gallery-caption">Đền Suối Tiên cổ kính soi bóng bên dòng suối mát xanh trong vắt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-text-col">
+                            <div class="history-block">
+                                <p><strong>Câu chuyện lịch sử:</strong> Đền tọa lạc nơi thượng nguồn dòng Suối Tiên xanh trong vắt soi bóng tận đáy hồ, là nơi thờ vọng Đức Thánh <strong>Quý Minh Đại Vương</strong> (vị thần trấn ải phía Nam Hoa Lư tứ trấn) cùng phu nhân của ngài. Đền được dựng lên để ghi nhớ công ơn canh giữ biên cương, bảo vệ mùa màng của ngài từ thời Hùng Vương thứ 18. Tên gọi "Suối Tiên" bắt nguồn từ truyền thuyết dân gian kể rằng phong cảnh nơi này hoang sơ, thanh khiết đến kỳ lạ, khiến các nàng tiên trên trời thường trốn xuống đây tắm mát và dạo chơi mỗi chiều hoàng hôn.</p>
+                            </div>
+                            <div class="wish-block">
+                                <strong>✨ Lời nguyện ước khi ghé thăm:</strong> Lắng nghe tiếng nước chảy róc rách của Suối Tiên, du khách thường cầu nguyện cho <strong>sức khỏe dồi dào, sự sinh sôi nảy nở (cầu con cái, tài lộc)</strong>, mong cầu một cuộc đời thanh khiết, tươi mát và luôn tràn đầy năng lượng tích cực như dòng suối nguồn.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORY PANEL 5 -->
+                <div class="story-content-panel" id="story-5">
+                    <h3>5. Đền Trình (Phủ Đột) — Nơi gửi gắm lòng trung quân ái quốc</h3>
+                    <div class="story-grid-internal">
+                        <div class="story-media-col">
+                            <div class="spot-card">
+                                <img src="images/den_trinh_trang_an_1785313109113.jpg" alt="Đền Trình Tràng An">
+                                <div class="spot-card-overlay">
+                                    <p class="gallery-caption">Đền Trình (Phủ Đột) rêu phong tọa lạc bên dòng sông xanh biếc dẫn lối vào di sản</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-text-col">
+                            <div class="history-block">
+                                <p><strong>Câu chuyện lịch sử:</strong> Đền có lịch sử hơn 1.000 năm, thờ 4 vị công thần khai quốc triều Đinh gồm: Nguyễn Bặc, Đinh Điền, Lưu Cơ và Trịnh Tú. Khi Đinh Tiên Hoàng Đế băng hà, triều đình xảy ra biến loạn lớn, các vị tướng đã kiên trung bảo vệ ấu chúa Đinh Toàn đi tránh nạn. Đền còn có tên gọi là Phủ Đột, mang ý nghĩa là nơi trình diện đầu tiên. Theo truyền thống dân gian, đây là nơi du khách dừng đò dâng hương, "trình báo" tấm lòng thành kính để xin các vị thần linh che chở trước khi đi sâu vào vùng lõi di sản.</p>
+                            </div>
+                            <div class="wish-block">
+                                <strong>✨ Lời nguyện ước khi ghé thăm:</strong> Ghé thăm đền Trình ngay đầu hành trình, du khách thường cầu xin <strong>sự hanh thông suôn sẻ, chuyến đi an toàn, vạn sự cát tường</strong> và cầu chúc một năm mới/công việc mới có sự khởi đầu thuận buồm xuôi gió.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORY PANEL 6 -->
+                <div class="story-content-panel" id="story-6">
+                    <h3>6. Đền Thánh Cao Sơn — Sự chở che oai nghiêm cửa ngõ Hoa Lư</h3>
+                    <div class="story-grid-internal">
+                        <div class="story-media-col">
+                            <div class="spot-card">
+                                <img src="images/den_cao_son_trang_an_1785313123900.jpg" alt="Đền Thánh Cao Sơn">
+                                <div class="spot-card-overlay">
+                                    <p class="gallery-caption">Đền thờ thần Cao Sơn cổ kính ẩn sau vách núi karst sừng sững</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-text-col">
+                            <div class="history-block">
+                                <p><strong>Câu chuyện lịch sử:</strong> Đây là nơi thờ thần <strong>Cao Sơn Đại Vương</strong> (Lạc tướng Vũ Lâm, con thứ 17 của Lạc Long Quân), một trong bốn vị thần linh thiêng nhất trấn giữ bốn hướng của kinh thành Hoa Lư cổ (Trấn Tây). Thần Cao Sơn là người có công hộ quốc an dân, dạy dân cách làm ruộng trồng lúa nước, tìm ra cây quang lang để ăn chống đói và bảo hộ muôn dân trước thú dữ núi rừng hiểm trở.</p>
+                            </div>
+                            <div class="wish-block">
+                                <strong>✨ Lời nguyện ước khi ghé thăm:</strong> Đứng dưới mái đền Cao Sơn sừng sững giữa vách đá cổ xưa, du khách thành kính dâng hương để cầu xin <strong>sự vững vàng vượt qua thử thách, công việc hanh thông phát đạt</strong>, cầu xin sức khỏe bền bỉ dẻo dai và sự vững chãi trong cuộc sống.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORY PANEL 7 -->
+                <div class="story-content-panel" id="story-7">
+                    <h3>7. Hệ thống xuyên thủy động kỳ vĩ (Tuyến 1 & 2)</h3>
+                    <div class="story-grid-internal">
+                        <div class="story-media-col">
+                            <div class="spot-card">
+                                <img src="images/hang_dong_trang_an_1785313139051.jpg" alt="Hang động Tràng An">
+                                <div class="spot-card-overlay">
+                                    <p class="gallery-caption">Các hang động xuyên thủy mang vẻ đẹp kỳ ảo tự nhiên của Quần thể di sản Tràng An</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-text-col">
+                            <div class="history-block">
+                                <p><strong>Câu chuyện lịch sử:</strong> Tràng An sở hữu hệ thống hang động ngầm liên kết chằng chịt, mỗi nơi mang một câu chuyện và đặc tính riêng biệt:
+                                <br>• <strong>Hang Địa Linh & Hang Thánh Trượt:</strong> Hang Địa Linh (Hang Châu Báu) óng ánh thạch nhũ vàng bạc. Hang Thánh Trượt gắn liền với thiền sư Nguyễn Minh Không triều Lý đi tìm lá thuốc quý chữa bệnh cứu vua Lý Thần Tông, vì quá say sưa ngắm cảnh mà trượt chân ngã trên dốc đá nơi này.
+                                <br>• <strong>Hang Tối & Hang Sáng:</strong> Cặp hang động dài 320m (Hang Tối) và 100m (Hang Sáng) nối liền nhau. Tên gọi tượng trưng cho triết lý tuần hoàn của vũ trụ và niềm khao khát vươn ra khỏi nghịch cảnh để đón ánh sáng tương lai của người xưa.
+                                <br>• <strong>Hang Lấm, Hang Vạng & Hang Đại:</strong> Những hang động nguyên sơ rêu phong. Hang Đại rộng lớn tới 200m từng là nơi ẩn quân đồn trú chiến lược của quân sĩ triều Đinh - Lê.</p>
+                            </div>
+                            <div class="wish-block">
+                                <strong>✨ Lời nguyện ước khi ghé thăm:</strong> Đi qua lòng hang tối mát lạnh rồi đột ngột đón lấy ánh sáng rực rỡ ngoài cửa hang, du khách thường nguyện cầu cho <strong>trí tuệ thông suốt, sự hanh thông vượt qua thời kỳ tăm tối khó khăn</strong> và tìm được con đường tươi sáng cho tương lai.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORY PANEL 8 -->
+                <div class="story-content-panel" id="story-8">
+                    <h3>8. Mê cung Hang Mây & Điển tích Hang Sính (Tuyến 1 & 3)</h3>
+                    <div class="story-grid-internal">
+                        <div class="story-media-col">
+                            <div class="spot-card">
+                                <img src="images/hang_sinh_trang_an_1785313296433.jpg" alt="Hang Mây và Hang Sính Tràng An">
+                                <div class="spot-card-overlay">
+                                    <p class="gallery-caption">Vòm nhũ đá trắng muốt phủ kín lòng hang Mây tựa như dải mây bồng bềnh</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-text-col">
+                            <div class="history-block">
+                                <p><strong>Câu chuyện lịch sử:</strong> Hai tuyệt tác hang động gắn liền với vẻ đẹp thiên nhiên và giai thoại lãng mạn:
+                                <br>• <strong>Hang Mây (Hang Vân):</strong> Xuyên thủy động dài gần 1.000m (dài nhất Tràng An). Trần hang được bao phủ bởi thạch nhũ trắng muốt mềm mại rủ xuống bồng bềnh tựa như mây ngàn.
+                                <br>• <strong>Hang Sính:</strong> Gắn liền với câu chuyện tình duyên trắc trở nhưng son sắt thời Đinh - Lê. Chàng trai chuẩn bị sính lễ đến hang để cầu hôn nàng nhưng hay tin nàng phải đi cống nạp nước láng giềng để giữ yên bờ cõi. Chàng vì quá đau lòng đã gieo mình xuống dòng sông ngầm hang Si kế bên. Dòng lệ sầu thương kết tinh lại thành những giọt nước rơi róc rách giữa lòng hang.</p>
+                            </div>
+                            <div class="wish-block">
+                                <strong>✨ Lời nguyện ước khi ghé thăm:</strong> Lướt thuyền qua cõi tiên cảnh mây ngàn và lắng nghe khúc tình ca Hang Sính, du khách thường cầu nguyện cho <strong>tình yêu lứa đôi sắt son chung thủy vượt qua khoảng cách</strong>, lòng trung trinh và mong cầu một cuộc sống tự tại, thanh nhẹ như mây trời.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Kết thúc .interactive-stories-widget -->
+
+
+
+        </article>
+    </div> <!-- Kết thúc .dashboard-layout -->
+</div> <!-- Kết thúc .article-layout -->
+
+    <footer class="article-footer">
+        <a href="destination-ninh-binh.html">← Quay lại Ninh Bình</a>
+        <span>🎨 Ảnh: AI-generated · © 2026 GO FAR</span>
+    </footer>
+
+    
+    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const panels = document.querySelectorAll('.story-content-panel');
+            
+            let currentIndex = 0;
+            let autoplayInterval = null;
+            let isHovered = false;
+            const intervalTime = 6000; // 6 seconds per tab
+            
+            function showTab(index) {
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                
+                tabs[index].classList.add('active');
+                panels[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            function startAutoplay() {
+                if (autoplayInterval) clearInterval(autoplayInterval);
+                autoplayInterval = setInterval(() => {
+                    if (!isHovered) {
+                        let nextIndex = (currentIndex + 1) % tabs.length;
+                        showTab(nextIndex);
+                    }
+                }, intervalTime);
+            }
+            
+            function resetAutoplay() {
+                startAutoplay();
+            }
+            
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    showTab(index);
+                    resetAutoplay();
+                });
+            });
+            
+            // Pause autoplay when user hovers over the article content (reading or viewing)
+            const storyContainer = document.querySelector('.article-main');
+            if (storyContainer) {
+                storyContainer.addEventListener('mouseenter', () => {
+                    isHovered = true;
+                });
+                storyContainer.addEventListener('mouseleave', () => {
+                    isHovered = false;
+                });
+            }
+            
+            startAutoplay();
+        });
+    
+        // Lightbox Zoom functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const spotCards = document.querySelectorAll('.spot-card');
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if (spotCards.length && lightboxModal && lightboxImg) {
+                spotCards.forEach(card => {
+                    card.style.cursor = 'zoom-in';
+                    card.addEventListener('click', () => {
+                        const img = card.querySelector('img');
+                        if (!img) return;
+
+                        let titleText = "";
+                        let descText = "";
+
+                        // 1. Check if inside .story-grid-internal (Tràng An)
+                        const parentGrid = card.closest('.story-grid-internal');
+                        if (parentGrid) {
+                            const h3 = parentGrid.querySelector('.story-text h3');
+                            const p = parentGrid.querySelector('.story-text p');
+                            if (h3) titleText = h3.textContent;
+                            if (p) descText = p.textContent;
+                        }
+
+                        // 2. Check if spot-card has overlay (Hang Múa, Tam Cốc, Bái Đính, Hoa Lư, Vân Long)
+                        const overlayH4 = card.querySelector('.spot-card-overlay h4');
+                        const overlayP = card.querySelector('.spot-card-overlay p');
+                        if (overlayH4) titleText = overlayH4.textContent;
+                        if (overlayP) descText = overlayP.textContent;
+
+                        // 3. Fallback to image alt
+                        if (!titleText && !descText) {
+                            titleText = img.alt || "Chi tiết hình ảnh";
+                        }
+
+                        lightboxModal.style.display = 'flex';
+                        lightboxImg.src = img.src;
+                        
+                        let captionHTML = "";
+                        if (titleText) {
+                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                        }
+                        if (descText) {
+                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                        }
+                        lightboxCaption.innerHTML = captionHTML;
+                    });
+                });
+
+                lightboxClose.addEventListener('click', () => {
+                    lightboxModal.style.display = 'none';
+                });
+
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal || e.target === lightboxClose) {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+</script>
+</body>
+</html>

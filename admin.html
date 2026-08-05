@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta name="description" content="Bảng điều khiển quản trị GO FAR - Quản lý bài viết và dữ liệu du lịch Việt Nam.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO FAR — Admin Dashboard</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --bg-hover: #334155;
+            --border: #334155;
+            --text: #f8fafc;
+            --text-sec: #94a3b8;
+            --accent: #FF8C32;
+            --accent-glow: rgba(255, 140, 50, 0.2);
+            --green: #22c55e;
+            --red: #ef4444;
+            --yellow: #fbbf24;
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ===== LOGIN ===== */
+        .login-screen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .login-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 3rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-logo { height: 48px; margin-bottom: 1.5rem; }
+        .login-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .login-sub { font-size: 0.85rem; color: var(--text-sec); margin-bottom: 2rem; }
+
+        .login-input {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .login-input:focus { border-color: var(--accent); }
+        .login-input::placeholder { color: #64748b; }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: linear-gradient(135deg, #FF8C32, #f97316);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .login-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 140, 50, 0.4); }
+
+        .login-error {
+            color: var(--red);
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
+            display: none;
+        }
+
+        /* ===== DASHBOARD ===== */
+        .dashboard { display: none; }
+        .dashboard.active { display: block; }
+
+        .topbar {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .topbar-logo { height: 32px; }
+        .topbar-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .topbar-badge {
+            background: var(--accent-glow);
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+        }
+
+        .topbar-right { display: flex; align-items: center; gap: 1rem; }
+        .btn-view-site {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-sec);
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-view-site:hover { border-color: var(--accent); color: var(--accent); }
+
+        .btn-logout {
+            padding: 0.5rem 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 8px;
+            color: var(--red);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-logout:hover { background: rgba(239, 68, 68, 0.2); }
+
+        .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+        /* Stats */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+        .stat-card-label { font-size: 0.75rem; color: var(--text-sec); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .stat-card-value { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; }
+        .stat-card-value.accent { color: var(--accent); }
+        .stat-card-value.green { color: var(--green); }
+        .stat-card-value.red { color: var(--red); }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: var(--text-sec);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: -1px;
+        }
+        .tab-btn:hover { color: var(--text); }
+        .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+        .tab-count {
+            background: var(--bg);
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+        }
+
+        /* Content Table */
+        .content-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 0.5rem;
+        }
+
+        .content-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.7rem;
+            color: var(--text-sec);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        .content-table td {
+            padding: 1rem;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        .content-table td:first-child { border-left: 1px solid var(--border); border-radius: var(--radius) 0 0 var(--radius); }
+        .content-table td:last-child { border-right: 1px solid var(--border); border-radius: 0 var(--radius) var(--radius) 0; }
+
+        .content-table tr:hover td { background: var(--bg-hover); }
+        .content-table tr.hidden-row td { opacity: 0.4; }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .item-thumb {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .item-title { font-weight: 600; font-size: 0.9rem; }
+        .item-desc { font-size: 0.75rem; color: var(--text-sec); margin-top: 0.2rem; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+        .status-badge.visible { background: rgba(34, 197, 94, 0.1); color: var(--green); }
+        .status-badge.hidden { background: rgba(239, 68, 68, 0.1); color: var(--red); }
+
+        .status-dot { width: 6px; height: 6px; border-radius: 50%; }
+        .status-dot.on { background: var(--green); }
+        .status-dot.off { background: var(--red); }
+
+        .action-btns { display: flex; gap: 0.5rem; }
+
+        .btn-action {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-sec);
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .btn-action:hover { background: var(--bg); }
+        .btn-action.btn-toggle:hover { border-color: var(--yellow); color: var(--yellow); }
+        .btn-action.btn-delete:hover { border-color: var(--red); color: var(--red); }
+
+        .category-badge {
+            font-size: 0.72rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            background: var(--bg);
+            color: var(--text-sec);
+            text-transform: capitalize;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-size: 0.85rem;
+            z-index: 999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.success { border-left: 3px solid var(--green); }
+        .toast.warning { border-left: 3px solid var(--yellow); }
+
+        /* Empty state */
+        .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text-sec); }
+        .empty-state-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.5; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .item-desc { display: none; }
+        }
+        @media (max-width: 600px) {
+            .stats-row { grid-template-columns: 1fr 1fr; }
+            .topbar { padding: 0.75rem 1rem; }
+            .main { padding: 1rem; }
+            .content-table th:nth-child(3),
+            .content-table td:nth-child(3) { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box">
+            <img src="images/logo.png" alt="GO FAR" class="login-logo">
+            <h1 class="login-title">Admin Dashboard</h1>
+            <p class="login-sub">Quản lý nội dung GO FAR</p>
+            <form id="loginForm">
+                <input type="password" class="login-input" id="loginPassword" placeholder="Nhập mật khẩu..." autofocus>
+                <button type="submit" class="login-btn">Đăng nhập</button>
+                <p class="login-error" id="loginError">❌ Sai mật khẩu. Thử lại.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard" id="dashboard">
+        <div class="topbar">
+            <div class="topbar-left">
+                <img src="images/logo.png" alt="GO FAR" class="topbar-logo">
+                <span class="topbar-title">Admin</span>
+                <span class="topbar-badge">Dashboard</span>
+            </div>
+            <div class="topbar-right">
+                <a href="index.html" target="_blank" class="btn-view-site">🌐 Xem website</a>
+                <button class="btn-logout" id="btnLogout">Đăng xuất</button>
+            </div>
+        </div>
+
+        <div class="main">
+            <!-- Stats -->
+            <div class="stats-row" id="statsRow"></div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="destinations">📍 Điểm đến<span class="tab-count" id="countDest">0</span></button>
+                <button class="tab-btn" data-tab="reviews">💬 Reviews<span class="tab-count" id="countRev">0</span></button>
+                <button class="tab-btn" data-tab="tips">💡 Bí kíp<span class="tab-count" id="countTip">0</span></button>
+            </div>
+
+            <!-- Table -->
+            <div id="tableContainer"></div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script src="data.js"></script>
+    <script>
+        const ADMIN_PASS = 'gofar2026';
+        const SESSION_KEY = 'gofar_admin_session';
+
+        // ===== LOGIN =====
+        const loginScreen = document.getElementById('loginScreen');
+        const dashboard = document.getElementById('dashboard');
+        const loginForm = document.getElementById('loginForm');
+        const loginPassword = document.getElementById('loginPassword');
+        const loginError = document.getElementById('loginError');
+
+        // Check existing session
+        if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+            showDashboard();
+        }
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (loginPassword.value === ADMIN_PASS) {
+                sessionStorage.setItem(SESSION_KEY, 'true');
+                showDashboard();
+            } else {
+                loginError.style.display = 'block';
+                loginPassword.value = '';
+                loginPassword.focus();
+            }
+        });
+
+        document.getElementById('btnLogout').addEventListener('click', () => {
+            sessionStorage.removeItem(SESSION_KEY);
+            location.reload();
+        });
+
+        function showDashboard() {
+            loginScreen.style.display = 'none';
+            dashboard.classList.add('active');
+            renderStats();
+            renderTable('destinations');
+            updateCounts();
+        }
+
+        // ===== STATS =====
+        function renderStats() {
+            const hidden = ContentManager.getHiddenIds();
+            const totalDest = GOFAR_DATA.destinations.length;
+            const totalRev = GOFAR_DATA.reviews.length;
+            const totalTips = GOFAR_DATA.tips.length;
+            const total = totalDest + totalRev + totalTips;
+            const hiddenCount = hidden.length;
+            const visibleCount = total - hiddenCount;
+
+            document.getElementById('statsRow').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-card-label">Tổng nội dung</div>
+                    <div class="stat-card-value accent">${total}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-label">Đang hiện</div>
+                    <div class="stat-card-value green">${visibleCount}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-label">Đã ẩn</div>
+                    <div class="stat-card-value red">${hiddenCount}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-label">Điểm đến</div>
+                    <div class="stat-card-value">${totalDest}</div>
+                </div>
+            `;
+        }
+
+        function updateCounts() {
+            document.getElementById('countDest').textContent = GOFAR_DATA.destinations.length;
+            document.getElementById('countRev').textContent = GOFAR_DATA.reviews.length;
+            document.getElementById('countTip').textContent = GOFAR_DATA.tips.length;
+        }
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderTable(btn.dataset.tab);
+            });
+        });
+
+        // ===== TABLE =====
+        function renderTable(type) {
+            const container = document.getElementById('tableContainer');
+            let items = GOFAR_DATA[type] || [];
+
+            if (items.length === 0) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📭</div><p>Chưa có nội dung nào.</p></div>';
+                return;
+            }
+
+            let rows = '';
+
+            if (type === 'destinations') {
+                rows = items.map(item => {
+                    const hidden = ContentManager.isHidden(item.id);
+                    return `
+                    <tr class="${hidden ? 'hidden-row' : ''}">
+                        <td>
+                            <div class="item-info">
+                                <img src="${item.img}" alt="${item.title}" class="item-thumb">
+                                <div>
+                                    <div class="item-title">${item.title}</div>
+                                    <div class="item-desc">${item.desc}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="category-badge">${item.category}</span></td>
+                        <td>★ ${item.rating} <span style="color:var(--text-sec);font-size:0.75rem">(${item.reviews})</span></td>
+                        <td>
+                            <span class="status-badge ${hidden ? 'hidden' : 'visible'}">
+                                <span class="status-dot ${hidden ? 'off' : 'on'}"></span>
+                                ${hidden ? 'Đã ẩn' : 'Hiển thị'}
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-action btn-toggle" onclick="toggleItem('${item.id}', '${type}')">
+                                    ${hidden ? '👁 Hiện' : '👁‍🗨 Ẩn'}
+                                </button>
+                            </div>
+                        </td>
+                    </tr>`;
+                }).join('');
+
+                container.innerHTML = `
+                <table class="content-table">
+                    <thead><tr><th>Điểm đến</th><th>Loại</th><th>Rating</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+                    <tbody>${rows}</tbody>
+                </table>`;
+
+            } else if (type === 'reviews') {
+                rows = items.map(item => {
+                    const hidden = ContentManager.isHidden(item.id);
+                    const title = item.type === 'quote' ? '💬 Quote' : item.destination;
+                    const preview = item.text.substring(0, 80) + '...';
+                    const img = item.destImg || 'images/hero.png';
+                    return `
+                    <tr class="${hidden ? 'hidden-row' : ''}">
+                        <td>
+                            <div class="item-info">
+                                <img src="${img}" alt="${title}" class="item-thumb">
+                                <div>
+                                    <div class="item-title">${title}</div>
+                                    <div class="item-desc">${preview}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>${item.type === 'quote' ? 'Quote' : item.authorName || '—'}</td>
+                        <td>${item.date || '—'}</td>
+                        <td>
+                            <span class="status-badge ${hidden ? 'hidden' : 'visible'}">
+                                <span class="status-dot ${hidden ? 'off' : 'on'}"></span>
+                                ${hidden ? 'Đã ẩn' : 'Hiển thị'}
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-action btn-toggle" onclick="toggleItem('${item.id}', '${type}')">
+                                    ${hidden ? '👁 Hiện' : '👁‍🗨 Ẩn'}
+                                </button>
+                            </div>
+                        </td>
+                    </tr>`;
+                }).join('');
+
+                container.innerHTML = `
+                <table class="content-table">
+                    <thead><tr><th>Review</th><th>Tác giả</th><th>Ngày</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+                    <tbody>${rows}</tbody>
+                </table>`;
+
+            } else if (type === 'tips') {
+                rows = items.map(item => {
+                    const hidden = ContentManager.isHidden(item.id);
+                    return `
+                    <tr class="${hidden ? 'hidden-row' : ''}">
+                        <td>
+                            <div class="item-info">
+                                <div style="font-size:1.8rem;width:48px;text-align:center;flex-shrink:0">${item.icon}</div>
+                                <div>
+                                    <div class="item-title">${item.title}</div>
+                                    <div class="item-desc">${item.text}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="category-badge">${item.tag}</span></td>
+                        <td>
+                            <span class="status-badge ${hidden ? 'hidden' : 'visible'}">
+                                <span class="status-dot ${hidden ? 'off' : 'on'}"></span>
+                                ${hidden ? 'Đã ẩn' : 'Hiển thị'}
+                            </span>
+                        </td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-action btn-toggle" onclick="toggleItem('${item.id}', '${type}')">
+                                    ${hidden ? '👁 Hiện' : '👁‍🗨 Ẩn'}
+                                </button>
+                            </div>
+                        </td>
+                    </tr>`;
+                }).join('');
+
+                container.innerHTML = `
+                <table class="content-table">
+                    <thead><tr><th>Bí kíp</th><th>Danh mục</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+                    <tbody>${rows}</tbody>
+                </table>`;
+            }
+        }
+
+        // ===== ACTIONS =====
+        function toggleItem(id, type) {
+            ContentManager.toggle(id);
+            const isNowHidden = ContentManager.isHidden(id);
+            renderTable(type);
+            renderStats();
+            showToast(isNowHidden ? '🙈 Đã ẩn bài viết' : '👁 Đã hiện bài viết', isNowHidden ? 'warning' : 'success');
+        }
+
+        // ===== TOAST =====
+        function showToast(msg, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.className = 'toast show ' + type;
+            setTimeout(() => { toast.className = 'toast'; }, 2500);
+        }
+    </script>
+</body>
+</html>

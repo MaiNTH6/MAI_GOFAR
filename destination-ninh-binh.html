@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninh Bình — Tràng An, Tam Cốc & Hạ Long trên cạn | GO FAR</title>
+    <meta name="description" content="Hướng dẫn du lịch Ninh Bình chi tiết: Tràng An, Tam Cốc, Bái Đính, Hang Múa. Đi lại, vé, lưu trú, ẩm thực, lịch trình 2N1Đ & 3N2Đ.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --green: #2D5A27;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, #2D5A27, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            border: 1px solid rgba(255,140,50,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+        .hero-meta-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            flex-wrap: wrap;
+        }
+        .hero-meta-line .rating { color: var(--accent-gold); }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        /* CONTENT LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        /* MAIN CONTENT */
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .article-main h2 .icon { font-size: 1.3rem; }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-main ul, .article-main ol {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        .article-main li { margin-bottom: 0.4rem; }
+
+        /* INFO TABLE */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.88rem;
+        }
+        .info-table th, .info-table td {
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .info-table th {
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+            width: 35%;
+        }
+        .info-table td { color: var(--text-sec); }
+        .info-table tr:hover { background: var(--bg-glass); }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(255,140,50,0.12);
+            color: var(--accent);
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* HIGHLIGHT BOX */
+        .tip-box {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .tip-box p { margin: 0; font-size: 0.88rem; }
+        .tip-box strong { color: var(--text); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
+
+        /* PREMIUM CHECKIN CARDS */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.1);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.75) saturate(1.2);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-sm);
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .dest-card-tags .tag-hot {
+            background: rgba(255, 140, 50, 0.25);
+            border: 1px solid rgba(255, 140, 50, 0.4);
+            color: var(--accent) !important;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text) !important;
+        }
+        .dest-card-desc {
+            font-size: 0.82rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 0.75rem;
+        }
+        .dest-card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .dest-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .dest-rating .stars {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .dest-rating span:last-child {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .dest-reviews {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .dest-card-credits {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 0.4rem;
+        }
+        
+        /* FOOD ITEM */
+        .food-list { margin: 1rem 0; }
+        .food-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+        }
+        .food-item .name { color: var(--text); font-weight: 500; }
+        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            align-self: start;
+        }
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            margin-bottom: 0.6rem;
+        }
+        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
+
+        .toc-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .toc-list li { margin-bottom: 0.4rem; }
+        .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.2s;
+        }
+        .toc-list a:hover { color: var(--accent); }
+
+        .budget-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.82rem;
+        }
+        .budget-label { color: var(--text-sec); }
+        .budget-value { color: var(--accent); font-weight: 600; }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .dest-card.double-col, .dest-card.single-col {
+        grid-column: span 1 !important;
+        aspect-ratio: 4/3;
+    }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 40vh; min-height: 280px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+            
+        .dest-card-meta, 
+        .dest-card-credits {
+            display: none !important;
+        }
+        </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
+            <a href="index.html" class="nav-back">← Về trang chủ</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="images/ninh_binh_hero_1783439944952.png" alt="Tràng An, Ninh Bình — Hạ Long trên cạn">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">📍 Miền Bắc · Di sản UNESCO</span>
+            <h1>Ninh Bình<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Hạ Long trên cạn</span></h1>
+            <div class="hero-meta-line">
+                <span class="rating">★ 4.8 / 5.0</span>
+                <span>·</span>
+                <span>Cách Hà Nội ~95 km</span>
+                <span>·</span>
+                <span>Cập nhật: 07/2026</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Ninh Bình</strong>
+    </div>
+
+    <div class="article-layout">
+        <div class="dashboard-layout">
+            <!-- MAIN -->
+            <article class="article-main">
+
+            <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
+            <p>Ninh Bình được ví như <strong>"Hạ Long trên cạn"</strong> — nơi những khối đá vôi hùng vĩ nhô lên giữa đồng lúa xanh mướt, dòng sông uốn lượn xuyên qua hang động. Quần thể danh thắng Tràng An được UNESCO công nhận là Di sản Thế giới kép (Văn hóa & Thiên nhiên) từ năm 2014.</p>
+            <p>Không chỉ có cảnh quan, Ninh Bình còn là cố đô đầu tiên của Việt Nam (Hoa Lư, thế kỷ X), mang trong mình chiều sâu lịch sử hàng nghìn năm. Đây là điểm đến hoàn hảo cho cả gia đình lẫn dân phượt — vừa thanh bình, vừa hùng vĩ.</p>
+
+            <!-- DANH THẮNG NỔI BẬT -->
+            <h2 id="phong-canh"><span class="icon">📸</span> Các danh thắng tại Ninh Bình</h2>
+            <p>Ninh Bình hội tụ những tuyệt tác non nước hoang sơ cùng bề dày lịch sử. Bấm xem chi tiết để xem cẩm nang đầy đủ của từng địa điểm:</p>
+
+            <div class="checkin-grid">
+                <!-- Trang An -->
+                <a href="destination-trang-an.html" class="dest-card double-col">
+                    <div class="dest-card-img">
+                        <img src="images/ninh_binh_hero_1783439944952.png" alt="Quần thể danh thắng Tràng An" loading="lazy">
+                    </div>
+                    <div class="dest-card-overlay"></div>
+                    <div class="dest-card-content">
+                        <div class="dest-card-tags">
+                            <span class="tag tag-hot">🔥 Di sản</span>
+                            <span class="tag">Chèo thuyền</span>
+                        </div>
+                        <h3 class="dest-card-title">Quần thể danh thắng Tràng An</h3>
+                        <p class="dest-card-desc">Hành trình xuôi thuyền nan ngoạn cảnh thung lũng nước xanh ngọc trong vắt và vượt qua các hang động xuyên thủy kỳ bí lung linh thạch nhũ.</p>
+                        <div class="dest-card-meta">
+                            <div class="dest-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.9</span>
+                            </div>
+                            <span class="dest-reviews">420 reviews</span>
+                        </div>
+                        <div class="dest-card-credits">
+                            <span>📷 AI</span>
+                            <span>Sưu tầm</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Hang Mua -->
+                <a href="destination-hang-mua.html" class="dest-card single-col">
+                    <div class="dest-card-img">
+                        <img src="images/hang_mua_peak_1783441917217.png" alt="Đỉnh Hang Múa" loading="lazy">
+                    </div>
+                    <div class="dest-card-overlay"></div>
+                    <div class="dest-card-content">
+                        <div class="dest-card-tags">
+                            <span class="tag">Đỉnh núi</span>
+                            <span class="tag">Săn ảnh</span>
+                        </div>
+                        <h3 class="dest-card-title">Đỉnh Hang Múa</h3>
+                        <p class="dest-card-desc">Vượt 500 bậc đá ngắm toàn cảnh thung lũng lúa vàng Tam Cốc rực rỡ và ngắm hoàng hôn buông lơi.</p>
+                        <div class="dest-card-meta">
+                            <div class="dest-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.8</span>
+                            </div>
+                            <span class="dest-reviews">310 reviews</span>
+                        </div>
+                        <div class="dest-card-credits">
+                            <span>📷 AI</span>
+                            <span>Sưu tầm</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tam Coc -->
+                <a href="destination-tam-coc.html" class="dest-card single-col">
+                    <div class="dest-card-img">
+                        <img src="images/tam_coc_river_1783441927501.png" alt="Thung lũng Tam Cốc" loading="lazy">
+                    </div>
+                    <div class="dest-card-overlay"></div>
+                    <div class="dest-card-content">
+                        <div class="dest-card-tags">
+                            <span class="tag">Mùa lúa</span>
+                            <span class="tag">Dòng sông</span>
+                        </div>
+                        <h3 class="dest-card-title">Thung lũng lúa vàng Tam Cốc</h3>
+                        <p class="dest-card-desc">Cánh đồng lúa nước vàng óng bồng bềnh men theo dòng sông Ngô Đồng lững lờ trôi cuối tháng 5.</p>
+                        <div class="dest-card-meta">
+                            <div class="dest-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.7</span>
+                            </div>
+                            <span class="dest-reviews">280 reviews</span>
+                        </div>
+                        <div class="dest-card-credits">
+                            <span>📷 AI</span>
+                            <span>Sưu tầm</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Bai Dinh -->
+                <a href="destination-bai-dinh.html" class="dest-card single-col">
+                    <div class="dest-card-img">
+                        <img src="images/bai_dinh_pagoda_1783443686667.png" alt="Chùa Bái Đính" loading="lazy">
+                    </div>
+                    <div class="dest-card-overlay"></div>
+                    <div class="dest-card-content">
+                        <div class="dest-card-tags">
+                            <span class="tag">Tâm linh</span>
+                            <span class="tag">Chùa cổ</span>
+                        </div>
+                        <h3 class="dest-card-title">Quần thể Chùa Bái Đính</h3>
+                        <p class="dest-card-desc">Bảo tháp 13 tầng uy nghiêm tôn kính và hành lang La Hán dài nhất châu Á tĩnh mịch rêu phong.</p>
+                        <div class="dest-card-meta">
+                            <div class="dest-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.8</span>
+                            </div>
+                            <span class="dest-reviews">390 reviews</span>
+                        </div>
+                        <div class="dest-card-credits">
+                            <span>📷 AI</span>
+                            <span>Sưu tầm</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Hoa Lu -->
+                <a href="destination-hoa-lu.html" class="dest-card single-col">
+                    <div class="dest-card-img">
+                        <img src="images/hoa_lu_temple_1783443696229.png" alt="Cố đô Hoa Lư" loading="lazy">
+                    </div>
+                    <div class="dest-card-overlay"></div>
+                    <div class="dest-card-content">
+                        <div class="dest-card-tags">
+                            <span class="tag">Di tích</span>
+                            <span class="tag">Lịch sử</span>
+                        </div>
+                        <h3 class="dest-card-title">Cố đô Hoa Lư</h3>
+                        <p class="dest-card-desc">Đền thờ Đinh - Lê cổ xưa nép mình giữa vách núi đá vôi kỳ vĩ rêu phong mang đậm tính lịch sử.</p>
+                        <div class="dest-card-meta">
+                            <div class="dest-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.6</span>
+                            </div>
+                            <span class="dest-reviews">150 reviews</span>
+                        </div>
+                        <div class="dest-card-credits">
+                            <span>📷 AI</span>
+                            <span>Sưu tầm</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Van Long -->
+                <a href="destination-van-long.html" class="dest-card double-col">
+                    <div class="dest-card-img">
+                        <img src="images/van_long_wetland_1783443704949.png" alt="Đầm Vân Long" loading="lazy">
+                    </div>
+                    <div class="dest-card-overlay"></div>
+                    <div class="dest-card-content">
+                        <div class="dest-card-tags">
+                            <span class="tag">Đầm nước</span>
+                            <span class="tag">Hoang dã</span>
+                        </div>
+                        <h3 class="dest-card-title">Đầm ngập nước Vân Long</h3>
+                        <p class="dest-card-desc">Vùng đầm ngập nước thanh bình hoang dã lớn nhất vùng đồng bằng Bắc Bộ với những chiếc đò tre lặng lờ xuôi dòng nước trong xanh.</p>
+                        <div class="dest-card-meta">
+                            <div class="dest-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.7</span>
+                            </div>
+                            <span class="dest-reviews">190 reviews</span>
+                        </div>
+                        <div class="dest-card-credits">
+                            <span>📷 AI</span>
+                            <span>Sưu tầm</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            
+
+            <!-- CẨM NANG THỰC TẾ -->
+            <h2 id="cam-nang"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
+            <p>Ninh Bình cách Hà Nội khoảng 95km, giao thông vô cùng thuận tiện:</p>
+            
+            <h3>1. Phương tiện di chuyển từ Hà Nội</h3>
+            <ul>
+                <li><strong>Xe limousine / Xe khách:</strong> Đi từ bến xe Giáp Bát/Mỹ Đình hoặc có xe đưa đón tận nhà. Thời gian di chuyển khoảng 2 giờ qua cao tốc Pháp Vân - Cầu Giẽ.</li>
+                <li><strong>Tàu hỏa:</strong> Tuyến đường sắt Thống Nhất xuất phát từ Ga Hà Nội đến Ga Ninh Bình. Thời gian di chuyển khoảng 2.5 giờ.</li>
+                <li><strong>Xe máy / Ô tô cá nhân:</strong> Di chuyển dọc theo quốc lộ 1A cũ hoặc đường cao tốc, đường đi bằng phẳng và vô cùng thuận tiện.</li>
+            </ul>
+
+            <h3>2. Vé tham quan các điểm chính</h3>
+            <p>Các điểm danh thắng tại Ninh Bình đều áp dụng bán vé tham quan và vé đò trực tiếp tại quầy. Bạn có thể dễ dàng mua trực tiếp bằng tiền mặt hoặc quét mã QR chuyển khoản tại quầy bán vé của từng khu du lịch (như Tràng An, Tam Cốc, Hang Múa, Cố đô Hoa Lư). Chùa Bái Đính miễn phí vé vào cửa nhưng có dịch vụ xe điện nội khu nếu bạn không muốn đi bộ.</p>
+
+            <!-- LƯU TRÚ & ẨM THỰC -->
+            <h2 id="luu-tru-am-thuc"><span class="icon">🏨</span> Lưu trú & Ẩm thực</h2>
+            
+            <h3>1. Gợi ý nơi ở</h3>
+            <p>Khuyến khích chọn các <strong>Homestay view núi</strong> hoặc khu nghỉ dưỡng sinh thái gần gũi với thiên nhiên tại khu vực Tam Cốc, Tràng An để thưởng thức trọn vẹn không gian thanh bình, tĩnh mịch đặc trưng của non nước Ninh Bình.</p>
+
+            <h3>2. Món ngon phải thử</h3>
+            <div class="food-list">
+                <div class="food-item"><span class="name">🐐 Thịt dê núi Ninh Bình (tái chanh, tái mè, áp chảo)</span></div>
+                <div class="food-item"><span class="name">🍖 Cơm cháy Ninh Bình (cơm cháy giòn rụm ăn kèm sốt dê thơm nóng)</span></div>
+                <div class="food-item"><span class="name">🐟 Cá rô Tổng Trường kho tộ đậm đà</span></div>
+                <div class="food-item"><span class="name">🦐 Ốc núi đá xào lá lốt hoặc hấp sả ớt</span></div>
+            </div>
+
+            <!-- KINH NGHIỆM & LƯU Ý -->
+            <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm & Lưu ý an toàn</h2>
+            
+            <h3>1. Thời điểm lý tưởng đi du lịch</h3>
+            <ul>
+                <li><strong>Tháng 1 – 3:</strong> Mùa xuân ấm áp, phù hợp đi lễ chùa Bái Đính và trẩy hội Tràng An đầu năm.</li>
+                <li><strong>Tháng 5 – 6:</strong> Mùa lúa chín vàng óng tại Tam Cốc — thời khắc Ninh Bình rực rỡ nhất.</li>
+                <li><strong>Tháng 9 – 10:</strong> Mùa thu mát mẻ, trời trong xanh, nước sông lững lờ êm ả.</li>
+            </ul>
+
+            <h3>2. Cảnh báo an toàn & Mẹo nhỏ</h3>
+            <ul>
+                <li><strong>An toàn:</strong> Tuyệt đối không leo trèo vượt hàng rào bảo vệ trên đỉnh Hang Múa để chụp ảnh mạo hiểm. Đường bậc đá có thể trơn trượt vào ngày mưa.</li>
+                <li><strong>Chuẩn bị:</strong> Đi thuyền nan ngoài trời 2 tiếng bắt buộc phải trang bị mũ rộng vành, kính râm, kem chống nắng và nước uống đầy đủ.</li>
+                <li><strong>Tiền mặt:</strong> Khu du lịch Tam Cốc/Tràng An ít cây ATM, hãy chuẩn bị sẵn tiền mặt để thanh toán dịch vụ ăn uống nhỏ lẻ hoặc tip bác chèo thuyền (thường khoảng 50k - 100k).</li>
+            </ul>
+
+            <div class="warning-box" style="margin-top: 1.5rem;">
+                <p>⚠️ Hãy là du khách văn minh: Không xả rác xuống sông khi đi thuyền, mặc trang phục lịch sự khi ghé thăm cố đô Hoa Lư hay chùa chiền tôn nghiêm.</p>
+            </div>
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <!-- QUICK INFO -->
+            <div class="sidebar-card">
+                <h4>📌 Thông tin nhanh</h4>
+                <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Cách Hà Nội ~95 km</div>
+                <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 2 – 3 ngày</div>
+                <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 5 – 6, 9 – 10</div>
+            </div>
+
+            <!-- TOC -->
+            <div class="sidebar-card">
+                <h4>📖 Mục lục</h4>
+                <ul class="toc-list">
+                    <li><a href="#phong-canh">📸 Danh thắng kì vĩ</a></li>
+                    <li><a href="#cam-nang">🚗 Di chuyển & Chi phí</a></li>
+                    <li><a href="#luu-tru-am-thuc">🏨 Lưu trú & Ẩm thực</a></li>
+                    <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & Lưu ý</a></li>
+                </ul>
+            </div>
+        </aside>
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <div>
+            <a href="index.html">← Về trang chủ</a> · <a href="policy.html">Điều khoản</a>
+        </div>
+        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+    </footer>
+
+</body>
+</html>

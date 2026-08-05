@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy Nhơn — Thiên đường biển đảo hoang sơ & tháp Chàm | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Quy Nhơn tự túc: bãi biển Kỳ Co, Eo Gió, Ghềnh Ráng Tiên Sa, tháp Bánh Ít, Hòn Khô, Cù Lao Xanh, tháp Đôi, đồi cát Phương Mai. Hải sản.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            border: 1px solid rgba(255,140,50,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+        .hero-meta-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            flex-wrap: wrap;
+        }
+        .hero-meta-line .rating { color: var(--accent-gold); }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        /* CONTENT LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        /* MAIN CONTENT */
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .article-main h2 .icon { font-size: 1.3rem; }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-main ul, .article-main ol {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        .article-main li { margin-bottom: 0.4rem; }
+
+        /* INFO TABLE */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.88rem;
+        }
+        .info-table th, .info-table td {
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .info-table th {
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+            width: 35%;
+        }
+        .info-table td { color: var(--text-sec); }
+        .info-table tr:hover { background: var(--bg-glass); }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(255,140,50,0.12);
+            color: var(--accent);
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* HIGHLIGHT BOX */
+        .tip-box {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .tip-box p { margin: 0; font-size: 0.88rem; }
+        .tip-box strong { color: var(--text); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+        }
+        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
+
+        /* PREMIUM CHECKIN CARDS */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.1);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.75) saturate(1.2);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-sm);
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .dest-card-tags .tag-hot {
+            background: rgba(255, 140, 50, 0.25);
+            border: 1px solid rgba(255, 140, 50, 0.4);
+            color: var(--accent) !important;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text) !important;
+        }
+        .dest-card-desc {
+            font-size: 0.82rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 0.75rem;
+        }
+        .dest-card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .dest-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .dest-rating .stars {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .dest-rating span:last-child {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .dest-reviews {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .dest-card-credits {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 0.4rem;
+        }
+        
+        /* FOOD ITEM */
+        .food-list { margin: 1rem 0; }
+        .food-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+        }
+        .food-item .name { color: var(--text); font-weight: 500; }
+        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            align-self: start;
+        }
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            margin-bottom: 0.6rem;
+        }
+        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
+
+        .toc-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .toc-list li { margin-bottom: 0.4rem; }
+        .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.2s;
+        }
+        .toc-list a:hover { color: var(--accent); }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 40vh; min-height: 280px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+
+        .dest-card-meta, 
+        .dest-card-credits {
+            display: none !important;
+        }
+
+        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text-sec);
+            padding: 1.5rem 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
+            <a href="index.html" class="nav-back">← Về trang chủ</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="images/quynhon_hero.jpg" alt="Quy Nhơn — Biển xanh & Nắng vàng">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">📍 Duyên hải Nam Trung Bộ</span>
+            <h1>Quy Nhơn<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Biển xanh & Nắng vàng</span></h1>
+            <div class="hero-meta-line">
+                <span class="rating">⭐ 4.6 / 5.0</span>
+                <span>·</span>
+                <span>Tỉnh Bình Định, Việt Nam</span>
+                <span>·</span>
+                <span>Cập nhật: 08/2026</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Quy Nhơn</strong>
+    </div>
+
+    <div class="article-layout">
+        <div class="dashboard-layout">
+            <!-- MAIN ARTICLE -->
+            <article class="article-main">
+
+                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
+                <p>Quy Nhơn (Bình Định) là một thành phố ven biển miền Trung hiền hòa, nổi tiếng với những bãi cát vàng óng mịn trải dài bên bờ biển xanh ngắt ngút ngàn, những hòn đảo hoang sơ kỳ vĩ và những di tích lịch sử tháp Chàm rêu phong cổ kính có niên đại hàng ngàn năm. Đây được mệnh danh là điểm đến hoang sơ, lý tưởng cho những ai muốn tìm kiếm một hành trình khám phá thiên nhiên biển đảo thuần khiết, chưa bị thương mại hóa.</p>
+                <p>Khác với sự ồn ào náo nhiệt của những vịnh biển du lịch khác, Quy Nhơn cuốn hút du khách bởi nhịp sống chậm rãi bình yên của những làng chài cổ ven biển, bởi vị mặn mòi sóng nước đại dương tại Kỳ Co, Eo Gió, Hòn Khô, và lòng hiếu khách, hào sảng đậm chất đất võ Bình Định.</p>
+
+                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
+                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Quy Nhơn. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
+
+                <div class="checkin-grid">
+                    
+                    <div class="dest-card double-col">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_ky_co.jpg" alt="Bãi biển Kỳ Co" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Maldives Việt Nam</span>
+                                <span class="tag">Biển xanh trong</span>
+                            </div>
+                            <h3 class="dest-card-title">Bãi biển Kỳ Co</h3>
+                            <p class="dest-card-desc">Bãi tắm hoang sơ với làn nước trong vắt màu ngọc bích nhìn tận đáy cát, ôm trọn bởi bãi cát trắng mịn màng uốn lượn dưới chân núi đá kỳ vĩ.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_eo_gio.jpg" alt="Eo Gió" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Kỳ quan ngắm biển</span>
+                                <span class="tag">Lộng gió</span>
+                            </div>
+                            <h3 class="dest-card-title">Eo Gió</h3>
+                            <p class="dest-card-desc">Cung đường đi bộ ven vách đá có tay vịn gạch đỏ ôm trọn eo biển lộng gió, điểm đón bình minh rực rỡ và chụp ảnh đỉnh nhất Quy Nhơn.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_ghenh_rang.jpg" alt="Ghềnh Ráng Tiên Sa" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Bãi Đá Trứng</span>
+                                <span class="tag">Thơ mộng</span>
+                            </div>
+                            <h3 class="dest-card-title">Ghềnh Ráng Tiên Sa</h3>
+                            <p class="dest-card-desc">Quần thể đá nhấp nhô độc đáo với bãi tắm Hoàng Hậu gồm vô số viên đá tròn mịn như trứng chim khổng lồ, nằm bên đồi thi sĩ Hàn Mặc Tử.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card double-col">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_banh_it.jpg" alt="Tháp Bánh Ít" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di sản Champa</span>
+                                <span class="tag">Cổ kính</span>
+                            </div>
+                            <h3 class="dest-card-title">Tháp Bánh Ít</h3>
+                            <p class="dest-card-desc">Cụm tháp Chàm nghìn năm tuổi tọa lạc kiêu hãnh trên đỉnh đồi lộng gió, mang nét kiến trúc gạch đỏ rêu phong huyền bí nhuốm màu thời gian.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_hon_kho.jpg" alt="Hòn Khô" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Con đường xuyên biển</span>
+                                <span class="tag">Lặn san hô</span>
+                            </div>
+                            <h3 class="dest-card-title">Hòn Khô</h3>
+                            <p class="dest-card-desc">Đảo nhỏ hoang sơ nổi tiếng với cây cầu gỗ ôm vách đá mộc mạc và con đường cát xuyên biển lộ ra khi thủy triều rút xuống.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_cu_lao_xanh.jpg" alt="Cù Lao Xanh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Đảo tiền tiêu</span>
+                                <span class="tag">Hải đăng cổ</span>
+                            </div>
+                            <h3 class="dest-card-title">Cù Lao Xanh</h3>
+                            <p class="dest-card-desc">Hòn ngọc xanh giữa trùng khơi với ngọn hải đăng Pháp cổ bằng đá cao sừng sững, không gian hoang sơ yên bình tách biệt đô thị khói bụi.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_thap_doi.jpg" alt="Tháp Đôi" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Trung tâm thành phố</span>
+                                <span class="tag">Kiến trúc Angkor</span>
+                            </div>
+                            <h3 class="dest-card-title">Tháp Đôi</h3>
+                            <p class="dest-card-desc">Cặp tháp Champa đứng song hành uy nghi giữa lòng thành phố, được bao quanh bởi công viên dừa xanh mát, xây dựng từ thế kỷ XII.</p>
+                        </div>
+                    </div>
+
+                    <div class="dest-card single-col">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_phuong_mai.jpg" alt="Đồi cát Phương Mai" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Sa mạc cát</span>
+                                <span class="tag">Trượt cát</span>
+                            </div>
+                            <h3 class="dest-card-title">Đồi cát Phương Mai</h3>
+                            <p class="dest-card-desc">Đồi cát khổng lồ với những triền cát thoai thoải lộng gió cạnh bờ biển Nhơn Lý, điểm chơi trượt cát kỳ thú đầy phấn khích.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & CHI PHÍ -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
+                <p>Quy Nhơn nằm cách TP.HCM 650km và Hà Nội 1.050km, hạ tầng giao thông kết nối hoàn hảo:</p>
+                
+                <h3>1. Lựa chọn phương tiện đến Quy Nhơn</h3>
+                <ul>
+                    <li><strong>Máy bay:</strong> Đáp xuống sân bay Phù Cát (cách Quy Nhơn 35km). Sau đó đi xe buýt sân bay của hãng hàng không hoặc bắt taxi về trung tâm.</li>
+                    <li><strong>Tàu hỏa (Đường sắt Thống Nhất):</strong> Dừng tại ga Diêu Trì (cách trung tâm 15km). Đi tàu đêm vô cùng thích hợp cho những ai thích ngắm cảnh.</li>
+                    <li><strong>Xe khách giường nằm chất lượng cao:</strong> Có nhiều hãng xe chạy thẳng từ TP.HCM dọc quốc lộ 1A đến bến xe Quy Nhơn chỉ mất khoảng 10 - 11 tiếng.</li>
+                </ul>
+
+                <h3>2. Chi phí vé tham khảo một số dịch vụ</h3>
+                <p>Để đi Kỳ Co hay Hòn Khô tự túc, du khách thường di chuyển ra bến tàu Nhơn Lý hoặc Nhơn Hải rồi thuê cano khứ hồi kết hợp lặn ngắm san hô.</p>
+
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Điểm tham quan / Trải nghiệm</th>
+                            <th>Mức giá tham khảo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cano khứ hồi đi đảo Kỳ Co & lặn san hô Bãi Dứa (Nhơn Lý)</td>
+                            <td><span class="price-tag">Theo chuyến / ghép cano</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cano khứ hồi đi đảo Hòn Khô (Nhơn Hải)</td>
+                            <td><span class="price-tag">Cự ly gần bến Nhơn Hải</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vé vào cổng tham quan Eo Gió du lịch bảo tồn</td>
+                            <td><span class="price-tag">Vé niêm yết tại cổng</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vé tham quan khu du lịch Ghềnh Ráng Tiên Sa</td>
+                            <td><span class="price-tag">Miễn phí vào cổng</span> (Chỉ tính phí gửi xe)</td>
+                        </tr>
+                        <tr>
+                            <td>Vé tham quan Tháp Bánh Ít hoặc Tháp Đôi di tích cổ</td>
+                            <td><span class="price-tag">Vé bảo tồn di tích Cham</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực đất võ</h2>
+                
+                <h3>1. Gợi ý lựa chọn nơi lưu trú</h3>
+                <ul>
+                    <li><strong>Dọc bãi biển trung tâm (Đường Xuân Diệu, An Dương Vương):</strong> Khách sạn cao tầng view biển, thuận tiện tắm biển sáng sớm và đi ăn hải sản đêm.</li>
+                    <li><strong>Khu làng chài Bãi Xép / Nhơn Lý:</strong> Thích hợp cho homestay sát biển, bình yên, trải nghiệm cuộc sống người dân chài lưới giản dị.</li>
+                </ul>
+
+                <h3>2. Ẩm thực xứ Nẫu đậm đà</h3>
+                <div class="food-list">
+                    <div class="food-item"><span class="name">🦐 Bánh xèo tôm nhảy Nhơn Lý (Vỏ bánh giòn rụm bên trên xếp những con tôm đất đỏ au tươi rói nhảy tanh tách khi đúc)</span></div>
+                    <div class="food-item"><span class="name">🐟 Bánh hỏi cháo lòng Quy Nhơn (Đĩa bánh hỏi mỡ hành trắng mịn ăn kèm đĩa lòng heo nóng sốt và chén cháo nóng hổi)</span></div>
+                    <div class="food-item"><span class="name">🍢 Nem chợ Huyện nướng thơm lừng chấm tương ớt đặc sản đất võ</span></div>
+                    <div class="food-item"><span class="name">🥥 Bánh ít lá gai mềm dẻo nhân dừa đậu xanh ngọt bùi thơm lừng</span></div>
+                </div>
+
+                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
+                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
+                
+                <h3>1. Mùa nào đi du lịch Quy Nhơn đẹp nhất?</h3>
+                <ul>
+                    <li><strong>Tháng 3 – 8:</strong> Mùa khô và là thời điểm vàng đi Quy Nhơn. Biển trong vắt màu ngọc bích, sóng êm ả thuận lợi cho cano chạy đảo và tắm biển cực kỳ an toàn.</li>
+                    <li><strong>Tháng 9 – 2 năm sau:</strong> Mùa mưa bão miền Trung. Biển động mạnh, cano ra Kỳ Co hay Hòn Khô thường bị cấm hoạt động do sóng lớn nguy hiểm.</li>
+                </ul>
+
+                <h3>2. Lưu ý an toàn biển đảo & thời tiết nắng nóng</h3>
+                <ul>
+                    <li><strong>Chống nắng kỹ càng:</strong> Cái nắng miền Trung tháng 5 - 8 vô cùng gay gắt. Hãy bôi kem chống nắng chỉ số cao, mang mũ rộng vành và uống đủ nước để tránh say nắng khi đi Kỳ Co, Eo Gió.</li>
+                    <li><strong>Tuyệt đối tuân thủ áo phao khi đi cano:</strong> Biển Quy Nhơn có dòng chảy ngầm phức tạp gần các rạn san hô đá. Bắt buộc mặc áo phao khi tắm biển và lặn san hô tại Hòn Khô, Kỳ Co.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ Cảnh báo bảo vệ san hô: Khi tham gia hoạt động lặn ngắm san hô tại Bãi Dứa (Nhơn Lý) hay Hòn Khô, tuyệt đối không dẫm đạp, bẻ gãy hay đứng lên rạn san hô tự nhiên để bảo tồn hệ sinh thái biển đảo xinh đẹp.</p>
+                </div>
+
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <!-- QUICK INFO -->
+                <div class="sidebar-card">
+                    <h4>📌 Thông tin nhanh</h4>
+                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Tỉnh Bình Định, Việt Nam</div>
+                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 3 – 4 ngày</div>
+                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 3 – 8 (Mùa khô)</div>
+                </div>
+
+                <!-- TOC -->
+                <div class="sidebar-card">
+                    <h4>📖 Mục lục</h4>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
+                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
+                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
+                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
+                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <div>
+            <a href="index.html">← Về trang chủ</a>
+        </div>
+        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // Lightbox Zoom functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const destCards = document.querySelectorAll('.dest-card');
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            if (destCards.length && lightboxModal && lightboxImg) {
+                destCards.forEach(card => {
+                    card.style.cursor = 'zoom-in';
+                    card.addEventListener('click', () => {
+                        const img = card.querySelector('.dest-card-img img');
+                        if (!img) return;
+
+                        let titleText = "";
+                        let descText = "";
+
+                        const overlayH3 = card.querySelector('.dest-card-content h3');
+                        const overlayP = card.querySelector('.dest-card-content p');
+                        if (overlayH3) titleText = overlayH3.textContent;
+                        if (overlayP) descText = overlayP.textContent;
+
+                        if (!titleText && !descText) {
+                            titleText = img.alt || "Chi tiết hình ảnh";
+                        }
+
+                        lightboxModal.style.display = 'flex';
+                        lightboxImg.src = img.src;
+                        
+                        let captionHTML = "";
+                        if (titleText) {
+                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                        }
+                        if (descText) {
+                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                        }
+                        lightboxCaption.innerHTML = captionHTML;
+                    });
+                });
+
+                lightboxClose.addEventListener('click', () => {
+                    lightboxModal.style.display = 'none';
+                });
+
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal || e.target === lightboxClose) {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        lightboxModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
