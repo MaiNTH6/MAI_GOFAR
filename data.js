@@ -116,7 +116,7 @@ const GOFAR_DATA = {
             category: 'heritage',
             tags: ['🔥 Hot', 'Di sản'],
             desc: 'Hạ Long trên cạn. Tràng An, Tam Cốc, Hang Múa — non nước hữu tình lung linh.',
-            img: 'images/Vinh_lan_ha.jpg',
+            img: 'images/ninh_binh_hero_1783439944952.png',
             rating: 4.8,
             stars: '★★★★★',
             reviews: 245,

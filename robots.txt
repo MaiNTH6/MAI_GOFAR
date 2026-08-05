@@ -1,0 +1,12 @@
+# ==========================================
+# GO FAR — Robots.txt
+# ==========================================
+
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /dist/
+Disallow: /.agents/
+Disallow: /scratch/
+
+Sitemap: https://gofarvietnam.com/sitemap.xml

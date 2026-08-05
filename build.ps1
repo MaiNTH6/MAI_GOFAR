@@ -21,10 +21,12 @@ if (Test-Path $distDir) {
 Write-Host "Đang sao chép các tệp HTML..." -ForegroundColor Green
 Copy-Item -Path "$sourceDir\*.html" -Destination $distDir -Force
 
-# 3. Sao chép các tệp JS & CSS sản phẩm
-Write-Host "Đang sao chép các tệp JS và CSS..." -ForegroundColor Green
+# 3. Sao chép các tệp JS, CSS & SEO sản phẩm
+Write-Host "Đang sao chép các tệp JS, CSS và cấu hình SEO..." -ForegroundColor Green
 Copy-Item -Path "$sourceDir\*.js" -Destination $distDir -Force
 Copy-Item -Path "$sourceDir\styles.css" -Destination $distDir -Force
+if (Test-Path "$sourceDir\robots.txt") { Copy-Item -Path "$sourceDir\robots.txt" -Destination $distDir -Force }
+if (Test-Path "$sourceDir\sitemap.xml") { Copy-Item -Path "$sourceDir\sitemap.xml" -Destination $distDir -Force }
 
 # 4. Sao chép thư mục chứa hình ảnh đã tối ưu hóa
 Write-Host "Đang sao chép tài nguyên hình ảnh (đã được tối ưu)..." -ForegroundColor Green
