@@ -87,24 +87,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const destinations = [
-        { name: 'Hà Giang', category: 'mountain', rating: '4.9', img: 'images/hero.png', desc: 'Cung đường đẹp nhất Việt Nam', region: 'Miền Bắc' },
-        { name: 'Vịnh Hạ Long', category: 'beach', rating: '4.8', img: 'images/halong.png', desc: 'Kỳ quan thiên nhiên thế giới', region: 'Miền Bắc' },
-        { name: 'Hội An', category: 'heritage', rating: '4.9', img: 'images/hoian.png', desc: 'Phố cổ lồng đèn', region: 'Miền Trung' },
-        { name: 'Sapa', category: 'mountain', rating: '4.6', img: 'images/sapa.png', desc: 'Ruộng bậc thang mây mù', region: 'Miền Bắc' },
-        { name: 'Phú Quốc', category: 'beach', rating: '4.5', img: 'images/phuquoc.png', desc: 'Đảo ngọc phương Nam', region: 'Miền Nam' },
-        { name: 'Đà Nẵng', category: 'city', rating: '4.7', img: 'images/danang_hero.jpg', desc: 'Thành phố đáng sống nhất', region: 'Miền Trung' },
-        { name: 'Ninh Bình', category: 'heritage', rating: '4.8', img: 'images/ninh_binh_hero_1783439944952.png', desc: 'Tràng An, Bái Đính, Tam Cốc, Hang Múa', region: 'Miền Bắc' },
-        { name: 'Tràng An (Ninh Bình)', category: 'heritage', rating: '4.9', img: 'images/ninh_binh_hero_1783439944952.png', desc: 'Hành trình thuyền nan xuyên hang thạch nhũ', region: 'Miền Bắc' },
-        { name: 'Hang Múa (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/hang_mua_peak_1783441917217.png', desc: 'Chinh phục 500 bậc đá ngắm hoàng hôn', region: 'Miền Bắc' },
-        { name: 'Tam Cốc (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/tam_coc_river_1783441927501.png', desc: 'Ngắm dải lụa sông Ngô Đồng mùa lúa chín', region: 'Miền Bắc' },
-        { name: 'Chùa Bái Đính (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/bai_dinh_pagoda_1783443686667.png', desc: 'Hành lang La Hán dài nhất Đông Nam Á', region: 'Miền Bắc' },
-        { name: 'Cố đô Hoa Lư (Ninh Bình)', category: 'heritage', rating: '4.7', img: 'images/hoa_lu_temple_1783443696229.png', desc: 'Đền thờ vua Đinh, vua Lê rêu phong', region: 'Miền Bắc' },
-        { name: 'Đầm Vân Long (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/van_long_wetland_1783443704949.png', desc: 'Vùng đầm ngập nước sinh thái hoang sơ', region: 'Miền Bắc' },
-        { name: 'Đà Lạt', category: 'mountain', rating: '4.6', img: 'images/dalat_hero.jpg', desc: 'Thành phố sương mù', region: 'Tây Nguyên' },
-        { name: 'Nha Trang', category: 'beach', rating: '4.4', img: 'images/phuquoc.png', desc: 'Biển xanh, nắng vàng', region: 'Miền Trung' },
-        { name: 'Huế', category: 'heritage', rating: '4.5', img: 'images/hoian.png', desc: 'Cố đô xưa', region: 'Miền Trung' },
-        { name: 'Quy Nhơn', category: 'beach', rating: '4.6', img: 'images/quynhon_hero.jpg', desc: 'Biển hoang sơ bí ẩn', region: 'Miền Trung' },
-        { name: 'Mộc Châu', category: 'mountain', rating: '4.5', img: 'images/sapa.png', desc: 'Cao nguyên hoa mận trắng', region: 'Miền Bắc' },
+        { name: 'Hà Giang', category: 'mountain', rating: '4.9', img: 'images/hero.webp', desc: 'Cung đường đẹp nhất Việt Nam', region: 'Miền Bắc' },
+        { name: 'Vịnh Hạ Long', category: 'beach', rating: '4.8', img: 'images/halong.webp', desc: 'Kỳ quan thiên nhiên thế giới', region: 'Miền Bắc' },
+        { name: 'Hội An', category: 'heritage', rating: '4.9', img: 'images/hoian.webp', desc: 'Phố cổ lồng đèn', region: 'Miền Trung' },
+        { name: 'Sapa', category: 'mountain', rating: '4.6', img: 'images/sapa.webp', desc: 'Ruộng bậc thang mây mù', region: 'Miền Bắc' },
+        { name: 'Phú Quốc', category: 'beach', rating: '4.5', img: 'images/phuquoc.webp', desc: 'Đảo ngọc phương Nam', region: 'Miền Nam' },
+        { name: 'Đà Nẵng', category: 'city', rating: '4.7', img: 'images/danang_hero.webp', desc: 'Thành phố đáng sống nhất', region: 'Miền Trung' },
+        { name: 'Ninh Bình', category: 'heritage', rating: '4.8', img: 'images/ninh_binh_hero_1783439944952.webp', desc: 'Tràng An, Bái Đính, Tam Cốc, Hang Múa', region: 'Miền Bắc' },
+        { name: 'Tràng An (Ninh Bình)', category: 'heritage', rating: '4.9', img: 'images/ninh_binh_hero_1783439944952.webp', desc: 'Hành trình thuyền nan xuyên hang thạch nhũ', region: 'Miền Bắc' },
+        { name: 'Hang Múa (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/hang_mua_peak_1783441917217.webp', desc: 'Chinh phục 500 bậc đá ngắm hoàng hôn', region: 'Miền Bắc' },
+        { name: 'Tam Cốc (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/tam_coc_river_1783441927501.webp', desc: 'Ngắm dải lụa sông Ngô Đồng mùa lúa chín', region: 'Miền Bắc' },
+        { name: 'Chùa Bái Đính (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/bai_dinh_pagoda_1783443686667.webp', desc: 'Hành lang La Hán dài nhất Đông Nam Á', region: 'Miền Bắc' },
+        { name: 'Cố đô Hoa Lư (Ninh Bình)', category: 'heritage', rating: '4.7', img: 'images/hoa_lu_temple_1783443696229.webp', desc: 'Đền thờ vua Đinh, vua Lê rêu phong', region: 'Miền Bắc' },
+        { name: 'Đầm Vân Long (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/van_long_wetland_1783443704949.webp', desc: 'Vùng đầm ngập nước sinh thái hoang sơ', region: 'Miền Bắc' },
+        { name: 'Đà Lạt', category: 'mountain', rating: '4.6', img: 'images/dalat_hero.webp', desc: 'Thành phố sương mù', region: 'Tây Nguyên' },
+        { name: 'Nha Trang', category: 'beach', rating: '4.4', img: 'images/phuquoc.webp', desc: 'Biển xanh, nắng vàng', region: 'Miền Trung' },
+        { name: 'Huế', category: 'heritage', rating: '4.5', img: 'images/hoian.webp', desc: 'Cố đô xưa', region: 'Miền Trung' },
+        { name: 'Quy Nhơn', category: 'beach', rating: '4.6', img: 'images/quynhon_hero.webp', desc: 'Biển hoang sơ bí ẩn', region: 'Miền Trung' },
+        { name: 'Mộc Châu', category: 'mountain', rating: '4.5', img: 'images/sapa.webp', desc: 'Cao nguyên hoa mận trắng', region: 'Miền Bắc' },
     ];
 
     let activeFilter = 'all';
@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tag: 'Mountain',
             location: 'Đông Bắc Việt Nam',
             rating: '★ 4.9',
-            img: 'images/hero.png',
+            img: 'images/hero.webp',
             review: '4 ngày 3 đêm trên cung đường Hà Giang. Mỗi sáng tỉnh dậy là một khung cảnh khác. Đèo Mã Pì Lèng lúc 6h sáng, sương mù cuộn dưới chân — đời này phải đi một lần. Những khúc cua tay áo hiểm trở, những bản làng người H\'Mông nép mình bên vách đá, và lòng hiếu khách của người dân bản địa sẽ khiến bạn không bao giờ quên.',
             tips: 'Nên thuê xe máy tại TP Hà Giang để tự do khám phá. Luôn kiểm tra phanh và xăng trước khi vượt đèo.'
         },
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tag: 'Hot · Săn mây',
             location: 'Sơn La',
             rating: '★ 4.9',
-            img: 'images/taxua.png',
+            img: 'images/taxua.webp',
             review: 'Thiên đường mây hạ giới. Nếu có một nơi khiến bạn thấy mình thật nhỏ bé trước thiên nhiên, đó chính là Tà Xùa. 5h30 sáng tại Sống Lưng Khủng Long, khi nắng vàng bắt đầu rọi xuống biển mây dày đặc, bạn sẽ hiểu vì sao người ta gọi đây là chốn tiên cảnh. Không khí trong lành, gió lạnh len lỏi, và cả một biển mây bồng bềnh cuộn trào ngay dưới chân.',
             tips: 'Nên đi vào tháng 10 - tháng 4. Mang theo áo khoác thật dày vì nhiệt độ ban đêm có thể xuống dưới 10 độ.'
         },
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tag: 'UNESCO',
             location: 'Quảng Ninh',
             rating: '★ 4.8',
-            img: 'images/halong.png',
+            img: 'images/halong.webp',
             review: 'Kỳ quan thiên nhiên thế giới với hàng ngàn đảo đá vôi nhô lên từ làn nước xanh ngọc. Trải nghiệm ngủ đêm trên du thuyền giữa vịnh là khoảnh khắc bình yên nhất. Buổi tối ngắm sao trên boong tàu, sáng sớm tập Taichi đón bình minh giữa đại dương.',
             tips: 'Nên đặt tour du thuyền 2 ngày 1 đêm để trải nghiệm trọn vẹn. Tránh đi vào cuối tuần mùa hè nếu không muốn chen chúc.'
         },
@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tag: 'Di sản · Phố cổ',
             location: 'Quảng Nam',
             rating: '★ 4.9',
-            img: 'images/hoian.png',
+            img: 'images/hoian.webp',
             review: 'Phố cổ đèn lồng, nơi thời gian ngừng trôi. Đi dọc con phố nhỏ lúc hoàng hôn, ánh đèn lồng vàng ấm chiếu xuống mặt nước sông Hoài — đó là khoảnh khắc Hội An chinh phục mọi trái tim. Ẩm thực nơi đây cũng đặc sắc không kém: cao lầu, mì Quảng, bánh mì Phượng.',
             tips: 'Nên đi vào tháng 2-4 (ít mưa). Thuê xe đạp dạo phố cổ. Tối 14 âm lịch hàng tháng có Đêm Hội An — phố tắt đèn, thắp nến lung linh.'
         },
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tag: 'Phố thị',
             location: 'Đà Nẵng',
             rating: '★ 4.7',
-            img: 'images/danang.png',
+            img: 'images/danang.webp',
             review: 'Thành phố đáng sống nhất Việt Nam, nơi biển Mỹ Khê tuyệt đẹp trải dài tít tắp. Sáng chạy bộ dọc bờ biển, trưa ăn mì Quảng bà Vị, chiều lên Bà Nà ngắm Cầu Vàng, tối ngồi cầu Rồng chờ phun lửa. Đà Nẵng có nhịp sống rất riêng — vừa năng động, vừa bình yên.',
             tips: 'Nên đi tháng 3-8. Thuê xe máy khám phá bán đảo Sơn Trà (voọc chà vá, cảnh biển tuyệt đẹp). Ăn bánh tráng cuốn thịt heo là must-try.'
         },
@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tag: 'Tây Bắc',
             location: 'Lào Cai',
             rating: '★ 4.6',
-            img: 'images/sapa.png',
+            img: 'images/sapa.webp',
             review: 'Ruộng bậc thang mùa lúa chín vàng rực, homestay bản làng ấm cúng, sương mù huyền ảo bao phủ thung lũng. Ở homestay nhà chị Mẩy, người H\'Mông — tối ngồi sưởi lửa, nghe chuyện bản làng. Sáng ra ruộng bậc thang phủ sương trắng xoá. Đây không phải du lịch — đây là sống.',
             tips: 'Mùa lúa chín (tháng 9-10) là đẹp nhất. Trek Tả Phìn hoặc Tả Van để trải nghiệm bản làng. Mang giày trek và áo ấm — nhiệt độ ban đêm có thể xuống 5°C.'
         }

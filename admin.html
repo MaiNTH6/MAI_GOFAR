@@ -545,7 +545,7 @@
                     const hidden = ContentManager.isHidden(item.id);
                     const title = item.type === 'quote' ? '💬 Quote' : item.destination;
                     const preview = item.text.substring(0, 80) + '...';
-                    const img = item.destImg || 'images/hero.png';
+                    const img = item.destImg || 'images/hero.webp';
                     return `
                     <tr class="${hidden ? 'hidden-row' : ''}">
                         <td>
