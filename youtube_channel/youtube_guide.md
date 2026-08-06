@@ -63,3 +63,25 @@ Thumbnail là yếu tố quyết định tỷ lệ nhấp chuột (CTR). Quy chu
   * Sử dụng màu tương phản mạnh với nền (Vàng chanh, Trắng viền đen, Cam neon).
   * Tiêu đề trên thumbnail không trùng hoàn toàn với tiêu đề video mà mang tính khơi gợi sự tò mò hoặc nhấn mạnh con số ấn tượng (Ví dụ: Tiêu đề video: *Ký sự chinh phục Fansipan*, Text trên thumbnail: *3.147M CỰC ĐẠI* hoặc *TỚI ĐỈNH RỒI!*).
 * **Lưu ý ghi công hình ảnh:** Đối với các hình ảnh hoặc chất liệu đồ họa có ứng dụng công nghệ trí tuệ nhân tạo (AI-generated) hỗ trợ thiết kế thumbnail, cần ghi công rõ ràng ở phần cuối của mô tả video: *"Hình ảnh minh họa có sự hỗ trợ của công nghệ AI sáng tạo."*
+
+---
+
+## 6. Quy Chuẩn Sản Xuất & Kiểm Duyệt Video (Production & Quality Control Notes)
+
+Để đảm bảo quy trình sản xuất video trơn tru và tuân thủ nghiêm ngặt chất lượng đầu ra, đội ngũ cần áp dụng các ghi chú sản xuất sau:
+
+### Giọng đọc (Voiceover)
+* Có thể sử dụng công nghệ chuyển giọng nói AI (Text-to-Speech AI) chất lượng cao (ưu tiên giọng miền Bắc truyền cảm, rõ chữ, tốc độ vừa phải) ở các giai đoạn đầu nếu chưa muốn lộ giọng nói thật.
+
+### Xử lý hình ảnh minh họa AI (AI Visuals)
+* Đối với mỗi điểm đến hoặc phân cảnh, cần tạo từ **2 - 3 phiên bản ảnh AI khác nhau** để thực hiện chuyển cảnh mượt mà, tránh dừng lại quá lâu ở 1 bức ảnh tĩnh gây nhàm chán.
+* Khi dựng phim, bắt buộc sử dụng hiệu ứng chuyển động camera giả lập như **Zoom in/out chậm** hoặc **Pan (quét góc nhìn) nhẹ** (hiệu ứng Ken Burns) để tạo cảm giác sống động cho ảnh tĩnh.
+
+### Minh bạch nguồn gốc hình ảnh (Disclosure)
+* Bắt buộc phải ghi rõ một dòng chú thích nhỏ ở phần mô tả/caption của video:
+  > *"Hình ảnh trong video được minh họa bởi công nghệ AI sáng tạo."*
+  Điều này giúp tuân thủ chính sách minh bạch thông tin của các nền tảng mạng xã hội (YouTube, TikTok, Facebook).
+
+### Kiểm duyệt dữ liệu trước khi xuất bản (Data Double-Check)
+* **Khớp dữ liệu website:** Các thông số chi tiết về giá cả dịch vụ (ví dụ: giá thuê xe máy phượt Hà Giang, chi phí homestay tại chỗ) phải trùng khớp hoàn toàn với các con số đã được niêm yết chính thức trên trang web [gofarvietnam.com](https://gofarvietnam.com).
+* **Kiểm tra tính thời điểm:** Rà soát và đối chiếu kỹ lưỡng thông tin về các mùa đẹp nhất trong năm của Mộc Châu, Y Tý, Sapa trước khi đăng video để đảm bảo tính thời sự và chính xác so với thời điểm phát sóng hiện tại.
