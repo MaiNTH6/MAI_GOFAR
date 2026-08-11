@@ -525,7 +525,74 @@
             from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
+
+        /* LEGEND SECTION */
+        .legend-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+        .legend-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .legend-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,140,50,0.3);
+        }
+        .legend-header {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+        .legend-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .legend-card:hover .legend-header img {
+            transform: scale(1.05);
+        }
+        .legend-title-box {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(22, 44, 62, 0.9) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.2rem 1.5rem;
+        }
+        .legend-title-box h3 {
+            color: var(--text) !important;
+            font-size: 1.25rem !important;
+            margin: 0 !important;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+        .legend-body {
+            padding: 1.5rem;
+        }
+        .legend-body p {
+            font-size: 0.9rem !important;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        .legend-body p:last-child {
+            margin-bottom: 0;
+        }
     </style>
+
+    
+    
+    
+
+    <!-- Structured Data -->
+    
 
     <link rel="canonical" href="https://gofarvietnam.com/destination-ha-giang.html">
     <link rel="icon" type="image/png" href="images/logo.png">
@@ -733,6 +800,51 @@
 
                 </div>
 
+                <!-- TRUYỀN THUYẾT & KỲ BÍ -->
+                <h2 id="truyen-thuyet"><span class="icon">✨</span> Truyền thuyết & Câu chuyện Kỳ bí</h2>
+                <p>Không chỉ sở hữu cảnh sắc thiên nhiên hùng vĩ, Cao nguyên đá Hà Giang còn là nơi lưu giữ những huyền thoại kỳ bí và câu chuyện lịch sử nhuốm màu sử thi truyền đời của các đồng bào dân tộc vùng cao:</p>
+                
+                <div class="legend-section">
+                    <div class="legend-card">
+                        <div class="legend-header">
+                            <img src="images/hagiang_lung_cu.webp" alt="Cột cờ Lũng Cú & Hồ Mắt Rồng" loading="lazy">
+                            <div class="legend-title-box">
+                                <h3>Sự tích Cột cờ Lũng Cú & Hồ Mắt Rồng</h3>
+                            </div>
+                        </div>
+                        <div class="legend-body">
+                            <p>Tương ứng với điểm cực Bắc địa đầu Tổ quốc, Lũng Cú (hay tiếng H'Mông cổ là <em>Long Cổ</em> – tiếng trống của Rồng) gắn liền với huyền thoại giữ nước vĩ đại. Tương truyền khi vua Quang Trung đánh đuổi giặc ngoại xâm, ông đã cho đặt một chiếc trống đồng khổng lồ ngay trên đỉnh núi Rồng, mỗi canh giờ lại gióng ba hồi trống đanh thép để khẳng định chủ quyền cương vực sơn hà.</p>
+                            <p>Dưới chân núi Lũng Cú có hai hồ nước ngọt trong vắt, quanh năm không bao giờ cạn được người dân gọi là <strong>Hồ Mắt Rồng</strong>. Sự tích kể rằng, Thần Rồng khi xưa ngao du hạ giới, vì thương xót dân bản nghèo quanh năm khát nước sinh hoạt, trước khi bay về trời đã để lại đôi mắt của mình hóa thân thành hai nguồn nước ngọt linh thiêng ban tặng sự sống cho mảnh đất đá xám trơ trọi này.</p>
+                        </div>
+                    </div>
+
+                    <div class="legend-card">
+                        <div class="legend-header">
+                            <img src="images/hagiang_ma_pi_leng.webp" alt="Đèo Mã Pì Lèng" loading="lazy">
+                            <div class="legend-title-box">
+                                <h3>Đèo Mã Pì Lèng - Huyền thoại "Sống mũi ngựa"</h3>
+                            </div>
+                        </div>
+                        <div class="legend-body">
+                            <p>Mã Pì Lèng (âm tiếng H'Mông cổ nghĩa là <em>Sống mũi con ngựa</em>) nói về độ dốc đứng và hiểm trở tột cùng của con đèo. Huyền thoại kể rằng, vách đá dựng đứng của Mã Pì Lèng từng là nỗi khiếp sợ của muôn loài thú dữ thuở hoang sơ, đến mức những con ngựa thồ hàng dẻo dai nhất khi leo qua đèo cũng phải tắt thở vì kiệt sức, ngựa cái đi qua đây đều phải sẩy thai tự nhiên vì dốc dựng đứng.</p>
+                            <p>Ngày nay, Mã Pì Lèng không chỉ là kỳ quan thiên nhiên, mà còn là tượng đài ý chí của con người. Đó là câu chuyện lịch sử đầy hào hùng về con đường Hạnh Phúc được hàng vạn thanh niên xung phong thuộc 8 tỉnh thành miền Bắc cùng đồng bào các dân tộc thiểu số ròng rã suốt 6 năm đục đá bằng tay không, treo mình trên vách đá đứng để mở lối kết nối rẻo cao.</p>
+                        </div>
+                    </div>
+
+                    <div class="legend-card">
+                        <div class="legend-header">
+                            <img src="images/hagiang_vuong_mansion.webp" alt="Dinh Vua Mèo" loading="lazy">
+                            <div class="legend-title-box">
+                                <h3>Dinh Vua Mèo & Bí ẩn phong thủy Quy Hải</h3>
+                            </div>
+                        </div>
+                        <div class="legend-body">
+                            <p>Nằm khuất bóng giữa thung lũng Sà Phìn, Dinh thự của Vua Mèo Vương Chính Đức trị giá 15 vạn đồng bạc trắng Đông Dương thời cổ (tương đương 150 tỷ VNĐ ngày nay) ẩn chứa những bí mật phong thủy ly kỳ. Để đặt móng xây dựng khu dinh thự phòng thủ kiên cố này, cụ Vương Chính Đức đã mời những thầy phong thủy lừng lẫy nhất đi bộ dọc cao nguyên đá tìm kiếm nhiều tháng ròng.</p>
+                            <p>Cuối cùng, khu đất vàng đã được chọn lựa: Một gò đất cao nổi lên có hình dáng giống như một chiếc mai con rùa vàng khổng lồ nằm hướng về biển (thế đất <em>Quy Hải</em>). Theo quan niệm phong thủy cổ xưa, thế đất mai rùa tượng trưng cho sự vững chãi, trường thọ và giàu sang phú quý ngàn năm, giúp che chở dòng tộc họ Vương thịnh vượng, an toàn qua mọi biến động lịch sử.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- DI CHUYỂN & CHI PHÍ -->
                 <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
                 <p>Hành trình khám phá cực Bắc đòi hỏi lộ trình chuẩn bị kỹ lưỡng về phương tiện để đảm bảo an toàn vượt qua các cung đường đèo dốc:</p>
@@ -831,6 +943,7 @@
                     <ul class="toc-list">
                         <li><a href="#tong-quan">📋 Tổng quan</a></li>
                         <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
+                        <li><a href="#truyen-thuyet">✨ Truyền thuyết & Kỳ bí</a></li>
                         <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
                         <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
                         <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
