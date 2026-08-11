@@ -534,6 +534,13 @@
     <!-- Structured Data -->
     
 
+    
+    
+    
+
+    <!-- Structured Data -->
+    
+
     <link rel="canonical" href="https://gofarvietnam.com/destination-sapa.html">
     <link rel="icon" type="image/png" href="images/logo.png">
     <!-- Open Graph / Facebook -->
@@ -618,7 +625,7 @@
 
                 <div class="checkin-grid">
                     
-                    <div class="dest-card double-col">
+                    <div class="dest-card double-col" data-legend="Fansipan – 'Nhà của trời' theo tiếng H'Mông cổ (Hủa Xi Pan). Dân bản truyền tai nhau truyền thuyết về người khổng lồ dũng mãnh đã gánh đất đắp nên ngọn núi cao này để chống chọi lại thiên tai lụt lội, bảo vệ cuộc sống yên bình cho con cháu rẻo cao. Nơi đây cũng được ví như cổng trời nối liền đất và thiên đường mây ngàn.">
                         <div class="dest-card-img">
                             <img src="images/sapa_fansipan.webp" alt="Đỉnh Fansipan" loading="lazy">
                         </div>
@@ -633,7 +640,7 @@
                         </div>
                     </div>
 
-                    <div class="dest-card single-col">
+                    <div class="dest-card single-col" data-legend="Làng Cát Cát cổ kính xưa kia là nơi cư ngụ lâu đời của tộc người H'Mông Đen. Tương truyền, người Pháp khi xưa đến đây phát hiện một dòng thác nước tuyệt đẹp đổ xuống từ chân núi Hàm Rồng và đặt tên là thác Catact (Thác Cát Cát), sau này địa danh ấy được đặt tên cho ngôi làng dệt thổ cẩm, nhuộm chàm độc đáo này.">
                         <div class="dest-card-img">
                             <img src="images/sapa_cat_cat.webp" alt="Bản Cát Cát" loading="lazy">
                         </div>
@@ -648,7 +655,7 @@
                         </div>
                     </div>
 
-                    <div class="dest-card single-col">
+                    <div class="dest-card single-col" data-legend="Thung lũng chứa đựng bãi đá cổ Sapa huyền bí với hơn 200 khối đá có kích thước lớn nhỏ khắc các hoa văn cổ sơ như ruộng bậc thang, nhà cửa, chữ viết cổ. Người Dao truyền đời kể rằng đây chính là tấm bản đồ địa lý và biên chép sử thi thủa mở đất dựng bản của tổ tiên mà người xưa đã phong ấn vào đá xám.">
                         <div class="dest-card-img">
                             <img src="images/sapa_muong_hoa.webp" alt="Thung lũng Mường Hoa" loading="lazy">
                         </div>
@@ -663,7 +670,7 @@
                         </div>
                     </div>
 
-                    <div class="dest-card double-col">
+                    <div class="dest-card double-col" data-legend="Ô Quy Hồ gắn liền với sự tích tình yêu đầy bi thương giữa chàng tiều phu Ô Quy Hồ (con thần núi) và nàng tiên thứ bảy tuyệt sắc. Bị ngăn cấm, chàng hóa thành chim màu đen bay quanh đỉnh đèo gào thét tên nàng tiên da diết 'Ô Quy Hồ, Ô Quy Hồ', còn những giọt nước mắt chia ly của nàng tiên hóa thành dải Thác Bạc đổ xuống chân đèo vĩnh hằng.">
                         <div class="dest-card-img">
                             <img src="images/sapa_o_quy_ho.webp" alt="Đèo Ô Quy Hồ" loading="lazy">
                         </div>
@@ -708,7 +715,7 @@
                         </div>
                     </div>
 
-                    <div class="dest-card single-col">
+                    <div class="dest-card single-col" data-legend="Truyền thuyết H'Mông kể rằng, thủa hồng hoang khi vạn vật mới được lập ra, có hai con rồng lớn đang quấn quýt bên nhau thì bão giông giăng phủ, nước lũ ập tới. Do quá mải mê đùa giỡn không kịp cất cánh bay về trời, rồng đực bay đi thoát nạn, rồng cái kiệt sức kẹt lại, hóa thân thành dãy núi đá sừng sững hướng đầu lên trời, miệng vẫn còn mở to ngóng trông bạn tình phía xa.">
                         <div class="dest-card-img">
                             <img src="images/sapa_ham_rong.webp" alt="Núi Hàm Rồng" loading="lazy">
                         </div>
@@ -892,10 +899,21 @@
                         
                         let captionHTML = "";
                         if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
                         }
                         if (descText) {
-                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
+                        }
+                        
+                        const legend = card.getAttribute('data-legend');
+                        if (legend) {
+                            captionHTML += `
+                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
+                                    ✨ Truyền thuyết & Sự tích Kỳ bí
+                                </span>
+                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
+                            </div>`;
                         }
                         lightboxCaption.innerHTML = captionHTML;
                     });

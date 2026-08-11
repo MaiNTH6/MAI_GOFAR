@@ -534,6 +534,13 @@
     <!-- Structured Data -->
     
 
+    
+    
+    
+
+    <!-- Structured Data -->
+    
+
     <link rel="canonical" href="https://gofarvietnam.com/destination-ta-xua.html">
     <link rel="icon" type="image/png" href="images/logo.png">
     <!-- Open Graph / Facebook -->
@@ -618,7 +625,7 @@
 
                 <div class="checkin-grid">
                     
-                    <div class="dest-card double-col">
+                    <div class="dest-card double-col" data-legend="Người Mông địa phương gọi sống núi này là Háng Đồng. Truyền thuyết kể rằng đây là thân xác hóa đá của một con rồng đất khổng lồ bị thần núi trừng phạt vì quấy nhiễu đời sống dân bản thủa hồng hoang. Lưng của nó nhô lên thành bờ vách hẹp dốc đứng quanh năm chìm trong mây phủ đại ngàn.">
                         <div class="dest-card-img">
                             <img src="images/taxua_dinosaur_backbone.webp" alt="Sống lưng khủng long Háng Đồng" loading="lazy">
                         </div>
@@ -633,7 +640,7 @@
                         </div>
                     </div>
 
-                    <div class="dest-card single-col">
+                    <div class="dest-card single-col" data-legend="Khối đá độc đáo nhô ra trên sườn đồi tựa như đầu cá heo đang ngoi lên đùa giỡn giữa biển mây. Người bản địa coi đây là món quà của Mẹ Thiên Nhiên ban tặng để che chở, mang lại điềm lành và may mắn cho người đi rừng vượt đèo.">
                         <div class="dest-card-img">
                             <img src="images/taxua_dolphin_rock.webp" alt="Mỏm cá heo Tà Xùa" loading="lazy">
                         </div>
@@ -693,7 +700,7 @@
                         </div>
                     </div>
 
-                    <div class="dest-card single-col">
+                    <div class="dest-card single-col" data-legend="Người Mông địa phương gọi sống núi này là Háng Đồng. Truyền thuyết kể rằng đây là thân xác hóa đá của một con rồng đất khổng lồ bị thần núi trừng phạt vì quấy nhiễu đời sống dân bản thủa hồng hoang. Lưng của nó nhô lên thành bờ vách hẹp dốc đứng quanh năm chìm trong mây phủ đại ngàn.">
                         <div class="dest-card-img">
                             <img src="images/taxua_hang_dong_village.webp" alt="Xã Háng Đồng hoang sơ" loading="lazy">
                         </div>
@@ -887,10 +894,21 @@
                         
                         let captionHTML = "";
                         if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
                         }
                         if (descText) {
-                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
+                        }
+                        
+                        const legend = card.getAttribute('data-legend');
+                        if (legend) {
+                            captionHTML += `
+                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
+                                    ✨ Truyền thuyết & Sự tích Kỳ bí
+                                </span>
+                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
+                            </div>`;
                         }
                         lightboxCaption.innerHTML = captionHTML;
                     });

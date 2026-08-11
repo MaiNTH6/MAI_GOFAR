@@ -534,6 +534,13 @@
     <!-- Structured Data -->
     
 
+    
+    
+    
+
+    <!-- Structured Data -->
+    
+
     <link rel="canonical" href="https://gofarvietnam.com/destination-da-lat.html">
     <link rel="icon" type="image/png" href="images/logo.png">
     <!-- Open Graph / Facebook -->
@@ -618,7 +625,7 @@
 
                 <div class="checkin-grid">
                     
-                    <div class="dest-card double-col">
+                    <div class="dest-card double-col" data-legend="Gắn với mối tình bi kịch giữa chàng K'Lang (tộc Lạch) và nàng H'Biang (tộc Chil). Tình yêu bị rào cản thù hằn dòng tộc ngăn cấm, hai người nguyện lấy cái chết để chứng minh cho tình yêu thủy chung son sắt. Nơi nàng nằm xuống hóa thành núi Bà, nơi chàng nằm xuống hóa thành núi Ông, ghép lại thành Langbiang huyền thoại.">
                         <div class="dest-card-img">
                             <img src="images/dalat_langbiang.webp" alt="Đỉnh Langbiang" loading="lazy">
                         </div>
@@ -633,7 +640,7 @@
                         </div>
                     </div>
 
-                    <div class="dest-card single-col">
+                    <div class="dest-card single-col" data-legend="Hồ nước trái tim thơ mộng giữa lòng thành phố ngàn hoa. Tên hồ được lấy cảm hứng từ nữ sĩ thơ Nôm Hồ Xuân Hương ở thế kỷ 18, đồng thời mang ý nghĩa hương thơm của cỏ hoa ngậm sương sớm lan tỏa khắp mặt nước thanh bình mỗi độ xuân về.">
                         <div class="dest-card-img">
                             <img src="images/dalat_xuan_huong.webp" alt="Hồ Xuân Hương" loading="lazy">
                         </div>
@@ -678,7 +685,7 @@
                         </div>
                     </div>
 
-                    <div class="dest-card single-col">
+                    <div class="dest-card single-col" data-legend="Thác Datanla gắn liền với truyền thuyết của người K'Ho. Nơi đây từng là bãi tắm của các nàng tiên hạ phàm vì nước dưới chân thác quá trong vắt dưới những tán thông xanh. Thác còn là phòng tuyến quân sự hiểm trở giúp người bản địa bảo vệ bộ tộc trước các đợt tấn công từ bên ngoài.">
                         <div class="dest-card-img">
                             <img src="images/dalat_datanla.webp" alt="Thác Datanla" loading="lazy">
                         </div>
@@ -892,10 +899,21 @@
                         
                         let captionHTML = "";
                         if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.35rem; color: #fff; display: block; margin-bottom: 0.6rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
                         }
                         if (descText) {
-                            captionHTML += `<span style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto;">${descText}</span>`;
+                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
+                        }
+                        
+                        const legend = card.getAttribute('data-legend');
+                        if (legend) {
+                            captionHTML += `
+                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
+                                    ✨ Truyền thuyết & Sự tích Kỳ bí
+                                </span>
+                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
+                            </div>`;
                         }
                         lightboxCaption.innerHTML = captionHTML;
                     });
