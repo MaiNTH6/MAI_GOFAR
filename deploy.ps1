@@ -32,7 +32,7 @@ $ftpPath = $envVars["FTP_PATH"]
 # Kiểm tra nếu thiếu thông tin
 if (-not $ftpHost -or -not $ftpUser -or -not $ftpPassword) {
     Write-Host "LỖI: Thiếu thông tin cấu hình FTP trong file $envPath" -ForegroundColor Red
-    Write-Host "Vui lòng cấu hình các biến sau vào file $envPath:" -ForegroundColor Yellow
+    Write-Host "Vui lòng cấu hình các biến sau vào file ${envPath}:" -ForegroundColor Yellow
     Write-Host "  FTP_HOST=ftp.gofarvietnam.com (hoặc IP hosting)" -ForegroundColor Yellow
     Write-Host "  FTP_USER=tên_đăng_nhập_ftp" -ForegroundColor Yellow
     Write-Host "  FTP_PASSWORD=mật_khẩu_ftp" -ForegroundColor Yellow
@@ -103,7 +103,7 @@ function Upload-FtpFile {
         $response.Close()
         return $true
     } catch {
-        Write-Host "Lỗi khi upload tệp $localPath: $_" -ForegroundColor Red
+        Write-Host "Lỗi khi upload tệp ${localPath}: $_" -ForegroundColor Red
         return $false
     }
 }
