@@ -3,7 +3,9 @@
 # Tự động upload thư mục 'dist' lên host gofarvietnam.com qua giao thức FTP.
 # ==========================================
 
-$envPath = Join-Path $HOME ".env"
+$localEnv = Join-Path (Get-Item .).FullName ".env"
+$userEnv = Join-Path $HOME ".env"
+$envPath = if (Test-Path $localEnv) { $localEnv } else { $userEnv }
 
 # 1. Đọc file cấu hình .env
 function Get-Env {
