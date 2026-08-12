@@ -433,6 +433,67 @@
             from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
+
+        /* LEGEND SECTION STYLES */
+        .legend-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+        .legend-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .legend-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,140,50,0.3);
+        }
+        .legend-header {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+        .legend-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .legend-card:hover .legend-header img {
+            transform: scale(1.05);
+        }
+        .legend-title-box {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(22, 44, 62, 0.9) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.2rem 1.5rem;
+        }
+        .legend-title-box h3 {
+            color: var(--text) !important;
+            font-size: 1.25rem !important;
+            margin: 0 !important;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+        .legend-body {
+            padding: 1.5rem;
+        }
+        .legend-body p {
+            font-size: 0.9rem !important;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+            color: var(--text-sec);
+        }
+        .legend-body p:last-child {
+            margin-bottom: 0;
+        }
 </style>
 
     
@@ -723,6 +784,51 @@
                             <span class="spot-card-tag">Cảnh quan hoang sơ</span>
                             <h4>Thung lũng Thung Nắng</h4>
                             <p>Thung lũng hoang sơ ngập tràn ánh nắng và các đầm sen tự nhiên, nơi dòng nước trong vắt luồn lách qua những hang đá thấp u tịch.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRUYỀN THUYẾT & DẤU ẤN LỊCH SỬ SÔNG NGÔ ĐỒNG -->
+                <h2 id="truyen-thuyet" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--accent-gold); margin-top: 2.5rem; margin-bottom: 1rem;"><span class="icon">✨</span> Truyền thuyết & Dấu ấn Lịch sử Sông Ngô Đồng</h2>
+                <p style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.8; margin-bottom: 1.5rem;">Không chỉ mang vẻ đẹp sơn thủy hữu tình, dòng sông Ngô Đồng và quần thể Tam Cốc - Bích Động còn lưu giữ những giai thoại lịch sử sử thi hào hùng và điển tích dân gian triều Trần:</p>
+                
+                <div class="legend-section">
+                    <div class="legend-card">
+                        <div class="legend-header">
+                            <img src="images/tam_coc_river_1783441927501.webp" alt="Sông Ngô Đồng uốn lượn" loading="lazy">
+                            <div class="legend-title-box">
+                                <h3>1. Truyền thuyết loài cây Ngô Đồng & Điềm lành Phượng Hoàng</h3>
+                            </div>
+                        </div>
+                        <div class="legend-body">
+                            <p>Tương truyền dân gian kể rằng, xưa kia đôi bờ dòng sông phủ kín những rặng cây ngô đồng rợp bóng. Trong huyền thoại cổ phương Đông có câu: <em>"Phượng hoàng phi cao, phi ngô đồng bất棲"</em> (Chim Phượng Hoàng cao quý bay khắp trời xanh nhưng chỉ chọn đậu trên nhánh cây ngô đồng).</p>
+                            <p>Người dân Cố đô tin rằng dòng sông Ngô Đồng uốn lượn chính là dòng sông mang sinh khí vương đế linh thiêng — nơi loài chim Phượng Hoàng trong tứ linh giáng thế ban điềm lành, sự bình yên và trù phú cho thung lũng Tam Cốc qua hàng ngàn thế kỷ.</p>
+                        </div>
+                    </div>
+
+                    <div class="legend-card">
+                        <div class="legend-header">
+                            <img src="images/tam_coc_thai_vi_1785642868140.webp" alt="Đền Thái Vi & Hành cung Vũ Lâm" loading="lazy">
+                            <div class="legend-title-box">
+                                <h3>2. Dấu ấn lịch sử Hành cung Vũ Lâm & Vua Trần Thái Tông (1285)</h3>
+                            </div>
+                        </div>
+                        <div class="legend-body">
+                            <p>Trong cuộc kháng chiến chống quân Nguyên - Mông lần thứ 2 (năm 1285), các vị vua nhà Trần (Trần Thái Tông, Trần Thánh Tông) và danh tướng Trần Hưng Đạo đã chọn thung lũng sông Ngô Đồng lập nên <strong>Hành cung Vũ Lâm</strong> - trận đồ sông núi tự nhiên bí mật giúp nghĩa quân cất giấu thuyền chiến, tích trữ lương thảo và mai phục phản công đại phá quân xâm lược.</p>
+                            <p>Sau khi dẹp xong giặc Mông Cổ (1258), Vua Trần Thái Tông nhường ngôi cho con rồi tìm về thung lũng Ngô Đồng dựng Am Thái Vi tu hành xuất gia (khởi nguồn dòng thiền Trúc Lâm). Ngôi <strong>Đền thờ cổ Thái Vi</strong> ngày nay nằm bên dòng sông chính là di tích lịch sử khang trang ghi dấu ấn một thời vừa kiên cường đánh giặc vừa sâu lắng chốn thiền môn.</p>
+                        </div>
+                    </div>
+
+                    <div class="legend-card">
+                        <div class="legend-header">
+                            <img src="images/tam_coc_cave_1783491558844.webp" alt="Ba Hang xuyên thủy Tam Cốc" loading="lazy">
+                            <div class="legend-title-box">
+                                <h3>3. Huyền thoại Ba Hang ngầm xuyên thủy (Tam Cốc)</h3>
+                            </div>
+                        </div>
+                        <div class="legend-body">
+                            <p>Tam Cốc nghĩa là "Ba hang" — bao gồm Hang Cả (dài 127m), Hang Hai (dài 60m) và Hang Ba (dài 50m). Theo truyền thuyết dân gian, ba hang động ngầm này được coi là mạn sườn rồng ẩn mình dưới lòng núi đá vôi karst cổ hàng triệu năm tuổi.</p>
+                            <p>Trong thời kỳ kháng chiến, vòm hang đá hiểm trở luồn lách dưới lòng núi từng là điểm dừng chân trú quân bí mật của các binh sĩ triều Trần, bảo toàn lực lượng để chờ thời cơ giải phóng giang sơn Cố đô.</p>
                         </div>
                     </div>
                 </div>
