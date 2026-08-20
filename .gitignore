@@ -18,6 +18,7 @@ yarn-error.log*
 # AI Agent metadata and conversations
 .agents/
 .gemini/
+.claude/
 scratch/
 
 # OS metadata

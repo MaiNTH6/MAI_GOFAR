@@ -401,6 +401,8 @@ body:hover .cursor-glow {
     margin-top: 2rem;
 }
 
+/* .search-result-item là thẻ <a> với mục đã có trang, <div> với mục "Sắp có".
+   text-decoration/color giữ nguyên diện mạo cũ ở cả hai trường hợp. */
 .search-result-item {
     display: flex;
     align-items: center;
@@ -409,10 +411,35 @@ body:hover .cursor-glow {
     border-bottom: var(--border-subtle);
     cursor: pointer;
     transition: opacity 0.3s;
+    text-decoration: none;
+    color: inherit;
 }
 
 .search-result-item:hover {
     opacity: 0.7;
+}
+
+/* Điểm đến chưa có trang chi tiết: mờ đi, không bấm được, đỡ dẫn người đọc vào ngõ cụt. */
+.search-result-item.is-upcoming {
+    cursor: default;
+    opacity: 0.55;
+}
+
+.search-result-item.is-upcoming:hover {
+    opacity: 0.55;
+}
+
+.search-result-badge {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    border: var(--border-subtle);
+    color: var(--text-muted);
+    white-space: nowrap;
 }
 
 .search-result-item img {
@@ -1336,7 +1363,12 @@ body:hover .cursor-glow {
     max-width: 400px;
 }
 
+/* .dest-card là thẻ <a> để Google thu thập được liên kết.
+   Ba dòng display/text-decoration/color giữ cho nó trông y hệt <div> trước đây. */
 .dest-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;

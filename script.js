@@ -86,25 +86,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchResults = document.getElementById('searchResults');
 
 
+    // `slug` trỏ tới trang chi tiết destination-<slug>.html.
+    // slug: null = chưa viết trang đó, ô tìm kiếm sẽ hiện nhãn "Sắp có" thay vì link chết.
     const destinations = [
-        { name: 'Hà Giang', category: 'mountain', rating: '4.9', img: 'images/hero.webp', desc: 'Cung đường đẹp nhất Việt Nam', region: 'Miền Bắc' },
-        { name: 'Vịnh Hạ Long', category: 'beach', rating: '4.8', img: 'images/halong.webp', desc: 'Kỳ quan thiên nhiên thế giới', region: 'Miền Bắc' },
-        { name: 'Hội An', category: 'heritage', rating: '4.9', img: 'images/hoian.webp', desc: 'Phố cổ lồng đèn', region: 'Miền Trung' },
-        { name: 'Sapa', category: 'mountain', rating: '4.6', img: 'images/sapa.webp', desc: 'Ruộng bậc thang mây mù', region: 'Miền Bắc' },
-        { name: 'Phú Quốc', category: 'beach', rating: '4.5', img: 'images/phuquoc.webp', desc: 'Đảo ngọc phương Nam', region: 'Miền Nam' },
-        { name: 'Đà Nẵng', category: 'city', rating: '4.7', img: 'images/danang_hero.webp', desc: 'Thành phố đáng sống nhất', region: 'Miền Trung' },
-        { name: 'Ninh Bình', category: 'heritage', rating: '4.8', img: 'images/ninh_binh_hero_1783439944952.webp', desc: 'Tràng An, Bái Đính, Tam Cốc, Hang Múa', region: 'Miền Bắc' },
-        { name: 'Tràng An (Ninh Bình)', category: 'heritage', rating: '4.9', img: 'images/ninh_binh_hero_1783439944952.webp', desc: 'Hành trình thuyền nan xuyên hang thạch nhũ', region: 'Miền Bắc' },
-        { name: 'Hang Múa (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/hang_mua_peak_1783441917217.webp', desc: 'Chinh phục 500 bậc đá ngắm hoàng hôn', region: 'Miền Bắc' },
-        { name: 'Tam Cốc (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/tam_coc_river_1783441927501.webp', desc: 'Ngắm dải lụa sông Ngô Đồng mùa lúa chín', region: 'Miền Bắc' },
-        { name: 'Chùa Bái Đính (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/bai_dinh_pagoda_1783443686667.webp', desc: 'Hành lang La Hán dài nhất Đông Nam Á', region: 'Miền Bắc' },
-        { name: 'Cố đô Hoa Lư (Ninh Bình)', category: 'heritage', rating: '4.7', img: 'images/hoa_lu_temple_1783443696229.webp', desc: 'Đền thờ vua Đinh, vua Lê rêu phong', region: 'Miền Bắc' },
-        { name: 'Đầm Vân Long (Ninh Bình)', category: 'heritage', rating: '4.8', img: 'images/van_long_wetland_1783443704949.webp', desc: 'Vùng đầm ngập nước sinh thái hoang sơ', region: 'Miền Bắc' },
-        { name: 'Đà Lạt', category: 'mountain', rating: '4.6', img: 'images/dalat_hero.webp', desc: 'Thành phố sương mù', region: 'Tây Nguyên' },
-        { name: 'Nha Trang', category: 'beach', rating: '4.4', img: 'images/phuquoc.webp', desc: 'Biển xanh, nắng vàng', region: 'Miền Trung' },
-        { name: 'Huế', category: 'heritage', rating: '4.5', img: 'images/hoian.webp', desc: 'Cố đô xưa', region: 'Miền Trung' },
-        { name: 'Quy Nhơn', category: 'beach', rating: '4.6', img: 'images/quynhon_hero.webp', desc: 'Biển hoang sơ bí ẩn', region: 'Miền Trung' },
-        { name: 'Mộc Châu', category: 'mountain', rating: '4.5', img: 'images/sapa.webp', desc: 'Cao nguyên hoa mận trắng', region: 'Miền Bắc' },
+        { name: 'Hà Giang', slug: 'ha-giang', category: 'mountain', rating: '4.9', img: 'images/hero.webp', desc: 'Cung đường đẹp nhất Việt Nam', region: 'Miền Bắc' },
+        { name: 'Tà Xùa', slug: 'ta-xua', category: 'mountain', rating: '4.9', img: 'images/taxua.webp', desc: 'Thiên đường mây, sống lưng khủng long', region: 'Miền Bắc' },
+        { name: 'Vịnh Hạ Long', slug: 'ha-long', category: 'beach', rating: '4.8', img: 'images/halong.webp', desc: 'Kỳ quan thiên nhiên thế giới', region: 'Miền Bắc' },
+        { name: 'Hội An', slug: 'hoi-an', category: 'heritage', rating: '4.9', img: 'images/hoian.webp', desc: 'Phố cổ lồng đèn', region: 'Miền Trung' },
+        { name: 'Sapa', slug: 'sapa', category: 'mountain', rating: '4.6', img: 'images/sapa.webp', desc: 'Ruộng bậc thang mây mù', region: 'Miền Bắc' },
+        { name: 'Đà Nẵng', slug: 'da-nang', category: 'city', rating: '4.7', img: 'images/danang_hero.webp', desc: 'Thành phố đáng sống nhất', region: 'Miền Trung' },
+        { name: 'Bà Nà Hills & Cầu Vàng (Đà Nẵng)', slug: 'ba-na-hills', category: 'mountain', rating: '4.7', img: 'images/danang_ba_na_hills.webp', desc: 'Làng Pháp trên mây và Cầu Vàng biểu tượng', region: 'Miền Trung' },
+        { name: 'Cầu Rồng & Sông Hàn (Đà Nẵng)', slug: 'cau-rong', category: 'city', rating: '4.6', img: 'images/danang_cau_rong.webp', desc: 'Rồng phun lửa cuối tuần bên sông Hàn', region: 'Miền Trung' },
+        { name: 'Bãi biển Mỹ Khê (Đà Nẵng)', slug: 'my-khe', category: 'beach', rating: '4.8', img: 'images/danang_my_khe.webp', desc: 'Một trong những bãi biển quyến rũ nhất hành tinh', region: 'Miền Trung' },
+        { name: 'Rạn Nam Ô (Đà Nẵng)', slug: 'nam-o', category: 'beach', rating: '4.5', img: 'images/danang_nam_o.webp', desc: 'Rạn đá phủ rêu xanh mùa đầu năm', region: 'Miền Trung' },
+        { name: 'Ngũ Hành Sơn (Đà Nẵng)', slug: 'ngu-hanh-son', category: 'heritage', rating: '4.6', img: 'images/danang_ngu_hanh_son.webp', desc: 'Năm ngọn núi đá vôi với hang động chùa chiền', region: 'Miền Trung' },
+        { name: 'Bán đảo Sơn Trà (Đà Nẵng)', slug: 'son-tra', category: 'mountain', rating: '4.7', img: 'images/danang_son_tra.webp', desc: 'Rừng già sát biển, nhà của voọc chà vá chân nâu', region: 'Miền Trung' },
+        { name: 'Ninh Bình', slug: 'ninh-binh', category: 'heritage', rating: '4.8', img: 'images/ninh_binh_hero_1783439944952.webp', desc: 'Tràng An, Bái Đính, Tam Cốc, Hang Múa', region: 'Miền Bắc' },
+        { name: 'Tràng An (Ninh Bình)', slug: 'trang-an', category: 'heritage', rating: '4.9', img: 'images/ninh_binh_hero_1783439944952.webp', desc: 'Hành trình thuyền nan xuyên hang thạch nhũ', region: 'Miền Bắc' },
+        { name: 'Hang Múa (Ninh Bình)', slug: 'hang-mua', category: 'heritage', rating: '4.8', img: 'images/hang_mua_peak_1783441917217.webp', desc: 'Chinh phục 500 bậc đá ngắm hoàng hôn', region: 'Miền Bắc' },
+        { name: 'Tam Cốc (Ninh Bình)', slug: 'tam-coc', category: 'heritage', rating: '4.8', img: 'images/tam_coc_river_1783441927501.webp', desc: 'Ngắm dải lụa sông Ngô Đồng mùa lúa chín', region: 'Miền Bắc' },
+        { name: 'Chùa Bái Đính (Ninh Bình)', slug: 'bai-dinh', category: 'heritage', rating: '4.8', img: 'images/bai_dinh_pagoda_1783443686667.webp', desc: 'Hành lang La Hán dài nhất Đông Nam Á', region: 'Miền Bắc' },
+        { name: 'Cố đô Hoa Lư (Ninh Bình)', slug: 'hoa-lu', category: 'heritage', rating: '4.7', img: 'images/hoa_lu_temple_1783443696229.webp', desc: 'Đền thờ vua Đinh, vua Lê rêu phong', region: 'Miền Bắc' },
+        { name: 'Đầm Vân Long (Ninh Bình)', slug: 'van-long', category: 'heritage', rating: '4.8', img: 'images/van_long_wetland_1783443704949.webp', desc: 'Vùng đầm ngập nước sinh thái hoang sơ', region: 'Miền Bắc' },
+        { name: 'Đà Lạt', slug: 'da-lat', category: 'mountain', rating: '4.6', img: 'images/dalat_hero.webp', desc: 'Thành phố sương mù', region: 'Tây Nguyên' },
+        { name: 'Quy Nhơn', slug: 'quy-nhon', category: 'beach', rating: '4.6', img: 'images/quynhon_hero.webp', desc: 'Biển hoang sơ bí ẩn', region: 'Miền Trung' },
+
+        // ----- Chưa có trang chi tiết. Viết xong thì điền slug vào là link tự chạy. -----
+        { name: 'Mộc Châu', slug: null, category: 'mountain', rating: '4.5', img: 'images/mocchau_clouds.webp', desc: 'Cao nguyên hoa mận trắng, đồi chè trái tim', region: 'Miền Bắc' },
+        { name: 'Phú Quốc', slug: null, category: 'beach', rating: '4.5', img: 'images/phuquoc.webp', desc: 'Đảo ngọc phương Nam', region: 'Miền Nam' },
+        { name: 'Nha Trang', slug: null, category: 'beach', rating: '4.4', img: 'images/phuquoc.webp', desc: 'Biển xanh, nắng vàng', region: 'Miền Trung' },
+        { name: 'Huế', slug: null, category: 'heritage', rating: '4.5', img: 'images/hoian.webp', desc: 'Cố đô xưa', region: 'Miền Trung' },
     ];
 
     let activeFilter = 'all';
@@ -189,49 +200,26 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Kết quả tìm kiếm là thẻ <a> thật -> Google thu thập được, và người dùng
+        // mở tab mới / copy link được. Mục chưa có trang thì hiện nhãn "Sắp có".
         searchResults.innerHTML = results.map(d => {
-            let onclickAction = `document.getElementById('searchModal').classList.remove('active');`;
-            const nameLower = d.name.toLowerCase();
-            if (nameLower.includes('tràng an')) {
-                onclickAction += `window.location.href = 'destination-trang-an.html';`;
-            } else if (nameLower.includes('hang múa')) {
-                onclickAction += `window.location.href = 'destination-hang-mua.html';`;
-            } else if (nameLower.includes('tam cốc')) {
-                onclickAction += `window.location.href = 'destination-tam-coc.html';`;
-            } else if (nameLower.includes('bái đính')) {
-                onclickAction += `window.location.href = 'destination-bai-dinh.html';`;
-            } else if (nameLower.includes('hoa lư')) {
-                onclickAction += `window.location.href = 'destination-hoa-lu.html';`;
-            } else if (nameLower.includes('vân long')) {
-                onclickAction += `window.location.href = 'destination-van-long.html';`;
-            } else if (nameLower.includes('ninh bình')) {
-                onclickAction += `window.location.href = 'destination-ninh-binh.html';`;
-            } else if (nameLower.includes('hà giang')) {
-                onclickAction += `window.location.href = 'destination-ha-giang.html';`;
-            } else if (nameLower.includes('tà xùa')) {
-                onclickAction += `window.location.href = 'destination-ta-xua.html';`;
-            } else if (nameLower.includes('hạ long')) {
-                onclickAction += `window.location.href = 'destination-ha-long.html';`;
-            } else if (nameLower.includes('hội an')) {
-                onclickAction += `window.location.href = 'destination-hoi-an.html';`;
-            } else if (nameLower.includes('đà nẵng')) {
-                onclickAction += `window.location.href = 'destination-da-nang.html';`;
-            } else if (nameLower.includes('sapa')) {
-                onclickAction += `window.location.href = 'destination-sapa.html';`;
-            } else if (nameLower.includes('đà lạt')) {
-                onclickAction += `window.location.href = 'destination-da-lat.html';`;
-            } else if (nameLower.includes('quy nhơn')) {
-                onclickAction += `window.location.href = 'destination-quy-nhon.html';`;
-            }
-            return `
-                <div class="search-result-item" onclick="${onclickAction}">
+            const body = `
                     <img src="${d.img}" alt="${d.name}">
                     <div>
                         <h4>${d.name}</h4>
                         <span>★ ${d.rating} · ${d.desc}</span>
-                    </div>
-                </div>
-            `;
+                    </div>`;
+
+            if (!d.slug) {
+                return `
+                <div class="search-result-item is-upcoming">${body}
+                    <span class="search-result-badge">Sắp có</span>
+                </div>`;
+            }
+
+            return `
+                <a class="search-result-item" href="destination-${d.slug}.html">${body}
+                </a>`;
         }).join('');
     }
 
@@ -509,90 +497,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') closeModal();
     });
 
-    // Global click listener for cards & showcase buttons
-    document.addEventListener('click', (e) => {
-        const showcaseBtn = e.target.closest('.btn-showcase-view');
-        const reviewBtn = e.target.closest('.btn-text');
-        const destCard = e.target.closest('.dest-card');
-        
-        if (showcaseBtn) {
-            const id = showcaseBtn.getAttribute('data-id');
-            if (id) {
-                e.preventDefault();
-                if (id === 'ninh-binh') {
-                    window.location.href = 'destination-ninh-binh.html';
-                } else if (id === 'da-nang') {
-                    window.location.href = 'destination-da-nang.html';
-                } else if (id === 'ha-giang') {
-                    window.location.href = 'destination-ha-giang.html';
-                } else if (id === 'ta-xua') {
-                    window.location.href = 'destination-ta-xua.html';
-                } else if (id === 'ha-long') {
-                    window.location.href = 'destination-ha-long.html';
-                } else if (id === 'hoi-an') {
-                    window.location.href = 'destination-hoi-an.html';
-                } else {
-                    openModal(id);
-                }
-            }
-            return;
-        }
-
-        if (reviewBtn || destCard) {
-            // Find ID from title slug
-            const card = destCard || reviewBtn.closest('.dest-card');
-            const titleElement = card.querySelector('.dest-card-title');
-            if (titleElement) {
-                const title = titleElement.textContent.trim().toLowerCase();
-                
-                if (title.includes('ninh bình')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-ninh-binh.html';
-                    return;
-                } else if (title.includes('đà nẵng')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-da-nang.html';
-                    return;
-                } else if (title.includes('hà giang')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-ha-giang.html';
-                    return;
-                } else if (title.includes('tà xùa')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-ta-xua.html';
-                    return;
-                } else if (title.includes('hạ long')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-ha-long.html';
-                    return;
-                } else if (title.includes('hội an')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-hoi-an.html';
-                    return;
-                } else if (title.includes('sapa')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-sapa.html';
-                    return;
-                } else if (title.includes('đà lạt')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-da-lat.html';
-                    return;
-                } else if (title.includes('quy nhơn')) {
-                    e.preventDefault();
-                    window.location.href = 'destination-quy-nhon.html';
-                    return;
-                }
-                
-                let id = '';
-                if (title.includes('đà nẵng')) id = 'da-nang';
-                
-                if (id) {
-                    e.preventDefault();
-                    openModal(id);
-                }
-            }
-        }
-    });
+    // Điều hướng thẻ điểm đến giờ do <a href> trong index.html đảm nhiệm.
+    // Bộ xử lý click cũ (khớp theo chữ hiển thị rồi gán window.location.href) đã bỏ:
+    // nó vô hình với Google, và sẽ hỏng lặng lẽ mỗi khi đổi tên hiển thị của thẻ.
+    // openModal()/articleModal bên dưới không còn nơi gọi từ trang chủ, nhưng vẫn
+    // giữ lại vì admin.html dùng chung contentMap.
 
     // ===== PAGE LOADER =====
     const pageLoader = document.getElementById('pageLoader');
