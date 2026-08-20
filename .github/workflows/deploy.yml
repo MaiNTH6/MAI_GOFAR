@@ -1,0 +1,49 @@
+# ==========================================
+# GO FAR — Tự động build & deploy lên GitHub Pages
+# Mỗi lần push lên main là site tự lên. Không giới hạn build (repo public).
+# ==========================================
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # cho phép chạy tay từ tab Actions
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Không huỷ deploy đang chạy dở, nhưng mỗi lúc chỉ chạy một cái.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Đóng gói vào dist
+        run: bash build.sh
+
+      - name: Cấu hình GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Tải gói sản phẩm lên
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Xuất bản lên GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,13 @@
+# ==========================================
+# GO FAR — HTTP headers
+# Cú pháp này dùng được cho cả Cloudflare Pages lẫn Netlify.
+# Tệp phải nằm ở gốc thư mục publish (dist) — build.sh lo việc sao chép.
+# ==========================================
+
+# Trang quản trị: chặn index ở tầng HTTP, không chỉ dựa vào thẻ meta noindex.
+/admin.html
+  X-Robots-Tag: noindex, nofollow
+
+# Ảnh đã tối ưu và đặt tên cố định — cache dài ngày.
+/images/*
+  Cache-Control: public, max-age=31536000, immutable

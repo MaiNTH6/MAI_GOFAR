@@ -1,0 +1,14 @@
+# ==========================================
+# GO FAR — Cấu hình deploy Netlify (dự phòng)
+#
+# Host chính đã chuyển sang Cloudflare Pages. Giữ tệp này để còn đường lùi
+# về Netlify nếu cần; xoá đi khi đã chạy ổn định trên Cloudflare.
+#
+# Netlify build chạy trên Linux nên không dùng được build.ps1 (PowerShell).
+# build.sh là bản tương đương, dùng chung cho cả hai nhà cung cấp.
+# Các header HTTP nằm ở tệp `_headers` (cú pháp chung cho cả hai).
+# ==========================================
+
+[build]
+  command = "bash build.sh"
+  publish = "dist"
