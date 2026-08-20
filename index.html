@@ -12,119 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=5">
 
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
     <link rel="canonical" href="https://gofarvietnam.com/">
     <link rel="icon" type="image/png" href="images/logo.png">
     <!-- Open Graph / Facebook -->
@@ -141,19 +28,46 @@
     <meta property="twitter:description" content="GO FAR - Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI. Tác giả: Sửu nhi.">
     <meta property="twitter:image" content="https://gofarvietnam.com/images/logo.png">
 
-    <!-- Structured Data -->
+    <!-- Structured Data — khai báo GO FAR là trang thông tin, KHÔNG phải công ty tour.
+         Cần thiết vì AI Overview của Google từng nhầm GO FAR với một hãng tour xe máy.
+         Khi có tài khoản Pinterest/Facebook/YouTube, thêm URL vào mảng "sameAs". -->
     <script type="application/ld+json">
-    {
+{
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "GO FAR",
-    "url": "https://gofarvietnam.com/",
-    "description": "GO FAR - Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI. Tác giả: Sửu nhi.",
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://gofarvietnam.com/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-    }
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://gofarvietnam.com/#organization",
+            "name": "GO FAR",
+            "alternateName": "GO FAR Vietnam",
+            "url": "https://gofarvietnam.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gofarvietnam.com/images/logo.png"
+            },
+            "description": "GO FAR là trang cẩm nang thông tin du lịch Việt Nam, tổng hợp và biên tập review về các điểm đến. Đây là trang thông tin miễn phí — GO FAR không kinh doanh tour, không bán vé, không cho thuê xe và không cung cấp dịch vụ lưu trú.",
+            "founder": {
+                "@type": "Person",
+                "name": "Sửu nhi"
+            },
+            "areaServed": {
+                "@type": "Country",
+                "name": "Việt Nam"
+            },
+            "sameAs": []
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://gofarvietnam.com/#website",
+            "name": "GO FAR",
+            "url": "https://gofarvietnam.com/",
+            "inLanguage": "vi",
+            "description": "Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI.",
+            "publisher": {
+                "@id": "https://gofarvietnam.com/#organization"
+            }
+        }
+    ]
 }
     </script>
 </head>
