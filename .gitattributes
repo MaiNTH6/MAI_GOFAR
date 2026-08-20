@@ -1,0 +1,15 @@
+# ==========================================
+# GO FAR — Chuẩn hoá ký tự xuống dòng
+#
+# Máy dev chạy Windows (core.autocrlf=true) nhưng GitHub Actions build trên
+# Ubuntu. Script shell dính CRLF sẽ hỏng ngay với lỗi $'\r': command not found.
+# Các quy tắc dưới buộc những tệp đó luôn là LF, bất kể máy nào commit.
+# ==========================================
+
+* text=auto
+
+*.sh    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+CNAME   text eol=lf
+_headers text eol=lf
