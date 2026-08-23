@@ -2885,8 +2885,7 @@ body:hover .cursor-glow {
 
 
 /* Custom overrides to remove reviews and ratings from cards */
-.dest-card-meta, 
-.dest-card-credits {
+.dest-card-meta {
     display: none !important;
 }
 
