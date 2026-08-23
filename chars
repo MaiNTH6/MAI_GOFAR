@@ -1,0 +1,2 @@
+[main 6c7e934] fix(ui): Remove 9 stray  after dest-card closing tags causing blank cards
+ 1 file changed, 9 insertions(+), 9 deletions(-)
