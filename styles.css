@@ -2277,8 +2277,34 @@ body:hover .cursor-glow {
         grid-template-columns: 1fr;
     }
 
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-grid .dest-card-large {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        aspect-ratio: 4/3 !important;
+        min-height: auto !important;
+    }
+
+    .bento-grid .dest-card-large .dest-card-title {
+        font-size: 1.4rem;
+    }
+
     .dest-card {
         aspect-ratio: 4/3;
+    }
+
+    .home-hero .category-tabs {
+        border-radius: var(--radius-lg);
+        gap: 0.4rem;
+        padding: 0.3rem;
+    }
+
+    .home-hero .cat-tab {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.78rem;
     }
 
     .reviews-masonry {
@@ -2896,4 +2922,42 @@ body:hover .cursor-glow {
 
 .dest-card:hover .dest-card-content {
     transform: none !important;
+}
+
+/* RESPONSIVE TABLES */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5rem 0;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    background: rgba(22, 44, 62, 0.5);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.info-table th {
+    background: rgba(255, 140, 50, 0.15);
+    color: var(--accent-warm, #FF8C32);
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.info-table td {
+    padding: 0.85rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-sec, #cbd5e1);
+}
+
+.price-tag {
+    color: var(--accent-bright, #fbbf24);
+    font-weight: 600;
 }
