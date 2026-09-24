@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mù Cang Chải — Mùa vàng bậc thang & Đỉnh đèo Khau Phạ | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Mù Cang Chải chi tiết: Đồi Mâm Xôi La Pán Tẩn, Đồi Móng Ngựa Sáng Nhù, Đèo Khau Phạ, thung lũng Tú Lệ, rừng trúc Púng Luông. Lịch trình, đi lại, đặc sản.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.92) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            background: rgba(255,140,50,0.15);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(255,140,50,0.2);
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-sec);
+            margin-top: 0.5rem;
+            max-width: 750px;
+        }
+
+        /* ARTICLE LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .toc-list a:hover { color: var(--accent); transform: translateX(4px); }
+
+        .quick-facts { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; }
+        .quick-facts li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.5rem; }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        /* MAIN CONTENT */
+        .article-main {
+            min-width: 0;
+        }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #fff;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            border-left: 3px solid var(--accent);
+            padding-left: 1.25rem;
+            background: rgba(255, 140, 50, 0.03);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #fff;
+        }
+
+        .article-main h2 .icon {
+            font-size: 1.4rem;
+        }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--accent-gold);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .article-main ul {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            margin: 0.5rem 0 1.5rem 1.5rem;
+            line-height: 1.8;
+        }
+        .article-main li { margin-bottom: 0.5rem; }
+
+        .tip-box {
+            background: rgba(251, 191, 36, 0.06);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .tip-box p { margin: 0; color: var(--text-sec); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box p { margin: 0; font-size: 0.9rem; color: var(--text-sec); }
+
+        /* CHECKIN GRID */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.15);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.75) saturate(1.25);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(4px);
+        }
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .dest-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* RESPONSIVE TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: rgba(22, 44, 62, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .info-table th {
+            background: rgba(255, 140, 50, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-sec);
+        }
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* FOOD LIST */
+        .food-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .food-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+        }
+        .food-item .name {
+            color: #fff;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 45vh; min-height: 300px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text);
+            padding: 1.5rem 0 2rem;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: 300;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR">
+            </a>
+            <a href="index.html" class="nav-back">← Quay lại Trang chủ</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/mucangchai_hero.webp" alt="Mù Cang Chải Yên Bái" loading="eager">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">🌾 Di tích Quốc gia Đặc biệt — Tây Bắc</span>
+            <h1>Mù Cang Chải — Mùa Vàng Đại Ngàn</h1>
+            <p class="hero-subtitle">Bức tranh tuyệt bích tạc vào vách đá Hoàng Liên Sơn bởi bàn tay kiên cường của đồng bào người Mông qua hàng trăm năm.</p>
+        </div>
+    </header>
+
+    <!-- ARTICLE LAYOUT -->
+    <div class="article-layout">
+        <div class="dashboard-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">📌 Thông tin nhanh</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span> <span class="val">Huyện Mù Cang Chải, Yên Bái</span></li>
+                        <li><span class="label">Độ cao:</span> <span class="val">~1.000m – 1.500m</span></li>
+                        <li><span class="label">Khoảng cách:</span> <span class="val">~280km từ Hà Nội</span></li>
+                        <li><span class="label">Thời gian gợi ý:</span> <span class="val">3 ngày 2 đêm</span></li>
+                        <li><span class="label">Mùa đẹp nhất:</span> <span class="val">Tháng 9 – 10 (Lúa chín)</span></li>
+                        <li><span class="label">Mùa nước đổ:</span> <span class="val">Tháng 5 – 6 (Đổ ải)</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">🧭 Mục lục bài viết</h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Tuyệt tác Di tích Quốc gia Đặc biệt</a></li>
+                        <li><a href="#toa-do">2. 8 Tọa độ Check-in & Truyền thuyết</a></li>
+                        <li><a href="#di-chuyen">3. Hướng dẫn di chuyển & Cung đường</a></li>
+                        <li><a href="#gia-ve">4. Bảng giá vé & Dịch vụ tham quan</a></li>
+                        <li><a href="#luu-tru">5. Lưu trú & Ẩm thực nếp Tú Lệ</a></li>
+                        <li><a href="#thoi-diem">6. Thời điểm vàng & Mẹo an toàn</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN ARTICLE -->
+            <main class="article-main">
+
+                <div class="intro-lead" id="tong-quan">
+                    Nếu có một nơi mà sự nhọc nhằn của con người hóa thành kỳ quan lay động lòng người, nơi đó chỉ có thể là <strong>Mù Cang Chải</strong>. Trên những triền núi dựng đứng của dãy Hoàng Liên Sơn, từng nhát cuốc của đồng bào người Mông qua nhiều thế kỷ đã tạc nên những nấc thang vàng bắc thẳng lên trời xanh.
+                </div>
+
+                <h2><span class="icon">🏞️</span> 1. Di sản Ruộng bậc thang Kỳ vĩ bậc nhất Thế giới</h2>
+                <p>Nằm cách thủ đô Hà Nội gần 280km về phía Tây Bắc, huyện Mù Cang Chải (tỉnh Yên Bái) nằm trọn dưới chân dãy núi Hoàng Liên Sơn hùng vĩ. Với hơn 2.200ha ruộng bậc thang uốn lượn tầng tầng lớp lớp, danh thắng này đã được Thủ tướng Chính phủ xếp hạng là <strong>Di tích quốc gia đặc biệt</strong> và được các tạp chí du lịch quốc tế uy tín (như CN Traveler, National Geographic) vinh danh trong top những vùng ruộng bậc thang đẹp nhất hành tinh.</p>
+                <p>Nét độc đáo của Mù Cang Chải nằm ở chỗ: đây không phải là cảnh quan thiên nhiên đơn thuần, mà là một công trình nhân tạo vĩ đại tượng trưng cho nghệ thuật sinh tồn, khai phá và dẫn nước khe suối tài tình của người Mông. Mỗi thửa ruộng là một tác phẩm điêu khắc sống động trên nền đất mẹ bao la.</p>
+
+                <!-- 8 CHECK-IN SPOTS -->
+                <h2 id="toa-do"><span class="icon">📸</span> 2. 8 Tọa độ Check-in Biểu tượng & Sự tích Kỳ bí</h2>
+                <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử)</em></p>
+
+                <div class="checkin-grid">
+
+                    <!-- 1. Đồi Mâm Xôi -->
+                    <div class="dest-card double-col" data-legend="Thửa ruộng hình mâm xôi tròn đầy ngự trị trên đỉnh đồi thoai thoải xã La Pán Tẩn là kiệt tác canh tác độc nhất vô nhị của người Mông. Hình dáng mâm xôi tượng trưng cho ước vọng muôn đời về sự no ấm, sung túc và mùa màng bội thu. Hàng năm vào mùa thu hoạch, đồng bào làm Lễ mừng cơm mới để tạ ơn trời đất và thần núi linh thiêng đã che chở cho bản làng.">
+                        <div class="dest-card-img">
+                            <img src="images/mucangchai_mam_xoi.webp" alt="Đồi Mâm Xôi La Pán Tẩn" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Biểu tượng số 1</span>
+                                <span class="tag">La Pán Tẩn</span>
+                            </div>
+                            <h3 class="dest-card-title">Đồi Mâm Xôi (La Pán Tẩn)</h3>
+                            <p class="dest-card-desc">Thửa ruộng hình mâm xôi tròn vẹn tuyệt mỹ ngự giữa thung lũng, biểu tượng bất hủ cho sự sung túc của người Mông.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Đồi Móng Ngựa -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc tại bản Sáng Nhù (xã Mồ Dề), đồi Móng Ngựa nổi bật với những thửa ruộng bậc thang uốn cong hình bán nguyệt mềm mại như chiếc móng ngựa khổng lồ. Khi ánh hoàng hôn buông xuống, sóng lúa vàng rực phản chiếu sắc đỏ tía của mây trời, tạo nên bức tranh thiên nhiên tráng lệ làm say đắm mọi bước chân lãng tử.">
+                        <div class="dest-card-img">
+                            <img src="images/mucangchai_mong_ngua.webp" alt="Đồi Móng Ngựa Sáng Nhù" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🌅 Hoàng hôn</span>
+                                <span class="tag">Sáng Nhù</span>
+                            </div>
+                            <h3 class="dest-card-title">Đồi Móng Ngựa (Sáng Nhù)</h3>
+                            <p class="dest-card-desc">Vòng cung bậc thang hình móng ngựa kỳ vĩ, điểm ngắm hoàng hôn dát vàng đẹp nhất Tây Bắc.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Đèo Khau Phạ -->
+                    <div class="dest-card single-col" data-legend="Trong tiếng Thái cổ, 'Khau Phạ' có nghĩa là 'Sừng Trời' — ngọn núi nhô lên như chiếc sừng đâm xuyên màn mây mù ngút ngàn của dãy Hoàng Liên Sơn. Nơi đây từng là căn cứ địa hiểm trở của Đội du kích Khau Phạ anh dũng thời kháng chiến chống Pháp. Ngày nay, đỉnh đèo là điểm cất cánh của lễ hội dù lượn 'Bay trên mùa vàng' nổi tiếng quốc tế.">
+                        <div class="dest-card-img">
+                            <img src="images/mucangchai_khau_pha.webp" alt="Đèo Khau Phạ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Tứ đại đỉnh đèo</span>
+                                <span class="tag">Dù lượn</span>
+                            </div>
+                            <h3 class="dest-card-title">Đèo Khau Phạ — Sừng Trời</h3>
+                            <p class="dest-card-desc">Cung đèo hiểm trở dài hơn 30km đâm xuyên mây mù, điểm bay dù lượn ngắm trọn thung lũng lúa từ tầng trời.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Thung lũng Tú Lệ -->
+                    <div class="dest-card double-col" data-legend="Nằm nép mình dưới chân đèo Khau Phạ, Tú Lệ là vùng đất định cư lâu đời của người Thái đen. Khí hậu mát lành cùng nguồn nước ngọt ngào từ khe núi đã tạo nên giống nếp tan dẻo thơm trứ danh từng dùng làm sản vật tiến vua. Du khách đến đây còn được trải nghiệm nét văn hóa tắm suối khoáng nóng tự nhiên đậm chất nguyên sơ của đồng bào.">
+                        <div class="dest-card-img">
+                            <img src="images/mucangchai_tu_le.webp" alt="Thung lũng Tú Lệ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Nếp tiến vua</span>
+                                <span class="tag">Suối khoáng</span>
+                            </div>
+                            <h3 class="dest-card-title">Thung lũng Tú Lệ</h3>
+                            <p class="dest-card-desc">Thung lũng trù phú nức tiếng nếp tan dẻo quánh, cốm xanh ngát và những nếp nhà sàn thanh bình bên dòng suối mát.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Rừng Trúc Púng Luông -->
+                    <div class="dest-card single-col" data-legend="Khu rừng trúc nguyên sinh rộng lớn hơn 60 năm tuổi do đồng bào người Mông chăm sóc và bảo vệ qua nhiều thế hệ tại bản Nà Háng Tủa Chử. Hàng triệu thân trúc thẳng tắp vươn cao che rợp ánh nắng, tạo nên một không gian xanh mướt, tĩnh lặng và thanh tịnh như lạc vào những thước phim cổ trang kinh điển giữa lòng Tây Bắc.">
+                        <div class="dest-card-img">
+                            <img src="images/mucangchai_rung_truc.webp" alt="Rừng Trúc Púng Luông" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Check-in</span>
+                                <span class="tag">Thanh tịnh</span>
+                            </div>
+                            <h3 class="dest-card-title">Rừng Trúc Púng Luông</h3>
+                            <p class="dest-card-desc">Rừng trúc cổ thụ hơn 60 năm tuổi xanh ngút ngàn, lối mòn mộng ảo đẹp tựa phim kiếm hiệp.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Thác Pú Nhu -->
+                    <div class="dest-card single-col" data-legend="Bắt nguồn từ những con suối ngầm trên đại ngàn Hoàng Liên Sơn, thác Pú Nhu đổ xuống vách đá cao 20m tạo thành một hồ nước trong vắt màu ngọc bích. Dân gian ví dòng thác như dải lụa trắng của nàng tiên nữ bỏ quên giữa thung lũng đá, mang lại nguồn nước tưới mát lành cho những nấc thang mùa vàng La Pán Tẩn.">
+                        <div class="dest-card-img">
+                            <img src="images/mucangchai_pu_nhu.webp" alt="Thác Pú Nhu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Thiên nhiên</span>
+                                <span class="tag">Thác nước</span>
+                            </div>
+                            <h3 class="dest-card-title">Thác Pú Nhu</h3>
+                            <p class="dest-card-desc">Dải thác bạc 20m đổ xuống hồ nước trong vắt mát lạnh, ẩn mình bình yên giữa đại ngàn xanh biếc.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Bản Lìm Mông -->
+                    <div class="dest-card single-col" data-legend="Nằm sâu dưới thung lũng Cao Phạ, bản Lìm Mông (người Mông) và Lìm Thái (người Thái) là điểm dừng chân yên bình bậc nhất Mù Cang Chải. Ngôi làng giữ nguyên nếp nhà sàn truyền thống, cối giã gạo chạy bằng sức nước bên bờ suối Nậm Có và những con đường đất mộc mạc thơm mùi rơm rạ mùa gặt.">
+                        <div class="dest-card-img">
+                            <img src="images/mucangchai_lim_mong.webp" alt="Bản Lìm Mông" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Bản làng cổ</span>
+                                <span class="tag">Văn hóa</span>
+                            </div>
+                            <h3 class="dest-card-title">Bản Lìm Mông & Lìm Thái</h3>
+                            <p class="dest-card-desc">Bản làng yên ả dưới chân đèo Khau Phạ, nơi suối Nậm Có rì rào ôm lấy những vựa lúa vàng trĩu hạt.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Mũi Giày Chế Cu Nha -->
+                    <div class="dest-card single-col" data-legend="Chế Cu Nha là xã có địa hình dốc bậc nhất Mù Cang Chải, nơi các thửa ruộng bậc thang được đắp trên những sườn núi có độ dốc dựng đứng trên 40 độ. Thửa ruộng hình mũi giày uốn lượn chứng minh cho ý chí kiên cường và kỹ năng đo độ dốc tuyệt hảo của người Mông khi biến vách đá hiểm trở thành nguồn sống dồi dào.">
+                        <div class="dest-card-img">
+                            <img src="images/mucangchai_che_cu_nha.webp" alt="Mũi Giày Chế Cu Nha" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Kỳ quan</span>
+                                <span class="tag">Chế Cu Nha</span>
+                            </div>
+                            <h3 class="dest-card-title">Mũi Giày Chế Cu Nha</h3>
+                            <p class="dest-card-desc">Những cung ruộng dốc đứng uốn lượn hình mũi giày độc đáo, minh chứng cho ý chí tạc núi của người Mông.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & LỘ TRÌNH -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> 3. Hướng dẫn Di chuyển & Cung đường Vượt Đèo</h2>
+                
+                <h3>1. Chặng Hà Nội → Mù Cang Chải (~280km)</h3>
+                <ul>
+                    <li><strong>Xe Limousine / Giường nằm chất lượng cao:</strong> Xuất phát từ bến xe Mỹ Đình hoặc Giáp Bát lúc 21h00 – 22h00 tối, ngủ một giấc sáng sớm hôm sau (khoảng 4h30 – 5h00) bạn đã có mặt tại ngã ba Kim hoặc thị trấn Mù Cang Chải.</li>
+                    <li><strong>Phượt xe máy / Tự lái ô tô:</strong> Cung đường kinh điển theo QL32: <em>Hà Nội → Sơn Tây → Cầu Trung Hà → Thanh Sơn (Phú Thọ) → Thu Cúc → Ba Khe → Thị xã Nghĩa Lộ → Tú Lệ → Đèo Khau Phạ → Mù Cang Chải</em>. Cung đường này tuyệt đẹp nhưng cần tay lái vững khi qua các đoạn đèo dốc quanh co.</li>
+                </ul>
+
+                <h3>2. Di chuyển nội khu Mù Cang Chải</h3>
+                <ul>
+                    <li><strong>Thuê xe máy tự lái:</strong> Thích hợp chạy trên các trục đường liên xã chính (Tú Lệ – Khau Phạ – Púng Luông – Mù Cang Chải).</li>
+                    <li><strong>Dịch vụ Xe ôm bản địa (Bắt buộc với Đồi Mâm Xôi & Móng Ngựa):</strong> Đường lên đỉnh các đồi ruộng bậc thang cực kỳ dốc, hẹp và đất trơn. Để đảm bảo an toàn tuyệt đối, bạn nên đi xe ôm của bà con người Mông tại chân đồi.</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Mẹo di chuyển an toàn:</strong> Đoạn đèo Khau Phạ thường xuất hiện sương mù dày đặc vào chiều muộn và sáng sớm. Nếu đi xe máy, hãy bật đèn sương mù, đi số thấp (số 2 hoặc 3) và không rà phanh liên tục khi đổ đèo.</p>
+                </div>
+
+                <!-- BẢNG GIÁ VÉ & DỊCH VỤ -->
+                <h2 id="gia-ve"><span class="icon">🎫</span> 4. Bảng giá vé & Chi phí Tham quan Tham khảo</h2>
+                <p>Dưới đây là mức giá tham khảo các dịch vụ trải nghiệm tại Mù Cang Chải:</p>
+
+                <div class="table-responsive">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Điểm đến / Dịch vụ trải nghiệm</th>
+                                <th>Chi phí tham khảo</th>
+                                <th>Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vé tham quan Đồi Mâm Xôi (La Pán Tẩn)</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Vé vào cổng danh thắng bảo tồn</td>
+                            </tr>
+                            <tr>
+                                <td>Xe ôm chở lên đỉnh Đồi Mâm Xôi (Khứ hồi)</td>
+                                <td><span class="price-tag">Theo quy định tổ xe ôm</span></td>
+                                <td>Đường dốc cao, tay lái bản địa</td>
+                            </tr>
+                            <tr>
+                                <td>Vé tham quan Đồi Móng Ngựa (Sáng Nhù)</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Điểm ngắm hoàng hôn đỉnh cao</td>
+                            </tr>
+                            <tr>
+                                <td>Vé tham quan Rừng Trúc Púng Luông</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Bao gồm phí bảo tồn rừng nguyên sinh</td>
+                            </tr>
+                            <tr>
+                                <td>Trải nghiệm Dù lượn "Bay trên mùa vàng" Khau Phạ</td>
+                                <td><span class="price-tag">Đăng ký theo tour dù lượn</span></td>
+                                <td>Bay cùng phi công chuyên nghiệp kèm video</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🍲</span> 5. Lưu trú & Ẩm thực Bản địa Nức tiếng</h2>
+                
+                <h3>1. Gợi ý điểm lưu trú</h3>
+                <ul>
+                    <li><strong>Homestay nhà sàn bản Lìm Mông / La Pán Tẩn:</strong> Không gian thô mộc, ấm cúng, mở cửa sổ ra là ngắm trọn thung lũng lúa vàng và sinh hoạt cùng gia đình đồng bào.</li>
+                    <li><strong>Resort & Ecolodge sinh thái:</strong> Khu nghỉ dưỡng cao cấp tại Tú Lệ (Le Champ Tu Le) hoặc Mu Cang Chai Ecolodge (Nậm Khắt) với suối khoáng nóng và view hồ bơi vô cực ngắm ruộng bậc thang.</li>
+                    <li><strong>Khách sạn trung tâm thị trấn:</strong> Đầy đủ tiện nghi, gần chợ đêm Mù Cang Chải và thuận tiện ăn uống.</li>
+                </ul>
+
+                <h3>2. Món ngon Mù Cang Chải & Tú Lệ nhất định phải thử</h3>
+                <div class="food-list">
+                    <div class="food-item">
+                        <span class="name">🌾 Cốm non & Xôi nếp nương Tú Lệ</span>
+                        Hạt nếp tan tròn mẩy, dẻo quánh, thơm nức mũi chấm cùng muối vừng hoặc ăn kèm thịt lợn nướng.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🐟 Cá suối nướng Pa Pỉnh Tộp</span>
+                        Cá suối tươi rói mổ lưng, ướp mắc khén, hạt dổi, ớt rừng rồi nướng gập trên than hồng thơm lừng.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🥓 Thịt lợn bản kẹp cây nướng</span>
+                        Thịt lợn cắp nách bì giòn, thịt chắc thơm, tẩm ướp lá mắc mật nướng xém vàng hấp dẫn.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🍶 Rượu Táo Mèo Mù Cang Chải</span>
+                        Men say nồng ấm ủ từ những quả táo mèo rừng thu hoạch chính vụ mùa thu trên triền núi đá.
+                    </div>
+                </div>
+
+                <!-- THỜI ĐIỂM & LƯU Ý -->
+                <h2 id="thoi-diem"><span class="icon">🗓️</span> 6. Thời điểm vàng & Kinh nghiệm Đi săn lúa</h2>
+                
+                <h3>1. Các mùa đẹp nhất trong năm</h3>
+                <ul>
+                    <li><strong>Tháng 9 – Tháng 10 (Mùa Lúa Chín):</strong> Mùa vàng rực rỡ nhất trong năm. Toàn bộ thung lũng khoác lên mình chiếc áo vàng óng ả, không khí lễ hội dù lượn rộn ràng.</li>
+                    <li><strong>Tháng 5 – Tháng 6 (Mùa Nước Đổ):</strong> Khi những cơn mưa đầu mùa đổ xuống, ruộng bậc thang ngập nước lung linh như hàng triệu tấm gương phản chiếu trời mây.</li>
+                    <li><strong>Tháng 12 – Tháng 1 (Mùa hoa Tớ Dày):</strong> Mùa đông se lạnh với sắc hồng thắm của loài hoa đào rừng Tớ Dày đặc trưng nở rực khắp các triền đồi đón Tết của người Mông.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>Lưu ý bảo vệ danh thắng:</strong> Tuyệt đối không giẫm đạp lên lúa, không bẻ bông lúa để chụp ảnh. Giữ gìn vệ sinh môi trường, không vứt rác tại các điểm tham quan và tôn trọng nếp sống sinh hoạt văn hóa của đồng bào người Mông, người Thái.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+        <div>
+            <strong>GO FAR</strong> — Go Straight Ahead · Bản quyền nội dung thuộc về GO FAR
+        </div>
+        <div class="credits">
+            Biên tập bởi <strong>Sửu nhi</strong> · 🎨 Ảnh nghệ thuật khởi tạo bởi AI
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.querySelector('.lightbox-close');
+
+            document.querySelectorAll('.dest-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    lightboxModal.style.display = 'flex';
+                    lightboxImg.src = img.src;
+                    
+                    const titleText = card.querySelector('.dest-card-title')?.innerText || '';
+                    const descText = card.querySelector('.dest-card-desc')?.innerText || '';
+                    const legend = card.getAttribute('data-legend') || '';
+                    
+                    let captionHTML = '';
+                    if (titleText) {
+                        captionHTML += `<strong style="font-size: 1.4rem; color: var(--accent-gold); display: block; margin-bottom: 0.4rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                    }
+                    if (descText) {
+                        captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; margin-bottom: 1rem;">${descText}</span>`;
+                    }
+                    if (legend) {
+                        captionHTML += `
+                        <div style="background: rgba(22, 44, 62, 0.9); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                            <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 600;">
+                                ✨ Sự tích & Dấu ấn Lịch sử
+                            </span>
+                            <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; display: block;">${legend}</span>
+                        </div>`;
+                    }
+                    lightboxCaption.innerHTML = captionHTML;
+                });
+            });
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.style.display = 'none';
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+                    lightboxModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

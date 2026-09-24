@@ -20,6 +20,19 @@ const GOFAR_DATA = {
             modalId: 'ha-giang'
         },
         {
+            id: 'dest-mu-cang-chai',
+            title: 'Mù Cang Chải',
+            category: 'mountain',
+            tags: ['🔥 Mùa vàng', 'Tây Bắc'],
+            desc: 'Tuyệt tác ruộng bậc thang Di tích Quốc gia Đặc biệt. Đồi Mâm Xôi, Đồi Móng Ngựa, đèo Khau Phạ.',
+            img: 'images/mucangchai_hero.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 286,
+            size: 'normal',
+            modalId: 'mu-cang-chai'
+        },
+        {
             id: 'dest-ta-xua',
             title: 'Tà Xùa',
             category: 'mountain',
