@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // slug: null = chưa viết trang đó, ô tìm kiếm sẽ hiện nhãn "Sắp có" thay vì link chết.
     const destinations = [
         { name: 'Hà Giang', slug: 'ha-giang', category: 'mountain', rating: '4.9', img: 'images/hero.webp', desc: 'Cung đường đẹp nhất Việt Nam', region: 'Miền Bắc' },
+        { name: 'Mù Cang Chải', slug: 'mu-cang-chai', category: 'mountain', rating: '4.9', img: 'images/mucangchai_mam_xoi.webp', desc: 'Tuyệt tác mùa vàng ruộng bậc thang & đèo Khau Phạ', region: 'Miền Bắc' },
         { name: 'Tà Xùa', slug: 'ta-xua', category: 'mountain', rating: '4.9', img: 'images/taxua.webp', desc: 'Thiên đường mây, sống lưng khủng long', region: 'Miền Bắc' },
         { name: 'Vịnh Hạ Long', slug: 'ha-long', category: 'beach', rating: '4.8', img: 'images/halong.webp', desc: 'Kỳ quan thiên nhiên thế giới', region: 'Miền Bắc' },
         { name: 'Hội An', slug: 'hoi-an', category: 'heritage', rating: '4.9', img: 'images/hoian.webp', desc: 'Phố cổ lồng đèn', region: 'Miền Trung' },
