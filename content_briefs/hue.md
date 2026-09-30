@@ -20,7 +20,7 @@
 | **Tác giả** | `Sửu nhi — GO FAR` |
 
 ### 📌 Khung thông tin nhanh (Sidebar):
-- 📍 **Vị trí:** Thành phố Huế, tỉnh Thừa Thiên Huế — cách Đà Nẵng ~100km qua Đèo Hải Vân.
+- 📍 **Vị trí:** Thành phố Huế, tỉnh Thừa Thiên Huế — cách Hà Nội ~660km theo Quốc lộ 1A / Đường sắt Bắc Nam.
 - ⏱️ **Thời gian gợi ý:** 3 ngày 2 đêm (hoặc kết hợp tour di sản Huế – Đà Nẵng – Hội An 4N3Đ).
 - ⭐ **Mùa đẹp nhất:** Tháng 1 – Tháng 4 (Mùa xuân khô ráo, hoa ngô đồng nở rộ) & Tháng 5 – Tháng 8 (Nắng đẹp).
 
