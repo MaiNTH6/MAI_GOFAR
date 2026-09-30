@@ -111,6 +111,19 @@ const GOFAR_DATA = {
             modalId: null
         },
         {
+            id: 'dest-hue',
+            title: 'Cố đô Huế',
+            category: 'heritage',
+            tags: ['👑 UNESCO', 'Di sản'],
+            desc: 'Kinh đô 13 triều vua Nguyễn, Đại Nội tráng lệ, lăng tẩm uy nghiêm và dòng sông Hương thơ mộng.',
+            img: 'images/hue_hero.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 356,
+            size: 'normal',
+            modalId: 'hue'
+        },
+        {
             id: 'dest-da-nang',
             title: 'Đà Nẵng',
             category: 'city',

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cố đô Huế — Di sản Hoàng cung & Lăng tẩm trầm mặc | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Huế chi tiết: Đại Nội Hoàng Thành, Lăng Tự Đức, Lăng Khải Định, Chùa Thiên Mụ, Sông Hương, làng hương Thủy Xuân, phá Tam Giang. Lịch trình, đi lại, ẩm thực.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.92) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-sec);
+            margin-top: 0.5rem;
+            max-width: 750px;
+        }
+
+        /* ARTICLE LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .toc-list a:hover { color: var(--accent); transform: translateX(4px); }
+
+        .quick-facts { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; }
+        .quick-facts li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.5rem; }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        /* MAIN CONTENT */
+        .article-main {
+            min-width: 0;
+        }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #fff;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            border-left: 3px solid var(--accent);
+            padding-left: 1.25rem;
+            background: rgba(255, 140, 50, 0.03);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #fff;
+        }
+
+        .article-main h2 .icon {
+            font-size: 1.4rem;
+        }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--accent-gold);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .article-main ul {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            margin: 0.5rem 0 1.5rem 1.5rem;
+            line-height: 1.8;
+        }
+        .article-main li { margin-bottom: 0.5rem; }
+
+        .tip-box {
+            background: rgba(251, 191, 36, 0.06);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .tip-box p { margin: 0; color: var(--text-sec); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box p { margin: 0; font-size: 0.9rem; color: var(--text-sec); }
+
+        /* CHECKIN GRID */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.15);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.75) saturate(1.25);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(4px);
+        }
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .dest-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* RESPONSIVE TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: rgba(22, 44, 62, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .info-table th {
+            background: rgba(255, 140, 50, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-sec);
+        }
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* FOOD LIST */
+        .food-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .food-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+        }
+        .food-item .name {
+            color: #fff;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 45vh; min-height: 300px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 22, 34, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            color: var(--text);
+            padding: 1.5rem 0 2rem;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: 300;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR">
+            </a>
+            <a href="index.html" class="nav-back">← Quay lại Trang chủ</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/hue_hero.webp" alt="Cố đô Huế" loading="eager">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">👑 Di sản Văn hóa Thế giới UNESCO</span>
+            <h1>Cố đô Huế — Dấu Ấn Hoàng Kim & Sông Hương Trầm Mặc</h1>
+            <p class="hero-subtitle">Kinh đô cổ kính của 13 triều vua Nguyễn, nơi thời gian ngưng đọng giữa lầu son gác tía, lăng tẩm uy nghiêm và dòng sông Hương bảng lảng sương mờ.</p>
+        </div>
+    </header>
+
+    <!-- ARTICLE LAYOUT -->
+    <div class="article-layout">
+        <div class="dashboard-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">📌 Thông tin nhanh</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span> <span class="val">TP. Huế, Thừa Thiên Huế</span></li>
+                        <li><span class="label">Danh hiệu:</span> <span class="val">Di sản UNESCO (1993)</span></li>
+                        <li><span class="label">Khoảng cách:</span> <span class="val">~100km từ Đà Nẵng</span></li>
+                        <li><span class="label">Thời gian gợi ý:</span> <span class="val">3 ngày 2 đêm</span></li>
+                        <li><span class="label">Mùa đẹp nhất:</span> <span class="val">Tháng 1 – 4 (Xuân Cố Đô)</span></li>
+                        <li><span class="label">Đặc trưng:</span> <span class="val">Cung đình & Sông Hương</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">🧭 Mục lục bài viết</h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Di sản Kinh đô 13 Triều Vua</a></li>
+                        <li><a href="#toa-do">2. 8 Tọa độ Hoàng cung & Lăng tẩm</a></li>
+                        <li><a href="#di-chuyen">3. Hướng dẫn di chuyển & Trải nghiệm</a></li>
+                        <li><a href="#gia-ve">4. Bảng giá vé Di tích Cố đô Huế</a></li>
+                        <li><a href="#luu-tru">5. Lưu trú & Ẩm thực Cung đình</a></li>
+                        <li><a href="#thoi-diem">6. Thời điểm vàng & Mẹo tham quan</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN ARTICLE -->
+            <main class="article-main">
+
+                <div class="intro-lead" id="tong-quan">
+                    Có những vùng đất đến để vui, nhưng có những nơi đến để lắng lòng mình lại. <strong>Huế</strong> là một chốn như thế. Kinh đô cổ kính của 13 triều vua Nguyễn nép mình bên dòng sông Hương thơ mộng, nơi thời gian dường như trôi chậm lại giữa những mái ngói rêu phong, lầu son gác tía và vẻ đẹp trầm mặc của ngàn năm văn hiến.
+                </div>
+
+                <h2><span class="icon">🏛️</span> 1. Di sản Văn hóa Thế giới Đầu tiên của Việt Nam</h2>
+                <p>Nằm trên dải đất miền Trung đầy nắng gió, Cố đô Huế từng là thủ phủ của các chúa Nguyễn ở Đàng Trong (1558 – 1777), kinh đô của triều đại Tây Sơn (1788 – 1801) và là kinh đô thống nhất của nước Việt Nam dưới 13 triều vua nhà Nguyễn suốt 143 năm (1802 – 1945).</p>
+                <p>Năm 1993, Quần thể Di tích Cố đô Huế vinh dự trở thành <strong>Di sản Văn hóa Thế giới đầu tiên của Việt Nam</strong> được UNESCO công nhận. Đến năm 2003, Nhã nhạc Cung đình Huế tiếp tục được vinh danh là Kiệt tác Di sản văn hóa phi vật thể và truyền khẩu của nhân loại. Sự kết hợp hoàn mỹ giữa nghệ thuật kiến trúc cung đình đỉnh cao với cảnh quan phong thủy non nước hữu tình (núi Ngự Bình, sông Hương, cồn Hến, cồn Dã Viên) đã tạo nên một di sản sống động có một không hai.</p>
+
+                <!-- 8 CHECK-IN SPOTS -->
+                <h2 id="toa-do"><span class="icon">📸</span> 2. 8 Tọa độ Di sản Biểu tượng & Dấu tích Lịch sử</h2>
+                <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử)</em></p>
+
+                <div class="checkin-grid">
+
+                    <!-- 1. Ngọ Môn & Điện Thái Hòa -->
+                    <div class="dest-card double-col" data-legend="Ngọ Môn được vua Minh Mạng cho xây dựng năm 1833 trên nền đài Nam Khuyết Đài cũ. Công trình nguy nga với 5 cửa đi và lầu Ngũ Phụng lợp ngói hoàng lưu ly phía trên, là nơi cử hành các đại lễ quan trọng nhất của triều đình nhà Nguyễn. Ngày 30/8/1945, chính tại lầu Ngọ Môn, vua Bảo Đại đã đọc Chiếu thoái vị và trao nộp ấn kiếm báu cho phái đoàn Chính phủ Cách mạng lâm thời, chấm dứt chế độ quân chủ phong kiến ngàn năm tại Việt Nam.">
+                        <div class="dest-card-img">
+                            <img src="images/hue_ngo_mon.webp" alt="Ngọ Môn Đại Nội Huế" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Di sản Hoàng gia</span>
+                                <span class="tag">Đại Nội</span>
+                            </div>
+                            <h3 class="dest-card-title">Ngọ Môn & Điện Thái Hòa (Đại Nội)</h3>
+                            <p class="dest-card-desc">Cổng chính phía Nam Hoàng thành nguy nga với lầu Ngũ Phụng, chứng nhân của những sự kiện trọng đại trong lịch sử dân tộc.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Chùa Thiên Mụ -->
+                    <div class="dest-card single-col" data-legend="Năm 1601, khi vào trấn thủ Đàng Trong, chúa Tiên Nguyễn Hoàng đích thân cưỡi ngựa khảo sát dọc bờ sông Hương và nghe dân làng kể về lời sấm của một bà tiên áo đỏ xuất hiện trên đồi Hà Khê tiên tri sẽ có bậc chân chúa lập chùa tụ linh khí non sông. Chúa Nguyễn Hoàng liền cho dựng chùa đặt tên là Thiên Mụ (Bà Chúa Trời). Năm 1844, vua Thiệu Trị cho xây thêm tháp Phước Duyên hình bát giác 7 tầng cao 21m, trở thành biểu tượng tâm linh bất hủ của Cố đô.">
+                        <div class="dest-card-img">
+                            <img src="images/hue_chua_thien_mu.webp" alt="Chùa Thiên Mụ Huế" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🏯 Đệ nhất cổ tự</span>
+                                <span class="tag">Hà Khê</span>
+                            </div>
+                            <h3 class="dest-card-title">Chùa Thiên Mụ & Tháp Phước Duyên</h3>
+                            <p class="dest-card-desc">Ngôi cổ tự khởi lập năm 1601 trên đồi Hà Khê, tháp Phước Duyên 7 tầng soi bóng thanh tịnh bên dòng sông Hương.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Lăng Khải Định -->
+                    <div class="dest-card single-col" data-legend="Khởi công xây dựng vào ngày 4/9/1920 và kéo dài suốt 11 năm mới hoàn tất (năm 1931), Lăng Khải Định là công trình kiến trúc độc đáo bậc nhất triều Nguyễn. Nằm trên sườn núi Châu Chữ hiểm trở, lăng là sự kết hợp táo bạo giữa trường phái kiến trúc cổ điển phương Tây với mỹ thuật cung đình phương Đông. Toàn bộ nội điện Khải Thành là một kiệt tác tranh phù điêu ghép bằng hàng triệu mảnh sành sứ, chai lọ và thủy tinh màu rực rỡ.">
+                        <div class="dest-card-img">
+                            <img src="images/hue_lang_khai_dinh.webp" alt="Lăng Khải Định Ứng Lăng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Kiệt tác sành sứ</span>
+                                <span class="tag">Ứng Lăng</span>
+                            </div>
+                            <h3 class="dest-card-title">Lăng Khải Định (Ứng Lăng)</h3>
+                            <p class="dest-card-desc">Đỉnh cao kiến trúc giao thoa Á - Âu trên núi Châu Chữ với những bức phù điêu ghép sành sứ tinh xảo tuyệt mỹ.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Lăng Tự Đức -->
+                    <div class="dest-card double-col" data-legend="Xây dựng từ năm 1864 đến 1867 trong một thung lũng hẹp rợp bóng thông xanh, Khiêm Lăng là bức tranh sơn thủy hữu tình phản ánh trọn vẹn tâm hồn thi sĩ đa sầu đa cảm của vua Tự Đức. Tại nhà tạ Xung Khiêm Tạ soi bóng bên hồ Lưu Khiêm, nhà vua thường ngồi ngắm sen nở, câu cá, uống trà ướp hương hoa đêm và ngâm vịnh những bài thơ bất hủ.">
+                        <div class="dest-card-img">
+                            <img src="images/hue_lang_tu_duc.webp" alt="Lăng Tự Đức Khiêm Lăng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Thi sĩ cung đình</span>
+                                <span class="tag">Khiêm Lăng</span>
+                            </div>
+                            <h3 class="dest-card-title">Lăng Tự Đức (Khiêm Lăng)</h3>
+                            <p class="dest-card-desc">Khu lăng tẩm thơ mộng nhất triều Nguyễn nép mình giữa rừng thông, nơi nhà tạ Xung Khiêm Tạ soi bóng hồ sen tĩnh lặng.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Lăng Minh Mạng -->
+                    <div class="dest-card single-col" data-legend="Nằm tại vị trí đắc địa nơi hợp lưu của hai dòng Tả Trạch và Hữu Trạch hợp thành sông Hương, Hiếu Lăng được quy hoạch từ năm 1840 thời vua Minh Mạng và hoàn thành năm 1843 thời vua Thiệu Trị. Quần thể gồm gần 40 công trình lớn nhỏ được bố trí đăng đối tuyệt đối dọc theo trục thần đạo dài 700m, thể hiện tư tưởng Nho giáo uy nghiêm và ý chí kiến tạo một vương triều thịnh trị.">
+                        <div class="dest-card-img">
+                            <img src="images/hue_lang_minh_mang.webp" alt="Lăng Minh Mạng Hiếu Lăng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Uy nghiêm Nho giáo</span>
+                                <span class="tag">Hiếu Lăng</span>
+                            </div>
+                            <h3 class="dest-card-title">Lăng Minh Mạng (Hiếu Lăng)</h3>
+                            <p class="dest-card-desc">Tuyệt tác đối xứng thần đạo mẫu mực trên núi Cẩm Kê, hồ Tân Nguyệt ôm trọn sự uy nghiêm của bậc đế vương.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Làng hương Thủy Xuân -->
+                    <div class="dest-card single-col" data-legend="Khởi nguồn từ thời các chúa Nguyễn khai phá xứ Đàng Trong, làng hương Thủy Xuân hơn 700 năm tuổi từng là nơi cung cấp các loại hương trầm hảo hạng cho triều đình, hoàng tộc và các chốn cổ tự linh thiêng quanh kinh thành. Những bó chân hương xòe tròn như những đóa hoa rực rỡ sắc màu ngũ hành dưới ánh nắng ban mai đã tạo nên một không gian văn hóa di sản sống động đậm chất nghệ thuật.">
+                        <div class="dest-card-img">
+                            <img src="images/hue_lang_huong.webp" alt="Làng hương Thủy Xuân" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Làng nghề 700 năm</span>
+                                <span class="tag">Check-in</span>
+                            </div>
+                            <h3 class="dest-card-title">Làng hương Thủy Xuân</h3>
+                            <p class="dest-card-desc">Làng nghề làm hương trầm cổ truyền rực rỡ sắc màu ngũ sắc xòe hoa dưới chân đồi Vọng Cảnh thanh bình.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Sông Hương & Cầu Tràng Tiền -->
+                    <div class="dest-card single-col" data-legend="Dòng sông Hương mềm như dải lụa xanh biếc chảy qua lòng Cố đô, mang theo hương thơm ngát của ngàn loài hoa cỏ rừng đầu nguồn. Bắc ngang dòng sông là cây cầu Tràng Tiền được khởi công năm 1897 dưới thời vua Thành Thái do hãng Eiffel (Pháp) thiết kế với 6 nhịp 12 vài bằng thép kiên cố. Trải qua hơn một thế kỷ thăng trầm cùng lịch sử đất nước, cầu Tràng Tiền vẫn duyên dáng soi bóng bên bến nước Cố đô.">
+                        <div class="dest-card-img">
+                            <img src="images/hue_cau_trang_tien.webp" alt="Cầu Tràng Tiền Sông Hương" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Biểu tượng Cố Đô</span>
+                                <span class="tag">Lãng mạn</span>
+                            </div>
+                            <h3 class="dest-card-title">Sông Hương & Cầu Tràng Tiền</h3>
+                            <p class="dest-card-desc">Cây cầu thép 6 nhịp duyên dáng bắc qua dòng sông Hương thơ mộng, biểu tượng tình yêu và hoài niệm xứ Huế.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Đầm Lập An & Phá Tam Giang -->
+                    <div class="dest-card single-col" data-legend="Phá Tam Giang là vùng đầm phá nước lợ lớn nhất Đông Nam Á với diện tích hơn 52km2, từng là vùng hiểm yếu gắn với câu ca dao xưa 'Thương em anh cũng muốn vô / Sợ trọt phá Tam Giang, sợ truông nhà Hồ'. Ngày nay, đầm Lập An dưới chân đèo Hải Vân và phá Tam Giang là tọa độ ngắm hoàng hôn buông tím thẫm mặt nước mênh mông, nơi du khách tận hưởng nguồn thủy hải sản phong phú và nét bình dị của ngư dân miền sông nước.">
+                        <div class="dest-card-img">
+                            <img src="images/hue_pha_tam_giang.webp" alt="Phá Tam Giang Đầm Lập An" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Hoàng hôn tím</span>
+                                <span class="tag">Đầm phá lớn nhất</span>
+                            </div>
+                            <h3 class="dest-card-title">Đầm Lập An & Phá Tam Giang</h3>
+                            <p class="dest-card-desc">Vùng đầm phá nước lợ lớn nhất Đông Nam Á với bức tranh hoàng hôn tím thẫm mênh mang và những chòi ngư dân bình dị.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & KẾT NỐI -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> 3. Hướng dẫn Di chuyển & Kết nối Tuyến Di sản</h2>
+                
+                <h3>1. Đến với Cố đô Huế</h3>
+                <ul>
+                    <li><strong>Máy bay:</strong> Đáp chuyến bay thẳng xuống Sân bay Quốc tế Phú Bài (HUI), cách trung tâm thành phố Huế khoảng 15km (20 phút đi taxi).</li>
+                    <li><strong>Tàu hỏa Bắc - Nam:</strong> Tuyến đường sắt kết nối ga Huế với ga Đà Nẵng vượt đèo Hải Vân được đánh giá là một trong những hành trình tàu hỏa ven biển đẹp nhất thế giới.</li>
+                    <li><strong>Đường bộ từ Đà Nẵng / Hội An (~100km):</strong> Đi xe khách hoặc limousine chất lượng cao qua hầm Hải Vân (khoảng 2 tiếng) hoặc tự lái xe máy vượt đèo Hải Vân ngắm vịnh Lăng Cô.</li>
+                </ul>
+
+                <h3>2. Phương tiện dạo quanh Cố Đô</h3>
+                <ul>
+                    <li><strong>Xe máy tự lái:</strong> Rất thuận tiện để đi thăm các lăng tẩm (Lăng Khải Định, Lăng Tự Đức, Lăng Minh Mạng) và làng hương Thủy Xuân.</li>
+                    <li><strong>Thuyền rồng sông Hương:</strong> Trải nghiệm nghe Ca Huế trên sông Hương và thả đèn hoa đăng ngắm cầu Tràng Tiền lung linh về đêm.</li>
+                    <li><strong>Xích lô nội thành:</strong> Ngắm nhìn những con đường rợp bóng cây xanh và cổng thành rêu phong thong dong, chậm rãi.</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Mẹo kết nối tuyến di sản hoàn hảo:</strong> Bạn nên sắp xếp hành trình 4 ngày 3 đêm: <em>Huế (2 ngày) → Vượt đèo Hải Vân → Đà Nẵng & Hội An (2 ngày)</em> để trải nghiệm trọn vẹn dải di sản miền Trung.</p>
+                </div>
+
+                <!-- BẢNG GIÁ VÉ DI TÍCH HUẾ -->
+                <h2 id="gia-ve"><span class="icon">🎫</span> 4. Bảng giá vé Tham quan Di tích Cố đô Huế</h2>
+                <p>Mức giá vé niêm yết chính thức bởi Trung tâm Bảo tồn Di tích Cố đô Huế (hueworldheritage.org.vn):</p>
+
+                <div class="table-responsive">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Địa điểm Di tích</th>
+                                <th>Chi phí tham khảo</th>
+                                <th>Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hoàng Cung Huế (Đại Nội — Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành)</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Bao gồm Bảo tàng Cổ vật Cung đình</td>
+                            </tr>
+                            <tr>
+                                <td>Lăng vua Khải Định (Ứng Lăng)</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Kiệt tác phù điêu sành sứ</td>
+                            </tr>
+                            <tr>
+                                <td>Lăng vua Tự Đức (Khiêm Lăng)</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Không gian thi ca hồ Lưu Khiêm</td>
+                            </tr>
+                            <tr>
+                                <td>Lăng vua Minh Mạng (Hiếu Lăng)</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Kiến trúc đối xứng trục thần đạo</td>
+                            </tr>
+                            <tr>
+                                <td>Chùa Thiên Mụ & Làng hương Thủy Xuân</td>
+                                <td><span class="price-tag">Miễn phí vào cổng</span></td>
+                                <td>Tự do dâng hương & chụp ảnh</td>
+                            </tr>
+                            <tr>
+                                <td>Nghe Ca Huế trên thuyền rồng sông Hương</td>
+                                <td><span class="price-tag">Theo vé bến thuyền Tòa Khâm</span></td>
+                                <td>Khoảng 50 phút ngoạn cảnh & thả hoa đăng</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🍲</span> 5. Lưu trú & Tinh hoa Ẩm thực Cố Đô</h2>
+                
+                <h3>1. Gợi ý điểm lưu trú</h3>
+                <ul>
+                    <li><strong>Khách sạn & Boutique ven sông Hương:</strong> Tập trung dọc tuyến đường Lê Lợi, Nguyễn Huệ với tầm nhìn thẳng ra dòng sông Hương và cầu Tràng Tiền.</li>
+                    <li><strong>Resort & Nhà vườn di sản:</strong> Pilgrimage Village (Làng Hành Hương), Azerai La Residence hoặc các khu nghỉ dưỡng sinh thái bên đầm Lập An / phá Tam Giang.</li>
+                    <li><strong>Homestay phong cách Cố Đô:</strong> Các ngôi nhà vườn rường gỗ truyền thống yên tĩnh trong khu vực Kim Long hoặc Vỹ Dạ.</li>
+                </ul>
+
+                <h3>2. Tinh hoa ẩm thực xứ Huế</h3>
+                <div class="food-list">
+                    <div class="food-item">
+                        <span class="name">🍜 Bún bò Huế chuẩn vị</span>
+                        Nước dùng ninh từ xương bò và mắm ruốc thơm lừng, sợi bún to, chả cua đậm đà, thịt bắp hoa giòn sần sật.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🐚 Cơm hến & Bún hến Cồn Hến</span>
+                        Món ăn dân dã bùng nổ hương vị với hến xào, tóp mỡ giòn rụm, lạc rang, hoa chuối và nước canh hến cay nồng.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🥟 Bánh bèo, nậm, lọc xứ Huế</span>
+                        Bánh bèo chén tôm cháy, bánh nậm mềm mịn gói lá dong, bánh bột lọc trong suốt dai giòn nhân tôm thịt đậm vị.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🍧 Chè bột lọc bọc heo quay</span>
+                        Món tráng miệng cung đình trứ danh kết hợp độc đáo giữa vị ngọt thanh đường phèn và vị béo mặn của thịt heo quay giòn.
+                    </div>
+                </div>
+
+                <!-- THỜI ĐIỂM & LƯU Ý -->
+                <h2 id="thoi-diem"><span class="icon">🗓️</span> 6. Thời điểm vàng & Văn hóa Ứng xử Di sản</h2>
+                
+                <h3>1. Các mùa du lịch Huế đẹp nhất</h3>
+                <ul>
+                    <li><strong>Tháng 1 – Tháng 4 (Mùa Xuân Cố Đô):</strong> Thời điểm tuyệt vời nhất trong năm. Trời nắng ấm nhẹ, mát mẻ, ít mưa, hoa ngô đồng nở rộ rực rỡ trong khuôn viên Đại Nội.</li>
+                    <li><strong>Tháng 5 – Tháng 8 (Mùa Lễ hội & Biển):</strong> Mùa hoa sen nở ngát hồ Tịnh Tâm, thích hợp kết hợp tắm biển Lăng Cô, biển Thuận An và tham quan các chương trình Festival Huế.</li>
+                    <li><strong>Tháng 9 – Tháng 12 (Mùa Mưa xứ Huế):</strong> Mùa mưa dầm mang vẻ đẹp hoài niệm trầm tư, lý tưởng để ngồi quán cà phê ven sông Hương thưởng thức âm nhạc Trịnh Công Sơn.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>Lưu ý tôn nghiêm di sản:</strong> Khi vào tham quan các khu vực tôn nghiêm trong Đại Nội (Điện Thái Hòa, Thế Miếu) và các lăng tẩm, vui lòng mặc trang phục lịch sự kín đáo (áo có tay, quần/váy dài qua đầu gối). Tuyệt đối không chạm tay vào các cổ vật và không vứt rác bừa bãi trong khuôn viên di tích.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+        <div>
+            <strong>GO FAR</strong> — Go Straight Ahead · Bản quyền nội dung thuộc về GO FAR
+        </div>
+        <div class="credits">
+            Biên tập bởi <strong>Sửu nhi</strong> · 🎨 Ảnh nghệ thuật khởi tạo bởi AI
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.querySelector('.lightbox-close');
+
+            document.querySelectorAll('.dest-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    lightboxModal.style.display = 'flex';
+                    lightboxImg.src = img.src;
+                    
+                    const titleText = card.querySelector('.dest-card-title')?.innerText || '';
+                    const descText = card.querySelector('.dest-card-desc')?.innerText || '';
+                    const legend = card.getAttribute('data-legend') || '';
+                    
+                    let captionHTML = '';
+                    if (titleText) {
+                        captionHTML += `<strong style="font-size: 1.4rem; color: var(--accent-gold); display: block; margin-bottom: 0.4rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                    }
+                    if (descText) {
+                        captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; margin-bottom: 1rem;">${descText}</span>`;
+                    }
+                    if (legend) {
+                        captionHTML += `
+                        <div style="background: rgba(22, 44, 62, 0.9); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                            <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 600;">
+                                ✨ Dấu ấn Lịch sử & Điển tích Hoàng gia
+                            </span>
+                            <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; display: block;">${legend}</span>
+                        </div>`;
+                    }
+                    lightboxCaption.innerHTML = captionHTML;
+                });
+            });
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.style.display = 'none';
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+                    lightboxModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
