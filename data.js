@@ -46,6 +46,19 @@ const GOFAR_DATA = {
             modalId: 'ta-xua'
         },
         {
+            id: 'dest-moc-chau',
+            title: 'Mộc Châu',
+            category: 'mountain',
+            tags: ['🌸 Mùa hoa', 'Tây Bắc'],
+            desc: 'Thảo nguyên hoa mận trắng, đồi chè trái tim uốn lượn, thác Dải Yếm và đỉnh Pha Luông hùng vĩ.',
+            img: 'images/mocchau_doi_che_trai_tim.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 342,
+            size: 'normal',
+            modalId: 'moc-chau'
+        },
+        {
             id: 'dest-sapa',
             title: 'Sapa',
             category: 'mountain',

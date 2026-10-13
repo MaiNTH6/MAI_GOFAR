@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Quy Nhơn', slug: 'quy-nhon', category: 'beach', rating: '4.6', img: 'images/quynhon_hero.webp', desc: 'Biển hoang sơ bí ẩn', region: 'Miền Trung' },
 
         { name: 'Cố đô Huế', slug: 'hue', category: 'heritage', rating: '4.9', img: 'images/hue_ngo_mon.webp', desc: 'Kinh đô 13 triều vua Nguyễn & Sông Hương', region: 'Miền Trung' },
-        { name: 'Mộc Châu', slug: null, category: 'mountain', rating: '4.5', img: 'images/mocchau_clouds.webp', desc: 'Cao nguyên hoa mận trắng, đồi chè trái tim', region: 'Miền Bắc' },
+        { name: 'Mộc Châu', slug: 'moc-chau', category: 'mountain', rating: '4.9', img: 'images/mocchau_hero.webp', desc: 'Thảo nguyên hoa mận trắng & đồi chè trái tim', region: 'Miền Bắc' },
         { name: 'Phú Quốc', slug: null, category: 'beach', rating: '4.5', img: 'images/phuquoc.webp', desc: 'Đảo ngọc phương Nam', region: 'Miền Nam' },
         { name: 'Nha Trang', slug: null, category: 'beach', rating: '4.4', img: 'images/phuquoc.webp', desc: 'Biển xanh, nắng vàng', region: 'Miền Trung' },
     ];

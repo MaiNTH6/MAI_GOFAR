@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mộc Châu — Thảo Nguyên Hoa Mận Trắng & Đồi Chè Trái Tim | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Mộc Châu chi tiết: đồi chè trái tim, thung lũng mận Nà Ka, thác Dải Yếm, đỉnh Pha Luông, cầu kính Bạch Long, rừng thông Bản Áng, bản Pa Phách, thác Nàng Tiên. Lịch trình, đi lại, đặc sản bê chao.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.92) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-sec);
+            margin-top: 0.5rem;
+            max-width: 750px;
+        }
+
+        /* ARTICLE LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .toc-list a:hover { color: var(--accent); transform: translateX(4px); }
+
+        .quick-facts { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; }
+        .quick-facts li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.5rem; }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        /* MAIN CONTENT */
+        .article-main {
+            min-width: 0;
+        }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #fff;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            border-left: 3px solid var(--accent);
+            padding-left: 1.25rem;
+            background: rgba(255, 140, 50, 0.03);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #fff;
+        }
+
+        .article-main h2 .icon {
+            font-size: 1.4rem;
+        }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--accent-gold);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .article-main ul {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            margin: 0.5rem 0 1.5rem 1.5rem;
+            line-height: 1.8;
+        }
+        .article-main li { margin-bottom: 0.5rem; }
+
+        .tip-box {
+            background: rgba(251, 191, 36, 0.06);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .tip-box p { margin: 0; color: var(--text-sec); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box p { margin: 0; font-size: 0.9rem; color: var(--text-sec); }
+
+        /* CHECKIN GRID */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.15);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.75) saturate(1.25);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(4px);
+        }
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .dest-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* RESPONSIVE TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: rgba(22, 44, 62, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .info-table th {
+            background: rgba(255, 140, 50, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-sec);
+        }
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* FOOD LIST */
+        .food-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .food-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+        }
+        .food-item .name {
+            color: #fff;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 20, 30, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 75vh;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.15);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            object-fit: contain;
+        }
+        .lightbox-caption {
+            margin-top: 1rem;
+            color: var(--text);
+            text-align: center;
+            max-width: 700px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: var(--text-muted);
+            font-size: 2.5rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 45vh; min-height: 300px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR">
+            </a>
+            <a href="index.html" class="nav-back">← Quay lại Trang chủ</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/mocchau_hero.webp" alt="Thảo nguyên Mộc Châu" loading="eager">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">🌸 Thảo Nguyên Bốn Mùa Hoa</span>
+            <h1>Mộc Châu — Thảo Nguyên Hoa Mận Trắng & Đồi Chè Trái Tim</h1>
+            <p class="hero-subtitle">Cao nguyên ôn hòa trên độ cao 1.050m, nơi những sóng chè xanh ngắt ôm trọn thung lũng hoa mận trắng muốt và mây ngàn bồng bềnh.</p>
+        </div>
+    </header>
+
+    <!-- ARTICLE LAYOUT -->
+    <div class="article-layout">
+        <div class="dashboard-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">📌 Thông tin nhanh</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span> <span class="val">Huyện Mộc Châu, Sơn La</span></li>
+                        <li><span class="label">Độ cao:</span> <span class="val">~1.050m so với mực biển</span></li>
+                        <li><span class="label">Khoảng cách:</span> <span class="val">~190km từ Hà Nội</span></li>
+                        <li><span class="label">Thời gian gợi ý:</span> <span class="val">2 ngày 1 đêm / 3N2Đ</span></li>
+                        <li><span class="label">Mùa đẹp nhất:</span> <span class="val">Tháng 11 – 2 (Hoa cải, mận)</span></li>
+                        <li><span class="label">Đặc trưng:</span> <span class="val">Đồi chè, hoa mận, bò sữa</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">🧭 Mục lục bài viết</h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Thảo nguyên Xanh & Mùa Hoa</a></li>
+                        <li><a href="#toa-do">2. 8 Tọa độ Check-in Biểu tượng</a></li>
+                        <li><a href="#di-chuyen">3. Hướng dẫn di chuyển & Cung đường QL6</a></li>
+                        <li><a href="#gia-ve">4. Bảng giá vé Điểm tham quan</a></li>
+                        <li><a href="#luu-tru">5. Lưu trú & Tinh hoa Ẩm thực Thảo Nguyên</a></li>
+                        <li><a href="#thoi-diem">6. Lịch mùa vàng & Mẹo du lịch</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN ARTICLE -->
+            <main class="article-main">
+
+                <div class="intro-lead" id="tong-quan">
+                    Nếu Tà Xùa là nơi bạn phải gồng mình leo dốc để săn mây, thì <strong>Mộc Châu</strong> lại là nơi mây ngàn tự tìm đến bạn. Trải rộng trên độ cao trung bình 1.050m so với mực nước biển, cao nguyên Mộc Châu chào đón du khách bằng những thung lũng đá vôi ngập tràn sắc hoa, làn gió mát lành thổi qua những đồi chè hình trái tim xanh ngát và đàn bò sữa thong dong gặm cỏ giữa thảo nguyên bao la.
+                </div>
+
+                <h2><span class="icon">🌿</span> 1. Cao Nguyên Bốn Mùa Hoa Của Tây Bắc</h2>
+                <p>Nằm ở cửa ngõ vùng Tây Bắc hùng vĩ, Mộc Châu sở hữu địa hình thảo nguyên karst bằng phẳng hiếm có, được thiên nhiên ban tặng nền khí hậu á nhiệt đới trong lành, mát mẻ quanh năm. Không chỉ là vùng chuyên canh chè và thủ phủ chăn nuôi bò sữa nức tiếng hơn 60 năm qua, Mộc Châu còn là thiên đường du lịch "mùa nào thức nấy".</p>
+                <p>Mỗi độ đông về sang xuân, cao nguyên lại thay áo mới: tháng 11 rực rỡ sắc trắng tinh khôi của hoa cải và vàng ruộm hoa dã quỳ; tháng 12 đến tháng 2 là mùa hoa mận, hoa mơ nở trắng xóa khắp các thung lũng Nà Ka, Mu Náu như tuyết phủ; sang hè là mùa trĩu quả của những vườn mận hậu bạt ngàn. Với cung đường Quốc lộ 6 thuận tiện, Mộc Châu là điểm đến nghỉ dưỡng cuối tuần hoàn hảo cho mọi lứa tuổi.</p>
+
+                <!-- 8 CHECK-IN SPOTS -->
+                <h2 id="toa-do"><span class="icon">📸</span> 2. 8 Tọa độ Thắng cảnh Biểu tượng & Dấu tích Lịch sử</h2>
+                <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử chính thống)</em></p>
+
+                <div class="checkin-grid">
+
+                    <!-- 1. Đồi chè Trái Tim -->
+                    <div class="dest-card double-col" data-legend="Đồi chè trái tim tại tiểu khu Cờ Đỏ (xã Tân Lập) là biểu tượng nhận diện du lịch Mộc Châu. Nông trường chè Mộc Châu được thành lập từ năm 1958 bởi các chiến sĩ Trung đoàn 280 (Sư đoàn 335) sau chiến dịch Điện Biên Phủ lên khai hoang xây dựng kinh tế Tây Bắc. Hình khối trái tim tuyệt mỹ thực chất là kết quả của kỹ thuật canh tác tạo luống chè đồng mức kỳ công nhằm chống xói mòn rửa trôi đất dốc, kết hợp bàn tay tài hoa của những người công nhân nông trường qua nhiều thế hệ.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_doi_che_trai_tim.webp" alt="Đồi chè trái tim Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Biểu tượng Thảo nguyên</span>
+                                <span class="tag">Tân Lập</span>
+                            </div>
+                            <h3 class="dest-card-title">Đồi chè Trái Tim (Tân Lập)</h3>
+                            <p class="dest-card-desc">Những sóng chè xanh mướt uốn lượn hình trái tim kỳ công giữa thảo nguyên, biểu tượng sức sống và tình yêu của đất Mộc Châu.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Thung lũng mận Nà Ka -->
+                    <div class="dest-card single-col" data-legend="Trải rộng trên diện tích hơn 100 hecta tại tiểu khu Pa Khen, thung lũng Nà Ka được mệnh danh là thung lũng mận đẹp nhất xứ Mộc Châu. Cứ mỗi độ cuối đông đầu xuân (tháng 12 đến tháng 2), cả thung lũng đồng loạt bung nở hàng vạn gốc mận cổ thụ, phủ lên núi đồi một tấm thảm trắng tinh khôi ngút tầm mắt. Đến tháng 5 - 6, nơi đây lại tưng bừng Ngày hội hái mận truyền thống khi cành nhánh trĩu nặng quả mận hậu chín đỏ phủ phấn trắng.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_na_ka_hoa_man.webp" alt="Thung lũng mận Nà Ka Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🌸 Mùa hoa mận</span>
+                                <span class="tag">Pa Khen</span>
+                            </div>
+                            <h3 class="dest-card-title">Thung lũng mận Nà Ka</h3>
+                            <p class="dest-card-desc">Xứ sở thần tiên mùa hoa mận trắng nở rộ tinh khôi phủ kín thung lũng dưới chân những nếp nhà gỗ mộc mạc.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Thác Dải Yếm -->
+                    <div class="dest-card single-col" data-legend="Thác Dải Yếm (còn gọi là thác Nàng hay thác Bản Vặt) tọa lạc tại xã Mường Sang. Dòng suối Vặt bắt nguồn từ hai khe nước Bó Co Lắm và Bó Tát Cóng đổ qua vách núi đá vôi tạo thành dòng thác 9 tầng kỳ vĩ cao hơn 100m. Dân gian truyền tụng thác gắn với tích xưa về nàng thiếu nữ Thái dũng cảm thả dải yếm thêu thổ cẩm của mình để cứu chàng trai thoát khỏi dòng lũ dữ mùa giông bão, hóa thành dải lụa nước trắng xóa tượng trưng cho tình yêu thủy chung son sắt.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_thac_dai_yem.webp" alt="Thác Dải Yếm Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Dải lụa thảo nguyên</span>
+                                <span class="tag">Bản Vặt</span>
+                            </div>
+                            <h3 class="dest-card-title">Thác Dải Yếm (Thác Nàng)</h3>
+                            <p class="dest-card-desc">Dòng thác 9 tầng nước đổ trắng xóa mềm mại như dải yếm thiếu nữ vắt qua núi đá giữa rừng nguyên sinh xanh thẳm.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Đỉnh Pha Luông -->
+                    <div class="dest-card double-col" data-legend="Tọa lạc tại xã Chiềng Sơn trên độ cao 2.000m sát ranh giới tự nhiên Việt - Lào, đỉnh Pha Luông được ví là 'Nóc nhà của cao nguyên Mộc Châu'. Vùng đất này từng in đậm dấu chân hành quân kiên cường của đoàn quân Tây Tiến trong kháng chiến chống Pháp, được bất tử hóa trong áng thơ kiệt xuất của nhà thơ Quang Dũng năm 1948: 'Dốc lên khúc khuỷu dốc thăm thẳm / Heo hút cồn mây súng ngửi trời / Ngàn thước lên cao ngàn thước xuống / Nhà ai Pha Luông mưa xa khơi'. Mỏm đá sống ảo vươn mình ra biển mây bao la là biểu tượng chinh phục của tuổi trẻ.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_pha_luong.webp" alt="Đỉnh Pha Luông Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">⛰️ Nóc nhà Mộc Châu</span>
+                                <span class="tag">Ký ức Tây Tiến</span>
+                            </div>
+                            <h3 class="dest-card-title">Đỉnh Pha Luông (Ký Ức Tây Tiến)</h3>
+                            <p class="dest-card-desc">Mỏm đá sống ảo kiêu hùng vươn mình ra biển mây cuồn cuộn trên độ cao 2.000m, nơi gắn liền trang sử hào hùng của đoàn binh Tây Tiến.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Cầu kính Bạch Long -->
+                    <div class="dest-card single-col" data-legend="Nằm trong quần thể khu du lịch Mộc Châu Island (xã Mường Sang), cầu kính Bạch Long được Tổ chức Kỷ lục Guinness thế giới chính thức công nhận là 'Cầu kính đi bộ dài nhất thế giới' vào ngày 28/5/2022 với tổng chiều dài 632m. Cầu gồm nhịp cầu treo dài 290m bắc qua hẻm núi sâu 150m và phần đường kính đi bộ men theo vách đá dựng đứng dài 342m. Mặt kính sử dụng 3 lớp kính cường lực Saint-Gobain của Pháp siêu chịu lực, mở ra tầm nhìn thót tim nhưng ngoạn mục xuống đại ngàn.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_cau_kinh_bach_long.webp" alt="Cầu kính Bạch Long Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Kỷ lục Guinness</span>
+                                <span class="tag">Mộc Châu Island</span>
+                            </div>
+                            <h3 class="dest-card-title">Cầu kính Bạch Long</h3>
+                            <p class="dest-card-desc">Cầu kính đi bộ dài nhất thế giới 632m uốn lượn ngoạn mục qua vách đá và thung lũng sâu hun hút đầy thử thách.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Rừng thông Bản Áng -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc tại xã Đông Sang, rừng thông Bản Áng rộng hơn 43ha soi bóng xuống mặt hồ tự nhiên phẳng lặng 5ha, được mệnh danh là 'Đà Lạt thu nhỏ của vùng Tây Bắc'. Nơi đây là địa bàn cư trú lâu đời của đồng bào người Thái trắng với những nếp nhà sàn truyền thống, nghề dệt thổ cẩm tinh tế và văn hóa xòe Thái đậm đà bản sắc. Không gian rừng thông bạt ngàn mát mẻ quanh năm là tọa độ lý tưởng để cắm trại, đạp xe và tận hưởng không khí nghỉ dưỡng bình yên.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_rung_thong_ban_ang.webp" alt="Rừng thông Bản Áng Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Đà Lạt thu nhỏ</span>
+                                <span class="tag">Bản Áng</span>
+                            </div>
+                            <h3 class="dest-card-title">Rừng thông Bản Áng</h3>
+                            <p class="dest-card-desc">Hồ nước trong veo soi bóng hàng ngàn gốc thông mã vĩ xanh rì, điểm cắm trại và dạo chơi thư thái tuyệt đẹp.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Bản Pa Phách -->
+                    <div class="dest-card single-col" data-legend="Nằm cheo leo trên sườn núi đá vôi ở độ cao hơn 1.000m, bản Pa Phách được du khách ví von là 'thủ phủ hoa cải trắng' của xứ Mộc Châu. Bản là nơi sinh sống của đồng bào người H'Mông và người Thái với những hàng rào đá xếp chồng tự nhiên, mái nhà gỗ pơ mu ám khói bếp và bạt ngàn những vạt hoa cải trắng muốt nở rộ từ sườn đồi xuống thung lũng vào mỗi dịp tháng 11 - 12, tạo nên bức tranh đời sống rẻo cao mộc mạc và thanh khiết.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_pa_phach.webp" alt="Bản Pa Phách hoa cải trắng Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Mùa hoa cải trắng</span>
+                                <span class="tag">Bản H'Mông</span>
+                            </div>
+                            <h3 class="dest-card-title">Bản Pa Phách (Mùa Hoa Cải)</h3>
+                            <p class="dest-card-desc">Thiên đường hoa cải trắng bạt ngàn trải dài khắp lối đi vào bản người H'Mông mộc mạc dưới chân núi đá kỳ vĩ.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Thác Nàng Tiên Chiềng Khoa -->
+                    <div class="dest-card single-col" data-legend="Ẩn mình giữa cánh rừng nguyên sinh xã Chiềng Khoa, thác Nàng Tiên là danh thắng hoang sơ gồm 3 tầng thác đổ xuống hồ nước màu xanh ngọc bích kỳ ảo. Tích xưa người Thái kể rằng, hai người con gái Thái xinh đẹp nết na tên là Én và Dợ đã có công tìm nguồn nước mát tưới tiêu ruộng đồng, dạy dân bản cấy lúa, quay tơ dệt vải. Sau khi mất, hai nàng hóa thành tiên nữ canh giữ dòng thác, đem lại mùa màng tươi tốt và chở che cho bản làng no ấm.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_thac_nang_tien.webp" alt="Thác Nàng Tiên Chiềng Khoa Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Ngọc bích đại ngàn</span>
+                                <span class="tag">Chiềng Khoa</span>
+                            </div>
+                            <h3 class="dest-card-title">Thác Nàng Tiên (Chiềng Khoa)</h3>
+                            <p class="dest-card-desc">Quần thể thác nước 3 tầng ẩn giữa đại ngàn nguyên sinh với lòng hồ nước xanh ngọc bích như cõi bồng lai tiên cảnh.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & KẾT NỐI -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> 3. Hướng Dẫn Di Chuyển & Cung Đường Đèo Thung Khe</h2>
+                
+                <h3>1. Lộ trình từ Hà Nội lên Mộc Châu (~190km)</h3>
+                <ul>
+                    <li><strong>Bằng ô tô cá nhân / Xe limousine (~4 tiếng):</strong> Tuyến đường thuận tiện nhất hiện nay. Đi theo Đại lộ Thăng Long → Cao tốc Hòa Lạc - Hòa Bình → Nhập vào Quốc lộ 6 đi qua Cao Phong, Tân Lạc, vượt qua đèo Thung Khe (đèo Đá Trắng) hùng vĩ để sang địa phận cao nguyên Mộc Châu.</li>
+                    <li><strong>Bằng xe khách giường nằm:</strong> Đón xe từ Bến xe Mỹ Đình hoặc Yên Nghĩa với rất nhiều chuyến chạy liên tục trong ngày, giá vé khoảng 180.000 – 250.000 VNĐ/vé.</li>
+                    <li><strong>Bằng xe máy cho dân phượt:</strong> Cung đường Quốc lộ 6 trải nhựa đẹp, có nhiều đoạn quanh co đèo dốc thú vị. Điểm dừng chân không thể bỏ qua là đỉnh đèo Thung Khe ngắm thung lũng Mai Châu bảng lảng trong sương sớm và thưởng thức ngô nướng, cơm lam chấm muối vừng.</li>
+                </ul>
+
+                <h3>2. Phương tiện dạo quanh cao nguyên Mộc Châu</h3>
+                <ul>
+                    <li><strong>Thuê xe máy tại thị trấn (120.000 – 150.000 VNĐ/ngày):</strong> Các điểm tham quan ở Mộc Châu trải dài cách nhau 10 – 25km (như đồi chè Tân Lập, thung lũng Nà Ka, thác Nàng Tiên), xe máy là phương tiện cơ động nhất để luồn lách vào các thung lũng hoa và đường đất bản làng.</li>
+                    <li><strong>Taxi / Thuê ô tô trọn gói:</strong> Phù hợp cho đoàn gia đình có người lớn tuổi và trẻ nhỏ, đường nhựa dẫn vào hầu hết các điểm chính như Rừng thông Bản Áng, Cầu kính Bạch Long, Thác Dải Yếm đều rất thông thoáng.</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Gợi ý lịch trình 2 ngày 1 đêm hoàn hảo:</strong><br>
+                    • <strong>Ngày 1:</strong> Hà Nội → Dừng chân đèo Thung Khe → Thác Dải Yếm & Cầu kính Bạch Long → Chiều hoàng hôn dạo Rừng thông Bản Áng → Tối thưởng thức Bê chao Mộc Châu.<br>
+                    • <strong>Ngày 2:</strong> Đón bình minh Đồi chè Trái Tim → Ngắm mùa hoa thung lũng mận Nà Ka hoặc Bản Pa Phách → Trưa ghé Thác Nàng Tiên Chiềng Khoa tắm mát → Chiều thong dong về lại Hà Nội.</p>
+                </div>
+
+                <!-- BẢNG GIÁ VÉ THAM QUAN -->
+                <h2 id="gia-ve"><span class="icon">🎫</span> 4. Bảng Giá Vé Tham Quan Thắng Cảnh Mộc Châu</h2>
+                <p>Mức giá vé niêm yết chính thức tại các ban quản lý khu du lịch và danh thắng (cập nhật mới nhất):</p>
+
+                <div class="table-responsive">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Điểm tham quan</th>
+                                <th>Chi phí tham khảo</th>
+                                <th>Ghi chú & Trải nghiệm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Đồi chè Trái Tim (Tân Lập / Mộc Sương)</td>
+                                <td><span class="price-tag">Miễn phí vào cổng</span></td>
+                                <td>Tự do chụp ảnh (thuê trang phục dân tộc: 30k – 50k)</td>
+                            </tr>
+                            <tr>
+                                <td>Khu du lịch Thác Dải Yếm</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Vé vào thác (vé cầu kính tình yêu tính riêng)</td>
+                            </tr>
+                            <tr>
+                                <td>Cầu kính Bạch Long (Mộc Châu Island)</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Bao gồm trọn gói trải nghiệm cầu kính Guinness</td>
+                            </tr>
+                            <tr>
+                                <td>Rừng thông Bản Áng</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Bao gồm vé vào cổng tham quan hồ và rừng thông</td>
+                            </tr>
+                            <tr>
+                                <td>Thung lũng mận Nà Ka / Vườn mận Mu Náu</td>
+                                <td><span class="price-tag">20.000 – 30.000 VNĐ</span></td>
+                                <td>Phí chăm sóc vườn do nhà vườn thu (được ăn mận tại vườn)</td>
+                            </tr>
+                            <tr>
+                                <td>Thác Nàng Tiên (Chiềng Khoa)</td>
+                                <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
+                                <td>Đi bè mảng chụp ảnh hồ ngọc bích (~10k – 20k/lượt)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🍲</span> 5. Lưu Trú & Tinh Hoa Ẩm Thực Thảo Nguyên</h2>
+                
+                <h3>1. Gợi ý điểm lưu trú tại Mộc Châu</h3>
+                <ul>
+                    <li><strong>Homestay nhà sàn quanh Rừng thông Bản Áng:</strong> Không gian xanh mát rợp bóng cây, nhà sàn gỗ ấm cúng mang phong cách Thái - H'Mông, giá từ 300.000 – 600.000 VNĐ/phòng.</li>
+                    <li><strong>Khách sạn & Resort cao cấp:</strong> Mộc Châu Island Resort, Thảo Nguyên Resort, Mường Thanh Luxury Mộc Châu tiện nghi sang trọng và có hồ bơi nước ấm mùa đông.</li>
+                    <li><strong>Glamping & Homestay giữa đồi chè:</strong> Trải nghiệm ngủ lều sang chảnh thức giấc giữa biển sương sớm và đồi chè thơm mát.</li>
+                </ul>
+
+                <h3>2. Tinh hoa ẩm thực cao nguyên Mộc Châu</h3>
+                <div class="food-list">
+                    <div class="food-item">
+                        <span class="name">🥩 Bê chao Mộc Châu thơm lừng</span>
+                        Thịt bê non xắt con chì, chao nhanh qua chảo dầu sôi già với sả ớt, miếng thịt ngoài giòn rụm trong mềm mọng, chấm nước tương gừng bùi ngậy.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🥛 Sữa tươi & Sữa chua nếp cẩm Mộc Châu</span>
+                        Đặc sản thảo nguyên trứ danh từ đàn bò sữa thuần chủng, dòng sữa béo ngậy thanh ngọt và sữa chua nếp cẩm dẻo thơm trứ danh.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🐟 Cá suối nướng Pa Pỉnh Tộp</span>
+                        Món ăn tinh hoa của người Thái, cá suối tươi rói ướp mắc khén, hạt dổi, rau rừng rồi kẹp thanh tre nướng vàng ruộm trên than hoa.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🥬 Cải mèo luộc chấm trứng dầm nước mắm</span>
+                        Loại rau cải đặc sản vùng cao giòn sần sật, vị đắng nhẹ ban đầu rồi hậu ngọt đậm đà, ăn kèm thịt lợn bản hun khói gác bếp.
+                    </div>
+                </div>
+
+                <!-- THỜI ĐIỂM & LƯU Ý -->
+                <h2 id="thoi-diem"><span class="icon">🗓️</span> 6. Lịch Mùa Vàng & Mẹo Du Lịch Bản Địa</h2>
+                
+                <h3>1. Lịch các mùa hoa đẹp nhất Mộc Châu</h3>
+                <ul>
+                    <li><strong>Tháng 11 – Tháng 12 (Mùa Hoa Cải Trắng & Dã Quỳ):</strong> Thung lũng Pa Phách, Bản Áng ngập trong sắc trắng bạt ngàn của hoa cải, hai bên đèo dã quỳ nở vàng ấm áp.</li>
+                    <li><strong>Tháng 1 – Tháng 2 (Mùa Hoa Mận, Hoa Đào Cổ Thụ):</strong> Mùa du lịch đỉnh cao nhất năm. Cả cao nguyên trắng tinh khôi như tuyết đầu mùa, thời tiết se lạnh tuyệt đẹp.</li>
+                    <li><strong>Tháng 3 – Tháng 4 (Mùa Hoa Ban Trắng):</strong> Hoa ban nở rộ trên các sườn núi đá vôi dọc Quốc lộ 6, mùa lễ hội Hết Chá của người Thái.</li>
+                    <li><strong>Tháng 5 – Tháng 6 (Mùa Thu Hoạch Mận Hậu):</strong> Trải nghiệm vào vườn tự tay hái những chùm mận hậu chín tím thẫm phủ phấn trắng giòn ngọt.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>Lưu ý quan trọng khi du lịch Mộc Châu:</strong><br>
+                    • <strong>Đêm vùng cao nhiệt độ hạ rất nhanh:</strong> Dù ban ngày có nắng ấm, ban đêm nhiệt độ có thể xuống 10 – 14°C, hãy luôn chuẩn bị áo khoác dày và khăn quàng ấm.<br>
+                    • <strong>Tôn trọng hoa và vườn cây:</strong> Khi vào chụp ảnh tại các đồi chè và thung lũng mận của bà con, hãy xin phép chủ vườn, tuyệt đối không bẻ cành bứt hoa hay giẫm lên luống rau.<br>
+                    • <strong>Cuối tuần mùa hoa mận rất đông:</strong> Nên chủ động đặt phòng homestay hoặc khách sạn trước ít nhất 1 – 2 tuần để tránh tình trạng cháy phòng.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+        <div>
+            <strong>GO FAR</strong> — Go Straight Ahead · Bản quyền nội dung thuộc về GO FAR
+        </div>
+        <div class="credits">
+            Biên tập bởi <strong>Sửu nhi</strong> · 🎨 Ảnh nghệ thuật khởi tạo bởi AI
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.querySelector('.lightbox-close');
+
+            document.querySelectorAll('.dest-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    lightboxModal.style.display = 'flex';
+                    lightboxImg.src = img.src;
+                    
+                    const titleText = card.querySelector('.dest-card-title')?.innerText || '';
+                    const descText = card.querySelector('.dest-card-desc')?.innerText || '';
+                    const legend = card.getAttribute('data-legend') || '';
+                    
+                    let captionHTML = '';
+                    if (titleText) {
+                        captionHTML += `<strong style="font-size: 1.4rem; color: var(--accent-gold); display: block; margin-bottom: 0.4rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                    }
+                    if (descText) {
+                        captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; margin-bottom: 1rem;">${descText}</span>`;
+                    }
+                    if (legend) {
+                        captionHTML += `
+                        <div style="background: rgba(22, 44, 62, 0.9); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                            <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 600;">
+                                ✨ Dấu ấn Lịch sử & Điển tích Thảo Nguyên
+                            </span>
+                            <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; display: block;">${legend}</span>
+                        </div>`;
+                    }
+                    lightboxCaption.innerHTML = captionHTML;
+                });
+            });
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.style.display = 'none';
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+                    lightboxModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
