@@ -537,19 +537,21 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            box-sizing: border-box;
             background-color: rgba(11, 22, 34, 0.96);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             align-items: center;
-            justify-content: center;
             flex-direction: column;
         }
         .lightbox-content {
             margin: auto;
             display: block;
             max-width: 90%;
-            max-height: 80vh;
+            max-height: 52vh;
             border-radius: var(--radius);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -566,7 +568,7 @@
             font-family: 'Inter', sans-serif;
         }
         .lightbox-close {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 35px;
             color: #f1f1f1;
