@@ -59,6 +59,19 @@ const GOFAR_DATA = {
             modalId: 'moc-chau'
         },
         {
+            id: 'dest-cao-bang',
+            title: 'Cao Bằng',
+            category: 'mountain',
+            tags: ['💎 UNESCO', 'Đông Bắc'],
+            desc: 'Kỳ quan Thác Bản Giốc lớn nhất Đông Nam Á, suối nguồn Pác Bó, Núi Mắt Thần và động Ngườm Ngao kỳ ảo.',
+            img: 'images/caobang_thac_ban_gioc.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 368,
+            size: 'normal',
+            modalId: 'cao-bang'
+        },
+        {
             id: 'dest-sapa',
             title: 'Sapa',
             category: 'mountain',

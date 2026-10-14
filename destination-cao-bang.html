@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cao Bằng — Non Nước Kỳ Vĩ Thác Bản Giốc & Dấu Ấn Lịch Sử Pác Bó | GO FAR</title>
+    <meta name="description" content="Khám phá Cao Bằng: Công viên địa chất toàn cầu UNESCO Non nước Cao Bằng, Thác Bản Giốc hùng vĩ nhất Đông Nam Á, Khu di tích Pác Bó, Núi Mắt Thần, Động Ngườm Ngao và ẩm thực biên cương trứ danh.">
+    <meta name="keywords" content="du lịch Cao Bằng, Thác Bản Giốc, Pác Bó, Suối Lê-nin, Núi Mắt Thần, Động Ngườm Ngao, Hồ Thang Hen, Đèo Mã Phục, kinh nghiệm du lịch Cao Bằng">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0a141e;
+            --bg-card: #112233;
+            --bg-card-hover: #162c3e;
+            --text: #f8fafc;
+            --text-sec: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #ff8c32;
+            --accent-gold: #fbbf24;
+            --accent-cyan: #06b6d4;
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* HEADER / NAV */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 20, 30, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-back {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--accent);
+        }
+
+        /* HERO HEADER */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 420px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 3.5rem;
+        }
+
+        .hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.85);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10,20,30,0.2) 0%, rgba(10,20,30,0.85) 80%, var(--bg) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-sec);
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* ARTICLE LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .toc-list a:hover { color: var(--accent); transform: translateX(4px); }
+
+        .quick-facts { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; }
+        .quick-facts li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.5rem; }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        /* MAIN CONTENT */
+        .article-main {
+            min-width: 0;
+        }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #fff;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            border-left: 3px solid var(--accent);
+            background: rgba(255, 140, 50, 0.03);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #fff;
+        }
+
+        .article-main h2 .icon {
+            font-size: 1.4rem;
+        }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--accent-gold);
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .article-main ul {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            margin: 0.5rem 0 1.5rem 1.5rem;
+            line-height: 1.8;
+        }
+        .article-main li { margin-bottom: 0.5rem; }
+
+        .tip-box {
+            background: rgba(251, 191, 36, 0.06);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .tip-box p { margin: 0; color: var(--text-sec); }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.06);
+            border-left: 3px solid #ef4444;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .warning-box p { margin: 0; color: var(--text-sec); }
+
+        /* CHECKIN GRID */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .dest-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .dest-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 140, 50, 0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+
+        .dest-card.single-col {
+            aspect-ratio: 4/3;
+        }
+
+        .dest-card-img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.05);
+        }
+
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10,20,30,0) 40%, rgba(10,20,30,0.92) 100%);
+            z-index: 2;
+        }
+
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 3;
+        }
+
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .dest-card-tags .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(4px);
+        }
+
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .dest-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* RESPONSIVE TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: rgba(22, 44, 62, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .info-table th {
+            background: rgba(255, 140, 50, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-sec);
+        }
+
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* FOOD LIST */
+        .food-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .food-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+        }
+
+        .food-item .name {
+            color: #fff;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* LIGHTBOX MODAL (SCROLLABLE & NO-CUTOFF) */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 20, 30, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
+            box-sizing: border-box;
+        }
+
+        .lightbox-modal::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lightbox-modal::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .lightbox-modal::-webkit-scrollbar-thumb {
+            background: rgba(255, 140, 50, 0.4);
+            border-radius: 4px;
+        }
+        .lightbox-modal::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        .lightbox-dialog {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 860px;
+            margin: auto;
+            min-height: min-content;
+            box-sizing: border-box;
+            padding-bottom: 2rem;
+        }
+
+        .lightbox-content {
+            max-width: 100%;
+            max-height: 52vh;
+            width: auto;
+            border-radius: var(--radius);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.15);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            margin-top: 1.25rem;
+            color: var(--text);
+            text-align: center;
+            max-width: 820px;
+            width: 100%;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(22, 44, 62, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            line-height: 1;
+            padding: 0;
+        }
+
+        .lightbox-close:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: scale(1.08);
+            border-color: var(--accent);
+        }
+
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-modal {
+                padding: 3.5rem 0.75rem 2.5rem;
+            }
+            .lightbox-content {
+                max-height: 42vh;
+            }
+            .lightbox-caption {
+                font-size: 0.9rem;
+            }
+            .lightbox-close {
+                top: 0.75rem;
+                right: 0.75rem;
+                width: 38px;
+                height: 38px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero { height: 45vh; min-height: 300px; }
+            .hero-content { bottom: 1.5rem; }
+            .article-layout { padding: 0 1.25rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR">
+            </a>
+            <a href="index.html" class="nav-back">← Quay lại Trang chủ</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/caobang_hero.webp" alt="Non nước Cao Bằng" loading="eager">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">💎 Công Viên Địa Chất Toàn Cầu UNESCO</span>
+            <h1>Cao Bằng — Non Nước Kỳ Vĩ Thác Bản Giốc & Dấu Ấn Lịch Sử Pác Bó</h1>
+            <p class="hero-subtitle">Miền biên viễn Đông Bắc nơi dòng thác tự nhiên lớn nhất Đông Nam Á đổ bọt trắng xóa giữa non xanh nước biếc và ngọn nguồn cách mạng thiêng liêng của dân tộc.</p>
+        </div>
+    </header>
+
+    <!-- ARTICLE LAYOUT -->
+    <div class="article-layout">
+        <div class="dashboard-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">📌 Thông tin nhanh</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span> <span class="val">Tỉnh Cao Bằng, Đông Bắc</span></li>
+                        <li><span class="label">Độ cao:</span> <span class="val">~200 – 1.900m so với mực biển</span></li>
+                        <li><span class="label">Khoảng cách:</span> <span class="val">~280km từ Hà Nội</span></li>
+                        <li><span class="label">Thời gian gợi ý:</span> <span class="val">3 ngày 2 đêm / 4N3Đ</span></li>
+                        <li><span class="label">Mùa đẹp nhất:</span> <span class="val">Tháng 9 – 12 (Nước trong, lúa chín)</span></li>
+                        <li><span class="label">Đặc trưng:</span> <span class="val">Thác Bản Giốc, Pác Bó, Núi Mắt Thần</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">🧭 Mục lục bài viết</h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Kỳ quan Non Nước & Địa chất UNESCO</a></li>
+                        <li><a href="#toa-do">2. 8 Tọa độ Thắng cảnh Biểu tượng</a></li>
+                        <li><a href="#di-chuyen">3. Hướng dẫn di chuyển & Cung đường QL3</a></li>
+                        <li><a href="#gia-ve">4. Bảng giá vé Điểm tham quan</a></li>
+                        <li><a href="#luu-tru">5. Lưu trú & Tinh hoa Ẩm thực Biên cương</a></li>
+                        <li><a href="#thoi-diem">6. Lịch mùa vàng & Mẹo du lịch bản địa</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN ARTICLE -->
+            <main class="article-main">
+
+                <div class="intro-lead" id="tong-quan">
+                    Nằm ở dải biên cương địa đầu Đông Bắc của Tổ quốc, <strong>Cao Bằng</strong> được thiên nhiên hào phóng ban tặng quần thể địa chất karst cổ đại hình thành hơn 500 triệu năm trước, được UNESCO chính thức ghi danh là <em>Công viên địa chất toàn cầu Non nước Cao Bằng</em> năm 2018. Nơi đây là sự giao hòa tuyệt mỹ giữa dòng thác Bản Giốc lớn nhất Đông Nam Á cuồn cuộn đổ bọt trắng xóa, dòng suối Lê-nin màu xanh ngọc bích soi bóng vách núi Các Mác thiêng liêng và những thung lũng đá vôi bảng lảng trong sương sớm.
+                </div>
+
+                <h2><span class="icon">🌿</span> 1. Kỳ Quan Non Nước Địa Đầu & Địa Chất Toàn Cầu UNESCO</h2>
+                <p>Khác biệt với nét gai góc của cao nguyên đá Đồng Văn hay vẻ bảng lảng săn mây của Tà Xùa, non nước Cao Bằng mang một vẻ đẹp trác tuyệt, hữu tình như bức tranh thủy mặc khổng lồ. Hệ thống sông Quây Sơn, sông Bằng Giang len lỏi giữa hàng ngàn ngọn núi đá vôi hình tháp nón (cone karst) xanh mướt, kiến tạo nên những kỳ quan thiên nhiên độc nhất vô nhị như Núi Mắt Thần thủng vòm xuyên núi, động Ngườm Ngao lung linh nhũ đá thạch anh và quần thể 36 hồ nước tự nhiên Thang Hen huyền ảo.</p>
+                <p>Đặc biệt vào những tháng cuối năm (từ tháng 9 đến tháng 12), Cao Bằng bước vào mùa du lịch đẹp nhất năm: dòng nước thác Bản Giốc trong veo chuyển màu xanh ngọc bích quyến rũ, những thảm lúa nếp ong Trùng Khánh chín vàng óng ả dọc đôi bờ sông, mùa hoa tam giác mạch và dã quỳ bung nở rực rỡ khắp triền đèo. Đây là thời khắc lý tưởng nhất để khởi hành chuyến du hành về miền biên cương Đông Bắc.</p>
+
+                <!-- 8 CHECK-IN SPOTS -->
+                <h2 id="toa-do"><span class="icon">📸</span> 2. 8 Tọa độ Thắng cảnh Biểu tượng & Dấu tích Lịch sử</h2>
+                <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử chính thống)</em></p>
+
+                <div class="checkin-grid">
+
+                    <!-- 1. Thác Bản Giốc -->
+                    <div class="dest-card double-col" data-legend="Nằm trên dòng sông Quây Sơn tại xã Đàm Thủy (huyện Trùng Khánh), Thác Bản Giốc là thác nước tự nhiên lớn thứ 4 thế giới nằm trên đường biên giới quốc tế (sau Iguazu, Victoria và Niagara) và là thác nước lớn nhất khu vực Đông Nam Á. Thác cao 35m, chia làm 3 tầng bậc thác khổng lồ trải rộng hàng trăm mét giữa núi rừng karst nguyên sinh. Theo Hiệp ước biên giới trên đất liền Việt Nam - Trung Quốc ký năm 1999 và cắm mốc năm 2008, phần thác chính phân định nửa bên trái thuộc chủ quyền Việt Nam, toàn bộ phần thác phụ nằm hoàn toàn bên lãnh thổ Việt Nam. Tháng 9/2023, Khu cảnh quan thác Bản Giốc (Việt Nam) - Đức Thiên (Trung Quốc) chính thức vận hành thí điểm, khẳng định chủ quyền biên giới hòa bình, hữu nghị.">
+                        <div class="dest-card-img">
+                            <img src="images/caobang_thac_ban_gioc.webp" alt="Thác Bản Giốc Cao Bằng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Kỳ quan Đệ nhất Thác</span>
+                                <span class="tag">Trùng Khánh</span>
+                            </div>
+                            <h3 class="dest-card-title">Thác Bản Giốc (Sông Quây Sơn)</h3>
+                            <p class="dest-card-desc">Thác nước tự nhiên lớn nhất Đông Nam Á với 3 tầng nước đổ trắng xóa đổ xuống dòng sông Quây Sơn màu ngọc bích kỳ ảo.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Khu di tích Pác Bó -->
+                    <div class="dest-card single-col" data-legend="Pác Bó theo tiếng Tày nghĩa là 'đầu nguồn'. Nơi đây ghi dấu mốc son lịch sử trọng đại: ngày 28/1/1941 (mùng 2 Tết Tân Tỵ), sau 30 năm bôn ba tìm đường cứu nước, Lãnh tụ Nguyễn Ái Quốc vượt qua cột mốc 108 biên giới Việt - Trung trở về Tổ quốc lãnh đạo cách mạng. Tại đây có hang Cốc Bó nơi Bác sinh hoạt, bàn đá chông chênh dịch sử Đảng, dòng suối nước trong xanh ngọc bích được Bác đặt tên là suối Lê-nin và ngọn núi Các Mác sừng sững uy nghiêm. Di tích được Thủ tướng Chính phủ xếp hạng Di tích quốc gia đặc biệt theo Quyết định số 548/QĐ-TTg năm 2012.">
+                        <div class="dest-card-img">
+                            <img src="images/caobang_suoi_lenin_pac_bo.webp" alt="Suối Lê-nin Pác Bó Cao Bằng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">⭐ Di tích Quốc gia Đặc biệt</span>
+                                <span class="tag">Hà Quảng</span>
+                            </div>
+                            <h3 class="dest-card-title">Suối Lê-nin & Núi Các Mác (Pác Bó)</h3>
+                            <p class="dest-card-desc">Dòng suối nguồn trong veo màu ngọc bích nhìn thấu đáy rêu xanh dưới chân ngọn núi thiêng Các Mác lịch sử.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Động Ngườm Ngao -->
+                    <div class="dest-card single-col" data-legend="Cách thác Bản Giốc khoảng 3km, động Ngườm Ngao được hình thành cách đây khoảng 400 triệu năm trong lòng dãy núi đá vôi với tổng chiều dài đã khảo sát hơn 2.144m. Theo tiếng Tày, 'Ngườm' là hang đá, 'Ngao' là hổ (hang hổ), gắn với tích xưa có bầy hổ dữ trú ngụ và tiếng suối ngầm gầm vang như tiếng hổ gầm. Trong lòng động là mê cung nhũ đá tuyệt mỹ với kiệt tác 'Đóa sen úp ngược' (hoa sen vàng) óng ánh thạch anh, cột đá cô đơn, cây đàn đá gõ vang thanh âm trầm bổng được xếp hạng Danh lam thắng cảnh cấp Quốc gia năm 1998.">
+                        <div class="dest-card-img">
+                            <img src="images/caobang_dong_nguom_ngao.webp" alt="Động Ngườm Ngao Cao Bằng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Hang Hổ Huyền Bí</span>
+                                <span class="tag">Đàm Thủy</span>
+                            </div>
+                            <h3 class="dest-card-title">Động Ngườm Ngao (Đóa Sen Vàng)</h3>
+                            <p class="dest-card-desc">Mê cung hang động karst 400 triệu năm tuổi lộng lẫy với tuyệt tác khối thạch nhũ hình hoa sen úp ngược màu hổ phách.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Núi Mắt Thần -->
+                    <div class="dest-card double-col" data-legend="Núi Mắt Thần (tiếng Tày gọi là Phja Piót nghĩa là Núi Thủng) tọa lạc tại thung lũng Bản Danh, xã Quốc Toản, là di sản địa chất tiêu biểu của Công viên địa chất toàn cầu UNESCO Non nước Cao Bằng. Đỉnh ngọn núi đá vôi hình tháp đứng độc lập có một lỗ thủng xuyên suốt qua lòng núi với đường kính rộng hơn 50m ở độ cao 50m so với đáy thung lũng, tựa như con mắt khổng lồ của thần linh trông coi bờ cõi. Dưới chân núi là thung lũng lòng chảo thảo nguyên cỏ xanh mượt mà, đàn ngựa thong dong gặm cỏ bên dòng suối nhỏ.">
+                        <div class="dest-card-img">
+                            <img src="images/caobang_nui_mat_than.webp" alt="Núi Mắt Thần Núi Thủng Cao Bằng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🏔️ Tuyệt tác Địa chất</span>
+                                <span class="tag">Quốc Toản</span>
+                            </div>
+                            <h3 class="dest-card-title">Núi Mắt Thần (Núi Thủng Phja Piót)</h3>
+                            <p class="dest-card-desc">Vòm thủng khổng lồ tự nhiên xuyên qua lòng núi đá vôi đứng sừng sững giữa thung lũng thảo nguyên xanh mướt ngỡ như trời Âu.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Hồ Thang Hen -->
+                    <div class="dest-card single-col" data-legend="Nằm lọt thỏm giữa những vách núi đá vôi kỳ vĩ ở độ cao hơn 1.000m so với mực biển, Thang Hen là quần thể gồm 36 hồ nước tự nhiên nối liền nhau qua các dòng sông ngầm kỳ bí. Tên gọi Thang Hen theo tiếng Tày có nghĩa là 'Đuôi ong' bởi từ trên cao nhìn xuống lòng hồ có hình dáng uốn lượn cong vút như đuôi con ong mật. Nước hồ Thang Hen bốn mùa xanh trong màu ngọc bích, ngay cả mùa mưa lũ khi các sông suối xung quanh đỏ ngầu phù sa thì mặt hồ vẫn giữ nguyên sắc xanh huyền thoại.">
+                        <div class="dest-card-img">
+                            <img src="images/caobang_ho_thang_hen.webp" alt="Hồ Thang Hen Cao Bằng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Gương ngọc bích</span>
+                                <span class="tag">Quảng Hòa</span>
+                            </div>
+                            <h3 class="dest-card-title">Quần thể Hồ Thang Hen</h3>
+                            <p class="dest-card-desc">Hồ nước tự nhiên phẳng lặng tựa tấm gương ngọc bích khổng lồ soi bóng núi rừng nguyên sinh thanh bình.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Đèo Mã Phục -->
+                    <div class="dest-card single-col" data-legend="Là con đèo đẹp và kỳ vĩ bậc nhất trên Quốc lộ 3 dài 3,5km với 7 vòng cua tay áo uốn lượn vượt qua độ cao gần 700m. Tại đỉnh đèo có hai mỏm núi đá vôi dựng đứng đối xứng hai bên đường tựa như hình ảnh hai con chiến mã đang quỳ gối phục tùng ('Mã Phục'). Tương truyền nơi đây gắn liền với người anh hùng dân tộc Nùng Trí Cao thời nhà Lý cưỡi ngựa xuất chinh đánh giặc, khi đến đỉnh đèo gặp địa thế hiểm trở ngựa kiệt sức quỳ rạp. Đèo Mã Phục là điểm di sản địa chất độc đáo với dấu tích đá bazan cầu hình thành từ núi lửa ngầm đáy đại dương cổ 260 triệu năm trước.">
+                        <div class="dest-card-img">
+                            <img src="images/caobang_deo_ma_phuc.webp" alt="Đèo Mã Phục Cao Bằng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Đệ nhất đèo Đông Bắc</span>
+                                <span class="tag">Quốc Toản</span>
+                            </div>
+                            <h3 class="dest-card-title">Đèo Mã Phục (Dấu tích Núi lửa cổ)</h3>
+                            <p class="dest-card-desc">7 tầng dốc quanh co uốn lượn qua hai khối núi đá vôi uy nghi hình ngựa quỳ, di sản địa chất núi lửa ngầm đáy biển cổ đại.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Làng rèn Phúc Sen -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc dưới chân núi đá vôi xã Phúc Sen, đây là làng nghề rèn dao thủ công truyền thống hơn 1.000 năm tuổi của đồng bào dân tộc Nùng An, được Bộ VHTTDL công nhận là Di sản văn hóa phi vật thể Quốc gia. Nghệ nhân rèn Phúc Sen không dùng bất kỳ nhiệt kế nào mà rèn sắt bằng mắt nhìn màu thép và cảm nhận than củi gỗ nghiến, sử dụng nguyên liệu là nhíp xe ô tô tải phế liệu đã qua tôi luyện chịu lực cao để tạo nên những sản phẩm dao, rựa, liềm bén ngọt, bền bỉ nức tiếng cả nước.">
+                        <div class="dest-card-img">
+                            <img src="images/caobang_lang_ren_phuc_sen.webp" alt="Làng rèn Phúc Sen Cao Bằng" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di sản 1.000 năm</span>
+                                <span class="tag">Nùng An</span>
+                            </div>
+                            <h3 class="dest-card-title">Làng rèn truyền thống Phúc Sen</h3>
+                            <p class="dest-card-desc">Nghề rèn dao thủ công từ nhíp xe cổ truyền nghìn năm của người Nùng An rực lửa than hồng bên nếp nhà sàn.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Chùa Trúc Lâm Bản Giốc -->
+                    <div class="dest-card single-col" data-legend="Ngôi chùa đầu tiên được xây dựng tại vùng biên cương địa đầu Đông Bắc của Tổ quốc, tọa lạc trên lưng chừng núi Phia Nhăm (xã Đàm Thủy), cách thác Bản Giốc khoảng 500m. Chùa khánh thành năm 2014 theo lối kiến trúc chùa truyền thống thời Lý - Trần với kết cấu gỗ lim, ngói mũi hài và chuông Đại hồng chung bằng đồng nặng 1,5 tấn. Từ sân chùa, du khách có thể phóng tầm mắt bao quát toàn cảnh hùng vĩ của dải thác Bản Giốc và thung lũng sông Quây Sơn uốn lượn, nơi tiếng chuông chùa ngân vang khẳng định chủ quyền lãnh thổ thiêng liêng.">
+                        <div class="dest-card-img">
+                            <img src="images/caobang_chua_truc_lam_ban_gioc.webp" alt="Chùa Phật Tích Trúc Lâm Bản Giốc" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Cột mốc tâm linh</span>
+                                <span class="tag">Phia Nhăm</span>
+                            </div>
+                            <h3 class="dest-card-title">Chùa Phật Tích Trúc Lâm Bản Giốc</h3>
+                            <p class="dest-card-desc">Ngôi chùa tựa lưng vào núi Phia Nhăm, nơi tiếng chuông Đại hồng chung ngân vang vọng qua thung lũng biên cương thiêng liêng.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & KẾT NỐI -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> 3. Hướng Dẫn Di Chuyển & Cung Đường Từ Hà Nội (~280km)</h2>
+                
+                <h3>1. Lộ trình từ Hà Nội lên TP Cao Bằng (~280km)</h3>
+                <ul>
+                    <li><strong>Bằng ô tô cá nhân / Xe limousine giường phòng (~5,5 – 6 tiếng):</strong> Tuyến đường thuận tiện và an toàn nhất: Xuất phát từ Hà Nội → Cao tốc Hà Nội - Thái Nguyên → Cao tốc Thái Nguyên - Chợ Mới (Bắc Kạn) → Nhập vào Quốc lộ 3 vượt qua đèo Giàng, đèo Gió để tiến thẳng vào thành phố Cao Bằng.</li>
+                    <li><strong>Bằng xe khách giường nằm:</strong> Đón xe từ Bến xe Mỹ Đình hoặc Giáp Bát với nhiều nhà xe chạy ban đêm (khởi hành 20h - 22h, đến Cao Bằng vào 4h - 5h sáng), giá vé khoảng 250.000 – 350.000 VNĐ/lượt.</li>
+                    <li><strong>Bằng xe máy phượt:</strong> Dành cho những tay lái giàu kinh nghiệm. Cung đường Quốc lộ 3 uốn lượn qua các triền núi đá vôi hùng vĩ, cảnh sắc thay đổi ngoạn mục từ trung du lên rẻo cao Đông Bắc.</li>
+                </ul>
+
+                <h3>2. Tuyến đường tham quan nội tỉnh từ TP Cao Bằng</h3>
+                <ul>
+                    <li><strong>Tuyến Đông (TP Cao Bằng → Trùng Khánh ~85km):</strong> TP Cao Bằng → Vượt đèo Mã Phục → Làng rèn Phúc Sen → Động Ngườm Ngao → Thác Bản Giốc & Chùa Trúc Lâm (Đường trải nhựa đẹp, xe 45 chỗ lưu thông thuận lợi).</li>
+                    <li><strong>Tuyến Bắc (TP Cao Bằng → Pác Bó ~50km):</strong> Đi theo đường Hồ Chí Minh (tỉnh lộ 203) phẳng lì chạy êm ru đến tận cổng Khu di tích Quốc gia đặc biệt Pác Bó.</li>
+                    <li><strong>Tuyến Hồ Thang Hen & Núi Mắt Thần (~30km):</strong> Nằm ở xã Quốc Toản, có thể kết hợp tham quan trên cung đường đi Trùng Khánh.</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Gợi ý lịch trình 3 ngày 2 đêm hoàn hảo cho du lịch cuối năm:</strong><br>
+                    • <strong>Ngày 1:</strong> Hà Nội → TP Cao Bằng (ăn trưa bánh cuốn nóng) → Check-in đèo Mã Phục → Cắm trại hoàng hôn tại thung lũng Núi Mắt Thần → Nghỉ đêm tại TP Cao Bằng hoặc Trùng Khánh.<br>
+                    • <strong>Ngày 2:</strong> Đón bình minh thác Bản Giốc (đi bè mảng ngắm thác & check-in cột mốc biên giới) → Viếng chùa Trúc Lâm Bản Giốc → Khám phá kỳ quan động Ngườm Ngao → Chiều ghé Làng rèn Phúc Sen → Tối thưởng thức vịt quay 7 vị.<br>
+                    • <strong>Ngày 3:</strong> Về nguồn Khu di tích Pác Bó (thăm hang Cốc Bó, ngắm suối Lê-nin, núi Các Mác, viếng đền thờ Bác Hồ) → Mua hạt dẻ Trùng Khánh & miến dong Phia Đén làm quà → Chiều trở về Hà Nội.</p>
+                </div>
+
+                <!-- BẢNG GIÁ VÉ THAM QUAN -->
+                <h2 id="gia-ve"><span class="icon">🎫</span> 4. Bảng Giá Vé Tham Quan Thắng Cảnh Cao Bằng</h2>
+                <p>Mức giá vé niêm yết chính thức tại các Ban quản lý khu du lịch và di tích (cập nhật mới nhất):</p>
+
+                <div class="table-responsive">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Điểm tham quan</th>
+                                <th>Chi phí tham khảo</th>
+                                <th>Ghi chú & Trải nghiệm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Khu du lịch Thác Bản Giốc</td>
+                                <td><span class="price-tag">45.000 VNĐ / người</span></td>
+                                <td>Vé vào cổng (Người lớn: 45k, trẻ em: 20k; đi bè mảng sát chân thác: ~50k/người)</td>
+                            </tr>
+                            <tr>
+                                <td>Động Ngườm Ngao</td>
+                                <td><span class="price-tag">45.000 VNĐ / người</span></td>
+                                <td>Tuyến tham quan thông thường (Tuyến khám phá mạo hiểm nhánh mới tính riêng)</td>
+                            </tr>
+                            <tr>
+                                <td>Khu di tích Quốc gia đặc biệt Pác Bó</td>
+                                <td><span class="price-tag">45.000 VNĐ / người</span></td>
+                                <td>Bao gồm vé tham quan di tích (Vé xe điện khứ hồi vào suối Lê-nin: 20.000 VNĐ)</td>
+                            </tr>
+                            <tr>
+                                <td>Núi Mắt Thần (Núi Thủng)</td>
+                                <td><span class="price-tag">Miễn phí vào cổng</span></td>
+                                <td>Điểm tự nhiên (Nếu cắm trại qua đêm, giữ gìn vệ sinh và dọn rác sạch sẽ)</td>
+                            </tr>
+                            <tr>
+                                <td>Khu sinh thái Hồ Thang Hen</td>
+                                <td><span class="price-tag">30.000 VNĐ / người</span></td>
+                                <td>Vé vào cổng tham quan hồ tự nhiên và khuôn viên sinh thái</td>
+                            </tr>
+                            <tr>
+                                <td>Chùa Phật Tích Trúc Lâm Bản Giốc</td>
+                                <td><span class="price-tag">Miễn phí vào cổng</span></td>
+                                <td>Tự do chiêm bái, ngắm toàn cảnh thác Bản Giốc từ trên cao</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🍲</span> 5. Lưu Trú & Tinh Hoa Ẩm Thực Vùng Cao Đông Bắc</h2>
+                
+                <h3>1. Gợi ý điểm lưu trú tại Cao Bằng</h3>
+                <ul>
+                    <li><strong>Resort & Khách sạn cao cấp tại Bản Giốc:</strong> Sài Gòn - Bản Giốc Resort (ngay đối diện thác Bản Giốc, view ngắm thác ngoạn mục), Mường Thanh Luxury Cao Bằng (tại trung tâm TP Cao Bằng).</li>
+                    <li><strong>Homestay nhà sàn bản địa tại Trùng Khánh:</strong> Khu vực bản Giuồng, bản Khuổi Ky (làng đá cổ người Tày hơn 400 năm tuổi) với trải nghiệm ngủ nhà sàn đá, thưởng trà ngắm núi, giá từ 350.000 – 600.000 VNĐ/đêm.</li>
+                    <li><strong>Glamping & Cắm trại tại Núi Mắt Thần:</strong> Trải nghiệm ngủ lều giữa thảo nguyên bao la, ngắm bầu trời sao đêm và đón bình minh xuyên qua vòm thủng kỳ vĩ.</li>
+                </ul>
+
+                <h3>2. Tinh hoa ẩm thực biên viễn Cao Bằng</h3>
+                <div class="food-list">
+                    <div class="food-item">
+                        <span class="name">🥣 Bánh cuốn canh Cao Bằng</span>
+                        Bánh tráng mỏng mềm mướt, nhân thịt băm mộc nhĩ, không chấm nước mắm như miền xuôi mà chan ngập trong bát nước dùng xương hầm ninh ngọt thanh nóng hổi, rắc thêm hành hoa, rau mùi và trứng chần béo ngậy.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🌰 Hạt dẻ Trùng Khánh nướng bùi thơm</span>
+                        Đặc sản trứ danh chỉ có tại vùng đất Trùng Khánh, hạt to gấp 3 - 4 lần hạt dẻ rừng, vỏ nâu sẫm phủ lớp lông tơ mịn, khi luộc chín hay nướng nứt vỏ tỏa hương thơm nức mũi, vị ngọt bùi béo ngậy khó quên.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🦆 Vịt quay 7 vị Cao Bằng</span>
+                        Vịt cỏ béo tròn được tẩm ướp 7 loại gia vị bí truyền của người Tày (mật ong rừng, thảo quả, mắc mật...), quay trên than hồng da vàng giòn rụm, thịt mềm ngọt đậm đà chấm nước sốt lòng vịt thơm lừng.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🍜 Phở chua & Miến dong Phia Đén</span>
+                        Món phở chua thanh tao với bánh phở dẻo mềm, thịt ba chỉ quay giòn, gan lợn, lạp xưởng gác bếp hòa quyện cùng nước sốt chua ngọt; cùng miến dong Phia Đén sợi dai giòn trong suốt nấu canh gà đồi.
+                    </div>
+                </div>
+
+                <!-- THỜI ĐIỂM & LƯU Ý -->
+                <h2 id="thoi-diem"><span class="icon">🗓️</span> 6. Lịch Mùa Vàng & Mẹo Du Lịch Bản Địa</h2>
+                
+                <h3>1. Lịch các mùa đẹp nhất trong năm tại Cao Bằng</h3>
+                <ul>
+                    <li><strong>Tháng 9 – Tháng 10 (Mùa Lúa Chín & Thác Nước Đẹp Nhất):</strong> Thác Bản Giốc bước vào mùa nước trong xanh ngọc bích, dòng sông Quây Sơn uốn lượn bên những cánh đồng lúa chín vàng ruộm thung lũng Đàm Thủy. Thời tiết thu mát lành, khô ráo.</li>
+                    <li><strong>Tháng 11 – Tháng 12 (Mùa Hoa Dã Quỳ, Tam Giác Mạch & Thu Hoạch Hạt Dẻ):</strong> Các triền đèo rực rỡ sắc vàng dã quỳ và sắc tím hồng của hoa tam giác mạch; mùa thu hoạch hạt dẻ Trùng Khánh ngọt bùi nhất năm.</li>
+                    <li><strong>Tháng 1 – Tháng 3 (Mùa Lễ Hội & Du Xuân Về Nguồn):</strong> Tiết trời se lạnh, sương giăng mờ ảo, mùa trẩy hội chùa Trúc Lâm Bản Giốc và hành hương về nguồn Pác Bó đầu năm mới.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>Lưu ý quan trọng khi du lịch Cao Bằng:</strong><br>
+                    • <strong>Quy định khu vực biên giới:</strong> Thác Bản Giốc nằm trên đường biên giới quốc gia, du khách luôn mang theo giấy tờ tùy thân (CCCD / Hộ chiếu) để xuất trình khi cần thiết; tuân thủ hướng dẫn của lực lượng Bộ đội Biên phòng và không vượt qua phao tiêu phân giới trên sông.<br>
+                    • <strong>Giữ gìn vệ sinh môi trường:</strong> Tại Núi Mắt Thần và thung lũng Thang Hen, tuyệt đối không xả rác, không lái xe cày nát mặt cỏ thảo nguyên.<br>
+                    • <strong>Thời tiết vùng cao cuối năm:</strong> Ban đêm và sáng sớm nhiệt độ hạ thấp (10 – 15°C), hãy chuẩn bị áo ấm chắn gió khi di chuyển qua các cung đèo.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+        <div>
+            <strong>GO FAR</strong> — Go Straight Ahead · Bản quyền nội dung thuộc về GO FAR
+        </div>
+        <div class="credits">
+            Biên tập bởi <strong>Sửu nhi</strong> · 🎨 Ảnh nghệ thuật khởi tạo bởi AI
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL (OPTIMIZED & SCROLLABLE) -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">&times;</button>
+        <div class="lightbox-dialog">
+            <img class="lightbox-content" id="lightboxImg" alt="Chi tiết thắng cảnh Cao Bằng">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            document.querySelectorAll('.dest-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    lightboxModal.style.display = 'flex';
+                    lightboxModal.scrollTop = 0;
+                    lightboxImg.src = img.src;
+                    
+                    const titleText = card.querySelector('.dest-card-title')?.innerText || '';
+                    const descText = card.querySelector('.dest-card-desc')?.innerText || '';
+                    const legend = card.getAttribute('data-legend') || '';
+                    
+                    let captionHTML = '';
+                    if (titleText) {
+                        captionHTML += `<strong style="font-size: 1.4rem; color: var(--accent-gold); display: block; margin-bottom: 0.4rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                    }
+                    if (descText) {
+                        captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; margin-bottom: 1rem;">${descText}</span>`;
+                    }
+                    if (legend) {
+                        captionHTML += `
+                        <div style="background: rgba(22, 44, 62, 0.92); border: 1px solid rgba(255, 140, 50, 0.4); border-radius: 12px; padding: 1.25rem 1.5rem; text-align: left; box-shadow: 0 8px 32px rgba(0,0,0,0.4); margin-bottom: 1.5rem;">
+                            <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 600;">
+                                ✨ Dấu ấn Lịch sử & Điển tích Biên Cương
+                            </span>
+                            <span style="font-size: 0.92rem; color: #f8fafc; line-height: 1.75; display: block;">${legend}</span>
+                        </div>`;
+                    }
+                    lightboxCaption.innerHTML = captionHTML;
+                });
+            });
+
+            const closeLightbox = () => {
+                lightboxModal.style.display = 'none';
+            };
+
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            lightboxModal.addEventListener('click', (e) => {
+                const dialog = document.querySelector('.lightbox-dialog');
+                if (e.target === lightboxModal || e.target === dialog) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
