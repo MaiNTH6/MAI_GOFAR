@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Quy Nhơn', slug: 'quy-nhon', category: 'beach', rating: '4.6', img: 'images/quynhon_hero.webp', desc: 'Biển hoang sơ bí ẩn', region: 'Miền Trung' },
 
         { name: 'Cố đô Huế', slug: 'hue', category: 'heritage', rating: '4.9', img: 'images/hue_ngo_mon.webp', desc: 'Kinh đô 13 triều vua Nguyễn & Sông Hương', region: 'Miền Trung' },
+        { name: 'Quảng Bình', slug: 'quang-binh', category: 'heritage', rating: '4.9', img: 'images/quangbinh_hero.webp', desc: 'Vương quốc hang động thế giới & Phong Nha Kẻ Bàng', region: 'Miền Trung' },
         { name: 'Mộc Châu', slug: 'moc-chau', category: 'mountain', rating: '4.9', img: 'images/mocchau_hero.webp', desc: 'Thảo nguyên hoa mận trắng & đồi chè trái tim', region: 'Miền Bắc' },
         { name: 'Cao Bằng', slug: 'cao-bang', category: 'mountain', rating: '4.9', img: 'images/caobang_hero.webp', desc: 'Non nước kỳ vĩ Thác Bản Giốc & Pác Bó', region: 'Miền Bắc' },
         { name: 'Bình Liêu', slug: 'binh-lieu', category: 'mountain', rating: '4.9', img: 'images/binhlieu_hero.webp', desc: 'Vạn lý trường thành Việt Nam & mùa cỏ lau trắng', region: 'Miền Bắc' },

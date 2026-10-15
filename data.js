@@ -111,6 +111,19 @@ const GOFAR_DATA = {
             modalId: 'con-dao'
         },
         {
+            id: 'dest-quang-binh',
+            title: 'Quảng Bình',
+            category: 'heritage',
+            tags: ['👑 UNESCO Kép', 'Hang động'],
+            desc: 'Phong Nha - Kẻ Bàng kỳ vĩ, Sơn Đoòng lớn nhất thế giới, động Thiên Đường hoàng cung và suối Nước Moọc ngọc bích.',
+            img: 'images/quangbinh_hero.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 392,
+            size: 'normal',
+            modalId: 'quang-binh'
+        },
+        {
             id: 'dest-sapa',
             title: 'Sapa',
             category: 'mountain',
