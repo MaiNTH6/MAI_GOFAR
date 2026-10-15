@@ -178,12 +178,22 @@
 
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.8rem;
+            font-size: clamp(1.75rem, 2.5vw, 2.45rem);
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.28;
             color: #ffffff;
             margin-bottom: 0.75rem;
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            text-wrap: balance;
+        }
+
+        .hero-title .title-line-1,
+        .hero-title .title-line-2 {
+            display: inline-block;
+        }
+
+        .hero-title .title-line-2 {
+            white-space: nowrap;
         }
 
         .hero-sub {
@@ -634,7 +644,10 @@
                     <span class="hero-badge">Khu Ramsar Biển Đầu Tiên VN</span>
                     <span class="hero-badge gold">Thiên Đường Biển Đảo</span>
                 </div>
-                <h1 class="hero-title">Côn Đảo — Bản Hùng Ca Bất Diệt & Thiên Đường Biển Biếc</h1>
+                <h1 class="hero-title">
+                    <span class="title-line-1">Côn Đảo — Bản Hùng Ca Bất Diệt</span>
+                    <span class="title-line-2">& Thiên Đường Biển Biếc</span>
+                </h1>
                 <p class="hero-sub">Vùng đất thiêng nơi ngàn đời sóng vỗ, nơi ý chí sắt đá của thế hệ cha anh tạc vào lịch sử, và cũng là hòn ngọc biển xanh nguyên sơ với những rặng san hô cổ xưa cùng mùa rùa biển về đẻ trứng.</p>
                 <div class="meta-bar">
                     <div class="meta-item">✍️ Tác giả: <strong>Sửu nhi</strong></div>

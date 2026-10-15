@@ -184,12 +184,22 @@
 
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.8rem;
+            font-size: clamp(1.75rem, 2.5vw, 2.45rem);
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.28;
             color: #ffffff;
             margin-bottom: 0.75rem;
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            text-wrap: balance;
+        }
+
+        .hero-title .title-line-1,
+        .hero-title .title-line-2 {
+            display: inline-block;
+        }
+
+        .hero-title .title-line-2 {
+            white-space: nowrap;
         }
 
         .hero-sub {
@@ -640,7 +650,10 @@
                     <span class="hero-badge cyan">Vương Quốc Hang Động Toàn Cầu</span>
                     <span class="hero-badge">Di Tích Quốc Gia Đặc Biệt</span>
                 </div>
-                <h1 class="hero-title">Quảng Bình — Vương Quốc Hang Động & Miền Di Sản Kỳ Vĩ</h1>
+                <h1 class="hero-title">
+                    <span class="title-line-1">Quảng Bình — Vương Quốc Hang Động</span>
+                    <span class="title-line-2">& Miền Di Sản Kỳ Vĩ</span>
+                </h1>
                 <p class="hero-sub">Vùng đất khúc ruột miền Trung nơi sở hữu hệ thống karst cổ đại hơn 400 triệu năm, những dòng sông ngầm huyền ảo, kỳ quan hang Sơn Đoòng lớn nhất hành tinh cùng những trang sử hào hùng trên dãy Trường Sơn.</p>
                 <div class="meta-bar">
                     <div class="meta-item">✍️ Tác giả: <strong>Sửu nhi</strong></div>
