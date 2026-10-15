@@ -72,6 +72,19 @@ const GOFAR_DATA = {
             modalId: 'cao-bang'
         },
         {
+            id: 'dest-binh-lieu',
+            title: 'Bình Liêu',
+            category: 'mountain',
+            tags: ['🌾 Mùa cỏ lau', 'Đông Bắc'],
+            desc: '"Vạn lý trường thành Việt Nam", Sống lưng khủng long mốc 1305, mùa cỏ lau trắng ngút ngàn và đỉnh săn mây Cao Ly.',
+            img: 'images/binhlieu_song_lung_khung_long_1305.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 295,
+            size: 'normal',
+            modalId: 'binh-lieu'
+        },
+        {
             id: 'dest-sapa',
             title: 'Sapa',
             category: 'mountain',
