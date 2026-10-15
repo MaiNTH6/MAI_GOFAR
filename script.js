@@ -117,7 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Cao Bằng', slug: 'cao-bang', category: 'mountain', rating: '4.9', img: 'images/caobang_hero.webp', desc: 'Non nước kỳ vĩ Thác Bản Giốc & Pác Bó', region: 'Miền Bắc' },
         { name: 'Bình Liêu', slug: 'binh-lieu', category: 'mountain', rating: '4.9', img: 'images/binhlieu_hero.webp', desc: 'Vạn lý trường thành Việt Nam & mùa cỏ lau trắng', region: 'Miền Bắc' },
         { name: 'Măng Đen (Kon Tum)', slug: 'mang-den', category: 'mountain', rating: '4.9', img: 'images/mangden_hero.webp', desc: 'Nàng thơ giữa đại ngàn & mùa hoa mai anh đào', region: 'Tây Nguyên' },
-        { name: 'Côn Đảo (Bà Rịa - Vũng Tàu)', slug: 'con-dao', category: 'beach', rating: '4.9', img: 'images/condao_hero.webp', desc: 'Bản hùng ca bất diệt Hàng Dương & thiên đường biển biếc', region: 'Miền Nam' },
+        { name: 'Côn Đảo Tâm Linh & Lịch Sử', slug: 'con-dao-tam-linh', category: 'heritage', rating: '5.0', img: 'images/condao_nghia_trang_hang_duong_tuong_niem.webp', desc: 'Bản hùng ca bất tử Hàng Dương & viếng mộ cô Sáu nửa đêm', region: 'Miền Nam' },
+        { name: 'Côn Đảo Sinh Thái & Biển Đảo', slug: 'con-dao-sinh-thai', category: 'beach', rating: '4.9', img: 'images/condao_hero.webp', desc: 'Bãi Đầm Trầu ngắm máy bay & mùa rùa đẻ trứng Hòn Bảy Cạnh', region: 'Miền Nam' },
         { name: 'Phú Quốc', slug: null, category: 'beach', rating: '4.5', img: 'images/phuquoc.webp', desc: 'Đảo ngọc phương Nam', region: 'Miền Nam' },
         { name: 'Nha Trang', slug: null, category: 'beach', rating: '4.4', img: 'images/phuquoc.webp', desc: 'Biển xanh, nắng vàng', region: 'Miền Trung' },
     ];
