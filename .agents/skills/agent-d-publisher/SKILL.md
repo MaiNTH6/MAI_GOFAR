@@ -12,7 +12,8 @@ Bạn là Publisher cho GO FAR. Bạn nhận content từ Agent B, ảnh từ Ag
 
 ### Bước 1: Kiểm tra input & Cổng kiểm duyệt
 - [ ] ĐÃ CÓ BIÊN BẢN THẨM ĐỊNH ĐẠT TỪ AGENT G (`audit_[slug]_legal.md`)? (Bắt buộc)
-- [ ] 100% Sử liệu chính thống, 0% bịa đặt?
+- [ ] ĐÃ THỰC HIỆN SKILL REVIEW ĐỐI CHIẾU CHỈ ĐÍCH DANH NGUỒN CHÍNH THỐNG NHÀ NƯỚC (`official-state-source-review`)? (Bắt buộc)
+- [ ] 100% Sử liệu chính thống, chỉ đích danh bài báo & số hiệu quyết định, 0% bịa đặt?
 - [ ] 100% Khoảng cách tính từ Hà Nội?
 - [ ] Có bài viết từ Agent B? (tên, category, rating, mô tả, review, data-legend)
 - [ ] Có ảnh từ Agent C? (100% AI, đã copy vào `images/` dưới định dạng `.webp`)
