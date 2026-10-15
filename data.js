@@ -98,30 +98,17 @@ const GOFAR_DATA = {
             modalId: 'mang-den'
         },
         {
-            id: 'dest-con-dao-tam-linh',
-            title: 'Côn Đảo — Lịch Sử & Tâm Linh',
-            category: 'heritage',
-            tags: ['🕯️ Về nguồn', 'Di tích Quốc gia'],
-            desc: 'Bản hùng ca bất tử Hàng Dương, viếng mộ cô Sáu lúc nửa đêm, di tích 113 năm Nhà tù Côn Đảo và An Sơn Miếu thiêng liêng.',
-            img: 'images/condao_nghia_trang_hang_duong_tuong_niem.webp',
-            rating: 5.0,
-            stars: '★★★★★',
-            reviews: 386,
-            size: 'normal',
-            modalId: 'con-dao-tam-linh'
-        },
-        {
-            id: 'dest-con-dao-sinh-thai',
-            title: 'Côn Đảo — Sinh Thái & Biển Đảo',
+            id: 'dest-con-dao',
+            title: 'Côn Đảo',
             category: 'beach',
-            tags: ['🐢 Rùa biển', 'Khu Ramsar Biển'],
-            desc: 'Bãi Đầm Trầu ngắm máy bay hạ cánh ngoạn mục, tour đêm xem rùa đẻ trứng tại Hòn Bảy Cạnh và cung đường ven biển tuyệt mỹ.',
+            tags: ['🐢 Rùa biển', 'Bà Rịa - Vũng Tàu'],
+            desc: 'Bản hùng ca bất diệt Hàng Dương, viếng mộ cô Sáu linh thiêng, bãi Đầm Trầu ngắm máy bay và mùa rùa đẻ trứng Hòn Bảy Cạnh.',
             img: 'images/condao_hero.webp',
             rating: 4.9,
             stars: '★★★★★',
             reviews: 358,
             size: 'normal',
-            modalId: 'con-dao-sinh-thai'
+            modalId: 'con-dao'
         },
         {
             id: 'dest-sapa',
