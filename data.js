@@ -98,6 +98,19 @@ const GOFAR_DATA = {
             modalId: 'mang-den'
         },
         {
+            id: 'dest-con-dao',
+            title: 'Côn Đảo',
+            category: 'beach',
+            tags: ['Di tích Quốc gia', 'Biển đảo'],
+            desc: 'Bản hùng ca bất diệt Hàng Dương, nhà tù Côn Đảo, bãi Đầm Trầu thơ mộng và mùa rùa đẻ trứng tại Hòn Bảy Cạnh.',
+            img: 'images/condao_hero.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 358,
+            size: 'normal',
+            modalId: 'con-dao'
+        },
+        {
             id: 'dest-sapa',
             title: 'Sapa',
             category: 'mountain',

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Côn Đảo — Thiên Đường Biển Đảo & Bản Hùng Ca Bất Diệt | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Côn Đảo toàn diện: Di tích Quốc gia đặc biệt Nhà tù Côn Đảo, Nghĩa trang Hàng Dương viếng mộ cô Sáu, Bãi Đầm Trầu ngắm máy bay, thả rùa con tại Hòn Bảy Cạnh và ẩm thực hạt bàng độc đáo.">
+    <meta name="keywords" content="du lịch Côn Đảo, kinh nghiệm đi Côn Đảo, nghĩa trang Hàng Dương, mộ cô Sáu, nhà tù Côn Đảo, bãi Đầm Trầu, Hòn Bảy Cạnh, rùa đẻ trứng Côn Đảo, chùa Núi Một, hạt bàng Côn Đảo, vé tàu cao tốc Côn Đảo">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0a141e;
+            --bg-card: #112233;
+            --bg-card-hover: #162c3e;
+            --text: #f8fafc;
+            --text-sec: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #ff8c32;
+            --accent-gold: #fbbf24;
+            --accent-cyan: #06b6d4;
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* HEADER / NAV */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 20, 30, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-back {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--accent);
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-wrap {
+            max-width: 1350px;
+            margin: 1rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            list-style: none;
+        }
+
+        .breadcrumb a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb .sep {
+            color: var(--text-muted);
+        }
+
+        .breadcrumb .current {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            max-width: 1350px;
+            margin: 1rem auto 2rem;
+            padding: 0 1.5rem;
+        }
+
+        .hero-banner {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 480px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 20, 30, 0.1) 0%, rgba(10, 20, 30, 0.85) 75%, var(--bg) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+        }
+
+        .hero-badge-wrap {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            background: rgba(255, 140, 50, 0.2);
+            color: var(--accent);
+            border: 1px solid rgba(255, 140, 50, 0.4);
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-badge.gold {
+            background: rgba(251, 191, 36, 0.2);
+            color: var(--accent-gold);
+            border-color: rgba(251, 191, 36, 0.4);
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            max-width: 900px;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 0.75rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* LAYOUT & SIDEBAR */
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* STICKY QUICK NAV */
+        .sidebar {
+            position: sticky;
+            top: 5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+
+        .sidebar-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--text-sec);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+
+        .sidebar-link:hover, .sidebar-link.active {
+            color: #ffffff;
+            background: rgba(255, 140, 50, 0.15);
+            border-left-color: var(--accent);
+        }
+
+        /* MAIN CONTENT */
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .article-main h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article-main h2 .icon {
+            color: var(--accent);
+        }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin: 1.75rem 0 0.75rem;
+        }
+
+        .article-main p {
+            color: #cbd5e1;
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .article-main ul {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        .article-main li {
+            margin-bottom: 0.6rem;
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: rgba(17, 34, 51, 0.75);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: #f1f5f9;
+            font-size: 1rem;
+        }
+
+        .warning-box {
+            background: rgba(251, 191, 36, 0.08);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #fef08a;
+            font-size: 0.95rem;
+        }
+
+        /* SPOTS GRID */
+        .dest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .dest-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .dest-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 140, 50, 0.3);
+        }
+
+        .dest-card-img-wrap {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .dest-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dest-card:hover .dest-card-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .dest-card-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(10, 20, 30, 0.75);
+            backdrop-filter: blur(8px);
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border-radius: 50px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            text-transform: uppercase;
+        }
+
+        .dest-card-body {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .dest-card-loc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+            line-height: 1.35;
+        }
+
+        .dest-card-desc {
+            font-size: 0.92rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .dest-card-cta {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 0.75rem;
+        }
+
+        /* DATA TABLE */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0 2rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: rgba(17, 34, 51, 0.9);
+            color: var(--accent-gold);
+            font-weight: 600;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            color: #cbd5e1;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* FOOTER */
+        .article-footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
+            margin-top: 4rem;
+            background: rgba(10, 20, 30, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 1350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .credits strong {
+            color: var(--accent-gold);
+        }
+
+        /* LIGHTBOX MODAL (SCROLLABLE & NO-CUTOFF) */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background: rgba(5, 10, 15, 0.95);
+            backdrop-filter: blur(16px);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .lightbox-dialog {
+            max-width: 900px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lightbox-content {
+            width: 100%;
+            max-height: 55vh;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .lightbox-caption {
+            color: #e2e8f0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 1.5rem;
+            right: 2rem;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 300;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            transition: color 0.2s, transform 0.2s;
+            z-index: 2010;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 992px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-banner {
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-banner {
+                height: 300px;
+            }
+            .hero-title {
+                font-size: 1.7rem;
+            }
+            .hero-overlay {
+                padding: 1.25rem;
+            }
+            .dest-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                <span>←</span> Quay lại trang chủ
+            </a>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-wrap">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li class="sep">/</li>
+            <li><a href="index.html#destinations">Điểm đến</a></li>
+            <li class="sep">/</li>
+            <li class="current">Côn Đảo (Bà Rịa - Vũng Tàu)</li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-banner">
+            <img src="images/condao_hero.webp" alt="Toàn cảnh vẻ đẹp kỳ vĩ của quần đảo Côn Đảo">
+            <div class="hero-overlay">
+                <div class="hero-badge-wrap">
+                    <span class="hero-badge gold">Di Tích Quốc Gia Đặc Biệt</span>
+                    <span class="hero-badge">Khu Ramsar Biển Đầu Tiên VN</span>
+                    <span class="hero-badge gold">Thiên Đường Biển Đảo</span>
+                </div>
+                <h1 class="hero-title">Côn Đảo — Bản Hùng Ca Bất Diệt & Thiên Đường Biển Biếc</h1>
+                <p class="hero-sub">Vùng đất thiêng nơi ngàn đời sóng vỗ, nơi ý chí sắt đá của thế hệ cha anh tạc vào lịch sử, và cũng là hòn ngọc biển xanh nguyên sơ với những rặng san hô cổ xưa cùng mùa rùa biển về đẻ trứng.</p>
+                <div class="meta-bar">
+                    <div class="meta-item">✍️ Tác giả: <strong>Sửu nhi</strong></div>
+                    <div class="meta-item">📍 Địa phận: <strong>Huyện Côn Đảo, Tỉnh Bà Rịa – Vũng Tàu</strong></div>
+                    <div class="meta-item">⏱️ Thời gian đọc: <strong>9 phút</strong></div>
+                    <div class="meta-item">📅 Cập nhật: <strong>15/10/2026</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <div class="container">
+        <div class="layout-grid">
+            
+            <!-- STICKY SIDEBAR NAVIGATION -->
+            <aside class="sidebar">
+                <div class="sidebar-title">📑 Mục Lục Cẩm Nang</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#tong-quan" class="sidebar-link">1. Tổng quan & Vị thế Côn Đảo</a></li>
+                    <li><a href="#toa-do" class="sidebar-link">2. 8 Tọa độ check-in & Sử tích</a></li>
+                    <li><a href="#lo-trinh" class="sidebar-link">3. Hướng dẫn di chuyển từ Hà Nội</a></li>
+                    <li><a href="#bang-gia" class="sidebar-link">4. Bảng giá vé niêm yết chính thức</a></li>
+                    <li><a href="#am-thuc" class="sidebar-link">5. Cẩm nang ẩm thực đặc sản</a></li>
+                    <li><a href="#thoi-diem" class="sidebar-link">6. Thời điểm lý tưởng & Lưu ý</a></li>
+                </ul>
+            </aside>
+
+            <!-- ARTICLE MAIN BODY -->
+            <main class="article-main">
+
+                <!-- TỔNG QUAN -->
+                <h2 id="tong-quan"><span class="icon">🏝️</span> 1. Tổng Quan & Vị Thế Côn Đảo</h2>
+                <p>Nằm cách mũi Vũng Tàu 97 hải lý và cách cửa sông Hậu 45 hải lý về phía Đông Nam, <strong>quần đảo Côn Đảo</strong> gồm 16 hòn đảo lớn nhỏ với tổng diện tích đất nổi 76km², trong đó đảo lớn nhất là Côn Sơn (51,52km²). Nơi đây không chỉ là pháo đài tiền tiêu canh giữ chủ quyền biển đảo thiêng liêng phía Nam của Tổ quốc, mà còn là một địa danh mang hai thái cực độc nhất vô nhị: một bên là khúc tráng ca hào hùng, bi tráng của dân tộc Việt Nam, một bên là thiên đường sinh thái biển đảo hoang sơ, nguyên bản hàng đầu khu vực.</p>
+
+                <div class="highlight-box">
+                    <p>🏛️ <strong>Di sản kép của Quốc gia & Quốc tế:</strong><br>
+                    • <strong>Di tích Lịch sử Quốc gia Đặc biệt:</strong> Hệ thống Nhà tù Côn Đảo được Thủ tướng Chính phủ công nhận theo Quyết định số 548/QĐ-TTg ngày 10/05/2012.<br>
+                    • <strong>Khu Ramsar Thế giới số 2.203:</strong> Vườn Quốc gia Côn Đảo là Khu Ramsar biển đầu tiên của Việt Nam, được Ban Thư ký Công ước Ramsar quốc tế chính thức công nhận ngày 18/06/2013 với diện tích bảo tồn gần 20.000 ha.</p>
+                </div>
+
+                <!-- 8 TỌA ĐỘ CHECK-IN -->
+                <h2 id="toa-do"><span class="icon">📍</span> 2. Tám Tọa Độ Check-in & Dấu Ấn Lịch Sử Côn Đảo</h2>
+                <p>Nhấp vào từng thẻ thắng cảnh bên dưới để chiêm ngưỡng bộ ảnh nghệ thuật AI độc quyền cùng những trang sử liệu hào hùng, tích xưa gắn liền với từng tấc đất, ngọn sóng Côn Đảo:</p>
+
+                <div class="dest-grid">
+                    
+                    <!-- SPOT 1: NGHĨA TRANG HÀNG DƯƠNG -->
+                    <article class="dest-card" data-legend="Nơi yên nghỉ vĩnh hằng của gần 2.000 chiến sĩ cách mạng kiên trung và đồng bào yêu nước (với hơn 1.200 phần mộ khuyết danh). Nổi bật giữa đồi dương vi vu là phần mộ của Nữ anh hùng LLVTND Võ Thị Sáu (Khu B2) - người con gái Đất Đỏ kiên trung ngẩng cao đầu trước họng súng kẻ thù khi mới tròn 19 tuổi (23/01/1952). Văn hóa viếng mộ cô Sáu lúc nửa đêm với cành hoa lê-ki-ma trắng muốt đã trở thành nghi thức tâm linh thiêng liêng nhất của du khách khi về nguồn Côn Đảo.">
+                        <div class="dest-card-img-wrap">
+                            <img src="images/condao_nghia_trang_hang_duong_tuong_niem.webp" alt="Nghĩa trang Hàng Dương và đài tưởng niệm thiêng liêng" loading="lazy">
+                            <span class="dest-card-tag">Di tích Quốc gia Đặc biệt</span>
+                        </div>
+                        <div class="dest-card-body">
+                            <div class="dest-card-loc">📍 Đường Nguyễn Đức Thuận, Côn Đảo</div>
+                            <h3 class="dest-card-title">Nghĩa Trang Hàng Dương & Mộ Cô Sáu</h3>
+                            <p class="dest-card-desc">Quần thể nghĩa trang 190.000m² linh thiêng, nơi yên nghỉ của các bậc tiền bối Lê Hồng Phong, Nguyễn An Ninh và chị Võ Thị Sáu.</p>
+                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                        </div>
+                    </article>
+
+                    <!-- SPOT 2: NHÀ TÙ CÔN ĐẢO -->
+                    <article class="dest-card" data-legend="Tồn tại suốt 113 năm (1862 - 1975) qua 53 đời chúa đảo, nơi được mệnh danh là 'địa ngục trần gian' với hệ thống giam giữ tàn bạo bậc nhất của thực dân và đế quốc. Trại Phú Hải cổ kính với hầm xay lúa khổ sai, cùng khu 'Chuồng Cọp Pháp' (Trại Phú Tường) gồm 120 phòng biệt giam kiên cố - nơi cai ngục rải vôi bột và dội nước bẩn tra tấn chiến sĩ kiên trung. Năm 1970, sự thật về Chuồng Cọp bị phơi bày đã làm chấn động lương tri toàn nhân loại.">
+                        <div class="dest-card-img-wrap">
+                            <img src="images/condao_nha_tu_chuong_cop.webp" alt="Kiến trúc di tích Nhà tù Côn Đảo và Chuồng Cọp" loading="lazy">
+                            <span class="dest-card-tag">Di tích Quốc gia Đặc biệt</span>
+                        </div>
+                        <div class="dest-card-body">
+                            <div class="dest-card-loc">📍 Trung tâm thị trấn Côn Đảo</div>
+                            <h3 class="dest-card-title">Nhà Tù Côn Đảo & Chuồng Cọp</h3>
+                            <p class="dest-card-desc">Chứng tích lịch sử 113 năm, nơi tôi luyện ý chí gang thép của hàng vạn chiến sĩ cách mạng yêu nước kiên trung bất khuất.</p>
+                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                        </div>
+                    </article>
+
+                    <!-- SPOT 3: BÃI ĐẦM TRẦU -->
+                    <article class="dest-card" data-legend="Được ví như 'nàng thơ kiều diễm' của Côn Đảo, bãi biển cong hình bán nguyệt ôm lấy bờ cát vàng óng ả mềm mịn và làn nước biển trong xanh tựa ngọc bích. Nơi đây gắn liền với sự tích tình yêu trắc trở của chàng Cau và nàng Trầu trong câu ca dân gian xứ đảo. Đặc biệt, Bãi Đầm Trầu là tọa độ duy nhất ngắm những chiếc máy bay thương mại hạ cánh sát sạt ngọn cây xuống đường băng sân bay Cỏ Ống vô cùng ngoạn mục.">
+                        <div class="dest-card-img-wrap">
+                            <img src="images/condao_bai_dam_trau.webp" alt="Bãi Đầm Trầu tuyệt mỹ với bờ cát vàng và nước xanh ngọc" loading="lazy">
+                            <span class="dest-card-tag">Bãi biển đẹp nhất Côn Đảo</span>
+                        </div>
+                        <div class="dest-card-body">
+                            <div class="dest-card-loc">📍 Gần Sân bay Cỏ Ống, Bắc đảo</div>
+                            <h3 class="dest-card-title">Bãi Đầm Trầu — Bãi Tắm Thiên Đường</h3>
+                            <p class="dest-card-desc">Bãi cát vàng mịn màng uốn lượn dưới vách đá phủ bóng cây rừng nguyên sinh, điểm ngắm máy bay hạ cánh ngoạn mục nhất Việt Nam.</p>
+                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                        </div>
+                    </article>
+
+                    <!-- SPOT 4: CHÙA NÚI MỘT -->
+                    <article class="dest-card" data-legend="Ngôi chùa duy nhất tọa lạc trên quần đảo Côn Đảo, khởi dựng năm 1964 và đại trùng tu năm 2011 mang đậm dấu ấn kiến trúc Phật giáo truyền thống Việt Nam. Ngôi chùa sở hữu vị thế phong thủy 'tiền thủy hậu sơn' hiếm có: Tựa lưng vững chãi vào vách núi Một hùng vĩ, phóng tầm mắt bao quát trọn vẹn vịnh Côn Sơn xanh ngắt, hồ sen An Hải thanh tịnh và toàn cảnh thị trấn Côn Đảo yên bình.">
+                        <div class="dest-card-img-wrap">
+                            <img src="images/condao_chua_nui_mot_van_son_tu.webp" alt="Chùa Núi Một Vân Sơn Tự tọa lạc trên núi nhìn ra vịnh biển" loading="lazy">
+                            <span class="dest-card-tag">Danh lam thắng cảnh tâm linh</span>
+                        </div>
+                        <div class="dest-card-body">
+                            <div class="dest-card-loc">📍 Núi Một, huyện Côn Đảo</div>
+                            <h3 class="dest-card-title">Chùa Núi Một (Vân Sơn Tự)</h3>
+                            <p class="dest-card-desc">Điểm đến tâm linh thanh tịnh tựa lưng vào núi cao, ngắm trọn vẹn vịnh biển Côn Sơn trong xanh và đầm sen An Hải thơm ngát.</p>
+                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                        </div>
+                    </article>
+
+                    <!-- SPOT 5: HÒN BẢY CẠNH -->
+                    <article class="dest-card" data-legend="Hòn đảo lớn thứ hai của Côn Đảo (rộng 683 ha), được che phủ bởi thảm rừng nguyên sinh nhiệt đới và hệ sinh thái san hô rực rỡ sắc màu. Bãi Cát Lớn tại Hòn Bảy Cạnh là bãi đẻ rùa biển lớn nhất Việt Nam, nơi hơn 70% cá thể rùa biển (vích) tại Côn Đảo chọn làm nơi đẻ trứng từ tháng 4 đến tháng 9. Trải nghiệm thức đêm canh rùa mẹ đào tổ và sớm mai thả rùa con chập chững về với biển khơi là bài học thiên nhiên sống động và cảm động bậc nhất.">
+                        <div class="dest-card-img-wrap">
+                            <img src="images/condao_hon_bay_canh_rua_bien.webp" alt="Rùa con mới nở chập chững bò ra biển tại Hòn Bảy Cạnh" loading="lazy">
+                            <span class="dest-card-tag">Khu Ramsar Biển Đầu Tiên VN</span>
+                        </div>
+                        <div class="dest-card-body">
+                            <div class="dest-card-loc">📍 Phía Đông đảo Côn Sơn</div>
+                            <h3 class="dest-card-title">Hòn Bảy Cạnh & Mùa Rùa Đẻ Trứng</h3>
+                            <p class="dest-card-desc">Vương quốc bảo tồn rùa biển lớn nhất Việt Nam, nơi lưu giữ hệ sinh thái rừng ngập mặn trên cạn và rạn san hô cổ xưa tuyệt mỹ.</p>
+                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                        </div>
+                    </article>
+
+                    <!-- SPOT 6: MIẾU BÀ PHI YẾN -->
+                    <article class="dest-card" data-legend="Ngôi miếu cổ kính rợp bóng cây bàng nghìn năm, thờ bà Hoàng Phi Yến (Lê Thị Răm) - thứ phi của chúa Nguyễn Ánh. Khi chúa toan cầu viện quân Pháp năm 1783, bà đã can gián hết lời nên bị chúa nghi lòng phản trắc và đày biệt giam trong hang đá Hòn Bà. Cuộc đời tiết liệt và câu chuyện người mẹ thương con gắn liền với câu ca dao lưu truyền khắp Nam Bộ: 'Gió đưa cây cải về trời / Rau răm ở lại chịu lời đắng cay'. Lễ giỗ Bà ngày 18/10 Âm lịch là ngày hội dân gian lớn nhất đảo.">
+                        <div class="dest-card-img-wrap">
+                            <img src="images/condao_mieu_ba_phi_yen.webp" alt="Miếu Bà Phi Yến cổ kính thanh tịnh dưới bóng cây bàng" loading="lazy">
+                            <span class="dest-card-tag">Di tích Lịch sử Cấp tỉnh</span>
+                        </div>
+                        <div class="dest-card-body">
+                            <div class="dest-card-loc">📍 Khu dân cư số 3, Côn Đảo</div>
+                            <h3 class="dest-card-title">Miếu Bà Phi Yến (An Sơn Miếu)</h3>
+                            <p class="dest-card-desc">Ngôi miếu thờ người phụ nữ trung trinh tiết liệt, gắn liền với câu ca dao 'Gió đưa cây cải về trời / Rau răm ở lại chịu lời đắng cay'.</p>
+                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                        </div>
+                    </article>
+
+                    <!-- SPOT 7: MŨI CHIM CHIM -->
+                    <article class="dest-card" data-legend="Những mỏm đá hoa cương tự nhiên vươn dài ra mặt biển Đông, tạo hình tựa như chiếc mỏ chim khổng lồ kiêu hãnh rẽ sóng đại dương. Đứng trên đỉnh vách đá Mũi Chim Chim lúc rạng đông, du khách sẽ được chiêm ngưỡng vầng thái dương đỏ rực từ từ nhô lên từ lòng biển biếc, nhuộm sắc vàng óng lên những bọt sóng trắng xóa và những dãy núi non điệp trùng giữa đại dương bao la.">
+                        <div class="dest-card-img-wrap">
+                            <img src="images/condao_mui_chim_chim_hoang_hon.webp" alt="Mũi Chim Chim hùng vĩ trong ánh hoàng hôn rực rỡ" loading="lazy">
+                            <span class="dest-card-tag">Tọa độ ngắm bình minh & hoàng hôn</span>
+                        </div>
+                        <div class="dest-card-body">
+                            <div class="dest-card-loc">📍 Cung đường Đông Bắc đảo Côn Sơn</div>
+                            <h3 class="dest-card-title">Mũi Chim Chim & Mũi Tàu Bể</h3>
+                            <p class="dest-card-desc">Mỏm đá granite tự nhiên nhô thẳng ra lòng biển khơi, tuyệt tác thiên nhiên đón những vạt nắng bình minh và hoàng hôn tráng lệ.</p>
+                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                        </div>
+                    </article>
+
+                    <!-- SPOT 8: CUNG ĐƯỜNG VEN BIỂN -->
+                    <article class="dest-card" data-legend="Cung đường nhựa êm ru men theo sườn núi đá hoa cương dựng đứng, một bên là thảm rừng nguyên sinh Vườn Quốc gia Côn Đảo bạt ngàn chim muông, một bên là đại dương xanh ngọc bích trải dài vô tận. Từng khúc cua uốn lượn mở ra những góc nhìn kỳ vĩ về Vịnh Côn Sơn, Cầu tàu 914 lịch sử, Cảng Bến Đầm sầm uất và những hòn đảo tiền tiêu sừng sững canh giữ chủ quyền biển trời Tổ quốc.">
+                        <div class="dest-card-img-wrap">
+                            <img src="images/condao_cung_duong_ven_bien_con_son.webp" alt="Cung đường ven biển Cỏ Ống Bến Đầm uốn lượn giữa núi và biển" loading="lazy">
+                            <span class="dest-card-tag">Cung đường ven biển đẹp bậc nhất</span>
+                        </div>
+                        <div class="dest-card-body">
+                            <div class="dest-card-loc">📍 Tuyến ven biển Cỏ Ống – Bến Đầm</div>
+                            <h3 class="dest-card-title">Cung Đường Ven Biển Côn Sơn</h3>
+                            <p class="dest-card-desc">Cung đường ngoạn mục ôm trọn bờ vịnh xanh biếc, nối liền từ Sân bay Cỏ Ống qua trung tâm thị trấn đến Cảng Bến Đầm.</p>
+                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- LỘ TRÌNH TỪ HÀ NỘI -->
+                <h2 id="lo-trinh"><span class="icon">✈️</span> 3. Hướng Dẫn Di Chuyển Từ Thủ Đô Hà Nội Đến Côn Đảo</h2>
+                <p>Khoảng cách đường hàng không từ Hà Nội đến Côn Đảo khoảng <strong>1.400km</strong>. Tùy theo thời gian và ngân sách, du khách từ Hà Nội có 3 phương án di chuyển thuận lợi và an toàn nhất hiện nay:</p>
+
+                <h3>Phương án 1: Đường hàng không bay thẳng Hà Nội → Côn Đảo (Nhanh nhất)</h3>
+                <ul>
+                    <li><strong>Lộ trình:</strong> Khởi hành từ Sân bay Quốc tế Nội Bài (HAN) bay thẳng đáp xuống Sân bay Côn Đảo (Cỏ Ống - VCS).</li>
+                    <li><strong>Thời gian bay thẳng:</strong> Khoảng <strong>2 giờ 15 phút</strong> (tiết kiệm tối đa thời gian di chuyển).</li>
+                    <li><strong>Hãng khai thác:</strong> Các chuyến bay charter hoặc liên doanh khai thác bằng tàu bay phản lực thương mại đưa đón khách trực tiếp giữa Thủ đô và huyện đảo.</li>
+                </ul>
+
+                <h3>Phương án 2: Đường hàng không nối chuyến qua TP. Hồ Chí Minh / Cần Thơ</h3>
+                <ul>
+                    <li><strong>Chặng 1:</strong> Bay từ Hà Nội (HAN) vào TP. Hồ Chí Minh (SGN) hoặc Cần Thơ (VCA) với thời gian bay ~2 giờ (hàng chục chuyến bay mỗi ngày của Vietnam Airlines, Vietjet Air).</li>
+                    <li><strong>Chặng 2:</strong> Nối chuyến bay chặng ngắn từ SGN / VCA ra Sân bay Côn Đảo (VCS) với thời gian bay chỉ <strong>45 – 50 phút</strong> (khai thác bởi VASCO / Vietnam Airlines bằng dòng máy bay ATR 72).</li>
+                    <li><strong>Tổng thời gian hành trình:</strong> Khoảng 4 – 5 giờ (tính cả thời gian quá cảnh).</li>
+                </ul>
+
+                <h3>Phương án 3: Bay vào Miền Nam kết hợp Tàu cao tốc 5 sao vượt biển</h3>
+                <p>Dành cho du khách muốn trải nghiệm ngắm nhìn biển Đông bao la và tiết kiệm chi phí vé máy bay chặng ngắn:</p>
+                <ul>
+                    <li><strong>Chặng bay:</strong> Hà Nội bay vào Cần Thơ hoặc TP. Hồ Chí Minh.</li>
+                    <li><strong>Đón tàu cao tốc:</strong>
+                        <br>• <em>Từ Cảng Trần Đề (Sóc Trăng):</em> Đi tàu Côn Đảo Express vượt biển ra Cảng Bến Đầm Côn Đảo, thời gian chạy chỉ <strong>2 giờ 15 phút</strong> (tuyến đường biển ngắn và êm nhất).
+                        <br>• <em>Từ Cảng Cầu Đá (TP. Vũng Tàu):</em> Đi tàu cao tốc Côn Đảo Express chạy thẳng ra Côn Đảo, thời gian chạy <strong>3 giờ 30 phút</strong>.
+                        <br>• <em>Từ Bến Ninh Kiều (Cần Thơ):</em> Đi tàu Mai Linh Express qua sông Hậu ra biển đến Côn Đảo (khoảng 3 giờ 45 phút).
+                    </li>
+                </ul>
+
+                <!-- BẢNG GIÁ VÉ NIÊM YẾT CHÍNH THỨC -->
+                <h2 id="bang-gia"><span class="icon">🎟️</span> 4. Bảng Giá Vé & Dịch Vụ Niêm Yết Chính Thức</h2>
+                <p>Toàn bộ giá vé và mức phí được đối chiếu chính xác theo Nghị quyết của Hội đồng Nhân dân tỉnh Bà Rịa – Vũng Tàu và niêm yết công khai của Trung tâm Bảo tồn Di tích Côn Đảo cùng Ban Quản lý Vườn Quốc gia Côn Đảo:</p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Khu vực / Điểm tham quan</th>
+                                <th>Giá vé niêm yết</th>
+                                <th>Ghi chú & Nguồn quy định</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Quần thể Di tích Lịch sử Nhà tù Côn Đảo</strong></td>
+                                <td><strong>60.000 VNĐ / người</strong></td>
+                                <td>Vé trọn tuyến tham quan Trại Phú Hải, Chuồng Cọp Pháp, Chuồng Cọp Mỹ, Nhà Chúa Đảo, Khu Chuồng Bò</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nghĩa trang Hàng Dương & Mộ Cô Sáu</strong></td>
+                                <td><strong>Miễn phí 100%</strong></td>
+                                <td>Công trình tâm linh công cộng (mở cửa từ sáng đến nửa đêm phục vụ nhân dân dâng hương)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Miếu Bà Phi Yến (An Sơn Miếu)</strong></td>
+                                <td><strong>Miễn phí 100%</strong></td>
+                                <td>Di tích Lịch sử - Văn hóa cấp tỉnh mở cửa tự do chiêm bái</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chùa Núi Một (Vân Sơn Tự)</strong></td>
+                                <td><strong>Miễn phí 100%</strong></td>
+                                <td>Danh lam thắng cảnh Phật giáo mở cửa quanh năm</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cầu Tàu 914 & Cầu Ma Thiên Lãnh</strong></td>
+                                <td><strong>Miễn phí 100%</strong></td>
+                                <td>Chứng tích lịch sử ngoài trời tự do tham quan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vườn Quốc gia Côn Đảo (Tuyến 1 – 3)</strong></td>
+                                <td><strong>60.000 VNĐ / người lớn</strong></td>
+                                <td>Tuyến tham quan sinh thái biển đảo: Hòn Tài, Hòn Bảy Cạnh, Hòn Cau (Sinh viên: 20k; Học sinh: 10k)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vườn Quốc gia Côn Đảo (Tuyến 4 – 17)</strong></td>
+                                <td><strong>50.000 VNĐ / người lớn</strong></td>
+                                <td>Tuyến trekking rừng nguyên sinh: Đầm Tre, Ma Thiên Lãnh – Sở Rẫy, Ông Đụng, Đất Thắm</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dịch vụ Hướng dẫn Xem Rùa Đẻ Trứng (Đêm)</strong></td>
+                                <td><strong>350.000 – 600.000 VNĐ / người</strong></td>
+                                <td>Phí kiểm lâm hướng dẫn bảo tồn tại trạm Hòn Bảy Cạnh / Hòn Cau (tùy quy mô đoàn khách)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dịch vụ Trải nghiệm Thả Rùa Con Về Biển</strong></td>
+                                <td><strong>50.000 VNĐ / người</strong></td>
+                                <td>Hoạt động giáo dục môi trường buổi sáng tại các bãi ấp trứng rùa Vườn Quốc gia</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ẨM THỰC ĐẶC SẢN -->
+                <h2 id="am-thuc"><span class="icon">🥥</span> 5. Cẩm Nang Ẩm Thực Đặc Sản Côn Đảo</h2>
+                <p>Ẩm thực Côn Đảo mang đậm phong vị mặn mòi của biển cả và cây rừng nhiệt đới, gắn liền với những thức quà độc nhất vô nhị:</p>
+
+                <div class="dest-card" style="margin-bottom: 2rem; cursor: default;">
+                    <div class="dest-card-img-wrap" style="height: 280px;">
+                        <img src="images/condao_am_thuc_hat_bang_hai_san.webp" alt="Mâm ẩm thực Côn Đảo: Hạt bàng rang muối gừng và hải sản tươi sống">
+                        <span class="dest-card-tag">Đặc sản trứ danh</span>
+                    </div>
+                    <div class="dest-card-body">
+                        <h3 class="dest-card-title" style="color: var(--accent-gold);">Hạt Bàng Côn Đảo & Hải Sản Đại Dương</h3>
+                        <p class="dest-card-desc">Thức quà kết tinh từ những cây bàng cổ thụ hàng trăm năm tuổi che mát khắp các nẻo đường di tích Côn Đảo, cùng nguồn hải sản tự nhiên tươi rói được đánh bắt từ ngư trường trù phú.</p>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><strong>Mứt Hạt Bàng (Rang Muối & Ngào Đường Gừng):</strong> Món đặc sản biểu tượng của Côn Đảo. Những quả bàng chín rụng được người dân nhặt về, phơi khô rồi dùng dao chẻ từng quả lấy nhân hạt nhỏ xíu bên trong. Hạt bàng rang giòn rụm, bùi béo ngậy, đượm chút vị mặn của muối hoặc vị ngọt thanh thơm lừng hương gừng cay ấm.</li>
+                    <li><strong>Ốc Vú Nàng:</strong> Loài ốc biển hình chóp nón tựa bầu ngực thiếu nữ, vỏ màu đen xám, thịt bên trong trắng nõn giòn sần sật. Món ốc vú nàng hấp sả hoặc nướng mỡ hành chấm muối tiêu chanh ớt hiểm là món nhắm trứ danh xứ đảo.</li>
+                    <li><strong>Cua Mặt Trăng:</strong> Loài cua quý hiếm sinh sống trong các khe đá san hô, trên mai có những đốm tròn màu đỏ thẫm như hình mặt trăng. Thịt cua ngọt đậm đà, gạch béo ngậy, ngon nhất khi luộc chín ăn nóng kèm muối tiêu chanh.</li>
+                    <li><strong>Cá Thu Một Nắng:</strong> Cá thu tươi vừa cập cảng Bến Đầm được làm sạch, cắt khoanh dày rồi phơi duy nhất một nắng giòn rụm bên ngoài nhưng thớ thịt bên trong vẫn giữ nguyên vị ngọt mọng tự nhiên.</li>
+                    <li><strong>Tôm Hùm Đỏ (Tôm Hùm Lửa):</strong> Tôm hùm tự nhiên của Côn Đảo có lớp vỏ đỏ au bắt mắt, thớ thịt săn chắc ngọt lịm, giàu canxi và đạm biển.</li>
+                </ul>
+
+                <!-- THỜI ĐIỂM & LƯU Ý -->
+                <h2 id="thoi-diem"><span class="icon">🗓️</span> 6. Thời Điểm Lý Tưởng & Quy Tắc Về Nguồn Thiêng Liêng</h2>
+                
+                <h3>1. Hai mùa khí hậu đặc trưng tại Côn Đảo</h3>
+                <ul>
+                    <li><strong>Tháng 3 – Tháng 9 (Mùa Biển Êm & Mùa Rùa Về Đẻ Trứng):</strong> Mùa du lịch đẹp nhất trong năm. Biển lặng sóng êm, trời trong xanh rực rỡ, thích hợp cho các hoạt động lặn ngắm san hô, tour ca nô đi các đảo nhỏ (Hòn Bảy Cạnh, Hòn Cau) và trực tiếp trải nghiệm xem rùa đẻ trứng lúc nửa đêm. Dù là mùa mưa nhưng các cơn mưa rào Côn Đảo thường chỉ kéo dài khoảng 30 – 45 phút rồi tạnh ráo ngay.</li>
+                    <li><strong>Tháng 10 – Tháng 2 năm sau (Mùa Gió Chướng & Mùa Lễ Tri Ân):</strong> Mùa biển có sóng lớn do gió chướng thổi mạnh từ phía Đông Bắc. Tuy nhiên, vùng biển phía Tây và Tây Nam (như Bãi Đầm Trầu, Bến Đầm) vẫn lặng sóng. Thời tiết mùa này khô ráo, se mát, rất thích hợp cho những chuyến hành hương tâm linh về nguồn, viếng Nghĩa trang Hàng Dương và chiêm bái các đền chùa thanh tịnh.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>Quy tắc quan trọng khi du lịch Côn Đảo:</strong><br>
+                    • <strong>Trang phục khi viếng di tích lịch sử & Nghĩa trang Hàng Dương:</strong> Côn Đảo là mảnh đất thiêng liêng đẫm máu xương của các anh hùng liệt sĩ. Khi đến viếng Nghĩa trang Hàng Dương (đặc biệt là lễ viếng mộ Cô Sáu ban đêm) và các trại giam, bắt buộc mặc trang phục kín đáo, lịch sự (quần dài, áo có tay), đi nhẹ nói khẽ, không đùa cợt cười nói to tiếng.<br>
+                    • <strong>Đồ lễ dâng hương cô Sáu:</strong> Chuẩn bị hoa tươi màu trắng (đặc biệt là hoa lê-ki-ma hoặc hoa cúc trắng), hương thơm, gương lược, áo bà ba trắng và trái cây tươi. Du khách nên tự dọn dẹp khay lễ sau khi dâng hương để giữ gìn vệ sinh chung.<br>
+                    • <strong>Nghiêm cấm xâm phạm tài nguyên Vườn Quốc gia:</strong> Côn Đảo áp dụng luật bảo tồn thiên nhiên cực kỳ nghiêm ngặt. Tuyệt đối không bẻ san hô, không nhặt vỏ ốc, vỏ sò, không mang rùa con hay bất kỳ mẫu vật động thực vật tự nhiên nào ra khỏi đảo; giữ gìn vệ sinh biển đảo không rác thải nhựa.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+        <div>
+            <strong>GO FAR</strong> — Go Straight Ahead · Bản quyền nội dung thuộc về GO FAR
+        </div>
+        <div class="credits">
+            Biên tập bởi <strong>Sửu nhi</strong> · 🎨 Ảnh nghệ thuật khởi tạo bởi AI
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL (SCROLLABLE & NO-CUTOFF) -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">&times;</button>
+        <div class="lightbox-dialog">
+            <img class="lightbox-content" id="lightboxImg" alt="Chi tiết thắng cảnh Côn Đảo">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            document.querySelectorAll('.dest-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    lightboxModal.style.display = 'flex';
+                    lightboxModal.scrollTop = 0;
+                    lightboxImg.src = img.src;
+                    
+                    const titleText = card.querySelector('.dest-card-title')?.innerText || '';
+                    const descText = card.querySelector('.dest-card-desc')?.innerText || '';
+                    const legend = card.getAttribute('data-legend') || '';
+                    
+                    let captionHTML = '';
+                    if (titleText) {
+                        captionHTML += `<strong style="font-size: 1.4rem; color: var(--accent-gold); display: block; margin-bottom: 0.4rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                    }
+                    if (descText) {
+                        captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; margin-bottom: 1rem;">${descText}</span>`;
+                    }
+                    if (legend) {
+                        captionHTML += `
+                        <div style="background: rgba(22, 44, 62, 0.92); border: 1px solid rgba(255, 140, 50, 0.4); border-radius: 12px; padding: 1.25rem 1.5rem; text-align: left; box-shadow: 0 8px 32px rgba(0,0,0,0.4); margin-bottom: 1.5rem;">
+                            <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 600;">
+                                ✨ Dấu Ấn Lịch Sử & Huyền Tích Biển Đảo
+                            </span>
+                            <span style="font-size: 0.92rem; color: #f8fafc; line-height: 1.75; display: block;">${legend}</span>
+                        </div>`;
+                    }
+                    lightboxCaption.innerHTML = captionHTML;
+                });
+            });
+
+            const closeLightbox = () => {
+                lightboxModal.style.display = 'none';
+            };
+
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            lightboxModal.addEventListener('click', (e) => {
+                const dialog = document.querySelector('.lightbox-dialog');
+                if (e.target === lightboxModal || e.target === dialog) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
