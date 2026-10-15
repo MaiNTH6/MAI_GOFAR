@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Măng Đen — Nàng Thơ Giữa Đại Ngàn & Mùa Hoa Mai Anh Đào | GO FAR</title>
+    <meta name="description" content="Khám phá Măng Đen (Kon Tum): 'Đà Lạt thứ hai của Tây Nguyên', thác Pa Sỹ 45m, hồ Đắk Ke soi bóng hoa mai anh đào rực rỡ, nhà Rông Kon Bring và ẩm thực gà nướng cơm lam tiêu rừng.">
+    <meta name="keywords" content="du lịch Măng Đen, Măng Đen Kon Tum, thác Pa Sỹ, hồ Đắk Ke, hoa mai anh đào Măng Đen, làng Kon Bring, Đức Mẹ Măng Đen, cơm lam gà nướng Măng Đen, kinh nghiệm du lịch Măng Đen">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0a141e;
+            --bg-card: #112233;
+            --bg-card-hover: #162c3e;
+            --text: #f8fafc;
+            --text-sec: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #ff8c32;
+            --accent-gold: #fbbf24;
+            --accent-cyan: #06b6d4;
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* HEADER / NAV */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 20, 30, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-back {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--accent);
+        }
+
+        /* HERO HEADER */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 420px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 3.5rem;
+        }
+
+        .hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.65);
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10,20,30,0.2) 0%, rgba(10,20,30,0.85) 85%, var(--bg) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 140, 50, 0.2);
+            color: var(--accent);
+            border: 1px solid rgba(255, 140, 50, 0.35);
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.85rem;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.85rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            color: var(--text-sec);
+            font-size: 0.95rem;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* LAYOUT DASHBOARD */
+        .dashboard-container {
+            max-width: 1350px;
+            margin: -2rem auto 4rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            position: sticky;
+            top: 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+        }
+
+        .quick-facts h3, .toc-box h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .fact-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.88rem;
+            padding: 0.45rem 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+        }
+
+        .fact-item:last-child {
+            border-bottom: none;
+        }
+
+        .fact-label {
+            color: var(--text-muted);
+        }
+
+        .fact-val {
+            color: var(--text);
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            padding: 0.35rem 0.5rem;
+            border-radius: 6px;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent);
+            background: rgba(255,255,255,0.04);
+            transform: translateX(4px);
+        }
+
+        /* MAIN CONTENT */
+        .content-main {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .section-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 1.75rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .content-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.85rem;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-main h2 .icon {
+            font-size: 1.5rem;
+        }
+
+        .content-main h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin: 1.75rem 0 0.85rem;
+        }
+
+        .content-main p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .content-main ul {
+            margin: 0.5rem 0 1.25rem 1.5rem;
+            color: #cbd5e1;
+        }
+
+        .content-main li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* BENTO GRID CHECK-IN */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .dest-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .dest-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 140, 50, 0.5);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .dest-card.double-col {
+            grid-column: span 2;
+        }
+
+        .dest-card-img {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .dest-card.single-col .dest-card-img {
+            aspect-ratio: 16/10;
+        }
+
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.05);
+        }
+
+        .dest-card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.08);
+            color: var(--text-sec);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tag-hot {
+            background: rgba(255, 140, 50, 0.2);
+            color: var(--accent);
+        }
+
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .dest-card-desc {
+            color: var(--text-sec);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* TABLES */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        th {
+            background: rgba(255,255,255,0.05);
+            color: var(--accent-gold);
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            color: #cbd5e1;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .price-tag {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* FOOD & TIPS BOXES */
+        .food-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin: 1.25rem 0;
+        }
+
+        .food-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+        }
+
+        .food-item .name {
+            display: block;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            color: #fca5a5;
+        }
+
+        /* ARTICLE FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--text-sec);
+            font-size: 0.9rem;
+        }
+
+        /* SCROLLABLE LIGHTBOX MODAL (NO-CUTOFF) */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(6, 12, 20, 0.94);
+            backdrop-filter: blur(16px);
+            align-items: flex-start;
+            justify-content: center;
+            overflow-y: auto;
+            padding: 3rem 1.5rem 2rem;
+            box-sizing: border-box;
+        }
+
+        .lightbox-dialog {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 860px;
+            margin: auto;
+            min-height: min-content;
+            box-sizing: border-box;
+            padding-bottom: 2rem;
+        }
+
+        .lightbox-content {
+            max-width: 100%;
+            max-height: 52vh;
+            width: auto;
+            border-radius: var(--radius);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.15);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            margin-top: 1.25rem;
+            color: var(--text);
+            text-align: center;
+            max-width: 820px;
+            width: 100%;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(22, 44, 62, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            line-height: 1;
+            padding: 0;
+        }
+
+        .lightbox-close:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: scale(1.08);
+            border-color: var(--accent);
+        }
+
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar { position: static; }
+            .checkin-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 4/3;
+            }
+            .hero-title { font-size: 2.2rem; }
+            .food-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR — Go Straight Ahead">
+            </a>
+            <a href="index.html" class="nav-back">
+                ← Quay lại Trang Chủ
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/mangden_hero.webp" alt="Măng Đen Kon Tum nàng thơ giữa đại ngàn Tây Nguyên" loading="eager">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🌲 Nàng Thơ Đại Ngàn · Tây Nguyên Xứ Lạnh</div>
+            <h1 class="hero-title">Măng Đen — Bản Tình Ca Rừng Thông & Mùa Hoa Mai Anh Đào</h1>
+            <div class="hero-meta">
+                <span>📍 Huyện Kon Plông, Tỉnh Kon Tum</span>
+                <span>⛰️ Độ cao: ~1.200m – 1.300m</span>
+                <span>🌸 Mùa hoa: Tháng 12 – Tháng 2</span>
+                <span>🚗 Khoảng cách: ~1.080km từ Hà Nội (Bay Nội Bài – Pleiku 1h35p + 105km)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard-container">
+        <div class="dashboard-layout">
+            
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="quick-facts">
+                    <h3>📊 Thông Tin Nhanh</h3>
+                    <div class="fact-item">
+                        <span class="fact-label">Vị trí</span>
+                        <span class="fact-val">Huyện Kon Plông, Kon Tum</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Độ cao trung bình</span>
+                        <span class="fact-val">1.200m – 1.300m</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Khí hậu quanh năm</span>
+                        <span class="fact-val">16°C – 22°C (Mát lạnh sương mù)</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Từ Hà Nội</span>
+                        <span class="fact-val">Bay ~1h35p (Pleiku) + 105km</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Mùa đẹp nhất</span>
+                        <span class="fact-val">Tháng 10 – Tháng 2 (Hoa mai anh đào)</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Dân tộc bản địa</span>
+                        <span class="fact-val">Mơ Nâm, Xơ Đăng, Ba Na</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Đặc sản trứ danh</span>
+                        <span class="fact-val">Gà nướng cơm lam, lẩu xuyên tiêu, dâu tây</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">Quy hoạch quốc gia</span>
+                        <span class="fact-val">QĐ 1492/QĐ-TTg (KDL Quốc gia)</span>
+                    </div>
+                </div>
+
+                <div class="toc-box">
+                    <h3>📑 Mục Lục Bài Viết</h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Khúc Tình Ca Cao Nguyên Măng Đen</a></li>
+                        <li><a href="#checkin">2. 8 Tọa Độ Kỳ Quan & Điển Tích</a></li>
+                        <li><a href="#di-chuyen">3. Hướng Dẫn Di Chuyển Từ Hà Nội</a></li>
+                        <li><a href="#gia-ve">4. Bảng Giá Vé & Dịch Vụ Niêm Yết</a></li>
+                        <li><a href="#luu-tru">5. Lưu Trú & Ẩm Thực Đại Ngàn</a></li>
+                        <li><a href="#thoi-diem">6. Lịch Mùa Hoa & Mẹo Bản Địa</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <main class="content-main">
+                
+                <!-- TỔNG QUAN -->
+                <section class="section-lead" id="tong-quan">
+                    <p>Nằm cheo leo trên dải cao nguyên phía Đông Bắc tỉnh Kon Tum ở độ cao hơn 1.200m so với mực nước biển, <strong>Măng Đen</strong> được mệnh danh là <em>"Nàng thơ giữa đại ngàn Tây Nguyên"</em> hay <em>"Đà Lạt thứ hai"</em> với bạt ngàn rừng thông đỏ nguyên sinh, không khí se lạnh mịt mùng sương sớm và huyền thoại thiêng liêng <strong>"Bảy hồ ba thác" (Thất hồ tam thác)</strong> của đồng bào người Mơ Nâm.</p>
+                    <p style="margin-top: 0.85rem; margin-bottom: 0;">Mỗi dịp cuối năm từ tháng 12 đến tháng 2, Măng Đen khoác lên mình tấm áo hồng phớt diễm lệ khi hàng vạn gốc hoa mai anh đào đồng loạt bung nở rực rỡ bên mặt hồ Đắk Ke phẳng lặng như gương. Nơi đây đã được Thủ tướng Chính phủ phê duyệt quy hoạch trở thành Khu du lịch quốc gia theo <strong>Quyết định số 1492/QĐ-TTg ngày 29/11/2023</strong>.</p>
+                </section>
+
+                <!-- 8 ĐIỂM CHECK-IN BENTO GRID -->
+                <h2 id="checkin"><span class="icon">🧭</span> 2. Khám Phá 8 Tọa Độ Check-in & Sử Tích Măng Đen</h2>
+                <p><em>(Nhấp vào từng ô thắng cảnh để mở rộng hình ảnh toàn cảnh và chi tiết huyền tích lịch sử bản địa)</em></p>
+
+                <div class="checkin-grid">
+                    
+                    <!-- 1. Thác Pa Sỹ -->
+                    <div class="dest-card double-col" data-legend="Thác Pa Sỹ nằm trong Khu du lịch sinh thái văn hóa thác Pa Sỹ thuộc xã Măng Cành, được hình thành từ 3 dòng suối lớn nhất Măng Đen hợp lưu lại thành một dòng thác trắng xóa đổ thẳng đứng từ độ cao 45m xuống hồ nước trong xanh ngắt giữa rừng già nguyên sinh. Theo tiếng Mơ Nâm, 'Pau Suh' (đọc chệch thành Pa Sỹ) có nghĩa là 'ba nguồn suối chụm lại thành một dòng thác'. Bao quanh chân thác là Khu vườn tượng gỗ dân gian Tây Nguyên với hơn 100 pho tượng sống động được các nghệ nhân bản địa đục đẽo thủ công từ rễ cây và thân gỗ mục, tái hiện sinh động đời sống mẫu hệ, săn bắn, giã gạo và lễ hội đâm trâu truyền thống.">
+                        <div class="dest-card-img">
+                            <img src="images/mangden_thac_pa_sy.webp" alt="Thác Pa Sỹ Măng Đen Kon Tum" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">💎 Đệ nhất thác Tây Nguyên</span>
+                                <span class="tag">Xã Măng Cành</span>
+                            </div>
+                            <h3 class="dest-card-title">Thác Pa Sỹ — Dải Lụa Trắng Giữa Đại Ngàn Nguyên Sinh</h3>
+                            <p class="dest-card-desc">Dòng thác 45m đổ tung bọt trắng xóa giữa rừng rậm nguyên sinh, gắn liền với huyền tích 'ba nguồn suối tụ hội' và khu vườn tượng gỗ dân gian Tây Nguyên độc đáo.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Hồ Đắk Ke & Hoa Mai Anh Đào -->
+                    <div class="dest-card single-col" data-legend="Hồ Đắk Ke (tên gốc theo tiếng Mơ Nâm là hồ Toong Rơ Pông) là hồ nước tự nhiên lớn và thơ mộng nhất trong quần thể 'Bảy hồ' huyền thoại tại thị trấn Măng Đen với diện tích mặt nước rộng hơn 3ha. Hồ nước được bao bọc bởi những rặng thông reo rì rào và hàng trăm gốc hoa mai anh đào cổ thụ ven hồ. Vào mùa đông xuân (tháng 12 – tháng 2), hoa mai anh đào bung nở rực rỡ sắc hồng soi bóng xuống mặt nước ngọc bích phẳng lặng như gương. Du khách có thể tản bộ trên những cây cầu gỗ mộc, chèo thuyền kayak ngắm hoa hoặc thưởng trà giữa không gian tĩnh mịch nguyên sơ.">
+                        <div class="dest-card-img">
+                            <img src="images/mangden_ho_dak_ke_hoa_anh_dao.webp" alt="Hồ Đắk Ke hoa mai anh đào Măng Đen" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🌸 Mùa hoa anh đào</span>
+                                <span class="tag">Bảy hồ huyền thoại</span>
+                            </div>
+                            <h3 class="dest-card-title">Hồ Đắk Ke (Hồ Toong Rơ Pông)</h3>
+                            <p class="dest-card-desc">Mặt hồ trong xanh ngọc bích phẳng lặng in bóng hàng thông già và những vạt hoa mai anh đào hồng thắm rực rỡ ven hồ mỗi độ đông về.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Làng Kon Bring & Nhà Rông -->
+                    <div class="dest-card single-col" data-legend="Nằm nép mình thanh bình bên sườn thung lũng xã Đắk Long (nay thuộc thị trấn Măng Đen), Kon Bring là một trong bốn làng du lịch cộng đồng kiểu mẫu của đồng bào dân tộc Mơ Nâm (nhánh người Ba Na và Xơ Đăng). Trái tim của làng là ngôi Nhà Rông truyền thống sừng sững cao vút với mái tranh uốn lượn hình lưỡi rìu ngửa lên trời — biểu tượng cho sức mạnh và sự kết nối giữa con người với thần linh Yang. Tại đây, du khách được lắng nghe tiếng cồng chiêng ngân vang giữa đêm lửa trại, xem nghệ nhân dệt thổ cẩm và thưởng thức ché rượu cần đượm nồng vị lá rừng.">
+                        <div class="dest-card-img">
+                            <img src="images/mangden_nha_rong_kon_bring.webp" alt="Nhà Rông làng văn hóa Kon Bring Măng Đen" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di sản không gian cồng chiêng</span>
+                                <span class="tag">Làng Mơ Nâm</span>
+                            </div>
+                            <h3 class="dest-card-title">Làng Văn Hóa Cộng Đồng Kon Bring</h3>
+                            <p class="dest-card-desc">Ngôi nhà Rông mái tranh cao vút sừng sững giữa thung lũng, nơi bảo tồn nguyên vẹn nhịp sống, tiếng cồng chiêng và nét văn hóa thổ cẩm người Mơ Nâm.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Rừng thông & Đường sương Măng Đen -->
+                    <div class="dest-card double-col" data-legend="Măng Đen sở hữu thảm thực vật rừng thông bạt ngàn với diện tích che phủ rừng lên tới hơn 80% — cao nhất vùng Tây Nguyên. Những cánh rừng thông ba lá và thông đỏ cổ thụ bạt ngàn trải dài tít tắp dọc theo các triền đồi uốn lượn. Vào những buổi sớm mùa đông, cả rừng thông chìm ngập trong biển sương mây dày đặc, khi ánh mặt trời vừa hé rạng, từng luồng ánh sáng 'god rays' vàng óng xuyên qua tán lá kim tạo nên khung cảnh điện ảnh huyền bí mê đắm lòng người. Ven rừng thông là những triền đồi hoa sim tím và hoa dã quỳ vàng rực rỡ khắp nẻo đường.">
+                        <div class="dest-card-img">
+                            <img src="images/mangden_rung_thong_duong_suong.webp" alt="Rừng thông đại ngàn trong sương Măng Đen" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🌲 Đại ngàn thông reo</span>
+                                <span class="tag">Săn sương sớm</span>
+                            </div>
+                            <h3 class="dest-card-title">Đại Ngàn Rừng Thông & Đồi Sim Măng Đen</h3>
+                            <p class="dest-card-desc">Cung đường uốn lượn xuyên qua những rặng thông cổ thụ ngút ngàn chìm trong màn sương mây mờ ảo, đón luồng nắng sớm mai tuyệt mỹ tựa cổ tích.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Tượng Đức Mẹ Măng Đen -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc trên ngọn đồi thông tĩnh lặng cách trung tâm thị trấn Măng Đen khoảng 1km, tượng Đức Mẹ Măng Đen (còn được gọi là Đức Mẹ Sầu Bi hay Đức Mẹ Cụt Tay) là điểm hành hương tâm linh nổi tiếng của cả du khách Công giáo và lương dân trên khắp cả nước. Pho tượng được dựng từ năm 1971 trong thời kỳ chiến tranh, sau đó bị thất lạc giữa rừng sâu và được phát hiện lại vào năm 2004 với đôi bàn tay bị gãy cụt. Hình ảnh Đức Mẹ với đôi tay không nguyên vẹn mang khuôn mặt thuần hậu của người phụ nữ Tây Nguyên trở thành biểu tượng thiêng liêng của lòng bao dung, xoa dịu nỗi đau và che chở cho những phận người khốn khó.">
+                        <div class="dest-card-img">
+                            <img src="images/mangden_tuong_duc_me_giua_rung.webp" alt="Tượng Đức Mẹ Măng Đen Kon Tum" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Tâm linh linh thiêng</span>
+                                <span class="tag">Đồi thông</span>
+                            </div>
+                            <h3 class="dest-card-title">Trung Tâm Hành Hương Đức Mẹ Măng Đen</h3>
+                            <p class="dest-card-desc">Bức tượng Đức Mẹ nép mình dưới bóng rừng thông cổ thụ thanh tịnh, biểu tượng thiêng liêng xoa dịu nỗi đau và nguyện cầu bình an.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Cung đường hoa mai anh đào -->
+                    <div class="dest-card single-col" data-legend="Không cần phải sang tận Nhật Bản hay chen chúc ở Đà Lạt, Măng Đen sở hữu hơn 100.000 cây hoa mai anh đào được trồng đồng loạt khắp các cung đường nội ô thị trấn, sườn đồi, quanh các hồ nước và khuôn viên các biệt thự gỗ. Mùa đông trên cao nguyên nhiệt độ xuống thấp (12 – 16°C) kích thích hoa đồng loạt trút lá và trổ bông hồng rực rỡ từ cuối tháng 12 đến hết tháng 1 dương lịch. Những con đường rợp sắc hoa mai anh đào uốn lượn bên sườn thông mờ sương tạo nên không gian lãng mạn vô ngần cho các cặp đôi và giới trẻ yêu nhiếp ảnh.">
+                        <div class="dest-card-img">
+                            <img src="images/mangden_mua_hoa_mai_anh_dao.webp" alt="Mùa hoa mai anh đào Măng Đen nở rộ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🌸 Sắc hồng mùa đông</span>
+                                <span class="tag">Mùa lễ hội</span>
+                            </div>
+                            <h3 class="dest-card-title">Cung Đường Hoa Mai Anh Đào Rực Rỡ</h3>
+                            <p class="dest-card-desc">Hàng vạn gốc hoa mai anh đào nở rộ hồng rực góc trời cao nguyên vào dịp cuối năm, biến thị trấn mờ sương thành thiên đường thơ mộng.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Đèo Măng Đen QL24 -->
+                    <div class="dest-card single-col" data-legend="Nằm trên tuyến huyết mạch Quốc lộ 24 nối thành phố Kon Tum với vùng duyên hải tỉnh Quảng Ngãi, Đèo Măng Đen dài hơn 12km vượt qua sườn núi dốc đứng với những khúc cua tay áo ngoạn mục giữa cánh rừng nhiệt đới chuyển tiếp sang á nhiệt đới rợp bóng thông. Đứng từ đỉnh đèo ở độ cao hơn 1.100m, du khách có thể phóng tầm mắt ôm trọn những thung lũng mây giăng mờ ảo phía dưới, chiêm ngưỡng những con suối nhỏ chảy luồn lách qua khe đá và cảm nhận rõ rệt làn gió lạnh buốt của khí hậu cao nguyên Măng Đen.">
+                        <div class="dest-card-img">
+                            <img src="images/mangden_deo_mang_den_ql24.webp" alt="Cung đèo Măng Đen Quốc lộ 24 Kon Tum" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Cung đường huyền thoại</span>
+                                <span class="tag">Quốc lộ 24</span>
+                            </div>
+                            <h3 class="dest-card-title">Đèo Măng Đen — Khúc Vĩ Cầm Hùng Vĩ</h3>
+                            <p class="dest-card-desc">Cung đèo 12km uốn lượn ngoạn mục giữa rừng già nguyên sinh và thông reo, ranh giới chuyển tiếp diệu kỳ lên cao nguyên ôn đới mát lạnh.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Nông nghiệp công nghệ cao & Dâu tây -->
+                    <div class="dest-card single-col" data-legend="Nhờ có độ cao trên 1.200m và khí hậu ôn đới quanh năm mát lành, Măng Đen đã được quy hoạch thành Trung tâm Nông nghiệp Công nghệ cao trọng điểm của tỉnh Kon Tum. Nơi đây quy tụ hàng chục trang trại hữu cơ ứng dụng công nghệ Israel và Nhật Bản chuyên trồng các loại cây xứ lạnh như dâu tây giống Hana Nhật Bản quả đỏ mọng ngọt đậm, cà chua cherry, phúc bồn tử, dưa lưới và cà phê Arabica xứ lạnh Măng Đen. Du khách có thể trực tiếp bước vào nhà kính tự tay hái những trái dâu chín mọng ngọt ngào và thưởng thức ngay tại vườn.">
+                        <div class="dest-card-img">
+                            <img src="images/mangden_vuon_dau_tay_cong_nghe_cao.webp" alt="Vườn dâu tây nông nghiệp công nghệ cao Măng Đen" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">🍓 Nông nghiệp sạch</span>
+                                <span class="tag">Trải nghiệm hái dâu</span>
+                            </div>
+                            <h3 class="dest-card-title">Vườn Dâu Tây Nông Nghiệp Công Nghệ Cao</h3>
+                            <p class="dest-card-desc">Những luống dâu tây trĩu quả chín mọng đỏ rực trong nhà kính công nghệ cao, trải nghiệm nông nghiệp sinh thái ngọt lành vùng cao xứ lạnh.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DI CHUYỂN & KẾT NỐI TỪ HÀ NỘI -->
+                <h2 id="di-chuyen"><span class="icon">✈️</span> 3. Hướng Dẫn Di Chuyển Chuẩn Xác Từ Hà Nội</h2>
+                
+                <h3>1. Đường hàng không kết hợp đường bộ (Lộ trình nhanh nhất: ~4 giờ)</h3>
+                <p>Măng Đen thuộc tỉnh Kon Tum chưa có sân bay thương mại riêng, du khách từ Hà Nội di chuyển tối ưu nhất theo phương án:</p>
+                <ul>
+                    <li><strong>Chặng 1: Bay từ Hà Nội đi Pleiku (Gia Lai):</strong> Khởi hành từ Sân bay Quốc tế Nội Bài (HAN) đáp xuống Sân bay Pleiku (PXU). Thời gian bay thẳng: <strong>1 giờ 35 phút</strong> (các hãng Vietnam Airlines, Vietjet Air khai thác hàng ngày).</li>
+                    <li><strong>Chặng 2: Xe đón từ Sân bay Pleiku đi Măng Đen (~105km):</strong>
+                        <br>• Đoạn Pleiku $\rightarrow$ TP Kon Tum: Dài ~50km theo Quốc lộ 14 (thời gian di chuyển: 1 tiếng).
+                        <br>• Đoạn TP Kon Tum $\rightarrow$ Thị trấn Măng Đen: Dài ~55km theo Quốc lộ 24 vượt đèo Măng Đen (thời gian di chuyển: 1 tiếng 15 phút).
+                        <br>• <em>Phương tiện:</em> Taxi sân bay trọn gói (khoảng 800.000 – 1.000.000 VNĐ/xe 4-7 chỗ), hoặc đi xe bus từ Pleiku sang Kon Tum rồi bắt xe buýt/xe khách tuyến Kon Tum – Măng Đen (giá vé 50.000 VNĐ/lượt).
+                    </li>
+                </ul>
+
+                <h3>2. Đường bộ xuyên Việt (~1.080km từ Hà Nội)</h3>
+                <p>Dành cho các phượt thủ hoặc đoàn xe gia đình thích hành trình du lịch đường dài xuyên Việt:</p>
+                <ul>
+                    <li><strong>Tuyến đường:</strong> Hà Nội $\rightarrow$ Cao tốc Bắc – Nam phía Đông (CT01) hoặc Đường Hồ Chí Minh $\rightarrow$ Quảng Trị $\rightarrow$ Đà Nẵng $\rightarrow$ Quảng Ngãi $\rightarrow$ Rẽ Quốc lộ 24 vượt đèo Măng Đen lên Kon Plông (hoặc qua Quốc lộ 14B từ Đà Nẵng qua Đắk Glei về Kon Tum).</li>
+                    <li><strong>Thời gian di chuyển:</strong> Khoảng 20 – 22 giờ lái xe liên tục (thường chia làm hành trình 2 ngày 1 đêm có dừng nghỉ đêm tại Quảng Bình hoặc Đà Nẵng).</li>
+                </ul>
+
+                <!-- BẢNG GIÁ VÉ & DỊCH VỤ -->
+                <h2 id="gia-ve"><span class="icon">🎟️</span> 4. Bảng Giá Vé & Dịch Vụ Tham Quan Mới Nhất</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Điểm tham quan / Dịch vụ</th>
+                                <th>Chi phí tham khảo</th>
+                                <th>Ghi chú & Trải nghiệm thực tế</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Khu du lịch sinh thái Thác Pa Sỹ</td>
+                                <td><span class="price-tag">50.000 VNĐ / người lớn</span><br><span style="font-size: 0.85rem; color: var(--text-sec);">25.000 VNĐ / trẻ em</span></td>
+                                <td>Vé vào cổng tham quan 45m thác nước, cầu gỗ và Vườn tượng gỗ dân gian Tây Nguyên (áp dụng theo biểu giá điều chỉnh từ cuối năm 2026; trẻ dưới 1m miễn phí)</td>
+                            </tr>
+                            <tr>
+                                <td>Hồ Đắk Ke (Hồ Toong Rơ Pông)</td>
+                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
+                                <td>Tự do tản bộ ngắm hoa mai anh đào quanh hồ (Dịch vụ chèo thuyền kayak / đạp vịt tính phí riêng: ~50.000 – 100.000 VNĐ/giờ)</td>
+                            </tr>
+                            <tr>
+                                <td>Làng văn hóa du lịch cộng đồng Kon Bring</td>
+                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
+                                <td>Tự do tham quan Nhà Rông, giao lưu người Mơ Nâm (xem biểu diễn cồng chiêng lửa trại nhóm đông theo thỏa thuận với bản)</td>
+                            </tr>
+                            <tr>
+                                <td>Trung tâm hành hương Đức Mẹ Măng Đen</td>
+                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
+                                <td>Điểm chiêm bái tâm linh thanh tịnh giữa đồi thông (vui lòng giữ trật tự và trang phục lịch sự)</td>
+                            </tr>
+                            <tr>
+                                <td>Các đồi thông & Cung đường hoa mai anh đào</td>
+                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
+                                <td>Không gian công cộng tự do chụp ảnh check-in (chú ý bảo vệ cây xanh, không bẻ cành ngắt hoa)</td>
+                            </tr>
+                            <tr>
+                                <td>Trang trại Dâu tây & Nông nghiệp công nghệ cao</td>
+                                <td><span class="price-tag">Miễn phí vào cổng</span></td>
+                                <td>Tự do chụp ảnh trong nhà kính; dâu tây tự hái cân tính tiền theo giá thị trường (khoảng 250.000 – 350.000 VNĐ/kg tùy loại)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- LƯU TRÚ & ẨM THỰC -->
+                <h2 id="luu-tru"><span class="icon">🍲</span> 5. Lưu Trú & Tinh Hoa Ẩm Thực Đại Ngàn Măng Đen</h2>
+                
+                <h3>1. Gợi ý điểm lưu trú tại Măng Đen</h3>
+                <ul>
+                    <li><strong>Homestay phong cách gỗ giữa rừng thông:</strong> La Maison Homestay, Sóc's House, Chàng Sen, Măng Đen Lữ Quán... Không gian mộc mạc ấm áp, lò sưởi củi, ban công nhìn ra đồi thông sương phủ, giá từ 350.000 – 700.000 VNĐ/đêm.</li>
+                    <li><strong>Resort & Khách sạn tiện nghi:</strong> Golden Boutique Hotel Măng Đen, Đắk Ke Măng Đen Resort, Khách sạn Tự Do Măng Đen... không gian sang trọng, dịch vụ chuyên nghiệp, giá từ 900.000 – 1.800.000 VNĐ/đêm.</li>
+                    <li><strong>Glamping & Cắm trại ven hồ / đồi thông:</strong> Trải nghiệm ngủ lều sang trọng đón gió lạnh cao nguyên, ngắm bầu trời đầy sao và sương sớm mai.</li>
+                </ul>
+
+                <h3>2. Tinh hoa ẩm thực vùng cao Măng Đen</h3>
+                <div style="margin: 1.5rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <img src="images/mangden_am_thuc_com_lam_ga_nuong.webp" alt="Ẩm thực Măng Đen cơm lam gà nướng tiêu rừng" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 420px;" loading="lazy">
+                    <div style="padding: 0.75rem 1.25rem; background: var(--bg-card); font-size: 0.85rem; color: var(--text-sec); border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                        <span>🍲 Mâm cỗ đặc sản Tây Nguyên: Gà đồi nướng lá tiêu rừng giòn rụm, cơm lam ống nứa dẻo thơm và muối ớt sọ Măng Đen cay nồng</span>
+                        <span style="font-size: 0.8rem; color: var(--accent);">🎨 Ảnh AI GO FAR</span>
+                    </div>
+                </div>
+
+                <div class="food-list">
+                    <div class="food-item">
+                        <span class="name">🍗 Gà nướng lá tiêu rừng Măng Đen</span>
+                        Gà thả đồi thịt săn chắc ngọt đậm được ướp với các loại lá rừng đặc trưng (đặc biệt là lá tiêu rừng giã nhuyễn cùng mật ong rừng), nướng chậm trên than hồng da vàng giòn rụm tỏa hương thơm nức mũi, chấm cùng muối hột ớt sọ cay tê đầu lưỡi.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🎋 Cơm lam nếp nương Măng Đen</span>
+                        Gạo nếp rẫy hạt tròn mẩy ngâm trong nước suối đầu nguồn, nhồi vào ống nứa non bịt lá chuối rồi nướng trên than củi rực hồng. Vỏ ống nứa xém đen bóc ra để lại lớp màng lụa trắng mịn, hạt cơm dẻo quánh thơm nồng hương tre nứa tự nhiên.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🍲 Lẩu xuyên tiêu Măng Đen</span>
+                        Nồi lẩu hai ngăn độc đáo với nước dùng ninh từ sâm dây Kon Tum và các loại thảo mộc vùng cao, một bên cay nồng đượm vị hoa tiêu rừng làm ấm sực cơ thể giữa đêm lạnh cao nguyên, một bên ngọt thanh thanh đạm nhúng cùng rau rừng tươi rói.
+                    </div>
+                    <div class="food-item">
+                        <span class="name">🐖 Heo rẫy nướng xiên & Rượu cần</span>
+                        Thịt heo bản nuôi thả rẫy tự nhiên da mỏng thịt mềm ít mỡ, tẩm ướp sả ớt mắc khén nướng than giòn rụm, nhắm cùng ngụm rượu cần nếp ủ men lá truyền thống của đồng bào Mơ Nâm men say đằm thắm.
+                    </div>
+                </div>
+
+                <!-- THỜI ĐIỂM & LƯU Ý -->
+                <h2 id="thoi-diem"><span class="icon">🗓️</span> 6. Lịch Mùa Hoa & Mẹo Du Lịch Bản Địa</h2>
+                
+                <h3>1. Lịch các mùa đẹp nhất trong năm tại Măng Đen</h3>
+                <ul>
+                    <li><strong>Tháng 12 – Tháng 1 (Mùa Hoa Mai Anh Đào Rực Rỡ Nhất):</strong> Mùa đẹp và đông vui nhất năm. Cả thị trấn bừng sáng trong sắc hồng mai anh đào, thời tiết se lạnh khô ráo, nắng vàng chan hòa và sương mù bồng bềnh lúc sớm mai.</li>
+                    <li><strong>Tháng 2 – Tháng 4 (Mùa Hoa Ban Trắng & Hoa Sim Rừng):</strong> Hoa ban trắng và hoa mua, hoa sim rừng đua nhau nở rộ trên các sườn đồi; mùa thu hoạch dâu tây công nghệ cao chín rộ.</li>
+                    <li><strong>Tháng 5 – Tháng 9 (Mùa Hè Xanh Tránh Nóng & Măng Rừng):</strong> Nhiệt độ chỉ khoảng 20 – 24°C, thời điểm lý tưởng để trốn cái nóng gay gắt của đồng bằng, ngắm thác Pa Sỹ cuồn cuộn nước trắng và thưởng thức măng le tươi non.</li>
+                    <li><strong>Tháng 10 – Tháng 11 (Mùa Lúa Chín Ruộng Bậc Thang & Hoa Dã Quỳ):</strong> Thung lũng Kon Bring vàng óng ả mùa gặt, những vạt hoa dã quỳ vàng rực nở dọc quốc lộ 24.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>Lưu ý quan trọng khi du lịch Măng Đen:</strong><br>
+                    • <strong>Trang phục giữ ấm:</strong> Nhiệt độ ban đêm và rạng sáng tại Măng Đen thường giảm sâu xuống 12 – 15°C kèm sương mù dày, hãy luôn chuẩn bị áo khoác ấm, khăn choàng cổ và găng tay.<br>
+                    • <strong>Lái xe vượt đèo Măng Đen (QL24):</strong> Đèo dốc quanh co và thường xuyên có sương mù che khuất tầm nhìn, lái xe cần đi chậm, bật đèn sương mù và giữ khoảng cách an toàn.<br>
+                    • <strong>Tôn trọng không gian linh thiêng & văn hóa bản địa:</strong> Khi vào chiêm bái tại Trung tâm hành hương Đức Mẹ Măng Đen hoặc thăm Nhà Rông làng Kon Bring, cần ăn mặc kín đáo lịch sự, không chạm vào các hiện vật thờ cúng và xin phép trước khi chụp ảnh chân dung người già, trẻ nhỏ đồng bào.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+        <div>
+            <strong>GO FAR</strong> — Go Straight Ahead · Bản quyền nội dung thuộc về GO FAR
+        </div>
+        <div class="credits">
+            Biên tập bởi <strong>Sửu nhi</strong> · 🎨 Ảnh nghệ thuật khởi tạo bởi AI
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL (SCROLLABLE & NO-CUTOFF) -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">&times;</button>
+        <div class="lightbox-dialog">
+            <img class="lightbox-content" id="lightboxImg" alt="Chi tiết thắng cảnh Măng Đen">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            document.querySelectorAll('.dest-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    lightboxModal.style.display = 'flex';
+                    lightboxModal.scrollTop = 0;
+                    lightboxImg.src = img.src;
+                    
+                    const titleText = card.querySelector('.dest-card-title')?.innerText || '';
+                    const descText = card.querySelector('.dest-card-desc')?.innerText || '';
+                    const legend = card.getAttribute('data-legend') || '';
+                    
+                    let captionHTML = '';
+                    if (titleText) {
+                        captionHTML += `<strong style="font-size: 1.4rem; color: var(--accent-gold); display: block; margin-bottom: 0.4rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
+                    }
+                    if (descText) {
+                        captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; margin-bottom: 1rem;">${descText}</span>`;
+                    }
+                    if (legend) {
+                        captionHTML += `
+                        <div style="background: rgba(22, 44, 62, 0.92); border: 1px solid rgba(255, 140, 50, 0.4); border-radius: 12px; padding: 1.25rem 1.5rem; text-align: left; box-shadow: 0 8px 32px rgba(0,0,0,0.4); margin-bottom: 1.5rem;">
+                            <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 600;">
+                                ✨ Dấu ấn Sử thi & Huyền thoại Đại Ngàn
+                            </span>
+                            <span style="font-size: 0.92rem; color: #f8fafc; line-height: 1.75; display: block;">${legend}</span>
+                        </div>`;
+                    }
+                    lightboxCaption.innerHTML = captionHTML;
+                });
+            });
+
+            const closeLightbox = () => {
+                lightboxModal.style.display = 'none';
+            };
+
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            lightboxModal.addEventListener('click', (e) => {
+                const dialog = document.querySelector('.lightbox-dialog');
+                if (e.target === lightboxModal || e.target === dialog) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

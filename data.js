@@ -85,6 +85,19 @@ const GOFAR_DATA = {
             modalId: 'binh-lieu'
         },
         {
+            id: 'dest-mang-den',
+            title: 'Măng Đen',
+            category: 'mountain',
+            tags: ['🌸 Mai anh đào', 'Tây Nguyên'],
+            desc: '"Nàng thơ giữa đại ngàn", rừng thông mờ sương, thác Pa Sỹ 45m, hồ Đắk Ke hoa anh đào và nhà Rông Kon Bring.',
+            img: 'images/mangden_hero.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 324,
+            size: 'normal',
+            modalId: 'mang-den'
+        },
+        {
             id: 'dest-sapa',
             title: 'Sapa',
             category: 'mountain',

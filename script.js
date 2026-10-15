@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Mộc Châu', slug: 'moc-chau', category: 'mountain', rating: '4.9', img: 'images/mocchau_hero.webp', desc: 'Thảo nguyên hoa mận trắng & đồi chè trái tim', region: 'Miền Bắc' },
         { name: 'Cao Bằng', slug: 'cao-bang', category: 'mountain', rating: '4.9', img: 'images/caobang_hero.webp', desc: 'Non nước kỳ vĩ Thác Bản Giốc & Pác Bó', region: 'Miền Bắc' },
         { name: 'Bình Liêu', slug: 'binh-lieu', category: 'mountain', rating: '4.9', img: 'images/binhlieu_hero.webp', desc: 'Vạn lý trường thành Việt Nam & mùa cỏ lau trắng', region: 'Miền Bắc' },
+        { name: 'Măng Đen (Kon Tum)', slug: 'mang-den', category: 'mountain', rating: '4.9', img: 'images/mangden_hero.webp', desc: 'Nàng thơ giữa đại ngàn & mùa hoa mai anh đào', region: 'Tây Nguyên' },
         { name: 'Phú Quốc', slug: null, category: 'beach', rating: '4.5', img: 'images/phuquoc.webp', desc: 'Đảo ngọc phương Nam', region: 'Miền Nam' },
         { name: 'Nha Trang', slug: null, category: 'beach', rating: '4.4', img: 'images/phuquoc.webp', desc: 'Biển xanh, nắng vàng', region: 'Miền Trung' },
     ];
