@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đà Lạt — Thành phố sương mù, săn mây & ngàn hoa | GO FAR</title>
-    <meta name="description" content="Cẩm nang du lịch Đà Lạt tự túc: Đỉnh Langbiang, hồ Xuân Hương, đồi chè Cầu Đất, ga Đà Lạt, thác Datanla, thiền viện Trúc Lâm, hồ Tuyền Lâm. Ăn uống, đi lại.">
+    <title>Đà Lạt — Thành Phố Sương Mù, Ngàn Hoa & Di Sản Cao Nguyên Lâm Viên | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Đà Lạt tự túc: Đỉnh Langbiang, Hồ Xuân Hương, Đồi chè Cầu Đất, Ga xe lửa Đà Lạt, Thác Datanla, Thiền viện Trúc Lâm, Dinh Bảo Đại, bộ ảnh 4 mùa du lịch, bánh tráng nướng, lẩu gà lá é.">
     <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +13,16 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg: #0F1E19;
+            --bg-sec: #162E27;
+            --bg-card: rgba(22, 46, 39, 0.85);
             --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
             --accent: #FF8C32;
             --accent-gold: #fbbf24;
+            --accent-rose: #f472b6;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -31,11 +32,12 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* NAV */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: linear-gradient(135deg, #0F1E19 0%, #162E27 50%, #0F1E19 100%);
             border-bottom: 2px solid;
             border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
             padding: 1rem 0;
@@ -68,8 +70,8 @@
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
         }
         .hero img {
@@ -80,7 +82,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(15,30,25,0.25) 0%, rgba(15,30,25,0.92) 100%);
         }
         .hero-content {
             position: absolute;
@@ -93,169 +95,280 @@
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
-            border-radius: 99px;
-            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            color: #fff;
         }
-        .hero-meta-line {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+        .hero-subtitle {
+            font-size: 1.1rem;
             color: var(--text-sec);
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            max-width: 860px;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
 
-        /* BREADCRUMB */
-        .breadcrumb {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
-
-        /* CONTENT LAYOUT */
+        /* ARTICLE LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
             padding: 0 1.5rem 4rem;
         }
+
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
 
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent);
+            padding-left: 0.4rem;
+        }
+
         /* MAIN CONTENT */
+        .article-main {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
         .article-main h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.6rem;
+            color: #fff;
             margin: 2.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid rgba(255, 140, 50, 0.3);
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
-        .article-main h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
-        }
-
+        .article-main h2:first-of-type { margin-top: 0; }
+        .article-main h2 .icon { font-size: 1.4rem; }
         .article-main p {
+            margin-bottom: 1.2rem;
             color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .article-main strong { color: #fff; font-weight: 600; }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 140, 50, 0.08);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
 
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
+        .highlight-box {
+            background: rgba(255, 140, 50, 0.08);
+            border: 1px solid rgba(255, 140, 50, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
         }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
+        .highlight-box h4 {
             color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+
+        .legend-box {
+            background: rgba(251, 191, 36, 0.06);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-box p { margin: 0; font-size: 0.95rem; color: #e2e8f0; }
+
+        /* SEASONS GRID (MỤC 4 BẮT BUỘC ĐẶT NGAY SAU MỤC 3) */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .season-card {
+            background: rgba(15, 30, 25, 0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 50, 0.5);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .season-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.06);
+        }
+        .season-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(15, 30, 25, 0.88);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
             font-weight: 600;
-            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251,191,36,0.3);
+        }
+        .season-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .season-time {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+        .season-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
-
-        /* PREMIUM CHECKIN CARDS */
+        /* CHECKIN GRID (MỤC 5) */
         .checkin-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
         .dest-card {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-sec);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
+            cursor: pointer;
         }
         .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+            border-color: rgba(255, 140, 50, 0.4);
         }
         .dest-card.double-col {
             grid-column: span 2;
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
         }
         .dest-card.single-col {
             grid-column: span 1;
@@ -271,16 +384,16 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            filter: brightness(0.9) saturate(1.15);
         }
         .dest-card:hover .dest-card-img img {
             transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+            filter: brightness(0.78) saturate(1.25);
         }
         .dest-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            background: linear-gradient(180deg, transparent 35%, rgba(15, 30, 25, 0.96) 100%);
             z-index: 1;
         }
         .dest-card-content {
@@ -295,748 +408,870 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
         .dest-card-tags .tag {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
+            color: #fff;
+            padding: 0.25rem 0.65rem;
             border-radius: var(--radius-sm);
-            color: #fff !important;
-            font-weight: 600;
+            backdrop-filter: blur(4px);
         }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
         }
         .dest-card-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
-            color: var(--text) !important;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .dest-card-desc {
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             color: var(--text-sec);
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            line-clamp: 2;
             -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
+            overflow: hidden;
         }
-        .dest-card-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .dest-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .dest-rating .stars {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        .dest-rating span:last-child {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .dest-reviews {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .dest-card-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 0.4rem;
-        }
-        
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
 
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
+        /* CULINARY SHOWCASE (MỤC 7) */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
+        .culinary-card {
+            background: rgba(15, 30, 25, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-        .sidebar-item {
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex;
-            align-items: center;
-            gap: 0.6rem;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 50, 0.5);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.06);
+        }
+        .culinary-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(15, 30, 25, 0.85);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251,191,36,0.3);
+        }
+        .culinary-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .culinary-price {
             font-size: 0.85rem;
-            color: var(--text-sec);
+            color: var(--accent);
+            font-weight: 600;
             margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .culinary-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            flex: 1;
         }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
-            color: var(--text-muted);
-            text-decoration: none;
+        .culinary-address {
             font-size: 0.82rem;
-            transition: color 0.2s;
+            color: var(--accent-gold);
+            border-top: 1px dashed rgba(255,255,255,0.08);
+            padding-top: 0.6rem;
+            margin: 0;
         }
-        .toc-list a:hover { color: var(--accent); }
 
-        /* FOOTER */
-        .article-footer {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
+        /* TABLE */
+        .pricing-table-wrap {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15, 30, 25, 0.5);
+        }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+        .pricing-table th, .pricing-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .pricing-table th {
+            background: rgba(22, 46, 39, 0.9);
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .pricing-table tr:hover td {
+            background: rgba(255, 140, 50, 0.04);
+        }
+        .pricing-table .price-tag {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .disclaimer-box {
+            font-size: 0.82rem;
             color: var(--text-muted);
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .article-footer a { color: var(--accent); text-decoration: none; }
-        .credits { font-style: italic; }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
+            font-style: italic;
+            margin-top: 0.5rem;
         }
 
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
-        }
-
-        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        /* LIGHTBOX MODAL */
         .lightbox-modal {
             display: none;
             position: fixed;
             z-index: 9999;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
-            box-sizing: border-box;
-            background-color: rgba(11, 22, 34, 0.96);
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            align-items: center;
-            flex-direction: column;
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
         }
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 52vh;
+        .lightbox-dialog {
+            max-width: 960px;
+            margin: 2rem auto;
+            background: var(--bg-card);
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lightbox-caption {
-            margin: auto;
-            display: block;
-            width: 85%;
-            max-width: 800px;
-            text-align: center;
-            color: var(--text-sec);
-            padding: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            position: relative;
         }
         .lightbox-close {
-            position: fixed;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.2rem;
+            color: #fff;
             cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: background 0.2s, transform 0.2s;
         }
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: var(--accent);
-            text-decoration: none;
+        .lightbox-close:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+        .lightbox-img-wrap {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .lightbox-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .lightbox-caption-wrap {
+            padding: 1.5rem 2rem;
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .lightbox-caption {
+            font-size: 0.95rem;
+            color: var(--text-sec);
+            line-height: 1.7;
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        /* FOOTER */
+        .article-footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .article-footer .credits {
+            margin-top: 0.5rem;
+            color: var(--accent);
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .seasons-grid, .checkin-grid, .culinary-grid { grid-template-columns: 1fr; }
+            .dest-card.single-col, .dest-card.double-col { grid-column: span 1; aspect-ratio: 16/9; }
         }
     </style>
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-da-lat.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-da-lat.html">
-    <meta property="og:title" content="Đà Lạt — Thành phố sương mù, săn mây & ngàn hoa | GO FAR">
-    <meta property="og:description" content="Cẩm nang du lịch Đà Lạt tự túc: Đỉnh Langbiang, hồ Xuân Hương, đồi chè Cầu Đất, ga Đà Lạt, thác Datanla, thiền viện Trúc Lâm, hồ Tuyền Lâm. Ăn uống, đi lại.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/dalat_langbiang.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-da-lat.html">
-    <meta property="twitter:title" content="Đà Lạt — Thành phố sương mù, săn mây & ngàn hoa | GO FAR">
-    <meta property="twitter:description" content="Cẩm nang du lịch Đà Lạt tự túc: Đỉnh Langbiang, hồ Xuân Hương, đồi chè Cầu Đất, ga Đà Lạt, thác Datanla, thiền viện Trúc Lâm, hồ Tuyền Lâm. Ăn uống, đi lại.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/dalat_langbiang.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Đà Lạt",
-    "description": "Cẩm nang du lịch Đà Lạt tự túc: Đỉnh Langbiang, hồ Xuân Hương, đồi chè Cầu Đất, ga Đà Lạt, thác Datanla, thiền viện Trúc Lâm, hồ Tuyền Lâm. Ăn uống, đi lại.",
-    "image": "https://gofarvietnam.com/images/dalat_langbiang.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Tây Nguyên",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
-        }
-    }
-}
-    </script>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                ← Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/dalat_hero.webp" alt="Đà Lạt — Thành phố sương mù">
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <img src="images/dalat_hero.webp" alt="Toàn cảnh thành phố ngàn hoa Đà Lạt mờ ảo trong sương sớm">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Tây Nguyên · Lâm Đồng</span>
-            <h1>Đà Lạt<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Thành phố sương mù</span></h1>
-            <div class="hero-meta-line">
-                <span class="rating">⭐ 4.6 / 5.0</span>
-                <span>·</span>
-                <span>Tỉnh Lâm Đồng, Việt Nam</span>
-                <span>·</span>
-                <span>Cập nhật: 08/2026</span>
-            </div>
+            <span class="hero-tag">🌲 Cao nguyên Lâm Viên • Lâm Đồng</span>
+            <h1>Đà Lạt — Thành Phố Sương Mù & Di Sản Trăm Năm</h1>
+            <p class="hero-subtitle">Nơi giao thoa giữa không gian kiến trúc Đông Dương lãng mạn, rừng thông bạt ngàn mát lạnh quanh năm và những thiên tình sử thiêng liêng giữa đại ngàn Tây Nguyên hùng vĩ.</p>
         </div>
-    </section>
+    </header>
 
-    <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Đà Lạt</strong>
-    </div>
-
+    <!-- MAIN CONTAINER -->
     <div class="article-layout">
         <div class="dashboard-layout">
-            <!-- MAIN ARTICLE -->
-            <article class="article-main">
-
-                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-                <p>Nằm trên cao nguyên Lâm Viên ở độ cao 1.500m so với mực nước biển, thành phố Đà Lạt (Lâm Đồng) được thiên nhiên ban tặng khí hậu ôn đới mát mẻ quanh năm cùng không khí dịu mát trong lành. Nơi đây từ lâu đã nổi tiếng với tên gọi "Thành phố sương mù", "Thành phố ngàn hoa" hay "Tiểu Paris" nhờ các kiến trúc biệt thự Pháp cổ kính lãng mạn ẩn mình dưới rừng thông xanh ngắt bao phủ khắp đồi núi.</p>
-                <p>Du lịch Đà Lạt cuốn hút mọi du khách bởi vẻ đẹp lãng mạn nhẹ nhàng từ những hồ nước phẳng lặng phản chiếu rặng liễu rủ, những đồi chè xanh mướt ngút ngàn lộng gió, những quán cà phê nghệ thuật ẩn mình trong sương sớm cùng văn hóa bản địa vùng cao Tây Nguyên phong phú, mến khách.</p>
-
-                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
-                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Đà Lạt. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
-
-                <div class="checkin-grid">
-                    
-                    <div class="dest-card double-col" data-legend="Cao hơn 2.100m, là địa bàn cư trú lâu đời của tộc người Lạch và người Chil. Tên gọi gắn với thiên tình sử bi tráng giữa chàng K'Lang và nàng H'Biang phản ánh cuộc chiến phá bỏ rào cản chia rẽ dòng tộc trong lịch sử Tây Nguyên, biểu tượng cho sức mạnh liên minh bộ tộc vùng cao.">
-                        <div class="dest-card-img">
-                            <img src="images/dalat_langbiang.webp" alt="Đỉnh Langbiang" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Hùng vĩ</span>
-                                <span class="tag">Nóc nhà Đà Lạt</span>
-                            </div>
-                            <h3 class="dest-card-title">Đỉnh Langbiang</h3>
-                            <p class="dest-card-desc">Ngọn núi huyền thoại cao hơn 2.100m, nơi bạn có thể đi xe Jeep lên đỉnh ngắm trọn thung lũng Trăm Năm, suối Vàng suối Bạc thơ mộng.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Hồ nước trung tâm Đà Lạt, vốn là vết tích dòng thác Cam Ly được kiến tạo ngăn dòng từ thời thuộc Pháp năm 1919. Năm 1953, hồ được đổi tên theo danh sĩ thơ Nôm nổi tiếng thế kỷ XVIII Hồ Xuân Hương, biểu trưng cho sự hòa quyện giữa thiên nhiên thơ mộng và văn hóa thi ca Việt Nam.">
-                        <div class="dest-card-img">
-                            <img src="images/dalat_xuan_huong.webp" alt="Hồ Xuân Hương" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Trái tim thành phố</span>
-                                <span class="tag">Thơ mộng</span>
-                            </div>
-                            <h3 class="dest-card-title">Hồ Xuân Hương</h3>
-                            <p class="dest-card-desc">Hồ nước hình trăng lưỡi liềm thơ mộng ngay trung tâm thành phố, lãng mạn nhất lúc chiều tà khi rặng liễu nhuộm sắc hoàng hôn hồng cam.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Đồn điền chè Cầu Đất (Cau Dat Tea) được người Pháp khai khẩn từ năm 1927 trên cao nguyên Lâm Viên ở độ cao 1.650m, là một trong những đồn điền chè lâu đời nhất Đông Dương. Giống chè Ô Long và chè Shan Tuyết cổ thụ được trồng trên đất đỏ bazan phì nhiêu xứ Lâm Đồng, tạo nên hương vị trà đặc trưng không nơi nào có được. Qua gần 100 năm, đồi chè Cầu Đất vẫn giữ nguyên quy trình canh tác hữu cơ truyền thống.">
-                        <div class="dest-card-img">
-                            <img src="images/dalat_cau_dat.webp" alt="Đồi chè Cầu Đất" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Săn mây</span>
-                                <span class="tag">Xanh ngắt</span>
-                            </div>
-                            <h3 class="dest-card-title">Đồi chè Cầu Đất</h3>
-                            <p class="dest-card-desc">Thung lũng chè hơn 100 tuổi trải dài ngút tầm mắt xanh mướt, điểm săn mây sớm hoàn hảo kết hợp check-in những tuabin gió khổng lồ.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card double-col" data-legend="Ga xe lửa Đà Lạt được xây dựng năm 1932 theo phong cách Art Deco, lấy cảm hứng từ nhà ga Deauville (Fr) với 3 mái vòm cách điệu hình đỉnh núi Langbiang. Đây là nhà ga xe lửa cổ nhất và đẹp nhất Đông Dương, điểm cuối của tuyến đường sắt răng cưa Tháp Chàm - Đà Lạt dài 84km — tuyến đường sắt răng cưa duy nhất tại Việt Nam và là một trong số ít trên thế giới, được kỹ sư Pháp thiết kế để vượt độ cao 1.500m qua đèo dốc Tây Nguyên.">
-                        <div class="dest-card-img">
-                            <img src="images/dalat_railway.webp" alt="Ga Đà Lạt" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Di sản Pháp</span>
-                                <span class="tag">Art Deco</span>
-                            </div>
-                            <h3 class="dest-card-title">Ga Đà Lạt</h3>
-                            <p class="dest-card-desc">Nhà ga xe lửa cổ kính và đẹp nhất Đông Dương với kiến trúc răng cưa độc đáo mô phỏng đỉnh Langbiang hùng vĩ cùng đầu máy hơi nước cổ xưa.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Thác Datanla gắn liền với lịch sử kháng chiến của đồng bào các dân tộc K'Ho bản địa chống xâm lược Chăm Pa cổ đại. Dưới chân thác là thung lũng nước trong vắt ẩn khuất – nơi từng là bãi lánh nạn chiến sự kiên cố và lưu trữ lương thảo vùng cao nguyên đất đỏ.">
-                        <div class="dest-card-img">
-                            <img src="images/dalat_datanla.webp" alt="Thác Datanla" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Trải nghiệm</span>
-                                <span class="tag">Thác nước</span>
-                            </div>
-                            <h3 class="dest-card-title">Thác Datanla</h3>
-                            <p class="dest-card-desc">Ngọn thác hùng vĩ hoang sơ ẩn mình trong rừng thông, nổi tiếng với hệ thống máng trượt alpine coaster xuyên rừng dài nhất Đông Nam Á.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Thiền viện Trúc Lâm Đà Lạt nằm trên đỉnh Phụng Hoàng bên hồ Tuyền Lâm, là trung tâm Thiền tông lớn nhất Việt Nam. Thiền viện được xây dựng năm 1993 theo dòng Thiền phái Trúc Lâm Yên Tử — dòng thiền 'Made in Vietnam' do vua Trần Nhân Tông sáng lập vào thế kỷ XIII sau khi đánh thắng quân Nguyên - Mông, rồi buông bỏ ngai vàng xuất gia tu hành tại Yên Tử. Kiến trúc thiền viện hài hòa giữa rừng thông xanh mướt và sương mù bảng lảng.">
-                        <div class="dest-card-img">
-                            <img src="images/dalat_truc_lam.webp" alt="Thiền viện Trúc Lâm" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Tâm linh</span>
-                                <span class="tag">Thanh tịnh</span>
-                            </div>
-                            <h3 class="dest-card-title">Thiền viện Trúc Lâm</h3>
-                            <p class="dest-card-desc">Ngôi thiền viện thuộc thiền phái Trúc Lâm Yên Tử nằm thanh tịnh bên sườn đồi, rợp bóng ngàn thông và rực rỡ sắc màu trăm hoa đua nở.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Hồ Tuyền Lâm (nghĩa là 'suối trong rừng') là hồ nhân tạo lớn nhất Đà Lạt, nằm giữa rừng thông bạt ngàn. Hồ được xây dựng năm 1982 bằng cách ngăn đập suối Tía phục vụ thủy lợi và du lịch. Khu vực quanh hồ là Khu du lịch quốc gia Tuyền Lâm với hệ sinh thái rừng thông ba lá đặc trưng của cao nguyên Lâm Viên. Vua Bảo Đại — hoàng đế cuối cùng triều Nguyễn — từng chọn vùng đất này làm nơi săn bắn và nghỉ dưỡng riêng.">
-                        <div class="dest-card-img">
-                            <img src="images/dalat_tuyen_lam.webp" alt="Hồ Tuyền Lâm" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Mặt hồ xanh</span>
-                                <span class="tag">Bình yên</span>
-                            </div>
-                            <h3 class="dest-card-title">Hồ Tuyền Lâm</h3>
-                            <p class="dest-card-desc">"Nam thiên đệ nhất hồ" với làn nước xanh phẳng lặng ôm trọn những ốc đảo thông xanh, chìm đắm trong sương sớm tĩnh mịch như cõi mơ.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Chợ đêm Đà Lạt nằm ngay trung tâm thành phố, bao quanh khu chợ Đà Lạt cổ được xây dựng từ thời Pháp thuộc. Đây là nơi quy tụ ẩm thực đường phố đặc sản Đà Lạt nổi tiếng: bánh tráng nướng, sữa đậu nành nóng, kem bơ, bánh căn... Chợ đêm Đà Lạt kế thừa truyền thống chợ phiên vùng cao Tây Nguyên, nơi cư dân các dân tộc K'Ho, Mạ, Chu Ru mang nông sản từ rẫy xuống trao đổi mua bán.">
-                        <div class="dest-card-img">
-                            <img src="images/dalat_night_market.webp" alt="Chợ đêm Đà Lạt" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Ẩm thực</span>
-                                <span class="tag">Nhộn nhịp</span>
-                            </div>
-                            <h3 class="dest-card-title">Chợ đêm Đà Lạt</h3>
-                            <p class="dest-card-desc">Không gian ẩm thực đường phố ấm cúng, thưởng thức bánh tráng nướng nóng hổi, sữa đậu nành bốc khói giữa không khí se lạnh đêm đồi.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- DI CHUYỂN & CHI PHÍ -->
-                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-                <p>Nằm trên vùng cao nguyên miền Nam Tây Nguyên, giao thông đến Đà Lạt vô cùng đa dạng:</p>
-                
-                <h3>1. Các phương tiện đến Đà Lạt</h3>
-                <ul>
-                    <li><strong>Máy bay:</strong> Đáp xuống sân bay Liên Khương (cách trung tâm thành phố 30km), sau đó bắt xe buýt sân bay hoặc taxi chạy cao tốc Liên Khương - Prenn vào thành phố.</li>
-                    <li><strong>Xe limousine giường phòng:</strong> Rất nhiều hãng xe chạy tuyến TP.HCM - Đà Lạt đón trả tận nơi cực kỳ tiện lợi qua đèo Bảo Lộc thơ mộng.</li>
-                    <li><strong>Xe máy phượt:</strong> Dành cho những ai thích thử thách chinh phục những con đèo uốn lượn đẹp mắt từ Nha Trang (đèo Khánh Lê) hoặc từ Phan Thiết (đèo Đại Ninh).</li>
-                </ul>
-
-                <h3>2. Giá vé tham khảo một số điểm vui chơi</h3>
-                <p>Hầu hết các danh thắng tự nhiên tại Đà Lạt đều thu phí vào cổng nhỏ bảo tồn cảnh quan. Giá vé cáp treo hoặc máng trượt được mua trực tiếp tại bến dịch vụ.</p>
-
-                <table class="info-table">
-                    <thead>
-                        <tr>
-                            <th>Điểm tham quan / Trải nghiệm</th>
-                            <th>Mức giá tham khảo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Máng trượt Alpine Coaster tại Thác Datanla (Khứ hồi)</td>
-                            <td><span class="price-tag">Theo giá dịch vụ tại thác</span></td>
-                        </tr>
-                        <tr>
-                            <td>Thuê xe Jeep khứ hồi lên đỉnh núi Langbiang</td>
-                            <td><span class="price-tag">Tính theo chuyến / ghép khách</span></td>
-                        </tr>
-                        <tr>
-                            <td>Cáp treo đồi Robin sang Thiền viện Trúc Lâm (Khứ hồi)</td>
-                            <td><span class="price-tag">Giá vé khứ hồi niêm yết</span></td>
-                        </tr>
-                        <tr>
-                            <td>Vé tàu cổ Ga Đà Lạt đi Trại Mát (Khứ hồi)</td>
-                            <td><span class="price-tag">Theo hạng ghế ngồi tàu cổ</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- LƯU TRÚ & ẨM THỰC -->
-                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực phố núi</h2>
-                
-                <h3>1. Gợi ý lựa chọn nơi lưu trú</h3>
-                <ul>
-                    <li><strong>Khu vực trung tâm (Bao quanh hồ Xuân Hương, chợ Đà Lạt):</strong> Phù hợp cho những ai thích dạo phố đi bộ, gần chợ đêm ăn uống tấp nập và tiện bắt xe.</li>
-                    <li><strong>Khu vực đồi thông ngoại ô (Tuyền Lâm, phường 11):</strong> Thích hợp cho nghỉ dưỡng homestay nhà kính ngắm đồi thông mộng mơ, resort biệt thự cổ biệt lập mát mẻ.</li>
-                </ul>
-
-                <h3>2. Ẩm thực đồi núi Đà Lạt ấm nồng</h3>
-                <div class="food-list">
-                    <div class="food-item"><span class="name">🥞 Lẩu gà lá é thơm nồng cay nhẹ (Thịt gà ngọt dai ngập trong nước lẩu măng chua cay sả lá é thơm nồng)</span></div>
-                    <div class="food-item"><span class="name">🍕 Bánh tráng nướng Đà Lạt (Được mệnh danh "pizza Việt Nam" nóng hổi giòn rụm béo ngậy trứng phô mai)</span></div>
-                    <div class="food-item"><span class="name">🍳 Bánh căn xíu mại nóng hổi (Vỏ bánh căn giòn rụm chấm nước xíu mại hành hoa thơm lừng béo ngậy)</span></div>
-                    <div class="food-item"><span class="name">🥖 Bánh mì xíu mại chén (Chén xíu mại nóng hổi chấm bánh mì giòn rụm ăn sáng cực ấm lòng)</span></div>
-                </div>
-
-                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
-                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
-                
-                <h3>1. Mùa nào Đà Lạt đẹp nhất trong năm?</h3>
-                <ul>
-                    <li><strong>Tháng 11 – 3 năm sau:</strong> Mùa khô lạnh. Tiết trời se lạnh dưới 15°C vào ban đêm cực kỳ dễ chịu, dã quỳ vàng rực nở dọc các con đèo và mùa hoa mai anh đào hồng thắm ngập tràn phố xá đầu xuân.</li>
-                    <li><strong>Tháng 4 – 6:</strong> Thời điểm hoa phượng tím nhuộm màu hoài niệm phố núi, nắng dịu nhẹ, khô ráo rất đẹp.</li>
-                    <li><strong>Tháng 7 – 10:</strong> Mùa mưa Đà Lạt. Thường có mưa rào vào đầu giờ chiều, tuy nhiên đây lại là mùa săn mây đỉnh nhất năm do độ ẩm không khí rất cao tạo ra những biển mây dày đặc bồng bềnh.</li>
-                </ul>
-
-                <h3>2. Mẹo nhỏ an toàn sống còn</h3>
-                <ul>
-                    <li><strong>Lái xe cẩn thận đường trơn đèo dốc:</strong> Đường đèo Prenn, đèo Mimosa hay đèo Bảo Lộc có độ dốc cao và cua gấp, rất trơn trượt khi trời mưa. Tuyệt đối không phóng nhanh vượt ẩu.</li>
-                    <li><strong>Mang đủ đồ giữ ấm:</strong> Nhiệt độ Đà Lạt đột ngột giảm sâu khi chiều tối xuống, chênh lệch nhiệt độ ngày và đêm rất lớn. Hãy luôn chuẩn bị sẵn áo khoác dày, khăn len ấm.</li>
-                </ul>
-
-                <div class="warning-box">
-                    <p>⚠️ Lưu ý bảo vệ cảnh quan du lịch: Đà Lạt kêu gọi du khách không vứt rác bừa bãi tại các khu vực cắm trại đồi cỏ hồng hay hồ Tuyền Lâm hoang sơ. Hãy cùng chung tay giữ gìn màu xanh trong lành của thành phố sương mù!</p>
-                </div>
-
-            </article>
-
-            <!-- SIDEBAR -->
+            
+            <!-- SIDEBAR WIDGETS -->
             <aside class="sidebar">
-                <!-- QUICK INFO -->
-                <div class="sidebar-card">
-                    <h4>📌 Thông tin nhanh</h4>
-                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Tỉnh Lâm Đồng, Việt Nam</div>
-                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 2 – 3 ngày</div>
-                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 11 – 3 năm sau & Mùa mây</div>
+                <div class="widget">
+                    <h3 class="widget-title">📌 Hồ Sơ Đà Lạt</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí hành chính:</span> <span class="val">Tỉnh Lâm Đồng</span></li>
+                        <li><span class="label">Địa hình:</span> <span class="val">Cao nguyên Lâm Viên</span></li>
+                        <li><span class="label">Độ cao trung bình:</span> <span class="val">1.500 m so với mực nước biển</span></li>
+                        <li><span class="label">Khoảng cách từ Hà Nội:</span> <span class="val">~1.450 km (Bay 1h50p)</span></li>
+                        <li><span class="label">Khoảng cách từ TP.HCM:</span> <span class="val">~305 km (Đèo Prenn mới)</span></li>
+                        <li><span class="label">Khí hậu:</span> <span class="val">Ôn đới núi cao (14 – 24°C)</span></li>
+                        <li><span class="label">Danh hiệu Nhà nước:</span> <span class="val">TP Festival Hoa VN</span></li>
+                        <li><span class="label">Danh hiệu Quốc tế:</span> <span class="val">TP Sáng tạo Âm nhạc UNESCO</span></li>
+                        <li><span class="label">Cửa ngõ hàng không:</span> <span class="val">Sân bay Liên Khương (DLI)</span></li>
+                        <li><span class="label">Thời điểm vàng:</span> <span class="val">Tháng 11 — Tháng 4</span></li>
+                    </ul>
                 </div>
 
-                <!-- TOC -->
-                <div class="sidebar-card">
-                    <h4>📖 Mục lục</h4>
+                <div class="widget">
+                    <h3 class="widget-title">📑 Mục Lục Cẩm Nang</h3>
                     <ul class="toc-list">
-                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
-                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
-                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
-                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
-                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                        <li><a href="#tong-quan">1. Tổng Quan Phố Núi</a></li>
+                        <li><a href="#lich-su-dia-ly">2. Địa Lý & Dấu Ấn Lịch Sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền Thoại & Truyền Tích</a></li>
+                        <li><a href="#bon-mua">4. Chuỗi Hình Ảnh 4 Mùa Du Lịch</a></li>
+                        <li><a href="#thang-canh">5. Top 10 Thắng Cảnh Biểu Tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm Nang Di Chuyển & Cung Đèo</a></li>
+                        <li><a href="#am-thuc">7. Tinh Hoa Ẩm Thực Phố Núi</a></li>
+                        <li><a href="#gia-ve">8. Bảng Giá Vé Tham Quan 2026</a></li>
+                        <li><a href="#lich-trinh">9. Gợi Ý Lịch Trình (3N2Đ) & Mẹo An Toàn</a></li>
                     </ul>
                 </div>
             </aside>
+
+            <!-- MAIN ARTICLE BODY -->
+            <main class="article-main">
+
+                <!-- 1. TỔNG QUAN -->
+                <h2 id="tong-quan"><span class="icon">🌲</span> 1. Tổng Quan Xứ Sở Sương Mù & Cao Nguyên Lâm Viên</h2>
+                <div class="intro-lead">
+                    Nằm trọn trên cao nguyên Lâm Viên ở độ cao 1.500m so với mực nước biển, Đà Lạt là một viên ngọc khí hậu độc nhất vô nhị của Việt Nam. Được bao bọc bởi những rặng thông ba lá ngút ngàn, những dải sương mù bồng bềnh quấn quýt các thung lũng sâu và nền nhiệt độ ôn hòa quanh năm mát mẻ từ 14°C đến 24°C, thành phố này từ lâu đã trở thành biểu tượng kinh điển của tình yêu, thi ca và nghệ thuật nghỉ dưỡng cao cấp.
+                </div>
+                <p>Khác biệt hoàn toàn với khí hậu nhiệt đới gió mùa nóng ẩm của vùng đồng bằng phía Nam, Đà Lạt mang đặc trưng của vùng á nhiệt đới núi cao với bốn mùa luân chuyển kỳ ảo trong cùng một ngày: sương sớm mùa xuân thanh khiết, trưa nắng ấm mùa hạ chan hòa, chiều mây bảng lảng mùa thu lãng đãng và đêm đông se lạnh co mình bên tách cà phê ấm nóng. Đây không chỉ là nơi tránh nóng lý tưởng mà còn là cái nôi gìn giữ hàng ngàn biệt thự Pháp cổ kính, tạo nên một "Tiểu Paris" phương Đông đầy chất thơ.</p>
+
+                <!-- 2. VỊ TRÍ ĐỊA LÝ & DẤU Ấn LỊCH SỬ -->
+                <h2 id="lich-su-dia-ly"><span class="icon">🏛️</span> 2. Vị Trí Địa Lý & Dấu Ấn Lịch Sử Đô Thị Cao Nguyên</h2>
+                <p>Về mặt địa giới hành chính, thành phố Đà Lạt là tỉnh lỵ và trung tâm kinh tế, chính trị, văn hóa của tỉnh Lâm Đồng. Đô thị nằm tựa lưng vào sườn phía Nam của dãy Trường Sơn hùng vĩ, tiếp giáp huyện Lạc Dương ở phía Bắc, huyện Đơn Dương ở phía Đông và huyện Lâm Hà, Đức Trọng ở phía Tây và Nam.</p>
+                
+                <div class="highlight-box">
+                    <h4>📜 Căn Cứ Pháp Lý & Văn Bản Quy Hoạch Nhà Nước</h4>
+                    <p>Theo <strong>Quyết định số 704/QĐ-TTg</strong> ngày 12/05/2014 của Thủ tướng Chính phủ, đồ án Điều chỉnh Quy hoạch chung thành phố Đà Lạt và vùng phụ cận đến năm 2030, tầm nhìn đến năm 2050 đã xác định Đà Lạt phát triển theo mô hình chuỗi các đô thị liên kết có tính đặc thù về "Thành phố trong rừng, rừng trong thành phố"; trung tâm du lịch sinh thái, nghỉ dưỡng cao cấp quốc gia và quốc tế; trung tâm di sản kiến trúc cảnh quan độc đáo.</p>
+                    <p style="margin-top: 0.5rem;">Bên cạnh đó, Đà Lạt vinh dự được Thủ tướng Chính phủ ký <strong>Quyết định số 227/QĐ-TTg</strong> công nhận là <em>"Thành phố Festival Hoa Việt Nam"</em>. Đặc biệt, vào ngày 31/10/2023, Tổng Giám đốc UNESCO đã chính thức ký quyết định công nhận Đà Lạt là thành viên Mạng lưới các thành phố sáng tạo toàn cầu của UNESCO (UCCN) trong lĩnh vực <strong>Âm nhạc</strong>, khẳng định tầm vóc văn hóa nghệ thuật của thành phố trên bản đồ thế giới.</p>
+                </div>
+
+                <p><strong>Dấu ấn lịch sử khởi sinh đô thị:</strong> Lịch sử cận đại của Đà Lạt gắn liền với cột mốc lịch sử ngày <strong>21 tháng 6 năm 1893</strong>, khi nhà thám hiểm, bác sĩ người Pháp gốc Thụy Sĩ <strong>Alexandre Yersin</strong> dẫn đầu đoàn thám hiểm vượt ngàn dặm hiểm trở đặt chân lên đỉnh cao nguyên Langbiang hoang sơ. Bị mê hoặc bởi cảnh sắc thiên nhiên kỳ vĩ và bầu không khí trong lành như vùng núi Alps châu Âu, ông đã gửi thư đề xuất Toàn quyền Paul Doumer chọn vùng đất này để kiến thiết thành một trạm điều dưỡng khí hậu quy mô bậc nhất Đông Dương.</p>
+                
+                <p><strong>Khởi nguyên danh xưng "Đà Lạt":</strong> Về mặt ngôn ngữ và nhân học, tên gọi "Đà Lạt" bắt nguồn từ tiếng của đồng bào bản địa <strong>người Lạch (Lạt)</strong> — một phân nhóm cư dân lâu đời thuộc cộng đồng dân tộc K'Ho. Trong tiếng bản địa, từ <em>"Đạ"</em> có nghĩa là nguồn nước, con sông, con suối; còn <em>"Lạch"</em> là tên gọi của bộ tộc. <em>"Đạ Lạch"</em> nguyên nghĩa là "con suối của người Lạch" — chính là dòng suối Cam Ly lịch sử uốn lượn qua các buôn làng cổ xưa, nơi nuôi dưỡng sự sống của người bản địa qua bao thế hệ trước khi đô thị hiện đại hình thành.</p>
+
+                <!-- 3. HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <h2 id="huyen-thoai"><span class="icon">📜</span> 3. Huyền Thoại & Truyền Tích Dân Gian Vùng Đất</h2>
+                <p>Ẩn sâu dưới làn sương mờ ảo của rừng thông ngút ngàn là cả một kho tàng truyền thuyết dân gian đẫm chất thi ca và bi tráng của đồng bào Tây Nguyên, lý giải sự hình thành của những danh thắng biểu tượng hôm nay.</p>
+
+                <div class="legend-box">
+                    <h4>🏔️ Bản Trường Ca Bất Tử: Chàng K'Lang Và Nàng H'Biang (Nguồn Gốc Núi Langbiang)</h4>
+                    <p>Tương truyền thuở xa xưa, tại vùng cao nguyên hoang vu có hai bộ tộc lớn nhất là người Lạch và người Chil vốn có mối thù hằn truyền kiếp do những lời nguyền hủ tục cổ hủ. Chàng K'Lang — một dũng sĩ kiên cường, tài ba buôn Lạch trong một lần đi săn đã dũng cảm cứu sống nàng H'Biang — người con gái xinh đẹp tuyệt trần của tù trưởng buôn Chil khỏi bầy chó sói hung tợn. Trái tim hai người lập tức hòa cùng một nhịp đập, họ nguyện gắn bó trọn đời bên nhau.</p>
+                    <p style="margin-top: 0.5rem;">Thế nhưng, lời nguyền cấm đoán hôn nhân giữa hai bộ tộc đã ngăn cản tình yêu son sắt của họ. Không chấp nhận buông tay, K'Lang và H'Biang cùng nhau trốn lên đỉnh núi cao sinh sống giữa thiên nhiên đại ngàn. Đến một ngày mùa đông giá rét, nàng H'Biang lâm trọng bệnh. K'Lang vượt đèo lội suối về buôn làng cầu xin thuốc cứu mạng vợ nhưng bị quân làng truy đuổi tàn nhẫn. Để che chắn mũi tên độc của buôn làng bắn về phía K'Lang, nàng H'Biang đã lấy thân mình đỡ tên và ngã xuống trong vòng tay người yêu. Quá đau đớn, K'Lang khóc than thấu tận trời xanh rồi quyên sinh theo nàng. Nước mắt của chàng tuôn trào thành dòng suối Đạ Nhim (suối nước mắt), còn thi thể của hai người hóa thành hai ngọn núi đôi sừng sững tựa vào nhau, được người đời mãi mãi ngợi ca là đỉnh núi <strong>Langbiang</strong> (ghép từ tên K'Lang và H'Biang).</p>
+                </div>
+
+                <div class="legend-box">
+                    <h4>🌊 Huyền Tích Thác Datanla — Dòng Suối Thần "Đạ Tam N'nha"</h4>
+                    <p>Trong tiếng K'Ho, thác Datanla có tên gốc là <em>"Đạ Tam N'nha"</em> (nghĩa là "dòng nước ẩn dưới vòm lá"). Chuyện xưa kể rằng, trong cuộc giao tranh ác liệt chống lại bầy dã thú và giặc cướp tràn vào xâm chiếm vùng cao nguyên, dũng sĩ bản địa K'Lang đã một mình cầm gươm báu xông pha trận mạc. Khi chém đổ hàng ngàn cây rừng cổ thụ, lưỡi gươm của chàng đã làm nứt toác các khối đá hoa cương, để lộ ra một dòng suối ngầm cuồn cuộn nước ngọt mát lành ẩn sâu dưới tán lá rậm rạp. Dòng nước thần kỳ ấy đã tiếp thêm sức mạnh cho hàng ngàn tráng sĩ buôn làng đánh tan giặc dữ, đem lại thái bình muôn đời cho vùng đất Lâm Viên.</p>
+                </div>
+
+                <!-- 4. CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH ĐÀ LẠT (BẮT BUỘC ĐẶT NGAY SAU MỤC TRUYỀN TÍCH) -->
+                <h2 id="bon-mua"><span class="icon">🌸</span> 4. Chuỗi Hình Ảnh 4 Mùa Du Lịch Đà Lạt</h2>
+                <p>Mỗi mùa trôi qua trên cao nguyên Lâm Viên lại khoác lên phố núi một tấm áo diệu kỳ, biến Đà Lạt thành bức tranh thiên nhiên bốn mùa rung động lòng người. Dưới đây là bộ ảnh đặc tả vẻ đẹp độc bản của 4 mùa du lịch Đà Lạt:</p>
+
+                <div class="seasons-grid">
+                    <!-- MÙA XUÂN -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/dalat_mua_xuan_mai_anh_dao.webp" alt="Mùa xuân hoa mai anh đào nở rực hồng triền đồi thông Đà Lạt">
+                            <span class="season-badge">Mùa Xuân</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Sắc Hồng Mai Anh Đào Phố Núi</h3>
+                            <div class="season-time">Tháng 1 — Tháng 3 • Mùa hoa bừng nở</div>
+                            <p class="season-desc">Khi tiết trời đầu năm còn se lạnh bảng lảng, hàng vạn gốc Mai Anh Đào cổ thụ ven Hồ Xuân Hương, dốc Đa Quý và đường Trần Hưng Đạo đồng loạt trút lá bung nở sắc hồng phấn diễm lệ, nhuộm hồng cả sườn đồi thông trong ánh nắng ban mai tinh khôi.</p>
+                        </div>
+                    </div>
+
+                    <!-- MÙA HẠ -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/dalat_mua_ha_phuong_tim_san_may.webp" alt="Mùa hạ phượng tím biếc rợp bóng biệt thự cổ và biển mây Cầu Đất">
+                            <span class="season-badge">Mùa Hạ</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Phượng Tím Lãng Mạn & Mùa Săn Mây</h3>
+                            <div class="season-time">Tháng 4 — Tháng 6 • Biển mây cuồn cuộn</div>
+                            <p class="season-desc">Những chùm hoa Phượng Tím (Jacaranda) nở rộ dọc những con dốc đá quanh co và biệt thự cổ kính thời Pháp. Đây cũng là thời điểm vàng để thức giấc lúc 5 giờ sáng đón biển mây bồng bềnh cuộn sóng qua thung lũng đồi chè Cầu Đất.</p>
+                        </div>
+                    </div>
+
+                    <!-- MÙA THU -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/dalat_mua_thu_vuon_hong_chin.webp" alt="Mùa thu vườn hồng chín vàng cam trĩu quả bên đồi thông Đà Lạt">
+                            <span class="season-badge">Mùa Thu</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Hồng Chín Vàng & Mưa Bay Lãng Đãng</h3>
+                            <div class="season-time">Tháng 7 — Tháng 9 • Thu hoạch trĩu cành</div>
+                            <p class="season-desc">Đà Lạt bước vào mùa thu với những cơn mưa rào bất chợt làm sạch trong bầu không khí. Khắp các triền đồi ngoại ô Khe Sanh, Mimosa, những cành hồng trút hết lá xanh chỉ còn trơ lại hàng ngàn quả hồng trứng, hồng giòn chín cam đỏ rực rỡ dưới nắng hanh vàng.</p>
+                        </div>
+                    </div>
+
+                    <!-- MÙA ĐÔNG -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/dalat_mua_dong_hoa_da_quy_co_hong.webp" alt="Mùa đông hoa dã quỳ vàng rực rỡ và đồi cỏ hồng tuyết Đan Kia Đà Lạt">
+                            <span class="season-badge">Mùa Đông</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Hoa Dã Quỳ Vàng & Đồi Cỏ Hồng Tuyết</h3>
+                            <div class="season-time">Tháng 10 — Tháng 12 • Mùa đẹp nhất năm</div>
+                            <p class="season-desc">Thời điểm Đà Lạt lạnh nhất và cũng quyến rũ nhất: hoa dã quỳ dại vàng rực nở tràn khắp mọi nẻo đèo uốn lượn, trong khi thung lũng Đan Kia - Suối Vàng trải rộng tấm thảm cỏ hồng tuyết ngậm sương lung linh dưới ánh bình minh rạng rỡ.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <h2 id="thang-canh"><span class="icon">📍</span> 5. Top 10 Thắng Cảnh Biểu Tượng & Dấu Tích Lịch Sử</h2>
+                <p>Khám phá trọn vẹn những tọa độ danh lam thắng cảnh và di tích kiến trúc quốc gia đã định hình nên linh hồn của Đà Lạt:</p>
+
+                <div class="checkin-grid">
+                    <!-- 1. LANGBIANG (DOUBLE) -->
+                    <div class="dest-card double-col" data-legend="Đỉnh núi đôi Langbiang huyền thoại — nóc nhà cao nguyên Lâm Viên sừng sững giữa trời xanh">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_langbiang.webp" alt="Đỉnh Langbiang nóc nhà cao nguyên Lâm Viên Đà Lạt">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Nóc nhà Lâm Viên</span>
+                                <span class="tag">Cao 2.167m</span>
+                                <span class="tag">Khu DTSQ Thế giới</span>
+                            </div>
+                            <h3 class="dest-card-title">1. Đỉnh Núi Thiêng Langbiang</h3>
+                            <p class="dest-card-desc">Sừng sững ở độ cao 2.167m, đỉnh Langbiang là biểu tượng kiêu hãnh của tình yêu son sắt giữa chàng K'Lang và nàng H'Biang. Ngồi trên xe jeep chuyên dụng vượt dốc thông vi vút lên đỉnh Ra-đa (1.929m), thu trọn vào tầm mắt toàn cảnh hồ Đan Kia lấp lánh và phố núi mờ ảo trong biển mây.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. HỒ XUÂN HƯƠNG (SINGLE) -->
+                    <div class="dest-card single-col" data-legend="Hồ Xuân Hương — trái tim thơ mộng của Đà Lạt với mặt nước phẳng lặng soi bóng rặng thông cổ thụ">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_xuan_huong.webp" alt="Hồ Xuân Hương trái tim thơ mộng giữa trung tâm thành phố Đà Lạt">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Di tích Quốc gia</span>
+                                <span class="tag">Trái tim phố núi</span>
+                            </div>
+                            <h3 class="dest-card-title">2. Thắng Cảnh Hồ Xuân Hương</h3>
+                            <p class="dest-card-desc">Hồ nước nhân tạo hình trăng lưỡi liềm uốn quanh trung tâm thành phố, được xếp hạng Di tích danh thắng quốc gia năm 1988. Đi dạo bộ quanh hồ sáng sớm hoặc đạp vịt hoàng hôn là trải nghiệm lãng mạn không thể bỏ lỡ.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. ĐỒI CHÈ CẦU ĐẤT (SINGLE) -->
+                    <div class="dest-card single-col" data-legend="Đồi chè Cầu Đất trăm năm tuổi — biển chè xanh ngát ngút ngàn và thiên đường săn mây lý tưởng">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_cau_dat.webp" alt="Đồi chè Cầu Đất ngút ngàn với tua bin gió và biển mây sáng sớm">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Trăm năm lịch sử</span>
+                                <span class="tag">Tọa độ săn mây</span>
+                            </div>
+                            <h3 class="dest-card-title">3. Đồi Chè Cầu Đất Farm</h3>
+                            <p class="dest-card-desc">Thành lập từ năm 1927, đây là vùng đồi chè cổ thụ rộng gần 230 ha trên độ cao 1.650m. Điểm hẹn săn mây ngoạn mục bên những cánh quạt gió khổng lồ quay chậm giữa biển sương trắng xóa.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. GA XE LỬA ĐÀ LẠT (DOUBLE) -->
+                    <div class="dest-card double-col" data-legend="Ga xe lửa Đà Lạt — kiệt tác kiến trúc Art Deco kết hợp mái nhà rông Tây Nguyên độc nhất vô nhị">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_railway.webp" alt="Ga xe lửa Đà Lạt di tích kiến trúc quốc gia độc đáo với đầu tàu hơi nước cổ">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Di tích Quốc gia</span>
+                                <span class="tag">Đường sắt răng cưa</span>
+                                <span class="tag">Art Deco 1938</span>
+                            </div>
+                            <h3 class="dest-card-title">4. Ga Xe Lửa Cổ Đà Lạt</h3>
+                            <p class="dest-card-desc">Nhà ga xe lửa đẹp và cổ kính nhất Đông Dương, khánh thành năm 1938 với hình tượng ba chóp mái cách điệu theo ba đỉnh Langbiang hùng vĩ. Nơi đây từng vận hành tuyến đường sắt răng cưa Tháp Chàm độc nhất thế giới vượt đèo Ngoạn Mục.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. THÁC DATANLA (SINGLE) -->
+                    <div class="dest-card single-col" data-legend="Thác Datanla — dòng thác hùng vĩ tung bọt trắng xóa cùng máng trượt New Alpine Coaster dài nhất ĐNA">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_datanla.webp" alt="Thác Datanla hùng vĩ tung bọt trắng xóa giữa rừng thông nguyên sinh">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Di tích Quốc gia</span>
+                                <span class="tag">Máng trượt dài nhất ĐNA</span>
+                            </div>
+                            <h3 class="dest-card-title">5. Quần Thể Thác Datanla</h3>
+                            <p class="dest-card-desc">Dòng thác 7 tầng nước đổ trắng xóa lọt thỏm giữa hẻm sâu rừng nguyên sinh đèo Prenn. Trải nghiệm cảm giác phấn khích tột đỉnh với hệ thống máng trượt uốn lượn xuyên rừng thông dài tới 2.400m.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. THIỀN VIỆN TRÚC LÂM (SINGLE) -->
+                    <div class="dest-card single-col" data-legend="Thiền viện Trúc Lâm Đà Lạt — chốn bồng lai thanh tịnh tọa lạc trên đồi Phụng Hoàng ngát hương thông">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_truc_lam.webp" alt="Thiền viện Trúc Lâm Đà Lạt thanh tịnh soi bóng bên hồ Tuyền Lâm">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Thiền phái Trúc Lâm</span>
+                                <span class="tag">Đồi Phụng Hoàng</span>
+                            </div>
+                            <h3 class="dest-card-title">6. Thiền Viện Trúc Lâm</h3>
+                            <p class="dest-card-desc">Ngôi đại tòng lâm thiền viện lớn nhất miền Nam thuộc dòng Thiền Trúc Lâm Yên Tử. Cụm kiến trúc thuần Việt bằng gỗ quý hài hòa tuyệt đối với rừng thông cổ thụ và vườn hoa quý ngát hương.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. HỒ TUYỀN LÂM (DOUBLE) -->
+                    <div class="dest-card double-col" data-legend="Khu du lịch quốc gia Hồ Tuyền Lâm — mặt nước ngọc bích phẳng lặng bao bọc bởi đảo thông xanh">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_tuyen_lam.webp" alt="Hồ Tuyền Lâm khu du lịch quốc gia đầu tiên với mặt nước tĩnh lặng và rừng thông ngút ngàn">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">KDL Quốc gia đầu tiên</span>
+                                <span class="tag">Di tích Thắng cảnh</span>
+                            </div>
+                            <h3 class="dest-card-title">7. Hồ Tuyền Lâm Mộng Mơ</h3>
+                            <p class="dest-card-desc">Được công nhận là Khu du lịch quốc gia đầu tiên của Việt Nam theo Quyết định 204/QĐ-TTg, hồ rộng hơn 350 ha với nhiều ốc đảo xanh ngắt nhấp nhô. Nơi lý tưởng để chèo thuyền kayak, cắm trại dã ngoại và ngắm rừng phong đổi màu lá.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. DINH III BẢO ĐẠI (SINGLE) -->
+                    <div class="dest-card single-col" data-legend="Dinh III Bảo Đại — biệt điện mùa hè lịch sử lưu giữ hiện vật quý của vị Hoàng đế cuối cùng triều Nguyễn">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_dinh_bao_dai_dinh_3.webp" alt="Dinh III Bảo Đại biệt điện mùa hè kiến trúc Pháp cổ kính giữa rừng thông Đà Lạt">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Di tích Lịch sử</span>
+                                <span class="tag">Biệt điện Hoàng gia</span>
+                            </div>
+                            <h3 class="dest-card-title">8. Dinh III Bảo Đại</h3>
+                            <p class="dest-card-desc">Biệt điện mùa hè của vua Bảo Đại và Hoàng hậu Nam Phương, xây dựng từ năm 1933 trên đồi thông râm mát. Nơi bảo tồn nguyên vẹn 25 phòng nghỉ sang trọng, phòng thiết triều và hiện vật hoàng gia quý giá.</p>
+                        </div>
+                    </div>
+
+                    <!-- 9. NHÀ THỜ DOMAINE DE MARIE (SINGLE) -->
+                    <div class="dest-card single-col" data-legend="Nhà thờ Domaine de Marie — sắc hồng đất nung đặc trưng giao thoa giữa phong cách Normandy và mái nhà rông">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_nha_tho_domaine_con_ga.webp" alt="Nhà thờ Domaine de Marie tường hồng đất nung rực rỡ bên vườn hoa trạng nguyên">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Kiến trúc Pháp - Tây Nguyên</span>
+                                <span class="tag">Màu hồng đất nung</span>
+                            </div>
+                            <h3 class="dest-card-title">9. Nhà Thờ Domaine De Marie</h3>
+                            <p class="dest-card-desc">Tọa lạc trên đồi Mai Anh, ngôi giáo đường nổi bật với màu sơn hồng đất nung ấm áp, hệ mái dốc lấy cảm hứng từ nhà rông Tây Nguyên và không gian ngập tràn hoa trạng nguyên, cẩm tú cầu.</p>
+                        </div>
+                    </div>
+
+                    <!-- 10. CHỢ ĐÊM ĐÀ LẠT (DOUBLE) -->
+                    <div class="dest-card double-col" data-legend="Chợ đêm Đà Lạt (Chợ Âm Phủ) — nhịp sống ẩm thực và văn hóa phố núi sôi động rực rỡ ánh đèn">
+                        <div class="dest-card-img">
+                            <img src="images/dalat_night_market.webp" alt="Chợ đêm Đà Lạt tấp nập người qua lại cùng làn khói thơm lừng của các gánh hàng rong">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Chợ Âm Phủ</span>
+                                <span class="tag">Thiên đường ăn vặt</span>
+                            </div>
+                            <h3 class="dest-card-title">10. Chợ Đêm Đà Lạt & Bậc Thang Cổ</h3>
+                            <p class="dest-card-desc">Khi hoàng hôn buông xuống, khu vực chân chợ Đà Lạt bừng sáng với hàng trăm gian hàng ẩm thực nóng hổi bốc khói nghi ngút. Thưởng thức khoai lang nướng, bánh tráng nướng và nhâm nhi ly sữa đậu nành nóng giữa cái lạnh 15°C.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. CẨM NANG DI CHUYỂN -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> 6. Cẩm Nang Di Chuyển & Cung Đường Đèo Cao Nguyên</h2>
+                <p>Nằm trên độ cao 1.500m, hệ thống giao thông đến Đà Lạt ngày càng hoàn thiện, kết nối thông suốt với cả nước qua đường hàng không và các tuyến đường bộ huyết mạch:</p>
+
+                <div class="highlight-box">
+                    <h4>✈️ Đường hàng không (Sân bay Liên Khương — DLI)</h4>
+                    <p>Sân bay Liên Khương nằm tại thị trấn Liên Nghĩa, huyện Đức Trọng, cách trung tâm Đà Lạt 30 km theo hướng Nam. Các hãng hàng không Vietnam Airlines, Vietjet Air, Bamboo Airways khai thác chuyến bay thẳng hàng ngày:</p>
+                    <ul style="margin: 0.5rem 0 0 1.2rem; font-size: 0.95rem;">
+                        <li><strong>Từ Hà Nội (HAN) → Đà Lạt (DLI):</strong> Thời gian bay chỉ ~1 giờ 50 phút (khoảng cách hàng không ~1.450 km). Giá vé từ 1.200.000 – 2.500.000 VNĐ/chiều.</li>
+                        <li><strong>Từ TP. Hồ Chí Minh (SGN) → Đà Lạt (DLI):</strong> Thời gian bay chỉ ~50 phút. Giá vé từ 650.000 – 1.400.000 VNĐ/chiều.</li>
+                        <li><strong>Từ Đà Nẵng / Hải Phòng / Vinh:</strong> Các chuyến bay định kỳ 1h20p – 1h45p.</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem;"><em>Từ sân bay Liên Khương về trung tâm thành phố:</em> Đi xe bus sân bay đón ngay sảnh (40.000 – 50.000 VNĐ/lượt) hoặc taxi trọn gói (200.000 – 250.000 VNĐ/xe 4 chỗ, chạy cao tốc Liên Khương - Prenn chỉ mất 35 phút).</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🚌 Xe khách giường nằm Limousine từ TP. Hồ Chí Minh</h4>
+                    <p>Khoảng cách đường bộ từ TP.HCM đến Đà Lạt là khoảng <strong>305 km</strong>. Các nhà xe uy tín chạy liên tục 24/24 với tần suất 15 - 30 phút/chuyến (Phương Trang, Thành Bưởi, Phong Phú Limousine, Trọng Minh Limousine):</p>
+                    <ul style="margin: 0.5rem 0 0 1.2rem; font-size: 0.95rem;">
+                        <li><strong>Xe Limousine phòng nằm đơn / đôi:</strong> Giá vé 320.000 – 420.000 VNĐ/vé/người.</li>
+                        <li><strong>Thời gian di chuyển:</strong> Khoảng 6 – 7 tiếng qua Cao tốc TP.HCM - Long Thành - Dầu Giây, QL20 và Đèo Prenn. Xuất phát lúc 22h – 23h đêm sẽ đến Đà Lạt vào 5h – 6h sáng hôm sau để kịp đón bình minh và săn mây.</li>
+                    </ul>
+                </div>
+
+                <div class="legend-box">
+                    <h4>🛣️ Cung Đường Đèo Mới Khang Trang: Đèo Prenn 4 Làn Xe</h4>
+                    <p>Dự án nâng cấp, mở rộng <strong>Đèo Prenn</strong> (dài 7,4 km) với tổng mức đầu tư hơn 550 tỷ đồng đã chính thức hoàn thành thông xe toàn tuyến 4 làn xe hiện đại vào đầu năm 2024. Cung đèo cửa ngõ huyết mạch này nay rộng thênh thang, mặt đường thảm nhựa êm ái, lắp đặt hệ thống chiếu sáng ban đêm thông minh và các vịnh ngắm cảnh an toàn tuyệt đối, rút ngắn đáng kể thời gian vượt đèo vào trung tâm thành phố.</p>
+                </div>
+
+                <!-- 7. TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <h2 id="am-thuc"><span class="icon">🍲</span> 7. Tinh Hoa Ẩm Thực Phố Núi Đà Lạt</h2>
+                <p>Khí hậu se lạnh quanh năm đã tạo nên nét văn hóa ẩm thực độc đáo: những món ăn nghi ngút khói nồng nàn thảo mộc và vị ấm nóng làm say lòng mọi du khách:</p>
+
+                <div class="culinary-grid">
+                    <!-- 1. BÁNH TRÁNG NƯỚNG -->
+                    <div class="culinary-card" data-legend="Bánh tráng nướng Đà Lạt — 'Pizza Việt Nam' nóng hổi giòn rụm bên bếp than hồng đêm lạnh">
+                        <div class="culinary-img-wrap">
+                            <img src="images/dalat_mon_banh_trang_nuong.webp" alt="Bánh tráng nướng Đà Lạt nóng giòn với trứng, mỡ hành, tép khô và xúc xích">
+                            <span class="culinary-badge">Đặc sản đêm lạnh</span>
+                        </div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bánh Tráng Nướng Đà Lạt</h3>
+                            <div class="culinary-price">Giá tham khảo: 20.000 – 35.000 VNĐ / cái</div>
+                            <p class="culinary-desc">Mệnh danh là "Pizza Việt Nam", miếng bánh tráng mỏng nướng trên than hồng đỏ rực, quét mỡ hành thơm nức, đập trứng gà/trứng cút vàng ươm, rắc tép khô, bò khô, xúc xích và phô mai béo ngậy. Cắn một miếng giòn rụm, vừa xuýt xoa vừa cảm nhận hơi ấm lan tỏa giữa đêm đông.</p>
+                            <p class="culinary-address">📍 Địa chỉ: Bánh tráng nướng Dì Đinh (26 Hoàng Diệu), Bánh tráng nướng Nhà Chung, Chợ đêm Đà Lạt.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. LẨU GÀ LÁ É -->
+                    <div class="culinary-card" data-legend="Lẩu gà lá é Tao Ngộ — nước dùng thanh ngọt the cay thảo mộc ấm bụng đêm sương">
+                        <div class="culinary-img-wrap">
+                            <img src="images/dalat_mon_lau_ga_la_e.webp" alt="Lẩu gà lá é Tao Ngộ Đà Lạt thơm ngát thịt gà ta và đĩa lá é xanh mướt">
+                            <span class="culinary-badge">Món ăn quốc dân</span>
+                        </div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Lẩu Gà Lá É Tao Ngộ</h3>
+                            <div class="culinary-price">Giá tham khảo: 250.000 – 400.000 VNĐ / nồi (2 – 4 người)</div>
+                            <p class="culinary-desc">Nồi lẩu sôi sùng sục với thịt gà đồi săn chắc, ngọt thịt, nấm sò giòn ngọt và măng tre tươi. Điểm nhấn làm nên linh hồn món ăn là rổ lá é tươi non nhúng vừa chín tới, tỏa ra vị cay nhẹ the the thơm nồng ấm bụng, chấm muối ớt hiểm cay xé lưỡi.</p>
+                            <p class="culinary-address">📍 Địa chỉ: Lẩu gà lá é Tao Ngộ gốc (Số 5 đường 3/4), Lẩu gà lá é 668 (Chu Văn An).</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. BÁNH MÌ XÍU MẠI -->
+                    <div class="culinary-card" data-legend="Bánh mì xíu mại Hoàng Diệu — món điểm tâm kinh điển làm ấm lòng buổi sớm mai">
+                        <div class="culinary-img-wrap">
+                            <img src="images/dalat_mon_banh_mi_xiu_mai.webp" alt="Chén xíu mại Đà Lạt nghi ngút khói chấm bánh mì giòn tan buổi sáng">
+                            <span class="culinary-badge">Điểm tâm sáng</span>
+                        </div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bánh Mì Xíu Mại Hoàng Diệu</h3>
+                            <div class="culinary-price">Giá tham khảo: 20.000 – 30.000 VNĐ / phần</div>
+                            <p class="culinary-desc">Món ăn sáng quen thuộc gắn bó với bao thế hệ người Đà Lạt: chén nước dùng trong vắt ninh từ xương heo ngọt lịm, bên trong là hai viên xíu mại thịt nạc băm mềm thơm, miếng da heo sần sật béo ngậy, lát chả lụa và sa tế cay nồng, xé bánh mì nóng giòn chấm ngập nước súp.</p>
+                            <p class="culinary-address">📍 Địa chỉ: Bánh mì xíu mại Hoàng Diệu (Số 26 Hoàng Diệu), Bánh mì xíu mại Thu Còi (Nguyễn Thị Minh Khai).</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. LẨU BÒ BA TOA -->
+                    <div class="culinary-card" data-legend="Lẩu bò Ba Toa Quán Gỗ — nồi lẩu bò trứ danh ngập tràn thịt nạm, gân và đuôi bò béo ngậy">
+                        <div class="culinary-img-wrap">
+                            <img src="images/dalat_mon_lau_bo_ba_toa.webp" alt="Lẩu bò Ba Toa Quán Gỗ Đà Lạt ngập tràn thịt gân và rau xanh núi cao">
+                            <span class="culinary-badge">Đặc sản trứ danh</span>
+                        </div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Lẩu Bò Ba Toa (Quán Gỗ)</h3>
+                            <div class="culinary-price">Giá tham khảo: 250.000 – 450.000 VNĐ / nồi</div>
+                            <p class="culinary-desc">Ra đời từ khu lò mổ Abattoir thời Pháp bên bờ suối Cam Ly, lẩu bò Ba Toa nổi tiếng với miếng thịt bò cắt dày cộp, ngập tràn nạm, gầu, gân, đuôi bò hầm mềm rục trong nước dùng thơm lừng quế hồi, ăn kèm mì trứng vàng ươm, cải xanh và chấm chao ớt sa tế đậm đà.</p>
+                            <p class="culinary-address">📍 Địa chỉ: Lẩu bò Ba Toa Quán Gỗ gốc (1/29 Hoàng Diệu), Lẩu bò Thanh Tâm (Nguyễn Thị Định).</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. KEM BƠ THANH THẢO -->
+                    <div class="culinary-card" data-legend="Kem bơ Thanh Thảo — bơ sáp cao nguyên xay sánh mịn hòa quyện viên kem dừa béo ngọt">
+                        <div class="culinary-img-wrap">
+                            <img src="images/dalat_mon_kem_bo_thanh_thao.webp" alt="Ly kem bơ Thanh Thảo xanh mướt với viên kem dừa và dừa sợi sấy giòn">
+                            <span class="culinary-badge">Món ngọt giải khát</span>
+                        </div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Kem Bơ Thanh Thảo</h3>
+                            <div class="culinary-price">Giá tham khảo: 25.000 – 35.000 VNĐ / ly</div>
+                            <p class="culinary-desc">Bơ sáp béo đặc sản Lâm Đồng được tuyển chọn kỹ càng, xay nhuyễn sánh mịn không xơ với sữa đặc béo ngậy, phía trên đặt một viên kem dừa trắng mịn màng mát lạnh, rắc thêm dừa sợi tươi và đậu phộng rang giòn thơm lừng.</p>
+                            <p class="culinary-address">📍 Địa chỉ: Kem bơ Thanh Thảo (76 Nguyễn Văn Trỗi), Kem bơ Phụng (97 Phan Đình Phùng).</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. SỮA ĐẬU NÀNH NÓNG & BÁNH NGỌT -->
+                    <div class="culinary-card" data-legend="Sữa đậu nành nóng và bánh ngọt — nét sinh hoạt đêm mộc mạc và thi vị của phố hoa">
+                        <div class="culinary-img-wrap">
+                            <img src="images/dalat_mon_sua_dau_nanh_nong_banh_ngot.webp" alt="Ly sữa đậu nành nóng nghi ngút khói bên đĩa bánh tiêu bánh sừng trâu đêm Đà Lạt">
+                            <span class="culinary-badge">Văn hóa phố đêm</span>
+                        </div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Sữa Đậu Nành Nóng & Bánh Ngọt</h3>
+                            <div class="culinary-price">Giá tham khảo: 12.000 – 20.000 VNĐ / ly; bánh 8.000 VNĐ</div>
+                            <p class="culinary-desc">Không còn gì thi vị bằng việc ngồi bên chiếc bàn gỗ nhỏ ven đường trong gió lạnh 14°C, áp hai bàn tay vào ly sữa đậu nành hoặc "nành bò" (sữa đậu nành pha sữa bò đặc) nóng hổi, nhâm nhi chiếc bánh tiêu vừng giòn hay bánh su kem mềm ngọt.</p>
+                            <p class="culinary-address">📍 Địa chỉ: Quán Hoa Sữa (64 Tăng Bạt Hổ), Sữa Cô Lan (Hẻm Nhà Chung), Chợ đêm Đà Lạt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. BẢNG GIÁ VÉ THAM QUAN NIÊM YẾT -->
+                <h2 id="gia-ve"><span class="icon">🎟️</span> 8. Bảng Giá Vé Tham Quan & Dịch Vụ Niêm Yết (2026)</h2>
+                <p>Bảng tổng hợp biểu phí tham quan các danh lam thắng cảnh và di tích lịch sử tại Đà Lạt được niêm yết chính thức:</p>
+
+                <div class="pricing-table-wrap">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Điểm tham quan / Dịch vụ</th>
+                                <th>Địa điểm / Khu vực</th>
+                                <th>Giá vé niêm yết</th>
+                                <th>Ghi chú & Dịch vụ đi kèm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Khu du lịch Núi Langbiang</strong></td>
+                                <td>Huyện Lạc Dương</td>
+                                <td><span class="price-tag">50.000 VNĐ</span></td>
+                                <td>Vé vào cổng người lớn; Vé xe jeep lên đỉnh Ra-đa: 120.000 VNĐ / khách khứ hồi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Khu du lịch Thác Datanla</strong></td>
+                                <td>Đèo Prenn, Phường 3</td>
+                                <td><span class="price-tag">50.000 VNĐ</span></td>
+                                <td>Vé vào cổng; Vé Máng trượt Alpine Coaster khứ hồi: 250.000 VNĐ / người lớn</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ga xe lửa Cổ Đà Lạt</strong></td>
+                                <td>Đường Quang Trung, Phường 9</td>
+                                <td><span class="price-tag">50.000 VNĐ</span></td>
+                                <td>Vé tham quan chụp ảnh di tích; Vé tàu hỏa cổ đi Trại Mát: 100.000 – 150.000 VNĐ / khứ hồi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dinh III Bảo Đại</strong></td>
+                                <td>Đường Triệu Việt Vương, Phường 4</td>
+                                <td><span class="price-tag">40.000 VNĐ</span></td>
+                                <td>Vé tham quan nội thất biệt điện; Thuê trang phục hoàng gia chụp ảnh: 30.000 – 50.000 VNĐ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cáp treo Đồi Robin — Trúc Lâm</strong></td>
+                                <td>Đồi Robin, Phường 3</td>
+                                <td><span class="price-tag">120.000 VNĐ</span></td>
+                                <td>Vé cáp treo khứ hồi ngắm rừng thông; Vé một chiều: 100.000 VNĐ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Đồi Chè Cầu Đất Farm</strong></td>
+                                <td>Xã Xuân Trường</td>
+                                <td><span class="price-tag">Miễn phí 100%</span></td>
+                                <td>Vào đồi chè tự do; Cầu gỗ săn mây / Tour tham quan nhà máy chè cổ: 50.000 – 100.000 VNĐ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thắng cảnh Hồ Xuân Hương</strong></td>
+                                <td>Trung tâm thành phố</td>
+                                <td><span class="price-tag">Miễn phí 100%</span></td>
+                                <td>Tự do dạo mát quanh hồ; Thuê thuyền đạp vịt: 60.000 – 100.000 VNĐ / giờ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thiền Viện Trúc Lâm Đà Lạt</strong></td>
+                                <td>Núi Phụng Hoàng</td>
+                                <td><span class="price-tag">Miễn phí 100%</span></td>
+                                <td>Chốn tôn nghiêm chiêm bái tự do; Thuê thuyền du ngoạn Hồ Tuyền Lâm: 300.000 – 500.000 VNĐ / thuyền</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nhà thờ Domaine de Marie & Con Gà</strong></td>
+                                <td>Nội ô Đà Lạt</td>
+                                <td><span class="price-tag">Miễn phí 100%</span></td>
+                                <td>Mở cửa đón khách tham quan và dự thánh lễ tự do</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chợ đêm Đà Lạt & Quảng trường Lâm Viên</strong></td>
+                                <td>Trung tâm thành phố</td>
+                                <td><span class="price-tag">Miễn phí 100%</span></td>
+                                <td>Khu sinh hoạt công cộng mở cửa tự do 24/24</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="disclaimer-box">⚠️ Lưu ý: Bảng giá vé có thể được điều chỉnh vào các dịp lễ Tết Nguyên Đán hoặc Festival Hoa theo quyết định của ban quản lý các khu du lịch.</p>
+
+                <!-- 9. LỊCH TRÌNH 3N2Đ & MẸO AN TOÀN -->
+                <h2 id="lich-trinh"><span class="icon">🧭</span> 9. Gợi Ý Lịch Trình Khám Phá Đà Lạt (3 Ngày 2 Đêm) & Mẹo An Toàn</h2>
+                <div class="highlight-box">
+                    <h4>📅 Lịch trình 3 Ngày 2 Đêm (Trọn vẹn Thắng cảnh, Di sản & Săn Mây)</h4>
+                    <p><strong>Ngày 1: Check-in Ga xe lửa → Dinh III Bảo Đại → Nhà thờ Domaine → Hồ Xuân Hương:</strong> Sáng đến Đà Lạt nhận phòng khách sạn, thưởng thức bánh mì xíu mại nóng giòn. 9h00 ghé Ga xe lửa Đà Lạt chụp ảnh bên những toa tàu cổ. Trưa ăn lẩu bò Ba Toa Quán Gỗ. Chiều viếng Dinh III Bảo Đại tìm hiểu lịch sử hoàng triều, ghé Nhà thờ Domaine de Marie tường hồng thơ mộng. 17h00 đạp vịt đón hoàng hôn trên Hồ Xuân Hương. Tối khám phá Chợ đêm Đà Lạt, ăn bánh tráng nướng và uống sữa đậu nành nóng.</p>
+                    <p><strong>Ngày 2: Săn mây Đồi chè Cầu Đất → Vườn hồng trĩu quả → Thác Datanla → Thiền viện Trúc Lâm:</strong> 4h30 sáng dậy sớm di chuyển về Cầu Đất đón biển mây cuồn cuộn và ngắm bình minh trên đồi chè. Trên đường về ghé thăm vườn hồng trĩu quả. Trưa thưởng thức lẩu gà lá é Tao Ngộ cay the ấm bụng. Chiều trải nghiệm máng trượt New Alpine Coaster tại Thác Datanla, sau đó đi cáp treo hoặc xe sang Thiền viện Trúc Lâm vãn cảnh hồ Tuyền Lâm thanh tịnh. Tối ghé quán cafe acoustic ngắm toàn cảnh thung lũng đèn lồng lung linh.</p>
+                    <p><strong>Ngày 3: Chinh phục đỉnh Langbiang → Vườn dâu tây công nghệ cao → Mua quà đặc sản:</strong> Sáng thuê xe jeep vượt đèo lên đỉnh Ra-đa Langbiang ngắm toàn cảnh hồ Đan Kia và suối Vàng mờ sương. 11h00 ghé các vườn dâu tây sinh học trải nghiệm tự tay hái dâu tươi tại vườn. Trưa ăn kem bơ Thanh Thảo. Chiều dạo chợ Đà Lạt mua atiso, mứt hoa quả, hồng treo gió làm quà trước khi ra sân bay Liên Khương hoặc lên xe về lại TP.HCM.</p>
+                </div>
+
+                <div class="legend-box">
+                    <h4>🛡️ Mẹo Trải Nghiệm Bản Địa & Cảnh Báo An Toàn</h4>
+                    <p><strong>1. Giữ ấm cơ thể:</strong> Nhiệt độ Đà Lạt ban đêm và sáng sớm thường giảm sâu xuống 12 – 15°C, có gió rét buốt. Luôn chuẩn bị áo khoác dày, khăn len, găng tay khi đi dạo phố đêm hoặc dậy sớm săn mây.</p>
+                    <p><strong>2. An toàn giao thông đèo dốc & sương mù:</strong> Địa hình Đà Lạt quanh co nhiều dốc cao và cua tay áo gắt (dốc Nhà Bò, dốc số 7...). Luôn kiểm tra phanh xe máy trước khi thuê, đi chậm số thấp (số 1, 2 đối với xe số) khi xuống dốc, tuyệt đối không rà phanh liên tục và bật đèn sương mù khi tầm nhìn giảm.</p>
+                    <p><strong>3. Tránh bẫy "cò mồi" dâu tây & mứt giá rẻ:</strong> Tuyệt đối không đi theo những người chạy xe máy phát tờ rơi mời chào "vào vườn dâu hái tận gốc giá 20.000đ/kg" ven đường đèo. Nên mua đặc sản mứt, atiso, hồng sấy tại các cửa hàng uy tín có niêm yết giá rõ ràng (L'angfarm, quầy đặc sản chính thống bên trong Chợ Đà Lạt).</p>
+                </div>
+
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a>
+            © 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cổng thông tin & Cẩm nang Du lịch Việt Nam.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            🎨 100% Ảnh minh họa sinh động bởi AI • Biên soạn bởi Sửu nhi
+        </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img loading="lazy" class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Lightbox Zoom functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const destCards = document.querySelectorAll('.dest-card');
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
+        // Lightbox Modal Logic
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImg');
+        const modalTitle = document.getElementById('lightboxTitle');
+        const modalCaption = document.getElementById('lightboxCaption');
 
-            if (destCards.length && lightboxModal && lightboxImg) {
-                destCards.forEach(card => {
-                    card.style.cursor = 'zoom-in';
-                    card.addEventListener('click', () => {
-                        const img = card.querySelector('.dest-card-img img');
-                        if (!img) return;
+        function openLightbox(imgSrc, imgAlt, title, caption) {
+            modalImg.src = imgSrc;
+            modalImg.alt = imgAlt;
+            modalTitle.textContent = title;
+            modalCaption.textContent = caption;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
-                        let titleText = "";
-                        let descText = "";
+        document.querySelectorAll('.dest-card, .culinary-card, .season-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                const titleEl = this.querySelector('.dest-card-title, .culinary-title, .season-title');
+                const descEl = this.querySelector('.dest-card-desc, .culinary-desc, .season-desc');
+                const title = titleEl ? titleEl.textContent.trim() : (img ? img.alt : '');
+                const legend = this.getAttribute('data-legend') || (descEl ? descEl.textContent.trim() : '');
 
-                        const overlayH3 = card.querySelector('.dest-card-content h3');
-                        const overlayP = card.querySelector('.dest-card-content p');
-                        if (overlayH3) titleText = overlayH3.textContent;
-                        if (overlayP) descText = overlayP.textContent;
+                if (img) {
+                    openLightbox(img.src, img.alt, title, legend);
+                }
+            });
+        });
 
-                        if (!titleText && !descText) {
-                            titleText = img.alt || "Chi tiết hình ảnh";
-                        }
+        function closeLightbox(e) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-                        lightboxModal.style.display = 'flex';
-                        lightboxImg.src = img.src;
-                        
-                        let captionHTML = "";
-                        if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
-                        }
-                        if (descText) {
-                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
-                        }
-                        
-                        const legend = card.getAttribute('data-legend');
-                        if (legend) {
-                            captionHTML += `
-                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
-                                    ✨ Truyền thuyết & Sự tích Kỳ bí
-                                </span>
-                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
-                            </div>`;
-                        }
-                        lightboxCaption.innerHTML = captionHTML;
-                    });
-                });
-
-                lightboxClose.addEventListener('click', () => {
-                    lightboxModal.style.display = 'none';
-                });
-
-                lightboxModal.addEventListener('click', (e) => {
-                    if (e.target === lightboxModal || e.target === lightboxClose) {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
-                
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeLightbox();
             }
         });
     </script>
