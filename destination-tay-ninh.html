@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tây Ninh — Nóc Nhà Nam Bộ & Thánh Địa Đạo Cao Đài | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Tây Ninh chi tiết: đỉnh núi Bà Đen 986m, tượng Phật Bà Tây Bổ Đà Sơn, chùa Bà linh thiêng, đại tượng Phật Di Lặc sa thạch, chuỗi hình ảnh 4 mùa du lịch, bánh tráng phơi sương, bò tơ Tây Ninh, ẩm thực chay.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 420px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.25) 0%, rgba(26,55,77,0.92) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-sec);
+            margin-top: 0.5rem;
+            max-width: 820px;
+        }
+
+        /* ARTICLE LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent);
+            padding-left: 0.4rem;
+        }
+
+        /* MAIN CONTENT */
+        .article-main {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            color: #fff;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid rgba(255, 140, 50, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .article-main h2:first-of-type { margin-top: 0; }
+        .article-main h2 .icon { font-size: 1.4rem; }
+        .article-main p {
+            margin-bottom: 1.2rem;
+            color: var(--text-sec);
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .article-main strong { color: #fff; font-weight: 600; }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 140, 50, 0.05);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .highlight-box {
+            background: rgba(255, 140, 50, 0.08);
+            border: 1px solid rgba(255, 140, 50, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box h4 {
+            color: var(--accent);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+
+        .legend-box {
+            background: rgba(251, 191, 36, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-gold);
+            font-family: 'Caveat', cursive;
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .legend-box p { margin: 0; font-size: 0.95rem; font-style: italic; }
+
+        /* SEASONS SHOWCASE */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.8rem 0 2.5rem;
+        }
+        .season-card {
+            background: rgba(15, 30, 45, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 140, 50, 0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+        .season-img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+        .season-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.05);
+        }
+        .season-badge {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            background: rgba(26, 55, 77, 0.85);
+            backdrop-filter: blur(6px);
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+        .season-body {
+            padding: 1.25rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+        .season-time {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .season-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* CHECKIN GRID */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.18), 0 0 0 1px rgba(255, 140, 50, 0.25);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.15);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.78) saturate(1.25);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(4px);
+        }
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .dest-card-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: rgba(22, 44, 62, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .info-table th {
+            background: rgba(255, 140, 50, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-sec);
+        }
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        .disclaimer-box {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+
+        /* FOOD LIST BOX */
+        .food-list-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+        .food-item-box {
+            background: rgba(15, 30, 45, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .food-item-box:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 50, 0.4);
+        }
+        .food-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .food-item-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+        }
+        .food-item-badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(255, 140, 50, 0.2);
+            color: var(--accent);
+            border: 1px solid rgba(255, 140, 50, 0.3);
+            font-weight: 600;
+        }
+        .food-item-flavor {
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+        }
+        .food-item-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .food-item-loc {
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.5rem;
+        }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 20, 30, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
+            box-sizing: border-box;
+        }
+        .lightbox-dialog {
+            position: relative;
+            max-width: 960px;
+            margin: auto;
+            background: #162c3e;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 140, 50, 0.3);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-img-wrap {
+            width: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content {
+            width: 100%;
+            max-height: 58vh;
+            object-fit: contain;
+            display: block;
+        }
+        .lightbox-caption-wrap {
+            padding: 1.5rem 2rem 2rem;
+            background: linear-gradient(180deg, #162c3e 0%, #112231 100%);
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .lightbox-caption {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        .lightbox-close {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            background: rgba(22, 44, 62, 0.85);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            line-height: 1;
+            padding: 0;
+        }
+        .lightbox-close:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: scale(1.08);
+            border-color: var(--accent);
+        }
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .checkin-grid, .seasons-grid, .food-list-grid { grid-template-columns: 1fr; }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 16/9;
+            }
+        }
+        @media (max-width: 768px) {
+            .article-main { padding: 1.5rem; }
+            .hero { height: 45vh; min-height: 320px; }
+            .lightbox-content { max-height: 42vh; }
+            .lightbox-caption-wrap { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR">
+            </a>
+            <a href="index.html" class="nav-back">← Quay lại Trang chủ</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/tayninh_hero.webp" alt="Toàn cảnh Núi Bà Đen Tây Ninh đỉnh 986m" loading="eager">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">⛰️ Nóc Nhà Nam Bộ & Đệ Nhất Thiên Sơn</span>
+            <h1>Tây Ninh — Nóc Nhà Nam Bộ & Thánh Địa Đạo Cao Đài</h1>
+            <p class="hero-subtitle">Đỉnh núi Bà Đen hùng vĩ 986m chạm tới trời mây, quần thể Phật giáo linh thiêng, nét độc đáo của Tòa Thánh Cao Đài và vùng căn cứ cách mạng Chiến khu R huyền thoại.</p>
+        </div>
+    </header>
+
+    <!-- ARTICLE LAYOUT -->
+    <div class="article-layout">
+        <div class="dashboard-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">📌 Thông tin nhanh</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span> <span class="val">Tỉnh Tây Ninh (Đông Nam Bộ)</span></li>
+                        <li><span class="label">Đỉnh cao nhất:</span> <span class="val">Núi Bà Đen (986m)</span></li>
+                        <li><span class="label">Khoảng cách:</span> <span class="val">~90km từ TP.HCM (QL22)</span></li>
+                        <li><span class="label">Kỷ lục thế giới:</span> <span class="val">Phật Bà bằng đồng cao nhất CA</span></li>
+                        <li><span class="label">Thời gian gợi ý:</span> <span class="val">2 ngày 1 đêm / Đi về trong ngày</span></li>
+                        <li><span class="label">Mùa đẹp nhất:</span> <span class="val">Tháng 10 – 12 (Săn mây) & Tháng Giêng</span></li>
+                        <li><span class="label">Đặc sản:</span> <span class="val">Bánh tráng phơi sương, bò tơ</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">🧭 Mục lục bài viết</h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Nóc nhà Nam Bộ & Đệ nhất thiên sơn</a></li>
+                        <li><a href="#vi-tri-lich-su">2. Vị trí địa lý & Dấu ấn Lịch sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền thoại Linh Sơn Thánh Mẫu</a></li>
+                        <li><a href="#chuoi-anh-4-mua">4. Chuỗi hình ảnh 4 Mùa Du lịch</a></li>
+                        <li><a href="#toa-do">5. Tọa độ Biểu tượng Đỉnh Núi Bà Đen</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm nang di chuyển & Cáp treo</a></li>
+                        <li><a href="#am-thuc">7. Tinh hoa Ẩm thực Tây Ninh</a></li>
+                        <li><a href="#gia-ve">8. Bảng giá vé Cáp treo & Điểm tham quan</a></li>
+                        <li><a href="#lich-trinh">9. Gợi ý lịch trình & Mẹo trải nghiệm</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN ARTICLE -->
+            <main class="article-main">
+
+                <div class="intro-lead" id="tong-quan">
+                    Sừng sững hiên ngang giữa vùng đồng bằng phì nhiêu Nam Bộ, ngọn núi <strong>Bà Đen (986m)</strong> được mệnh danh là <em>"Nóc nhà Đông Nam Bộ"</em> và <em>"Đệ nhất thiên sơn"</em>. Không chỉ là chốn địa linh tụ khí với truyền thuyết Linh Sơn Thánh Mẫu linh ứng hơn ba thế kỷ, <strong>Tây Ninh</strong> còn là miền đất linh thiêng của Tòa Thánh Cao Đài với kiến trúc vạn giáo quy nguyên độc nhất vô nhị, nơi lưu giữ căn cứ cách mạng Chiến khu R hào hùng và nền ẩm thực chay tinh tế đã trở thành Di sản văn hóa phi vật thể quốc gia.
+                </div>
+
+                <h2><span class="icon">🌿</span> 1. Nóc Nhà Nam Bộ & Đệ Nhất Thiên Sơn</h2>
+                <p>Nằm cách TP. Hồ Chí Minh khoảng 90km về phía Tây Bắc, Tây Ninh sở hữu địa hình chuyển tiếp đặc sắc giữa vùng cao nguyên bán sơn địa và đồng bằng châu thổ. Nổi bật nhất trên nền trời là ngọn núi Bà Đen hình nón khổng lồ cao 986m quanh năm mây phủ trắng xóa. Khí hậu Tây Ninh mang tính chất nhiệt đới gió mùa phương Nam nhưng trên đỉnh núi cao lại mát mẻ như xứ ôn đới, nhiệt độ thường thấp hơn vùng đồng bằng từ 8°C đến 10°C, mang đến trải nghiệm bốn mùa trong một ngày độc đáo.</p>
+                <p>Vào những tháng cuối năm và đầu mùa khô (tháng 10 đến tháng 4 năm sau), Tây Ninh là điểm hẹn săn mây lý tưởng bậc nhất phía Nam. Tại đỉnh núi Bà Đen, hiện tượng kỳ thú "mây thấu kính đĩa bay" (Lenticular clouds) thường xuyên xuất hiện tạo nên vòng hào quang mây khổng lồ bao bọc lấy đỉnh thiêng, thu hút hàng triệu lượt du khách và Phật tử hành hương chiêm bái.</p>
+
+                <h2 id="vi-tri-lich-su"><span class="icon">🏛️</span> 2. Vị Trí Địa Lý & Dấu Ấn Lịch Sử Căn Cứ Trung Ương Cục</h2>
+                <p>Tây Ninh có vị trí địa kinh tế và quốc phòng đặc biệt quan trọng với hơn 240km đường biên giới tiếp giáp Vương quốc Campuchia. Vùng đất này từng là căn cứ địa cách mạng bất khả xâm phạm của quân dân miền Nam trong hai cuộc kháng chiến vĩ đại của dân tộc.</p>
+                <p>Theo <strong>Quyết định số 548/QĐ-TTg ngày 10/5/2012 của Thủ tướng Chính phủ</strong>, Căn cứ Trung ương Cục miền Nam (Chiến khu R) tại huyện Tân Biên đã được xếp hạng là <strong>Di tích quốc gia đặc biệt</strong>. Nơi đây từng là đầu não lãnh đạo toàn bộ phong trào cách mạng giải phóng miền Nam (1961 - 1975) dưới sự chở che của rừng già Chàng Riệc và những mái nhà lá trung quân không bén lửa.</p>
+                <div class="highlight-box">
+                    <h4>🏆 Kỷ Lục Guinness Thế Giới Trên Đỉnh Núi Bà Đen</h4>
+                    <p>Theo <strong>Quyết định số 1099/QĐ-TTg ngày 05/9/2018 của Thủ tướng Chính phủ</strong>, Núi Bà Đen được phê duyệt quy hoạch là Khu du lịch quốc gia. Năm 2021, Tổ chức Kỷ lục Guinness thế giới chính thức xác lập kỷ lục cho Tượng Phật Bà Tây Bổ Đà Sơn trên đỉnh núi cao 986m là <em>"Tượng Phật Bà bằng đồng cao nhất châu Á tọa lạc trên đỉnh núi"</em> với chiều cao 72m đúc từ hơn 170 tấn đồng đỏ nguyên khối.</p>
+                </div>
+
+                <h2 id="huyen-thoai"><span class="icon">📜</span> 3. Huyền Thoại Linh Sơn Thánh Mẫu & Tích Xưa Vùng Đất</h2>
+                
+                <div class="legend-box">
+                    <h4>✨ Truyền tích Linh Sơn Thánh Mẫu (Bà Đen — Nàng Đênh)</h4>
+                    <p>Theo dân gian lưu truyền từ thời chúa Nguyễn, nàng Đênh (Lê Thị Thiên Hương) là thiếu nữ tài sắc vẹn toàn, con quan tri huyện mồ côi mẹ, có lòng hướng Phật và một lòng son sắt yêu chàng trai cùng làng Lê Sĩ Triệt. Khi chàng Triệt tòng quân đánh giặc Tây Sơn, nàng Đênh ở nhà bị kẻ xấu mưu toan làm nhục. Để giữ trọn trinh tiết, nàng đã gieo mình xuống vực sâu tuẫn tiết. Linh hồn nàng hiển linh báo mộng chỉ đường cho quan quân, phù trợ chúa Nguyễn Ánh thoát hiểm trong lúc lánh nạn và bảo bọc mùa màng cho dân bản mường. Vua Gia Long sau khi lên ngôi đã sắc phong cho nàng là Linh Sơn Thánh Mẫu, lập đền thờ tại hang đá núi Bà Đen để nhân dân đời đời hương khói tri ân.</p>
+                </div>
+
+                <div class="legend-box">
+                    <h4>✨ Huyền tích Đền Thánh Cao Đài — Kiến trúc Vạn Giáo Quy Nguyên</h4>
+                    <p>Khởi dựng từ năm 1931 và hoàn thành năm 1955, Tòa Thánh Tây Ninh là thánh địa trung ương của đạo Cao Đài (Đại Đạo Tam Kỳ Phổ Độ). Toàn bộ công trình dài 100m được xây dựng hoàn toàn bằng sức lao động thủ công của các tín đồ ăn chay trường mà không dùng đến bản vẽ kiến trúc phương Tây hay máy móc cơ giới. Điểm nhấn trung tâm là biểu tượng Thiên Nhãn (Mắt Trời tỏa hào quang) và các cột trụ rồng cuốn sơn thếp rực rỡ, tượng trưng cho sự hợp nhất tinh hoa của Nho giáo, Đạo giáo, Phật giáo, Kitô giáo và Hồi giáo.</p>
+                </div>
+
+                <div class="legend-box">
+                    <h4>✨ Truyền kỳ cây lá Trung Quân — Loài lá không bén lửa Chiến khu R</h4>
+                    <p>Trong những năm tháng kháng chiến ác liệt tại Căn cứ Trung ương Cục miền Nam, quân dân ta đã phát hiện ra loài cây lá trung quân độc đáo của rừng già Tây Ninh. Lá cây dày, dai, có chứa hàm lượng nước tự nhiên cao nên khi gặp lửa bom đạn chỉ quắt lại mà không hề bắt cháy bùng phát. Nhờ đặc tính kỳ diệu đó, hàng ngàn lán trại, nhà hội trường của các đồng chí lãnh đạo Trung ương Cục đã đứng vững an toàn dưới làn mưa bom bão đạn của kẻ thù.</p>
+                </div>
+
+                <!-- 4. CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH -->
+                <h2 id="chuoi-anh-4-mua"><span class="icon">🌸</span> 4. Chuỗi Hình Ảnh 4 Mùa Du Lịch Tây Ninh</h2>
+                <p>Khí hậu Tây Ninh chia hai mùa mưa nắng rõ rệt, kết hợp cùng các dịp đại lễ tâm linh quy mô lớn tạo nên bốn mùa trải nghiệm kỳ thú:</p>
+
+                <div class="seasons-grid">
+                    <!-- Season 1 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/tayninh_mua_san_may_dinh_nui_ba.webp" alt="Mùa săn mây đỉnh núi Bà Đen Tây Ninh" loading="lazy">
+                            <span class="season-badge">Tháng 10 – 12</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Săn Mây Đĩa Bay Đỉnh Núi Bà</h3>
+                            <div class="season-time">🗓️ Cuối năm se lạnh</div>
+                            <p class="season-desc">Thời điểm vàng để chiêm ngưỡng biển mây cuồn cuộn tràn qua mỏm đá đỉnh 986m và hiện tượng mây thấu kính UFO hình đĩa bay kỳ ảo bao quanh tượng Phật Bà trong ánh bình minh rực rỡ.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 2 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/tayninh_mua_le_hoi_xuan_chua_ba.webp" alt="Mùa Hội Xuân Núi Bà Đen Tây Ninh" loading="lazy">
+                            <span class="season-badge">Tháng Giêng – Tháng Hai âm lịch</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Hội Xuân Núi Bà Đen</h3>
+                            <div class="season-time">🗓️ Đầu xuân trẩy hội</div>
+                            <p class="season-desc">Lễ hội hành hương lớn nhất phương Nam thu hút hàng triệu Phật tử về chiêm bái Linh Sơn Tiên Thạch Tự, cầu tài lộc bình an dưới làn khói trầm thơm ngát và sắc hoa mai vàng khoe sắc thắm.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 3 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/tayninh_mua_dai_le_duc_chi_ton_toa_thanh.webp" alt="Mùa Đại lễ Đức Chí Tôn Tòa Thánh Tây Ninh" loading="lazy">
+                            <span class="season-badge">Tháng Giêng & Tháng Tám âm lịch</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Đại Lễ Tòa Thánh Cao Đài</h3>
+                            <div class="season-time">🗓️ Rằm tháng Giêng & Hội Yến Rằm tháng Tám</div>
+                            <p class="season-desc">Không gian lễ hội tôn giáo rực rỡ sắc màu nhất Đông Nam Bộ với màn rước cộ hoa Long Mã, triển lãm hàng trăm gian quả phẩm nghệ thuật và các màn múa rồng nhang độc đáo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 4 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/tayninh_mua_hoa_tam_giac_mach_dinh_nui.webp" alt="Mùa hoa rực rỡ trên đỉnh núi Bà Đen" loading="lazy">
+                            <span class="season-badge">Tháng 3 – 5</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Muôn Hoa Nở Rộ Trên Đỉnh Mây</h3>
+                            <div class="season-time">🗓️ Nắng ấm thảo nguyên</div>
+                            <p class="season-desc">Quần thể cảnh quan trên đỉnh núi Bà Đen biến thành vườn địa đàng rực rỡ với hàng trăm ngàn gốc hoa cẩm tú cầu, hoa tulip, ngọc thảo khoe sắc quanh các quảng trường đá và đài sen đồng thau.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. TỌA ĐỘ CHECK-IN BIỂU TƯỢNG -->
+                <h2 id="toa-do"><span class="icon">📸</span> 5. Tọa Độ Biểu Tượng Đỉnh Núi Bà Đen</h2>
+                <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử chính thống)</em></p>
+
+                <div class="checkin-grid">
+
+                    <!-- 1. Đỉnh Núi Bà Đen & Tượng Phật Bà Tây Bổ Đà Sơn -->
+                    <div class="dest-card double-col" data-legend="Núi Bà Đen là ngọn núi lửa đã tắt cao 986m, đỉnh núi cao nhất Nam Bộ được mệnh danh là 'Nóc nhà Đông Nam Bộ'. Tọa lạc uy nghiêm trên đỉnh núi là Tượng Phật Bà Tây Bổ Đà Sơn — kiệt tác điêu khắc đạt Kỷ lục Guinness thế giới năm 2021 là 'Tượng Phật Bà bằng đồng cao nhất châu Á tọa lạc trên đỉnh núi'. Tượng cao 72m đúc từ 170 tấn đồng đỏ nguyên khối, đứng trang nghiêm trên đài sen đồng, hướng tầm mắt từ bi bao quát toàn cảnh đồng bằng Nam Bộ bao la trong biển mây vần vũ.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_dinh_nui_ba_den_phat_ba.webp" alt="Tượng Phật Bà Tây Bổ Đà Sơn đỉnh núi Bà Đen Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Kỷ lục Guinness Châu Á</span>
+                                <span class="tag">Đỉnh 986m</span>
+                            </div>
+                            <h3 class="dest-card-title">1. Đỉnh Núi Bà Đen & Tượng Phật Bà Tây Bổ Đà Sơn</h3>
+                            <p class="dest-card-desc">Nóc nhà Nam Bộ cao 986m với pho đại tượng Phật Bà bằng đồng cao 72m đứng uy nghi giữa biển mây bồng bềnh và muôn hoa rực rỡ.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Quần thể Chùa Bà Đen -->
+                    <div class="dest-card single-col" data-legend="Quần thể chùa Bà (Linh Sơn Tiên Thạch Tự) tọa lạc ở độ cao 350m lưng chừng núi Bà Đen, khởi dựng từ thế kỷ XVIII với lịch sử hơn 300 năm linh ứng. Chùa nép mình bên những vách đá hoa cương sừng sững, gồm chùa Thượng, chùa Hạ, chùa Trung và động Ba Cô. Nơi đây là trung tâm tín ngưỡng thờ Linh Sơn Thánh Mẫu, thu hút hàng triệu khách hành hương mỗi dịp Tết đến xuân về chiêm bái cầu quốc thái dân an.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_chua_ba_den_linh_son_tien_thach.webp" alt="Chùa Bà Đen Linh Sơn Tiên Thạch Tự Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Cổ tự 300 năm</span>
+                                <span class="tag">Linh Sơn Tiên Thạch</span>
+                            </div>
+                            <h3 class="dest-card-title">2. Quần Thể Chùa Bà Đen (Linh Sơn Tiên Thạch)</h3>
+                            <p class="dest-card-desc">Ngôi cổ tự thâm nghiêm hơn 300 năm nép mình bên vách đá hoa cương, trung tâm thờ phụng Linh Sơn Thánh Mẫu linh thiêng.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Đại tượng Phật Di Lặc sa thạch -->
+                    <div class="dest-card single-col" data-legend="Khánh thành đầu năm 2024 ở độ cao 900m trên đỉnh núi Bà Đen, Đại tượng Phật Di Lặc bằng đá sa thạch có chiều cao 36m, bề rộng lớn nhất 45m. Bức tượng được ghép nối kỳ công từ 6.688 viên đá sa thạch tự nhiên khai thác tại chỗ, tạo nên nụ cười hoan hỷ an lạc hướng về phía hồ Dầu Tiếng. Phía sau tượng là thác nước nhân tạo cao 35m chảy tràn qua các tầng đá bậc thang kết hợp hệ thống nhạc nước hiện đại bậc nhất Việt Nam.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_dai_tuong_phat_di_lac_sa_thach.webp" alt="Tượng Phật Di Lặc bằng đá sa thạch Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">6.688 viên đá</span>
+                                <span class="tag">Khánh thành 2024</span>
+                            </div>
+                            <h3 class="dest-card-title">3. Đại Tượng Phật Di Lặc Sa Thạch</h3>
+                            <p class="dest-card-desc">Pho tượng Phật Di Lặc bằng đá sa thạch lớn hàng đầu thế giới với nụ cười hoan hỷ bên thác nước vô cực kỳ vĩ.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 6. DI CHUYỂN -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> 6. Cẩm Nang Di Chuyển & Cáp Treo Sun World</h2>
+                <p>Tây Ninh chỉ cách TP.HCM khoảng 90km - 100km, đường sá rộng rãi bằng phẳng với nhiều lựa chọn di chuyển trong ngày thuận tiện:</p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-sec);">
+                    <li style="margin-bottom: 0.5rem;"><strong>Xe buýt / Xe khách Limousine từ TP.HCM:</strong> Tuyến xe limousine đón tận nơi (quận 1, Tân Bình, sân bay Tân Sơn Nhất) chạy thẳng TP. Tây Ninh / Núi Bà Đen mất khoảng 2 tiếng đến 2,5 tiếng. Giá vé: 100.000 – 160.000 VNĐ/lượt.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Tự lái ô tô / Xe máy:</strong> Đi theo Quốc lộ 22 (tuyến Xuyên Á) qua ngã tư An Sương → Thị trấn Trảng Bàng → Gò Dầu → Quốc lộ 22B đến TP. Tây Ninh và Khu du lịch Núi Bà Đen.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Hệ thống cáp treo Sun World Ba Den Mountain:</strong> Gồm 2 tuyến cáp treo hiện đại Doppelmayr: Tuyến cáp Vân Sơn đưa du khách từ chân núi lên thẳng đỉnh 986m (thời gian bay chỉ 8 phút), và Tuyến cáp Chùa Hang đưa du khách lên Quần thể chùa Bà (thời gian 5 phút). Nhà ga cáp treo Bà Đen từng đạt Kỷ lục Guinness là "Nhà ga cáp treo lớn nhất thế giới".</li>
+                </ul>
+
+                <!-- 7. ẨM THỰC TÂY NINH -->
+                <h2 id="am-thuc"><span class="icon">🍲</span> 7. Tinh Hoa Ẩm Thực Vùng Đất Thánh</h2>
+                <p>Ẩm thực Tây Ninh ghi dấu ấn đậm nét với các di sản văn hóa phi vật thể quốc gia về nghề thủ công truyền thống và nghệ thuật ẩm thực độc đáo:</p>
+
+                <div class="food-list-grid">
+
+                    <!-- Món 1: Bánh tráng phơi sương -->
+                    <div class="food-item-box">
+                        <div class="food-item-header">
+                            <h3 class="food-item-title">Bánh Tráng Phơi Sương Trảng Bàng</h3>
+                            <span class="food-item-badge">Di sản Quốc gia</span>
+                        </div>
+                        <div class="food-item-flavor">🌯 Dẻo mềm tự nhiên, đượm vị sương đêm</div>
+                        <p class="food-item-desc">Được công nhận là Di sản văn hóa phi vật thể quốc gia năm 2016. Chiếc bánh tráng làm từ gạo nàng thơm pha chút muối, tráng hai lớp, nướng than phồng rộp rồi đem phơi hứng trọn hạt sương đêm thanh khiết. Bánh dẻo dai tự nhiên cuốn cùng thịt heo bắp luộc thái mỏng, đĩa rau rừng hơn 15 loại (lá cóc, quế vị, sao nhái, đọt xoài) chấm nước mắm tỏi ớt chua ngọt ngon khó cưỡng.</p>
+                        <div class="food-item-loc">📍 Quán Hoàng Minh, Út Huệ, Năm Dung (Thị trấn Trảng Bàng)</div>
+                    </div>
+
+                    <!-- Món 2: Bò tơ Tây Ninh -->
+                    <div class="food-item-box">
+                        <div class="food-item-header">
+                            <h3 class="food-item-title">Bò Tơ Tây Ninh Nướng Than Hoa</h3>
+                            <span class="food-item-badge">Đặc sản trứ danh</span>
+                        </div>
+                        <div class="food-item-flavor">🥩 Thịt mềm ngọt thơm, bì giòn sần sật</div>
+                        <p class="food-item-desc">Thịt bò tơ non tơ chăn thả trên đồng cỏ Tây Ninh chỉ từ 5 - 6 tháng tuổi nên thớ thịt mềm ngọt ngậy, lớp bì mỏng giòn sần sật không hề dai. Từng tảng bò tơ ướp sốt sa tế hoặc tiêu rừng nướng trên vỉ than hoa đỏ rực khói thơm nức mũi, xẻo từng miếng nóng hổi chấm ngập chén chao ớt béo cay kèm đậu bắp nướng giòn.</p>
+                        <div class="food-item-loc">📍 Bò tơ Năm Sánh (đường 30/4), Bò tơ Nhật Trường, Bò tơ Út Khương</div>
+                    </div>
+
+                    <!-- Món 3: Nghệ thuật ẩm thực chay -->
+                    <div class="food-item-box">
+                        <div class="food-item-header">
+                            <h3 class="food-item-title">Nghệ Thuật Ẩm Thực Chay Tây Ninh</h3>
+                            <span class="food-item-badge">Di sản Quốc gia 2022</span>
+                        </div>
+                        <div class="food-item-flavor">🥗 Thanh tịnh thuần khiết, cầu kỳ tạo tác</div>
+                        <p class="food-item-desc">Được Bộ VHTTDL công nhận là Di sản văn hóa phi vật thể quốc gia năm 2022. Gắn liền với nếp sống ăn chay trường của hàng chục vạn tín đồ đạo Cao Đài, món chay Tây Ninh đạt đến đỉnh cao nghệ thuật về màu sắc, hương vị và dinh dưỡng từ hoa quả, rau rừng, đậu hũ và nấm tự nhiên, tạo hình tinh xảo không thua kém bất kỳ món mặn sang trọng nào.</p>
+                        <div class="food-item-loc">📍 Các nhà hàng chay tại thị xã Hòa Thành, Chợ Long Hoa, Chùa Bà</div>
+                    </div>
+
+                    <!-- Món 4: Bánh canh Trảng Bàng -->
+                    <div class="food-item-box">
+                        <div class="food-item-header">
+                            <h3 class="food-item-title">Bánh Canh Trảng Bàng</h3>
+                            <span class="food-item-badge">Món ngon Nam Bộ</span>
+                        </div>
+                        <div class="food-item-flavor">🍜 Nước dùng trong veo, sợi bánh dẻo thơm</div>
+                        <p class="food-item-desc">Sợi bánh canh được làm từ gạo nàng thơm ngâm kỹ, xay nhuyễn và hấp chín thủ công tạo nên màu trắng trong và độ dẻo mềm đặc biệt. Nước lèo hầm từ xương ống heo cùng ngò gai, hành hoa trong vắt ngọt lịm. Tô bánh canh bốc khói đầy đặn khoanh giò heo giòn béo, thịt nạc luộc xắt mỏng rắc tiêu cay ấm, chấm nước mắm tiêu nguyên chất ăn kèm đĩa rau rừng tươi rói.</p>
+                        <div class="food-item-loc">📍 Bánh canh Út Huệ, Hoàng Minh (Quốc lộ 22, Trảng Bàng)</div>
+                    </div>
+
+                    <!-- Món 5: Muối tôm & Muối ớt Tây Ninh -->
+                    <div class="food-item-box">
+                        <div class="food-item-header">
+                            <h3 class="food-item-title">Muối Tôm & Muối Ớt Tây Ninh</h3>
+                            <span class="food-item-badge">Di sản Quốc gia 2023</span>
+                        </div>
+                        <div class="food-item-flavor">🌶️ Hạt to giòn rụm, mặn ngọt cay nồng</div>
+                        <p class="food-item-desc">Được công nhận là Di sản văn hóa phi vật thể quốc gia theo Quyết định 75/QĐ-BVHTTDL ngày 12/01/2023. Một nghịch lý thú vị khi Tây Ninh không giáp biển nhưng lại là thủ phủ của loại muối ngon nức tiếng cả nước. Muối hột biển được rang sấy trên chảo lửa cùng tôm khô, ớt đỏ cay nồng và tỏi ta tạo nên hạt muối cam óng giòn rụm, gia vị chấm hoa quả nhiệt đới 'gây nghiện' số 1 Việt Nam.</p>
+                        <div class="food-item-loc">📍 Cơ sở sản xuất Muối tôm Ý Như, Chợ Long Hoa, Siêu thị đặc sản Tây Ninh</div>
+                    </div>
+
+                    <!-- Món 6: Ốc xu núi Bà Đen -->
+                    <div class="food-item-box">
+                        <div class="food-item-header">
+                            <h3 class="food-item-title">Ốc Xu Núi Bà Đen</h3>
+                            <span class="food-item-badge">Đặc sản quý hiếm</span>
+                        </div>
+                        <div class="food-item-flavor">🐚 Giòn ngọt tự nhiên, đượm vị thảo mộc</div>
+                        <p class="food-item-desc">Loài ốc núi đặc hữu chỉ sinh sống trong các hốc đá trên sườn núi Bà Đen, ăn lá thảo dược, rêu xanh và cây thuốc quý. Vỏ ốc dẹt nhỏ giống đồng tiền xu. Thịt ốc xu giòn dai sần sật, có vị ngọt thanh và hậu vị đắng nhẹ của thảo mộc tự nhiên. Đem hấp sả gừng lá chúc chấm muối tiêu chanh hoặc xào me cay là món nhắm tuyệt hảo bồi bổ sức khỏe.</p>
+                        <div class="food-item-loc">📍 Các nhà hàng ẩm thực dưới chân núi Bà Đen, thị trấn Tân Châu</div>
+                    </div>
+
+                </div>
+
+                <!-- 8. GIÁ VÉ & CHI PHÍ -->
+                <h2 id="gia-ve"><span class="icon">💰</span> 8. Bảng Giá Vé Cáp Treo Sun World & Điểm Tham Quan</h2>
+                <div class="table-responsive">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Hạng mục vé / Dịch vụ trải nghiệm</th>
+                                <th>Địa điểm</th>
+                                <th>Giá vé tham khảo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Vé cổng Khu du lịch Núi Bà Đen</strong></td>
+                                <td>Chân núi Bà Đen</td>
+                                <td><span class="price-tag">10.000 VNĐ</span> (Người lớn) / <span class="price-tag">5.000 VNĐ</span> (Trẻ em)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cáp treo Đỉnh Núi Bà</strong> (Tuyến Vân Sơn khứ hồi)</td>
+                                <td>Sun World Ba Den Mountain</td>
+                                <td><span class="price-tag">350.000 – 400.000 VNĐ</span> (Người lớn) / <span class="price-tag">250.000 VNĐ</span> (Trẻ em)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cáp treo Chùa Hang</strong> (Khứ hồi)</td>
+                                <td>Sun World Ba Den Mountain</td>
+                                <td><span class="price-tag">250.000 VNĐ</span> (Người lớn) / <span class="price-tag">150.000 VNĐ</span> (Trẻ em)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Combo Cáp treo Đỉnh Núi + Chùa Hang</strong></td>
+                                <td>Sun World Ba Den Mountain</td>
+                                <td><span class="price-tag">550.000 – 600.000 VNĐ</span> / người</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tòa Thánh Tây Ninh</strong></td>
+                                <td>Thị xã Hòa Thành</td>
+                                <td><span class="price-tag">Miễn phí vé</span> (Ăn mặc trang nghiêm, bỏ giày dép bên ngoài)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Căn cứ Trung ương Cục miền Nam</strong></td>
+                                <td>Xã Tân Lập, Tân Biên</td>
+                                <td><span class="price-tag">20.000 VNĐ</span> / người</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vườn Quốc gia Lò Gò - Xa Mát</strong> (Vé vào cổng)</td>
+                                <td>Huyện Tân Biên</td>
+                                <td><span class="price-tag">20.000 VNĐ</span> / người</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="disclaimer-box">
+                    * Lưu ý: Giá vé cáp treo có chính sách ưu đãi đặc biệt cho người dân địa phương tỉnh Tây Ninh và có thể áp dụng biểu phí buffet ẩm thực trọn gói trên đỉnh núi tùy theo từng thời điểm trong năm.
+                </div>
+
+                <!-- 9. LỊCH TRÌNH & MẸO -->
+                <h2 id="lich-trinh"><span class="icon">🧭</span> 9. Gợi Ý Lịch Trình Khám Phá Tây Ninh</h2>
+                <div class="highlight-box">
+                    <h4>📅 Lịch trình 2 Ngày 1 Đêm (Hành trình tâm linh & Chinh phục nóc nhà Nam Bộ)</h4>
+                    <p><strong>Ngày 1:</strong> TP.HCM xuất phát sớm → Ăn sáng bánh canh Trảng Bàng → Đến Tòa Thánh Tây Ninh chiêm bái và nghe kinh lúc 12:00 trưa → Trưa thưởng thức cơm chay nghệ thuật hoặc bò tơ nướng → Chiều lên cáp treo Chùa Hang viếng chùa Bà Đen → Tối dạo phố đêm TP. Tây Ninh và ăn ốc xu núi Bà.</p>
+                    <p><strong>Ngày 2:</strong> 6:00 sáng lên cáp treo tuyến Vân Sơn chinh phục Đỉnh Núi Bà Đen (986m), săn mây ngắm Tượng Phật Bà Tây Bổ Đà Sơn và Đại tượng Di Lặc sa thạch → Thưởng thức buffet trên đỉnh mây → Chiều ghé ngắm hoàng hôn Hồ Dầu Tiếng hoặc thăm Căn cứ Trung ương Cục miền Nam → Mua bánh tráng phơi sương, muối tôm làm quà rồi về lại TP.HCM.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+        <div>
+            © 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cổng thông tin & Cẩm nang Du lịch Việt Nam.
+        </div>
+        <div class="credits">
+            🎨 100% Ảnh minh họa sinh động bởi AI • Biên soạn bởi Sửu nhi
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lightbox Modal Logic
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImg');
+        const modalTitle = document.getElementById('lightboxTitle');
+        const modalCaption = document.getElementById('lightboxCaption');
+
+        function openLightbox(imgSrc, imgAlt, title, caption) {
+            modalImg.src = imgSrc;
+            modalImg.alt = imgAlt;
+            modalTitle.textContent = title;
+            modalCaption.textContent = caption;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.querySelectorAll('.dest-card, .culinary-card, .season-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                const titleEl = this.querySelector('.dest-card-title, .culinary-title, .season-title');
+                const descEl = this.querySelector('.dest-card-desc, .culinary-desc, .season-desc');
+                const title = titleEl ? titleEl.textContent.trim() : (img ? img.alt : '');
+                const legend = this.getAttribute('data-legend') || (descEl ? descEl.textContent.trim() : '');
+
+                if (img) {
+                    openLightbox(img.src, img.alt, title, legend);
+                }
+            });
+        });
+
+        function closeLightbox(e) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cần Thơ — Thủ Phủ Tây Đô Sông Nước & Chợ Nổi Cái Răng | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Cần Thơ chi tiết: chợ nổi Cái Răng, bến Ninh Kiều, nhà cổ Bình Thủy, miệt vườn Phong Điền, lẩu mắm, vịt nấu chao, bánh xèo củ hủ dừa, chuỗi ảnh 4 mùa du lịch sông nước Tây Đô.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1A374D;
+            --bg-sec: #162c3e;
+            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg-glass: rgba(255,255,255,0.04);
+            --text: #f8fafc;
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #FF8C32;
+            --accent-gold: #fbbf24;
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        .nav {
+            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-logo img { height: 45px; }
+        .nav-back {
+            color: var(--text-sec);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 420px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,55,77,0.25) 0%, rgba(26,55,77,0.92) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-sec);
+            margin-top: 0.5rem;
+            max-width: 820px;
+        }
+
+        /* ARTICLE LAYOUT */
+        .article-layout {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent);
+            padding-left: 0.4rem;
+        }
+
+        /* MAIN CONTENT */
+        .article-main {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            color: #fff;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid rgba(255, 140, 50, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .article-main h2:first-of-type { margin-top: 0; }
+        .article-main h2 .icon { font-size: 1.4rem; }
+        .article-main p {
+            margin-bottom: 1.2rem;
+            color: var(--text-sec);
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .article-main strong { color: #fff; font-weight: 600; }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 140, 50, 0.05);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .highlight-box {
+            background: rgba(255, 140, 50, 0.08);
+            border: 1px solid rgba(255, 140, 50, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box h4 {
+            color: var(--accent);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+
+        .legend-box {
+            background: rgba(251, 191, 36, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-gold);
+            font-family: 'Caveat', cursive;
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .legend-box p { margin: 0; font-size: 0.95rem; font-style: italic; }
+
+        /* SEASONS SHOWCASE */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.8rem 0 2.5rem;
+        }
+        .season-card {
+            background: rgba(15, 30, 45, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 140, 50, 0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+        .season-img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+        .season-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.05);
+        }
+        .season-badge {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            background: rgba(26, 55, 77, 0.85);
+            backdrop-filter: blur(6px);
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+        .season-body {
+            padding: 1.25rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+        .season-time {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .season-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* CHECKIN GRID */
+        .checkin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+            display: block;
+            text-decoration: none;
+            color: var(--text) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.18), 0 0 0 1px rgba(255, 140, 50, 0.25);
+        }
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.15);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.78) saturate(1.25);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(22, 44, 62, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(4px);
+        }
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .dest-card-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* CULINARY SHOWCASE */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .food-card {
+            background: rgba(15, 30, 45, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .food-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 140, 50, 0.45);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+        }
+        .food-img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+        .food-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .food-card:hover .food-img-wrap img {
+            transform: scale(1.05);
+        }
+        .food-badge {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            background: rgba(255, 140, 50, 0.9);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+        }
+        .food-body {
+            padding: 1.3rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .food-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+        .food-flavor {
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .food-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .food-place {
+            margin-top: auto;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: rgba(22, 44, 62, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .info-table th {
+            background: rgba(255, 140, 50, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-sec);
+        }
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        .disclaimer-box {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+
+        /* FOOTER */
+        .article-footer {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-footer a { color: var(--accent); text-decoration: none; }
+        .credits { font-style: italic; }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 20, 30, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
+            box-sizing: border-box;
+        }
+        .lightbox-dialog {
+            position: relative;
+            max-width: 960px;
+            margin: auto;
+            background: #162c3e;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 140, 50, 0.3);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-img-wrap {
+            width: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content {
+            width: 100%;
+            max-height: 58vh;
+            object-fit: contain;
+            display: block;
+        }
+        .lightbox-caption-wrap {
+            padding: 1.5rem 2rem 2rem;
+            background: linear-gradient(180deg, #162c3e 0%, #112231 100%);
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .lightbox-caption {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        .lightbox-close {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            background: rgba(22, 44, 62, 0.85);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            line-height: 1;
+            padding: 0;
+        }
+        .lightbox-close:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: scale(1.08);
+            border-color: var(--accent);
+        }
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .checkin-grid, .seasons-grid, .culinary-grid { grid-template-columns: 1fr; }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 16/9;
+            }
+        }
+        @media (max-width: 768px) {
+            .article-main { padding: 1.5rem; }
+            .hero { height: 45vh; min-height: 320px; }
+            .lightbox-content { max-height: 42vh; }
+            .lightbox-caption-wrap { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR">
+            </a>
+            <a href="index.html" class="nav-back">← Quay lại Trang chủ</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/cantho_hero.webp" alt="Toàn cảnh thành phố Cần Thơ bên sông Hậu" loading="eager">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">🌾 Thủ Phủ Miền Tây Sông Nước</span>
+            <h1>Cần Thơ — Thủ Phủ Tây Đô Sông Nước & Chợ Nổi Cái Răng</h1>
+            <p class="hero-subtitle">Đô thị sông nước hiền hòa nơi ngã ba sông Hậu, bồng bềnh ghe xuồng chợ nổi Cái Răng, nét cổ kính giao thoa nhà cổ Bình Thủy và hương phù sa miệt vườn trĩu hạt.</p>
+        </div>
+    </header>
+
+    <!-- ARTICLE LAYOUT -->
+    <div class="article-layout">
+        <div class="dashboard-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">📌 Thông tin nhanh</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span> <span class="val">TP. Cần Thơ (Trung ương)</span></li>
+                        <li><span class="label">Vùng:</span> <span class="val">Trung tâm ĐBSCL</span></li>
+                        <li><span class="label">Khoảng cách:</span> <span class="val">~169km từ TP.HCM (Cao tốc)</span></li>
+                        <li><span class="label">Di sản:</span> <span class="val">Chợ nổi Cái Răng (QG 266)</span></li>
+                        <li><span class="label">Thời gian gợi ý:</span> <span class="val">2 ngày 1 đêm / 3N2Đ</span></li>
+                        <li><span class="label">Mùa đẹp nhất:</span> <span class="val">Tháng 5 – 8 (Trái cây) & 9 – 11</span></li>
+                        <li><span class="label">Đặc sản:</span> <span class="val">Lẩu mắm, vịt nấu chao, nem Cái Răng</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">🧭 Mục lục bài viết</h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Thủ phủ Tây Đô — Gạo trắng nước trong</a></li>
+                        <li><a href="#vi-tri-lich-su">2. Vị trí địa lý & Dấu ấn Lịch sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền thoại Cầm Thi Giang & Tích xưa</a></li>
+                        <li><a href="#chuoi-anh-4-mua">4. Chuỗi hình ảnh 4 Mùa Du lịch</a></li>
+                        <li><a href="#toa-do">5. Top 9 Tọa độ Thắng cảnh Biểu tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm nang di chuyển & Cao tốc</a></li>
+                        <li><a href="#am-thuc">7. Tinh hoa Ẩm thực Tây Đô</a></li>
+                        <li><a href="#gia-ve">8. Bảng giá vé tàu thuyền & Trải nghiệm</a></li>
+                        <li><a href="#lich-trinh">9. Gợi ý lịch trình & Mẹo du lịch</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN ARTICLE -->
+            <main class="article-main">
+
+                <div class="intro-lead" id="tong-quan">
+                    <em>"Cần Thơ gạo trắng nước trong / Ai đi đến đó lòng không muốn về"</em>. Nằm bên dòng sông Hậu hiền hòa chở nặng phù sa, <strong>Cần Thơ</strong> từ lâu đã được mệnh danh là "Thủ phủ Tây Đô" — trái tim trù phú, sầm uất và mến khách bậc nhất của miền Tây Nam Bộ. Nơi đây quyến rũ lòng người bởi nhịp sống ghe xuồng bồng bềnh của Chợ nổi Cái Răng lúc bình minh, nét đài các thâm nghiêm của những ngôi nhà cổ trăm năm tuổi và không gian miệt vườn rợp bóng cây trái ngọt lành.
+                </div>
+
+                <h2><span class="icon">🌿</span> 1. Thủ Phủ Tây Đô — Trái Tim Châu Thổ Cửu Long</h2>
+                <p>Trải qua hơn 280 năm hình thành và phát triển từ thời mở cõi phương Nam của các bậc tiền nhân, Cần Thơ mang trong mình vẻ đẹp giao thoa độc đáo giữa nét thanh bình, êm ả của vùng đồng bằng châu thổ và sự hiện đại, năng động của một đô thị trực thuộc Trung ương. Hệ thống kênh rạch chằng chịt đan xen như mạng nhện đã hun đúc nên một nền văn minh sông nước đặc sắc, nơi tiếng mái chèo khua nước, tiếng mời chào rôm rả trên chợ nổi và câu hò vọng cổ mênh mang trên bến Ninh Kiều đã trở thành linh hồn của đất và người Tây Đô.</p>
+                <p>Khí hậu Cần Thơ quanh năm ấm áp, ôn hòa với hai mùa mưa nắng rõ rệt. Không chịu ảnh hưởng của bão gió khắc nghiệt, Cần Thơ dang tay đón chào du khách bốn mùa: mùa hè rực rỡ với những vườn cây trĩu quả thơm lừng; mùa nước nổi tưng bừng với cá linh, bông điên điển; và những ngày giáp Tết ngập tràn sắc hoa rực rỡ trên bến dưới thuyền.</p>
+
+                <h2 id="vi-tri-lich-su"><span class="icon">🏛️</span> 2. Vị Trí Địa Lý & Dấu Ấn Lịch Sử Thành Lập</h2>
+                <p>Thành phố Cần Thơ nằm ở vị trí trung tâm vùng hạ lưu châu thổ sông Mê Kông, trải dài bên bờ hữu ngạn sông Hậu. Theo <strong>Nghị quyết số 22/2003/QH11 ngày 26/11/2003 của Quốc hội khóa XI</strong>, tỉnh Cần Thơ chính thức được chia tách để thành lập Thành phố Cần Thơ trực thuộc Trung ương. Với diện tích tự nhiên 1.439 km² và dân số trên 1,2 triệu người, Cần Thơ giữ vai trò hạt nhân kinh tế, trung tâm đào tạo y tế - giáo dục và đầu mối giao thông huyết mạch của toàn vùng ĐBSCL.</p>
+                <p>Hệ thống hạ tầng giao thông kết nối Cần Thơ ngày nay đã phát triển vượt bậc với <strong>Cầu Cần Thơ</strong> (khánh thành ngày 24/4/2010 với nhịp chính dây văng 550m dài nhất Đông Nam Á thời điểm bấy giờ), Sân bay Quốc tế Cần Thơ kết nối các đường bay nội địa và quốc tế, cùng tuyến cao tốc huyết mạch TP.HCM – Trung Lương – Mỹ Thuận – Cần Thơ rút ngắn thời gian di chuyển từ Sài Gòn về miền Tây chỉ còn chưa đầy 2 giờ đồng hồ.</p>
+                <div class="highlight-box">
+                    <h4>🏆 Di sản Văn hóa Phi vật thể Quốc gia Chợ nổi Cái Răng</h4>
+                    <p>Ngày 10/3/2016, Bộ Văn hóa, Thể thao và Du lịch đã chính thức ban hành <strong>Quyết định số 266/QĐ-BVHTTDL</strong> công nhận <em>"Văn hóa Chợ nổi Cái Răng"</em> là Di sản văn hóa phi vật thể quốc gia. Đây là niềm tự hào lớn lao, khẳng định giá trị lịch sử, phương thức sinh hoạt và tập quán giao thương đường thủy độc nhất vô nhị của cư dân Tây Nam Bộ.</p>
+                </div>
+
+                <h2 id="huyen-thoai"><span class="icon">📜</span> 3. Huyền Thoại Cầm Thi Giang & Giai Thoại Sông Nước</h2>
+                
+                <div class="legend-box">
+                    <h4>✨ Giai thoại Cầm Thi Giang — Tiếng đàn ca giữa đêm trăng sông Hậu</h4>
+                    <p>Theo dân gian truyền tụng, vào cuối thế kỷ XVIII, khi chúa Nguyễn Ánh (vua Gia Long sau này) bôn tẩu lánh nạn ở miền Tây Nam Bộ, thuyền ngự có lần xuôi theo dòng sông về vùng Trấn Giang (Cần Thơ xưa). Trong đêm thanh vắng trăng thanh gió mát, chúa nghe thấy từ trên bờ sông vọng lại những khúc đàn ca tài tử êm đềm, tiếng sáo trúc réo rắt du dương hòa cùng giọng ngâm thơ trong trẻo của các thiếu nữ. Cảm xúc trào dâng trước cảnh sắc thái bình giữa loạn lạc, chúa Nguyễn bèn đặt tên cho dòng sông là "Cầm Thi Giang" (dòng sông của đàn và thơ). Về sau, người dân đọc chệch âm Cầm Thi thành Cần Thơ.</p>
+                </div>
+
+                <div class="legend-box">
+                    <h4>✨ Tích xưa "Cây Bẹo" — Ngôn ngữ không lời của Chợ nổi Cái Răng</h4>
+                    <p>Giữa bốn bề sông nước sóng vỗ dập dềnh và tiếng máy nổ vang rền của hàng trăm ghe xuồng, người buôn bán chợ nổi đã sáng tạo nên phương thức tiếp thị tài tình: cây tre dài cắm dựng đứng trước mũi ghe gọi là "cây bẹo". Cây bẹo thể hiện tập quán "treo gì bán nấy": treo trái dưa hấu bán dưa hấu, treo chùm nhãn bán nhãn; "treo mà không bán" là quần áo gia đình phơi trên ghe; "không treo mà bán" là những chiếc ghe nhỏ len lỏi bán bún riêu, cà phê, hủ tiếu; và "treo cái này nhưng bán cái khác" là treo một tấm lá dừa ngụ ý muốn bán chính chiếc ghe ấy.</p>
+                </div>
+
+                <div class="legend-box">
+                    <h4>✨ Giai thoại phong thủy Nhà cổ Bình Thủy họ Dương</h4>
+                    <p>Ngôi nhà cổ 5 gian do ông Dương Chấn Kỷ khởi dựng từ năm 1870 ẩn chứa câu chuyện thú vị về thuật phong thủy Nam Bộ. Trước khi dựng nhà, gia chủ đã mời thầy địa lý phong thủy đặt đá trừ tà, chọn thế đất rồng cuộn hổ ngồi bên rạch Bình Thủy để hậu thế đỗ đạt, phát tài. Khi giao thoa kiến trúc Pháp vào đầu thế kỷ XX, các nghệ nhân đã khéo léo kết hợp hệ thống hoa văn xi măng gothic Tây phương với hoa văn thuần Việt tùng - cúc - trúc - mai, biến nơi đây thành viên ngọc kiến trúc độc nhất vô nhị trải qua hơn một thế kỷ phong ba.</p>
+                </div>
+
+                <!-- 4. CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH -->
+                <h2 id="chuoi-anh-4-mua"><span class="icon">🌸</span> 4. Chuỗi Hình Ảnh 4 Mùa Du Lịch Cần Thơ</h2>
+                <p>Khác với vùng núi cao Tây Bắc đổi màu theo hoa nở, bốn mùa của Tây Đô vận động nhịp nhàng theo con nước phù sa và mùa vụ nông nghiệp trù phú của đồng bằng châu thổ:</p>
+
+                <div class="seasons-grid">
+                    <!-- Season 1 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/cantho_mua_nuoc_noi_cho_noi.webp" alt="Mùa nước nổi Chợ nổi Cái Răng Cần Thơ" loading="lazy">
+                            <span class="season-badge">Tháng 9 – 11</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Nước Nổi & Chợ Nổi Cái Răng</h3>
+                            <div class="season-time">🗓️ Phù sa ngập tràn đồng bãi</div>
+                            <p class="season-desc">Khi con nước từ thượng nguồn sông Mê Kông tràn về mang theo phù sa đỏ rực và nguồn tôm cá dồi dào, Chợ nổi Cái Răng nhộn nhịp hơn bao giờ hết với hàng trăm ghe thuyền chở đầy sản vật tươi rói, bông súng, cá linh nhảy xoi xói.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 2 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/cantho_mua_hoa_tet_ba_bo.webp" alt="Mùa hoa Tết làng hoa Bà Bộ Cần Thơ" loading="lazy">
+                            <span class="season-badge">Tháng 12 – 1</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Hoa Tết Làng Hoa Bà Bộ</h3>
+                            <div class="season-time">🗓️ Giáp Tết Nguyên Đán rực rỡ</div>
+                            <p class="season-desc">Những ngày giáp Tết, các làng hoa truyền thống lâu đời như Bà Bộ, Phó Thọ (quận Bình Thủy) bừng sáng sắc vàng rực của cúc mâm xôi, vạn thọ, hoa giấy ngũ sắc, chuẩn bị theo ghe thuyền xuôi ngược tỏa đi khắp Nam Kỳ.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 3 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/cantho_mua_trai_cay_phong_dien.webp" alt="Mùa trái cây Phong Điền Cần Thơ" loading="lazy">
+                            <span class="season-badge">Tháng 5 – 8</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Trái Cây Trĩu Cành Miệt Vườn</h3>
+                            <div class="season-time">🗓️ Mùa hè ngọt lành</div>
+                            <p class="season-desc">Thiên đường của những tín đồ ẩm thực hoa quả nhiệt đới. Các miệt vườn Phong Điền, Cù lao Tân Lộc trĩu nặng dâu Hạ Châu thơm ngọt, sầu riêng Ri6 cơm vàng hạt lép, chôm chôm chín đỏ rực và măng cụt mọng nước.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 4 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <img src="images/cantho_mua_le_hoi_banh_dan_gian.webp" alt="Mùa Lễ hội Bánh dân gian Nam Bộ Cần Thơ" loading="lazy">
+                            <span class="season-badge">Tháng 3 – 4 âm lịch</span>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Lễ Hội Bánh Dân Gian Nam Bộ</h3>
+                            <div class="season-time">🗓️ Dịp Giỗ Tổ Hùng Vương</div>
+                            <p class="season-desc">Đại hội ẩm thực văn hóa quy mô bậc nhất miền Tây hội tụ hàng trăm loại bánh dân gian: bánh xèo khổng lồ, bánh tét lá cẩm, bánh da lợn, bánh bò thốt nốt cùng các màn biểu diễn đờn ca tài tử rộn rã.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. TOP 9 TỌA ĐỘ CHECK-IN BIỂU TƯỢNG -->
+                <h2 id="toa-do"><span class="icon">📸</span> 5. Top 9 Tọa Độ Thắng Cảnh Biểu Tượng & Dấu Tích Lịch Sử</h2>
+                <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử chính thống)</em></p>
+
+                <div class="checkin-grid">
+
+                    <!-- 1. Chợ nổi Cái Răng -->
+                    <div class="dest-card double-col" data-legend="Chợ nổi Cái Răng nằm trên sông Cần Thơ, cách trung tâm thành phố khoảng 6km. Được công nhận là Di sản văn hóa phi vật thể quốc gia theo Quyết định 266/QĐ-BVHTTDL ngày 10/3/2016. Chợ hình thành tự phát từ đầu thế kỷ XX khi đường bộ chưa phát triển, trở thành đầu mối bán buôn nông sản quy mô lớn nhất đồng bằng châu thổ. Nét văn hóa độc nhất là 'Cây bẹo' treo nông sản đầu mũi ghe và những chiếc ghe ẩm thực phục vụ hủ tiếu, bún riêu, cà phê kho ngay trên mặt nước bồng bềnh.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_cho_noi_cai_rang.webp" alt="Chợ nổi Cái Răng Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Di sản Quốc gia</span>
+                                <span class="tag">Bình minh sông Hậu</span>
+                            </div>
+                            <h3 class="dest-card-title">1. Chợ Nổi Cái Răng (Di Sản Quốc Gia)</h3>
+                            <p class="dest-card-desc">Bức tranh giao thương sông nước bồng bềnh lúc bình minh với hàng trăm ghe xuồng chở đầy hoa trái nhiệt đới và cây bẹo độc đáo.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Bến Ninh Kiều & Cầu Tình Yêu -->
+                    <div class="dest-card single-col" data-legend="Bến Ninh Kiều hình thành từ thế kỷ XIX thời Pháp thuộc, ban đầu mang tên Hàng Dương, đến năm 1957 được đổi tên thành Ninh Kiều theo sự kiện chiến thắng lịch sử của nghĩa quân Lam Sơn năm 1426. Tọa lạc bên hữu ngạn sông Hậu, bến Ninh Kiều ngày nay là công viên đi bộ sầm uất với Tượng đài Chủ tịch Hồ Chí Minh bằng đồng cao 7,2m. Cầu đi bộ Ninh Kiều (Cầu Tình Yêu) uốn lượn hình chữ S với hai đóa hoa sen phát sáng LED rực rỡ bắc qua rạch Khai Luông là điểm hẹn hò ngắm cảnh lãng mạn bậc nhất Tây Đô.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_ben_ninh_kieu_cau_tinh_yeu.webp" alt="Bến Ninh Kiều và Cầu Tình Yêu Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Biểu tượng Tây Đô</span>
+                                <span class="tag">Lung linh về đêm</span>
+                            </div>
+                            <h3 class="dest-card-title">2. Bến Ninh Kiều & Cầu Tình Yêu</h3>
+                            <p class="dest-card-desc">Công viên ven sông Hậu lộng gió, ngắm du thuyền lộng lẫy và cầu đi bộ hoa sen lung linh ánh đèn lúc hoàng hôn.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Nhà cổ Bình Thủy -->
+                    <div class="dest-card single-col" data-legend="Nhà cổ Bình Thủy (Nhà thờ họ Dương) tại số 144 Bùi Hữu Nghĩa, quận Bình Thủy được Bộ VHTTDL xếp hạng Di tích kiến trúc nghệ thuật cấp quốc gia năm 2009. Ngôi nhà 5 gian 2 mái do ông Dương Chấn Kỷ khởi dựng năm 1870, hoàn thành đầu thế kỷ XX. Đây là hình mẫu tuyệt mỹ về sự kết hợp Đông - Tây: mặt tiền mang kiến trúc biệt thự Pháp với vòm cuốn, cột corinthian và hoa sắt, nhưng bên trong bài trí theo phong thủy Á Đông thuần khiết với bao lam sơn son thếp vàng và bộ bàn ghế cẩm thạch Vân Nam. Ngôi nhà từng được chọn làm bối cảnh chính cho phim điện ảnh thế giới 'Người tình' (L'Amant).">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_nha_co_binh_thuy.webp" alt="Nhà cổ Bình Thủy Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di tích Quốc gia</span>
+                                <span class="tag">Phim Người tình</span>
+                            </div>
+                            <h3 class="dest-card-title">3. Nhà Cổ Bình Thủy (Họ Dương)</h3>
+                            <p class="dest-card-desc">Viên ngọc kiến trúc Pháp - Việt hơn 150 năm tuổi với kho tàng cổ vật quý hiếm và khu vườn phong lan tao nhã.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Thiền viện Trúc Lâm Phương Nam -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc tại ấp Mỹ Nhơn, xã Mỹ Khánh, huyện Phong Điền; khánh thành ngày 17/5/2014. Với khuôn viên rộng gần 4 hecta, đây là ngôi thiền viện lớn nhất miền Tây Nam Bộ theo dòng thiền Trúc Lâm Yên Tử do Phật hoàng Trần Nhân Tông sáng lập. Toàn bộ chính điện và các công trình rường cột được dựng từ 1.000 khối gỗ lim nhập khẩu, lợp ngói mũi hài theo đúng phong cách kiến trúc thời Lý - Trần thuần Việt, mang lại không gian thanh tịnh và uy nghiêm giữa đồng bằng trù phú.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_thien_vien_truc_lam_phuong_nam.webp" alt="Thiền viện Trúc Lâm Phương Nam Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Kiến trúc gỗ lim</span>
+                                <span class="tag">Trúc Lâm Yên Tử</span>
+                            </div>
+                            <h3 class="dest-card-title">4. Thiền Viện Trúc Lâm Phương Nam</h3>
+                            <p class="dest-card-desc">Thiền viện Phật giáo lớn nhất miền Tây với chánh điện gỗ lim uy nghiêm, hồ sen thơm ngát và tượng Phật thanh tịnh.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Miệt vườn Phong Điền -->
+                    <div class="dest-card single-col" data-legend="Huyện Phong Điền được mệnh danh là 'Vương quốc trái cây' của thủ phủ Tây Đô với hơn 8.500 hecta vườn cây ăn trái quanh năm trĩu quả. Nhờ nguồn phù sa ngọt ngào từ sông Cần Thơ bồi đắp, Phong Điền nức tiếng với giống dâu Hạ Châu đặc sản duy nhất, sầu riêng Ri6, chôm chôm nhãn, vú sữa Lò Rèn và măng cụt. Du khách tới đây có thể tự tay hái quả chín trên cây, chèo xuồng ba lá len lỏi trong rạch nhỏ và thưởng thức bữa cơm đồng quê đậm chất Nam Bộ.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_miet_vuon_phong_dien.webp" alt="Miệt vườn trái cây Phong Điền Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Thủ phủ trái cây</span>
+                                <span class="tag">Dâu Hạ Châu</span>
+                            </div>
+                            <h3 class="dest-card-title">5. Miệt Vườn Sinh Thái Phong Điền</h3>
+                            <p class="dest-card-desc">Không gian sinh thái miệt vườn trù phú, tự tay trẩy chôm chôm, sầu riêng chín cây và thư thái chèo xuồng dưới tán lá xanh mát.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Cồn Sơn & Trải nghiệm cá lóc bay -->
+                    <div class="dest-card double-col" data-legend="Cồn Sơn là cồn đất phù sa nổi giữa lòng sông Hậu thuộc phường Bùi Hữu Nghĩa, quận Bình Thủy. Nơi đây là mô hình du lịch cộng đồng kiểu mẫu gắn liền với nếp sống thuần hậu của bà con miệt vườn. Đến Cồn Sơn, du khách được chiêm ngưỡng màn biểu diễn độc nhất vô nhị 'Cá lóc bay' khi hàng trăm con cá lóc phóng vút lên khỏi mặt nước đớp mồi, tham quan làng bè cá bè sông Hậu, tự tay làm bánh dân gian truyền thống (bánh lá mít, bánh kẹp cuốn) và thưởng thức trái cây tại vườn.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_con_son_ca_loc_bay.webp" alt="Cồn Sơn cá lóc bay Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Độc lạ miền Tây</span>
+                                <span class="tag">Cộng đồng Cồn Sơn</span>
+                            </div>
+                            <h3 class="dest-card-title">6. Cồn Sơn & Trải Nghiệm "Cá Lóc Bay"</h3>
+                            <p class="dest-card-desc">Điểm du lịch cộng đồng trứ danh giữa sông Hậu với màn xiếc cá lóc bay kỳ thú, vườn ổi xanh mát và lớp học làm bánh truyền thống.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Chùa Munir Ansay Khmer -->
+                    <div class="dest-card single-col" data-legend="Chùa Munir Ansay (tọa lạc tại số 36 Đại lộ Hòa Bình, quận Ninh Kiều) là ngôi chùa Khmer lớn và lộng lẫy nhất tại trung tâm TP. Cần Thơ, được khởi công xây dựng từ năm 1948. Chùa mang đậm kiến trúc Phật giáo Nam tông Khmer với cổng tháp Tam bảo rực rỡ sắc vàng kim, những pho tượng nữ thần chim Kinnara, rắn thần Naga nhiều đầu bảo hộ Phật pháp và các bức phù điêu chạm khắc tinh xảo miêu tả cuộc đời Đức Phật Thích Ca.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_chua_khmer_munir_ansay.webp" alt="Chùa Munir Ansay Khmer Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Văn hóa Khmer</span>
+                                <span class="tag">Màu vàng kim</span>
+                            </div>
+                            <h3 class="dest-card-title">7. Chùa Khmer Munir Ansay</h3>
+                            <p class="dest-card-desc">Ngôi chùa Angkor thu nhỏ rực rỡ sắc vàng kim ngay giữa lòng đô thị, điểm giao thoa văn hóa tâm linh độc đáo.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Chùa Ông (Quảng Triệu Hội Quán) -->
+                    <div class="dest-card single-col" data-legend="Chùa Ông (Quảng Triệu Hội Quán) tọa lạc tại số 32 Hai Bà Trưng, bến Ninh Kiều, được Bộ Văn hóa - Thông tin xếp hạng Di tích kiến trúc nghệ thuật quốc gia theo Quyết định 759/QĐ-BT ngày 21/6/1993. Khởi dựng năm 1894 bởi bà con bang Quảng Đông định cư tại Cần Thơ, chùa thờ Quan Thánh Đế Quân (Quan Công) biểu trưng cho lòng trung nghĩa. Ngôi chùa giữ nguyên vẹn bố cục chữ Quốc (國) với sân thiên tỉnh đón ánh sáng tự nhiên, mái ngói âm dương trang trí tượng gốm màu tráng men sinh động và hàng trăm vòng nhang trầm cuộn tròn bảng lảng khói thiêng.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_chua_ong_ninh_kieu.webp" alt="Chùa Ông Ninh Kiều Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di tích Quốc gia 1893</span>
+                                <span class="tag">Nhang trầm huyền ảo</span>
+                            </div>
+                            <h3 class="dest-card-title">8. Chùa Ông (Quảng Triệu Hội Quán)</h3>
+                            <p class="dest-card-desc">Di tích kiến trúc nghệ thuật cổ kính của cộng đồng người Hoa với nghệ thuật gốm phù điêu tuyệt xảo và khói hương vòng tôn nghiêm.</p>
+                        </div>
+                    </div>
+
+                    <!-- 9. Chợ đêm Tây Đô -->
+                    <div class="dest-card single-col" data-legend="Chợ đêm Tây Đô (thuộc khuôn viên Hội chợ Triển lãm Quốc tế Cần Thơ) và phố đi bộ chợ đêm Ninh Kiều là trung tâm vui chơi, giải trí và ẩm thực đường phố sôi động nhất miền Tây khi thành phố lên đèn. Hàng trăm gian hàng bày bán thổ cẩm, đồ thủ công mỹ nghệ, quà lưu niệm miền sông nước cùng thiên đường ẩm thực đường phố với các món bánh tráng nướng, bún mắm, ốc nướng tiêu và sinh tố hoa quả nhiệt đới tươi mát.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_cho_dem_tay_do.webp" alt="Chợ đêm Tây Đô Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Phố đêm sông nước</span>
+                                <span class="tag">Ẩm thực đường phố</span>
+                            </div>
+                            <h3 class="dest-card-title">9. Chợ Đêm Tây Đô & Phố Đi Bộ</h3>
+                            <p class="dest-card-desc">Thiên đường ẩm thực đêm rực rỡ sắc màu, thưởng thức quà vặt miền sông nước và ngắm nhìn nhịp sống Tây Đô lung linh.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 6. DI CHUYỂN -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> 6. Cẩm Nang Di Chuyển & Tuyến Cao Tốc Huyết Mạch</h2>
+                <p>Cần Thơ là đầu mối giao thông của vùng ĐBSCL nên du khách từ mọi miền đất nước có thể tiếp cận vô cùng thuận tiện:</p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-sec);">
+                    <li style="margin-bottom: 0.5rem;"><strong>Đường hàng không (Sân bay Quốc tế Cần Thơ - VCA):</strong> Các hãng hàng không Vietnam Airlines, Vietjet Air khai thác các đường bay thẳng khứ hồi mỗi ngày từ Hà Nội, Đà Nẵng, Hải Phòng, Vinh, Phú Quốc... Thời gian bay từ Hà Nội chỉ khoảng 2 giờ 10 phút.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Đường bộ cao tốc từ TP.HCM:</strong> Tuyến cao tốc Bắc - Nam phía Đông (đoạn TP.HCM – Trung Lương – Mỹ Thuận – Cầu Mỹ Thuận 2 – Cần Thơ) đã thông xe toàn tuyến, rút ngắn thời gian chạy xe ô tô / xe khách limousine chất lượng cao xuống chỉ còn <strong>khoảng 2 tiếng đến 2,5 tiếng</strong>. Giá vé xe khách: 160.000 – 220.000 VNĐ/vé.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Phương tiện tham quan Chợ nổi:</strong> Để đi Chợ nổi Cái Răng, du khách nên có mặt tại bến tàu du lịch Ninh Kiều hoặc bến tàu Cái Răng từ <strong>5:00 – 5:30 sáng</strong>. Giá thuê tàu thuyền dao động từ 350.000 – 600.000 VNĐ/tàu riêng (chở 6 - 15 người) hoặc 80.000 – 100.000 VNĐ/khách vé lẻ.</li>
+                </ul>
+
+                <!-- 7. ẨM THỰC TÂY ĐÔ -->
+                <h2 id="am-thuc"><span class="icon">🍲</span> 7. Tinh Hoa Ẩm Thực Thủ Phủ Tây Đô</h2>
+                <p>Ẩm thực Cần Thơ là bản hòa ca tuyệt vời giữa nguồn thủy hải sản nước ngọt phong phú của dòng Mê Kông và phong vị hào sảng, phóng khoáng của đất phương Nam:</p>
+
+                <div class="culinary-grid">
+
+                    <!-- Món 1: Lẩu mắm Cần Thơ -->
+                    <div class="food-card">
+                        <div class="food-img-wrap">
+                            <img src="images/cantho_mon_lau_mam_da_ly.webp" alt="Lẩu mắm Cần Thơ" loading="lazy">
+                            <span class="food-badge">Đệ nhất đặc sản</span>
+                        </div>
+                        <div class="food-body">
+                            <h3 class="food-name">Lẩu Mắm Cần Thơ</h3>
+                            <div class="food-flavor">🐟 Đậm đà vị mắm cá linh, cá sặc đồng</div>
+                            <p class="food-desc">Nồi nước lẩu mắm sánh vàng sôi sùng sục được chắt lọc từ mắm cá linh và mắm cá sặc ủ kỹ, thơm nức hương sả ớt và nước dừa tươi ngọt thanh. Thả vào nồi là cá hú béo ngậy, tôm sông tươi rói, mực giòn, thịt ba chỉ và đĩa rau đồng bạt ngàn hơn 20 loại: bông điên điển, bông súng, so đũa, rau đắng, cù nèo ăn kèm bún trắng tinh.</p>
+                            <div class="food-place">📍 Lẩu mắm Dạ Lý (đường 3/2), Lẩu mắm Cần Thơ Má Năm</div>
+                        </div>
+                    </div>
+
+                    <!-- Món 2: Vịt nấu chao -->
+                    <div class="food-card">
+                        <div class="food-img-wrap">
+                            <img src="images/cantho_mon_vit_nau_chao.webp" alt="Vịt nấu chao Cần Thơ" loading="lazy">
+                            <span class="food-badge">Món ngon di sản</span>
+                        </div>
+                        <div class="food-body">
+                            <h3 class="food-name">Vịt Nấu Chao Thành Giao</h3>
+                            <div class="food-flavor">🦆 Thơm béo chao đỏ, bùi dẻo khoai môn</div>
+                            <p class="food-desc">Từng được Tổ chức Kỷ lục Việt Nam vinh danh trong Top 100 món ăn đặc sản tiêu biểu. Thịt vịt xiêm thả vườn săn chắc được ướp đẫm chao trắng, chao đỏ lên men gia truyền, nấu cùng khoai môn dẻo bùi và nấm rơm trong nước dừa xiêm. Nước lẩu béo ngậy chấm chén chao pha ớt hiểm cay xé lưỡi, nhúng ngập rau muống non giòn ngọt.</p>
+                            <div class="food-place">📍 Hẻm 1 đường Lý Tự Trọng (Vịt nấu chao Thành Giao, Kim Liên)</div>
+                        </div>
+                    </div>
+
+                    <!-- Món 3: Bánh xèo củ hủ dừa -->
+                    <div class="food-card">
+                        <div class="food-img-wrap">
+                            <img src="images/cantho_mon_banh_xeo_cu_hu_dua.webp" alt="Bánh xèo củ hủ dừa Cần Thơ" loading="lazy">
+                            <span class="food-badge">Nghệ nhân Mười Xiêm</span>
+                        </div>
+                        <div class="food-body">
+                            <h3 class="food-name">Bánh Xèo Củ Hủ Dừa</h3>
+                            <div class="food-flavor">🥥 Vàng giòn rụm, ngọt thanh củ hủ dừa</div>
+                            <p class="food-desc">Chiếc bánh xèo khổng lồ miền Tây đổ mỏng tanh trên chảo gang lớn với bột gạo pha nước cốt dừa và nghệ tươi vàng ruộm. Nhân bánh là sự kết hợp đỉnh cao của củ hủ dừa non ngọt giòn, tép bạc sông tươi ngọt thịt, thịt ba chỉ và giá đỗ. Cuốn miếng bánh xèo nóng hổi cùng đọt xoài non, lá cách, cải bẹ xanh chấm nước mắm tỏi ớt chua ngọt đậm đà.</p>
+                            <div class="food-place">📍 Bánh xèo Mười Xiêm (Trà Nóc), Bánh xèo 7 Tới (Cái Răng)</div>
+                        </div>
+                    </div>
+
+                    <!-- Món 4: Nem nướng Cái Răng -->
+                    <div class="food-card">
+                        <div class="food-img-wrap">
+                            <img src="images/cantho_mon_nem_nuong_cai_rang.webp" alt="Nem nướng Cái Răng Cần Thơ" loading="lazy">
+                            <span class="food-badge">Đặc sản gia truyền</span>
+                        </div>
+                        <div class="food-body">
+                            <h3 class="food-name">Nem Nướng Cái Răng</h3>
+                            <div class="food-flavor">🔥 Thịt nướng than hồng, béo bùi tương xay</div>
+                            <p class="food-desc">Thịt heo nạc tươi vừa mổ còn nóng hổi được quết nhuyễn bằng chày tay với tỏi, tiêu hạt và gia vị bí truyền, viên tròn xiên trên que tre nướng trên bếp than hoa rực hồng. Miếng nem nướng vàng óng mỡ màng, cuốn cùng bánh tráng mỏng, bánh hỏi trắng mịn, khế chua, chuối chát và chấm ngập trong chén tương nếp xay sánh mịn rắc đậu phộng rang giòn.</p>
+                            <div class="food-place">📍 Nem nướng Thanh Vân (Đại lộ Hòa Bình), Nem nướng Anh Ba</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 8. GIÁ VÉ & CHI PHÍ -->
+                <h2 id="gia-ve"><span class="icon">💰</span> 8. Bảng Giá Vé Tham Quan & Trải Nghiệm Cần Thơ</h2>
+                <div class="table-responsive">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Điểm tham quan / Dịch vụ trải nghiệm</th>
+                                <th>Địa điểm</th>
+                                <th>Giá vé tham khảo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tàu thuyền Chợ nổi Cái Răng</strong> (Vé lẻ ghép đoàn)</td>
+                                <td>Bến Ninh Kiều</td>
+                                <td><span class="price-tag">80.000 – 100.000 VNĐ</span> / người</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thuê tàu riêng Chợ nổi Cái Răng</strong> (Tàu 10 – 15 chỗ)</td>
+                                <td>Bến Ninh Kiều / Cái Răng</td>
+                                <td><span class="price-tag">400.000 – 650.000 VNĐ</span> / tàu trọn gói</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nhà cổ Bình Thủy</strong></td>
+                                <td>Đường Bùi Hữu Nghĩa, Bình Thủy</td>
+                                <td><span class="price-tag">30.000 VNĐ</span> / người</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cồn Sơn</strong> (Vé đò qua sông + tham quan vườn cá lóc bay)</td>
+                                <td>Phường Bùi Hữu Nghĩa, Bình Thủy</td>
+                                <td><span class="price-tag">80.000 – 120.000 VNĐ</span> / người</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Làng du lịch Mỹ Khánh</strong> (Vé vào cổng)</td>
+                                <td>Xã Mỹ Khánh, Phong Điền</td>
+                                <td><span class="price-tag">90.000 VNĐ</span> (Người lớn) / <span class="price-tag">50.000 VNĐ</span> (Trẻ em)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thiền viện Trúc Lâm Phương Nam</strong></td>
+                                <td>Xã Mỹ Khánh, Phong Điền</td>
+                                <td><span class="price-tag">Miễn phí vé</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chùa Ông & Chùa Munir Ansay</strong></td>
+                                <td>Quận Ninh Kiều</td>
+                                <td><span class="price-tag">Miễn phí vé</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="disclaimer-box">
+                    * Lưu ý: Giá vé tàu thuyền và các dịch vụ trải nghiệm có thể dao động nhẹ trong các dịp Lễ hội Bánh dân gian Nam Bộ, Tết Nguyên Đán hoặc tùy theo thỏa thuận lộ trình riêng biệt của du khách.
+                </div>
+
+                <!-- 9. LỊCH TRÌNH & MẸO -->
+                <h2 id="lich-trinh"><span class="icon">🧭</span> 9. Gợi Ý Lịch Trình Khám Phá Tây Đô</h2>
+                <div class="highlight-box">
+                    <h4>📅 Lịch trình 2 Ngày 1 Đêm (Trải nghiệm trọn vẹn nét duyên Tây Đô)</h4>
+                    <p><strong>Ngày 1:</strong> TP.HCM / Hà Nội đến Cần Thơ → Check-in khách sạn bến Ninh Kiều → Chiều thăm Nhà cổ Bình Thủy, viếng Chùa Ông linh thiêng → Hoàng hôn tản bộ Cầu Tình Yêu ngắm du thuyền sông Hậu → Tối thưởng thức vịt nấu chao Thành Giao và khám phá Chợ đêm Ninh Kiều.</p>
+                    <p><strong>Ngày 2:</strong> 5:00 sáng xuất bến Ninh Kiều đi Chợ nổi Cái Răng, ăn tô bún riêu nóng hổi bồng bềnh trên ghe → Ghé Cồn Sơn chiêm ngưỡng màn xiếc cá lóc bay kỳ thú → Xuôi thuyền về miệt vườn Phong Điền tự tay hái trái cây và viếng Thiền viện Trúc Lâm Phương Nam → Trưa thưởng thức lẩu mắm đậm đà → Mua bánh tét lá cẩm, trái cây làm quà rồi trở về.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+        <div>
+            © 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cổng thông tin & Cẩm nang Du lịch Việt Nam.
+        </div>
+        <div class="credits">
+            🎨 100% Ảnh minh họa sinh động bởi AI • Biên soạn bởi Sửu nhi
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lightbox Modal Logic
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImg');
+        const modalTitle = document.getElementById('lightboxTitle');
+        const modalCaption = document.getElementById('lightboxCaption');
+
+        function openLightbox(imgSrc, imgAlt, title, caption) {
+            modalImg.src = imgSrc;
+            modalImg.alt = imgAlt;
+            modalTitle.textContent = title;
+            modalCaption.textContent = caption;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.querySelectorAll('.dest-card, .culinary-card, .season-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                const titleEl = this.querySelector('.dest-card-title, .culinary-title, .season-title');
+                const descEl = this.querySelector('.dest-card-desc, .culinary-desc, .season-desc');
+                const title = titleEl ? titleEl.textContent.trim() : (img ? img.alt : '');
+                const legend = this.getAttribute('data-legend') || (descEl ? descEl.textContent.trim() : '');
+
+                if (img) {
+                    openLightbox(img.src, img.alt, title, legend);
+                }
+            });
+        });
+
+        function closeLightbox(e) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
