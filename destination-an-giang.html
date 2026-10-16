@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Giang — Thủ Phủ Mùa Nước Nổi & Miền Đất Bảy Núi Thất Sơn Kỳ Vĩ | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch An Giang toàn diện: Khám phá rừng tràm Trà Sư xanh ngút ngàn, Miếu Bà Chúa Xứ Núi Sam linh thiêng, cánh đồng thốt nốt Tri Tôn, chùa Hang, chợ nổi Long Xuyên và ẩm thực lẩu cá linh bông điên điển.">
+    <meta name="keywords" content="du lịch An Giang, kinh nghiệm đi An Giang, rừng tràm Trà Sư, mùa nước nổi miền Tây, Miếu Bà Chúa Xứ Núi Sam, thốt nốt Tri Tôn, Núi Cấm, chùa Hang Châu Đốc, chợ nổi Long Xuyên, lẩu cá linh bông điên điển, bún cá Châu Đốc">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0a141e;
+            --bg-card: #112233;
+            --bg-card-hover: #162c3e;
+            --text: #f8fafc;
+            --text-sec: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #ff8c32;
+            --accent-gold: #fbbf24;
+            --accent-green: #10b981;
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* HEADER / NAV */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 20, 30, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-back {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--accent);
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-wrap {
+            max-width: 1350px;
+            margin: 1rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            list-style: none;
+        }
+
+        .breadcrumb a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb .sep {
+            color: var(--text-muted);
+        }
+
+        .breadcrumb .current {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            max-width: 1350px;
+            margin: 1rem auto 2rem;
+            padding: 0 1.5rem;
+        }
+
+        .hero-banner {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 480px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 20, 30, 0.15) 0%, rgba(10, 20, 30, 0.88) 75%, var(--bg) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+        }
+
+        .hero-badge-wrap {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            background: rgba(255, 140, 50, 0.2);
+            color: var(--accent);
+            border: 1px solid rgba(255, 140, 50, 0.4);
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-badge.green {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        .hero-badge.gold {
+            background: rgba(251, 191, 36, 0.2);
+            color: var(--accent-gold);
+            border-color: rgba(251, 191, 36, 0.4);
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.75rem, 2.5vw, 2.45rem);
+            font-weight: 700;
+            line-height: 1.28;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            text-wrap: balance;
+        }
+
+        .hero-title .title-line-1,
+        .hero-title .title-line-2 {
+            display: inline-block;
+        }
+
+        .hero-title .title-line-2 {
+            white-space: nowrap;
+        }
+
+        .hero-sub {
+            font-size: 1.12rem;
+            color: #e2e8f0;
+            max-width: 920px;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 0.75rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* LAYOUT & SIDEBAR */
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* STICKY QUICK NAV */
+        .sidebar {
+            position: sticky;
+            top: 5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+
+        .sidebar-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--text-sec);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+
+        .sidebar-link:hover, .sidebar-link.active {
+            color: #ffffff;
+            background: rgba(255, 140, 50, 0.15);
+            border-left-color: var(--accent);
+        }
+
+        .sidebar-box {
+            margin-top: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .sidebar-box h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-box p {
+            color: var(--text-sec);
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        /* MAIN CONTENT */
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .article-main h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .article-main p {
+            color: #cbd5e1;
+            font-size: 1.02rem;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        /* SPOTS GRID */
+        .spots-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
+            margin: 2rem 0;
+        }
+
+        .spot-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.3s;
+            cursor: zoom-in;
+        }
+
+        .spot-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 140, 50, 0.4);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+        }
+
+        .spot-card-img {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .spot-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: block;
+        }
+
+        .spot-card:hover .spot-card-img img {
+            transform: scale(1.06);
+        }
+
+        .spot-card-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(10, 20, 30, 0.85);
+            backdrop-filter: blur(8px);
+            color: var(--accent-gold);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .spot-card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .spot-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .spot-card-desc {
+            font-size: 0.92rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .spot-card-hint {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+            border-top: 1px solid var(--border);
+            padding-top: 0.75rem;
+        }
+
+        /* SEASONS SHOWCASE */
+        .seasons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .season-card {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: zoom-in;
+        }
+
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 50, 0.4);
+            box-shadow: 0 16px 40px rgba(255, 140, 50, 0.15);
+        }
+
+        .season-card-img {
+            position: relative;
+            min-height: 240px;
+            overflow: hidden;
+        }
+
+        .season-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+
+        .season-card:hover .season-card-img img {
+            transform: scale(1.06);
+        }
+
+        .season-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(135deg, #FF8C32 0%, #fbbf24 100%);
+            color: #1a1a1a;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: 99px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .season-card-body {
+            padding: 1.75rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .season-card-body h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .season-desc {
+            font-size: 0.92rem;
+            color: var(--text-sec);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .season-highlights {
+            background: rgba(255, 140, 50, 0.06);
+            border-left: 3px solid var(--accent);
+            padding: 0.75rem 1rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+        }
+
+        .season-highlights strong {
+            color: var(--accent-gold);
+        }
+
+        /* LEGENDS & HISTORY */
+        .legend-box {
+            background: linear-gradient(145deg, rgba(251, 191, 36, 0.05) 0%, rgba(17, 34, 51, 0.9) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .legend-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        /* TABLE WRAP & PRICING */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        table.info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+            background: var(--bg-card);
+        }
+
+        table.info-table th, table.info-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        table.info-table th {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        table.info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-tag {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .price-disclaimer-note {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FOOD GRID */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .food-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 140, 50, 0.4);
+        }
+
+        .food-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .food-card p {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* TIPS & WARNINGS */
+        .tip-box {
+            background: rgba(16, 185, 129, 0.08);
+            border-left: 4px solid var(--accent-green);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 1.5rem 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+            color: #d1fae5;
+            font-size: 0.95rem;
+        }
+
+        .warning-box {
+            background: rgba(255, 140, 50, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #fed7aa;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(10, 20, 30, 0.95);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 75vh;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            margin-top: 1.25rem;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .lightbox-desc {
+            font-size: 0.92rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+        }
+
+        .lightbox-legend {
+            background: rgba(255, 140, 50, 0.1);
+            border: 1px solid rgba(255, 140, 50, 0.3);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            margin-top: 0.75rem;
+            font-size: 0.88rem;
+            color: #ffedd5;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 380px;
+            }
+            .hero-overlay {
+                padding: 1.5rem;
+            }
+            .spots-grid, .food-grid {
+                grid-template-columns: 1fr;
+            }
+            .season-card {
+                grid-template-columns: 1fr;
+            }
+            .season-card-img {
+                height: 220px;
+                min-height: auto;
+            }
+            .season-card-body {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                ← Về Trang Chủ
+            </a>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-wrap">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li class="sep">›</li>
+            <li class="current">An Giang</li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-banner">
+            <img src="images/angiang_hero.webp" alt="Toàn cảnh sông nước mùa nước nổi An Giang">
+            <div class="hero-overlay">
+                <div class="hero-badge-wrap">
+                    <span class="hero-badge green">🌾 Miền Tây Nam Bộ</span>
+                    <span class="hero-badge">🌊 Mùa Nước Nổi</span>
+                    <span class="hero-badge gold">⛰️ Thất Sơn Bảy Núi</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line-1">An Giang — Thủ Phủ Mùa Nước Nổi</span>
+                    <span class="title-line-2">& Vùng Đất Bảy Núi Thất Sơn Kỳ Vĩ</span>
+                </h1>
+                <p class="hero-sub">
+                    Nơi phù sa Mê Kông dâng tràn thành tấm gương soi mây trời, những thảm bèo cám Trà Sư xanh ngút ngàn, bóng thốt nốt vút cao giữa đồng bằng và vùng đất địa linh giao thoa văn hóa Kinh – Hoa – Chăm – Khmer.
+                </p>
+                <div class="meta-bar">
+                    <div class="meta-item">📍 Miền Tây Nam Bộ (Tây sông Hậu)</div>
+                    <div class="meta-item">⏱️ Thời gian gợi ý: 3 ngày 2 đêm</div>
+                    <div class="meta-item">⭐ Mùa đẹp nhất: Tháng 9 – 12 (Nước nổi) & Tháng 12 – 4 (Thốt nốt)</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+        <div class="layout-grid">
+            
+            <!-- STICKY SIDEBAR -->
+            <aside class="sidebar">
+                <div class="sidebar-title">
+                    <span>📖 Mục Lục Bài Viết</span>
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="#tong-quan" class="sidebar-link">📋 1. Tổng quan điểm đến</a></li>
+                    <li><a href="#toa-do" class="sidebar-link">📸 2. Tọa độ Check-in Biểu Tượng</a></li>
+                    <li><a href="#truyen-thuyet" class="sidebar-link">✨ 3. Huyền Thoại & Lịch Sử Thất Sơn</a></li>
+                    <li><a href="#theo-mua" class="sidebar-link">🌸 4. An Giang 4 Mùa Cảnh Sắc</a></li>
+                    <li><a href="#di-chuyen" class="sidebar-link">🚗 5. Phương Tiện & Lộ Trình</a></li>
+                    <li><a href="#gia-ve" class="sidebar-link">🎟️ 6. Bảng Giá Vé & Dịch Vụ</a></li>
+                    <li><a href="#am-thuc" class="sidebar-link">🍲 7. Ẩm Thực Mùa Nước Nổi</a></li>
+                    <li><a href="#kinh-nghiem" class="sidebar-link">🗓️ 8. Kinh Nghiệm Du Lịch An Toàn</a></li>
+                </ul>
+
+                <div class="sidebar-box">
+                    <h4>💡 Lưu ý mùa nước nổi</h4>
+                    <p>Mùa nước nổi đẹp nhất từ <strong>tháng 9 đến tháng 11</strong> hàng năm. Hãy chuẩn bị dép sandal, áo khoác chống nắng mỏng và sạc dự phòng để thỏa sức chụp ảnh trên thuyền nan.</p>
+                </div>
+            </aside>
+
+            <!-- ARTICLE CONTENT -->
+            <article class="article-main">
+
+                <!-- 1. TỔNG QUAN -->
+                <h2 id="tong-quan">📋 1. Tổng Quan Về An Giang</h2>
+                <p>
+                    Nằm ở miền Tây Nam Bộ tại ngã ba biên giới Việt Nam – Campuchia, <strong>An Giang</strong> là mảnh đất kỳ diệu hội tụ đầy đủ những nét độc đáo nhất của đồng bằng sông Cửu Long: vừa có dòng sông Tiền, sông Hậu cuồn cuộn đỏ nặng phù sa, vừa có dãy <strong>Thất Sơn Bảy Núi</strong> hùng vĩ vươn cao sừng sững giữa biển lúa mênh mông bát ngát.
+                </p>
+                <p>
+                    Đặc biệt, vào khoảng <strong>tháng 9 đến tháng 11</strong> hàng năm, An Giang bước vào <strong>Mùa Nước Nổi</strong> — hiện tượng tự nhiên kỳ thú được ví như "món quà của đất trời" khi nước sông Mê Kông từ thượng nguồn đổ về tràn ngập các cánh đồng, mang theo nguồn tôm cá dồi dào, thảm bèo xanh ngắt và những mùa hoa điên điển vàng rực nở dọc triền kênh. An Giang còn là vùng đất giao thoa văn hóa rực rỡ của 4 dân tộc anh em <em>Kinh – Hoa – Chăm – Khmer</em>, tạo nên kho tàng tín ngưỡng, ẩm thực và nếp sống mộc mạc làm say lòng bất kỳ lữ khách phương xa nào.
+                </p>
+
+                <!-- 2. TỌA ĐỘ CHECK-IN -->
+                <h2 id="toa-do">📸 2. Top 10 Tọa Độ Check-in Biểu Tượng Của An Giang</h2>
+                <p>Dưới đây là 10 điểm đến không thể bỏ lỡ khi đặt chân tới xứ Thất Sơn và miền sông nước An Giang:</p>
+
+                <div class="spots-grid">
+
+                    <!-- Spot 1: Rừng tràm Trà Sư -->
+                    <div class="spot-card" data-legend="Rừng tràm Trà Sư thuộc thị xã Tịnh Biên có diện tích 845 ha, là khu rừng ngập nước ngọt tiêu biểu của vùng Tây sông Hậu. Mùa nước nổi, cả khu rừng biến thành thảm nhung xanh ngọc bích của hàng tỷ cánh bèo cám li ti. Nơi đây là vương quốc của hơn 70 loài chim nước quý hiếm như giang sen, điên điển cùng hệ sinh thái thủy sinh trù phú bậc nhất đồng bằng.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_rung_tram_tra_su.webp" alt="Rừng tràm Trà Sư mùa nước nổi bèo xanh">
+                            <span class="spot-card-tag">Sinh thái · Biểu tượng</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">1. Rừng Tràm Trà Sư (Tịnh Biên)</h3>
+                            <p class="spot-card-desc">Thả mình trên chiếc xuồng ba lá lướt nhẹ rẽ lối giữa thảm bèo cám xanh ngọc bích ngút ngàn, dưới vòm tràm cổ thụ rợp bóng và tiếng chim rừng ríu rít chuyền cành.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 2: Miếu Bà Chúa Xứ Núi Sam -->
+                    <div class="spot-card" data-legend="Miếu Bà Chúa Xứ Núi Sam tọa lạc tại chân núi Sam, thành phố Châu Đốc. Tượng Bà bằng đá sa thạch có niên đại từ thế kỷ VI theo nghệ thuật điêu khắc Óc Eo cổ xưa. Lễ hội Vía Bà Chúa Xứ (22 đến 27 tháng 4 Âm lịch) được Bộ Văn hóa, Thể thao và Du lịch công nhận là Di sản văn hóa phi vật thể quốc gia, là trung tâm tín ngưỡng tâm linh linh thiêng thu hút hàng triệu lượt khách hành hương mỗi năm.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_mieu_ba_chua_xu_nui_sam.webp" alt="Miếu Bà Chúa Xứ Núi Sam Châu Đốc">
+                            <span class="spot-card-tag">Tâm linh · Di sản QG</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">2. Miếu Bà Chúa Xứ Núi Sam (Châu Đốc)</h3>
+                            <p class="spot-card-desc">Trung tâm hành hương tâm linh linh thiêng bậc nhất Nam Bộ với kiến trúc tháp mái ngói tam cấp màu xanh ngọc bích, khói hương nghi ngút và lễ hội Vía Bà nghìn năm truyền đời.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 3: Cánh đồng thốt nốt Tri Tôn -->
+                    <div class="spot-card" data-legend="Cây thốt nốt (tiếng Khmer là Th'nôt) là biểu tượng thiêng liêng gắn bó máu thịt với đời sống đồng bào Khmer An Giang qua nhiều thế kỷ. Thốt nốt cao vút từ 20 đến 30 mét, có tuổi thọ lên tới hàng trăm năm. Tại huyện Tri Tôn và Tịnh Biên, những hàng thốt nốt đơn độc hoặc kết thành hình trái tim giữa cánh đồng ngập nước tạo nên khung cảnh hoàng hôn huyền thoại độc nhất vô nhị.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_canh_dong_thot_not_tri_ton.webp" alt="Cánh đồng thốt nốt Tri Tôn An Giang lúc hoàng hôn">
+                            <span class="spot-card-tag">Phong cảnh · Đặc trưng</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">3. Cánh Đồng Thốt Nốt Tri Tôn & Tịnh Biên</h3>
+                            <p class="spot-card-desc">Bóng những rặng thốt nốt cao vút in bóng xuống mặt nước lung linh lúc ráng chiều hoàng hôn, tạo nên bức tranh đồng quê miền viễn Tây vừa thơ mộng vừa khoáng đạt.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 4: Chùa Hang (Phước Điền Tự) -->
+                    <div class="spot-card" data-legend="Chùa Hang (Phước Điền Tự) nằm trên triền dốc núi Sam ở độ cao hàng trăm mét, được xếp hạng Di tích Lịch sử - Văn hóa cấp Quốc gia năm 1980. Ngôi chùa gắn liền với huyền tích bà Thợ (Lê Thị Thơ) quy y tu hành trong hang sâu và thuần hóa được đôi mãng xà khổng lồ (rắn thanh xà, bạch xà) biết nghe kinh Phật và bảo vệ cổ tự.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_chua_hang_phuoc_dien_tu.webp" alt="Chùa Hang Phước Điền Tự sườn núi Sam">
+                            <span class="spot-card-tag">Kiến trúc · Di tích QG</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">4. Chùa Hang — Phước Điền Tự (Núi Sam)</h3>
+                            <p class="spot-card-desc">Ngôi chùa cheo leo trên vách đá với hệ thống mái vòm đỏ trầm, những bậc đá rêu phong uốn lượn và ban công nhìn bao quát toàn bộ cánh đồng lúa giáp biên cương bao la.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 5: Làng nổi Châu Đốc & Làng Chăm -->
+                    <div class="spot-card" data-legend="Làng bè nổi Châu Đốc kéo dài hàng cây số trên ngã ba sông Hậu, là cái nôi nuôi cá basa và cá tra xuất khẩu lớn bậc nhất thế giới. Ngay bên kia sông là Làng Chăm Đa Phước và Châu Phong với những nếp nhà sàn gỗ cổ kính, thánh đường Hồi giáo Mubarak có mái vòm tráng lệ và nghề dệt thổ cẩm Chăm tinh xảo.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_lang_noi_chau_doc_lang_cham.webp" alt="Làng bè nổi Châu Đốc và Làng Chăm Đa Phước">
+                            <span class="spot-card-tag">Văn hóa · Sông nước</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">5. Làng Nổi Châu Đốc & Làng Chăm Đa Phước</h3>
+                            <p class="spot-card-desc">Khám phá nét văn hóa độc đáo của những ngôi nhà nổi trên bè cá dọc ngã ba sông Hậu và ghé thăm thánh đường Hồi giáo Mubarak ngập tràn sắc trắng thanh khiết của người Chăm.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 6: Núi Cấm (Thiên Cấm Sơn) -->
+                    <div class="spot-card" data-legend="Núi Cấm (Thiên Cấm Sơn) có độ cao 705m so với mực nước biển, là đỉnh núi cao nhất dãy Thất Sơn và toàn vùng Tây Nam Bộ, được mệnh danh là 'Đà Lạt của miền Tây' với khí hậu mát mẻ quanh năm. Trên đỉnh núi tọa lạc Tượng Phật Di Lặc cao 33,6m – kỷ lục Tượng Phật Di Lặc trên đỉnh núi lớn nhất châu Á, soi bóng bên hồ Thủy Liêm huyền ảo.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_nui_cam_chua_van_linh.webp" alt="Núi Cấm Thiên Cấm Sơn chùa Vạn Linh">
+                            <span class="spot-card-tag">Nóc nhà miền Tây · Kỷ lục</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">6. Núi Cấm — Thiên Cấm Sơn (Tịnh Biên)</h3>
+                            <p class="spot-card-desc">Chinh phục đỉnh núi cao 705m mây mù bảng lảng giữa hồ Thủy Liêm phẳng lặng, chiêm bái Tượng Phật Di Lặc kỷ lục châu Á nở nụ cười từ bi hỷ xả giữa đại ngàn Thất Sơn.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 7: Chợ nổi Long Xuyên -->
+                    <div class="spot-card" data-legend="Chợ nổi Long Xuyên họp từ mờ sáng trên khúc sông Hậu gần phà Ô Môi, thành phố Long Xuyên. Khác với các chợ nổi thương mại hóa khác, nơi đây vẫn giữ vẹn nguyên tính cách hào sảng, chất phác nguyên bản của người miền Tây. Mỗi chiếc thuyền ghe cắm một cây sào tre gọi là 'cây bẹo' treo lủng lẳng món hàng mình bán để khách từ xa nhìn thấy.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_cho_noi_long_xuyen.webp" alt="Chợ nổi Long Xuyên trên sông Hậu An Giang">
+                            <span class="spot-card-tag">Văn hóa chợ · Sông nước</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">7. Chợ Nổi Long Xuyên (TP. Long Xuyên)</h3>
+                            <p class="spot-card-desc">Thưởng thức một tô bún cá nóng hổi hay ly cà phê sữa đá bồng bềnh trên ghe xuồng lúc bình minh, hòa mình vào nét sinh hoạt mộc mạc nguyên sơ của người thương hồ.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 8: Hồ Tà Pạ & Cánh đồng Tà Pạ -->
+                    <div class="spot-card" data-legend="Hồ Tà Pạ nằm trên đồi Tà Pạ thuộc xã Núi Tô, huyện Tri Tôn, được mệnh danh là 'Tuyệt tình cốc của miền Tây'. Hồ hình thành từ dấu tích khai thác đá cũ sâu hun hút, đáy hồ lắng đọng khoáng chất tạo nên màu nước xanh ngọc bích biến đổi theo từng vạt nắng. Cạnh đó là ngôi chùa Khmer Tà Pạ bằng gỗ quý độc đáo uy nghi giữa đồi cao.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_ho_ta_pa_tri_ton.webp" alt="Hồ Tà Pạ Tri Tôn nước xanh ngọc bích">
+                            <span class="spot-card-tag">Kỳ quan · Hồ đá</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">8. Hồ Tà Pạ & Chùa Tà Pạ (Tri Tôn)</h3>
+                            <p class="spot-card-desc">Chiêm ngưỡng làn nước hồ xanh ngắt như ngọc bích lọt thỏm giữa những vách đá dựng đứng, phóng tầm mắt ngắm trọn vẹn cánh đồng Tà Pạ rực rỡ bên ngôi chùa Khmer cổ kính.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 9: Lăng Thoại Ngọc Hầu & Kênh Vĩnh Tế -->
+                    <div class="spot-card" data-legend="Lăng Thoại Ngọc Hầu (Sơn Lăng) nằm đối diện Miếu Bà Chúa Xứ Núi Sam, là nơi yên nghỉ của danh tướng Nguyễn Văn Thoại (1761–1829) cùng hai phu nhân. Ông là công thần kiệt xuất triều Nguyễn có công chỉ huy đào kênh Vĩnh Tế dài gần 100km (1819–1824) – công trình thủy nông quân sự vĩ đại nhất lịch sử Nam Bộ bảo vệ bờ cõi Tổ quốc.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_hero.webp" alt="Lăng Thoại Ngọc Hầu và dòng kênh Vĩnh Tế">
+                            <span class="spot-card-tag">Lịch sử · Di tích QG</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">9. Lăng Thoại Ngọc Hầu & Kênh Vĩnh Tế</h3>
+                            <p class="spot-card-desc">Tưởng nhớ vị danh tướng có công mở cõi khai hoang và khắc phục thiên nhiên khắc nghiệt, xây dựng nên con kênh biên giới huyết mạch trường tồn hơn 2 thế kỷ.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 10: Di tích Óc Eo - Ba Thê -->
+                    <div class="spot-card" data-legend="Khu di tích khảo cổ Óc Eo – Ba Thê thuộc huyện Thoại Sơn được Thủ tướng Chính phủ xếp hạng Di tích quốc gia đặc biệt năm 2012. Đây là đô thị cảng biển quốc tế sầm uất cổ xưa của Vương quốc Phù Nam từ thế kỷ I đến thế kỷ VII sau Công nguyên, lưu giữ vô số cổ vật bằng vàng, gốm và tượng đá minh chứng nền văn minh cổ rực rỡ.">
+                        <div class="spot-card-img">
+                            <img src="images/angiang_chua_hang_phuoc_dien_tu.webp" alt="Khu di tích khảo cổ Óc Eo Ba Thê An Giang">
+                            <span class="spot-card-tag">Khảo cổ · Di tích QG Đặc biệt</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">10. Di Tích Khảo Cổ Óc Eo – Ba Thê (Thoại Sơn)</h3>
+                            <p class="spot-card-desc">Ngược dòng thời gian tìm về dấu xưa của Vương quốc cổ Phù Nam — một trung tâm giao thương hàng hải sầm uất từng kết nối thế giới phương Đông và La Mã cổ đại.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 3. TRUYỀN THUYẾT & LỊCH SỬ -->
+                <h2 id="truyen-thuyet">✨ 3. Huyền Thoại & Dấu Ấn Lịch Sử Vùng Đất Thất Sơn</h2>
+                <p>Không chỉ sở hữu thiên nhiên trù phú, An Giang còn là vùng đất chứa đựng những câu chuyện lịch sử hào hùng và huyền tích tâm linh kỳ bí truyền đời:</p>
+
+                <div class="legend-box">
+                    <h3>👑 Sự Tích Bà Chúa Xứ Núi Sam & Đoàn Quân Mở Cõi</h3>
+                    <p>
+                        Truyền thuyết dân gian kể rằng, vào đầu thế kỷ XIX khi giặc Xiêm sang cướp phá biên cương, chúng trèo lên đỉnh núi Sam bắt gặp pho tượng Bà bằng đá sa thạch tuyệt mỹ. Quân giặc hò reo xúm lại khiêng tượng xuống núi để mang về nước, nhưng khi nhấc tượng lên thì lạ thay tượng Bà mỗi lúc một nặng trĩu tựa nghìn cân, không tài nào khiêng nổi. Một tên giặc tức tối đập gãy một cánh tay của tượng và lập tức bị trừng phạt thổ huyết bỏ mạng, toán giặc hoảng loạn tháo chạy.
+                    </p>
+                    <p>
+                        Về sau, Bà nhập vào một cô đồng trong làng bảo rằng muốn dân làng thỉnh Bà xuống chân núi để Bà phò trợ, ban bình an và mùa màng tươi tốt. Dân làng cử nhiều tráng đinh lực lưỡng lên thỉnh nhưng không dịch chuyển được tượng. Cô đồng bảo tiếp: <em>"Chỉ cần cử 9 cô gái đồng trinh tắm rửa sạch sẽ lên thỉnh là được"</em>. Quả nhiên, 9 trinh nữ chỉ cần nâng nhẹ là tượng Bà nhấc lên được ngay. Đến chân núi Sam ngày nay, tượng bỗng trở nên nặng nghìn cân không lay chuyển được nữa, dân làng hiểu rằng Bà chọn ngự nơi đây nên đã lập miếu thờ phụng từ đó.
+                    </p>
+                </div>
+
+                <div class="legend-box">
+                    <h3>🌊 Kỳ Tích Đào Kênh Vĩnh Tế (1819 – 1824)</h3>
+                    <p>
+                        Con kênh biên giới dài gần 100km nối từ sông Hậu (Châu Đốc) ra biển Tây (Hà Tiên) được thi công hoàn toàn bằng sức người thủ công trong 5 năm gian khổ dưới triều vua Gia Long và Minh Mạng. Vị danh tướng chỉ huy công trình vĩ đại này là Chưởng cơ Thoại Ngọc Hầu (Nguyễn Văn Thoại).
+                    </p>
+                    <p>
+                        Trong thời gian đào kênh giữa rừng hoang nước độc đầy muỗi mòng, rắn rết và quân giặc quấy nhiễu, chính thất phu nhân của ông là bà <strong>Châu Thị Vĩnh Tế</strong> đã ngày đêm hết lòng lo toan lương thực, chăm sóc thuốc men cho hàng vạn dân binh, khích lệ tinh thần binh sĩ hoàn thành việc lớn. Cảm kích trước đức độ và công lao vô bờ của bà, vua Minh Mạng đã xuống chiếu lấy tên của bà đặt tên cho con kênh là <strong>Kênh Vĩnh Tế</strong> và núi Sam được ban tên là <strong>Vĩnh Tế Sơn</strong> — một vinh dự lịch sử hiếm có dành cho người phụ nữ Việt Nam thời phong kiến.
+                    </p>
+                </div>
+
+                <!-- 4. AN GIANG THEO MÙA -->
+                <h2 id="theo-mua">🌸 4. An Giang 4 Mùa Cảnh Sắc — Bản Giao Hưởng Sông Nước & Thốt Nốt</h2>
+                <p>Khác biệt với nhịp sống hối hả nơi đô thị, thời gian tại An Giang trôi êm ả theo con nước và nhịp thở của tự nhiên. Mỗi mùa trong năm, mảnh đất cực Nam Tổ quốc lại mang một phong vị quyến rũ riêng biệt:</p>
+
+                <div class="seasons-container">
+
+                    <!-- MÙA 1: MÙA NƯỚC NỔI -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/angiang_mua_nuoc_noi_giang_luoi.webp" alt="Mùa nước nổi An Giang giăng lưới bắt cá linh">
+                            <span class="season-badge">Tháng 9 – Tháng 11</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🌊 Mùa Nước Nổi — Thời Khắc Vàng Của Phù Sa & Bèo Xanh</h3>
+                            <p class="season-desc">Khi con nước lũ hiền hòa từ sông Mê Kông dâng tràn qua đồng, An Giang bước vào mùa du lịch đẹp nhất năm. Thảm bèo cám Trà Sư dâng ngập xanh rờn, từng đàn cá linh non tràn vào đồng nội ăn theo hoa điên điển vàng rực nở rộ. Đây là thời điểm tuyệt vời nhất để ngồi xuồng ba lá lướt trên mặt nước, ngắm ngư dân giăng lưới bông súng ma dài 3–5m trong ánh rạng đông.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Trải nghiệm đỉnh cao:</strong> Đi xuồng chèo Rừng tràm Trà Sư, thưởng thức lẩu cá linh bông điên điển tươi rói, ghé chợ cá Châu Đốc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 2: MÙA THU HOẠCH THỐT NỐT -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/angiang_mua_thu_hoach_thot_not.webp" alt="Mùa thu hoạch thốt nốt miền Tây An Giang">
+                            <span class="season-badge">Tháng 12 – Tháng 4</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🌴 Mùa Thu Hoạch Thốt Nốt & Mùa Khô Nắng Vàng</h3>
+                            <p class="season-desc">Bước vào mùa khô, bầu trời An Giang trong xanh văn vắt, nắng vàng như rót mật lên những rặng thốt nốt sum suê trĩu quả. Đây là mùa người dân Khmer thoăn thoắt leo lên ngọn thốt nốt hứng từng ống nước ngọt mát lành, rồi nhóm lửa nấu những mẻ đường thốt nốt thơm lừng ngào ngạt khắp xóm làng Tri Tôn, Tịnh Biên.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Trải nghiệm đỉnh cao:</strong> Uống nước thốt nốt tươi mát lịm tại vườn, thử món bánh bò thốt nốt nướng lá chuối, chụp ảnh hàng thốt nốt hình trái tim.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 3: MÙA LỄ HỘI VÍA BÀ CHÚA XỨ -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/angiang_mieu_ba_chua_xu_nui_sam.webp" alt="Mùa lễ hội Vía Bà Chúa Xứ Núi Sam">
+                            <span class="season-badge">Tháng 4 – Tháng 5 (22-27/4 Âm Lịch)</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🏮 Mùa Lễ Hội Vía Bà Chúa Xứ & Tết Chol Chnam Thmay</h3>
+                            <p class="season-desc">Mùa lễ hội tâm linh quy mô lớn nhất phương Nam hội tụ hàng triệu lượt Phật tử và du khách bốn phương tề tựu về cầu bình an, tài lộc tại miếu Bà Núi Sam. Cùng thời gian này, các chùa tháp Khmer rộn rã đón Tết té nước Chol Chnam Thmay với những điệu múa Lâm Thôn truyền thống, hòa chung nhịp sống đa sắc tộc độc đáo.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Trải nghiệm đỉnh cao:</strong> Dự lễ Tắm Bà uy nghiêm đêm 23/4 Âm lịch, hòa mình vào không khí hội hè Chợ đêm Châu Đốc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 4: MÙA VÀNG THẤT SƠN -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/angiang_canh_dong_thot_not_tri_ton.webp" alt="Mùa lúa chín vàng cánh đồng Tà Pạ An Giang">
+                            <span class="season-badge">Tháng 7 – Tháng 8</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🌾 Mùa Vàng Thất Sơn — Bức Tranh Lúa Rực Rỡ Dưới Chân Núi</h3>
+                            <p class="season-desc">Trước khi con nước nổi tràn về, cánh đồng Tà Pạ và Tri Tôn khoác lên màu áo vàng rực óng ả. Khác với ruộng bậc thang vùng cao Tây Bắc, ruộng lúa ở đây được đồng bào Khmer chia thành những ô thửa vuông vức đa sắc màu, xen kẽ với những hàng cây thốt nốt sừng sững vươn thẳng lên trời xanh biếc.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Trải nghiệm đỉnh cao:</strong> Ngắm toàn cảnh biển lúa chín từ đồi Tà Pạ, dạo bước trên đê kênh Vĩnh Tế lộng gió.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 5. PHƯƠNG TIỆN & LỘ TRÌNH -->
+                <h2 id="di-chuyen">🚗 5. Phương Tiện & Lộ Trình Khám Phá An Giang</h2>
+                <p>An Giang cách TP. Hồ Chí Minh khoảng 210km (Châu Đốc khoảng 250km). Hệ thống cầu cống và quốc lộ đã hoàn thiện khang trang:</p>
+
+                <h3>1. Cách di chuyển từ TP. Hồ Chí Minh đến An Giang</h3>
+                <ul>
+                    <li><strong>Xe khách giường nằm cao cấp:</strong> Các hãng xe uy tín như Phương Trang, Huệ Nghĩa, Hùng Cường khởi hành liên tục 24/7 từ bến xe Miền Tây đi Long Xuyên hoặc Châu Đốc. Thời gian di chuyển khoảng 5 – 6 giờ qua cao tốc Trung Lương – Mỹ Thuận.</li>
+                    <li><strong>Ô tô cá nhân / Xe máy phượt:</strong> Lộ trình phổ biến: TP.HCM → Cao tốc Trung Lương – Mỹ Thuận → Cầu Mỹ Thuận 2 → Sa Đéc (Đồng Tháp) → Phà Vàm Cống / Cầu Vàm Cống → Long Xuyên → Châu Đốc. Đường đi rộng thoáng, phẳng phiu.</li>
+                </ul>
+
+                <h3>2. Phương tiện đi lại tại An Giang</h3>
+                <ul>
+                    <li><strong>Thuê xe máy:</strong> Giá từ 120.000 – 150.000 VNĐ/ngày tại khách sạn Châu Đốc hoặc Long Xuyên. Xe máy là phương tiện cơ động nhất để luồn lách qua các bờ kênh, vườn thốt nốt Tri Tôn và đèo dốc Núi Cấm.</li>
+                    <li><strong>Xuồng ba lá / Tắc ráng (Vỏ lãi):</strong> Phương tiện không thể thiếu để khám phá Rừng tràm Trà Sư, chợ nổi Long Xuyên và làng bè sông Châu Đốc.</li>
+                </ul>
+
+                <!-- 6. BẢNG GIÁ VÉ & DỊCH VỤ -->
+                <h2 id="gia-ve">🎟️ 6. Bảng Giá Vé & Dịch Vụ Tham Quan Mới Nhất</h2>
+                <p>Dưới đây là mức giá vé niêm yết chính thức tại các ban quản lý khu du lịch và danh thắng tại An Giang:</p>
+
+                <div class="table-wrap">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Địa điểm / Dịch vụ</th>
+                                <th>Chi phí tham khảo</th>
+                                <th>Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rừng tràm Trà Sư (Trọn gói xuồng chèo + vỏ lãi)</td>
+                                <td><span class="price-tag">200.000 VNĐ / khách</span></td>
+                                <td>Bao gồm vé vào cổng, đi tắc ráng máy và xuồng chèo tay ngắm bèo</td>
+                            </tr>
+                            <tr>
+                                <td>Cáp treo Núi Cấm (Khứ hồi)</td>
+                                <td><span class="price-tag">200.000 VNĐ / người lớn</span></td>
+                                <td>Trẻ em: 100.000 VNĐ (dưới 1m3)</td>
+                            </tr>
+                            <tr>
+                                <td>Xe máy / Xe ôm chở lên đỉnh Núi Cấm</td>
+                                <td><span class="price-tag">100.000 – 120.000 VNĐ / khứ hồi</span></td>
+                                <td>Đội xe ôm chuyên nghiệp do ban quản lý cấp thẻ an toàn</td>
+                            </tr>
+                            <tr>
+                                <td>Xe điện tham quan KDL Núi Sam</td>
+                                <td><span class="price-tag">20.000 – 30.000 VNĐ / lượt</span></td>
+                                <td>Đưa đón khách từ bãi đỗ xe vào cổng Miếu Bà</td>
+                            </tr>
+                            <tr>
+                                <td>Thuê thuyền tham quan Làng bè & Làng Chăm Châu Đốc</td>
+                                <td><span class="price-tag">150.000 – 250.000 VNĐ / thuyền</span></td>
+                                <td>Giá thuyền riêng chở từ 4 – 8 người trong 1.5 – 2 tiếng</td>
+                            </tr>
+                            <tr>
+                                <td>Thuê ghe tham quan Chợ nổi Long Xuyên</td>
+                                <td><span class="price-tag">150.000 – 200.000 VNĐ / thuyền</span></td>
+                                <td>Khởi hành từ bến phà Ô Môi lúc 5h30 – 7h00 sáng</td>
+                            </tr>
+                            <tr>
+                                <td>Miếu Bà Chúa Xứ Núi Sam & Chùa Hang</td>
+                                <td><span class="price-tag">Miễn phí vào cửa</span></td>
+                                <td>Điểm chiêm bái tâm linh tự do</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="price-disclaimer-note">
+                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
+                </p>
+
+                <!-- 7. ẨM THỰC ĐẶC SẢN -->
+                <h2 id="am-thuc">🍲 7. Cẩm Nang Ẩm Thực Đặc Sản An Giang Mùa Nước Nổi</h2>
+                <p>Ẩm thực An Giang là sự hòa quyện tinh hoa của hương vị sông nước phù sa và nếp ẩm thực phong phú của 4 dân tộc Kinh, Chăm, Hoa, Khmer:</p>
+
+                <div class="food-grid">
+                    <div class="food-card">
+                        <h4>🍲 Lẩu cá linh bông điên điển</h4>
+                        <p>Biểu tượng ẩm thực mùa nước nổi! Những chú cá linh đầu mùa non mềm béo ngậy nấu cùng nước dừa tươi, me chua thanh dịu và nhúng ngập những chùm bông điên điển vàng ươm giòn ngọt.</p>
+                    </div>
+
+                    <div class="food-card">
+                        <h4>🍜 Bún cá Châu Đốc</h4>
+                        <p>Nước dùng nấu từ xương ống ngọt lịm thơm nồng củ ngải bún và nghệ vàng tươi, thịt cá lóc đồng xào săn thơm lừng ăn kèm bông điên điển, rau đắng và chả lụa.</p>
+                    </div>
+
+                    <div class="food-card">
+                        <h4>🥞 Bánh bò thốt nốt</h4>
+                        <p>Đặc sản nức tiếng làm từ đường thốt nốt nguyên chất và bột gạo ngâm men cơm rượu. Bánh có màu vàng mật ong tự nhiên, xốp mềm nhiều rễ tre và thoang thoảng vị béo cốt dừa ngây ngất.</p>
+                    </div>
+
+                    <div class="food-card">
+                        <h4>🐟 "Vương quốc mắm" Châu Đốc</h4>
+                        <p>Chợ mắm Châu Đốc với hàng trăm loại mắm cá linh, mắm cá lóc, mắm cá sặc, mắm thái thơm lừng trứ danh. Mắm ăn kèm thịt luộc, chuối chát, khế chua là món ăn đậm đà khó quên.</p>
+                    </div>
+
+                    <div class="food-card">
+                        <h4>🥗 Gỏi sầu đâu khô cá lóc</h4>
+                        <p>Đọt lá sầu đâu có vị đắng hậu ngọt thanh trộn cùng khô cá lóc nướng xé sợi, dưa leo, xoài băm và chấm nước mắm me chua ngọt đậm đà phong vị biên cương.</p>
+                    </div>
+
+                    <div class="food-card">
+                        <h4>🍖 Cơm tấm Long Xuyên</h4>
+                        <p>Hạt tấm nhuyễn mịn đặc trưng, thịt sườn nướng thái sợi nhỏ xíu mềm thấm vị, ăn kèm bì thính, chả trứng và một quả trứng kho đậm đà thơm béo.</p>
+                    </div>
+                </div>
+
+                <!-- 8. KINH NGHIỆM DU LỊCH AN TOÀN -->
+                <h2 id="kinh-nghiem">🗓️ 8. Kinh Nghiệm Du Lịch Sông Nước An Giang An Toàn</h2>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>An toàn đường thủy bắt buộc:</strong> Khi đi tắc ráng máy hoặc xuồng ba lá len lỏi trong rừng tràm Trà Sư hay chợ nổi, bắt buộc phải <strong>mặc áo phao bảo hộ</strong> đúng quy định. Không nhoài người ra mạn thuyền để chụp ảnh hoặc thò tay xuống nước khi thuyền đang rẽ sóng.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Trang phục & Hành trang:</strong> Thời tiết An Giang nắng ấm quanh năm. Nên mặc trang phục cotton thấm hút mồ hôi, mang nón rộng vành, kính râm và kem chống nắng. Đặc biệt nhớ chuẩn bị thuốc xịt chống muỗi/côn trùng khi tham quan rừng tràm ngập nước.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p>📌 <strong>Tôn nghiêm nơi thờ tự:</strong> Khi viếng Miếu Bà Chúa Xứ Núi Sam, Chùa Hang hay các chùa tháp Phật giáo Nam tông Khmer, hãy mặc trang phục kín đáo (quần/váy dài qua gối, áo có tay). Cẩn thận tư trang cá nhân, tiền bạc ở các điểm đông người hành hương dịp lễ hội.</p>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 GO FAR — Cẩm nang du lịch Việt Nam chất lượng cao. Hình ảnh minh họa 100% AI sinh thực nghiệm.</p>
+        <p style="margin-top: 0.5rem;"><a href="index.html">← Quay lại trang chủ GO FAR</a></p>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+        <div class="lightbox-caption">
+            <h3 class="lightbox-title" id="lightboxTitle"></h3>
+            <p class="lightbox-desc" id="lightboxDesc"></p>
+            <div class="lightbox-legend" id="lightboxLegend" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lightbox functionality
+            const clickableCards = document.querySelectorAll('.spot-card, .season-card');
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const modalTitle = document.getElementById('lightboxTitle');
+            const modalDesc = document.getElementById('lightboxDesc');
+            const modalLegend = document.getElementById('lightboxLegend');
+            const modalClose = document.getElementById('lightboxClose');
+
+            clickableCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt || '';
+
+                    // Get title and desc
+                    const titleEl = card.querySelector('.spot-card-title, h3');
+                    const descEl = card.querySelector('.spot-card-desc, .season-desc');
+                    
+                    modalTitle.textContent = titleEl ? titleEl.textContent : '';
+                    modalDesc.textContent = descEl ? descEl.textContent : '';
+
+                    // Check legend
+                    const legend = card.getAttribute('data-legend');
+                    if (legend) {
+                        modalLegend.innerHTML = '<strong>✨ Huyền tích & Dấu ấn:</strong> ' + legend;
+                        modalLegend.style.display = 'block';
+                    } else {
+                        modalLegend.style.display = 'none';
+                    }
+
+                    modal.style.display = 'flex';
+                });
+            });
+
+            // Close lightbox
+            modalClose.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Sticky TOC highlight
+            const sections = document.querySelectorAll('.article-main h2[id]');
+            const navLinks = document.querySelectorAll('.sidebar-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
