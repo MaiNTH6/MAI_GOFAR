@@ -607,14 +607,44 @@
         .food-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 1.5rem;
-            transition: transform 0.2s, border-color 0.2s;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: zoom-in;
         }
 
         .food-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             border-color: rgba(255, 140, 50, 0.4);
+            box-shadow: 0 16px 36px rgba(255, 140, 50, 0.15);
+        }
+
+        .food-card-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .food-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .food-card:hover .food-card-img img {
+            transform: scale(1.06);
+        }
+
+        .food-card-body {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .food-card h4 {
@@ -1175,42 +1205,65 @@
                 <h2 id="am-thuc">🍲 7. Cẩm Nang Ẩm Thực Đặc Sản An Giang Mùa Nước Nổi</h2>
                 <p>Ẩm thực An Giang là sự hòa quyện tinh hoa của hương vị sông nước phù sa và nếp ẩm thực phong phú của 4 dân tộc Kinh, Chăm, Hoa, Khmer:</p>
 
-                <div style="margin: 1.5rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/angiang_am_thuc_lau_ca_linh_bong_dien_dien.webp" alt="Mâm ẩm thực mùa nước nổi An Giang: Lẩu cá linh bông điên điển và bún cá Châu Đốc" style="width: 100%; height: auto; max-height: 420px; object-fit: cover; display: block;">
-                    <div style="padding: 0.8rem 1.2rem; background: var(--bg-card); font-size: 0.9rem; color: var(--text-sec); border-top: 1px solid var(--border);">
-                        ✨ <em>Mâm lẩu cá linh bông điên điển, bún cá Châu Đốc và các món ngon thốt nốt trứ danh mùa nước nổi miền Tây An Giang.</em>
-                    </div>
-                </div>
-
                 <div class="food-grid">
                     <div class="food-card">
-                        <h4>🍲 Lẩu cá linh bông điên điển</h4>
-                        <p>Biểu tượng ẩm thực mùa nước nổi! Những chú cá linh đầu mùa non mềm béo ngậy nấu cùng nước dừa tươi, me chua thanh dịu và nhúng ngập những chùm bông điên điển vàng ươm giòn ngọt.</p>
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/angiang_mon_lau_ca_linh_bong_dien_dien.webp" alt="Lẩu cá linh bông điên điển An Giang">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🍲 Lẩu cá linh bông điên điển</h4>
+                            <p>Biểu tượng ẩm thực mùa nước nổi! Những chú cá linh đầu mùa non mềm béo ngậy nấu cùng nước dừa tươi, me chua thanh dịu và nhúng ngập những chùm bông điên điển vàng ươm giòn ngọt.</p>
+                        </div>
                     </div>
 
                     <div class="food-card">
-                        <h4>🍜 Bún cá Châu Đốc</h4>
-                        <p>Nước dùng nấu từ xương ống ngọt lịm thơm nồng củ ngải bún và nghệ vàng tươi, thịt cá lóc đồng xào săn thơm lừng ăn kèm bông điên điển, rau đắng và chả lụa.</p>
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/angiang_mon_bun_ca_chau_doc.webp" alt="Bún cá Châu Đốc thơm nồng củ ngải bún">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🍜 Bún cá Châu Đốc</h4>
+                            <p>Nước dùng nấu từ xương ống ngọt lịm thơm nồng củ ngải bún và nghệ vàng tươi, thịt cá lóc đồng xào săn thơm lừng ăn kèm bông điên điển, rau đắng và chả lụa.</p>
+                        </div>
                     </div>
 
                     <div class="food-card">
-                        <h4>🥞 Bánh bò thốt nốt</h4>
-                        <p>Đặc sản nức tiếng làm từ đường thốt nốt nguyên chất và bột gạo ngâm men cơm rượu. Bánh có màu vàng mật ong tự nhiên, xốp mềm nhiều rễ tre và thoang thoảng vị béo cốt dừa ngây ngất.</p>
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/angiang_mon_banh_bo_thot_not.webp" alt="Bánh bò thốt nốt rễ tre xốp mềm béo ngậy">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🥞 Bánh bò thốt nốt</h4>
+                            <p>Đặc sản nức tiếng làm từ đường thốt nốt nguyên chất và bột gạo ngâm men cơm rượu. Bánh có màu vàng mật ong tự nhiên, xốp mềm nhiều rễ tre và thoang thoảng vị béo cốt dừa ngây ngất.</p>
+                        </div>
                     </div>
 
                     <div class="food-card">
-                        <h4>🐟 "Vương quốc mắm" Châu Đốc</h4>
-                        <p>Chợ mắm Châu Đốc với hàng trăm loại mắm cá linh, mắm cá lóc, mắm cá sặc, mắm thái thơm lừng trứ danh. Mắm ăn kèm thịt luộc, chuối chát, khế chua là món ăn đậm đà khó quên.</p>
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/angiang_mon_mam_chau_doc.webp" alt="Đặc sản mắm Châu Đốc trứ danh An Giang">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🐟 "Vương quốc mắm" Châu Đốc</h4>
+                            <p>Chợ mắm Châu Đốc với hàng trăm loại mắm cá linh, mắm cá lóc, mắm cá sặc, mắm thái thơm lừng trứ danh. Mắm ăn kèm thịt luộc, chuối chát, khế chua là món ăn đậm đà khó quên.</p>
+                        </div>
                     </div>
 
                     <div class="food-card">
-                        <h4>🥗 Gỏi sầu đâu khô cá lóc</h4>
-                        <p>Đọt lá sầu đâu có vị đắng hậu ngọt thanh trộn cùng khô cá lóc nướng xé sợi, dưa leo, xoài băm và chấm nước mắm me chua ngọt đậm đà phong vị biên cương.</p>
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/angiang_mon_goi_sau_dau_kho_ca_loc.webp" alt="Gỏi sầu đâu khô cá lóc chấm mắm me An Giang">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🥗 Gỏi sầu đâu khô cá lóc</h4>
+                            <p>Đọt lá sầu đâu có vị đắng hậu ngọt thanh trộn cùng khô cá lóc nướng xé sợi, dưa leo, xoài băm và chấm nước mắm me chua ngọt đậm đà phong vị biên cương.</p>
+                        </div>
                     </div>
 
                     <div class="food-card">
-                        <h4>🍖 Cơm tấm Long Xuyên</h4>
-                        <p>Hạt tấm nhuyễn mịn đặc trưng, thịt sườn nướng thái sợi nhỏ xíu mềm thấm vị, ăn kèm bì thính, chả trứng và một quả trứng kho đậm đà thơm béo.</p>
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/angiang_mon_com_tam_long_xuyen.webp" alt="Cơm tấm Long Xuyên thịt nướng thái sợi bì chả trứng kho">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🍖 Cơm tấm Long Xuyên</h4>
+                            <p>Hạt tấm nhuyễn mịn đặc trưng, thịt sườn nướng thái sợi nhỏ xíu mềm thấm vị, ăn kèm bì thính, chả trứng và một quả trứng kho đậm đà thơm béo.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -1254,7 +1307,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Lightbox functionality
-            const clickableCards = document.querySelectorAll('.spot-card, .season-card');
+            const clickableCards = document.querySelectorAll('.spot-card, .season-card, .food-card');
             const modal = document.getElementById('lightboxModal');
             const modalImg = document.getElementById('lightboxImg');
             const modalTitle = document.getElementById('lightboxTitle');
@@ -1271,8 +1324,8 @@
                     modalImg.alt = img.alt || '';
 
                     // Get title and desc
-                    const titleEl = card.querySelector('.spot-card-title, h3');
-                    const descEl = card.querySelector('.spot-card-desc, .season-desc');
+                    const titleEl = card.querySelector('.spot-card-title, h3, h4');
+                    const descEl = card.querySelector('.spot-card-desc, .season-desc, p');
                     
                     modalTitle.textContent = titleEl ? titleEl.textContent : '';
                     modalDesc.textContent = descEl ? descEl.textContent : '';
