@@ -467,6 +467,102 @@
             display: none !important;
         }
 
+        /* SEASONS SHOWCASE */
+        .seasons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+        .season-card {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: zoom-in;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 50, 0.4);
+            box-shadow: 0 16px 40px rgba(255, 140, 50, 0.15);
+        }
+        .season-card-img {
+            position: relative;
+            min-height: 240px;
+            overflow: hidden;
+        }
+        .season-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+        .season-card:hover .season-card-img img {
+            transform: scale(1.06);
+        }
+        .season-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(135deg, #FF8C32 0%, #fbbf24 100%);
+            color: #1a1a1a;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: 99px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .season-card-body {
+            padding: 1.75rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .season-card-body h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        .season-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .season-highlights {
+            background: rgba(255, 140, 50, 0.06);
+            border-left: 3px solid var(--accent);
+            padding: 0.75rem 1rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+        }
+        .season-highlights strong {
+            color: var(--accent-gold);
+        }
+        @media (max-width: 900px) {
+            .season-card {
+                grid-template-columns: 1fr;
+            }
+            .season-card-img {
+                height: 220px;
+                min-height: auto;
+            }
+            .season-card-body {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+
         /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
         .lightbox-modal {
             display: none;
@@ -1014,17 +1110,91 @@
                     <div class="food-item"><span class="name">🍲 Thắng cố & Mèn mén (Món ngô xay đồ chín ăn kèm canh thắng cố H'Mông truyền thống)</span></div>
                 </div>
 
-                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
-                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm & Lưu ý an toàn đèo dốc</h2>
-                
-                <h3>1. Mùa nào Hà Giang đẹp nhất?</h3>
-                <ul>
-                    <li><strong>Tháng 9 – 10:</strong> Mùa lúa chín vàng ươm óng ả trên những ruộng bậc thang Hoàng Su Phì hùng vĩ.</li>
-                    <li><strong>Tháng 11 – 12:</strong> Mùa hoa tam giác mạch nở rộ nhuộm sắc hồng tím dịu dàng lên các sườn đá xám cao nguyên.</li>
-                    <li><strong>Tháng 1 – 3:</strong> Mùa xuân hoa đào, hoa lê nở sớm khoe sắc hồng trắng tinh khôi bên hàng rào đá cổ kính.</li>
-                </ul>
+                <!-- CHUỖI CẢNH SẮC HÀ GIANG THEO MÙA -->
+                <h2 id="cac-mua"><span class="icon">🌸</span> Hà Giang 4 Mùa Cảnh Sắc — Bản Giao Hưởng Cao Nguyên Đá</h2>
+                <p>Khác biệt với bất kỳ vùng đất nào trên dải đất hình chữ S, Hà Giang mang vẻ đẹp kỳ vĩ và biến ảo diệu kỳ theo từng mùa trong năm. Mỗi chu kỳ thời gian về nơi cực Bắc Tổ quốc lại khoác lên mình một tấm áo choàng hoàn toàn mới lạ, thu hút bước chân lữ khách muôn phương:</p>
 
-                <h3>2. Quy tắc an toàn bắt buộc khi vượt đèo</h3>
+                <div class="seasons-container">
+                    <!-- MÙA 1: HOA TAM GIÁC MẠCH -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/hagiang_mua_hoa_tam_giac_mach.webp" alt="Mùa hoa tam giác mạch Hà Giang">
+                            <span class="season-badge">Tháng 10 – Tháng 12</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🌸 Mùa Hoa Tam Giác Mạch — Nhuộm Hồng Cao Nguyên Đá</h3>
+                            <p class="season-desc">Khi ngọn gió đông đầu mùa se lạnh thổi qua miền địa đầu, hàng triệu đóa hoa tam giác mạch li ti đồng loạt bung nở, chuyển sắc kỳ diệu từ trắng tinh khôi sang hồng phấn rồi tím thẫm rực rỡ, ôm trọn những sườn đồi và vách đá tai mèo gai góc khắp cao nguyên đá.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Tọa độ ngắm hoa đẹp nhất:</strong> Thung lũng Sủng Là, chân Cột cờ Lũng Cú, đèo Mã Pí Lèng, dốc Thẩm Mã, xã Phố Cáo, Ma Lé.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 2: MÙA XUÂN HOA ĐÀO, HOA MẬN -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/hagiang_mua_xuan_hoa_dao_hoa_man.webp" alt="Mùa xuân hoa đào hoa mận Hà Giang">
+                            <span class="season-badge">Tháng 1 – Tháng 3</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🍑 Mùa Xuân Hoa Đào, Hoa Mận — Sức Sống Mãnh Liệt Rẻo Cao</h3>
+                            <p class="season-desc">Mùa xuân gõ cửa địa đầu Tổ quốc với sắc hồng thắm của đào phai cổ thụ, sắc trắng tinh khôi của hoa mận, hoa lê bung nở rực rỡ bên những hàng rào đá rêu phong và mái ngói âm dương nhà trình tường cổ kính. Đây cũng là mùa lễ hội Gầu Tào truyền thống rộn rã tiếng khèn Mông đón chào năm mới.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Tọa độ check-in đẹp nhất:</strong> Làng văn hóa Lũng Cẩm, thôn Lao Xa (Sủng Là), thị trấn Phó Bảng, bản Lô Lô Chải.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 3: MÙA NƯỚC ĐỔ HOÀNG SU PHÌ -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/hagiang_mua_nuoc_do_hoang_su_phi.webp" alt="Mùa nước đổ ruộng bậc thang Hoàng Su Phì">
+                            <span class="season-badge">Tháng 5 – Tháng 6</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>💦 Mùa Nước Đổ — Những Tấm "Gương Trời" Khổng Lồ</h3>
+                            <p class="season-desc">Vào đầu hạ, những cơn mưa rào trút xuống dẫn nguồn nước từ đỉnh núi tràn vào các thửa ruộng bậc thang uốn lượn. Hàng ngàn nấc thang tại Hoàng Su Phì biến thành những tấm gương khổng lồ phản chiếu bầu trời xanh ngắt, mây trắng bồng bềnh và ánh bình minh rạng rỡ, tạo nên bức tranh thủy mặc kỳ vĩ của thiên nhiên và sức lao động con người vùng cao.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Tọa độ săn ảnh đẹp nhất:</strong> Bản Phùng, Nậm Ty, Thông Nguyên, Bản Luốc, Tả Sử Choóng (Hoàng Su Phì).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 4: MÙA LÚA CHÍN VÀNG HOÀNG SU PHÌ -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/hagiang_mua_lua_chin_hoang_su_phi.webp" alt="Mùa lúa chín vàng Hoàng Su Phì Hà Giang">
+                            <span class="season-badge">Tháng 9 – Tháng 10</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🌾 Mùa Vàng Hoàng Su Phì — Thảm Lụa Vàng Óng Dưới Nắng Thu</h3>
+                            <p class="season-desc">Mùa thu là thời khắc rực rỡ và trù phú nhất của rẻo cao Đông Bắc. Từng dải ruộng bậc thang chín vàng ươm, trĩu hạt nối tiếp nhau từ đỉnh núi xuống tận đáy thung lũng sâu, tỏa ngát hương thơm lúa mới nếp nương quyện trong gió sớm mát lành, đưa Hoàng Su Phì trở thành Di tích Quốc gia đặc biệt danh bất hư truyền.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Tọa độ ngắm lúa đỉnh cao:</strong> Đồi mâm xôi Bản Phùng, cung đường Nậm Ty – Thông Nguyên, thung lũng Bản Luốc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 5: MÙA ĐÔNG SĂN MÂY & HOA CẢI VÀNG -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/hagiang_mua_dong_san_may_cai_vang.webp" alt="Mùa đông săn mây và hoa cải vàng Hà Giang">
+                            <span class="season-badge">Tháng 12 – Tháng 1</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>☁️ Mùa Đông Săn Mây & Hoa Cải Vàng — Nốt Trầm Kiêu Hãnh</h3>
+                            <p class="season-desc">Khi cái rét ngọt ngào bao trùm miền biên viễn, những biển mây trắng muốt bồng bềnh cuồn cuộn dâng trào qua hẻm vực Tu Sản và đỉnh đèo Mã Pí Lèng hùng vĩ. Giữa làn sương giá buốt, những vạt hoa cải vàng rực rỡ vươn mình kiêu hãnh khoe sắc ấm áp, thắp sáng cả một góc trời cao nguyên đá địa đầu Tổ quốc.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Tọa độ săn mây & hoa cải:</strong> Điểm dừng chân Mã Pí Lèng Panorama, đỉnh đèo Quản Bạ, thung lũng Phó Cáo, Lũng Cú.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KINH NGHIỆM & AN TOÀN -->
+                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Lưu ý an toàn & Kinh nghiệm vượt đèo dốc</h2>
+
+                <h3>⚠️ Quy tắc an toàn bắt buộc khi vượt đèo</h3>
                 <ul>
                     <li><strong>Kiểm tra xe hàng ngày:</strong> Luôn kiểm tra phanh trước sau, lốp xe và đèn pha. Chỉ sử dụng xe máy số hoặc xe tay côn khỏe, tuyệt đối tránh đi xe ga nếu tay lái không cực kỳ vững vàng.</li>
                     <li><strong>Nhường đường và giữ khoảng cách:</strong> Đi chậm sát phần đường bên phải ở các dốc cua gấp khúc, bấm còi cảnh báo khi vào cua khuất tầm nhìn. Nhường đường cho xe tải lớn leo dốc.</li>
@@ -1056,6 +1226,7 @@
                         <li><a href="#truyen-thuyet">✨ Truyền thuyết & Kỳ bí</a></li>
                         <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
                         <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
+                        <li><a href="#cac-mua">🌸 Hà Giang 4 Mùa Sắc Thắm</a></li>
                         <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
                     </ul>
                 </div>
@@ -1080,7 +1251,7 @@
     <script>
         // Lightbox Zoom functionality
         document.addEventListener('DOMContentLoaded', () => {
-            const destCards = document.querySelectorAll('.dest-card');
+            const destCards = document.querySelectorAll('.dest-card, .season-card');
             const lightboxModal = document.getElementById('lightboxModal');
             const lightboxImg = document.getElementById('lightboxImg');
             const lightboxCaption = document.getElementById('lightboxCaption');
@@ -1090,14 +1261,14 @@
                 destCards.forEach(card => {
                     card.style.cursor = 'zoom-in';
                     card.addEventListener('click', () => {
-                        const img = card.querySelector('.dest-card-img img');
+                        const img = card.querySelector('.dest-card-img img') || card.querySelector('.season-card-img img');
                         if (!img) return;
 
                         let titleText = "";
                         let descText = "";
 
-                        const overlayH3 = card.querySelector('.dest-card-content h3');
-                        const overlayP = card.querySelector('.dest-card-content p');
+                        const overlayH3 = card.querySelector('.dest-card-content h3') || card.querySelector('.season-card-body h3');
+                        const overlayP = card.querySelector('.dest-card-content p') || card.querySelector('.season-card-body .season-desc');
                         if (overlayH3) titleText = overlayH3.textContent;
                         if (overlayP) descText = overlayP.textContent;
 
