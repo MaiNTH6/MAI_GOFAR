@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quy Nhơn — Thiên đường biển đảo hoang sơ & tháp Chàm | GO FAR</title>
-    <meta name="description" content="Cẩm nang du lịch Quy Nhơn tự túc: bãi biển Kỳ Co, Eo Gió, Ghềnh Ráng Tiên Sa, tháp Bánh Ít, Hòn Khô, Cù Lao Xanh, tháp Đôi, đồi cát Phương Mai. Hải sản.">
+    <title>Quy Nhơn — Thiên Đường Biển Đảo Kỳ Vĩ & Đất Võ Trời Văn | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Quy Nhơn chi tiết: bãi tắm Kỳ Co ngọc bích, Eo Gió lộng gió, di tích Tháp Đôi Chăm Pa, Ghềnh Ráng Tiên Sa, chuỗi hình ảnh 4 mùa du lịch, bánh xèo tôm nhảy, bún chả cá.">
     <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +13,16 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg: #0C1E2C;
+            --bg-sec: #132E43;
+            --bg-card: rgba(19, 46, 67, 0.85);
             --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent: #FF8C32;
+            --accent: #0EA5E9;
             --accent-gold: #fbbf24;
+            --accent-warm: #F97316;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -31,13 +32,14 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* NAV */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: linear-gradient(135deg, #0C1E2C 0%, #132e43 50%, #0C1E2C 100%);
             border-bottom: 2px solid;
-            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            border-image: linear-gradient(90deg, transparent, #0EA5E9, #fbbf24, transparent) 1;
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -68,8 +70,8 @@
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
         }
         .hero img {
@@ -80,7 +82,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(12,30,44,0.25) 0%, rgba(12,30,44,0.92) 100%);
         }
         .hero-content {
             position: absolute;
@@ -93,169 +95,271 @@
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
-            border-radius: 99px;
-            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            color: #fff;
         }
-        .hero-meta-line {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+        .hero-subtitle {
+            font-size: 1.1rem;
             color: var(--text-sec);
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            max-width: 840px;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
 
-        /* BREADCRUMB */
-        .breadcrumb {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
-
-        /* CONTENT LAYOUT */
+        /* ARTICLE LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
             padding: 0 1.5rem 4rem;
         }
+
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
 
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent);
+            padding-left: 0.4rem;
+        }
+
         /* MAIN CONTENT */
+        .article-main {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
         .article-main h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.6rem;
+            color: #fff;
             margin: 2.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid rgba(14, 165, 233, 0.3);
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
-        .article-main h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
-        }
-
+        .article-main h2:first-of-type { margin-top: 0; }
+        .article-main h2 .icon { font-size: 1.4rem; }
         .article-main p {
+            margin-bottom: 1.2rem;
             color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .article-main strong { color: #fff; font-weight: 600; }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
+            background: rgba(14, 165, 233, 0.05);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
 
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
+        .highlight-box {
+            background: rgba(14, 165, 233, 0.08);
+            border: 1px solid rgba(14, 165, 233, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
         }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
+        .highlight-box h4 {
             color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+
+        .legend-box {
+            background: rgba(251, 191, 36, 0.06);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-box p { margin: 0; font-size: 0.95rem; color: #e2e8f0; }
+
+        /* SEASONS GRID */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .season-card {
+            background: rgba(12, 30, 44, 0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(14, 165, 233, 0.5);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .season-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(12, 30, 44, 0.85);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
             font-weight: 600;
-            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251,191,36,0.3);
+        }
+        .season-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .season-time {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+        .season-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
-
-        /* PREMIUM CHECKIN CARDS */
+        /* CHECKIN GRID */
         .checkin-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
         .dest-card {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-sec);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
+            cursor: pointer;
         }
         .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+            border-color: rgba(14, 165, 233, 0.4);
         }
         .dest-card.double-col {
             grid-column: span 2;
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
         }
         .dest-card.single-col {
             grid-column: span 1;
@@ -271,16 +375,16 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            filter: brightness(0.9) saturate(1.15);
         }
         .dest-card:hover .dest-card-img img {
             transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+            filter: brightness(0.78) saturate(1.25);
         }
         .dest-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            background: linear-gradient(180deg, transparent 35%, rgba(12, 30, 44, 0.96) 100%);
             z-index: 1;
         }
         .dest-card-content {
@@ -295,145 +399,141 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
         .dest-card-tags .tag {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
+            color: #fff;
+            padding: 0.25rem 0.65rem;
             border-radius: var(--radius-sm);
-            color: #fff !important;
-            font-weight: 600;
+            backdrop-filter: blur(4px);
         }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
         }
         .dest-card-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
-            color: var(--text) !important;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .dest-card-desc {
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             color: var(--text-sec);
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            line-clamp: 2;
             -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
+            overflow: hidden;
         }
-        .dest-card-meta {
+
+        /* CULINARY SHOWCASE */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .culinary-card {
+            background: rgba(12, 30, 44, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            flex-direction: column;
+            cursor: pointer;
         }
-        .dest-rating {
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(14, 165, 233, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        .culinary-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+        .culinary-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            flex: 1;
+        }
+        .culinary-price {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
-        .dest-rating .stars {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        .dest-rating span:last-child {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .dest-reviews {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .dest-card-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 0.4rem;
-        }
-        
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
 
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
+        /* TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
         }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
+            background: rgba(19, 46, 67, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
+        .info-table th {
+            background: rgba(14, 165, 233, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-sec);
-            margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
+        .disclaimer-box {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.82rem;
-            transition: color 0.2s;
+            margin-top: 0.8rem;
+            font-style: italic;
         }
-        .toc-list a:hover { color: var(--accent); }
 
         /* FOOTER */
         .article-footer {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.06);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             flex-wrap: wrap;
             gap: 1rem;
@@ -441,605 +541,619 @@
         .article-footer a { color: var(--accent); text-decoration: none; }
         .credits { font-style: italic; }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
-        }
-
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
-        }
-
-        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        /* LIGHTBOX MODAL */
         .lightbox-modal {
             display: none;
             position: fixed;
             z-index: 9999;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
+            background-color: rgba(8, 20, 30, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
             box-sizing: border-box;
-            background-color: rgba(11, 22, 34, 0.96);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            align-items: center;
-            flex-direction: column;
         }
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 52vh;
+        .lightbox-dialog {
+            position: relative;
+            max-width: 960px;
+            margin: 2rem auto;
+            background: rgba(19, 46, 67, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
             animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .lightbox-caption {
-            margin: auto;
+        .lightbox-img-wrap {
+            width: 100%;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
             display: block;
-            width: 85%;
-            max-width: 800px;
-            text-align: center;
-            color: var(--text-sec);
-            padding: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-caption-wrap {
+            padding: 1.8rem 2rem;
+            background: linear-gradient(180deg, rgba(19, 46, 67, 0.9) 0%, rgba(12, 30, 44, 0.95) 100%);
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+        .lightbox-caption {
+            color: #e2e8f0;
+            font-size: 0.96rem;
+            line-height: 1.75;
+            text-align: justify;
         }
         .lightbox-close {
             position: fixed;
             top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
+            right: 25px;
+            color: #fff;
+            font-size: 1.8rem;
             font-weight: bold;
-            transition: 0.3s;
             cursor: pointer;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            line-height: 1;
+            padding: 0;
         }
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: var(--accent);
-            text-decoration: none;
+        .lightbox-close:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: scale(1.08);
+            border-color: var(--accent);
+        }
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .checkin-grid, .seasons-grid, .culinary-grid { grid-template-columns: 1fr; }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1 !important;
+                aspect-ratio: 16/9;
+            }
+        }
+        @media (max-width: 768px) {
+            .article-main { padding: 1.5rem; }
+            .hero { height: 45vh; min-height: 320px; }
+            .lightbox-content { max-height: 42vh; }
+            .lightbox-caption-wrap { padding: 1.2rem; }
         }
     </style>
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-quy-nhon.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-quy-nhon.html">
-    <meta property="og:title" content="Quy Nhơn — Thiên đường biển đảo hoang sơ & tháp Chàm | GO FAR">
-    <meta property="og:description" content="Cẩm nang du lịch Quy Nhơn tự túc: bãi biển Kỳ Co, Eo Gió, Ghềnh Ráng Tiên Sa, tháp Bánh Ít, Hòn Khô, Cù Lao Xanh, tháp Đôi, đồi cát Phương Mai. Hải sản.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/quynhon_ky_co.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-quy-nhon.html">
-    <meta property="twitter:title" content="Quy Nhơn — Thiên đường biển đảo hoang sơ & tháp Chàm | GO FAR">
-    <meta property="twitter:description" content="Cẩm nang du lịch Quy Nhơn tự túc: bãi biển Kỳ Co, Eo Gió, Ghềnh Ráng Tiên Sa, tháp Bánh Ít, Hòn Khô, Cù Lao Xanh, tháp Đôi, đồi cát Phương Mai. Hải sản.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/quynhon_ky_co.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Quy Nhơn",
-    "description": "Cẩm nang du lịch Quy Nhơn tự túc: bãi biển Kỳ Co, Eo Gió, Ghềnh Ráng Tiên Sa, tháp Bánh Ít, Hòn Khô, Cù Lao Xanh, tháp Đôi, đồi cát Phương Mai. Hải sản.",
-    "image": "https://gofarvietnam.com/images/quynhon_ky_co.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Duyên hải Nam Trung Bộ",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
-        }
-    }
-}
-    </script>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR">
+            </a>
+            <a href="index.html" class="nav-back">← Quay lại Trang chủ</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/quynhon_hero.webp" alt="Quy Nhơn — Biển xanh & Nắng vàng">
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/quynhon_hero.webp" alt="Toàn cảnh thành phố biển Quy Nhơn hiền hòa" loading="eager">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Duyên hải Nam Trung Bộ</span>
-            <h1>Quy Nhơn<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Biển xanh & Nắng vàng</span></h1>
-            <div class="hero-meta-line">
-                <span class="rating">⭐ 4.6 / 5.0</span>
-                <span>·</span>
-                <span>Tỉnh Bình Định, Việt Nam</span>
-                <span>·</span>
-                <span>Cập nhật: 08/2026</span>
-            </div>
+            <span class="hero-tag">🌊 Thiên Đường Biển Đảo Nam Trung Bộ</span>
+            <h1>Quy Nhơn — Biển Xanh Nắng Vàng & Hào Khí Đất Võ</h1>
+            <p class="hero-subtitle">Vịnh biển vầng trăng khuyết hiền hòa, làn nước ngọc bích Kỳ Co, eo biển lộng gió Eo Gió đón bình minh, tháp Chăm Pa rêu phong ngàn năm và hương vị ẩm thực xứ Nẫu đậm đà.</p>
         </div>
-    </section>
+    </header>
 
-    <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Quy Nhơn</strong>
-    </div>
-
+    <!-- ARTICLE LAYOUT -->
     <div class="article-layout">
         <div class="dashboard-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">📌 Thông tin nhanh</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span> <span class="val">TP. Quy Nhơn, Tỉnh Bình Định</span></li>
+                        <li><span class="label">Đô thị:</span> <span class="val">Đô thị loại I (QĐ 159/QĐ-TTg)</span></li>
+                        <li><span class="label">Khoảng cách:</span> <span class="val">~1.065km từ Hà Nội</span></li>
+                        <li><span class="label">Sân bay:</span> <span class="val">Phù Cát (UIH, ~30km)</span></li>
+                        <li><span class="label">Thời gian gợi ý:</span> <span class="val">3 ngày 2 đêm / 4N3Đ</span></li>
+                        <li><span class="label">Mùa đẹp nhất:</span> <span class="val">Tháng 3 – 9 (Biển êm nắng ấm)</span></li>
+                        <li><span class="label">Đặc sản:</span> <span class="val">Bánh xèo tôm nhảy, bún chả cá</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">🧭 Mục lục bài viết</h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Thành phố biển Quy Nhơn — Vẻ đẹp thuần khiết</a></li>
+                        <li><a href="#vi-tri-lich-su">2. Vị trí Địa lý & Dấu ấn Vương triều Chăm Pa</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền thoại Tây Sơn & Thi nhân Hàn Mặc Tử</a></li>
+                        <li><a href="#chuoi-anh-4-mua">4. Chuỗi hình ảnh 4 Mùa Du lịch</a></li>
+                        <li><a href="#toa-do">5. Top 8 Tọa độ Thắng cảnh Biểu tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm nang Di chuyển & Kết nối Giao thông</a></li>
+                        <li><a href="#am-thuc">7. Tinh hoa Ẩm thực Xứ Nẫu Bình Định</a></li>
+                        <li><a href="#gia-ve">8. Bảng giá vé Tham quan & Dịch vụ Cano</a></li>
+                        <li><a href="#lich-trinh">9. Gợi ý Lịch trình & Mẹo trải nghiệm</a></li>
+                    </ul>
+                </div>
+            </aside>
+
             <!-- MAIN ARTICLE -->
-            <article class="article-main">
+            <main class="article-main">
 
-                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-                <p>Quy Nhơn (Bình Định) là một thành phố ven biển miền Trung hiền hòa, nổi tiếng với những bãi cát vàng óng mịn trải dài bên bờ biển xanh ngắt ngút ngàn, những hòn đảo hoang sơ kỳ vĩ và những di tích lịch sử tháp Chàm rêu phong cổ kính có niên đại hàng ngàn năm. Đây được mệnh danh là điểm đến hoang sơ, lý tưởng cho những ai muốn tìm kiếm một hành trình khám phá thiên nhiên biển đảo thuần khiết, chưa bị thương mại hóa.</p>
-                <p>Khác với sự ồn ào náo nhiệt của những vịnh biển du lịch khác, Quy Nhơn cuốn hút du khách bởi nhịp sống chậm rãi bình yên của những làng chài cổ ven biển, bởi vị mặn mòi sóng nước đại dương tại Kỳ Co, Eo Gió, Hòn Khô, và lòng hiếu khách, hào sảng đậm chất đất võ Bình Định.</p>
+                <div class="intro-lead" id="tong-quan">
+                    Nằm nép mình bên vịnh biển cong hình vầng trăng khuyết tuyệt đẹp của dải đất duyên hải Nam Trung Bộ, <strong>Quy Nhơn (Bình Định)</strong> quyến rũ lòng người bởi vẻ đẹp hoang sơ thuần khiết, những bãi cát vàng mịn màng trải dài bên làn nước biển xanh ngắt ngút ngàn và những ngọn tháp Chăm Pa rêu phong cổ kính sừng sững qua hàng ngàn năm lịch sử. Đây là miền đất của "đất võ trời văn", nơi giao thoa rực rỡ giữa văn hóa Chăm Pa cổ xưa, hào khí Tây Sơn lẫy lừng và hồn thơ trữ tình xứ Nẫu.
+                </div>
 
-                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
-                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Quy Nhơn. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
+                <h2><span class="icon">🌿</span> 1. Thành Phố Biển Quy Nhơn — Vẻ Đẹp Thuần Khiết</h2>
+                <p>Khác biệt với sự nhộn nhịp hối hả của Nha Trang hay vẻ hiện đại của Đà Nẵng, Quy Nhơn gìn giữ cho mình một nhịp sống chậm rãi, bình yên và hiền hòa. Bờ biển uốn lượn ôm trọn lấy thành phố với bãi cát thoai thoải sạch bong, bán đảo Phương Mai sừng sững che chắn sóng gió đại dương và những hòn đảo hoang sơ rải rác ngoài khơi như Kỳ Co, Hòn Khô, Cù Lao Xanh.</p>
+                <p>Không chỉ sở hữu cảnh sắc thiên nhiên biển đảo tuyệt mỹ, Quy Nhơn còn được tôn vinh là một trong những trung tâm khoa học và du lịch hàng đầu miền Trung với Trung tâm Quốc tế Khoa học và Giáo dục Liên ngành (ICISE) và Công viên Sáng tạo Quy Hòa — nơi tụ hội của nhiều nhà khoa học đoạt giải Nobel trên toàn thế giới.</p>
+
+                <h2 id="vi-tri-lich-su"><span class="icon">🏛️</span> 2. Vị Trí Địa Lý & Dấu Ấn Vương Triều Chăm Pa - Tây Sơn</h2>
+                <p>Thành phố Quy Nhơn là đô thị trung tâm kinh tế, chính trị, văn hóa của tỉnh Bình Định. Theo <strong>Quyết định số 159/QĐ-TTg ngày 25/01/2010 của Thủ tướng Chính phủ</strong>, Quy Nhơn chính thức được công nhận là <strong>Đô thị loại I</strong> trực thuộc tỉnh.</p>
+                <p>Bình Định từng là kinh đô Đồ Bàn (Vijaya) của vương quốc Chăm Pa cổ suốt 5 thế kỷ (từ thế kỷ XI đến thế kỷ XV). Dấu ấn kiến trúc Chăm Pa tại đây được bảo tồn nguyên vẹn và đậm đặc bậc nhất Việt Nam. Tiêu biểu là Quần thể Tháp Đôi (Tháp Hưng Thạnh) được Bộ Văn hóa - Thông tin xếp hạng là <strong>Di tích Kiến trúc Nghệ thuật Quốc gia</strong> theo <strong>Quyết định số 983-VH/QĐ ngày 04/8/1980</strong>, và Quần thể Tháp Bánh Ít (Tháp Bạc) xếp hạng Di tích Quốc gia theo <strong>Quyết định số 201/VH-QĐ ngày 15/11/1982</strong> — từng lọt vào cuốn sách kiến trúc quốc tế <em>"1.001 công trình kiến trúc phải đến trong đời"</em>.</p>
+                <p>Đặc biệt, quê hương Tây Sơn của người anh hùng áo vải cờ đào Quang Trung - Nguyễn Huệ tại huyện Tây Sơn (cách Quy Nhơn ~45km) đã được Thủ tướng Chính phủ xếp hạng là <strong>Di tích quốc gia đặc biệt</strong> theo <strong>Quyết định số 2408/QĐ-TTg ngày 31/12/2014</strong>. Về văn hóa phi vật thể, Võ cổ truyền Bình Định và Hát Bội Bình Định được công nhận là Di sản văn hóa phi vật thể Quốc gia theo <strong>Quyết định số 2684/QĐ-BVHTTDL</strong>, còn Nghệ thuật Bài Chòi Trung Bộ được UNESCO ghi danh là <strong>Di sản văn hóa phi vật thể đại diện của nhân loại</strong> năm 2017.</p>
+                <div class="highlight-box">
+                    <h4>👑 Danh Thắng Quốc Gia Ghềnh Ráng — Tiên Sa & Mộ Thi Sĩ Hàn Mặc Tử</h4>
+                    <p>Theo <strong>Quyết định số 201/QĐ-BVHTT ngày 15/11/1991 của Bộ Văn hóa - Thông tin</strong>, Khu danh thắng Ghềnh Ráng được xếp hạng là Di tích Danh lam thắng cảnh cấp Quốc gia. Nơi đây có Bãi tắm Hoàng Hậu với hàng triệu viên đá cuội tròn nhẵn như trứng chim khổng lồ và Đồi Thi Nhân — nơi an nghỉ vĩnh hằng của nhà thơ tài hoa bạc mệnh Hàn Mặc Tử.</p>
+                </div>
+
+                <h2 id="huyen-thoai"><span class="icon">📜</span> 3. Huyền Thoại Đất Võ Tây Sơn & Tích Xưa Thi Nhân Hàn Mặc Tử</h2>
+                
+                <div class="legend-box">
+                    <h4>✨ Hào khí Tây Sơn Tam Kiệt — Cây me cổ & Giếng nước thần</h4>
+                    <p>Trong khuôn viên Bảo tàng Quang Trung tại làng Kiên Mỹ, cây me cổ thụ sum sê cành lá và giếng nước đá ong cổ có niên đại hơn 300 năm vẫn trường tồn cùng thời gian. Tương truyền, đây là mảnh đất sinh dưỡng ba anh em Tây Sơn: Nguyễn Nhạc, Nguyễn Huệ, Nguyễn Lữ. Nước giếng mát trong ngọt lành đã nuôi dưỡng chí lớn của người anh hùng áo vải lập nên chiến công Ngọc Hồi - Đống Đa đại phá 29 vạn quân Thanh mùa xuân Kỷ Dậu 1789, giữ yên bờ cõi giang sơn gấm vóc.</p>
+                </div>
+
+                <div class="legend-box">
+                    <h4>✨ Huyền thoại Bãi tắm Hoàng Hậu & Trăng thơ Ghềnh Ráng</h4>
+                    <p>Những năm 1927, trong những chuyến kinh lý cùng Vua Bảo Đại, Nam Phương Hoàng Hậu vì quá say mê vẻ đẹp nguyên sơ của vịnh biển Ghềnh Ráng nên đã chọn nơi này làm bãi tắm riêng biệt. Những viên đá cuội xám bóng được sóng biển mài giũa nhẵn thín xếp chồng lớp lớp dưới chân vách đá dựng đứng. Cũng chính tại mảnh đất này, thi sĩ Hàn Mặc Tử đã trút hơi thở cuối cùng ở tuổi 28 tại Trại phong Quy Hòa năm 1940. Lời trăng thơ thắt ruột <em>"Ai mua trăng tôi bán trăng cho / Chẳng bán tình duyên ước hẹn hò"</em> vẫn văng vẳng theo từng đợt sóng vỗ ghềnh đá đêm ngày.</p>
+                </div>
+
+                <div class="legend-box">
+                    <h4>✨ Sự tích Eo Gió — Chiếc phễu hút gió đón bình minh đẹp nhất biển Đông</h4>
+                    <p>Tọa lạc tại xã bán đảo Nhơn Lý, địa thế cánh cung kỳ vĩ của hai dãy núi đá hoa cương cao vút khép lại tạo thành một eo biển hình phễu đón trọn từng luồng gió mát lành từ khơi xa thổi vào đất liền. Ngư dân địa phương từ bao đời nay truyền tai nhau: ai đón được những tia nắng bình minh đầu tiên rọi qua vòm đá Eo Gió sẽ đón nhận được nguồn linh khí đất trời đại dương dồi dào, tâm hồn an yên và thuận buồm xuôi gió suốt cả năm.</p>
+                </div>
+
+                <!-- 4. CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH -->
+                <h2 id="chuoi-anh-4-mua"><span class="icon">🌸</span> 4. Chuỗi Hình Ảnh 4 Mùa Du Lịch Quy Nhơn</h2>
+                <p>Khí hậu duyên hải Bình Định mang đặc trưng nhiệt đới gió mùa biển đảo với mùa khô nắng ấm rực rỡ kéo dài:</p>
+
+                <div class="seasons-grid">
+                    <!-- Season 1 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <span class="season-badge">Tháng 3 – 5</span>
+                            <div style="width:100%;height:100%;background:linear-gradient(135deg,#0284c7,#0369a1);display:flex;align-items:center;justify-content:center;color:#bae6fd;font-size:2.5rem;">☀️</div>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Khô Nắng Vàng Biển Êm</h3>
+                            <div class="season-time">🗓️ Tiết trời lý tưởng đầu hè</div>
+                            <p class="season-desc">Biển Quy Nhơn phẳng lặng như mặt gương, bầu trời cao xanh không một gợn mây, nhiệt độ ấm áp 26°C – 28°C cực kỳ thích hợp cho các chuyến đi cano vượt sóng ra đảo Kỳ Co và Hòn Khô.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 2 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <span class="season-badge">Tháng 6 – 8</span>
+                            <div style="width:100%;height:100%;background:linear-gradient(135deg,#0f766e,#115e59);display:flex;align-items:center;justify-content:center;color:#99f6e4;font-size:2.5rem;">🤿</div>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Lặn San Hô & Lễ Hội Biển</h3>
+                            <div class="season-time">🗓️ Cao điểm biển xanh rực rỡ</div>
+                            <p class="season-desc">Độ trong của nước biển đạt mức tuyệt đối, nhìn rõ từng rạn san hô ngũ sắc và đàn cá bơi lội dưới đáy sâu tại Bãi Dứa, Cù Lao Xanh. Không khí lễ hội ẩm thực cá ngừ đại dương và võ cổ truyền rộn ràng khắp phố biển.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 3 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <span class="season-badge">Tháng 9 – 10</span>
+                            <div style="width:100%;height:100%;background:linear-gradient(135deg,#b45309,#92400e);display:flex;align-items:center;justify-content:center;color:#fde68a;font-size:2.5rem;">🍂</div>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Thu Biển Vắng & Xứ Dừa</h3>
+                            <div class="season-time">🗓️ Không gian tĩnh lặng thư thái</div>
+                            <p class="season-desc">Những ngày thu dịu mát, lượng khách du lịch giảm bớt nhường chỗ cho vẻ đẹp tĩnh lặng nguyên sơ. Thích hợp cho những chuyến nghỉ dưỡng, tản bộ ngắm hoàng hôn Ghềnh Ráng và thưởng thức đặc sản xứ dừa Tam Quan.</p>
+                        </div>
+                    </div>
+
+                    <!-- Season 4 -->
+                    <div class="season-card">
+                        <div class="season-img-wrap">
+                            <span class="season-badge">Tháng 1 – 2</span>
+                            <div style="width:100%;height:100%;background:linear-gradient(135deg,#be123c,#9f1239);display:flex;align-items:center;justify-content:center;color:#fecdd3;font-size:2.5rem;">🏮</div>
+                        </div>
+                        <div class="season-body">
+                            <h3 class="season-title">Mùa Xuân Trẩy Hội Đống Đa Tây Sơn</h3>
+                            <div class="season-time">🗓️ Đầu xuân rộn rã trống trận</div>
+                            <p class="season-desc">Mùa mai vàng xứ Nẫu nở rộ, du khách nô nức về trẩy hội Đền Tây Sơn Tam Kiệt mùng 4 – 5 Tết Nguyên Đán, hòa mình vào tiếng trống trận hào hùng và những bài quyền võ cổ truyền vang danh bờ cõi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. TOP 8 TỌA ĐỘ THẮNG CẢNH -->
+                <h2 id="toa-do"><span class="icon">📸</span> 5. Top 8 Tọa Độ Thắng Cảnh Biểu Tượng & Dấu Tích Lịch Sử</h2>
+                <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử chính thống)</em></p>
 
                 <div class="checkin-grid">
-                    
-                    <div class="dest-card double-col" data-legend="Kỳ Co là bãi biển hoang sơ nằm ẩn sau dãy núi bán đảo Phương Mai (xã Nhơn Lý, TP. Quy Nhơn), chỉ mới được khai thác du lịch từ khoảng năm 2015. Tên gọi 'Kỳ Co' có gốc từ tiếng Chăm cổ, dân gian địa phương giải thích theo thế đất nhìn từ trên cao giống hình con kỳ nhông đang co mình. Vùng biển này từng là ngư trường đánh bắt truyền thống của ngư dân làng chài Nhơn Lý qua hàng trăm năm, nước biển trong xanh ngọc bích với rạn san hô sống phong phú.">
+
+                    <!-- 1. Bãi biển Kỳ Co -->
+                    <div class="dest-card double-col" data-legend="Kỳ Co là bãi biển hoang sơ nằm ẩn mình sau dãy núi đá hoa cương bán đảo Phương Mai thuộc xã Nhơn Lý, TP. Quy Nhơn. Bãi tắm có hình lưỡi liềm uốn cong mềm mại với dải cát trắng mịn màng và làn nước biển trong vắt hai màu lam ngọc bích nhìn thấu đáy cát. Nơi đây từng là ngư trường đánh bắt truyền thống của ngư dân Nhơn Lý qua hàng trăm năm, nay được mệnh danh là 'Maldives của Việt Nam' với vẻ đẹp trác tuyệt chưa từng bị phá vỡ.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_ky_co.webp" alt="Bãi biển Kỳ Co" loading="lazy">
+                            <img src="images/quynhon_ky_co.webp" alt="Bãi biển Kỳ Co Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
                                 <span class="tag tag-hot">🔥 Maldives Việt Nam</span>
-                                <span class="tag">Biển xanh trong</span>
+                                <span class="tag">Nhơn Lý</span>
                             </div>
-                            <h3 class="dest-card-title">Bãi biển Kỳ Co</h3>
-                            <p class="dest-card-desc">Bãi tắm hoang sơ với làn nước trong vắt màu ngọc bích nhìn tận đáy cát, ôm trọn bởi bãi cát trắng mịn màng uốn lượn dưới chân núi đá kỳ vĩ.</p>
+                            <h3 class="dest-card-title">Bãi Biển Kỳ Co (Vịnh Nước Ngọc Bích)</h3>
+                            <p class="dest-card-desc">Bãi cát trắng mịn màng uốn lượn dưới chân vách đá dựng đứng, làn nước biển hai màu lam ngọc trong thấu đáy cát.</p>
                         </div>
                     </div>
 
-                    <div class="dest-card single-col" data-legend="Eo Gió nằm ở xã Nhơn Lý, bán đảo Phương Mai (TP. Quy Nhơn). Tên gọi 'Eo Gió' bắt nguồn từ địa hình eo biển hình phễu được bao bọc bởi các dãy núi đá cao, tạo hiệu ứng đón gió biển Đông thổi mạnh quanh năm. Vẻ đẹp hoang sơ kỳ vĩ với vách đá dựng đứng ôm trọn eo biển xanh ngọc bích đã đưa nơi đây trở thành biểu tượng du lịch mới của Bình Định.">
+                    <!-- 2. Eo Gió -->
+                    <div class="dest-card single-col" data-legend="Nằm tại xã bán đảo Nhơn Lý cách trung tâm Quy Nhơn khoảng 20km, Eo Gió là eo biển hình cánh cung lộng gió được bao bọc bởi hai dãy núi đá hoa cương kỳ vĩ. Con đường đi bộ lát đá men theo sườn núi với hàng rào sơn trắng đỏ uốn lượn ngoạn mục giữa biển trời bao la. Dưới chân vách đá là bờ biển đá đẻ nhẵn bóng cùng những con sóng bạc đầu xô bờ tung bọt trắng xóa, tạo nên khung cảnh đón bình minh rực rỡ nhất dải đất miền Trung.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_eo_gio.webp" alt="Eo Gió" loading="lazy">
+                            <img src="images/quynhon_eo_gio.webp" alt="Eo Gió Nhơn Lý Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Kỳ quan ngắm biển</span>
-                                <span class="tag">Lộng gió</span>
+                                <span class="tag tag-hot">🌅 Đón Bình Minh Đẹp Nhất</span>
+                                <span class="tag">Nhơn Lý</span>
                             </div>
-                            <h3 class="dest-card-title">Eo Gió</h3>
-                            <p class="dest-card-desc">Cung đường đi bộ ven vách đá có tay vịn gạch đỏ ôm trọn eo biển lộng gió, điểm đón bình minh rực rỡ và chụp ảnh đỉnh nhất Quy Nhơn.</p>
+                            <h3 class="dest-card-title">Eo Gió Nhơn Lý</h3>
+                            <p class="dest-card-desc">Cung đường ven vách đá kỳ vĩ ôm trọn eo biển hút gió lồng lộng, nơi ngắm bình minh trên biển Đông ngoạn mục nhất.</p>
                         </div>
                     </div>
 
-                    <div class="dest-card single-col" data-legend="Nằm sát trung tâm Quy Nhơn, gắn với di tích lăng mộ nhà thơ tài hoa bạc mệnh Hàn Mặc Tử. Giai thoại dân gian kể về tình yêu son sắt của cô gái đẹp thoát chạy khỏi ách áp bức của quan lại phong kiến, trốn vào vách đá Ghềnh Ráng biến mất vào sương biển Tiên Sa lộng lẫy.">
+                    <!-- 3. Đảo Hòn Khô -->
+                    <div class="dest-card single-col" data-legend="Thuộc thôn Hải Đông, xã Nhơn Hải, đảo Hòn Khô đúng như tên gọi của mình: hoang sơ, khô cằn và không hề có cây cổ thụ râm mát, nhưng lại sở hữu bãi tắm trong veo và rạn san hô lộ thiên tuyệt mỹ. Điểm độc đáo nhất tại Hòn Khô là con đường cát ngầm xuyên biển dài hàng trăm mét hiện rõ mồn một khi thủy triều rút xuống, cùng cây cầu gỗ mộc mạc dựng men theo vách đá sát mép sóng biển xanh ngắt.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_ghenh_rang.webp" alt="Ghềnh Ráng Tiên Sa" loading="lazy">
+                            <img src="images/quynhon_hon_kho.webp" alt="Đảo Hòn Khô Quy Nhơn" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Đường xuyên biển</span>
+                                <span class="tag">Nhơn Hải</span>
+                            </div>
+                            <h3 class="dest-card-title">Đảo Hòn Khô (Nhơn Hải)</h3>
+                            <p class="dest-card-desc">Con đường cát ngầm lộ thiên giữa đại dương khi thủy triều rút và rạn san hô sặc sỡ bơi lội ngay mép nước.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Đảo ngọc Cù Lao Xanh -->
+                    <div class="dest-card double-col" data-legend="Cù Lao Xanh (xã đảo Nhơn Châu) cách TP. Quy Nhơn khoảng 24km về phía Đông Nam, được ví như 'Hòn ngọc Biển Đông' với màu xanh ngắt ngút ngàn của rừng cây hòa vào màu xanh ngọc bích của biển khơi. Đỉnh cao nhất của đảo sừng sững ngọn Hải đăng Cù Lao Xanh được người Pháp xây dựng năm 1890 cao 119m so với mực nước biển, kết hợp tinh tế giữa phong cách kiến trúc gothic phương Tây và nét thâm nghiêm phương Đông, là ngọn hải đăng cổ bậc nhất vùng duyên hải miền Trung.">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_cu_lao_xanh.webp" alt="Đảo Cù Lao Xanh Hải Đăng Cổ Quy Nhơn" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">💎 Hòn Ngọc Biển Đông</span>
+                                <span class="tag">Nhơn Châu</span>
+                            </div>
+                            <h3 class="dest-card-title">Đảo Cù Lao Xanh & Ngọn Hải Đăng Cổ 1890</h3>
+                            <p class="dest-card-desc">Thiên đường biển đảo hoang sơ tuyệt đối, ngọn hải đăng đá cổ kính hơn 130 năm tuổi sừng sững canh giữ chủ quyền biển đảo.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Ghềnh Ráng Tiên Sa -->
+                    <div class="dest-card single-col" data-legend="Nằm cách trung tâm thành phố chỉ 3km về phía Nam, Ghềnh Ráng là quần thể danh thắng kỳ thú với bãi đá uốn lượn theo bờ biển xanh trong. Nơi đây nổi tiếng với Bãi tắm Hoàng Hậu ngập tràn những viên đá cuội tròn xoe như trứng chim khổng lồ xếp lớp tự nhiên, Đồi Thi Nhân rợp bóng thông reo và ngôi mộ thanh tịnh của thi sĩ tài hoa Hàn Mặc Tử. Quần thể được Bộ Văn hóa - Thông tin xếp hạng Di tích Danh lam thắng cảnh cấp Quốc gia năm 1991.">
+                        <div class="dest-card-img">
+                            <img src="images/quynhon_ghenh_rang.webp" alt="Ghềnh Ráng Tiên Sa Bãi Đá Trứng Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
                                 <span class="tag">Bãi Đá Trứng</span>
-                                <span class="tag">Thơ mộng</span>
+                                <span class="tag">Ghềnh Ráng</span>
                             </div>
-                            <h3 class="dest-card-title">Ghềnh Ráng Tiên Sa</h3>
-                            <p class="dest-card-desc">Quần thể đá nhấp nhô độc đáo với bãi tắm Hoàng Hậu gồm vô số viên đá tròn mịn như trứng chim khổng lồ, nằm bên đồi thi sĩ Hàn Mặc Tử.</p>
+                            <h3 class="dest-card-title">Ghềnh Ráng Tiên Sa & Mộ Hàn Mặc Tử</h3>
+                            <p class="dest-card-desc">Bãi tắm Hoàng Hậu với muôn triệu viên đá cuội nhẵn bóng và đồi thi nhân nơi an nghỉ của thi sĩ Hàn Mặc Tử.</p>
                         </div>
                     </div>
 
-                    <div class="dest-card double-col" data-legend="Tháp Bánh Ít (còn gọi Tháp Bạc) là quần thể 4 tháp Chăm Pa cổ xây dựng từ thế kỷ XI–XII trên đồi cao nhìn xuống sông Côn, thuộc di tích quốc gia. Đây là một trong những cụm tháp Chăm còn nguyên vẹn nhất tại Bình Định — vùng đất từng là trung tâm kinh đô Vijaya rực rỡ của vương quốc Chăm Pa suốt 5 thế kỷ (thế kỷ XI–XV). Kiến trúc tháp thể hiện trình độ xây dựng bằng gạch nung kết dính bí ẩn chưa được giải mã của người Chăm cổ.">
+                    <!-- 6. Tháp Đôi Chăm Pa -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc ngay trên đường Trần Hưng Đạo trong lòng phường Đống Đa, Tháp Đôi (còn gọi là Tháp Hưng Thạnh) gồm hai ngọn tháp gạch nung cổ xây dựng từ cuối thế kỷ XII: tháp lớn cao 20m và tháp nhỏ cao 18m. Đây là công trình kiến trúc nghệ thuật độc đáo bậc nhất của vương quốc Chăm Pa cổ, mang đậm phong cách kiến trúc Chăm Pa kết hợp Khmer Angkor với các tượng phù điêu vũ nữ Apsara và chim thần Garuda xòe cánh uy nghi trên góc mái. Được xếp hạng Di tích Kiến trúc Nghệ thuật Quốc gia năm 1980.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_banh_it.webp" alt="Tháp Bánh Ít" loading="lazy">
+                            <img src="images/quynhon_thap_doi.webp" alt="Tháp Đôi Chăm Pa Hưng Thạnh Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Di sản Champa</span>
-                                <span class="tag">Cổ kính</span>
+                                <span class="tag">Di tích Quốc gia 1980</span>
+                                <span class="tag">Nội ô Quy Nhơn</span>
                             </div>
-                            <h3 class="dest-card-title">Tháp Bánh Ít</h3>
-                            <p class="dest-card-desc">Cụm tháp Chàm nghìn năm tuổi tọa lạc kiêu hãnh trên đỉnh đồi lộng gió, mang nét kiến trúc gạch đỏ rêu phong huyền bí nhuốm màu thời gian.</p>
+                            <h3 class="dest-card-title">Tháp Đôi Chăm Pa (Tháp Hưng Thạnh)</h3>
+                            <p class="dest-card-desc">Kiệt tác kiến trúc gạch nung thế kỷ XII giao thoa phong cách Chăm Pa và Angkor huyền bí sừng sững giữa phố thị.</p>
                         </div>
                     </div>
 
-                    <div class="dest-card single-col" data-legend="Hòn Khô là hòn đảo đá nhỏ nằm gần bờ biển Nhơn Hải, nối với đất liền bằng một cầu gỗ dài vắt ngang sóng biển. Vùng biển quanh đảo là khu bảo tồn san hô cộng đồng đầu tiên của Bình Định, do chính ngư dân làng Nhơn Hải tự nguyện thành lập để bảo vệ rạn san hô và nguồn lợi hải sản. Mô hình bảo tồn biển cộng đồng này đã trở thành hình mẫu cho các vùng ven biển miền Trung.">
+                    <!-- 7. Đồi cát Phương Mai -->
+                    <div class="dest-card single-col" data-legend="Nằm liền kề bãi biển Nhơn Lý trên bán đảo Phương Mai, đồi cát Phương Mai sở hữu những đụn cát vàng óng ả nhấp nhô ở độ cao từ 20m đến 100m so với mực nước biển. Nhờ những ngọn gió biển thổi miệt mài ngày đêm, vân cát trên bề mặt đồi cát liên tục thay đổi hình thù kỳ thú sau mỗi cơn gió thoảng. Đây là địa điểm lý tưởng để trải nghiệm trượt cát tốc độ cao và ghi lại những bức ảnh kỷ niệm tựa như lạc giữa sa mạc hoang sơ.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_hon_kho.webp" alt="Hòn Khô" loading="lazy">
+                            <img src="images/quynhon_phuong_mai.webp" alt="Đồi cát Phương Mai Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Con đường xuyên biển</span>
-                                <span class="tag">Lặn san hô</span>
+                                <span class="tag">Tiểu sa mạc</span>
+                                <span class="tag">Bán đảo Phương Mai</span>
                             </div>
-                            <h3 class="dest-card-title">Hòn Khô</h3>
-                            <p class="dest-card-desc">Đảo nhỏ hoang sơ nổi tiếng với cây cầu gỗ ôm vách đá mộc mạc và con đường cát xuyên biển lộ ra khi thủy triều rút xuống.</p>
+                            <h3 class="dest-card-title">Đồi Cát Phương Mai</h3>
+                            <p class="dest-card-desc">Những triền cát vàng óng ả uốn lượn theo chiều gió biển, nơi trải nghiệm trượt cát cảm giác mạnh độc đáo.</p>
                         </div>
                     </div>
 
-                    <div class="dest-card single-col" data-legend="Cù Lao Xanh (tên cổ Đảo Vân Phi) nằm cách bờ biển Quy Nhơn 24km, là đảo tiền tiêu bảo vệ vùng biển Bình Định. Trên đảo có ngọn hải đăng cổ do người Pháp xây dựng năm 1890, cao 118m so với mực nước biển — một trong những hải đăng cao nhất và lâu đời nhất Đông Dương. Cù Lao Xanh là nơi sinh sống của cộng đồng ngư dân nhỏ, giữ nguyên nếp sống chài lưới hoang sơ chưa bị thương mại hóa.">
+                    <!-- 8. Quần thể Tháp Bánh Ít -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc trên đồi cao thuộc xã Phước Hiệp (huyện Tuy Phước, giáp ranh Quy Nhơn), Tháp Bánh Ít (còn gọi là Tháp Bạc) gồm 4 ngọn tháp cổ xây dựng vào cuối thế kỷ XI - đầu thế kỷ XII. Nhìn từ xa, tháp chính có hình dáng nhọn chóp tựa chiếc bánh ít lá gai truyền thống của xứ Nẫu. Quần thể này là tuyệt phẩm kiến trúc gạch Chăm Pa lộng lẫy, được nhóm tác giả người Anh đưa vào cuốn sách danh tiếng '1.001 công trình kiến trúc phải đến trong đời'. Được xếp hạng Di tích Quốc gia năm 1982.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_cu_lao_xanh.webp" alt="Cù Lao Xanh" loading="lazy">
+                            <img src="images/quynhon_banh_it.webp" alt="Quần thể Tháp Bánh Ít Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Đảo tiền tiêu</span>
-                                <span class="tag">Hải đăng cổ</span>
+                                <span class="tag">1.001 Kiến Trúc Thế Giới</span>
+                                <span class="tag">Tuy Phước</span>
                             </div>
-                            <h3 class="dest-card-title">Cù Lao Xanh</h3>
-                            <p class="dest-card-desc">Hòn ngọc xanh giữa trùng khơi với ngọn hải đăng Pháp cổ bằng đá cao sừng sững, không gian hoang sơ yên bình tách biệt đô thị khói bụi.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Tháp Đôi Quy Nhơn là cụm hai tháp Chăm Pa cổ nằm ngay trong lòng thành phố, xây dựng khoảng cuối thế kỷ XII. Đây là cụm tháp Chăm duy nhất mang phong cách kiến trúc Khmer với góc tháp trang trí hình chim thần Garuda — linh vật trong thần thoại Hindu, phản ánh ảnh hưởng giao lưu văn hóa giữa vương quốc Chăm Pa và đế quốc Khmer láng giềng. Bình Định hiện còn lưu giữ 8 cụm tháp Chăm — nhiều nhất cả nước.">
-                        <div class="dest-card-img">
-                            <img src="images/quynhon_thap_doi.webp" alt="Tháp Đôi" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Trung tâm thành phố</span>
-                                <span class="tag">Kiến trúc Angkor</span>
-                            </div>
-                            <h3 class="dest-card-title">Tháp Đôi</h3>
-                            <p class="dest-card-desc">Cặp tháp Champa đứng song hành uy nghi giữa lòng thành phố, được bao quanh bởi công viên dừa xanh mát, xây dựng từ thế kỷ XII.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Đồi cát Phương Mai trải dài trên bán đảo Phương Mai phía Đông Quy Nhơn, là cồn cát trắng tự nhiên hiếm hoi ven biển miền Trung. Bán đảo Phương Mai gắn với các di tích lịch sử quân sự như Lũy cổ Phương Mai — hệ thống phòng thủ cửa biển Thị Nại từ thời Tây Sơn, và chùa Linh Sơn (chùa Phật Lồi) thờ tượng thần Shiva thời Chăm Pa. Ngày nay, đồi cát là điểm du lịch mạo hiểm với trượt cát, đua xe địa hình, và ngắm hoàng hôn trên sa mạc ven biển.">
-                        <div class="dest-card-img">
-                            <img src="images/quynhon_phuong_mai.webp" alt="Đồi cát Phương Mai" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Sa mạc cát</span>
-                                <span class="tag">Trượt cát</span>
-                            </div>
-                            <h3 class="dest-card-title">Đồi cát Phương Mai</h3>
-                            <p class="dest-card-desc">Đồi cát khổng lồ với những triền cát thoai thoải lộng gió cạnh bờ biển Nhơn Lý, điểm chơi trượt cát kỳ thú đầy phấn khích.</p>
+                            <h3 class="dest-card-title">Quần Thể Tháp Bánh Ít (Tháp Bạc)</h3>
+                            <p class="dest-card-desc">Cụm 4 tháp Chăm Pa nghìn năm tuổi tọa lạc trên đồi cao lộng gió, tuyệt tác kiến trúc lọt top thế giới.</p>
                         </div>
                     </div>
 
                 </div>
 
-                <!-- DI CHUYỂN & CHI PHÍ -->
-                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-                <p>Quy Nhơn nằm cách TP.HCM 650km và Hà Nội 1.050km, hạ tầng giao thông kết nối hoàn hảo:</p>
-                
-                <h3>1. Lựa chọn phương tiện đến Quy Nhơn</h3>
-                <ul>
-                    <li><strong>Máy bay:</strong> Đáp xuống sân bay Phù Cát (cách Quy Nhơn 35km). Sau đó đi xe buýt sân bay của hãng hàng không hoặc bắt taxi về trung tâm.</li>
-                    <li><strong>Tàu hỏa (Đường sắt Thống Nhất):</strong> Dừng tại ga Diêu Trì (cách trung tâm 15km). Đi tàu đêm vô cùng thích hợp cho những ai thích ngắm cảnh.</li>
-                    <li><strong>Xe khách giường nằm chất lượng cao:</strong> Có nhiều hãng xe chạy thẳng từ TP.HCM dọc quốc lộ 1A đến bến xe Quy Nhơn chỉ mất khoảng 10 - 11 tiếng.</li>
-                </ul>
-
-                <h3>2. Chi phí vé tham khảo một số dịch vụ</h3>
-                <p>Để đi Kỳ Co hay Hòn Khô tự túc, du khách thường di chuyển ra bến tàu Nhơn Lý hoặc Nhơn Hải rồi thuê cano khứ hồi kết hợp lặn ngắm san hô.</p>
-
-                <table class="info-table">
-                    <thead>
-                        <tr>
-                            <th>Điểm tham quan / Trải nghiệm</th>
-                            <th>Mức giá tham khảo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Cano khứ hồi đi đảo Kỳ Co & lặn san hô Bãi Dứa (Nhơn Lý)</td>
-                            <td><span class="price-tag">Theo chuyến / ghép cano</span></td>
-                        </tr>
-                        <tr>
-                            <td>Cano khứ hồi đi đảo Hòn Khô (Nhơn Hải)</td>
-                            <td><span class="price-tag">Cự ly gần bến Nhơn Hải</span></td>
-                        </tr>
-                        <tr>
-                            <td>Vé vào cổng tham quan Eo Gió du lịch bảo tồn</td>
-                            <td><span class="price-tag">Vé niêm yết tại cổng</span></td>
-                        </tr>
-                        <tr>
-                            <td>Vé tham quan khu du lịch Ghềnh Ráng Tiên Sa</td>
-                            <td><span class="price-tag">Miễn phí vào cổng</span> (Chỉ tính phí gửi xe)</td>
-                        </tr>
-                        <tr>
-                            <td>Vé tham quan Tháp Bánh Ít hoặc Tháp Đôi di tích cổ</td>
-                            <td><span class="price-tag">Vé bảo tồn di tích Cham</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- LƯU TRÚ & ẨM THỰC -->
-                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực đất võ</h2>
-                
-                <h3>1. Gợi ý lựa chọn nơi lưu trú</h3>
-                <ul>
-                    <li><strong>Dọc bãi biển trung tâm (Đường Xuân Diệu, An Dương Vương):</strong> Khách sạn cao tầng view biển, thuận tiện tắm biển sáng sớm và đi ăn hải sản đêm.</li>
-                    <li><strong>Khu làng chài Bãi Xép / Nhơn Lý:</strong> Thích hợp cho homestay sát biển, bình yên, trải nghiệm cuộc sống người dân chài lưới giản dị.</li>
-                </ul>
-
-                <h3>2. Ẩm thực xứ Nẫu đậm đà</h3>
-                <div class="food-list">
-                    <div class="food-item"><span class="name">🦐 Bánh xèo tôm nhảy Nhơn Lý (Vỏ bánh giòn rụm bên trên xếp những con tôm đất đỏ au tươi rói nhảy tanh tách khi đúc)</span></div>
-                    <div class="food-item"><span class="name">🐟 Bánh hỏi cháo lòng Quy Nhơn (Đĩa bánh hỏi mỡ hành trắng mịn ăn kèm đĩa lòng heo nóng sốt và chén cháo nóng hổi)</span></div>
-                    <div class="food-item"><span class="name">🍢 Nem chợ Huyện nướng thơm lừng chấm tương ớt đặc sản đất võ</span></div>
-                    <div class="food-item"><span class="name">🥥 Bánh ít lá gai mềm dẻo nhân dừa đậu xanh ngọt bùi thơm lừng</span></div>
+                <!-- 6. DI CHUYỂN -->
+                <h2 id="di-chuyen"><span class="icon">🚗</span> 6. Cẩm Nang Di Chuyển & Kết Nối Giao Thông Quy Nhơn</h2>
+                <p>Nằm trên trục giao thông huyết mạch Bắc - Nam, du khách có thể dễ dàng đến với Quy Nhơn bằng cả đường hàng không, đường sắt và đường bộ:</p>
+                <div class="highlight-box">
+                    <h4>✈️ Hàng Không & Đường Sắt:</h4>
+                    <p><strong>Đường hàng không:</strong> Sân bay Phù Cát (UIH) cách trung tâm TP. Quy Nhơn khoảng 30km. Các hãng hàng không Vietnam Airlines, Vietjet Air, Bamboo Airways khai thác chuyến bay thẳng hàng ngày từ Hà Nội (~1h40m) và TP.HCM (~1h10m). Xe buýt sân bay về trung tâm có giá 50.000 VNĐ / lượt, taxi khoảng 200.000 – 250.000 VNĐ.</p>
+                    <p><strong>Đường sắt Bắc - Nam:</strong> Ga Diêu Trì (cách trung tâm ~10km) đón hầu hết các chuyến tàu hỏa Thống Nhất SE. Ga Quy Nhơn nằm ngay trung tâm thành phố đón tàu SQN / SE chuyên tuyến.</p>
+                    <p><strong>Di chuyển nội thành & Ra đảo:</strong> Thuê xe máy từ 120.000 – 150.000 VNĐ / ngày để vi vu các cung đường ven biển Nhơn Lý, Nhơn Hải. Đi đảo Kỳ Co hoặc Cù Lao Xanh di chuyển bằng cano cao tốc tại bến tàu Nhơn Lý hoặc Cảng Hàm Tử.</p>
                 </div>
 
-                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
-                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
-                
-                <h3>1. Mùa nào đi du lịch Quy Nhơn đẹp nhất?</h3>
-                <ul>
-                    <li><strong>Tháng 3 – 8:</strong> Mùa khô và là thời điểm vàng đi Quy Nhơn. Biển trong vắt màu ngọc bích, sóng êm ả thuận lợi cho cano chạy đảo và tắm biển cực kỳ an toàn.</li>
-                    <li><strong>Tháng 9 – 2 năm sau:</strong> Mùa mưa bão miền Trung. Biển động mạnh, cano ra Kỳ Co hay Hòn Khô thường bị cấm hoạt động do sóng lớn nguy hiểm.</li>
-                </ul>
+                <!-- 7. ẨM THỰC -->
+                <h2 id="am-thuc"><span class="icon">🍲</span> 7. Tinh Hoa Ẩm Thực Xứ Nẫu Bình Định</h2>
+                <p>Ẩm thực Quy Nhơn là sự kết tinh giữa nguồn hải sản dồi dào của biển Đông và phong vị đồng nội đậm đà, mộc mạc đặc trưng xứ Nẫu:</p>
 
-                <h3>2. Lưu ý an toàn biển đảo & thời tiết nắng nóng</h3>
-                <ul>
-                    <li><strong>Chống nắng kỹ càng:</strong> Cái nắng miền Trung tháng 5 - 8 vô cùng gay gắt. Hãy bôi kem chống nắng chỉ số cao, mang mũ rộng vành và uống đủ nước để tránh say nắng khi đi Kỳ Co, Eo Gió.</li>
-                    <li><strong>Tuyệt đối tuân thủ áo phao khi đi cano:</strong> Biển Quy Nhơn có dòng chảy ngầm phức tạp gần các rạn san hô đá. Bắt buộc mặc áo phao khi tắm biển và lặn san hô tại Hòn Khô, Kỳ Co.</li>
-                </ul>
+                <div class="culinary-grid">
+                    <!-- Dish 1 -->
+                    <div class="culinary-card">
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bánh Xèo Tôm Nhảy Rau Mầm</h3>
+                            <p class="culinary-desc">Món ăn biểu tượng nức tiếng xứ Nẫu. Những con tôm đất đỏ au còn nhảy tanh tách được thả vào chảo dầu nóng rực, phủ lớp bột gạo xay giòn rụm viền vàng ươm, rắc thêm giá đỗ và hành hoa. Bánh ăn kèm bánh tráng gạo Bình Định cuốn rau mầm thanh mát, chấm bát nước mắm tỏi ớt chua ngọt thơm lừng.</p>
+                            <div class="culinary-price">💰 Giá tham khảo: 25.000 – 35.000 VNĐ / chiếc (Quán cô Năm, bà Năm)</div>
+                        </div>
+                    </div>
 
-                <div class="warning-box">
-                    <p>⚠️ Cảnh báo bảo vệ san hô: Khi tham gia hoạt động lặn ngắm san hô tại Bãi Dứa (Nhơn Lý) hay Hòn Khô, tuyệt đối không dẫm đạp, bẻ gãy hay đứng lên rạn san hô tự nhiên để bảo tồn hệ sinh thái biển đảo xinh đẹp.</p>
+                    <!-- Dish 2 -->
+                    <div class="culinary-card">
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bún Chả Cá Quy Nhơn</h3>
+                            <p class="culinary-desc">Bát bún nóng hổi với nước dùng thanh ngọt tự nhiên ninh hoàn toàn từ xương và đầu cá thu, cá cờ tươi roi rói. Miếng chả cá thu quết tay dai giòn sần sật nướng hoặc chiên vàng bóng, ăn kèm bún sợi nhỏ, hành hoa, ớt rim cay nồng và đĩa rau sống xà lách non giòn ngọt mát.</p>
+                            <div class="culinary-price">💰 Giá tham khảo: 30.000 – 45.000 VNĐ / tô (Bún cá Ngọc Liên, Thuận Lê)</div>
+                        </div>
+                    </div>
+
+                    <!-- Dish 3 -->
+                    <div class="culinary-card">
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bánh Hỏi Lòng Heo Đất Võ</h3>
+                            <p class="culinary-desc">Bữa sáng truyền thống của người dân Bình Định. Những miếng bánh hỏi trắng ngần dệt từ sợi bột gạo li ti, thoa lớp dầu hẹ xanh mướt thơm nức mũi, ăn kèm đĩa lòng heo tươi luộc giòn sần sật, chén cháo lòng nóng hổi và nước mắm cốt pha tỏi ớt chanh chuẩn vị miền Trung.</p>
+                            <div class="culinary-price">💰 Giá tham khảo: 35.000 – 50.000 VNĐ / phần (Bánh hỏi Diên Hồng, Hồng Linh)</div>
+                        </div>
+                    </div>
+
+                    <!-- Dish 4 -->
+                    <div class="culinary-card">
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Chả Ram Tôm Đất Giòn Rụm</h3>
+                            <p class="culinary-desc">Thức quà giòn tan không thể thiếu trong mâm cỗ xứ Nẫu. Tôm đất tươi ngọt thịt kết hợp cùng thịt ba chỉ băm nhuyễn và hành tím hương thơm nồng, cuốn chặt trong lớp bánh tráng phơi sương mỏng manh rồi chiên ngập dầu giòn rụm đến tận miếng cuối cùng, cuốn rau sống chấm tương đậu bùi ngậy.</p>
+                            <div class="culinary-price">💰 Giá tham khảo: 50.000 – 80.000 VNĐ / đĩa</div>
+                        </div>
+                    </div>
+
+                    <!-- Dish 5 -->
+                    <div class="culinary-card">
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Nem Chợ Huyện (Nướng & Chua)</h3>
+                            <p class="culinary-desc"><em>"Ai về Tuy Phước ăn nem / Ghé qua Hưng Thạnh mà xem tháp Chàm"</em>. Nem Chợ Huyện làm từ thịt heo nạc tươi giã nhuyễn ủ men lá ổi và gói trong lá chuối xanh. Nem có vị chua ngọt thanh dịu, dai giòn tự nhiên; nướng trên than hoa thơm ngào ngạt chấm tương ớt rim Bình Định cay nồng nàn.</p>
+                            <div class="culinary-price">💰 Giá tham khảo: 40.000 – 60.000 VNĐ / chục</div>
+                        </div>
+                    </div>
+
+                    <!-- Dish 6 -->
+                    <div class="culinary-card">
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bánh Ít Lá Gai Hình Tháp Chăm</h3>
+                            <p class="culinary-desc">Món quà quê mộc mạc thơm thảo lòng người Bình Định. Vỏ bánh làm từ lá gai giã nhuyễn quyện bột nếp dẻo quánh màu đen tuyền bóng bẩy, nhân bên trong là dừa nạo xào đường thốt nốt béo bùi và đậu xanh ngọt dịu, gói bằng lá chuối thành hình chóp tháp tựa như những ngọn tháp Chăm Pa cổ kính.</p>
+                            <div class="culinary-price">💰 Giá tham khảo: 4.000 – 6.000 VNĐ / chiếc</div>
+                        </div>
+                    </div>
                 </div>
 
-            </article>
+                <!-- 8. BẢNG GIÁ VÉ -->
+                <h2 id="gia-ve"><span class="icon">🎫</span> 8. Bảng Giá Vé Tham Quan & Dịch Vụ Biển Đảo Quy Nhơn</h2>
+                <p>Bảng giá vé niêm yết chính thức tại các điểm danh lam thắng cảnh và dịch vụ cano tại Quy Nhơn:</p>
 
-            <!-- SIDEBAR -->
-            <aside class="sidebar">
-                <!-- QUICK INFO -->
-                <div class="sidebar-card">
-                    <h4>📌 Thông tin nhanh</h4>
-                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Tỉnh Bình Định, Việt Nam</div>
-                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 3 – 4 ngày</div>
-                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 3 – 8 (Mùa khô)</div>
+                <div class="table-responsive">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Điểm tham quan / Trải nghiệm</th>
+                                <th>Địa phương</th>
+                                <th>Giá vé người lớn</th>
+                                <th>Ghi chú / Dịch vụ đi kèm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Khu du lịch Kỳ Co</strong></td>
+                                <td>Xã Nhơn Lý</td>
+                                <td><span class="price-tag">120.000 VNĐ</span></td>
+                                <td>Bao gồm vé vào cổng + xe trung chuyển 2 chiều</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tour Cano Kỳ Co + Lặn San Hô</strong></td>
+                                <td>Bến Nhơn Lý</td>
+                                <td><span class="price-tag">250.000 – 350.000 VNĐ</span></td>
+                                <td>Cano cao tốc khứ hồi, ngắm san hô Bãi Dứa, áo phao, kính lặn</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Danh thắng Eo Gió</strong></td>
+                                <td>Xã Nhơn Lý</td>
+                                <td><span class="price-tag">25.000 VNĐ</span></td>
+                                <td>Vé vào cổng đường đi bộ ven vách đá</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tháp Đôi Chăm Pa</strong></td>
+                                <td>Nội ô Quy Nhơn</td>
+                                <td><span class="price-tag">20.000 VNĐ</span></td>
+                                <td>Di tích kiến trúc nghệ thuật quốc gia</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quần thể Tháp Bánh Ít</strong></td>
+                                <td>Huyện Tuy Phước</td>
+                                <td><span class="price-tag">20.000 VNĐ</span></td>
+                                <td>Di tích quốc gia trên đồi cao</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ghềnh Ráng — Tiên Sa & Mộ Hàn Mặc Tử</strong></td>
+                                <td>Phường Ghềnh Ráng</td>
+                                <td><span class="price-tag">Miễn phí 100%</span></td>
+                                <td>Danh lam thắng cảnh quốc gia mở cửa tự do</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Đồi cát Phương Mai</strong></td>
+                                <td>Bán đảo Phương Mai</td>
+                                <td><span class="price-tag">Miễn phí 100%</span></td>
+                                <td>Thuê ván trượt cát: 20.000 – 30.000 VNĐ / ván</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cano ra đảo Cù Lao Xanh</strong></td>
+                                <td>Cảng Hàm Tử</td>
+                                <td><span class="price-tag">350.000 – 450.000 VNĐ</span></td>
+                                <td>Vé cano cao tốc khứ hồi (di chuyển ~30 phút)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="disclaimer-box">⚠️ Lưu ý: Giá tour cano biển đảo và lặn ngắm san hô có thể thay đổi tùy theo điều kiện thời tiết thực tế và các dịp lễ Tết cao điểm.</p>
+
+                <!-- 9. LỊCH TRÌNH -->
+                <h2 id="lich-trinh"><span class="icon">🧭</span> 9. Gợi Ý Lịch Trình Khám Phá Quy Nhơn (3 Ngày 2 Đêm)</h2>
+                <div class="highlight-box">
+                    <h4>📅 Lịch trình 3 Ngày 2 Đêm (Trọn vẹn Biển đảo & Di sản Chăm Pa)</h4>
+                    <p><strong>Ngày 1: Đến Quy Nhơn → Tháp Đôi → Ghềnh Ráng Tiên Sa → Phố biển về đêm:</strong> Trưa đáp sân bay Phù Cát hoặc ga Diêu Trì, nhận phòng khách sạn đường biển Xuân Diệu hoặc An Dương Vương. Chiều ghé thăm Tháp Đôi Chăm Pa giữa lòng phố thị, sau đó vãn cảnh Ghềnh Ráng Tiên Sa, dạo bước trên Bãi Đá Trứng và viếng mộ nhà thơ Hàn Mặc Tử. Tối thưởng thức bún chả cá và dạo chợ đêm Quy Nhơn.</p>
+                    <p><strong>Ngày 2: Thiên đường Kỳ Co → Eo Gió lộng gió → Đồi cát Phương Mai:</strong> Sáng sớm di chuyển qua cầu Thị Nại dài gần 2,5km vượt đầm sang Nhơn Lý. Lên cano cao tốc vượt sóng ra bãi tắm Kỳ Co tắm biển ngọc bích, sau đó cano đưa đi lặn ngắm san hô rực rỡ tại Bãi Dứa. Trưa thưởng thức đại tiệc 8 món hải sản tươi sống làng chài Nhơn Lý. Chiều tản bộ con đường ven vách đá đón gió đại dương tại Eo Gió và ghé đồi cát Phương Mai trượt cát đón hoàng hôn. Tối ăn bánh xèo tôm nhảy giòn rụm.</p>
+                    <p><strong>Ngày 3: Tháp Bánh Ít → Bảo tàng Quang Trung Tây Sơn → Mua quà xứ Nẫu:</strong> Sáng vượt đồi chiêm bái cụm tháp Bánh Ít nghìn năm tuổi, xuôi về huyện Tây Sơn viếng Đền thờ Tây Sơn Tam Kiệt, chiêm ngưỡng cây me và giếng nước thiêng hơn 300 năm tuổi, xem biểu diễn trống trận và võ cổ truyền Bình Định. Chiều mua nem Chợ Huyện, chả ram tôm đất, bánh ít lá gai làm quà trước khi ra sân bay trở về.</p>
                 </div>
 
-                <!-- TOC -->
-                <div class="sidebar-card">
-                    <h4>📖 Mục lục</h4>
-                    <ul class="toc-list">
-                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
-                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
-                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
-                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
-                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
-                    </ul>
-                </div>
-            </aside>
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a>
+            © 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cổng thông tin & Cẩm nang Du lịch Việt Nam.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            🎨 100% Ảnh minh họa sinh động bởi AI • Biên soạn bởi Sửu nhi
+        </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img loading="lazy" class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Lightbox Zoom functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const destCards = document.querySelectorAll('.dest-card');
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
+        // Lightbox Modal Logic
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImg');
+        const modalTitle = document.getElementById('lightboxTitle');
+        const modalCaption = document.getElementById('lightboxCaption');
 
-            if (destCards.length && lightboxModal && lightboxImg) {
-                destCards.forEach(card => {
-                    card.style.cursor = 'zoom-in';
-                    card.addEventListener('click', () => {
-                        const img = card.querySelector('.dest-card-img img');
-                        if (!img) return;
+        function openLightbox(imgSrc, imgAlt, title, caption) {
+            modalImg.src = imgSrc;
+            modalImg.alt = imgAlt;
+            modalTitle.textContent = title;
+            modalCaption.textContent = caption;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
-                        let titleText = "";
-                        let descText = "";
+        document.querySelectorAll('.dest-card, .culinary-card, .season-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                const titleEl = this.querySelector('.dest-card-title, .culinary-title, .season-title');
+                const descEl = this.querySelector('.dest-card-desc, .culinary-desc, .season-desc');
+                const title = titleEl ? titleEl.textContent.trim() : (img ? img.alt : '');
+                const legend = this.getAttribute('data-legend') || (descEl ? descEl.textContent.trim() : '');
 
-                        const overlayH3 = card.querySelector('.dest-card-content h3');
-                        const overlayP = card.querySelector('.dest-card-content p');
-                        if (overlayH3) titleText = overlayH3.textContent;
-                        if (overlayP) descText = overlayP.textContent;
+                if (img) {
+                    openLightbox(img.src, img.alt, title, legend);
+                }
+            });
+        });
 
-                        if (!titleText && !descText) {
-                            titleText = img.alt || "Chi tiết hình ảnh";
-                        }
+        function closeLightbox(e) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-                        lightboxModal.style.display = 'flex';
-                        lightboxImg.src = img.src;
-                        
-                        let captionHTML = "";
-                        if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
-                        }
-                        if (descText) {
-                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
-                        }
-                        
-                        const legend = card.getAttribute('data-legend');
-                        if (legend) {
-                            captionHTML += `
-                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
-                                    ✨ Truyền thuyết & Sự tích Kỳ bí
-                                </span>
-                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
-                            </div>`;
-                        }
-                        lightboxCaption.innerHTML = captionHTML;
-                    });
-                });
-
-                lightboxClose.addEventListener('click', () => {
-                    lightboxModal.style.display = 'none';
-                });
-
-                lightboxModal.addEventListener('click', (e) => {
-                    if (e.target === lightboxModal || e.target === lightboxClose) {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
-                
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeLightbox();
             }
         });
     </script>
