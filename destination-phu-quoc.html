@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phú Quốc — Thiên Đường Đảo Ngọc & Thủ Phủ Biển Đảo Mùa Khô | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Phú Quốc toàn diện: Khám phá Bãi Sao cát trắng như kem, cáp treo Hòn Thơm vượt biển kỷ lục thế giới, làng chài Rạch Vẹm sao biển đỏ, Dinh Cậu linh thiêng và ẩm thực gỏi cá trích, bún quậy trứ danh.">
+    <meta name="keywords" content="du lịch Phú Quốc, kinh nghiệm đi Phú Quốc, Bãi Sao, cáp treo Hòn Thơm, Rạch Vẹm sao biển, Bãi Kem, Dinh Cậu Phú Quốc, nhà tù Phú Quốc, nước mắm Phú Quốc, bún quậy Kiến Xây, gỏi cá trích, ghẹ Hàm Ninh">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #071726;
+            --bg-card: #0d2238;
+            --bg-card-hover: #132e4c;
+            --text: #f8fafc;
+            --text-sec: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #ff8c32;
+            --accent-gold: #fbbf24;
+            --accent-cyan: #06b6d4;
+            --accent-green: #10b981;
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* HEADER / NAV */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 23, 38, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-back {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--accent);
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-wrap {
+            max-width: 1350px;
+            margin: 1rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            list-style: none;
+        }
+
+        .breadcrumb a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb .sep {
+            color: var(--text-muted);
+        }
+
+        .breadcrumb .current {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            max-width: 1350px;
+            margin: 1rem auto 2rem;
+            padding: 0 1.5rem;
+        }
+
+        .hero-banner {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 480px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7, 23, 38, 0.15) 0%, rgba(7, 23, 38, 0.85) 75%, var(--bg) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            width: fit-content;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-title .title-line-1 {
+            display: block;
+        }
+
+        .hero-title .title-line-2 {
+            display: block;
+            color: var(--accent-cyan);
+            font-size: 2.1rem;
+            margin-top: 0.25rem;
+        }
+
+        .hero-sub {
+            color: var(--text-sec);
+            font-size: 1.05rem;
+            max-width: 850px;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* LAYOUT GRID */
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .sidebar-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .sidebar-link {
+            display: block;
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s;
+        }
+
+        .sidebar-link:hover, .sidebar-link.active {
+            color: #ffffff;
+            background: rgba(6, 182, 212, 0.15);
+            border-left: 3px solid var(--accent-cyan);
+            padding-left: 0.65rem;
+        }
+
+        .sidebar-box {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px dashed rgba(6, 182, 212, 0.3);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            color: #cffafe;
+        }
+
+        .sidebar-box h4 {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* CONTENT */
+        .article-main h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.85rem;
+            color: #ffffff;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .article-main h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article-main h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            color: var(--accent-gold);
+            margin: 1.75rem 0 0.75rem;
+        }
+
+        .article-main p {
+            color: var(--text-sec);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-main strong {
+            color: #ffffff;
+        }
+
+        .article-main ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text-sec);
+        }
+
+        .article-main li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        /* SPOTS GRID */
+        .spots-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .spot-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            cursor: zoom-in;
+        }
+
+        .spot-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 16px 36px rgba(6, 182, 212, 0.15);
+        }
+
+        .spot-card-img {
+            position: relative;
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .spot-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: block;
+        }
+
+        .spot-card:hover .spot-card-img img {
+            transform: scale(1.06);
+        }
+
+        .spot-card-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(7, 23, 38, 0.85);
+            backdrop-filter: blur(8px);
+            color: var(--accent-gold);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .spot-card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .spot-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .spot-card-desc {
+            font-size: 0.92rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .spot-card-hint {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            color: var(--accent-cyan);
+            font-weight: 500;
+            border-top: 1px solid var(--border);
+            padding-top: 0.75rem;
+        }
+
+        /* SEASONS SHOWCASE */
+        .seasons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .season-card {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: zoom-in;
+        }
+
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 16px 40px rgba(6, 182, 212, 0.15);
+        }
+
+        .season-card-img {
+            position: relative;
+            min-height: 240px;
+            overflow: hidden;
+        }
+
+        .season-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+
+        .season-card:hover .season-card-img img {
+            transform: scale(1.05);
+        }
+
+        .season-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(7, 23, 38, 0.9);
+            color: var(--accent-cyan);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(6, 182, 212, 0.4);
+        }
+
+        .season-card-body {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .season-card-body h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin: 0 0 0.75rem 0;
+            line-height: 1.4;
+        }
+
+        .season-desc {
+            font-size: 0.93rem;
+            color: var(--text-sec);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .season-highlights {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-gold);
+            padding: 0.75rem 1rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.88rem;
+            color: #fef08a;
+        }
+
+        /* LEGENDS */
+        .legend-box {
+            background: linear-gradient(135deg, rgba(13, 34, 56, 0.9) 0%, rgba(7, 23, 38, 0.95) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .legend-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        /* TABLE WRAP & PRICING */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        table.info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+            background: var(--bg-card);
+        }
+
+        table.info-table th, table.info-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        table.info-table th {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        table.info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-tag {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .price-disclaimer-note {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FOOD GRID WITH DEDICATED IMAGES */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .food-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: zoom-in;
+        }
+
+        .food-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 16px 36px rgba(6, 182, 212, 0.15);
+        }
+
+        .food-card-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .food-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .food-card:hover .food-card-img img {
+            transform: scale(1.06);
+        }
+
+        .food-card-body {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .food-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .food-card p {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* TIPS & WARNINGS */
+        .tip-box {
+            background: rgba(16, 185, 129, 0.08);
+            border-left: 4px solid var(--accent-green);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 1.5rem 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+            color: #d1fae5;
+            font-size: 0.95rem;
+        }
+
+        .warning-box {
+            background: rgba(255, 140, 50, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #fed7aa;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(7, 23, 38, 0.95);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 75vh;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            margin-top: 1.25rem;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .lightbox-desc {
+            font-size: 0.92rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+        }
+
+        .lightbox-legend {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            margin-top: 0.75rem;
+            font-size: 0.88rem;
+            color: #cffafe;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 380px;
+            }
+            .hero-overlay {
+                padding: 1.5rem;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-title .title-line-2 {
+                font-size: 1.7rem;
+            }
+            .spots-grid, .food-grid {
+                grid-template-columns: 1fr;
+            }
+            .season-card {
+                grid-template-columns: 1fr;
+            }
+            .season-card-img {
+                height: 220px;
+                min-height: auto;
+            }
+            .season-card-body {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                ← Về Trang Chủ
+            </a>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-wrap">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li class="sep">/</li>
+            <li><a href="index.html#destinations">Điểm đến</a></li>
+            <li class="sep">/</li>
+            <li class="current">Phú Quốc (Kiên Giang)</li>
+        </ul>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-banner">
+            <img src="images/phuquoc_hero.webp" alt="Toàn cảnh Đảo Ngọc Phú Quốc biển xanh ngọc bích" loading="eager">
+            <div class="hero-overlay">
+                <div class="hero-badge">🏖️ Thiên Đường Biển Đảo Mùa Khô · Kiên Giang</div>
+                <h1 class="hero-title">
+                    <span class="title-line-1">Phú Quốc — Thiên Đường Đảo Ngọc</span>
+                    <span class="title-line-2">& Vịnh Biển Hoàng Hôn Đẹp Nhất Việt Nam</span>
+                </h1>
+                <p class="hero-sub">
+                    Nơi biển xanh ngọc bích hòa cùng bờ cát trắng mịn như kem, tuyến cáp treo vượt biển kỷ lục thế giới, vương quốc sao biển Rạch Vẹm và những chiều hoàng hôn rực rỡ say đắm lòng người.
+                </p>
+                <div class="meta-bar">
+                    <div class="meta-item">📍 Vịnh Thái Lan (Tỉnh Kiên Giang)</div>
+                    <div class="meta-item">⏱️ Thời gian gợi ý: 4 ngày 3 đêm</div>
+                    <div class="meta-item">⭐ Mùa đẹp nhất: Tháng 10 – Tháng 4 (Mùa khô biển êm tuyệt đối)</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+        <div class="layout-grid">
+            
+            <!-- STICKY SIDEBAR -->
+            <aside class="sidebar">
+                <div class="sidebar-title">
+                    <span>📖 Mục Lục Cẩm Nang</span>
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="#tong-quan" class="sidebar-link">📋 1. Tổng quan Đảo Ngọc</a></li>
+                    <li><a href="#toa-do" class="sidebar-link">📸 2. Top 10 Tọa Độ Biểu Tượng</a></li>
+                    <li><a href="#truyen-thuyet" class="sidebar-link">✨ 3. Huyền Thoại & Lịch Sử Đảo</a></li>
+                    <li><a href="#theo-mua" class="sidebar-link">🌸 4. Phú Quốc 4 Mùa Cảnh Sắc</a></li>
+                    <li><a href="#di-chuyen" class="sidebar-link">✈️ 5. Phương Tiện & Lộ Trình</a></li>
+                    <li><a href="#gia-ve" class="sidebar-link">🎟️ 6. Bảng Giá Vé & Dịch Vụ</a></li>
+                    <li><a href="#am-thuc" class="sidebar-link">🍲 7. Ẩm Thực Đặc Sản Đảo Ngọc</a></li>
+                    <li><a href="#kinh-nghiem" class="sidebar-link">🗓️ 8. Kinh Nghiệm Du Lịch An Toàn</a></li>
+                </ul>
+
+                <div class="sidebar-box">
+                    <h4>💡 Lưu ý mùa khô vàng</h4>
+                    <p>Khoảng thời gian từ <strong>tháng 10 đến tháng 4</strong> là lúc biển Phú Quốc êm ả nhất, không có bão, nước trong vắt nhìn thấy đáy san hô. Nên đặt vé máy bay và khách sạn sớm từ 2–3 tuần!</p>
+                </div>
+            </aside>
+
+            <!-- ARTICLE CONTENT -->
+            <article class="article-main">
+
+                <!-- 1. TỔNG QUAN -->
+                <h2 id="tong-quan">📋 1. Tổng Quan Về Thiên Đường Đảo Ngọc Phú Quốc</h2>
+                <p>
+                    Tọa lạc trong vùng biển Tây Nam thuộc vịnh Thái Lan, <strong>Phú Quốc</strong> là hòn đảo lớn nhất của Việt Nam với diện tích tự nhiên <strong>589,27 km²</strong> (tương đương quốc đảo Singapore) và là thành phố đảo đầu tiên của nước ta (thành lập theo Nghị quyết 899/NQ-UBTVQH14 của Ủy ban Thường vụ Quốc hội).
+                </p>
+                <p>
+                    Được mệnh danh là <em>"Đảo Ngọc"</em>, Phú Quốc sở hữu đường bờ biển dài hơn 150km với hàng chục bãi tắm nguyên sơ tuyệt mỹ, thảm rừng nguyên sinh nhiệt đới thuộc Khu Dự trữ Sinh quyển Thế giới Kiên Giang (được UNESCO công nhận năm 2006), cùng nguồn lợi thủy hải sản trù phú bậc nhất phương Nam. Đặc biệt, từ <strong>tháng 10 đến tháng 4</strong> hàng năm, khi miền Bắc đón không khí lạnh, Phú Quốc bước vào <strong>Mùa Khô Vàng</strong> — thời điểm biển lặng như tờ, nắng vàng rực rỡ và những hoàng hôn ngũ sắc ngoạn mục níu chân du khách trong và ngoài nước.
+                </p>
+
+                <!-- 2. TỌA ĐỘ CHECK-IN -->
+                <h2 id="toa-do">📸 2. Top 10 Tọa Độ Check-in Biểu Tượng Của Phú Quốc</h2>
+                <p>Khám phá 10 điểm đến không thể bỏ lỡ đại diện cho thiên nhiên, văn hóa và lịch sử hào hùng của xứ đảo:</p>
+
+                <div class="spots-grid">
+
+                    <!-- Spot 1: Bãi Sao -->
+                    <div class="spot-card" data-legend="Bãi Sao nằm ở phía Đông Nam đảo Phú Quốc, thuộc phường An Thới. Bãi biển dài hơn 7km hình cánh cung mềm mại, nổi tiếng khắp thế giới nhờ bãi cát trắng mịn như kem tuyết và làn nước biển trong xanh màu ngọc bích. Tên gọi Bãi Sao xuất phát từ câu chuyện xưa: mỗi khi hoàng hôn buông xuống, hàng ngàn chú sao biển lại dạt vào bờ phủ trắng xóa dưới ánh trăng.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_bai_sao.webp" alt="Bãi Sao Phú Quốc bãi cát trắng mịn hàng dừa nghiêng">
+                            <span class="spot-card-tag">Bãi biển · Top Thế giới</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">1. Bãi Sao (Phường An Thới)</h3>
+                            <p class="spot-card-desc">Bãi biển biểu tượng số 1 với bãi cát trắng muốt như phấn, hàng dừa nghiêng bóng thơ mộng và làn nước ấm áp phẳng lặng như gương soi.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 2: Cáp treo Hòn Thơm -->
+                    <div class="spot-card" data-legend="Tuyến cáp treo 3 dây vượt biển Hòn Thơm nối thị trấn An Thới qua các đảo Hòn Dừa, Hòn Rỏi tới Hòn Thơm có tổng chiều dài 7.899,9 mét, được Tổ chức Kỷ lục Guinness trao chứng nhận Cáp treo ba dây vượt biển dài nhất thế giới. Từ cabin trên độ cao hàng trăm mét, du khách thu trọn vẹn vào tầm mắt bức tranh hàng trăm tàu thuyền đánh cá rực rỡ trên vịnh An Thới.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_cap_treo_hon_thom.webp" alt="Cáp treo Hòn Thơm vượt biển kỷ lục Guinness Phú Quốc">
+                            <span class="spot-card-tag">Kỷ lục Thế giới · Trải nghiệm</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">2. Cáp Treo Hòn Thơm (Quần đảo An Thới)</h3>
+                            <p class="spot-card-desc">Bay giữa tầng không ngắm trọn vẹn đại dương xanh thẳm, các hòn đảo hoang sơ và bến cảng ngập tràn sắc màu thuyền bè nhộn nhịp.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 3: Bãi Khem & Mũi Ông Đội -->
+                    <div class="spot-card" data-legend="Mũi Ông Đội nằm ở mũi cực Nam Phú Quốc là địa danh địa lý độc nhất vô nhị: một dải đất thon dài vươn ra biển nơi du khách có thể ngắm cả bình minh lẫn hoàng hôn tại cùng một vị trí. Cạnh đó là Bãi Khem (Bãi Kem) thoai thoải hình cánh quạt, từng được mạng lưới du lịch hàng đầu Flight Network xếp hạng top 50 bãi biển đẹp nhất hành tinh năm 2018.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_bai_kem_mui_ong_doi.webp" alt="Bãi Khem và Mũi Ông Đội ngắm bình minh và hoàng hôn Phú Quốc">
+                            <span class="spot-card-tag">Địa danh độc nhất · Nghỉ dưỡng</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">3. Bãi Khem & Mũi Ông Đội</h3>
+                            <p class="spot-card-desc">Thiên đường nghỉ dưỡng biệt lập với bờ biển hình trăng khuyết, rạn san hô nguyên sơ và địa thế ngắm trọn hai khoảnh khắc bình minh - hoàng hôn trên cùng một tọa độ.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 4: Làng chài Rạch Vẹm -->
+                    <div class="spot-card" data-legend="Rạch Vẹm nằm ở Bắc đảo cách trung tâm Dương Đông khoảng 25km. Làng chài vẫn giữ vẹn nguyên nét hoang sơ với những cây cầu gỗ mộc mạc bắc ra các nhà bè nổi giữa biển. Vào mùa khô (tháng 12 đến tháng 4), làn nước nông trong vắt là nơi trú ngụ của hàng đàn sao biển đỏ rực (Protoreaster nodosus) bò trên cát trắng tạo nên cảnh sắc thần tiên.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_rach_vem_sao_bien.webp" alt="Làng chài Rạch Vẹm vương quốc sao biển đỏ Phú Quốc">
+                            <span class="spot-card-tag">Vương quốc sao biển · Hoang sơ</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">4. Làng Chài Rạch Vẹm (Vương Quốc Sao Biển)</h3>
+                            <p class="spot-card-desc">Dạo bước trên những cây cầu gỗ mộc vươn ra biển, chiêm ngưỡng thế giới sao biển đỏ lấp lánh dưới làn nước trong vắt như pha lê.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 5: Sunset Sanato & Bãi Trường -->
+                    <div class="spot-card" data-legend="Bãi Trường (Long Beach) trải dài gần 20km dọc bờ Tây đảo, là bờ biển ngắm hoàng hôn rực rỡ nhất Việt Nam. Sunset Sanato Beach Club tọa lạc tại đây nổi tiếng với các công trình nghệ thuật sắp đặt siêu thực của kiến trúc sư Nikita Marshunok: đàn voi chân dài sải bước giữa biển, cổng trời đôi mặt người rẽ đôi ráng chiều hoàng hôn.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_sunset_sanato_bai_truong.webp" alt="Hoàng hôn Sunset Sanato Bãi Trường Phú Quốc">
+                            <span class="spot-card-tag">Check-in hoàng hôn · Nghệ thuật</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">5. Sunset Sanato & Bãi Trường (Dương Tơ)</h3>
+                            <p class="spot-card-desc">Thánh địa săn hoàng hôn triệu view với các tác phẩm điêu khắc đàn voi chân dài, cánh cổng trời huyền thoại in bóng giữa vòm trời cam rực rỡ.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 6: Làng chài cổ Hàm Ninh -->
+                    <div class="spot-card" data-legend="Làng chài Hàm Ninh nép mình dưới chân dãy núi Hàm Ninh cao hàng trăm mét, là một trong những làng chài cổ xưa nhất xứ đảo hình thành từ thế kỷ XIX. Làng nổi tiếng với cầu cảng nối dài ra biển khơi cạn, nghề lặn bắt hải sâm (đồn đột), ngọc trai và đặc sản ghẹ Hàm Ninh thịt chắc, ngọt thơm trứ danh cả nước.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_lang_chai_ham_ninh.webp" alt="Làng chài cổ Hàm Ninh Phú Quốc đón bình minh">
+                            <span class="spot-card-tag">Làng chài cổ · Đặc sản ghẹ</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">6. Làng Chài Cổ Hàm Ninh</h3>
+                            <p class="spot-card-desc">Ngắm bình minh đầu tiên trên đảo tại cầu cảng dài tít tắp, hòa vào nhịp sống mộc mạc của ngư dân và thưởng thức ghẹ Hàm Ninh tươi rói luộc tại chỗ.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 7: Vườn quốc gia Phú Quốc & Suối Tranh -->
+                    <div class="spot-card" data-legend="Vườn Quốc gia Phú Quốc chiếm hơn 50% diện tích đảo với hơn 31.400 ha rừng nguyên sinh, được UNESCO công nhận là vùng lõi Khu Dự trữ Sinh quyển Thế giới năm 2006. Nổi bật giữa tán rừng đại ngàn là Suối Tranh dài 15km bắt nguồn từ các khe nước nhỏ trên dãy Hàm Ninh, len lỏi qua ghềnh đá rêu phong tạo thành thác nước mát lành.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_vuon_quoc_gia_suoi_tranh.webp" alt="Suối Tranh rừng nguyên sinh Vườn Quốc gia Phú Quốc">
+                            <span class="spot-card-tag">Sinh thái · UNESCO</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">7. Vườn Quốc Gia Phú Quốc & Suối Tranh</h3>
+                            <p class="spot-card-desc">Trekking dưới tán rừng nguyên sinh xanh mướt ngút ngàn, đắm mình trong làn nước suối mát lạnh và lắng nghe tiếng chim rừng ríu rít chuyền cành.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 8: Dinh Cậu & Dinh Bà Thủy Long -->
+                    <div class="spot-card" data-legend="Dinh Cậu tọa lạc trên mỏm đá tự nhiên có hình thù kỳ thú vươn mình ra cửa biển sông Dương Đông từ thế kỷ XVII. Ngôi miếu cổ kính rêu phong dưới gốc cây sộp cổ thụ đại thụ, thờ Long Vương Thánh Mẫu và hai Cậu (Cậu Tài, Cậu Quý) – vị thần bảo hộ ngư dân vượt qua phong ba bão táp mỗi chuyến xuất hành khơi xa.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_dinh_cau_hoang_hon.webp" alt="Dinh Cậu Phú Quốc trên mỏm đá lúc hoàng hôn">
+                            <span class="spot-card-tag">Tâm linh · Biểu tượng đảo</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">8. Dinh Cậu & Dinh Bà (Dương Đông)</h3>
+                            <p class="spot-card-desc">Biểu tượng tâm linh linh thiêng trên mỏm đá sóng vỗ ngàn năm, nơi ngắm ráng chiều hoàng hôn rực rỡ và cầu bình an, thuận buồm xuôi gió.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 9: Di tích Trại giam Tù binh Phú Quốc -->
+                    <div class="spot-card" data-legend="Trại giam Tù binh Chiến tranh Phú Quốc (Nhà tù Cây Dừa) được Thủ tướng Chính phủ xếp hạng Di tích quốc gia đặc biệt năm 2014 theo Quyết định số 2408/QĐ-TTg. Trong chiến tranh, nơi đây giam giữ hơn 40.000 chiến sĩ cách mạng với các hình phạt tàn khốc như chuồng cọp kẽm gai, đóng đinh, chôn sống... minh chứng cho ý chí kiên trung bất khuất của dân tộc.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_nha_tu_phu_quoc.webp" alt="Di tích quốc gia đặc biệt Nhà tù Phú Quốc">
+                            <span class="spot-card-tag">Lịch sử · Di tích QG Đặc biệt</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">9. Di Tích Lịch Sử Nhà Tù Phú Quốc</h3>
+                            <p class="spot-card-desc">Nơi ghi dấu bản anh hùng ca bất tử của các chiến sĩ cách mạng kiên cường, địa chỉ đỏ giáo dục truyền thống yêu nước sâu sắc cho các thế hệ.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                    <!-- Spot 10: Nhà thùng Nước mắm & Vườn Tiêu -->
+                    <div class="spot-card" data-legend="Nghề làm nước mắm truyền thống Phú Quốc được Bộ Văn hóa, Thể thao và Du lịch ghi danh là Di sản văn hóa phi vật thể quốc gia năm 2021 và là sản phẩm đầu tiên của Việt Nam được EU bảo hộ chỉ dẫn địa lý. Những thùng gỗ bời lời khổng lồ ủ cá cơm than tươi ròng rã 12–15 tháng cho ra giọt nước mắm nhĩ màu cánh gián đậm đà 40–43 độ đạm tự nhiên.">
+                        <div class="spot-card-img">
+                            <img src="images/phuquoc_nha_thung_nuoc_mam_vuon_tieu.webp" alt="Nhà thùng nước mắm truyền thống và vườn tiêu Phú Quốc">
+                            <span class="spot-card-tag">Di sản Quốc gia · Làng nghề</span>
+                        </div>
+                        <div class="spot-card-body">
+                            <h3 class="spot-card-title">10. Nhà Thùng Nước Mắm & Vườn Tiêu Suối Đá</h3>
+                            <p class="spot-card-desc">Mục sở thị quy trình ủ chượp nước mắm nhĩ trứ danh 200 năm tuổi và dạo bước giữa những luống hồ tiêu trĩu hạt cay nồng nức tiếng.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 3. TRUYỀN THUYẾT & LỊCH SỬ -->
+                <h2 id="truyen-thuyet">✨ 3. Huyền Thoại & Dấu Ấn Lịch Sử Vùng Đất Đảo Ngọc</h2>
+                <p>Nằm nơi đầu sóng ngọn gió biên cương phía Tây Nam, Phú Quốc là chứng nhân lịch sử của nhiều biến động hào hùng và những truyền tích kỳ bí truyền đời:</p>
+
+                <div class="legend-box">
+                    <h3>👑 Dấu Tích Bôn Tẩu Của Chúa Nguyễn Ánh & Huyền Tích Giếng Tiên</h3>
+                    <p>
+                        Vào cuối thế kỷ XVIII, trong những năm tháng lánh nạn quân Tây Sơn truy đuổi, Chúa Nguyễn Ánh (sau này là Vua Gia Long sáng lập triều Nguyễn) đã nhiều lần cùng tàn quân chạy ra đảo Phú Quốc. Khi trú chân tại mũi cực Nam của đảo (nay là <strong>Mũi Ông Đội</strong>), đoàn quân lâm vào cảnh cùng cực kiệt quệ: lương thực cạn kiệt, xung quanh bốn bề là nước biển mặn chát, binh lính khát cháy cổ họng.
+                    </p>
+                    <p>
+                        Trong lúc tuyệt vọng, Chúa Nguyễn Ánh đã rút thanh gươm báu cắm sâu vào tảng đá hoa cương ven biển, ngửa mặt lên trời khấn nguyện: <em>"Nếu trời cho ta làm vua thì hãy ban cho quân sĩ nguồn nước ngọt cứu mạng!"</em>. Vừa dứt lời, khi ngài rút lưỡi gươm lên thì một mạch nước ngọt trong vắt, mát lịm kỳ diệu từ lòng đá ngầm phun trào xối xả. Kỳ lạ thay, mạch nước này nằm ngay sát mép sóng biển mặn nhưng suốt hàng trăm năm qua con nước thủy triều lên xuống chưa bao giờ làm nước bị nhiễm mặn và giếng cũng không bao giờ cạn nước. Người dân đời sau gọi nơi đây là <strong>Giếng Tiên</strong> (hay Giếng Ngự) và lập miếu thờ tưởng nhớ dấu chân mở cõi phương Nam.
+                    </p>
+                </div>
+
+                <div class="legend-box">
+                    <h3>🌊 Huyền Tích Dinh Cậu — Ngọn Hải Đăng Tâm Linh Của Ngư Phủ</h3>
+                    <p>
+                        Truyền thuyết dân gian xứ đảo kể lại, vào khoảng thế kỷ XVII, khi những lưu dân người Việt đầu tiên dong thuyền ra đảo Phú Quốc khai hoang lập ấp, nghề biển đối mặt vô vàn nguy hiểm bởi những cơn bão biển bất ngờ cuộn sóng dìm đắm tàu bè. Một ngày nọ, một chiếc thuyền đánh cá gặp bão dữ trôi dạt nhiều ngày giữa biển khơi mù mịt, cận kề cái chết.
+                    </p>
+                    <p>
+                        Trong lúc tuyệt vọng khấn cầu trời đất phù hộ, bỗng nhiên ngư dân nhìn thấy một mỏm đá nhô cao sừng sững nơi cửa biển với ánh sáng huyền ảo dẫn đường. Thuyền nương theo ánh sáng rẽ sóng vào bờ thoát nạn kỳ diệu. Cho rằng mỏm đá có linh khí trời ban che chở, dân làng cùng nhau góp công lập nên ngôi miếu thờ gọi là <strong>Dinh Cậu</strong>. Kể từ đó, trước mỗi chuyến ra khơi bám biển dài ngày hay mỗi dịp lễ hội âm lịch, bà con làng chài đều tề tựu về dâng hương khấn vái cầu xin sóng yên biển lặng, tôm cá đầy khoang.
+                    </p>
+                </div>
+
+                <!-- 4. PHÚ QUỐC THEO MÙA -->
+                <h2 id="theo-mua">🌸 4. Phú Quốc 4 Mùa Cảnh Sắc — Bản Giao Hưởng Biển Trời Tây Nam</h2>
+                <p>Khác biệt với đất liền, thiên nhiên Phú Quốc phân định thành hai mùa rõ nét cùng những chu kỳ sinh thái đặc hữu tạo nên vẻ đẹp riêng biệt theo từng thời điểm trong năm:</p>
+
+                <div class="seasons-container">
+
+                    <!-- MÙA 1: MÙA KHÔ BIỂN ÊM -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/phuquoc_mua_kho_bien_em.webp" alt="Mùa khô biển êm Phú Quốc từ tháng 11 đến tháng 4">
+                            <span class="season-badge">Tháng 11 – Tháng 4</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🌊 Mùa Khô Biển Êm — Thời Điểm Vàng Du Lịch Đảo Ngọc</h3>
+                            <p class="season-desc">Khi gió mùa Đông Bắc tràn về, Phú Quốc bước vào khoảng thời gian thiên nhiên hoàn mỹ nhất. Mặt biển phẳng lặng như gương soi, nước biển trong vắt nhìn thấu tận đáy san hô ở độ sâu 5–7 mét, bầu trời xanh ngắt và nắng vàng ấm áp. Đây là lúc lý tưởng nhất cho các tour cano 4 đảo, lặn ngắm san hô bằng ống thở (snorkeling) và lặn bình khí (scuba diving).</p>
+                            <div class="season-highlights">
+                                <strong>📍 Trải nghiệm đỉnh cao:</strong> Đi cano khám phá Hòn Mây Rút, Hòn Gầm Ghì, Hòn Móng Tay; đi bộ dưới đáy biển Seawalker.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 2: MÙA SAO BIỂN RẠCH VẸM -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/phuquoc_mua_sao_bien_rach_vem.webp" alt="Mùa sao biển đỏ nở rộ tại làng chài Rạch Vẹm">
+                            <span class="season-badge">Tháng 12 – Tháng 4</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>⭐ Mùa Sao Biển Đỏ Rạch Vẹm — Bức Tranh Thiên Nhiên Cổ Tích</h3>
+                            <p class="season-desc">Vào những tháng mùa khô, vùng biển Bắc đảo tại làng chài Rạch Vẹm và Mũi Hàm Rồng trở nên tĩnh lặng tuyệt đối. Hàng trăm chú sao biển đỏ rực dạt vào bãi cát trắng nông chỉ ngập ngang mắt cá chân, lấp lánh dưới làn nước trong suốt như hồ thủy tinh. Du khách có thể thỏa sức ngắm nhìn và chụp những bức hình kỷ niệm tuyệt mỹ.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Trải nghiệm đỉnh cao:</strong> Chụp ảnh cùng sao biển đỏ tự nhiên dưới nước (tuyệt đối không nhấc lên khỏi mặt nước), ăn hải sản tươi sống trên nhà bè Rạch Vẹm.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 3: MÙA THU HOẠCH TIÊU & SIM RỪNG -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/phuquoc_mua_thu_hoach_tieu_sim_rung.webp" alt="Mùa thu hoạch hồ tiêu và hái sim rừng Phú Quốc">
+                            <span class="season-badge">Tháng 1 – Tháng 3</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🌿 Mùa Thu Hoạch Hồ Tiêu & Rộ Trái Sim Rừng</h3>
+                            <p class="season-desc">Mùa xuân trên đảo là thời điểm các vườn tiêu Suối Đá, Khu Tượng chín đỏ chùm, người nông dân rộn ràng bắc thang hái tiêu sọ, tiêu chín hảo hạng thơm lừng. Cùng lúc đó, sườn đồi rừng nguyên sinh tím biếc mùa hoa sim kết trái, những mẻ rượu sim rừng truyền thống lên men thơm ngào ngạt khắp các cơ sở chưng cất trứ danh.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Trải nghiệm đỉnh cao:</strong> Thử nếm hạt tiêu chín cay nồng tại vườn, thưởng thức mật sim và rượu sim rừng hảo hạng 30 độ.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÙA 4: MÙA HOÀNG HÔN BÃI TRƯỜNG -->
+                    <div class="season-card">
+                        <div class="season-card-img">
+                            <img loading="lazy" src="images/phuquoc_mua_hoang_hon_bai_truong.webp" alt="Mùa hoàng hôn ngũ sắc rực rỡ Bãi Trường Phú Quốc">
+                            <span class="season-badge">Tháng 10 – Tháng 12</span>
+                        </div>
+                        <div class="season-card-body">
+                            <h3>🌅 Mùa Hoàng Hôn Ngũ Sắc — Khoảnh Khắc Ma Mị Nơi Chân Trời</h3>
+                            <p class="season-desc">Thời khắc giao mùa cuối năm mang đến những chiều hoàng hôn ngoạn mục nhất Phú Quốc. Bầu trời Bãi Trường, Dinh Cậu chuyển biến kỳ diệu từ vàng mật sang hồng phấn, đỏ tía rồi tím thẫm hòa quyện cùng sóng biển rực rỡ, tạo nên khung cảnh lãng mạn vô song làm say đắm mọi trái tim lữ hành.</p>
+                            <div class="season-highlights">
+                                <strong>📍 Trải nghiệm đỉnh cao:</strong> Ngồi bar bãi biển chill nhạc acoustic tại OCSEN Beach Bar hoặc Sunset Sanato, ngắm mặt trời đỏ ối chìm dần đáy biển.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 5. PHƯƠNG TIỆN & LỘ TRÌNH -->
+                <h2 id="di-chuyen">✈️ 5. Phương Tiện & Lộ Trình Di Chuyển Đến Phú Quốc</h2>
+                <p>Phú Quốc sở hữu cảng hàng không quốc tế và hệ thống cảng biển nước sâu hiện đại, kết nối vô cùng thuận tiện:</p>
+
+                <h3>1. Đường Hàng Không (Nhanh chóng & Thuận tiện nhất)</h3>
+                <ul>
+                    <li><strong>Từ Hà Nội:</strong> Vietnam Airlines, Vietjet Air, Bamboo Airways khai thác chuyến bay thẳng hàng ngày đến sân bay quốc tế Phú Quốc (PQC). Thời gian bay khoảng <strong>2 giờ 10 phút</strong>.</li>
+                    <li><strong>Từ TP. Hồ Chí Minh:</strong> Chuyến bay thẳng chỉ mất khoảng <strong>55 – 60 phút</strong>, tần suất hơn 20 chuyến/ngày từ sáng sớm đến đêm khuya.</li>
+                    <li><strong>Từ Hải Phòng, Đà Nẵng, Cần Thơ:</strong> Các chặng bay thẳng khứ hồi đều đặn 3–5 chuyến/tuần.</li>
+                </ul>
+
+                <h3>2. Đường Thủy (Tàu cao tốc từ đất liền)</h3>
+                <ul>
+                    <li><strong>Tuyến Rạch Giá → Phú Quốc:</strong> Tàu cao tốc Superdong hoặc Phú Quốc Express (thời gian chạy khoảng <strong>2 giờ 15 phút – 2 giờ 30 phút</strong>). Cập cảng Bãi Vòng.</li>
+                    <li><strong>Tuyến Hà Tiên → Phú Quốc:</strong> Tàu cao tốc chỉ mất khoảng <strong>1 giờ 15 phút</strong>. Có phà cao tốc Thạnh Thới chuyên chở được cả ô tô cá nhân 4–7 chỗ ra đảo.</li>
+                </ul>
+
+                <!-- 6. BẢNG GIÁ VÉ & DỊCH VỤ -->
+                <h2 id="gia-ve">🎟️ 6. Bảng Giá Vé Tham Quan & Dịch Vụ Du Lịch Phú Quốc</h2>
+                <p>Dưới đây là bảng giá vé tham khảo các điểm du lịch tiêu biểu tại TP. Phú Quốc:</p>
+
+                <div class="table-wrap">
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Điểm đến / Dịch vụ trải nghiệm</th>
+                                <th>Mức giá tham khảo</th>
+                                <th>Ghi chú & Chính sách vé</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vé Cáp treo Hòn Thơm khứ hồi (kèm công viên nước Aquatopia)</td>
+                                <td><span class="price-tag">650.000 – 700.000 VNĐ / người lớn</span></td>
+                                <td>Trẻ em (1m – 1m4): 500.000 VNĐ; Dưới 1m miễn phí</td>
+                            </tr>
+                            <tr>
+                                <td>Tour Cano 4 đảo (Hòn Móng Tay, Gầm Ghì, Mây Rút, cáp treo)</td>
+                                <td><span class="price-tag">850.000 – 1.100.000 VNĐ / khách</span></td>
+                                <td>Bao gồm cano SB, ăn trưa hải sản 8 món, chụp ảnh sup flycam</td>
+                            </tr>
+                            <tr>
+                                <td>Vé vào cổng Sunset Sanato Beach Club</td>
+                                <td><span class="price-tag">100.000 VNĐ / người lớn</span></td>
+                                <td>Bao gồm vé chụp ảnh các tác phẩm nghệ thuật bên bờ biển</td>
+                            </tr>
+                            <tr>
+                                <td>Vé tham quan Suối Tranh (Vườn quốc gia)</td>
+                                <td><span class="price-tag">30.000 VNĐ / người</span></td>
+                                <td>Bao gồm bảo hiểm tham quan rừng và suối</td>
+                            </tr>
+                            <tr>
+                                <td>Di tích Lịch sử Nhà tù Phú Quốc</td>
+                                <td><span class="price-tag">Miễn phí vào cửa</span></td>
+                                <td>Thuê hướng dẫn viên thuyết minh: 100.000 – 150.000 VNĐ / đoàn</td>
+                            </tr>
+                            <tr>
+                                <td>Dinh Cậu, Dinh Bà, Làng chài Rạch Vẹm, Bãi Sao</td>
+                                <td><span class="price-tag">Miễn phí vào cửa</span></td>
+                                <td>Chi phí tự túc (thuê ghế dù bãi biển khoảng 50.000 – 100.000 VNĐ)</td>
+                            </tr>
+                            <tr>
+                                <td>Nhà thùng Nước mắm Khải Hoàn / Phụng Hưng</td>
+                                <td><span class="price-tag">Miễn phí tham quan</span></td>
+                                <td>Thử nếm nước mắm nhĩ và mua đặc sản làm quà</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="price-disclaimer-note">
+                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
+                </p>
+
+                <!-- 7. ẨM THỰC ĐẶC SẢN -->
+                <h2 id="am-thuc">🍲 7. Cẩm Nang Ẩm Thực Đặc Sản Đảo Ngọc Phú Quốc</h2>
+                <p>Ẩm thực Phú Quốc nức tiếng cả nước nhờ độ tươi ngon tuyệt đối của hải sản vừa đánh bắt từ biển sâu cùng vị cay nồng đặc trưng của hạt tiêu hồ đảo:</p>
+
+                <div class="food-grid">
+
+                    <!-- Món 1: Gỏi cá trích -->
+                    <div class="food-card">
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/phuquoc_mon_goi_ca_trich.webp" alt="Gỏi cá trích đặc sản số 1 Phú Quốc">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🐟 Gỏi cá trích Phú Quốc</h4>
+                            <p>Đặc sản đệ nhất xứ đảo! Những lát cá trích tươi vừa gỡ lưới lóc bỏ xương, bóp tái cùng chanh ớt, trộn dừa nạo béo bùi, cuốn bánh tráng rau rừng và chấm nước mắm me đậu phộng đậm đà ngây ngất.</p>
+                        </div>
+                    </div>
+
+                    <!-- Món 2: Bún quậy Kiến Xây -->
+                    <div class="food-card">
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/phuquoc_mon_bun_quay_kien_xay.webp" alt="Tô bún quậy Kiến Xây tươi ngon trứ danh Phú Quốc">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🍜 Bún quậy Kiến Xây</h4>
+                            <p>Trải nghiệm ẩm thực độc đáo khi sợi bún được ép tươi tại chỗ, chả tôm cá quết sống dán quanh thành tô chan nước lèo nóng hổi làm chín tái, ăn kèm chén muối ớt tắc tự pha theo khẩu vị riêng.</p>
+                        </div>
+                    </div>
+
+                    <!-- Món 3: Ghẹ Hàm Ninh -->
+                    <div class="food-card">
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/phuquoc_mon_ghe_ham_ninh.webp" alt="Ghẹ Hàm Ninh hấp chấm muối tiêu chanh Phú Quốc">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🦀 Ghẹ Hàm Ninh hấp</h4>
+                            <p>Ghẹ Hàm Ninh kích thước vừa phải nhưng thịt chắc nịch, ngọt đậm đà tự nhiên và gạch béo ngậy. Ghẹ tươi luộc sả chấm đĩa muối tiêu chanh hạt tiêu Phú Quốc cay nồng là chuẩn vị đảo ngọc.</p>
+                        </div>
+                    </div>
+
+                    <!-- Món 4: Nhum biển nướng mỡ hành -->
+                    <div class="food-card">
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/phuquoc_mon_nhum_bien_nuong_mo_hanh.webp" alt="Nhum biển nướng mỡ hành đậu phộng béo bùi Phú Quốc">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🦔 Nhum biển nướng mỡ hành</h4>
+                            <p>Được ví như "nhân sâm của biển", nhum bổ đôi nướng trên than hồng thơm nức mũi, thêm thìa mỡ hành xèo xèo và đậu phộng giòn rụm, xúc từng thìa trứng nhum béo ngậy tan ngay đầu lưỡi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Món 5: Còi biên mai nướng muối ớt -->
+                    <div class="food-card">
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/phuquoc_mon_coi_bien_mai_nuong.webp" alt="Còi biên mai nướng muối ớt cay giòn Phú Quốc">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🍢 Còi biên mai nướng muối ớt</h4>
+                            <p>Biên mai là loài sò biển hình tam giác cắm sâu dưới đáy cát. Phần còi tròn bằng đồng xu dày thịt, ướp muối hạt to và ớt đỏ cay xé nướng than hoa vừa chín tới dai ngọt giòn sần sật.</p>
+                        </div>
+                    </div>
+
+                    <!-- Món 6: Rượu sim rừng & Bánh khéo -->
+                    <div class="food-card">
+                        <div class="food-card-img">
+                            <img loading="lazy" src="images/phuquoc_mon_ruou_sim_banh_kheo.webp" alt="Rượu sim rừng và bánh khéo đặc sản quà tặng Phú Quốc">
+                        </div>
+                        <div class="food-card-body">
+                            <h4>🍷 Rượu sim rừng & Bánh khéo</h4>
+                            <p>Rượu sim mật lên men tự nhiên từ trái sim rừng tím thẫm có vị ngọt chát thanh tao tốt cho tiêu hóa, kết hợp cùng những chiếc bánh khéo nhỏ nhắn tạo hình vỏ sò nhân dừa đậu xanh nức tiếng.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 8. KINH NGHIỆM DU LỊCH AN TOÀN -->
+                <h2 id="kinh-nghiem">🗓️ 8. Kinh Nghiệm Du Lịch Biển Đảo Phú Quốc An Toàn & Văn Minh</h2>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>Bảo vệ sinh thái sao biển Rạch Vẹm:</strong> Tuyệt đối <strong>KHÔNG nhấc sao biển lên khỏi mặt nước</strong> hoặc phơi sao biển lên cát khô để chụp ảnh "sống ảo". Sao biển là loài sinh vật mẫn cảm, việc tiếp xúc không khí trên 10–15 giây sẽ khiến chúng bị ngạt thở và chết hàng loạt. Hãy chụp ảnh sao biển nhẹ nhàng dưới làn nước trong!</p>
+                </div>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>An toàn tắm biển & Bảo vệ san hô:</strong> Khi lặn ngắm san hô (snorkeling), tuyệt đối không giẫm đạp, bẻ cành san hô hoặc đứng lên các rạn san hô sống. Luôn mặc áo phao cứu sinh khi tham gia các hoạt động ca nô trên biển và chú ý cờ báo hiệu dòng chảy xa bờ tại các bãi tắm công cộng.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Thời điểm di chuyển & Chống say sóng:</strong> Nếu đi tàu cao tốc từ Rạch Giá/Hà Tiên ra đảo, hãy uống thuốc chống say sóng trước 30 phút. Nếu đi mùa khô từ tháng 10 đến tháng 4, biển êm dịu phẳng lặng hầu như không có cảm giác sóng lắc.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p>📌 <strong>Chọn bãi tắm theo mùa gió:</strong> Vào mùa khô (tháng 10 – tháng 4), bờ Tây (Bãi Trường, Dinh Cậu) và bờ Bắc (Rạch Vẹm) sóng êm nhất. Vào mùa hè (tháng 5 – tháng 9), nếu bờ Tây có sóng to, hãy chuyển sang các bãi biển bờ Đông (Bãi Sao, Bãi Khem) nước vẫn trong xanh văn vắt và lặng sóng!</p>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 GO FAR — Cẩm nang du lịch Việt Nam chất lượng cao. Hình ảnh minh họa 100% AI sinh thực nghiệm.</p>
+        <p style="margin-top: 0.5rem;"><a href="index.html">← Quay lại trang chủ GO FAR</a></p>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+        <div class="lightbox-caption">
+            <h3 class="lightbox-title" id="lightboxTitle"></h3>
+            <p class="lightbox-desc" id="lightboxDesc"></p>
+            <div class="lightbox-legend" id="lightboxLegend" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lightbox functionality for Spots, Seasons, and Food Cards
+            const clickableCards = document.querySelectorAll('.spot-card, .season-card, .food-card');
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const modalTitle = document.getElementById('lightboxTitle');
+            const modalDesc = document.getElementById('lightboxDesc');
+            const modalLegend = document.getElementById('lightboxLegend');
+            const modalClose = document.getElementById('lightboxClose');
+
+            clickableCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt || '';
+
+                    // Get title and desc
+                    const titleEl = card.querySelector('.spot-card-title, h3, h4');
+                    const descEl = card.querySelector('.spot-card-desc, .season-desc, p');
+                    
+                    modalTitle.textContent = titleEl ? titleEl.textContent : '';
+                    modalDesc.textContent = descEl ? descEl.textContent : '';
+
+                    // Check legend
+                    const legend = card.getAttribute('data-legend');
+                    if (legend) {
+                        modalLegend.innerHTML = '<strong>✨ Huyền tích & Dấu ấn:</strong> ' + legend;
+                        modalLegend.style.display = 'block';
+                    } else {
+                        modalLegend.style.display = 'none';
+                    }
+
+                    modal.style.display = 'flex';
+                });
+            });
+
+            // Close lightbox
+            modalClose.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Sticky TOC highlight
+            const sections = document.querySelectorAll('.article-main h2[id]');
+            const navLinks = document.querySelectorAll('.sidebar-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
