@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hà Giang — Cực Bắc Tổ quốc & Cao nguyên đá Đồng Văn | GO FAR</title>
-    <meta name="description" content="Cẩm nang du lịch Hà Giang chi tiết: Đèo Mã Pí Lèng, sông Nho Quế, hẻm Tu Sản, dinh Vua Mèo, cột cờ Lũng Cú. Lịch trình, đi lại, món ăn đặc sản.">
+    <title>Hà Giang — Miền Đá Nở Hoa & Cột Mốc Cực Bắc Tổ Quốc | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Hà Giang toàn diện: Đèo Mã Pí Lèng, sông Nho Quế xanh ngọc bích, Cột cờ Quốc gia Lũng Cú, Dinh Vua Mèo, ruộng bậc thang Hoàng Su Phì, 4 mùa hoa tam giác mạch, thắng cố & cháo ấu tẩu.">
     <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +13,16 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg: #111E28;
+            --bg-sec: #182C3D;
+            --bg-card: rgba(24, 44, 61, 0.88);
             --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent: #FF8C32;
-            --accent-gold: #fbbf24;
+            --accent: #F97316;
+            --accent-gold: #FBBF24;
+            --accent-pink: #EC4899;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -31,13 +32,14 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* NAV */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: linear-gradient(135deg, #111E28 0%, #1a3347 50%, #111E28 100%);
             border-bottom: 2px solid;
-            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            border-image: linear-gradient(90deg, transparent, #F97316, #FBBF24, transparent) 1;
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -68,8 +70,8 @@
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
         }
         .hero img {
@@ -80,7 +82,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(17,30,40,0.25) 0%, rgba(17,30,40,0.92) 100%);
         }
         .hero-content {
             position: absolute;
@@ -93,169 +95,288 @@
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
-            border-radius: 99px;
-            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            color: #fff;
         }
-        .hero-meta-line {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+        .hero-subtitle {
+            font-size: 1.1rem;
             color: var(--text-sec);
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            max-width: 860px;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
 
-        /* BREADCRUMB */
-        .breadcrumb {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
-
-        /* CONTENT LAYOUT */
+        /* ARTICLE LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
             padding: 0 1.5rem 4rem;
         }
+
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
 
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent);
+            padding-left: 0.4rem;
+        }
+
         /* MAIN CONTENT */
+        .article-main {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .article-main section {
+            margin-bottom: 3.5rem;
+        }
         .article-main h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 1.6rem;
+            color: #fff;
+            margin: 0 0 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid rgba(249, 115, 22, 0.35);
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
+        .article-main h2 .icon { font-size: 1.4rem; }
         .article-main h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            margin: 1.5rem 0 0.8rem;
         }
-
         .article-main p {
+            margin-bottom: 1.2rem;
             color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .article-main strong { color: #fff; font-weight: 600; }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
+            background: rgba(249, 115, 22, 0.08);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
 
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
+        .highlight-box {
+            background: rgba(249, 115, 22, 0.08);
+            border: 1px solid rgba(249, 115, 22, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
         }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
+        .highlight-box h4 {
             color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+
+        .legend-box {
+            background: rgba(251, 191, 36, 0.06);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-box p { margin: 0; font-size: 0.95rem; color: #e2e8f0; }
+
+        /* SEASONS GRID */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .season-card {
+            background: rgba(17, 30, 40, 0.7);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(249, 115, 22, 0.5);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .season-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.05);
+        }
+        .season-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(17, 30, 40, 0.85);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
             font-weight: 600;
-            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251,191,36,0.3);
+        }
+        .season-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .season-time {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+        .season-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
-
-        /* PREMIUM CHECKIN CARDS */
+        /* CHECKIN GRID */
         .checkin-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
         .dest-card {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-sec);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
+            cursor: pointer;
         }
         .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+            border-color: rgba(249, 115, 22, 0.4);
         }
         .dest-card.double-col {
             grid-column: span 2;
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
         }
         .dest-card.single-col {
             grid-column: span 1;
@@ -271,16 +392,16 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            filter: brightness(0.9) saturate(1.15);
         }
         .dest-card:hover .dest-card-img img {
             transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+            filter: brightness(0.78) saturate(1.25);
         }
         .dest-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            background: linear-gradient(180deg, transparent 35%, rgba(17, 30, 40, 0.96) 100%);
             z-index: 1;
         }
         .dest-card-content {
@@ -295,145 +416,156 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
         .dest-card-tags .tag {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
+            color: #fff;
+            padding: 0.25rem 0.65rem;
             border-radius: var(--radius-sm);
-            color: #fff !important;
-            font-weight: 600;
+            backdrop-filter: blur(4px);
         }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
         }
         .dest-card-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
-            color: var(--text) !important;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .dest-card-desc {
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             color: var(--text-sec);
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            line-clamp: 2;
             -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
+            overflow: hidden;
         }
-        .dest-card-meta {
+
+        /* CULINARY SHOWCASE */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .culinary-card {
+            background: rgba(17, 30, 40, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            flex-direction: column;
+            cursor: pointer;
         }
-        .dest-rating {
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(249, 115, 22, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.05);
+        }
+        .culinary-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+        .culinary-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            flex: 1;
+        }
+        .culinary-price {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
-        .dest-rating .stars {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        .dest-rating span:last-child {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .dest-reviews {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .dest-card-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 0.4rem;
-        }
-        
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
 
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
+        /* TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
         }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
+            background: rgba(24, 44, 61, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
+        .info-table th {
+            background: rgba(249, 115, 22, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-sec);
-            margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
+        .disclaimer-box {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.82rem;
-            transition: color 0.2s;
+            margin-top: 0.8rem;
+            font-style: italic;
         }
-        .toc-list a:hover { color: var(--accent); }
 
         /* FOOTER */
         .article-footer {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.06);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             flex-wrap: wrap;
             gap: 1rem;
@@ -441,881 +573,768 @@
         .article-footer a { color: var(--accent); text-decoration: none; }
         .credits { font-style: italic; }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
-        }
-
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
-        }
-
-        /* SEASONS SHOWCASE */
-        .seasons-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin: 2rem 0 3rem;
-        }
-        .season-card {
-            display: grid;
-            grid-template-columns: 360px 1fr;
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            cursor: zoom-in;
-        }
-        .season-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 140, 50, 0.4);
-            box-shadow: 0 16px 40px rgba(255, 140, 50, 0.15);
-        }
-        .season-card-img {
-            position: relative;
-            min-height: 240px;
-            overflow: hidden;
-        }
-        .season-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-            display: block;
-        }
-        .season-card:hover .season-card-img img {
-            transform: scale(1.06);
-        }
-        .season-badge {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: linear-gradient(135deg, #FF8C32 0%, #fbbf24 100%);
-            color: #1a1a1a;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.35rem 0.85rem;
-            border-radius: 99px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .season-card-body {
-            padding: 1.75rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .season-card-body h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            color: #fff;
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-        .season-desc {
-            font-size: 0.9rem;
-            color: var(--text-sec);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .season-highlights {
-            background: rgba(255, 140, 50, 0.06);
-            border-left: 3px solid var(--accent);
-            padding: 0.75rem 1rem;
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            font-size: 0.85rem;
-            color: var(--text-sec);
-            line-height: 1.5;
-        }
-        .season-highlights strong {
-            color: var(--accent-gold);
-        }
-        @media (max-width: 900px) {
-            .season-card {
-                grid-template-columns: 1fr;
-            }
-            .season-card-img {
-                height: 220px;
-                min-height: auto;
-            }
-            .season-card-body {
-                padding: 1.25rem 1.5rem;
-            }
-        }
-
-        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        /* LIGHTBOX MODAL */
         .lightbox-modal {
             display: none;
             position: fixed;
             z-index: 9999;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
+            background-color: rgba(9, 17, 24, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
             box-sizing: border-box;
-            background-color: rgba(11, 22, 34, 0.96);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            align-items: center;
-            flex-direction: column;
         }
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 52vh;
+        .lightbox-dialog {
+            position: relative;
+            max-width: 960px;
+            margin: 2rem auto;
+            background: rgba(24, 44, 61, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
             animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .lightbox-caption {
-            margin: auto;
+        .lightbox-img-wrap {
+            width: 100%;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
             display: block;
-            width: 85%;
-            max-width: 800px;
-            text-align: center;
-            color: var(--text-sec);
-            padding: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-caption-wrap {
+            padding: 1.8rem 2rem;
+            background: linear-gradient(180deg, rgba(24, 44, 61, 0.9) 0%, rgba(17, 30, 40, 0.95) 100%);
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+        .lightbox-caption {
+            color: #e2e8f0;
+            font-size: 0.96rem;
+            line-height: 1.75;
         }
         .lightbox-close {
-            position: fixed;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #fff;
+            font-size: 32px;
             font-weight: bold;
-            transition: 0.3s;
             cursor: pointer;
+            z-index: 10;
+            line-height: 1;
+            transition: color 0.2s, transform 0.2s;
+            background: rgba(0, 0, 0, 0.5);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: var(--accent);
-            text-decoration: none;
+        .lightbox-close:hover {
+            color: var(--accent-gold);
+            transform: scale(1.1);
         }
 
         @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
+            from { transform: scale(0.92); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
 
-        /* LEGEND SECTION */
-        .legend-section {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin: 1.5rem 0 2.5rem;
-        }
-        .legend-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .legend-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255,140,50,0.3);
-        }
-        .legend-header {
-            position: relative;
-            height: 180px;
-            overflow: hidden;
-        }
-        .legend-header img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .legend-card:hover .legend-header img {
-            transform: scale(1.05);
-        }
-        .legend-title-box {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(22, 44, 62, 0.9) 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 1.2rem 1.5rem;
-        }
-        .legend-title-box h3 {
-            color: var(--text) !important;
-            font-size: 1.25rem !important;
-            margin: 0 !important;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-        }
-        .legend-body {
-            padding: 1.5rem;
-        }
-        .legend-body p {
-            font-size: 0.9rem !important;
-            line-height: 1.7;
-            margin-bottom: 0.8rem;
-        }
-        .legend-body p:last-child {
-            margin-bottom: 0;
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .checkin-grid { grid-template-columns: 1fr; }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1;
+                aspect-ratio: 16/9;
+            }
+            .seasons-grid, .culinary-grid { grid-template-columns: 1fr; }
+            .hero { height: 45vh; }
+            .article-main { padding: 1.5rem; }
         }
     </style>
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-ha-giang.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-ha-giang.html">
-    <meta property="og:title" content="Hà Giang — Cực Bắc Tổ quốc & Cao nguyên đá Đồng Văn | GO FAR">
-    <meta property="og:description" content="Cẩm nang du lịch Hà Giang chi tiết: Đèo Mã Pí Lèng, sông Nho Quế, hẻm Tu Sản, dinh Vua Mèo, cột cờ Lũng Cú. Lịch trình, đi lại, món ăn đặc sản.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/hagiang_ma_pi_leng.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-ha-giang.html">
-    <meta property="twitter:title" content="Hà Giang — Cực Bắc Tổ quốc & Cao nguyên đá Đồng Văn | GO FAR">
-    <meta property="twitter:description" content="Cẩm nang du lịch Hà Giang chi tiết: Đèo Mã Pí Lèng, sông Nho Quế, hẻm Tu Sản, dinh Vua Mèo, cột cờ Lũng Cú. Lịch trình, đi lại, món ăn đặc sản.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/hagiang_ma_pi_leng.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Hà Giang",
-    "description": "Cẩm nang du lịch Hà Giang chi tiết: Đèo Mã Pí Lèng, sông Nho Quế, hẻm Tu Sản, dinh Vua Mèo, cột cờ Lũng Cú. Lịch trình, đi lại, món ăn đặc sản.",
-    "image": "https://gofarvietnam.com/images/hagiang_ma_pi_leng.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Miền Bắc",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
-        }
-    }
-}
-    </script>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/hagiang_ma_pi_leng.webp" alt="Hà Giang — Cung đường hạnh phúc">
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/hagiang_hero.webp" alt="Toàn cảnh Đèo Mã Pí Lèng và Sông Nho Quế Hà Giang">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Miền Bắc · Núi rừng Đông Bắc</span>
-            <h1>Hà Giang<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Cung đường hạnh phúc</span></h1>
-            <div class="hero-meta-line">
-                <span class="rating">⭐ 4.9 / 5.0</span>
-                <span>·</span>
-                <span>Cách Hà Nội ~300 km</span>
-                <span>·</span>
-                <span>Cập nhật: 08/2026</span>
-            </div>
+            <span class="hero-tag">🔥 Đệ nhất hùng quan • Công viên Địa chất UNESCO</span>
+            <h1>Hà Giang — Miền Đá Nở Hoa & Nơi Địa Đầu Tổ Quốc</h1>
+            <p class="hero-subtitle">Vùng đất kỳ vĩ nơi cực Bắc, nơi những dãy núi đá tai mèo dựng đứng hòa cùng màu xanh ngọc bích của dòng Nho Quế và ý chí sắt đá của con người trên cung đường Hạnh Phúc.</p>
         </div>
-    </section>
+    </header>
 
-    <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Hà Giang</strong>
-    </div>
-
+    <!-- CONTENT LAYOUT -->
     <div class="article-layout">
         <div class="dashboard-layout">
-            <!-- MAIN ARTICLE -->
-            <article class="article-main">
-
-                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-                <p>Hà Giang nằm ở cực Bắc Việt Nam, cách Hà Nội khoảng 300km. Nơi đây nổi tiếng thế giới với Công viên địa chất toàn cầu Cao nguyên đá Đồng Văn - một vùng đá xám trập trùng hùng vĩ, và con đường Hạnh Phúc huyền thoại được mở bằng sức người của hàng vạn thanh niên xung phong.</p>
-                <p>Đến Hà Giang, bạn sẽ được thưởng ngoạn những ruộng bậc thang Hoàng Su Phì uốn lượn lúa chín vàng, dốc Thẩm Mã quanh co, đèo Mã Pí Lèng hiểm trở bậc nhất Việt Nam và nét văn hóa vùng cao độc đáo của đồng bào các dân tộc thiểu số H'Mông, Dao, Lô Lô.</p>
-
-                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
-                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Hà Giang. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
-
-                <div class="checkin-grid">
-                    
-                    <div class="dest-card double-col" data-legend="Mã Pì Lèng (tiếng H'Mông cổ nghĩa là 'Sống mũi ngựa') mô phỏng thế núi dốc đứng hiểm trở. Nơi đây từng là bức tường thành đá ngăn cách thung lũng hiểm trở vùng cao phía Bắc thủa hoang sơn. Vào những năm 1959–1965, hàng vạn thanh niên xung phong thuộc 8 tỉnh miền Bắc đã treo mình trên vách đá ròng rã suốt 6 năm, đục từng thớ đá xám bằng tay không để khai phá Con đường Hạnh Phúc huyền thoại, giải phóng giao thương cho rẻo cao biên giới.">
-                        <div class="dest-card-img">
-                            <img src="images/hagiang_ma_pi_leng.webp" alt="Đèo Mã Pí Lèng" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Hùng vĩ</span>
-                                <span class="tag">Đèo dốc</span>
-                            </div>
-                            <h3 class="dest-card-title">Đèo Mã Pí Lèng</h3>
-                            <p class="dest-card-desc">Một trong tứ đại đỉnh đèo của Việt Nam với cung đường uốn lượn vắt vẻo lưng chừng núi đá dựng đứng kỳ vĩ.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Hẻm vực Tu Sản được ghi nhận là hẻm vực kiến tạo karst sâu nhất Đông Nam Á với vách đá dựng đứng cao tới 700-800m. Địa chất vùng cao nguyên đá Đồng Văn hình thành qua hàng trăm triệu năm dâu bể kiến tạo địa chất. Dân gian địa phương lưu truyền huyền thoại thần Sét dùng lưỡi gươm thiên giáng xuống chia đôi ngọn núi chặn dòng lũ thủa xưa, khai mở dòng sông Nho Quế xanh lục bảo hiền hòa chảy qua nuôi dưỡng bờ cõi rẻo biên cương.">
-                        <div class="dest-card-img">
-                            <img src="images/hagiang_nho_que.webp" alt="Sông Nho Quế & Hẻm Tu Sản" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Kỳ quan</span>
-                                <span class="tag">Dòng sông</span>
-                            </div>
-                            <h3 class="dest-card-title">Sông Nho Quế & Hẻm Tu Sản</h3>
-                            <p class="dest-card-desc">Dòng sông xanh lục bảo lững lờ trôi dưới lòng hẻm vực Tu Sản sâu và hiểm trở bậc nhất Đông Nam Á.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Đỉnh núi Rồng (Long Sơn) Lũng Cú nằm ở độ cao khoảng 1.470m so với mực nước biển, trấn giữ cực Bắc của Tổ quốc. Tên gọi Lũng Cú trong tiếng H'Mông nghĩa là 'thung lũng ngô', nhưng dân gian ghép âm với từ Hán-Việt 'Long Cổ' (Trống của Rồng) gắn với sự tích hoàng đế Quang Trung đặt chiếc trống đồng khổng lồ tại biên ải, mỗi canh giờ đều gióng trống đanh thép để khẳng định chủ quyền cương vực. Hai hồ nước tự nhiên dưới chân núi tương truyền là đôi mắt rồng thiêng để lại bảo hộ nguồn nước ngọt cho dân bản rẻo cao.">
-                        <div class="dest-card-img">
-                            <img src="images/hagiang_lung_cu.webp" alt="Cột cờ Lũng Cú" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Cực Bắc</span>
-                                <span class="tag">Tâm linh</span>
-                            </div>
-                            <h3 class="dest-card-title">Cột cờ Lũng Cú</h3>
-                            <p class="dest-card-desc">Cột cờ quốc gia linh thiêng ngự trị trên đỉnh núi Rồng, biểu tượng chủ quyền nơi cực Bắc Tổ quốc.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card double-col" data-legend="Xây dựng cuối thế kỷ XIX tại thung lũng Sà Phìn, khu dinh thự trị giá 15 vạn đồng bạc trắng Đông Dương thời thuộc Pháp (tương đương 150 tỷ đồng ngày nay) của thủ lĩnh họ Vương - Vương Chính Đức. Công trình mang kiến trúc giao thoa Pháp - Hoa - H'Mông, tọa lạc trên gò đất có thế phong thủy 'Quy Hải' (mai rùa vàng nổi lên giữa thung lũng), đóng vai trò như một pháo đài phòng thủ kiên cố bảo vệ biên ải Đông Bắc qua nhiều biến động lịch sử.">
-                        <div class="dest-card-img">
-                            <img src="images/hagiang_vuong_mansion.webp" alt="Dinh thự họ Vương (Dinh Vua Mèo)" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Lịch sử</span>
-                                <span class="tag">Kiến trúc</span>
-                            </div>
-                            <h3 class="dest-card-title">Dinh thự họ Vương (Dinh Vua Mèo)</h3>
-                            <p class="dest-card-desc">Kiến trúc nghệ thuật độc đáo giao thoa Pháp - Hoa và H'Mông cổ kính tồn tại qua trăm năm lịch sử.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Ngôi nhà trình tường đất hơn 80 năm tuổi của gia tộc ông Mua Súa Páo (từng là đại úy trong quân đội Vua Mèo) tại làng Lũng Cẩm. Ngôi nhà đại diện cho tinh hoa kiến trúc và lối sống cổ kính của người H'Mông vùng cao cực Bắc với tường đất nện dày bản, mái ngói âm dương xám phủ rêu phong cùng bờ rào đá xếp tay tỉ mỉ – nơi lưu giữ những giá trị văn hóa bản địa nguyên bản.">
-                        <div class="dest-card-img">
-                            <img src="images/hagiang_pao_house.webp" alt="Nhà của Pao" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Điện ảnh</span>
-                                <span class="tag">Bản làng</span>
-                            </div>
-                            <h3 class="dest-card-title">Nhà của Pao</h3>
-                            <p class="dest-card-desc">Ngôi nhà trình tường đất truyền thống cổ kính của người H'Mông tại làng văn hóa Lũng Cẩm yên bình.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Được UNESCO công nhận là Công viên Địa chất Toàn cầu, nơi lưu dấu tích lịch sử vỏ Trái Đất cách đây từ 500 triệu năm với các hóa thạch biển cổ đại. Cảnh quan đá tai mèo trập trùng hiểm trở không chỉ là thách thức tự nhiên mà lịch sử dựng nước coi đây là 'vạn lý trường thành bằng đá' tự nhiên bảo vệ bờ cõi biên cương phía Bắc quốc gia.">
-                        <div class="dest-card-img">
-                            <img src="images/hagiang_dong_van_karst.webp" alt="Cao nguyên đá Đồng Văn" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">UNESCO</span>
-                                <span class="tag">Địa chất</span>
-                            </div>
-                            <h3 class="dest-card-title">Cao nguyên đá Đồng Văn</h3>
-                            <p class="dest-card-desc">Kỳ quan địa chất toàn cầu với trập trùng đá xám tai mèo trơ trọi thách thức thời gian.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Núi Đôi Quản Bạ (còn gọi là núi Cô Tiên) là tuyệt tác kiến tạo địa chất nằm bên quốc lộ 4C. Giai thoại dân gian lưu truyền mối tình diễm lệ giữa nàng tiên đào tuyệt sắc hạ phàm và chàng trai khổng lồ bản địa. Khi bị Ngọc Hoàng kéo về trời, nàng để lại đôi bầu sữa của mình hóa thành gò núi tròn trịa nuôi dưỡng dòng chảy mát lành, giúp thung lũng Quản Bạ quanh năm tươi tốt.">
-                        <div class="dest-card-img">
-                            <img src="images/hagiang_quan_ba.webp" alt="Cổng trời Quản Bạ & Núi Đôi" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Thiên nhiên</span>
-                                <span class="tag">Ngắm cảnh</span>
-                            </div>
-                            <h3 class="dest-card-title">Cổng trời Quản Bạ & Núi Đôi</h3>
-                            <p class="dest-card-desc">Nơi ngắm nhìn cặp núi đôi tròn trịa kỳ lạ giữa thung lũng lúa xanh mướt ngập tràn sương sớm.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Ruộng bậc thang Hoàng Su Phì là di tích quốc gia độc đáo, minh chứng cho phương thức canh tác lúa nước bền bỉ suốt hơn 3 thế kỷ của các tộc người La Chí, Dao, Nùng trên sườn dốc Tây Bắc. Công trình vĩ đại xếp bậc uốn lượn trùng điệp này thể hiện quá trình đấu tranh kiên cường chinh phục tự nhiên để định cư và gìn giữ lãnh thổ đất Việt.">
-                        <div class="dest-card-img">
-                            <img src="images/hagiang_hoang_su_phi.webp" alt="Hoàng Su Phì lúa chín" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Mùa vàng</span>
-                                <span class="tag">Ruộng bậc thang</span>
-                            </div>
-                            <h3 class="dest-card-title">Hoàng Su Phì lúa chín</h3>
-                            <p class="dest-card-desc">Những thửa ruộng bậc thang kỳ vĩ bậc nhất vùng cao uốn lượn tầng tầng lớp lớp óng ả màu vàng lúa chín.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- TRUYỀN THUYẾT & KỲ BÍ -->
-                <h2 id="truyen-thuyet"><span class="icon">✨</span> Truyền thuyết & Câu chuyện Kỳ bí</h2>
-                <p>Không chỉ sở hữu cảnh sắc thiên nhiên hùng vĩ, Cao nguyên đá Hà Giang còn là nơi lưu giữ những huyền thoại kỳ bí và câu chuyện lịch sử nhuốm màu sử thi truyền đời của các đồng bào dân tộc vùng cao:</p>
-                
-                <div class="legend-section">
-                    <div class="legend-card">
-                        <div class="legend-header">
-                            <img src="images/hagiang_lung_cu.webp" alt="Cột cờ Lũng Cú & Hồ Mắt Rồng" loading="lazy">
-                            <div class="legend-title-box">
-                                <h3>Sự tích Cột cờ Lũng Cú & Hồ Mắt Rồng</h3>
-                            </div>
-                        </div>
-                        <div class="legend-body">
-                            <p>Tương ứng với điểm cực Bắc địa đầu Tổ quốc, Lũng Cú (hay tiếng H'Mông cổ là <em>Long Cổ</em> – tiếng trống của Rồng) gắn liền với huyền thoại giữ nước vĩ đại. Tương truyền khi vua Quang Trung đánh đuổi giặc ngoại xâm, ông đã cho đặt một chiếc trống đồng khổng lồ ngay trên đỉnh núi Rồng, mỗi canh giờ lại gióng ba hồi trống đanh thép để khẳng định chủ quyền cương vực sơn hà.</p>
-                            <p>Dưới chân núi Lũng Cú có hai hồ nước ngọt trong vắt, quanh năm không bao giờ cạn được người dân gọi là <strong>Hồ Mắt Rồng</strong>. Sự tích kể rằng, Thần Rồng khi xưa ngao du hạ giới, vì thương xót dân bản nghèo quanh năm khát nước sinh hoạt, trước khi bay về trời đã để lại đôi mắt của mình hóa thân thành hai nguồn nước ngọt linh thiêng ban tặng sự sống cho mảnh đất đá xám trơ trọi này.</p>
-                        </div>
-                    </div>
-
-                    <div class="legend-card">
-                        <div class="legend-header">
-                            <img src="images/hagiang_ma_pi_leng.webp" alt="Đèo Mã Pì Lèng" loading="lazy">
-                            <div class="legend-title-box">
-                                <h3>Đèo Mã Pì Lèng - Huyền thoại "Sống mũi ngựa"</h3>
-                            </div>
-                        </div>
-                        <div class="legend-body">
-                            <p>Mã Pì Lèng (âm tiếng H'Mông cổ nghĩa là <em>Sống mũi con ngựa</em>) nói về độ dốc đứng và hiểm trở tột cùng của con đèo. Huyền thoại kể rằng, vách đá dựng đứng của Mã Pì Lèng từng là nỗi khiếp sợ của muôn loài thú dữ thuở hoang sơ, đến mức những con ngựa thồ hàng dẻo dai nhất khi leo qua đèo cũng phải tắt thở vì kiệt sức, ngựa cái đi qua đây đều phải sẩy thai tự nhiên vì dốc dựng đứng.</p>
-                            <p>Ngày nay, Mã Pì Lèng không chỉ là kỳ quan thiên nhiên, mà còn là tượng đài ý chí của con người. Đó là câu chuyện lịch sử đầy hào hùng về con đường Hạnh Phúc được hàng vạn thanh niên xung phong thuộc 8 tỉnh thành miền Bắc cùng đồng bào các dân tộc thiểu số ròng rã suốt 6 năm đục đá bằng tay không, treo mình trên vách đá đứng để mở lối kết nối rẻo cao.</p>
-                        </div>
-                    </div>
-
-                    <div class="legend-card">
-                        <div class="legend-header">
-                            <img src="images/hagiang_vuong_mansion.webp" alt="Dinh Vua Mèo" loading="lazy">
-                            <div class="legend-title-box">
-                                <h3>Dinh Vua Mèo & Bí ẩn phong thủy Quy Hải</h3>
-                            </div>
-                        </div>
-                        <div class="legend-body">
-                            <p>Nằm khuất bóng giữa thung lũng Sà Phìn, Dinh thự của Vua Mèo Vương Chính Đức trị giá 15 vạn đồng bạc trắng Đông Dương thời cổ (tương đương 150 tỷ VNĐ ngày nay) ẩn chứa những bí mật phong thủy ly kỳ. Để đặt móng xây dựng khu dinh thự phòng thủ kiên cố này, cụ Vương Chính Đức đã mời những thầy phong thủy lừng lẫy nhất đi bộ dọc cao nguyên đá tìm kiếm nhiều tháng ròng.</p>
-                            <p>Cuối cùng, khu đất vàng đã được chọn lựa: Một gò đất cao nổi lên có hình dáng giống như một chiếc mai con rùa vàng khổng lồ nằm hướng về biển (thế đất <em>Quy Hải</em>). Theo quan niệm phong thủy cổ xưa, thế đất mai rùa tượng trưng cho sự vững chãi, trường thọ và giàu sang phú quý ngàn năm, giúp che chở dòng tộc họ Vương thịnh vượng, an toàn qua mọi biến động lịch sử.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHUỖI CẢNH SẮC HÀ GIANG THEO MÙA -->
-                <h2 id="cac-mua"><span class="icon">🌸</span> Hà Giang 4 Mùa Cảnh Sắc — Bản Giao Hưởng Cao Nguyên Đá</h2>
-                <p>Khác biệt với bất kỳ vùng đất nào trên dải đất hình chữ S, Hà Giang mang vẻ đẹp kỳ vĩ và biến ảo diệu kỳ theo từng mùa trong năm. Mỗi chu kỳ thời gian về nơi cực Bắc Tổ quốc lại khoác lên mình một tấm áo choàng hoàn toàn mới lạ, thu hút bước chân lữ khách muôn phương:</p>
-
-                <div class="seasons-container">
-                    <!-- MÙA 1: HOA TAM GIÁC MẠCH -->
-                    <div class="season-card">
-                        <div class="season-card-img">
-                            <img loading="lazy" src="images/hagiang_mua_hoa_tam_giac_mach.webp" alt="Mùa hoa tam giác mạch Hà Giang">
-                            <span class="season-badge">Tháng 10 – Tháng 12</span>
-                        </div>
-                        <div class="season-card-body">
-                            <h3>🌸 Mùa Hoa Tam Giác Mạch — Nhuộm Hồng Cao Nguyên Đá</h3>
-                            <p class="season-desc">Khi ngọn gió đông đầu mùa se lạnh thổi qua miền địa đầu, hàng triệu đóa hoa tam giác mạch li ti đồng loạt bung nở, chuyển sắc kỳ diệu từ trắng tinh khôi sang hồng phấn rồi tím thẫm rực rỡ, ôm trọn những sườn đồi và vách đá tai mèo gai góc khắp cao nguyên đá.</p>
-                            <div class="season-highlights">
-                                <strong>📍 Tọa độ ngắm hoa đẹp nhất:</strong> Thung lũng Sủng Là, chân Cột cờ Lũng Cú, đèo Mã Pí Lèng, dốc Thẩm Mã, xã Phố Cáo, Ma Lé.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MÙA 2: MÙA XUÂN HOA ĐÀO, HOA MẬN -->
-                    <div class="season-card">
-                        <div class="season-card-img">
-                            <img loading="lazy" src="images/hagiang_mua_xuan_hoa_dao_hoa_man.webp" alt="Mùa xuân hoa đào hoa mận Hà Giang">
-                            <span class="season-badge">Tháng 1 – Tháng 3</span>
-                        </div>
-                        <div class="season-card-body">
-                            <h3>🍑 Mùa Xuân Hoa Đào, Hoa Mận — Sức Sống Mãnh Liệt Rẻo Cao</h3>
-                            <p class="season-desc">Mùa xuân gõ cửa địa đầu Tổ quốc với sắc hồng thắm của đào phai cổ thụ, sắc trắng tinh khôi của hoa mận, hoa lê bung nở rực rỡ bên những hàng rào đá rêu phong và mái ngói âm dương nhà trình tường cổ kính. Đây cũng là mùa lễ hội Gầu Tào truyền thống rộn rã tiếng khèn Mông đón chào năm mới.</p>
-                            <div class="season-highlights">
-                                <strong>📍 Tọa độ check-in đẹp nhất:</strong> Làng văn hóa Lũng Cẩm, thôn Lao Xa (Sủng Là), thị trấn Phó Bảng, bản Lô Lô Chải.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MÙA 3: MÙA NƯỚC ĐỔ HOÀNG SU PHÌ -->
-                    <div class="season-card">
-                        <div class="season-card-img">
-                            <img loading="lazy" src="images/hagiang_mua_nuoc_do_hoang_su_phi.webp" alt="Mùa nước đổ ruộng bậc thang Hoàng Su Phì">
-                            <span class="season-badge">Tháng 5 – Tháng 6</span>
-                        </div>
-                        <div class="season-card-body">
-                            <h3>💦 Mùa Nước Đổ — Những Tấm "Gương Trời" Khổng Lồ</h3>
-                            <p class="season-desc">Vào đầu hạ, những cơn mưa rào trút xuống dẫn nguồn nước từ đỉnh núi tràn vào các thửa ruộng bậc thang uốn lượn. Hàng ngàn nấc thang tại Hoàng Su Phì biến thành những tấm gương khổng lồ phản chiếu bầu trời xanh ngắt, mây trắng bồng bềnh và ánh bình minh rạng rỡ, tạo nên bức tranh thủy mặc kỳ vĩ của thiên nhiên và sức lao động con người vùng cao.</p>
-                            <div class="season-highlights">
-                                <strong>📍 Tọa độ săn ảnh đẹp nhất:</strong> Bản Phùng, Nậm Ty, Thông Nguyên, Bản Luốc, Tả Sử Choóng (Hoàng Su Phì).
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MÙA 4: MÙA LÚA CHÍN VÀNG HOÀNG SU PHÌ -->
-                    <div class="season-card">
-                        <div class="season-card-img">
-                            <img loading="lazy" src="images/hagiang_mua_lua_chin_hoang_su_phi.webp" alt="Mùa lúa chín vàng Hoàng Su Phì Hà Giang">
-                            <span class="season-badge">Tháng 9 – Tháng 10</span>
-                        </div>
-                        <div class="season-card-body">
-                            <h3>🌾 Mùa Vàng Hoàng Su Phì — Thảm Lụa Vàng Óng Dưới Nắng Thu</h3>
-                            <p class="season-desc">Mùa thu là thời khắc rực rỡ và trù phú nhất của rẻo cao Đông Bắc. Từng dải ruộng bậc thang chín vàng ươm, trĩu hạt nối tiếp nhau từ đỉnh núi xuống tận đáy thung lũng sâu, tỏa ngát hương thơm lúa mới nếp nương quyện trong gió sớm mát lành, đưa Hoàng Su Phì trở thành Di tích Quốc gia đặc biệt danh bất hư truyền.</p>
-                            <div class="season-highlights">
-                                <strong>📍 Tọa độ ngắm lúa đỉnh cao:</strong> Đồi mâm xôi Bản Phùng, cung đường Nậm Ty – Thông Nguyên, thung lũng Bản Luốc.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MÙA 5: MÙA ĐÔNG SĂN MÂY & HOA CẢI VÀNG -->
-                    <div class="season-card">
-                        <div class="season-card-img">
-                            <img loading="lazy" src="images/hagiang_mua_dong_san_may_cai_vang.webp" alt="Mùa đông săn mây và hoa cải vàng Hà Giang">
-                            <span class="season-badge">Tháng 12 – Tháng 1</span>
-                        </div>
-                        <div class="season-card-body">
-                            <h3>☁️ Mùa Đông Săn Mây & Hoa Cải Vàng — Nốt Trầm Kiêu Hãnh</h3>
-                            <p class="season-desc">Khi cái rét ngọt ngào bao trùm miền biên viễn, những biển mây trắng muốt bồng bềnh cuồn cuộn dâng trào qua hẻm vực Tu Sản và đỉnh đèo Mã Pí Lèng hùng vĩ. Giữa làn sương giá buốt, những vạt hoa cải vàng rực rỡ vươn mình kiêu hãnh khoe sắc ấm áp, thắp sáng cả một góc trời cao nguyên đá địa đầu Tổ quốc.</p>
-                            <div class="season-highlights">
-                                <strong>📍 Tọa độ săn mây & hoa cải:</strong> Điểm dừng chân Mã Pí Lèng Panorama, đỉnh đèo Quản Bạ, thung lũng Phó Cáo, Lũng Cú.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DI CHUYỂN & CHI PHÍ -->
-                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-                <p>Hành trình khám phá cực Bắc đòi hỏi lộ trình chuẩn bị kỹ lưỡng về phương tiện để đảm bảo an toàn vượt qua các cung đường đèo dốc:</p>
-                
-                <h3>1. Phương tiện di chuyển đến Hà Giang</h3>
-                <ul>
-                    <li><strong>Xe khách giường nằm:</strong> Xuất phát từ bến xe Mỹ Đình (Hà Nội) chạy đêm thẳng lên thành phố Hà Giang. Có các dòng xe giường phòng cao cấp (Cabin) vô cùng êm ái.</li>
-                    <li><strong>Xe limousine đón trả tận nơi:</strong> Tiện lợi và nhanh chóng hơn, phù hợp cho nhóm gia đình, chạy ban ngày khoảng 6 tiếng từ Hà Nội.</li>
-                </ul>
-
-                <h3>2. Di chuyển chinh phục đèo dốc</h3>
-                <p><strong>Thuê xe máy tự lái</strong> tại thành phố Hà Giang là phương án hoàn hảo nhất. Các cửa hàng cho thuê xe máy sẽ trang bị sẵn mũ bảo hiểm chất lượng, giáp bảo hộ tay chân, bản đồ du lịch và hỗ trợ cứu hộ dọc đường.</p>
-
-                <h3>3. Giá vé tham quan một số điểm chính</h3>
-                <table class="info-table">
-                    <thead>
-                        <tr>
-                            <th>Địa điểm tham quan</th>
-                            <th>Giá vé tham khảo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Dinh thự họ Vương (Dinh Vua Mèo)</td>
-                            <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
-                        </tr>
-                        <tr>
-                            <td>Nhà của Pao (Làng Lũng Cẩm)</td>
-                            <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
-                        </tr>
-                        <tr>
-                            <td>Đi thuyền trên sông Nho Quế</td>
-                            <td><span class="price-tag">Giá niêm yết tại bến</span> (Bao gồm xe trung chuyển từ quốc lộ xuống bến thuyền)</td>
-                        </tr>
-                        <tr>
-                            <td>Cột cờ Lũng Cú</td>
-                            <td><span class="price-tag">Vé niêm yết tại quầy</span> (Có phí xe điện trung chuyển lên chân cột cờ)</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- LƯU TRÚ & ẨM THỰC -->
-                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực vùng cao</h2>
-                
-                <h3>1. Gợi ý nơi ở trên cung đường Loop</h3>
-                <ul>
-                    <li><strong>Thành phố Hà Giang:</strong> Điểm dừng chân đêm đầu tiên để nhận xe máy. Rất nhiều homestay xinh xắn ven sông hoặc trung tâm.</li>
-                    <li><strong>Thị trấn Đồng Văn & Quản Bạ:</strong> Tập trung các khách sạn 2-3 sao sạch sẽ, homestay cổ kính trong khu phố cổ Đồng Văn, tiện đi chợ phiên cuối tuần.</li>
-                    <li><strong>Bản làng Du Già, Lô Lô Chải:</strong> Điểm nghỉ dưỡng tuyệt vời với những nếp nhà trình tường cổ kính của người Lô Lô ngay dưới chân cột cờ Lũng Cú hoặc thung lũng lúa Du Già.</li>
-                </ul>
-
-                <h3>2. Món ngon đặc sản không thể bỏ lỡ</h3>
-                <div class="food-list">
-                    <div class="food-item"><span class="name">🍜 Cháo ấu tẩu (Món ăn đặc sản giải cảm vị đắng nhẹ đặc trưng bùi béo)</span></div>
-                    <div class="food-item"><span class="name">🥓 Thịt trâu gác bếp (Thịt trâu dai ngọt đượm hương mắc khén hạt dổi)</span></div>
-                    <div class="food-item"><span class="name">🥞 Bánh cuốn trứng phố cổ Đồng Văn (Bánh tráng cuốn ăn cùng nước xương ngọt lịm)</span></div>
-                    <div class="food-item"><span class="name">🍲 Thắng cố & Mèn mén (Món ngô xay đồ chín ăn kèm canh thắng cố H'Mông truyền thống)</span></div>
-                </div>
-
-                <!-- KINH NGHIỆM & AN TOÀN -->
-                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Lưu ý an toàn & Kinh nghiệm vượt đèo dốc</h2>
-
-                <h3>⚠️ Quy tắc an toàn bắt buộc khi vượt đèo</h3>
-                <ul>
-                    <li><strong>Kiểm tra xe hàng ngày:</strong> Luôn kiểm tra phanh trước sau, lốp xe và đèn pha. Chỉ sử dụng xe máy số hoặc xe tay côn khỏe, tuyệt đối tránh đi xe ga nếu tay lái không cực kỳ vững vàng.</li>
-                    <li><strong>Nhường đường và giữ khoảng cách:</strong> Đi chậm sát phần đường bên phải ở các dốc cua gấp khúc, bấm còi cảnh báo khi vào cua khuất tầm nhìn. Nhường đường cho xe tải lớn leo dốc.</li>
-                    <li><strong>Phòng chống sương mù:</strong> Trời Hà Giang thường có sương mù dày đặc che khuất tầm nhìn chỉ còn vài mét. Nên dừng chân nghỉ hoặc bật đèn sương mù, di chuyển cực kỳ chậm dưới 20km/h.</li>
-                </ul>
-
-                <div class="warning-box">
-                    <p>⚠️ Lưu ý bảo tồn văn hóa: Không tự ý chụp ảnh trẻ em dân tộc nếu không được sự đồng ý, không cho tiền hoặc kẹo trẻ em dọc đường để tránh tạo thói quen xấu. Hãy tôn trọng phong tục tập quán bản địa, không giẫm lên hoa tam giác mạch của bà con trồng.</p>
-                </div>
-
-            </article>
 
             <!-- SIDEBAR -->
             <aside class="sidebar">
-                <!-- QUICK INFO -->
-                <div class="sidebar-card">
-                    <h4>📌 Thông tin nhanh</h4>
-                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Miền núi Đông Bắc Việt Nam</div>
-                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 3 – 4 ngày</div>
-                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 9 – 12</div>
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Thông Tin Nhanh
+                    </h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span><span class="val">Cực Bắc Việt Nam (~300km từ HN)</span></li>
+                        <li><span class="label">Diện tích:</span><span class="val">7.929 km²</span></li>
+                        <li><span class="label">Danh hiệu:</span><span class="val">Công viên Địa chất UNESCO (2010)</span></li>
+                        <li><span class="label">Độ cao TB:</span><span class="val">1.000m - 1.600m</span></li>
+                        <li><span class="label">Thời điểm đẹp:</span><span class="val">Tháng 9 - 12 & Tháng 1 - 3</span></li>
+                        <li><span class="label">Đặc sản cốt lõi:</span><span class="val">Thắng cố, Cháo ấu tẩu, Bánh TGM</span></li>
+                    </ul>
                 </div>
 
-                <!-- TOC -->
-                <div class="sidebar-card">
-                    <h4>📖 Mục lục</h4>
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                        Mục Lục Hướng Dẫn
+                    </h3>
                     <ul class="toc-list">
-                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
-                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
-                        <li><a href="#truyen-thuyet">✨ Truyền thuyết & Kỳ bí</a></li>
-                        <li><a href="#cac-mua">🌸 Hà Giang 4 Mùa Sắc Thắm</a></li>
-                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
-                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
-                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                        <li><a href="#tong-quan">1. Tổng quan điểm đến</a></li>
+                        <li><a href="#lich-su-dia-ly">2. Vị trí địa lý & Dấu ấn lịch sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền thoại & Truyền tích dân gian</a></li>
+                        <li><a href="#bon-mua">4. Chuỗi hình ảnh 4 mùa du lịch</a></li>
+                        <li><a href="#thang-canh">5. Top 10 Thắng cảnh biểu tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm nang di chuyển & Cung đường</a></li>
+                        <li><a href="#am-thuc">7. Tinh hoa ẩm thực đặc sản</a></li>
+                        <li><a href="#gia-ve">8. Bảng giá vé tham quan niêm yết</a></li>
+                        <li><a href="#lich-trinh">9. Lịch trình 3N2Đ & Mẹo an toàn</a></li>
                     </ul>
                 </div>
             </aside>
+
+            <!-- MAIN CONTENT -->
+            <main class="article-main">
+
+                <!-- MỤC 1: TỔNG QUAN -->
+                <section id="tong-quan">
+                    <h2><span class="icon">🧭</span> 1. Tổng quan điểm đến</h2>
+                    <div class="intro-lead">
+                        Nằm nơi chóp nón cực Bắc của bản đồ Tổ quốc, <strong>Hà Giang</strong> được mệnh danh là bản hùng ca kỳ vĩ của đá và hoa. Nơi đây sở hữu Công viên Địa chất Toàn cầu UNESCO đầu tiên tại Việt Nam, hội tụ những đỉnh đèo hiểm trở bậc nhất Đông Nam Á, những hẻm vực sâu thẳm hun hút và sức sống mãnh liệt của 19 dân tộc anh em trên cao nguyên đá xám.
+                    </div>
+                    <p>Địa hình Hà Giang được kiến tạo qua hàng trăm triệu năm biến động vỏ Trái Đất, hình thành nên miền cảnh quan karst đá vôi tai mèo đen thẫm trùng điệp chiếm hơn 60% diện tích 4 huyện vùng cao: Quản Bạ, Yên Minh, Đồng Văn và Mèo Vạc. Nhưng giữa sự khắc nghiệt của đá, sự sống chưa bao giờ ngừng sinh sôi. Từng hốc đá cằn cỗi vẫn được đồng bào H'Mông kiên cường gieo mầm ngô xanh, từng vạt đồi vẫn bung nở rực rỡ sắc hồng tím của hoa tam giác mạch và trắng tinh khôi của hoa mơ, hoa mận mỗi độ xuân về.</p>
+                    <p>Không chỉ sở hữu thiên nhiên ngoạn mục vô tiền khoáng hậu, Hà Giang còn là phên dậu thiêng liêng gìn giữ từng tấc đất biên cương của đất nước. Đứng trên đỉnh Long Sơn dưới bóng lá cờ đỏ sao vàng 54m² của Cột cờ Quốc gia Lũng Cú trông ra dải non sông điệp trùng, bất kỳ người con đất Việt nào cũng trào dâng niềm tự hào dân tộc thiêng liêng và sâu lắng.</p>
+                </section>
+
+                <!-- MỤC 2: VỊ TRÍ ĐỊA LÝ & DẤU ẤN LỊCH SỬ -->
+                <section id="lich-su-dia-ly">
+                    <h2><span class="icon">📜</span> 2. Vị trí địa lý & Dấu ấn lịch sử</h2>
+                    <p>Hà Giang là tỉnh miền núi biên giới cực Bắc Việt Nam, có tọa độ địa lý từ 22°10' đến 23°23' vĩ độ Bắc và từ 104°20' đến 105°35' kinh độ Đông. Phía bắc giáp nước Cộng hòa Nhân dân Trung Hoa với đường biên giới dài hơn 277km; phía đông giáp tỉnh Cao Bằng; phía nam giáp tỉnh Tuyên Quang; phía tây và tây nam giáp tỉnh Lào Cai và Yên Bái. Khí hậu Hà Giang mang tính chất á nhiệt đới vùng núi cao, mùa đông lạnh giá buốt giá có nơi xuất hiện băng tuyết, mùa hè mát mẻ dễ chịu.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>⚖️ Căn cứ Pháp lý & Quyết định Xếp hạng Di sản Chính thống</h4>
+                        <p>Giá trị địa chất, lịch sử và văn hóa của Hà Giang được ghi nhận qua các công ước quốc tế và văn bản quy phạm pháp luật của Nhà nước Việt Nam:</p>
+                        <ul style="margin: 0.6rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Công ước UNESCO & Mạng lưới Công viên Địa chất Toàn cầu (GGN - 03/10/2010):</strong> Tại Hy Lạp, Công viên Địa chất Cao nguyên đá Đồng Văn chính thức được UNESCO công nhận là Công viên Địa chất Toàn cầu đầu tiên của Việt Nam và thứ hai ở Đông Nam Á. Tiếp tục vượt qua các kỳ tái thẩm định nghiêm ngặt vào các năm 2014, 2018 và 2022.</li>
+                            <li><strong>Quyết định số 1959/QĐ-TTg ngày 31/12/2019 của Thủ tướng Chính phủ:</strong> Xếp hạng Di tích quốc gia đặc biệt đối với <em>Danh lam thắng cảnh Ruộng bậc thang Hoàng Su Phì</em> (tại các xã Bản Luốc, Sán Sả Hồ, Bản Phùng, Hồ Thầu, Nậm Ty, Thông Nguyên).</li>
+                            <li><strong>Quyết định số 411/QĐ-BVHTTDL ngày 16/11/2009 của Bộ Văn hóa, Thể thao và Du lịch:</strong> Xếp hạng Danh lam thắng cảnh quốc gia đối với <em>Đèo Mã Pí Lèng</em> - một trong "Tứ đại đỉnh đèo" lừng danh của miền Bắc.</li>
+                            <li><strong>Quyết định số 937/QĐ-BT ngày 23/7/1993 của Bộ Văn hóa - Thông tin (nay là Bộ VHTTDL):</strong> Xếp hạng Di tích kiến trúc nghệ thuật quốc gia đối với <em>Khu Dinh thự dòng họ Vương (Dinh Vua Mèo)</em> tại thung lũng Sà Phìn, huyện Đồng Văn.</li>
+                            <li><strong>Quyết định số 2050/QĐ-TTg của Thủ tướng Chính phủ:</strong> Phê duyệt Quy hoạch tổng thể phát triển Khu du lịch quốc gia Cao nguyên đá Đồng Văn, tỉnh Hà Giang đến năm 2025, tầm nhìn 2030.</li>
+                        </ul>
+                    </div>
+
+                    <p>Về dấu ấn lịch sử hào hùng, không thể không nhắc tới bản trường ca mở đường mang tên <strong>"Con đường Hạnh Phúc" (Quốc lộ 4C)</strong> nối từ thành phố Hà Giang qua 4 huyện vùng cao hiểm trở. Khởi công ngày 10/9/1959 và hoàn thành ngày 15/6/1965, con đường dài gần 200km được kiến tạo bởi hơn 1.200 dân công và thanh niên xung phong thuộc 16 dân tộc từ 8 tỉnh miền Bắc (Hà Giang, Tuyên Quang, Thái Nguyên, Cao Bằng, Bắc Kạn, Lạng Sơn, Hải Dương, Nam Định).</p>
+                    <p>Đặc biệt tại đoạn qua Đèo Mã Pí Lèng - nơi vách đá dựng đứng hiểm trở như lưỡi rìu chém thẳng xuống vực sâu, một "Đội cảm tử" gồm 17 thanh niên dũng cảm đã tình nguyện treo mình giữa tầng không bằng dây thừng trên vách đá ròng rã suốt 11 tháng trời, đục từng lỗ mìn, nạy từng tảng đá để mở đường máu. Kỳ tích ấy đã biến cung đường tử thần thành dải lụa mềm vắt ngang mây trời, mang lại ánh sáng ấm no, hạnh phúc cho đồng bào các dân tộc vùng biên cương.</p>
+                </section>
+
+                <!-- MỤC 3: HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai">
+                    <h2><span class="icon">🏔️</span> 3. Huyền thoại & Truyền tích dân gian vùng đất</h2>
+                    
+                    <div class="legend-box">
+                        <h4>💚 Huyền thoại Núi Đôi Quản Bạ (Bầu vú nàng tiên Hoa Đào)</h4>
+                        <p>Chuyện xưa kể rằng, ở vùng đất Tam Sơn có một chàng trai người Mông khôi ngô tuấn tú, có tài thổi khèn Mông du dương réo rắt khiến chim trời ngừng bay, suối ngừng chảy. Tiếng khèn bay lên tận tiên giới, làm say đắm nàng tiên Hoa Đào xinh đẹp tuyệt trần. Nàng bèn trốn xuống trần gian nên duyên chồng vợ cùng chàng và sinh được một bé trai kháu khỉnh. Ngọc Hoàng phát hiện bèn sai thiên lôi bắt nàng về trời. Thương chồng một mình nuôi con thiếu bầu sữa mẹ, trước khi bay về mây, nàng đã để lại đôi nhũ hoa tròn trịa nuôi con khôn lớn. Đôi nhũ hoa ấy biến thành hai quả núi cân đối hình bầu vú mẹ giữa thung lũng, dòng sữa ngọt ngào thấm sâu vào lòng đất tạo nên thung lũng hoa trái bốn mùa trĩu quả ngọt lành.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>🌸 Sự tích Hoa Tam Giác Mạch cứu đói bản làng</h4>
+                        <p>Đồng bào vùng cao lưu truyền câu chuyện cảm động về nguồn gốc loài hoa tam giác mạch. Năm ấy hạn hán kéo dài, lúa ngô trên nương rẫy đều khô héo, vụ đông giá buốt ập đến mang theo cơn đói khủng khiếp đe dọa các bản người Mông. Giữa lúc tuyệt vọng, bỗng dân làng ngửi thấy trong gió lạnh phảng phất mùi hương lạ thanh tao từ phía thung lũng đá xám. Mọi người lần theo mùi hương và ngỡ ngàng nhận ra giữa những khe đá cằn cỗi mọc lên bạt ngàn những mảng hoa tím phớt hồng, kết hạt hình tam giác nhỏ nhắn. Dân làng đem hạt về xay bột nặn bánh ăn thấy ngọt bùi, ấm bụng, giúp cả bản làng vượt qua mùa đông đói rét. Hạt lúa họ nhà lúa, mày ngô họ nhà ngô, lại có hình góc tam giác nên bà con trân trọng đặt tên là "Tam Giác Mạch".</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>🗡️ Huyền tích Vết kiếm Thần Sông tạo hẻm Tu Sản & Sông Nho Quế</h4>
+                        <p>Thuở hồng hoang khai thiên lập địa, quả núi Mã Pí Lèng và núi Săm Pun liền thành một dải đá khổng lồ vững chãi, chặn đứng nguồn nước thượng nguồn từ phương Bắc chảy về. Phía bên kia núi nước dâng ngập trắng đồng, còn phía bên này hạn hán nứt nẻ cỏ cây tàn lụi. Thần Núi ngủ say không hay biết, Thần Sông thấy dân chúng khốn cùng bèn rút thanh gươm báu sáng lòa, vung một nhát chém kinh thiên động địa xẻ đôi dãy núi đá vôi sừng sững. Vết chém ấy mở ra Hẻm vực Tu Sản sâu thẳm hun hút, dòng nước tuôn trào hóa thành con sông Nho Quế màu xanh ngọc bích uốn lượn mang nguồn sống trù phú về cho muôn loài.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 4: CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua">
+                    <h2><span class="icon">🌸</span> 4. Chuỗi hình ảnh 4 mùa du lịch</h2>
+                    <p>Hà Giang quanh năm là một bức tranh thiên nhiên tuyệt mỹ, mỗi mùa mang một sắc thái riêng biệt không trộn lẫn. Từ mùa hoa mơ đào xuân rực rỡ, mùa nước đổ óng ánh như gương đến mùa lúa chín vàng ươm và mùa hoa tam giác mạch huyền ảo giữa sương mây:</p>
+
+                    <div class="seasons-grid">
+                        <!-- Mùa Xuân -->
+                        <div class="season-card" onclick="openLightbox('images/hagiang_mua_xuan_hoa_dao_hoa_man.webp', 'Mùa Xuân (Tháng 1 - 3): Hoa Đào Hoa Mận Nở Rộ Bản Xa', 'Xuân về trên khắp các thung lũng Quản Bạ, Đồng Văn, Mèo Vạc. Những nếp nhà trình tường đất nâu ấm cúng bừng sáng trong sắc hồng của hoa đào rừng, sắc trắng tinh khôi của hoa mận, hoa lê và tiếng khèn Mông gọi bạn tình da diết.')">
+                            <div class="season-img-wrap">
+                                <img src="images/hagiang_mua_xuan_hoa_dao_hoa_man.webp" alt="Mùa xuân hoa đào hoa mận Hà Giang" loading="lazy">
+                                <span class="season-badge">Tháng 1 - 3</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Xuân: Sắc Thắm Hoa Đào, Hoa Mận Bản Xa</h3>
+                                <span class="season-time">Thời điểm: Tháng 1 đến hết tháng 3 Dương lịch</span>
+                                <p class="season-desc">Khi tiết trời se lạnh của mùa đông dần tan, cả cao nguyên đá như bừng tỉnh giấc nồng. Hoa đào phai cổ thụ, hoa mận trắng muốt nở bung bên hàng rào đá rêu phong, kết hợp cùng các lễ hội truyền thống như Lễ hội Gầu Tào, Chợ tình Khâu Vai rộn rã sắc màu thổ cẩm.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Nước Đổ -->
+                        <div class="season-card" onclick="openLightbox('images/hagiang_mua_nuoc_do_hoang_su_phi.webp', 'Mùa Hạ (Tháng 5 - 6): Mùa Nước Đổ Hoàng Su Phì Kỳ Vĩ', 'Những dải ruộng bậc thang Hoàng Su Phì vào mùa đổ ải lấp lánh như hàng ngàn chiếc gương trời khổng lồ bậc tầng xếp tầng bậc uốn lượn theo sườn núi Tây Côn Lĩnh trong ánh nắng chói chang.')">
+                            <div class="season-img-wrap">
+                                <img src="images/hagiang_mua_nuoc_do_hoang_su_phi.webp" alt="Mùa nước đổ Hoàng Su Phì Hà Giang" loading="lazy">
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Hạ: Kỳ Quan Nước Đổ Hoàng Su Phì</h3>
+                                <span class="season-time">Thời điểm: Tháng 5 đến tháng 6 Dương lịch</span>
+                                <p class="season-desc">Khi những cơn mưa rào đầu hạ tưới mát núi rừng, đồng bào La Chí, Dao đỏ, Nùng bắt đầu dẫn nước từ khe suối về ruộng bậc thang. Mặt nước lóng lánh phản chiếu mây trời, ánh bình minh và bóng dáng bà con cần mẫn cấy lúa tạo nên bức họa điêu khắc kỳ vĩ trên đất.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Lúa Chín -->
+                        <div class="season-card" onclick="openLightbox('images/hagiang_mua_lua_chin_hoang_su_phi.webp', 'Mùa Thu (Tháng 9 - 10): Mâm Xôi Vàng Rực Rỡ Hoàng Su Phì', 'Mùa thu dát vàng khắp các thung lũng bản Phùng, bản Luốc, Nậm Ty. Những đợt sóng lúa chín vàng ươm trĩu hạt tầng tầng lớp lớp cuộn trào theo triền đồi ngút ngàn, phảng phất hương cốm mới thơm lừng trong gió thu.')">
+                            <div class="season-img-wrap">
+                                <img src="images/hagiang_mua_lua_chin_hoang_su_phi.webp" alt="Mùa lúa chín vàng Hoàng Su Phì Hà Giang" loading="lazy">
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu: Biển Vàng Ruộng Bậc Thang Trĩu Hạt</h3>
+                                <span class="season-time">Thời điểm: Giữa tháng 9 đến cuối tháng 10 Dương lịch</span>
+                                <p class="season-desc">Hoàng Su Phì bước vào thời khắc rực rỡ nhất khi Di tích quốc gia đặc biệt ruộng bậc thang đồng loạt chuyển sang màu vàng óng ả. Thời tiết thu trong xanh, mát mẻ, trời cao vời vợi là thời điểm lý tưởng nhất cho những chuyến trekking săn ảnh mùa vàng.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Hoa Tam Giác Mạch -->
+                        <div class="season-card" onclick="openLightbox('images/hagiang_mua_hoa_tam_giac_mach.webp', 'Mùa Đông (Tháng 10 - 12): Miền Hoa Tam Giác Mạch & Sương Mây Luồn', 'Thảm hoa tam giác mạch hồng tím dịu dàng nở rộ bao phủ những sườn dốc đá tai mèo xám ngắt. Biển mây trắng bồng bềnh cuộn trào qua đỉnh Mã Pí Lèng trong cái lạnh buốt giá đặc trưng của cao nguyên đá.')">
+                            <div class="season-img-wrap">
+                                <img src="images/hagiang_mua_hoa_tam_giac_mach.webp" alt="Mùa hoa tam giác mạch Hà Giang" loading="lazy">
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Đông: Tam Giác Mạch Nở Rộ & Biển Mây Đỉnh Đèo</h3>
+                                <span class="season-time">Thời điểm: Tháng 10 đến hết tháng 12 Dương lịch</span>
+                                <p class="season-desc">Mùa biểu tượng đặc sắc nhất của Hà Giang. Sắc hoa tam giác mạch chuyển biến diệu kỳ từ trắng tinh khôi sang hồng phấn rồi ánh tím thẫm kiêu hãnh trên nền đá tai mèo, cùng những buổi sớm mai săn mây bồng bềnh trên cung đèo Mã Pí Lèng huyền thoại.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 5: TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh">
+                    <h2><span class="icon">📸</span> 5. Top 10 Thắng cảnh biểu tượng & Dấu tích lịch sử</h2>
+                    <p>Khám phá trọn vẹn 10 tọa độ biểu tượng hùng vĩ và giàu giá trị di sản văn hóa nhất định phải đặt chân đến khi ghé thăm Hà Giang:</p>
+
+                    <div class="checkin-grid">
+                        <!-- Spot 1: Đèo Mã Pí Lèng (Double Col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/hagiang_ma_pi_leng.webp', 'Đèo Mã Pí Lèng — Vua Của Tứ Đại Đỉnh Đèo Miền Bắc', 'Dài 20km uốn lượn quanh vách núi hiểm trở ở độ cao 1.200m nối Đồng Văn và Mèo Vạc. Nơi đây từng được coi là kỳ tích mở đường của hàng ngàn thanh niên xung phong trên con đường Hạnh Phúc ròng rã suốt 6 năm (1959 - 1965).')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_ma_pi_leng.webp" alt="Đèo Mã Pí Lèng Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Top 1 Hùng Quan</span>
+                                    <span class="tag">Danh Thắng Quốc Gia</span>
+                                </div>
+                                <h3 class="dest-card-title">1. Đèo Mã Pí Lèng — Vua Của Các Con Đèo</h3>
+                                <p class="dest-card-desc">Cung đèo hiểm trở bậc nhất Việt Nam với tầm nhìn ngoạn mục thu trọn hẻm vực Tu Sản sâu thẳm và dòng sông Nho Quế màu ngọc bích phía dưới.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 2: Sông Nho Quế & Hẻm Tu Sản -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_nho_que.webp', 'Sông Nho Quế & Hẻm Tu Sản — Hẻm Vực Sâu Nhất Đông Nam Á', 'Hẻm vực karst sâu tới gần 1.000m với vách đá dựng đứng kỳ vĩ hai bên, ôm trọn dòng nước xanh trong vắt quanh năm phẳng lặng như dải lụa ngọc bích.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_nho_que.webp" alt="Sông Nho Quế Hẻm Tu Sản Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Must-Checkin</span>
+                                    <span class="tag">Hẻm Sâu 1000m</span>
+                                </div>
+                                <h3 class="dest-card-title">2. Sông Nho Quế & Hẻm Tu Sản</h3>
+                                <p class="dest-card-desc">Trải nghiệm du thuyền lướt nhẹ trên dòng sông ngọc bích ngước nhìn vách đá Tu Sản sừng sững cao vút chạm mây xanh.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 3: Cột cờ Quốc gia Lũng Cú -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_lung_cu.webp', 'Cột Cờ Quốc Gia Lũng Cú — Điểm Cực Bắc Thiêng Liêng', 'Tọa lạc trên đỉnh núi Rồng (Long Sơn) cao 1.470m so với mực nước biển, lá cờ đỏ sao vàng rộng 54m² bay kiêu hãnh giữa gió ngàn khẳng định chủ quyền biên cương Tổ quốc.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_lung_cu.webp" alt="Cột cờ Lũng Cú Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Cực Bắc Thiêng Liêng</span>
+                                    <span class="tag">Cờ 54m² Dân Tộc</span>
+                                </div>
+                                <h3 class="dest-card-title">3. Cột Cờ Quốc Gia Lũng Cú</h3>
+                                <p class="dest-card-desc">Cột mốc chủ quyền thiêng liêng nơi đỉnh cực Bắc đất nước, nơi mỗi người con đất Việt đều mơ ước một lần được chào cờ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 4: Dinh Thự Họ Vương (Double Col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/hagiang_vuong_mansion.webp', 'Dinh Thự Họ Vương (Dinh Vua Mèo) — Pháo Đài Đá Cổ Sà Phìn', 'Di tích kiến trúc nghệ thuật quốc gia xây dựng năm 1898 với kinh phí hơn 15 vạn đồng bạc trắng Đông Dương. Sự giao thoa độc đáo giữa kiến trúc người Mông, người Hoa và Pháp cổ giữa rặng sa mộc ngút ngàn.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_vuong_mansion.webp" alt="Dinh họ Vương Vua Mèo Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Di Tích Quốc Gia</span>
+                                    <span class="tag">Vua Mèo Vương Chính Đức</span>
+                                </div>
+                                <h3 class="dest-card-title">4. Dinh Thự Họ Vương — Trầm Tích Vua Mèo Sà Phìn</h3>
+                                <p class="dest-card-desc">Tòa pháo đài bằng đá xanh, gỗ sa mộc và mái ngói âm dương tinh xảo, ẩn chứa bao thăng trầm lịch sử vùng đất thuốc phiện một thời.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 5: Nhà của Pao -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_pao_house.webp', 'Làng Lũng Cẩm & Nhà Của Pao — Thung Lũng Sủng Là Cổ Kính', 'Ngôi nhà trình tường gần 100 năm tuổi của gia tộc người Mông giàu có, bối cảnh chính của bộ phim điện ảnh đoạt giải Cánh Diều Vàng Chuyện của Pao.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_pao_house.webp" alt="Nhà của Pao Làng Lũng Cẩm Sủng Là" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Bối Cảnh Điện Ảnh</span>
+                                    <span class="tag">Nhà Trình Tường</span>
+                                </div>
+                                <h3 class="dest-card-title">5. Nhà Của Pao — Bản Lũng Cẩm</h3>
+                                <p class="dest-card-desc">Nét mộc mạc nguyên sơ với tường đất vàng ấm áp, cổng gỗ bạc màu thời gian và giàn hoa tam giác mạch rực rỡ ngoài sân.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 6: Cao nguyên đá Đồng Văn -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_dong_van_karst.webp', 'Cao Nguyên Đá Đồng Văn — Công Viên Địa Chất Toàn Cầu UNESCO', 'Trải rộng qua 4 huyện núi cao phía Bắc Hà Giang, nơi lưu giữ các dấu vết cổ sinh địa chất có niên đại từ 400 đến 600 triệu năm trước.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_dong_van_karst.webp" alt="Cao nguyên đá Đồng Văn UNESCO Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">UNESCO Geopark</span>
+                                    <span class="tag">Đá Tai Mèo</span>
+                                </div>
+                                <h3 class="dest-card-title">6. Cao Nguyên Đá Đồng Văn</h3>
+                                <p class="dest-card-desc">Bảo tàng địa chất ngoài trời kỳ vĩ với những rừng đá tai mèo xám sắc nhọn trải dài đến tận chân trời.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 7: Cổng trời Quản Bạ & Núi Đôi Cô Tiên -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_quan_ba.webp', 'Cổng Trời Quản Bạ & Núi Đôi Cô Tiên — Bầu Vú Nàng Tiên Giữa Mây', 'Cửa ngõ đầu tiên bước vào Cao nguyên đá Đồng Văn ở độ cao 1.500m, nơi chiêm ngưỡng hai quả núi hình bầu ngực căng tròn tuyệt mỹ của nàng tiên.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_quan_ba.webp" alt="Núi Đôi Quản Bạ Cổng Trời Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Cửa Ngõ Cao Nguyên</span>
+                                    <span class="tag">Núi Đôi Cô Tiên</span>
+                                </div>
+                                <h3 class="dest-card-title">7. Núi Đôi Quản Bạ — Cổng Trời</h3>
+                                <p class="dest-card-desc">Kiệt tác thiên nhiên ban tặng cho thung lũng Tam Sơn, mây trắng bồng bềnh ôm ấp đôi gò bồng đào huyền thoại.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 8: Ruộng bậc thang Hoàng Su Phì -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_hoang_su_phi.webp', 'Ruộng Bậc Thang Hoàng Su Phì — Di Tích Quốc Gia Đặc Biệt', 'Công trình điêu khắc trên sườn núi đá vĩ đại nhất của đồng bào các dân tộc vùng cao, tầng tầng lớp lớp uốn lượn chạm mây trời.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_hoang_su_phi.webp" alt="Ruộng bậc thang Hoàng Su Phì Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Di Tích QG Đặc Biệt</span>
+                                    <span class="tag">Kỳ Quan Điêu Khắc</span>
+                                </div>
+                                <h3 class="dest-card-title">8. Ruộng Bậc Thang Hoàng Su Phì</h3>
+                                <p class="dest-card-desc">Tuyệt tác ruộng bậc thang dốc đứng ngoạn mục bậc nhất thế giới, biến chuyển diệu kỳ giữa mùa nước đổ và mùa lúa chín vàng.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 9: Phố cổ Đồng Văn -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_pho_co_dong_van.webp', 'Phố Cổ Đồng Văn — Trầm Tích Kiến Trúc Trăm Năm', 'Khu phố cổ hình thành từ đầu thế kỷ XX với gần 40 nếp nhà đất hai tầng cổ kính lợp ngói âm dương, lung linh ánh đèn lồng đỏ khi đêm về.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_pho_co_dong_van.webp" alt="Phố cổ Đồng Văn Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Phố Cổ Trăm Năm</span>
+                                    <span class="tag">Chợ Phiên Vùng Cao</span>
+                                </div>
+                                <h3 class="dest-card-title">9. Phố Cổ Đồng Văn — Hồn Xưa Cao Nguyên</h3>
+                                <p class="dest-card-desc">Không gian sinh hoạt văn hóa giao thương sầm uất với chợ phiên rực rỡ sắc áo thổ cẩm và quán cà phê phố cổ trầm mặc.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 10: Dốc Thẩm Mã -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_doc_tham_ma.webp', 'Dốc Thẩm Mã — Con Dốc Chín Khúc Quanh Thử Ngựa', 'Con dốc đèo ngoằn ngoèo với 9 khúc cua tay áo uốn lượn ngoạn mục, xưa kia là nơi đồng bào thử sức ngựa thồ vượt dốc đá cao nguyên.')">
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_doc_tham_ma.webp" alt="Dốc Thẩm Mã Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">9 Khúc Cua Tay Áo</span>
+                                    <span class="tag">Con Dốc Thử Ngựa</span>
+                                </div>
+                                <h3 class="dest-card-title">10. Dốc Thẩm Mã — Khúc Quanh Ngoạn Mục</h3>
+                                <p class="dest-card-desc">Điểm check-in kinh điển trên cung đường Hạnh Phúc, nơi ngắm nhìn trọn vẹn những khúc cua uốn lượn mềm mại như dải lụa qua núi đá.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 6: CẨM NANG DI CHUYỂN -->
+                <section id="di-chuyen">
+                    <h2><span class="icon">🚗</span> 6. Cẩm nang di chuyển & Cung đường giao thông</h2>
+                    <p>Hà Giang cách trung tâm thủ đô Hà Nội khoảng 300km. Với việc thông tuyến cao tốc Tuyên Quang - Phú Thọ, thời gian di chuyển từ Hà Nội lên TP Hà Giang hiện nay đã được rút ngắn chỉ còn khoảng 5.5 - 6 giờ:</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Chặng di chuyển & Phương tiện</th>
+                                    <th>Thời gian dự kiến</th>
+                                    <th>Mức giá tham khảo</th>
+                                    <th>Lời khuyên & Lưu ý an toàn</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Xe Limousine / Cabin VIP giường nằm</strong> (Hà Nội -> TP Hà Giang)</td>
+                                    <td>5.5 - 6 giờ</td>
+                                    <td><span class="price-tag">250.000 - 350.000 đ/vé</span></td>
+                                    <td>Nên chọn chuyến đêm (khởi hành 21h00 - 22h00 tại Mỹ Đình) để ngủ trên xe và có mặt tại TP Hà Giang lúc 04h00 sáng hôm sau.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thuê xe máy số / xe cào cào</strong> (Tại TP Hà Giang đi cung đường đèo)</td>
+                                    <td>Chủ động 3 - 4 ngày</td>
+                                    <td><span class="price-tag">150.000 - 450.000 đ/ngày</span></td>
+                                    <td>Xe số (Wave, Blade) từ 150k - 180k/ngày; Xe côn cào cào (XR150, CRF) từ 350k - 500k/ngày. Tuyệt đối không thuê xe ga đi đèo.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tour xe máy Easy Rider (Bản địa chở)</strong> (Trọn gói 3N2Đ)</td>
+                                    <td>3 Ngày 2 Đêm</td>
+                                    <td><span class="price-tag">2.500.000 - 3.200.000 đ/người</span></td>
+                                    <td>Lựa chọn an toàn số 1 cho người tay lái yếu, không quen đổ đèo dốc sương mù. Các tay lái bản địa giàu kinh nghiệm phục vụ chu đáo.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Xe ô tô 7 chỗ / 16 chỗ có lái</strong> (Hà Nội lên trọn gói)</td>
+                                    <td>Toàn bộ lịch trình</td>
+                                    <td><span class="price-tag">5.500.000 - 8.000.000 đ/chuyến</span></td>
+                                    <td>Phù hợp cho gia đình có người lớn tuổi và trẻ nhỏ. Cần chọn lái xe chuyên tuyến miền núi Tây Bắc quen đường cua tay áo.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Cung đường phượt kinh điển QL4C (Con đường Hạnh Phúc):</h3>
+                    <ul style="margin: 0.5rem 0 1.5rem 1.2rem; color: var(--text-sec); font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Chặng 1: TP Hà Giang -> Quản Bạ (46km):</strong> Vượt dốc Bắc Sum quanh co ngoạn mục lên Cổng trời Quản Bạ, ngắm Núi Đôi Cô Tiên và thung lũng Tam Sơn.</li>
+                        <li><strong>Chặng 2: Quản Bạ -> Yên Minh -> Sủng Là (80km):</strong> Đi qua rừng thông Yên Minh xanh mát, chinh phục Dốc Cán Tỷ, Dốc Thẩm Mã vào thung lũng Sủng Là ghé thăm Nhà của Pao.</li>
+                        <li><strong>Chặng 3: Sủng Là -> Sà Phìn -> Đồng Văn (35km):</strong> Ghé thăm Dinh thự dòng họ Vương (Vua Mèo), đi tiếp lên phố cổ Đồng Văn nghỉ đêm.</li>
+                        <li><strong>Chặng 4: Đồng Văn -> Lũng Cú -> Đèo Mã Pí Lèng -> Mèo Vạc (50km):</strong> Chinh phục Cột cờ cực Bắc Lũng Cú, vượt Đèo Mã Pí Lèng ngắm hẻm Tu Sản, chèo thuyền sông Nho Quế.</li>
+                    </ul>
+                </section>
+
+                <!-- MỤC 7: TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <section id="am-thuc">
+                    <h2><span class="icon">🍲</span> 7. Tinh hoa ẩm thực đặc sản</h2>
+                    <p>Ẩm thực vùng cao Hà Giang mang phong vị đậm đà, hoang dại của núi rừng đại ngàn. Giữa cái lạnh buốt giá của đá tai mèo, những món ăn nghi ngút khói thơm nồng nàn thảo quả, hạt dổi và chén rượu ngô men lá nồng ấm xua tan mọi mệt mỏi đường xa:</p>
+
+                    <div class="culinary-grid">
+                        <!-- Món 1: Thắng cố ngựa Đồng Văn -->
+                        <div class="culinary-card" onclick="openLightbox('images/hagiang_mon_thang_co_dong_van.webp', 'Thắng Cố Ngựa Đồng Văn — Bản Sắc Đại Ngàn Chợ Phiên', 'Nồi thắng cố khổng lồ sôi sùng sục trên bếp củi chợ phiên Đồng Văn. Thịt ngựa, sườn, lòng mề được ninh nhừ cùng 12 vị thảo mộc núi rừng: mắc khén, thảo quả, quế hồi, sả, gừng, tạo nên hương vị bùi ngậy nồng nàn.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hagiang_mon_thang_co_dong_van.webp" alt="Thắng cố ngựa Đồng Văn Hà Giang" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">1. Thắng Cố Ngựa Đồng Văn</h3>
+                                <p class="culinary-desc">Món ăn linh hồn của người H'Mông tại các phiên chợ vùng cao. Miếng thịt ngựa giòn sần sật béo bùi quyện trong nước dùng thơm lừng gia vị rừng, chấm cùng bát muối ớt xanh cay xé lưỡi và nhấp chén rượu ngô men lá ấm nồng cả lồng ngực.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">50.000 - 100.000 VNĐ / bát</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 2: Cháo ấu tẩu -->
+                        <div class="culinary-card" onclick="openLightbox('images/hagiang_mon_chao_au_tau.webp', 'Cháo Ấu Tẩu Hà Giang — Vị Đắng Dược Liệu Hóa Ngọt Bùi', 'Nồi cháo độc đáo nấu từ củ ấu tẩu hầm kỹ hơn 12 tiếng để loại bỏ độc tố, ninh cùng gạo nếp nương và chân giò heo béo ngậy. Bát cháo sánh mịn bốc khói có vị đắng thanh ban đầu nhưng đọng lại hậu vị ngọt bùi sâu lắng.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hagiang_mon_chao_au_tau.webp" alt="Cháo ấu tẩu Hà Giang" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">2. Cháo Ấu Tẩu — Thức Quà Đêm Giải Cảm</h3>
+                                <p class="culinary-desc">Được ví như vị thuốc bồi bổ xương khớp và xua tan mệt mỏi sau ngày dài vượt đèo dốc. Bát cháo thơm nồng hành hoa, lá tía tô thái sợi, rắc thêm chút tiêu đen cay ấm và quả trứng gà chần lòng đào béo ngậy làm ấm lòng lữ khách đêm đông.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">35.000 - 50.000 VNĐ / bát</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 3: Bánh tam giác mạch nướng than hoa -->
+                        <div class="culinary-card" onclick="openLightbox('images/hagiang_mon_banh_tam_giac_mach.webp', 'Bánh Tam Giác Mạch Nướng — Hương Thơm Hạt Ngọc Khe Đá', 'Hạt tam giác mạch phơi khô xay nhuyễn thành bột mịn, nhào nước đúc thành từng chiếc bánh tròn dày rồi nướng chín trên bếp than hồng rực rỡ bên vỉa hè chợ phiên.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hagiang_mon_banh_tam_giac_mach.webp" alt="Bánh tam giác mạch nướng Hà Giang" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">3. Bánh Tam Giác Mạch Nướng Than Hoa</h3>
+                                <p class="culinary-desc">Cầm trên tay chiếc bánh tam giác mạch nóng hổi vừa ra lò giữa tiết trời lạnh giá, cắn một miếng thấy vỏ ngoài giòn giòn, bên trong xốp mềm bùi bùi, phảng phất hương vị hăng ngái đặc trưng của hạt hoa vùng cao nguyên đá.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">15.000 - 25.000 VNĐ / chiếc</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 4: Thịt lợn đen hun khói gác bếp -->
+                        <div class="culinary-card" onclick="openLightbox('images/hagiang_mon_thit_lon_den_hun_khoi.webp', 'Thịt Lợn Đen Gác Bếp — Đượm Nồng Khói Lửa Hoàng Liên', 'Từng thớ thịt đùi lợn đen thả rông tẩm ướp hạt dổi, mắc khén, ớt bột rồi treo lủng lẳng trên gác bếp suốt nhiều tháng. Lớp mỡ trong veo giòn giòn không ngấy, phần nạc đỏ au đậm đà mùi khói mía và củi gụ.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hagiang_mon_thit_lon_den_hun_khoi.webp" alt="Thịt lợn đen hun khói gác bếp Hà Giang" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">4. Thịt Lợn Đen Hun Khói Gác Bếp</h3>
+                                <p class="culinary-desc">Thịt lợn cắp nách nuôi tự nhiên ăn ngô khoai trên sườn núi nên thịt săn chắc vô cùng. Khi ăn đem xào với cải mèo đắng hoặc nướng than hoa chấm muối ớt chanh, tạo nên món nhắm kinh điển không thể thiếu bên vò rượu ngô bản địa.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">380.000 - 550.000 VNĐ / kg</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 5: Phở Tráng Kìm gà đồi -->
+                        <div class="culinary-card" onclick="openLightbox('images/hagiang_mon_pho_trang_kim.webp', 'Phở Tráng Kìm Gà Đồi — Bánh Phở Thủ Công Sắc Vàng Nghệ', 'Sợi phở Tráng Kìm được tráng tay thủ công bằng bột gạo nương pha nghệ vàng óng ả phơi trên sào nứa bên đường Quản Bạ, kết hợp thịt gà đồi da vàng giòn sần sật và nước dùng ninh xương ngọt thanh trong vắt.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hagiang_mon_pho_trang_kim.webp" alt="Phở Tráng Kìm gà đồi Quản Bạ Hà Giang" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">5. Phở Tráng Kìm Gà Đồi Quản Bạ</h3>
+                                <p class="culinary-desc">Bữa sáng truyền thống của người dân xã Đông Hà bên dòng sông Miện. Bát phở ngập tràn những miếng gà đồi chặt dày thịt dai ngọt, nước dùng thơm ngát mùi gừng núi và thảo mộc, húp một ngụm là thấy nguồn năng lượng tràn trề để sẵn sàng chinh phục đèo cao.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">40.000 - 60.000 VNĐ / bát</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 6: Thắng dền Đồng Văn -->
+                        <div class="culinary-card" onclick="openLightbox('images/hagiang_mon_thang_den_dong_van.webp', 'Thắng Dền Đồng Văn — Món Ngọt Ấm Nóng Đêm Phố Cổ', 'Từng viên bánh nếp nương tròn xinh nhân đậu xanh dẻo quánh, luộc chín bồng bềnh trong bát nước đường hoa mai gừng già cay nồng, rắc thêm vừng rang, đậu phộng và chút nước cốt dừa thơm béo.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hagiang_mon_thang_den_dong_van.webp" alt="Thắng dền Đồng Văn Hà Giang" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">6. Thắng Dền Phố Cổ Đồng Văn</h3>
+                                <p class="culinary-desc">Ngồi bên hiên nhà cổ Đồng Văn giữa đêm đông lạnh buốt dưới 5 độ C, xì xụp bát thắng dền nóng hổi ấm sực cả người. Vị cay ấm nồng nàn của gừng già quyện cùng vị ngọt thanh của đường nâu và độ dẻo mềm của nếp nương tạo nên cảm xúc xao xuyến khó tả.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">20.000 - 30.000 VNĐ / bát</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 8: BẢNG GIÁ VÉ THAM QUAN NIÊM YẾT -->
+                <section id="gia-ve">
+                    <h2><span class="icon">🎟️</span> 8. Bảng giá vé tham quan & Dịch vụ trải nghiệm niêm yết</h2>
+                    <p>Bảng giá vé tham quan thắng cảnh và dịch vụ du lịch niêm yết chính thức tại các điểm đến trọng điểm tỉnh Hà Giang (Cập nhật năm 2026):</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Điểm Tham Quan / Dịch Vụ</th>
+                                    <th>Mức Phí Niêm Yết</th>
+                                    <th>Đối Tượng Trẻ Em</th>
+                                    <th>Chi Tiết Quyền Lợi & Ghi Chú</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Cột Cờ Quốc Gia Lũng Cú</strong></td>
+                                    <td><span class="price-tag">25.000 đ/người</span></td>
+                                    <td><span class="price-tag">10.000 đ (Dưới 1m2)</span></td>
+                                    <td>Vé tham quan leo lên đỉnh Cột cờ. Dịch vụ xe điện trung chuyển từ bãi xe: 15.000 đ/lượt.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Khu Dinh Thự Họ Vương (Dinh Vua Mèo)</strong></td>
+                                    <td><span class="price-tag">30.000 đ/người</span></td>
+                                    <td><span class="price-tag">Miễn phí trẻ em</span></td>
+                                    <td>Bao gồm vé vào cổng tham quan toàn bộ 64 gian phòng pháo đài kiến trúc cổ Sà Phìn.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Làng Văn Hóa Lũng Cẩm & Nhà Của Pao</strong></td>
+                                    <td><span class="price-tag">10.000 đ/người</span></td>
+                                    <td><span class="price-tag">Miễn phí</span></td>
+                                    <td>Vé bảo tồn văn hóa làng cổ Sủng Là và tham quan khuôn viên ngôi nhà trình tường cổ.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Du Thuyền Ngắm Hẻm Tu Sản — Sông Nho Quế</strong></td>
+                                    <td><span class="price-tag">120.000 đ/người</span></td>
+                                    <td><span class="price-tag">60.000 đ (Dưới 1m2)</span></td>
+                                    <td>Hành trình thuyền máy ngắm hẻm Tu Sản 45 - 60 phút. Xe ôm trung chuyển bến thuyền: 100.000 đ khứ hồi.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Động Lùng Khúy (Quản Bạ)</strong></td>
+                                    <td><span class="price-tag">50.000 đ/người</span></td>
+                                    <td><span class="price-tag">20.000 đ</span></td>
+                                    <td>"Đệ nhất động cao nguyên đá" với hệ thống thạch nhũ nguyên sinh kỳ ảo dài hơn 300m.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Chèo Thuyền Kayak / SUP Sông Nho Quế</strong></td>
+                                    <td><span class="price-tag">100.000 - 150.000 đ</span></td>
+                                    <td><span class="price-tag">Theo người lớn</span></td>
+                                    <td>Thuê thuyền tự chèo trải nghiệm mặt nước ngọc bích hẻm Tu Sản (kèm áo phao an toàn).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cổng Trời Quản Bạ & Đèo Mã Pí Lèng</strong></td>
+                                    <td><span class="price-tag">Miễn phí tham quan</span></td>
+                                    <td><span class="price-tag">Miễn phí</span></td>
+                                    <td>Tự do dừng chân vãn cảnh, chụp ảnh tại các điểm dừng chân công cộng trên đèo.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="disclaimer-box">
+                        * Giá vé trên được áp dụng theo biểu phí niêm yết của Ban Quản lý Công viên Địa chất Cao nguyên đá Đồng Văn. Giá dịch vụ thuyền đò và xe ôm có thể điều chỉnh nhẹ vào các dịp nghỉ lễ hội hoa Tam Giác Mạch cao điểm.
+                    </div>
+                </section>
+
+                <!-- MỤC 9: GỢI Ý LỊCH TRÌNH 3N2Đ & MẸO AN TOÀN -->
+                <section id="lich-trinh">
+                    <h2><span class="icon">🧭</span> 9. Gợi ý lịch trình & Mẹo trải nghiệm bản địa an toàn</h2>
+                    <p>Cung đường Hà Giang có địa hình đèo dốc quanh co liên tục. Để chuyến đi vừa an toàn, trọn vẹn và không bị kiệt sức, GO FAR đề xuất lịch trình trải nghiệm tối ưu 3 Ngày 2 Đêm:</p>
+
+                    <h3>Lịch trình gợi ý 3N2Đ: "Bản Hùng Ca Cao Nguyên Đá — Chạm Đỉnh Lũng Cú"</h3>
+                    <div style="margin: 1rem 0; padding-left: 1.2rem; border-left: 3px solid var(--accent); color: var(--text-sec); font-size: 0.95rem;">
+                        <p><strong>Ngày 1: TP Hà Giang — Dốc Bắc Sum — Cổng Trời Quản Bạ — Rừng Thông Yên Minh — Đồng Văn</strong><br>
+                        - 06h30: Nhận xe máy tại TP Hà Giang, ăn sáng phở chua hoặc bánh cuốn trứng nước canh.<br>
+                        - 08h00: Vượt dốc Bắc Sum, dừng chân ngắm Núi Đôi Quản Bạ tại Cổng Trời.<br>
+                        - 10h30: Ghé thăm cây nghiến cô đơn Cán Tỷ, ngắm thung lũng đá tai mèo kỳ vĩ.<br>
+                        - 12h30: Ăn trưa tại thị trấn Yên Minh, thưởng thức cơm lam gà đồi nướng.<br>
+                        - 14h00: Chinh phục Dốc Thẩm Mã huyền thoại, check-in thung lũng Sủng Là và Nhà của Pao.<br>
+                        - 16h30: Khám phá Dinh thự Vua Mèo họ Vương tại thung lũng Sà Phìn.<br>
+                        - 18h30: Nhận phòng homestay tại Phố cổ Đồng Văn, ăn tối lẩu gà đen hoặc thắng cố ngựa, thưởng thức bát thắng dền nóng hổi dạo phố cổ về đêm.</p>
+
+                        <p style="margin-top: 1rem;"><strong>Ngày 2: Cột Cờ Lũng Cú — Đệ Nhất Đèo Mã Pí Lèng — Du Thuyền Sông Nho Quế — Mèo Vạc</strong><br>
+                        - 07h00: Ăn sáng bánh cuốn Đồng Văn chấm nước hầm xương đậm đà.<br>
+                        - 08h30: Chạm tay vào lá cờ Tổ quốc trên đỉnh Cột cờ Lũng Cú và ghé thăm mốc điểm cực Bắc 428 thiêng liêng.<br>
+                        - 12h00: Ăn trưa tại Đồng Văn rồi khởi hành chinh phục đệ nhất hùng quan Đèo Mã Pí Lèng.<br>
+                        - 14h00: Đi xe ôm xuống bến thuyền Nho Quế, trải nghiệm du thuyền len qua hẻm Tu Sản sâu hun hút.<br>
+                        - 17h00: Vượt đèo về thị trấn Mèo Vạc hoặc Làng văn hóa du lịch cộng đồng Pả Vi nghỉ đêm, thưởng thức bữa cơm tối ấm cúng cùng đồng bào người Mông.</p>
+
+                        <p style="margin-top: 1rem;"><strong>Ngày 3: Mèo Vạc — Cung Đường Chữ M — Du Già Hoặc Đường Cũ Về TP Hà Giang — Hà Nội</strong><br>
+                        - 07h30: Đi dạo chợ phiên Mèo Vạc (nếu trúng Chủ nhật), mua sắm đặc sản mật ong bạc hà, thịt gác bếp.<br>
+                        - 09h00: Chinh phục cung đèo chữ M ngoạn mục, xuôi về thung lũng nguyên sơ Du Già tắm thác nước mát lành.<br>
+                        - 13h00: Ăn trưa tại Du Già rồi thong dong theo đường tỉnh 176 trở về TP Hà Giang.<br>
+                        - 17h30: Trả xe máy tại TP Hà Giang, ăn tối thưởng thức bát cháo ấu tẩu nóng hổi giải mỏi.<br>
+                        - 20h30: Lên xe cabin VIP giường nằm êm ái trở về thủ đô Hà Nội, kết thúc chuyến phượt để đời.</p>
+                    </div>
+
+                    <h3>Mẹo an toàn sống còn khi đi đèo dốc Hà Giang:</h3>
+                    <ul style="margin: 0.5rem 0 1rem 1.2rem; color: var(--text-sec); font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Quy tắc đổ đèo bằng số thấp:</strong> "Lên dốc số nào thì xuống dốc số đó" (chủ yếu dùng số 1 và số 2). Tuyệt đối không âm côn, không về mo (số 0) và không bóp phanh liên tục để tránh cháy má phanh gây mất phanh nguy hiểm tính mạng.</li>
+                        <li><strong>Không đi xe tay ga:</strong> Địa hình đèo dốc Hà Giang có độ dốc trung bình 10 - 14% với hàng trăm khúc cua tay áo khuất tầm nhìn, xe tay ga không có phanh động cơ số nên cực kỳ nguy hiểm. Luôn chọn xe số hoặc xe côn tay.</li>
+                        <li><strong>Quy tắc lái xe trong sương mù:</strong> Mùa đông và mùa xuân thường xuyên có sương mù dày đặc che khuất tầm nhìn dưới 5 mét trên đèo Mã Pí Lèng và Cổng trời. Luôn bật đèn pha sương, bóp còi cảnh báo trước khi vào cua và giữ khoảng cách an toàn.</li>
+                        <li><strong>Tôn trọng văn hóa bản địa:</strong> Không chụp ảnh xoa đầu trẻ em vùng cao, không tự ý cho tiền trẻ em bên đường (nên tặng sách vở, bánh kẹo), xin phép người dân trước khi chụp ảnh chân dung và ăn mặc lịch sự khi ghé thăm các di tích văn hóa.</li>
+                    </ul>
+                </section>
+
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a>
+            © 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch Việt Nam chuẩn xác & chuyên sâu.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            Biên tập nội dung: <strong>Sửu nhi</strong> • Ảnh: <strong>100% AI Travel Photography (GO FAR Studio)</strong>
+        </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img loading="lazy" class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightboxDirect()">&times;</span>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="Chi tiết hình ảnh danh thắng Hà Giang">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Lightbox Zoom functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const destCards = document.querySelectorAll('.dest-card, .season-card');
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
+        function openLightbox(src, title, caption) {
+            var modal = document.getElementById('lightboxModal');
+            var img = document.getElementById('lightboxImg');
+            var titleElem = document.getElementById('lightboxTitle');
+            var capElem = document.getElementById('lightboxCaption');
+            
+            img.src = src;
+            titleElem.textContent = title;
+            capElem.textContent = caption;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
-            if (destCards.length && lightboxModal && lightboxImg) {
-                destCards.forEach(card => {
-                    card.style.cursor = 'zoom-in';
-                    card.addEventListener('click', () => {
-                        const img = card.querySelector('.dest-card-img img') || card.querySelector('.season-card-img img');
-                        if (!img) return;
+        function closeLightboxDirect() {
+            var modal = document.getElementById('lightboxModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-                        let titleText = "";
-                        let descText = "";
+        function closeLightbox(event) {
+            if (event.target.id === 'lightboxModal') {
+                closeLightboxDirect();
+            }
+        }
 
-                        const overlayH3 = card.querySelector('.dest-card-content h3') || card.querySelector('.season-card-body h3');
-                        const overlayP = card.querySelector('.dest-card-content p') || card.querySelector('.season-card-body .season-desc');
-                        if (overlayH3) titleText = overlayH3.textContent;
-                        if (overlayP) descText = overlayP.textContent;
-
-                        if (!titleText && !descText) {
-                            titleText = img.alt || "Chi tiết hình ảnh";
-                        }
-
-                        lightboxModal.style.display = 'flex';
-                        lightboxImg.src = img.src;
-                        
-                        let captionHTML = "";
-                        if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
-                        }
-                        if (descText) {
-                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
-                        }
-                        
-                        const legend = card.getAttribute('data-legend');
-                        if (legend) {
-                            captionHTML += `
-                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
-                                    ✨ Truyền thuyết & Sự tích Kỳ bí
-                                </span>
-                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
-                            </div>`;
-                        }
-                        lightboxCaption.innerHTML = captionHTML;
-                    });
-                });
-
-                lightboxClose.addEventListener('click', () => {
-                    lightboxModal.style.display = 'none';
-                });
-
-                lightboxModal.addEventListener('click', (e) => {
-                    if (e.target === lightboxModal || e.target === lightboxClose) {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
-                
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightboxDirect();
             }
         });
     </script>
