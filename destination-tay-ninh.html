@@ -665,6 +665,90 @@
             .lightbox-content { max-height: 42vh; }
             .lightbox-caption-wrap { padding: 1.2rem; }
         }
+    
+        /* CULINARY SHOWCASE */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .culinary-card {
+            background: rgba(22, 44, 62, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 50, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.06);
+        }
+        .culinary-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(22, 44, 62, 0.85);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251,191,36,0.3);
+        }
+        .culinary-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .culinary-price {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+        .culinary-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            flex: 1;
+        }
+        .culinary-address {
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
+            margin: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -713,10 +797,10 @@
                     <h3 class="widget-title">🧭 Mục lục bài viết</h3>
                     <ul class="toc-list">
                         <li><a href="#tong-quan">1. Nóc nhà Nam Bộ & Đệ nhất thiên sơn</a></li>
-                        <li><a href="#vi-tri-lich-su">2. Vị trí địa lý & Dấu ấn Lịch sử</a></li>
+                        <li><a href="#lich-su-dia-ly">2. Vị trí Địa lý & Dấu ấn Lịch sử</a></li>
                         <li><a href="#huyen-thoai">3. Huyền thoại Linh Sơn Thánh Mẫu</a></li>
-                        <li><a href="#chuoi-anh-4-mua">4. Chuỗi hình ảnh 4 Mùa Du lịch</a></li>
-                        <li><a href="#toa-do">5. Tọa độ Biểu tượng Đỉnh Núi Bà Đen</a></li>
+                        <li><a href="#bon-mua">4. Chuỗi hình ảnh 4 Mùa Du lịch</a></li>
+                        <li><a href="#thang-canh">5. Top 10 Thắng cảnh Biểu tượng & Di tích</a></li>
                         <li><a href="#di-chuyen">6. Cẩm nang di chuyển & Cáp treo</a></li>
                         <li><a href="#am-thuc">7. Tinh hoa Ẩm thực Tây Ninh</a></li>
                         <li><a href="#gia-ve">8. Bảng giá vé Cáp treo & Điểm tham quan</a></li>
@@ -728,15 +812,15 @@
             <!-- MAIN ARTICLE -->
             <main class="article-main">
 
-                <div class="intro-lead" id="tong-quan">
+                <div class="intro-lead">
+                    <h2 id="tong-quan" style="border:none; margin:0 0 1rem 0; padding:0;"><span class="icon">🌿</span> 1. Nóc Nhà Nam Bộ & Đệ Nhất Thiên Sơn</h2>
                     Sừng sững hiên ngang giữa vùng đồng bằng phì nhiêu Nam Bộ, ngọn núi <strong>Bà Đen (986m)</strong> được mệnh danh là <em>"Nóc nhà Đông Nam Bộ"</em> và <em>"Đệ nhất thiên sơn"</em>. Không chỉ là chốn địa linh tụ khí với truyền thuyết Linh Sơn Thánh Mẫu linh ứng hơn ba thế kỷ, <strong>Tây Ninh</strong> còn là miền đất linh thiêng của Tòa Thánh Cao Đài với kiến trúc vạn giáo quy nguyên độc nhất vô nhị, nơi lưu giữ căn cứ cách mạng Chiến khu R hào hùng và nền ẩm thực chay tinh tế đã trở thành Di sản văn hóa phi vật thể quốc gia.
                 </div>
 
-                <h2><span class="icon">🌿</span> 1. Nóc Nhà Nam Bộ & Đệ Nhất Thiên Sơn</h2>
                 <p>Nằm cách TP. Hồ Chí Minh khoảng 90km về phía Tây Bắc, Tây Ninh sở hữu địa hình chuyển tiếp đặc sắc giữa vùng cao nguyên bán sơn địa và đồng bằng châu thổ. Nổi bật nhất trên nền trời là ngọn núi Bà Đen hình nón khổng lồ cao 986m quanh năm mây phủ trắng xóa. Khí hậu Tây Ninh mang tính chất nhiệt đới gió mùa phương Nam nhưng trên đỉnh núi cao lại mát mẻ như xứ ôn đới, nhiệt độ thường thấp hơn vùng đồng bằng từ 8°C đến 10°C, mang đến trải nghiệm bốn mùa trong một ngày độc đáo.</p>
                 <p>Vào những tháng cuối năm và đầu mùa khô (tháng 10 đến tháng 4 năm sau), Tây Ninh là điểm hẹn săn mây lý tưởng bậc nhất phía Nam. Tại đỉnh núi Bà Đen, hiện tượng kỳ thú "mây thấu kính đĩa bay" (Lenticular clouds) thường xuyên xuất hiện tạo nên vòng hào quang mây khổng lồ bao bọc lấy đỉnh thiêng, thu hút hàng triệu lượt du khách và Phật tử hành hương chiêm bái.</p>
 
-                <h2 id="vi-tri-lich-su"><span class="icon">🏛️</span> 2. Vị Trí Địa Lý & Dấu Ấn Lịch Sử Căn Cứ Trung Ương Cục</h2>
+                <h2 id="lich-su-dia-ly"><span class="icon">🏛️</span> 2. Vị Trí Địa Lý & Dấu Ấn Lịch Sử Căn Cứ Trung Ương Cục</h2>
                 <p>Tây Ninh có vị trí địa kinh tế và quốc phòng đặc biệt quan trọng với hơn 240km đường biên giới tiếp giáp Vương quốc Campuchia. Vùng đất này từng là căn cứ địa cách mạng bất khả xâm phạm của quân dân miền Nam trong hai cuộc kháng chiến vĩ đại của dân tộc.</p>
                 <p>Theo <strong>Quyết định số 548/QĐ-TTg ngày 10/5/2012 của Thủ tướng Chính phủ</strong>, Căn cứ Trung ương Cục miền Nam (Chiến khu R) tại huyện Tân Biên đã được xếp hạng là <strong>Di tích quốc gia đặc biệt</strong>. Nơi đây từng là đầu não lãnh đạo toàn bộ phong trào cách mạng giải phóng miền Nam (1961 - 1975) dưới sự chở che của rừng già Chàng Riệc và những mái nhà lá trung quân không bén lửa.</p>
                 <div class="highlight-box">
@@ -762,7 +846,7 @@
                 </div>
 
                 <!-- 4. CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH -->
-                <h2 id="chuoi-anh-4-mua"><span class="icon">🌸</span> 4. Chuỗi Hình Ảnh 4 Mùa Du Lịch Tây Ninh</h2>
+                <h2 id="bon-mua"><span class="icon">🌸</span> 4. Chuỗi Hình Ảnh 4 Mùa Du Lịch Tây Ninh</h2>
                 <p>Khí hậu Tây Ninh chia hai mùa mưa nắng rõ rệt, kết hợp cùng các dịp đại lễ tâm linh quy mô lớn tạo nên bốn mùa trải nghiệm kỳ thú:</p>
 
                 <div class="seasons-grid">
@@ -819,13 +903,13 @@
                     </div>
                 </div>
 
-                <!-- 5. TỌA ĐỘ CHECK-IN BIỂU TƯỢNG -->
-                <h2 id="toa-do"><span class="icon">📸</span> 5. Tọa Độ Biểu Tượng Đỉnh Núi Bà Đen</h2>
+                <!-- 5. TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <h2 id="thang-canh"><span class="icon">📸</span> 5. Top 10 Thắng Cảnh Biểu Tượng & Dấu Tích Lịch Sử</h2>
                 <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử chính thống)</em></p>
 
                 <div class="checkin-grid">
 
-                    <!-- 1. Đỉnh Núi Bà Đen & Tượng Phật Bà Tây Bổ Đà Sơn -->
+                    <!-- 1. Đỉnh Núi Bà Đen & Tượng Phật Bà Tây Bổ Đà Sơn (double-col) -->
                     <div class="dest-card double-col" data-legend="Núi Bà Đen là ngọn núi lửa đã tắt cao 986m, đỉnh núi cao nhất Nam Bộ được mệnh danh là 'Nóc nhà Đông Nam Bộ'. Tọa lạc uy nghiêm trên đỉnh núi là Tượng Phật Bà Tây Bổ Đà Sơn — kiệt tác điêu khắc đạt Kỷ lục Guinness thế giới năm 2021 là 'Tượng Phật Bà bằng đồng cao nhất châu Á tọa lạc trên đỉnh núi'. Tượng cao 72m đúc từ 170 tấn đồng đỏ nguyên khối, đứng trang nghiêm trên đài sen đồng, hướng tầm mắt từ bi bao quát toàn cảnh đồng bằng Nam Bộ bao la trong biển mây vần vũ.">
                         <div class="dest-card-img">
                             <img src="images/tayninh_dinh_nui_ba_den_phat_ba.webp" alt="Tượng Phật Bà Tây Bổ Đà Sơn đỉnh núi Bà Đen Tây Ninh" loading="lazy">
@@ -841,7 +925,7 @@
                         </div>
                     </div>
 
-                    <!-- 2. Quần thể Chùa Bà Đen -->
+                    <!-- 2. Quần thể Chùa Bà Đen (single-col) -->
                     <div class="dest-card single-col" data-legend="Quần thể chùa Bà (Linh Sơn Tiên Thạch Tự) tọa lạc ở độ cao 350m lưng chừng núi Bà Đen, khởi dựng từ thế kỷ XVIII với lịch sử hơn 300 năm linh ứng. Chùa nép mình bên những vách đá hoa cương sừng sững, gồm chùa Thượng, chùa Hạ, chùa Trung và động Ba Cô. Nơi đây là trung tâm tín ngưỡng thờ Linh Sơn Thánh Mẫu, thu hút hàng triệu khách hành hương mỗi dịp Tết đến xuân về chiêm bái cầu quốc thái dân an.">
                         <div class="dest-card-img">
                             <img src="images/tayninh_chua_ba_den_linh_son_tien_thach.webp" alt="Chùa Bà Đen Linh Sơn Tiên Thạch Tự Tây Ninh" loading="lazy">
@@ -857,7 +941,7 @@
                         </div>
                     </div>
 
-                    <!-- 3. Đại tượng Phật Di Lặc sa thạch -->
+                    <!-- 3. Đại tượng Phật Di Lặc sa thạch (single-col) -->
                     <div class="dest-card single-col" data-legend="Khánh thành đầu năm 2024 ở độ cao 900m trên đỉnh núi Bà Đen, Đại tượng Phật Di Lặc bằng đá sa thạch có chiều cao 36m, bề rộng lớn nhất 45m. Bức tượng được ghép nối kỳ công từ 6.688 viên đá sa thạch tự nhiên khai thác tại chỗ, tạo nên nụ cười hoan hỷ an lạc hướng về phía hồ Dầu Tiếng. Phía sau tượng là thác nước nhân tạo cao 35m chảy tràn qua các tầng đá bậc thang kết hợp hệ thống nhạc nước hiện đại bậc nhất Việt Nam.">
                         <div class="dest-card-img">
                             <img src="images/tayninh_dai_tuong_phat_di_lac_sa_thach.webp" alt="Tượng Phật Di Lặc bằng đá sa thạch Tây Ninh" loading="lazy">
@@ -870,6 +954,118 @@
                             </div>
                             <h3 class="dest-card-title">3. Đại Tượng Phật Di Lặc Sa Thạch</h3>
                             <p class="dest-card-desc">Pho tượng Phật Di Lặc bằng đá sa thạch lớn hàng đầu thế giới với nụ cười hoan hỷ bên thác nước vô cực kỳ vĩ.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Tòa Thánh Tây Ninh (single-col) -->
+                    <div class="dest-card single-col" data-legend="Tòa Thánh Tây Ninh (Đền Thánh Cao Đài) tại thị xã Hòa Thành, khởi dựng năm 1931 hoàn thành năm 1955. Là thánh địa trung ương của đạo Cao Đài — tôn giáo nội sinh lớn thứ ba Việt Nam. Kiến trúc độc nhất vô nhị hòa quyện giữa tháp chuông nhà thờ Công giáo, mái cong chùa chiền Á Đông và vòm tròn Hồi giáo, biểu tượng Thiên Nhãn rạng ngời tinh thần Vạn giáo quy nguyên.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_toa_thanh_tay_ninh_cao_dai.webp" alt="Tòa Thánh Tây Ninh Đền Thánh Cao Đài" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Thánh địa Cao Đài</span>
+                                <span class="tag">Thiên Nhãn</span>
+                            </div>
+                            <h3 class="dest-card-title">4. Tòa Thánh Tây Ninh (Đền Thánh Cao Đài)</h3>
+                            <p class="dest-card-desc">Kiệt tác kiến trúc tôn giáo độc nhất vô nhị biểu trưng tinh thần vạn giáo quy nguyên với sắc màu rực rỡ và nghi lễ tôn nghiêm.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Hồ Dầu Tiếng & Đảo Nhím (double-col) -->
+                    <div class="dest-card double-col" data-legend="Hồ Dầu Tiếng là hồ nước nhân tạo lớn nhất Việt Nam và Đông Nam Á với diện tích mặt nước 270 km², dung tích trữ nước hơn 1,58 tỷ m³. Trải dài giữa Tây Ninh, Bình Dương và Bình Phước, hồ sở hữu khung cảnh hoang sơ tuyệt mỹ với Đảo Nhím xanh ngát, mặt nước ngọc bích phẳng lặng soi bóng ngọn núi Bà Đen hùng vĩ ở phía chân trời, là thiên đường cắm trại ngắm hoàng hôn đỉnh cao.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_ho_dau_tieng_dao_nhim.webp" alt="Hồ Dầu Tiếng và Đảo Nhím Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Hồ nhân tạo lớn nhất ĐNA</span>
+                                <span class="tag">Cắm trại hoàng hôn</span>
+                            </div>
+                            <h3 class="dest-card-title">5. Hồ Dầu Tiếng & Đảo Nhím Hoang Sơ</h3>
+                            <p class="dest-card-desc">Biển hồ nước ngọt mênh mông 270km² với những cù lao xanh mướt, điểm hẹn cắm trại ngắm hoàng hôn buông xuống núi Bà Đen kỳ vĩ.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Vườn Quốc Gia Lò Gò - Xa Mát (single-col) -->
+                    <div class="dest-card single-col" data-legend="Vườn Quốc gia Lò Gò - Xa Mát (huyện Tân Biên) được Hội đồng Vườn Di sản ASEAN công nhận là Vườn Di sản ASEAN (ASEAN Heritage Park) năm 2019. Với diện tích hơn 30.000 ha, nơi đây bảo tồn hệ sinh thái rừng rụng lá họ Dầu (rừng khộp) chuyển tiếp độc đáo giữa Tây Nguyên và đồng bằng sông Cửu Long, nơi trú ngụ của loài sếu đầu đỏ quý hiếm và thảm thực vật ngập nước nguyên sơ.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_vuon_quoc_gia_lo_go_xa_mat.webp" alt="Vườn Quốc gia Lò Gò Xa Mát Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Vườn Di Sản ASEAN</span>
+                                <span class="tag">Sếu đầu đỏ</span>
+                            </div>
+                            <h3 class="dest-card-title">6. Vườn Quốc Gia Lò Gò — Xa Mát</h3>
+                            <p class="dest-card-desc">Vườn Di sản ASEAN với sinh cảnh rừng ngập nước, bến thuyền sông Vàm Cỏ Đông êm đềm và hệ động thực vật quý hiếm.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Căn Cứ Trung Ương Cục Miền Nam (single-col) -->
+                    <div class="dest-card single-col" data-legend="Căn cứ Trung ương Cục miền Nam (Chiến khu R, huyện Tân Biên) được xếp hạng Di tích quốc gia đặc biệt theo Quyết định 548/QĐ-TTg ngày 10/5/2012 của Thủ tướng Chính phủ. Đây là cơ quan đầu não chỉ đạo cách mạng miền Nam thời kỳ kháng chiến chống Mỹ (1961 - 1975). Di tích bảo tồn nguyên vẹn các căn hầm chữ A, nhà làm việc lợp lá trung quân không bén lửa của các đồng chí Nguyễn Văn Linh, Võ Văn Kiệt.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_can_cu_trung_uong_cuc_mien_nam.webp" alt="Căn cứ Trung ương Cục miền Nam Chiến khu R" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Di tích Quốc gia Đặc biệt</span>
+                                <span class="tag">Lá trung quân</span>
+                            </div>
+                            <h3 class="dest-card-title">7. Căn Cứ Trung Ương Cục Miền Nam (Chiến Khu R)</h3>
+                            <p class="dest-card-desc">Thủ đô kháng chiến miền Nam trong lòng rừng già, nơi chứng kiến những quyết sách lịch sử dưới mái lá trung quân bất tử.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Tháp Cổ Chót Mạt (single-col) -->
+                    <div class="dest-card single-col" data-legend="Tháp cổ Chót Mạt (xã Tân Phong, huyện Tân Biên) được Bộ Văn hóa - Thông tin xếp hạng Di tích kiến trúc nghệ thuật quốc gia theo Quyết định 983-QĐ/VH ngày 04/8/1993. Được xây dựng từ thế kỷ VIII thời kỳ văn hóa Óc Eo (Vương quốc Phù Nam cổ), ngọn tháp cao hơn 10m bằng gạch nung kết dính bằng nhựa thực vật cổ xưa, mang những đường nét hoa văn phù điêu chạm khắc huyền bí của nền văn minh cổ đại.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_thap_co_chot_mat.webp" alt="Tháp cổ Chót Mạt Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Văn hóa Óc Eo thế kỷ VIII</span>
+                                <span class="tag">Di tích Quốc gia</span>
+                            </div>
+                            <h3 class="dest-card-title">8. Tháp Cổ Chót Mạt — Di Tích Óc Eo</h3>
+                            <p class="dest-card-desc">Ngọn tháp gạch cổ hơn 1.200 năm tuổi của vương quốc Phù Nam xưa, dấu ấn khảo cổ học vô giá giữa đồng bằng phương Nam.</p>
+                        </div>
+                    </div>
+
+                    <!-- 9. Thung Lũng Ma Thiên Lãnh (double-col) -->
+                    <div class="dest-card double-col" data-legend="Thung lũng Ma Thiên Lãnh nằm tiếp giáp giữa ba ngọn núi: núi Bà Đen, núi Heo và núi Phụng. Nơi đây được ví như 'Tử Cấm Thành thu nhỏ' của Tây Ninh với hẻm vực đá hoa cương dựng đứng sâu hun hút, suối vàng róc rách chảy qua những tảng đá khổng lồ rêu phong và cánh rừng nguyên sinh bạt ngàn mây phủ, điểm trekking mạo hiểm kỳ bí bậc nhất miền Nam.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_ma_thien_lanh_thung_lung.webp" alt="Thung lũng Ma Thiên Lãnh Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">Hẻm vực kỳ bí</span>
+                                <span class="tag">Trekking mạo hiểm</span>
+                            </div>
+                            <h3 class="dest-card-title">9. Thung Lũng Ma Thiên Lãnh Kỳ Bí</h3>
+                            <p class="dest-card-desc">Cung đường trekking vượt suối luồn rừng giữa ba đỉnh núi đá sừng sững, đắm mình trong thiên nhiên hoang sơ và suối đá trong veo.</p>
+                        </div>
+                    </div>
+
+                    <!-- 10. Rừng Di Tích Lịch Sử Chàng Riệc (single-col) -->
+                    <div class="dest-card single-col" data-legend="Rừng lịch sử Chàng Riệc nằm sát biên giới Việt Nam - Campuchia tại huyện Tân Biên. Khu rừng nguyên sinh bạt ngàn với những cây cổ thụ sao đen, dầu rái hàng trăm năm tuổi cao vút, tỏa bóng râm mát chở che cho hệ thống căn cứ của Ban An ninh Trung ương Cục miền Nam và Mặt trận Dân tộc Giải phóng miền Nam Việt Nam.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_rung_chang_riec.webp" alt="Rừng di tích lịch sử Chàng Riệc Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Rừng nguyên sinh</span>
+                                <span class="tag">Biên giới Việt - Cam</span>
+                            </div>
+                            <h3 class="dest-card-title">10. Rừng Di Tích Lịch Sử Chàng Riệc</h3>
+                            <p class="dest-card-desc">Không gian xanh mát của rừng nguyên sinh vùng biên ải với những tán cổ thụ trăm tuổi chở che dấu tích lịch sử oai hùng.</p>
                         </div>
                     </div>
 
@@ -886,74 +1082,92 @@
 
                 <!-- 7. ẨM THỰC TÂY NINH -->
                 <h2 id="am-thuc"><span class="icon">🍲</span> 7. Tinh Hoa Ẩm Thực Vùng Đất Thánh</h2>
-                <p>Ẩm thực Tây Ninh ghi dấu ấn đậm nét với các di sản văn hóa phi vật thể quốc gia về nghề thủ công truyền thống và nghệ thuật ẩm thực độc đáo:</p>
+                <p>Ẩm thực Tây Ninh ghi dấu ấn sâu sắc với các di sản văn hóa phi vật thể quốc gia về nghề thủ công truyền thống và nghệ thuật ẩm thực chay độc đáo:</p>
 
-                <div class="food-list-grid">
+                <div class="culinary-grid">
 
                     <!-- Món 1: Bánh tráng phơi sương -->
-                    <div class="food-item-box">
-                        <div class="food-item-header">
-                            <h3 class="food-item-title">Bánh Tráng Phơi Sương Trảng Bàng</h3>
-                            <span class="food-item-badge">Di sản Quốc gia</span>
+                    <div class="culinary-card" data-legend="Bánh tráng phơi sương Trảng Bàng là Di sản văn hóa phi vật thể quốc gia được công nhận năm 2016. Chiếc bánh gạo nàng thơm nướng than phồng xốp rồi đem phơi hứng trọn sương đêm thanh khiết để đạt độ dẻo dai tự nhiên, cuốn cùng thịt luộc bắp heo và đĩa rau rừng hơn 15 vị chấm mắm ớt chua ngọt ngon ngất ngây.">
+                        <div class="culinary-img-wrap">
+                            <img src="images/tayninh_mon_banh_trang_phoi_suong_cuon_thit_luoc.webp" alt="Bánh tráng phơi sương Trảng Bàng cuốn thịt luộc" loading="lazy">
+                            <span class="culinary-badge">Di sản Quốc gia 2016</span>
                         </div>
-                        <div class="food-item-flavor">🌯 Dẻo mềm tự nhiên, đượm vị sương đêm</div>
-                        <p class="food-item-desc">Được công nhận là Di sản văn hóa phi vật thể quốc gia năm 2016. Chiếc bánh tráng làm từ gạo nàng thơm pha chút muối, tráng hai lớp, nướng than phồng rộp rồi đem phơi hứng trọn hạt sương đêm thanh khiết. Bánh dẻo dai tự nhiên cuốn cùng thịt heo bắp luộc thái mỏng, đĩa rau rừng hơn 15 loại (lá cóc, quế vị, sao nhái, đọt xoài) chấm nước mắm tỏi ớt chua ngọt ngon khó cưỡng.</p>
-                        <div class="food-item-loc">📍 Quán Hoàng Minh, Út Huệ, Năm Dung (Thị trấn Trảng Bàng)</div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bánh Tráng Phơi Sương Trảng Bàng</h3>
+                            <span class="culinary-price">💰 120.000 — 180.000 VNĐ / phần cuốn (2 người)</span>
+                            <p class="culinary-desc">Bánh tráng mềm dẻo đượm vị sương đêm, ôm trọn thịt bắp luộc thái mỏng giòn ngọt, đĩa rau rừng bạt ngàn lá cóc, quế vị, đọt xoài hòa quyện nước mắm tỏi ớt đậm đà.</p>
+                            <p class="culinary-address">📍 Quán Hoàng Minh, Út Huệ, Năm Dung (Quốc lộ 22, Thị trấn Trảng Bàng)</p>
+                        </div>
                     </div>
 
-                    <!-- Món 2: Bò tơ Tây Ninh -->
-                    <div class="food-item-box">
-                        <div class="food-item-header">
-                            <h3 class="food-item-title">Bò Tơ Tây Ninh Nướng Than Hoa</h3>
-                            <span class="food-item-badge">Đặc sản trứ danh</span>
+                    <!-- Món 2: Bò tơ Tây Ninh nướng -->
+                    <div class="culinary-card" data-legend="Bò tơ Tây Ninh nổi tiếng bởi chất thịt non mềm ngọt lịm từ những chú bê 5-6 tháng tuổi thả rông trên triền cỏ. Từng tảng thịt bò tơ ướp sốt sả ớt hoặc tiêu rừng nướng trên than hoa rực hồng, lớp bì mỏng xém vàng giòn rụm sần sật, chấm ngập chén chao sa tế béo cay thơm phức.">
+                        <div class="culinary-img-wrap">
+                            <img src="images/tayninh_mon_bo_to_tay_ninh_nuong.webp" alt="Bò tơ Tây Ninh nướng than hoa" loading="lazy">
+                            <span class="culinary-badge">Đặc sản trứ danh</span>
                         </div>
-                        <div class="food-item-flavor">🥩 Thịt mềm ngọt thơm, bì giòn sần sật</div>
-                        <p class="food-item-desc">Thịt bò tơ non tơ chăn thả trên đồng cỏ Tây Ninh chỉ từ 5 - 6 tháng tuổi nên thớ thịt mềm ngọt ngậy, lớp bì mỏng giòn sần sật không hề dai. Từng tảng bò tơ ướp sốt sa tế hoặc tiêu rừng nướng trên vỉ than hoa đỏ rực khói thơm nức mũi, xẻo từng miếng nóng hổi chấm ngập chén chao ớt béo cay kèm đậu bắp nướng giòn.</p>
-                        <div class="food-item-loc">📍 Bò tơ Năm Sánh (đường 30/4), Bò tơ Nhật Trường, Bò tơ Út Khương</div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bò Tơ Tây Ninh Nướng Than Hoa</h3>
+                            <span class="culinary-price">💰 150.000 — 250.000 VNĐ / đĩa nướng</span>
+                            <p class="culinary-desc">Thớ thịt bò tơ hồng tươi mềm mọng nước nướng xèo xèo trên than hồng, bì giòn sần sật bùi ngọt, cuốn rau rừng chấm chao ớt cay nồng tuyệt hảo.</p>
+                            <p class="culinary-address">📍 Bò tơ Năm Sánh (đường 30/4, TP. Tây Ninh), Bò tơ Nhật Trường</p>
+                        </div>
                     </div>
 
                     <!-- Món 3: Nghệ thuật ẩm thực chay -->
-                    <div class="food-item-box">
-                        <div class="food-item-header">
-                            <h3 class="food-item-title">Nghệ Thuật Ẩm Thực Chay Tây Ninh</h3>
-                            <span class="food-item-badge">Di sản Quốc gia 2022</span>
+                    <div class="culinary-card" data-legend="Nghệ thuật chế biến món ăn chay tỉnh Tây Ninh được Bộ VHTTDL ghi danh Di sản văn hóa phi vật thể quốc gia năm 2022. Gắn liền với nếp sống ăn chay trường của hàng chục vạn tín đồ đạo Cao Đài, mâm cơm chay Tây Ninh biến tấu kỳ công từ rau củ, đậu hũ và nấm tươi thành hàng trăm món ngon thanh tịnh và bổ dưỡng.">
+                        <div class="culinary-img-wrap">
+                            <img src="images/tayninh_mon_am_thuc_chay_tay_ninh.webp" alt="Nghệ thuật ẩm thực chay Tây Ninh" loading="lazy">
+                            <span class="culinary-badge">Di sản Quốc gia 2022</span>
                         </div>
-                        <div class="food-item-flavor">🥗 Thanh tịnh thuần khiết, cầu kỳ tạo tác</div>
-                        <p class="food-item-desc">Được Bộ VHTTDL công nhận là Di sản văn hóa phi vật thể quốc gia năm 2022. Gắn liền với nếp sống ăn chay trường của hàng chục vạn tín đồ đạo Cao Đài, món chay Tây Ninh đạt đến đỉnh cao nghệ thuật về màu sắc, hương vị và dinh dưỡng từ hoa quả, rau rừng, đậu hũ và nấm tự nhiên, tạo hình tinh xảo không thua kém bất kỳ món mặn sang trọng nào.</p>
-                        <div class="food-item-loc">📍 Các nhà hàng chay tại thị xã Hòa Thành, Chợ Long Hoa, Chùa Bà</div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Nghệ Thuật Ẩm Thực Chay Tây Ninh</h3>
+                            <span class="culinary-price">💰 30.000 — 80.000 VNĐ / món (hoặc buffet chay)</span>
+                            <p class="culinary-desc">Mâm cỗ chay thanh tịnh được bài trí tinh tế như đóa sen ngát hương, hương vị ngọt lành tự nhiên từ nấm rừng và rau củ tươi, thanh lọc thân tâm.</p>
+                            <p class="culinary-address">📍 Các nhà hàng chay tại thị xã Hòa Thành, Chợ Long Hoa, Quán chay Vương Thiện</p>
+                        </div>
                     </div>
 
                     <!-- Món 4: Bánh canh Trảng Bàng -->
-                    <div class="food-item-box">
-                        <div class="food-item-header">
-                            <h3 class="food-item-title">Bánh Canh Trảng Bàng</h3>
-                            <span class="food-item-badge">Món ngon Nam Bộ</span>
+                    <div class="culinary-card" data-legend="Tô bánh canh Trảng Bàng nghi ngút khói nổi tiếng với sợi bánh làm từ gạo nàng thơm dẻo dai trắng trong và nồi nước lèo hầm xương ống trong veo ngọt lịm. Thưởng thức cùng giò heo giòn béo, thịt nạc luộc xắt mỏng và đĩa rau rừng tươi mơn mởn.">
+                        <div class="culinary-img-wrap">
+                            <img src="images/tayninh_mon_banh_canh_trang_bang.webp" alt="Bánh canh Trảng Bàng Tây Ninh" loading="lazy">
+                            <span class="culinary-badge">Món ngon phương Nam</span>
                         </div>
-                        <div class="food-item-flavor">🍜 Nước dùng trong veo, sợi bánh dẻo thơm</div>
-                        <p class="food-item-desc">Sợi bánh canh được làm từ gạo nàng thơm ngâm kỹ, xay nhuyễn và hấp chín thủ công tạo nên màu trắng trong và độ dẻo mềm đặc biệt. Nước lèo hầm từ xương ống heo cùng ngò gai, hành hoa trong vắt ngọt lịm. Tô bánh canh bốc khói đầy đặn khoanh giò heo giòn béo, thịt nạc luộc xắt mỏng rắc tiêu cay ấm, chấm nước mắm tiêu nguyên chất ăn kèm đĩa rau rừng tươi rói.</p>
-                        <div class="food-item-loc">📍 Bánh canh Út Huệ, Hoàng Minh (Quốc lộ 22, Trảng Bàng)</div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Bánh Canh Giò Heo Trảng Bàng</h3>
+                            <span class="culinary-price">💰 40.000 — 55.000 VNĐ / tô</span>
+                            <p class="culinary-desc">Nước dùng hầm xương trong vắt thanh ngọt, sợi bánh canh gạo nàng thơm trơn mướt mềm dẻo, khoanh giò heo luộc giòn sần sật chấm mắm tiêu đen cay nồng.</p>
+                            <p class="culinary-address">📍 Bánh canh Hoàng Minh, Út Huệ (Quốc lộ 22, Trảng Bàng)</p>
+                        </div>
                     </div>
 
-                    <!-- Món 5: Muối tôm & Muối ớt Tây Ninh -->
-                    <div class="food-item-box">
-                        <div class="food-item-header">
-                            <h3 class="food-item-title">Muối Tôm & Muối Ớt Tây Ninh</h3>
-                            <span class="food-item-badge">Di sản Quốc gia 2023</span>
+                    <!-- Món 5: Muối tôm Tây Ninh -->
+                    <div class="culinary-card" data-legend="Nghề làm muối ớt Tây Ninh được công nhận Di sản văn hóa phi vật thể quốc gia theo Quyết định 75/QĐ-BVHTTDL ngày 12/01/2023. Muối hột biển rang sấy kỳ công trên chảo gang cùng tôm khô, ớt chín đỏ và tỏi thơm nức, tạo nên những hạt muối cam óng giòn rụm làm nức lòng thực khách cả nước.">
+                        <div class="culinary-img-wrap">
+                            <img src="images/tayninh_mon_muoi_tom_tay_ninh.webp" alt="Muối tôm và muối ớt Tây Ninh" loading="lazy">
+                            <span class="culinary-badge">Di sản Quốc gia 2023</span>
                         </div>
-                        <div class="food-item-flavor">🌶️ Hạt to giòn rụm, mặn ngọt cay nồng</div>
-                        <p class="food-item-desc">Được công nhận là Di sản văn hóa phi vật thể quốc gia theo Quyết định 75/QĐ-BVHTTDL ngày 12/01/2023. Một nghịch lý thú vị khi Tây Ninh không giáp biển nhưng lại là thủ phủ của loại muối ngon nức tiếng cả nước. Muối hột biển được rang sấy trên chảo lửa cùng tôm khô, ớt đỏ cay nồng và tỏi ta tạo nên hạt muối cam óng giòn rụm, gia vị chấm hoa quả nhiệt đới 'gây nghiện' số 1 Việt Nam.</p>
-                        <div class="food-item-loc">📍 Cơ sở sản xuất Muối tôm Ý Như, Chợ Long Hoa, Siêu thị đặc sản Tây Ninh</div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Muối Tôm & Muối Ớt Tây Ninh</h3>
+                            <span class="culinary-price">💰 25.000 — 60.000 VNĐ / hũ (150k - 200k/kg)</span>
+                            <p class="culinary-desc">Hạt muối to tròn giòn rụm màu cam óng ả, vị mặn ngọt cay nồng đậm đà hòa quyện hương thơm nức mũi của tôm sấy, gia vị chấm hoa quả không thể thiếu.</p>
+                            <p class="culinary-address">📍 Cơ sở sản xuất Muối tôm Ý Như, Chợ Long Hoa, Siêu thị đặc sản Tây Ninh</p>
+                        </div>
                     </div>
 
                     <!-- Món 6: Ốc xu núi Bà Đen -->
-                    <div class="food-item-box">
-                        <div class="food-item-header">
-                            <h3 class="food-item-title">Ốc Xu Núi Bà Đen</h3>
-                            <span class="food-item-badge">Đặc sản quý hiếm</span>
+                    <div class="culinary-card" data-legend="Ốc xu núi Bà Đen là loài ốc đặc hữu chỉ sinh sống trong các hốc đá trên sườn núi, ăn lá thảo mộc rêu xanh và vị thuốc quý nên thịt ốc thơm lành bổ dưỡng. Ốc xu hấp sả lá chúc gừng cay giòn sần sật chấm muối tiêu chanh hoặc xào me chua ngọt là món ngon hiếm có khó tìm.">
+                        <div class="culinary-img-wrap">
+                            <img src="images/tayninh_mon_oc_xu_nui_ba.webp" alt="Ốc xu núi Bà Đen Tây Ninh" loading="lazy">
+                            <span class="culinary-badge">Đặc sản quý hiếm</span>
                         </div>
-                        <div class="food-item-flavor">🐚 Giòn ngọt tự nhiên, đượm vị thảo mộc</div>
-                        <p class="food-item-desc">Loài ốc núi đặc hữu chỉ sinh sống trong các hốc đá trên sườn núi Bà Đen, ăn lá thảo dược, rêu xanh và cây thuốc quý. Vỏ ốc dẹt nhỏ giống đồng tiền xu. Thịt ốc xu giòn dai sần sật, có vị ngọt thanh và hậu vị đắng nhẹ của thảo mộc tự nhiên. Đem hấp sả gừng lá chúc chấm muối tiêu chanh hoặc xào me cay là món nhắm tuyệt hảo bồi bổ sức khỏe.</p>
-                        <div class="food-item-loc">📍 Các nhà hàng ẩm thực dưới chân núi Bà Đen, thị trấn Tân Châu</div>
+                        <div class="culinary-body">
+                            <h3 class="culinary-title">Ốc Xu Núi Bà Hấp Sả Lá Chúc</h3>
+                            <span class="culinary-price">💰 120.000 — 180.000 VNĐ / đĩa</span>
+                            <p class="culinary-desc">Thịt ốc xu béo tròn giòn dai sần sật, phảng phất hương thơm ngát của sả và lá chúc rừng, vị ngọt bùi đượm thảo mộc thiên nhiên bồi bổ sức khỏe.</p>
+                            <p class="culinary-address">📍 Các nhà hàng ẩm thực dưới chân núi Bà Đen, thị xã Hòa Thành</p>
+                        </div>
                     </div>
 
                 </div>
