@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ninh Bình — Tràng An, Tam Cốc & Hạ Long trên cạn | GO FAR</title>
-    <meta name="description" content="Hướng dẫn du lịch Ninh Bình chi tiết: Tràng An, Tam Cốc, Bái Đính, Hang Múa. Đi lại, vé, lưu trú, ẩm thực, lịch trình 2N1Đ & 3N2Đ.">
+    <title>Ninh Bình — Tuyệt Đỉnh Di Sản Kép Thế Giới & Cố Đô Ngàn Năm | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Ninh Bình toàn diện: Quần thể Di sản Kép Tràng An, đỉnh Ngọa Long Hang Múa, sông Ngô Đồng Tam Cốc, chùa Bái Đính, Cố đô Hoa Lư, 4 mùa du lịch, đặc sản dê núi & cơm cháy.">
     <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,16 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg: #0D1F2D;
+            --bg-sec: #132D42;
+            --bg-card: rgba(19, 45, 66, 0.88);
             --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent: #FF8C32;
+            --accent: #10B981;
             --accent-gold: #fbbf24;
-            --green: #2D5A27;
+            --accent-warm: #F97316;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -32,13 +32,14 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* NAV */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: linear-gradient(135deg, #0D1F2D 0%, #15344d 50%, #0D1F2D 100%);
             border-bottom: 2px solid;
-            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, #2D5A27, transparent) 1;
+            border-image: linear-gradient(90deg, transparent, #10B981, #fbbf24, transparent) 1;
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -69,8 +70,8 @@
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
         }
         .hero img {
@@ -81,7 +82,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(13,31,45,0.25) 0%, rgba(13,31,45,0.92) 100%);
         }
         .hero-content {
             position: absolute;
@@ -94,169 +95,288 @@
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
-            border-radius: 99px;
-            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            color: #fff;
         }
-        .hero-meta-line {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+        .hero-subtitle {
+            font-size: 1.1rem;
             color: var(--text-sec);
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            max-width: 860px;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
 
-        /* BREADCRUMB */
-        .breadcrumb {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
-
-        /* CONTENT LAYOUT */
+        /* ARTICLE LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
             padding: 0 1.5rem 4rem;
         }
+
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
 
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent);
+            padding-left: 0.4rem;
+        }
+
         /* MAIN CONTENT */
+        .article-main {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .article-main section {
+            margin-bottom: 3.5rem;
+        }
         .article-main h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 1.6rem;
+            color: #fff;
+            margin: 0 0 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid rgba(16, 185, 129, 0.35);
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
+        .article-main h2 .icon { font-size: 1.4rem; }
         .article-main h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            margin: 1.5rem 0 0.8rem;
         }
-
         .article-main p {
+            margin-bottom: 1.2rem;
             color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .article-main strong { color: #fff; font-weight: 600; }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
+            background: rgba(16, 185, 129, 0.08);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
 
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
+        .highlight-box {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
         }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
+        .highlight-box h4 {
             color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+
+        .legend-box {
+            background: rgba(251, 191, 36, 0.06);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-box p { margin: 0; font-size: 0.95rem; color: #e2e8f0; }
+
+        /* SEASONS GRID */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .season-card {
+            background: rgba(13, 31, 45, 0.7);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .season-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.05);
+        }
+        .season-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(13, 31, 45, 0.85);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
             font-weight: 600;
-            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251,191,36,0.3);
+        }
+        .season-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .season-time {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+        .season-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
-
-        /* PREMIUM CHECKIN CARDS */
+        /* CHECKIN GRID */
         .checkin-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
         .dest-card {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-sec);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
+            cursor: pointer;
         }
         .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+            border-color: rgba(16, 185, 129, 0.4);
         }
         .dest-card.double-col {
             grid-column: span 2;
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
         }
         .dest-card.single-col {
             grid-column: span 1;
@@ -272,16 +392,16 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            filter: brightness(0.9) saturate(1.15);
         }
         .dest-card:hover .dest-card-img img {
             transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+            filter: brightness(0.78) saturate(1.25);
         }
         .dest-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            background: linear-gradient(180deg, transparent 35%, rgba(13, 31, 45, 0.96) 100%);
             z-index: 1;
         }
         .dest-card-content {
@@ -296,156 +416,156 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
         .dest-card-tags .tag {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
+            color: #fff;
+            padding: 0.25rem 0.65rem;
             border-radius: var(--radius-sm);
-            color: #fff !important;
-            font-weight: 600;
+            backdrop-filter: blur(4px);
         }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
         }
         .dest-card-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
-            color: var(--text) !important;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .dest-card-desc {
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             color: var(--text-sec);
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            line-clamp: 2;
             -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
+            overflow: hidden;
         }
-        .dest-card-meta {
+
+        /* CULINARY SHOWCASE */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .culinary-card {
+            background: rgba(13, 31, 45, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            flex-direction: column;
+            cursor: pointer;
         }
-        .dest-rating {
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.05);
+        }
+        .culinary-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+        .culinary-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            flex: 1;
+        }
+        .culinary-price {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
-        .dest-rating .stars {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        .dest-rating span:last-child {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .dest-reviews {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .dest-card-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 0.4rem;
-        }
-        
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
 
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
+        /* TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
         }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
+            background: rgba(19, 45, 66, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
+        .info-table th {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-sec);
-            margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
+        .disclaimer-box {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.82rem;
-            transition: color 0.2s;
+            margin-top: 0.8rem;
+            font-style: italic;
         }
-        .toc-list a:hover { color: var(--accent); }
-
-        .budget-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.82rem;
-        }
-        .budget-label { color: var(--text-sec); }
-        .budget-value { color: var(--accent); font-weight: 600; }
 
         /* FOOTER */
         .article-footer {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.06);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             flex-wrap: wrap;
             gap: 1rem;
@@ -453,477 +573,774 @@
         .article-footer a { color: var(--accent); text-decoration: none; }
         .credits { font-style: italic; }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .article-layout {
-                grid-template-columns: 1fr;
-            }
+        /* LIGHTBOX MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(8, 18, 26, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
+            box-sizing: border-box;
+        }
+        .lightbox-dialog {
+            position: relative;
+            max-width: 960px;
+            margin: 2rem auto;
+            background: rgba(19, 45, 66, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-img-wrap {
+            width: 100%;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            display: block;
+        }
+        .lightbox-caption-wrap {
+            padding: 1.8rem 2rem;
+            background: linear-gradient(180deg, rgba(19, 45, 66, 0.9) 0%, rgba(13, 31, 45, 0.95) 100%);
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+        .lightbox-caption {
+            color: #e2e8f0;
+            font-size: 0.96rem;
+            line-height: 1.75;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            line-height: 1;
+            transition: color 0.2s, transform 0.2s;
+            background: rgba(0, 0, 0, 0.5);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .lightbox-close:hover {
+            color: var(--accent-gold);
+            transform: scale(1.1);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
             .sidebar { position: static; }
-            .checkin-grid {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-    }
-    .dest-card.double-col, .dest-card.single-col {
-        grid-column: span 1 !important;
-        aspect-ratio: 4/3;
-    }
+            .checkin-grid { grid-template-columns: 1fr; }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1;
+                aspect-ratio: 16/9;
+            }
+            .seasons-grid, .culinary-grid { grid-template-columns: 1fr; }
+            .hero { height: 45vh; }
+            .article-main { padding: 1.5rem; }
         }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
-        }
-            
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
-        }
-        </style>
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-ninh-binh.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-ninh-binh.html">
-    <meta property="og:title" content="Ninh Bình — Tràng An, Tam Cốc & Hạ Long trên cạn | GO FAR">
-    <meta property="og:description" content="Hướng dẫn du lịch Ninh Bình chi tiết: Tràng An, Tam Cốc, Bái Đính, Hang Múa. Đi lại, vé, lưu trú, ẩm thực, lịch trình 2N1Đ & 3N2Đ.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/ninh_binh_hero_1783439944952.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-ninh-binh.html">
-    <meta property="twitter:title" content="Ninh Bình — Tràng An, Tam Cốc & Hạ Long trên cạn | GO FAR">
-    <meta property="twitter:description" content="Hướng dẫn du lịch Ninh Bình chi tiết: Tràng An, Tam Cốc, Bái Đính, Hang Múa. Đi lại, vé, lưu trú, ẩm thực, lịch trình 2N1Đ & 3N2Đ.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/ninh_binh_hero_1783439944952.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Ninh Bình",
-    "description": "Hướng dẫn du lịch Ninh Bình chi tiết: Tràng An, Tam Cốc, Bái Đính, Hang Múa. Đi lại, vé, lưu trú, ẩm thực, lịch trình 2N1Đ & 3N2Đ.",
-    "image": "https://gofarvietnam.com/images/ninh_binh_hero_1783439944952.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Miền Bắc",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
-        }
-    }
-}
-    </script>
+    </style>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/ninh_binh_hero_1783439944952.webp" alt="Tràng An, Ninh Bình — Hạ Long trên cạn">
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/ninh_binh_hero_1783439944952.webp" alt="Toàn cảnh danh thắng Tràng An Ninh Bình">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Miền Bắc · Di sản UNESCO</span>
-            <h1>Ninh Bình<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Hạ Long trên cạn</span></h1>
-            <div class="hero-meta-line">
-                <span class="rating">★ 4.8 / 5.0</span>
-                <span>·</span>
-                <span>Cách Hà Nội ~95 km</span>
-                <span>·</span>
-                <span>Cập nhật: 07/2026</span>
-            </div>
+            <span class="hero-tag">🔥 Di sản Thế giới UNESCO • Cố đô Hoa Lư</span>
+            <h1>Ninh Bình — Tuyệt Đỉnh Di Sản Kép & Non Nước Hữu Tình</h1>
+            <p class="hero-subtitle">Vùng đất non xanh nước biếc, nơi ngưng đọng trầm tích nghìn năm lịch sử Đại Cồ Việt và vẻ đẹp kỳ vĩ của chốn bồng lai tiên cảnh Tràng An, Tam Cốc, Hang Múa.</p>
         </div>
-    </section>
+    </header>
 
-    <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Ninh Bình</strong>
-    </div>
-
+    <!-- CONTENT LAYOUT -->
     <div class="article-layout">
         <div class="dashboard-layout">
-            <!-- MAIN -->
-            <article class="article-main">
 
-            <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-            <p>Ninh Bình được ví như <strong>"Hạ Long trên cạn"</strong> — nơi những khối đá vôi hùng vĩ nhô lên giữa đồng lúa xanh mướt, dòng sông uốn lượn xuyên qua hang động. Quần thể danh thắng Tràng An được UNESCO công nhận là Di sản Thế giới kép (Văn hóa & Thiên nhiên) từ năm 2014.</p>
-            <p>Không chỉ có cảnh quan, Ninh Bình còn là cố đô đầu tiên của Việt Nam (Hoa Lư, thế kỷ X), mang trong mình chiều sâu lịch sử hàng nghìn năm. Đây là điểm đến hoàn hảo cho cả gia đình lẫn dân phượt — vừa thanh bình, vừa hùng vĩ.</p>
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Thông Tin Nhanh
+                    </h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span><span class="val">Cửa ngõ miền Bắc (~90km từ HN)</span></li>
+                        <li><span class="label">Diện tích:</span><span class="val">1.387 km²</span></li>
+                        <li><span class="label">Danh hiệu:</span><span class="val">Di sản Kép UNESCO (2014)</span></li>
+                        <li><span class="label">Khu Ramsar:</span><span class="val">Đầm Vân Long (Thế giới #2360)</span></li>
+                        <li><span class="label">Thời điểm đẹp:</span><span class="val">Tháng 1 - 3 & Tháng 5 - 6</span></li>
+                        <li><span class="label">Đặc sản cốt lõi:</span><span class="val">Dê núi, Cơm cháy, Xôi kiến</span></li>
+                    </ul>
+                </div>
 
-            <!-- DANH THẮNG NỔI BẬT -->
-            <h2 id="phong-canh"><span class="icon">📸</span> Các danh thắng tại Ninh Bình</h2>
-            <p>Ninh Bình hội tụ những tuyệt tác non nước hoang sơ cùng bề dày lịch sử. Bấm xem chi tiết để xem cẩm nang đầy đủ của từng địa điểm:</p>
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                        Mục Lục Hướng Dẫn
+                    </h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Tổng quan điểm đến</a></li>
+                        <li><a href="#lich-su-dia-ly">2. Vị trí địa lý & Dấu ấn lịch sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền thoại & Truyền tích dân gian</a></li>
+                        <li><a href="#bon-mua">4. Chuỗi hình ảnh 4 mùa du lịch</a></li>
+                        <li><a href="#thang-canh">5. Top 10 Thắng cảnh biểu tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm nang di chuyển & Cung đường</a></li>
+                        <li><a href="#am-thuc">7. Tinh hoa ẩm thực đặc sản</a></li>
+                        <li><a href="#gia-ve">8. Bảng giá vé tham quan niêm yết</a></li>
+                        <li><a href="#lich-trinh">9. Lịch trình 3N2Đ & Mẹo bản địa</a></li>
+                    </ul>
+                </div>
+            </aside>
 
-            <div class="checkin-grid">
-                <!-- Trang An -->
-                <a href="destination-trang-an.html" class="dest-card double-col">
-                    <div class="dest-card-img">
-                        <img src="images/ninh_binh_hero_1783439944952.webp" alt="Quần thể danh thắng Tràng An" loading="lazy">
+            <!-- MAIN CONTENT -->
+            <main class="article-main">
+
+                <!-- MỤC 1: TỔNG QUAN -->
+                <section id="tong-quan">
+                    <h2><span class="icon">🧭</span> 1. Tổng quan điểm đến</h2>
+                    <div class="intro-lead">
+                        Được mệnh danh là <strong>"Vịnh Hạ Long trên cạn"</strong> và cái nôi của nền độc lập tự chủ thời kỳ phong kiến Việt Nam, Ninh Bình sở hữu địa hình karst nhiệt đới ngập nước ngoạn mục bậc nhất hành tinh. Đây là nơi hội tụ linh khí của đất trời, tạo nên bản trường ca giao hòa tuyệt mỹ giữa thiên nhiên nguyên sơ và di sản nghìn năm văn hiến.
                     </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Di sản</span>
-                            <span class="tag">Chèo thuyền</span>
-                        </div>
-                        <h3 class="dest-card-title">Quần thể danh thắng Tràng An</h3>
-                        <p class="dest-card-desc">Hành trình xuôi thuyền nan ngoạn cảnh thung lũng nước xanh ngọc trong vắt và vượt qua các hang động xuyên thủy kỳ bí lung linh thạch nhũ.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating">
-                                <span class="stars">★★★★★</span>
-                                <span>4.9</span>
+                    <p>Nằm ở vị trí cửa ngõ cực nam của tam giác châu thổ sông Hồng, Ninh Bình sở hữu vị thế địa lý vô cùng đắc địa, là cầu nối chuyển tiếp giữa vùng kinh tế đồng bằng Bắc Bộ và vùng duyên hải Bắc Trung Bộ. Nơi đây từng được Tiên Hoàng Đế Đinh Bộ Lĩnh chọn làm kinh đô đầu tiên của nhà nước phong kiến trung ương tập quyền Đại Cồ Việt vào năm 968 nhờ bức tường thành thiên nhiên bằng núi đá vôi trùng điệp, hiểm trở và hệ thống hang động sông ngòi liên hoàn bao bọc.</p>
+                    <p>Ngày 23/6/2014, tại kỳ họp lần thứ 38 của Ủy ban Di sản Thế giới tổ chức ở Doha (Qatar), Quần thể danh thắng Tràng An đã chính thức được UNESCO công nhận là <strong>Di sản Văn hóa và Thiên nhiên Thế giới</strong>. Đây là di sản hỗn hợp (di sản kép) đầu tiên và duy nhất của Việt Nam cũng như toàn khu vực Đông Nam Á, khẳng định giá trị ngoại hạng toàn cầu về cả địa chất - địa mạo karst và dấu ấn sinh sống của người tiền sử từ hơn 30.000 năm trước.</p>
+                </section>
+
+                <!-- MỤC 2: VỊ TRÍ ĐỊA LÝ & DẤU ẤN LỊCH SỬ -->
+                <section id="lich-su-dia-ly">
+                    <h2><span class="icon">📜</span> 2. Vị trí địa lý & Dấu ấn lịch sử</h2>
+                    <p>Ninh Bình trải dài từ tọa độ địa lý 20°00' đến 20°27' vĩ độ Bắc và 105°40' đến 106°10' kinh độ Đông, tiếp giáp tỉnh Hà Nam ở phía bắc, Nam Định ở phía đông bắc, Hòa Bình ở phía tây bắc, Thanh Hóa ở phía tây và nam, cùng bờ biển dài gần 18km trông ra vịnh Bắc Bộ ở huyện Kim Sơn. Sự giao thoa của 3 vùng sinh thái: đồi núi bán sơn địa phía tây, đồng bằng chiêm trũng trung tâm và vùng bãi bồi ven biển tạo nên hệ sinh thái đa dạng, khí hậu cận nhiệt đới ẩm 4 mùa rõ nét.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>⚖️ Căn cứ Pháp lý & Quyết định Xếp hạng Di sản Chính thống</h4>
+                        <p>Hồ sơ khoa học và giá trị di sản của Ninh Bình được xác lập trên nền tảng các văn bản quản lý và công ước pháp lý nhà nước:</p>
+                        <ul style="margin: 0.6rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Văn bản UNESCO số 38 COM 8B.14 (23/6/2014):</strong> Kỳ họp lần thứ 38 Ủy ban Di sản Thế giới tại Doha (Qatar) ghi danh Quần thể danh thắng Tràng An là Di sản Văn hóa và Thiên nhiên thế giới theo tiêu chí (v) văn hóa truyền thống cư trú, (vii) thẩm mỹ cảnh quan tuyệt mỹ và (viii) địa chất karst nhiệt đới ngập nước.</li>
+                            <li><strong>Quyết định số 548/QĐ-TTg ngày 10/5/2012 của Thủ tướng Chính phủ:</strong> Xếp hạng Di tích quốc gia đặc biệt đối với <em>Khu di tích lịch sử và kiến trúc nghệ thuật Cố đô Hoa Lư</em> và <em>Danh lam thắng cảnh Tràng An - Tam Cốc - Bích Động</em>.</li>
+                            <li><strong>Công ước Ramsar Quốc tế (22/5/2019):</strong> Ban Thư ký Công ước Ramsar công nhận Khu bảo tồn thiên nhiên đất ngập nước Vân Long là Khu Ramsar số 2360 của thế giới và là khu Ramsar thứ 9 của Việt Nam.</li>
+                            <li><strong>Quyết định số 2684/QĐ-BVHTTDL của Bộ Văn hóa, Thể thao và Du lịch:</strong> Ghi danh <em>Lễ hội truyền thống Cố đô Hoa Lư</em> vào Danh mục Di sản văn hóa phi vật thể quốc gia.</li>
+                        </ul>
+                    </div>
+
+                    <p>Về dấu ấn lịch sử, mùa xuân năm Mậu Thìn (968), sau khi đánh dẹp và thu phục 12 sứ quân cát cứ, Vạn Thắng Vương Đinh Bộ Lĩnh lên ngôi Hoàng đế, lấy hiệu Đinh Tiên Hoàng, định quốc hiệu Đại Cồ Việt. Nhận thấy địa thế Hoa Lư "núi làm thành, hào làm sông", nhà Đinh đã triệt để lợi dụng các dãy núi đá vôi hiểm trở, đắp các lũy đất nối liền các vách núi để lập nên một kinh đô quân sự kiên cố chưa từng có, mở đầu cho kỷ nguyên độc lập tự chủ lâu dài của các triều đại phong kiến Việt Nam sau hơn 1000 năm Bắc thuộc.</p>
+                    <p>Tiếp nối nhà Đinh, triều đại Tiền Lê do vua Lê Đại Hành trị vì đã lãnh đạo quân dân đánh tan giặc Tống xâm lược năm 981, bình định Chiêm Thành, tiếp tục xây dựng các cung điện Bách Bảo Quang Tuế nguy nga. Mãi đến mùa thu năm Canh Tuất (1010), vua Lý Thái Tổ ban Chiếu dời đô từ Hoa Lư về Thăng Long (Hà Nội), vùng đất Ninh Bình lui về giữ vai trò là "Cố đô", trở thành hậu cứ chiến lược vững chãi trong cuộc kháng chiến chống quân Nguyên Mông của nhà Trần với căn cứ hành cung Vũ Lâm oai hùng.</p>
+                </section>
+
+                <!-- MỤC 3: HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai">
+                    <h2><span class="icon">🐉</span> 3. Huyền thoại & Truyền tích dân gian vùng đất</h2>
+                    
+                    <div class="legend-box">
+                        <h4>⚔️ Huyền tích Đinh Bộ Lĩnh cờ lau tập trận & Rồng vàng hộ mệnh</h4>
+                        <p>Thuở hàn vi mồ côi cha, cậu bé Đinh Bộ Lĩnh ngày ngày cùng chúng bạn chăn trâu cắt cỏ tại thung lũng Gia Phương, bẻ cờ lau làm cờ lệnh, khoanh tay làm kiệu tôn vinh minh chủ. Dân gian truyền rằng, khi bị người chú thúc đuổi vì hiểu lầm, Đinh Bộ Lĩnh chạy tới bến sông Hoàng Long. Giữa lúc nguy khốn, bỗng một con rồng vàng khổng lồ từ đáy sông hiện lên, nâng cậu bé qua sông sang bờ bên kia, khiến người chú kinh hãi quỳ lạy. Bến sông ấy từ đó mang tên sông Hoàng Long (Rồng Vàng), báo trước thiên mệnh đế vương của vị anh hùng khai sáng triều Đinh.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>👑 Truyền tích Thần Cao Sơn & Thần Quý Minh trấn giữ kinh thành</h4>
+                        <p>Trong tâm thức người dân Cố đô, vùng non nước Hoa Lư - Tràng An được che chở bởi hai vị thần tối linh trong Tứ trấn linh thiêng: Thần Cao Sơn (trấn giữ cửa ngõ phía Tây) và Thần Quý Minh (trấn giữ cửa ngõ phía Nam). Tương truyền, ngài Quý Minh Đại Vương là vị tướng tài thời Hùng Vương, có công dẹp loạn giữ yên bờ cõi, khi hóa thần đã hiển linh giúp quân tướng nhà Đinh bảo vệ hiểm địa Tràng An. Đền Suối Tiên và Đền Trần (Nội Lâm) nằm ẩn sâu giữa thung lũng đá vôi Tràng An nghìn năm qua vẫn là chốn hương khói linh thiêng bậc nhất.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>💃 Truyền thuyết Hang Múa & Đỉnh Ngọa Long</h4>
+                        <p>Dưới chân núi Múa sừng sững hình chuông úp, nhân dân địa phương vẫn truyền tai câu chuyện thời Trần. Sau khi nhường ngôi lui về tu hành tại am Thái Vi giữa lòng Ngũ Nhạc Sơn, vua Trần Thái Tông thường ghé thăm hang động dưới chân núi để xem các cung tần mỹ nữ đàn hát múa lượn. Hang động kỳ thú ấy từ đó được gọi là "Hang Múa". Trên đỉnh núi là tượng rồng đá khổng lồ uốn lượn ngút ngàn (Ngọa Long Sơn), ôm trọn tầm nhìn 360 độ xuống toàn cảnh thung lũng sông Ngô Đồng óng ả.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 4: CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua">
+                    <h2><span class="icon">🌸</span> 4. Chuỗi hình ảnh 4 mùa du lịch</h2>
+                    <p>Khác biệt với nhiều miền di sản khác, Ninh Bình khoác lên mình 4 tấm áo thiên nhiên biến chuyển kỳ diệu theo từng chu kỳ mùa trong năm. Dù ghé thăm vào mùa xuân trẩy hội hay mùa lúa chín vàng óng ả, du khách đều được đắm chìm trong vẻ đẹp thơ mộng ngỡ như chốn tiên bồng.</p>
+
+                    <div class="seasons-grid">
+                        <!-- Mùa Xuân -->
+                        <div class="season-card" onclick="openLightbox('images/ninhbinh_mua_le_hoi_xuan_hoa_lu_bai_dinh.webp', 'Mùa Xuân (Tháng 1 - 3): Du Xuân Trẩy Lộc & Lễ Hội Cố Đô', 'Không gian lễ hội trang nghiêm đầu xuân tại Quần thể chùa Bái Đính và Cố đô Hoa Lư. Những nếp mái chùa cong vút ẩn hiện trong làn sương xuân mờ ảo, cờ hội phấp phới cùng sắc thắm đào phai, thu hút hàng triệu phật tử và du khách thập phương về chiêm bái cầu an.')">
+                            <div class="season-img-wrap">
+                                <img src="images/ninhbinh_mua_le_hoi_xuan_hoa_lu_bai_dinh.webp" alt="Mùa xuân lễ hội chùa Bái Đính Cố đô Hoa Lư" loading="lazy">
+                                <span class="season-badge">Tháng 1 - 3</span>
                             </div>
-                            <span class="dest-reviews">420 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span>📷 AI</span>
-                            <span>Sưu tầm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Hang Mua -->
-                <a href="destination-hang-mua.html" class="dest-card single-col">
-                    <div class="dest-card-img">
-                        <img src="images/hang_mua_peak_1783441917217.webp" alt="Đỉnh Hang Múa" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Đỉnh núi</span>
-                            <span class="tag">Săn ảnh</span>
-                        </div>
-                        <h3 class="dest-card-title">Đỉnh Hang Múa</h3>
-                        <p class="dest-card-desc">Vượt 500 bậc đá ngắm toàn cảnh thung lũng lúa vàng Tam Cốc rực rỡ và ngắm hoàng hôn buông lơi.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating">
-                                <span class="stars">★★★★★</span>
-                                <span>4.8</span>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Xuân: Trẩy Lộc Cố Đô & Khai Hội Bái Đính</h3>
+                                <span class="season-time">Thời điểm: Tháng 1 đến hết tháng 3 Âm lịch</span>
+                                <p class="season-desc">Tiết trời se lạnh phảng phất mưa xuân lất phất, muôn hoa đâm chồi nảy lộc. Đây là thời khắc các lễ hội truyền thống lớn nhất Cố đô đồng loạt khai hội: Hội chùa Bái Đính, Lễ hội Hoa Lư, Lễ hội Tràng An đưa du khách trở về cội nguồn tâm linh thuần khiết.</p>
                             </div>
-                            <span class="dest-reviews">310 reviews</span>
                         </div>
-                        <div class="dest-card-credits">
-                            <span>📷 AI</span>
-                            <span>Sưu tầm</span>
-                        </div>
-                    </div>
-                </a>
 
-                <!-- Tam Coc -->
-                <a href="destination-tam-coc.html" class="dest-card single-col">
-                    <div class="dest-card-img">
-                        <img src="images/tam_coc_river_1783441927501.webp" alt="Thung lũng Tam Cốc" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Mùa lúa</span>
-                            <span class="tag">Dòng sông</span>
-                        </div>
-                        <h3 class="dest-card-title">Thung lũng lúa vàng Tam Cốc</h3>
-                        <p class="dest-card-desc">Cánh đồng lúa nước vàng óng bồng bềnh men theo dòng sông Ngô Đồng lững lờ trôi cuối tháng 5.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating">
-                                <span class="stars">★★★★★</span>
-                                <span>4.7</span>
+                        <!-- Mùa Lúa Vàng -->
+                        <div class="season-card" onclick="openLightbox('images/ninhbinh_mua_lua_vang_tam_coc.webp', 'Mùa Lúa Vàng (Tháng 5 - 6): Bức Họa Vàng Rực Bên Dòng Ngô Đồng', 'Tam Cốc bước vào mùa đẹp nhất trong năm khi hai bên bờ sông Ngô Đồng rực vàng mùa lúa chín. Từng chiếc thuyền nan nhẹ lướt trên làn nước xanh ngọc bích, len qua ba hang ngập tràn hương thơm ngọt ngào của rơm rạ mùa gặt.')">
+                            <div class="season-img-wrap">
+                                <img src="images/ninhbinh_mua_lua_vang_tam_coc.webp" alt="Mùa lúa vàng chín rộ Tam Cốc dòng sông Ngô Đồng" loading="lazy">
+                                <span class="season-badge">Tháng 5 - 6</span>
                             </div>
-                            <span class="dest-reviews">280 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span>📷 AI</span>
-                            <span>Sưu tầm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bai Dinh -->
-                <a href="destination-bai-dinh.html" class="dest-card single-col">
-                    <div class="dest-card-img">
-                        <img src="images/bai_dinh_pagoda_1783443686667.webp" alt="Chùa Bái Đính" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Tâm linh</span>
-                            <span class="tag">Chùa cổ</span>
-                        </div>
-                        <h3 class="dest-card-title">Quần thể Chùa Bái Đính</h3>
-                        <p class="dest-card-desc">Bảo tháp 13 tầng uy nghiêm tôn kính và hành lang La Hán dài nhất châu Á tĩnh mịch rêu phong.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating">
-                                <span class="stars">★★★★★</span>
-                                <span>4.8</span>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Lúa Vàng: Bức Họa Tam Cốc Ngô Đồng</h3>
+                                <span class="season-time">Thời điểm: Cuối tháng 5 đến giữa tháng 6 Dương lịch</span>
+                                <p class="season-desc">Được bình chọn là một trong những cánh đồng lúa đẹp nhất Việt Nam, cánh đồng Tam Cốc khi vào hạ chuyển mình từ sắc xanh mạ non sang màu vàng ươm trù phú. Ánh nắng rực rỡ soi bóng những tháp karst kỳ vĩ tạo nên tuyệt tác thiên nhiên rực rỡ.</p>
                             </div>
-                            <span class="dest-reviews">390 reviews</span>
                         </div>
-                        <div class="dest-card-credits">
-                            <span>📷 AI</span>
-                            <span>Sưu tầm</span>
-                        </div>
-                    </div>
-                </a>
 
-                <!-- Hoa Lu -->
-                <a href="destination-hoa-lu.html" class="dest-card single-col">
-                    <div class="dest-card-img">
-                        <img src="images/hoa_lu_temple_1783443696229.webp" alt="Cố đô Hoa Lư" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Di tích</span>
-                            <span class="tag">Lịch sử</span>
-                        </div>
-                        <h3 class="dest-card-title">Cố đô Hoa Lư</h3>
-                        <p class="dest-card-desc">Đền thờ Đinh - Lê cổ xưa nép mình giữa vách núi đá vôi kỳ vĩ rêu phong mang đậm tính lịch sử.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating">
-                                <span class="stars">★★★★★</span>
-                                <span>4.6</span>
+                        <!-- Mùa Sen Nở -->
+                        <div class="season-card" onclick="openLightbox('images/ninhbinh_mua_sen_no_hang_mua.webp', 'Mùa Sen Nở (Tháng 6 - 8): Hương Sen Tinh Khiết Dưới Vách Ngọa Long', 'Hồ sen bạt ngàn rộng hàng chục hecta nở rộ ngay dưới chân núi Hang Múa. Cây cầu gỗ hình trái tim uốn lượn giữa ngàn đóa sen hồng ngát hương, đối lập với nét gai góc, uy nghi của rặng núi đá vôi nghìn năm tuổi.')">
+                            <div class="season-img-wrap">
+                                <img src="images/ninhbinh_mua_sen_no_hang_mua.webp" alt="Mùa sen nở ngát hương dưới chân Hang Múa" loading="lazy">
+                                <span class="season-badge">Tháng 6 - 8</span>
                             </div>
-                            <span class="dest-reviews">150 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span>📷 AI</span>
-                            <span>Sưu tầm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Van Long -->
-                <a href="destination-van-long.html" class="dest-card double-col">
-                    <div class="dest-card-img">
-                        <img src="images/van_long_wetland_1783443704949.webp" alt="Đầm Vân Long" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Đầm nước</span>
-                            <span class="tag">Hoang dã</span>
-                        </div>
-                        <h3 class="dest-card-title">Đầm ngập nước Vân Long</h3>
-                        <p class="dest-card-desc">Vùng đầm ngập nước thanh bình hoang dã lớn nhất vùng đồng bằng Bắc Bộ với những chiếc đò tre lặng lờ xuôi dòng nước trong xanh.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating">
-                                <span class="stars">★★★★★</span>
-                                <span>4.7</span>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Sen Nở: Thanh Khiết Đầm Sen Hang Múa</h3>
+                                <span class="season-time">Thời điểm: Tháng 6 đến tháng 8 Dương lịch</span>
+                                <p class="season-desc">Khi nắng hè rực rỡ trải vàng thung lũng, các đầm sen quanh Hang Múa, Đầm Vân Long đồng loạt bung nở tỏa hương thanh tao. Đi dạo trên cầu gỗ giữa hồ sen lúc bình minh sáng sớm là trải nghiệm thanh lọc tâm hồn tuyệt đối.</p>
                             </div>
-                            <span class="dest-reviews">190 reviews</span>
                         </div>
-                        <div class="dest-card-credits">
-                            <span>📷 AI</span>
-                            <span>Sưu tầm</span>
+
+                        <!-- Mùa Sương Thu & Chim Di Cư -->
+                        <div class="season-card" onclick="openLightbox('images/ninhbinh_mua_suong_thu_chim_di_cu_van_long.webp', 'Mùa Thu - Đông (Tháng 9 - 12): Sương Mờ & Cò Về Làm Tổ Đầm Vân Long', 'Khung cảnh huyền bí như tranh thủy mặc lúc hoàng hôn tại Đầm ngập nước Vân Long. Mặt nước phẳng lặng như tấm gương khổng lồ in bóng mây trời, đón hàng vạn cánh chim di cư và voọc mông trắng quý hiếm tìm nơi trú ẩn.')">
+                            <div class="season-img-wrap">
+                                <img src="images/ninhbinh_mua_suong_thu_chim_di_cu_van_long.webp" alt="Mùa thu sương mờ và chim di cư đầm Vân Long" loading="lazy">
+                                <span class="season-badge">Tháng 9 - 12</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu - Đông: Bảng Lảng Sương Mờ & Chim Di Cư</h3>
+                                <span class="season-time">Thời điểm: Tháng 9 đến tháng 12 Dương lịch</span>
+                                <p class="season-desc">Trời thu miền Bắc trong vắt, nước sông Tràng An xanh thấu đáy trông thấy rong rêu đuôi cáo uốn lượn. Về chiều, từng đàn cò trắng rủ nhau bay rợp trời Đầm Vân Long, tạo nên không gian nguyên sinh thanh bình thoát tục.</p>
+                            </div>
                         </div>
                     </div>
-                </a>
-            </div>
+                </section>
 
-            
+                <!-- MỤC 5: TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh">
+                    <h2><span class="icon">📸</span> 5. Top 10 Thắng cảnh biểu tượng & Dấu tích lịch sử</h2>
+                    <p>Khám phá trọn vẹn 10 tọa độ check-in và di tích khảo cổ - danh thắng ngoạn mục nhất làm nên danh tiếng toàn cầu của Cố đô Ninh Bình:</p>
 
-            <!-- CẨM NANG THỰC TẾ -->
-            <h2 id="cam-nang"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-            <p>Ninh Bình cách Hà Nội khoảng 95km, giao thông vô cùng thuận tiện:</p>
-            
-            <h3>1. Phương tiện di chuyển từ Hà Nội</h3>
-            <ul>
-                <li><strong>Xe limousine / Xe khách:</strong> Đi từ bến xe Giáp Bát/Mỹ Đình hoặc có xe đưa đón tận nhà. Thời gian di chuyển khoảng 2 giờ qua cao tốc Pháp Vân - Cầu Giẽ.</li>
-                <li><strong>Tàu hỏa:</strong> Tuyến đường sắt Thống Nhất xuất phát từ Ga Hà Nội đến Ga Ninh Bình. Thời gian di chuyển khoảng 2.5 giờ.</li>
-                <li><strong>Xe máy / Ô tô cá nhân:</strong> Di chuyển dọc theo quốc lộ 1A cũ hoặc đường cao tốc, đường đi bằng phẳng và vô cùng thuận tiện.</li>
-            </ul>
+                    <div class="checkin-grid">
+                        <!-- Spot 1: Tràng An - Thủy Đình (Double Col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/thuy_dinh_trang_an_1783491538832.webp', 'Quần Thể Danh Thắng Tràng An — Thủy Đình Cổ Kính', 'Trái tim của Di sản Kép thế giới UNESCO. Thủy Đình Tràng An soi bóng trên dòng Sao Khê trong xanh, bao bọc bởi quần thể hang động xuyên thủy kỳ bí (Hang Sáng, Hang Tối, Hang Nấu Rượu, Hang Ba Giọt).')">
+                            <div class="dest-card-img">
+                                <img src="images/thuy_dinh_trang_an_1783491538832.webp" alt="Tràng An Thủy Đình Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Top 1 Biểu Tượng</span>
+                                    <span class="tag">Di sản Thế giới UNESCO</span>
+                                </div>
+                                <h3 class="dest-card-title">1. Quần Thể Danh Thắng Tràng An — Thủy Đình</h3>
+                                <p class="dest-card-desc">Hành trình chèo thuyền nan 3 tiếng qua hệ thống sông ngòi ngầm liên hoàn luồn qua hàng chục hang động tự nhiên và các đền phủ cổ kính giữa non cao.</p>
+                            </div>
+                        </div>
 
-            <h3>2. Vé tham quan các điểm chính</h3>
-            <p>Các điểm danh thắng tại Ninh Bình đều áp dụng bán vé tham quan và vé đò trực tiếp tại quầy. Bạn có thể dễ dàng mua trực tiếp bằng tiền mặt hoặc quét mã QR chuyển khoản tại quầy bán vé của từng khu du lịch (như Tràng An, Tam Cốc, Hang Múa, Cố đô Hoa Lư). Chùa Bái Đính miễn phí vé vào cửa nhưng có dịch vụ xe điện nội khu nếu bạn không muốn đi bộ.</p>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
+                        <!-- Spot 2: Hang Múa -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hang_mua_peak_1783441917217.webp', 'Đỉnh Ngọa Long Hang Múa — Nóc Nhà Cố Đô', 'Vượt qua 486 bậc đá trắng mô phỏng Vạn Lý Trường Thành thu nhỏ để chạm tới đỉnh Ngọa Long Sơn, chiêm ngưỡng trọn vẹn toàn cảnh Tam Cốc từ trên cao.')">
+                            <div class="dest-card-img">
+                                <img src="images/hang_mua_peak_1783441917217.webp" alt="Đỉnh Hang Múa Ngọa Long Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Must-Checkin</span>
+                                    <span class="tag">486 Bậc Đá</span>
+                                </div>
+                                <h3 class="dest-card-title">2. Đỉnh Ngọa Long — Hang Múa</h3>
+                                <p class="dest-card-desc">Tọa độ ngắm toàn cảnh thung lũng Tam Cốc và sông Ngô Đồng đẹp nhất thế giới lúc hoàng hôn và bình minh.</p>
+                            </div>
+                        </div>
 
-            <!-- LƯU TRÚ & ẨM THỰC -->
-            <h2 id="luu-tru-am-thuc"><span class="icon">🏨</span> Lưu trú & Ẩm thực</h2>
-            
-            <h3>1. Gợi ý nơi ở</h3>
-            <p>Khuyến khích chọn các <strong>Homestay view núi</strong> hoặc khu nghỉ dưỡng sinh thái gần gũi với thiên nhiên tại khu vực Tam Cốc, Tràng An để thưởng thức trọn vẹn không gian thanh bình, tĩnh mịch đặc trưng của non nước Ninh Bình.</p>
+                        <!-- Spot 3: Tam Cốc -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/tam_coc_river_1783441927501.webp', 'Tam Cốc — Ba Hang Xuyên Thủy Bên Dòng Ngô Đồng', 'Hành trình lướt nhẹ thuyền nan luồn qua Hang Cả, Hang Hai, Hang Ba uốn quanh thung lũng lúa vàng rực rỡ.')">
+                            <div class="dest-card-img">
+                                <img src="images/tam_coc_river_1783441927501.webp" alt="Tam Cốc sông Ngô Đồng Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Kỳ Quan Lúa Vàng</span>
+                                    <span class="tag">Sông Ngô Đồng</span>
+                                </div>
+                                <h3 class="dest-card-title">3. Tam Cốc — Ba Hang Xuyên Thủy</h3>
+                                <p class="dest-card-desc">Được mệnh danh Nam thiên đệ nhị động, nơi lưu giữ kỹ nghệ chèo thuyền bằng chân độc đáo của người chèo đò bản địa.</p>
+                            </div>
+                        </div>
 
-            <h3>2. Món ngon phải thử</h3>
-            <div class="food-list">
-                <div class="food-item"><span class="name">🐐 Thịt dê núi Ninh Bình (tái chanh, tái mè, áp chảo)</span></div>
-                <div class="food-item"><span class="name">🍖 Cơm cháy Ninh Bình (cơm cháy giòn rụm ăn kèm sốt dê thơm nóng)</span></div>
-                <div class="food-item"><span class="name">🐟 Cá rô Tổng Trường kho tộ đậm đà</span></div>
-                <div class="food-item"><span class="name">🦐 Ốc núi đá xào lá lốt hoặc hấp sả ớt</span></div>
-            </div>
+                        <!-- Spot 4: Chùa Bái Đính (Double Col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/bai_dinh_pagoda_1783443686667.webp', 'Quần Thể Chùa Bái Đính — Kỷ Lục Phật Giáo Đông Nam Á', 'Khu chùa tâm linh sở hữu hàng loạt kỷ lục châu Á và Việt Nam: Tượng Phật bằng đồng dát vàng lớn nhất châu Á, Hành lang 500 vị La Hán bằng đá xanh dài nhất châu Á.')">
+                            <div class="dest-card-img">
+                                <img src="images/bai_dinh_pagoda_1783443686667.webp" alt="Chùa Bái Đính Ninh Bình toàn cảnh" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Kỷ Lục Châu Á</span>
+                                    <span class="tag">Đại Tượng Phật Đồng</span>
+                                </div>
+                                <h3 class="dest-card-title">4. Quần Thể Chùa Bái Đính — Trung Tâm Phật Giáo</h3>
+                                <p class="dest-card-desc">Quần thể chùa rộng 539ha gồm Bái Đính Cổ Tự nghìn năm và Bái Đính Tân Tự nguy nga với Bảo tháp Xá lợi Phật cao 100m.</p>
+                            </div>
+                        </div>
 
-            <!-- KINH NGHIỆM & LƯU Ý -->
-            <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm & Lưu ý an toàn</h2>
-            
-            <h3>1. Thời điểm lý tưởng đi du lịch</h3>
-            <ul>
-                <li><strong>Tháng 1 – 3:</strong> Mùa xuân ấm áp, phù hợp đi lễ chùa Bái Đính và trẩy hội Tràng An đầu năm.</li>
-                <li><strong>Tháng 5 – 6:</strong> Mùa lúa chín vàng óng tại Tam Cốc — thời khắc Ninh Bình rực rỡ nhất.</li>
-                <li><strong>Tháng 9 – 10:</strong> Mùa thu mát mẻ, trời trong xanh, nước sông lững lờ êm ả.</li>
-            </ul>
+                        <!-- Spot 5: Cố đô Hoa Lư -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoa_lu_temple_1783443696229.webp', 'Cố Đô Hoa Lư — Đền Vua Đinh & Vua Lê', 'Kinh đô đầu tiên của nhà nước Đại Cồ Việt thế kỷ X. Nơi lưu giữ kiến trúc đền thờ chạm khắc gỗ đá tinh xảo và sập rồng đá nghìn năm tuổi.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoa_lu_temple_1783443696229.webp" alt="Đền vua Đinh Cố đô Hoa Lư" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Di Tích QG Đặc Biệt</span>
+                                    <span class="tag">Đại Cồ Việt 968</span>
+                                </div>
+                                <h3 class="dest-card-title">5. Cố Đô Hoa Lư — Dấu Tích Ngàn Năm</h3>
+                                <p class="dest-card-desc">Thành lũy đá tự nhiên che chở cho hai triều đại Đinh và Tiền Lê, lưu giữ giá trị lịch sử và bảo vật quốc gia sập đá hoa văn rồng cuộn.</p>
+                            </div>
+                        </div>
 
-            <h3>2. Cảnh báo an toàn & Mẹo nhỏ</h3>
-            <ul>
-                <li><strong>An toàn:</strong> Tuyệt đối không leo trèo vượt hàng rào bảo vệ trên đỉnh Hang Múa để chụp ảnh mạo hiểm. Đường bậc đá có thể trơn trượt vào ngày mưa.</li>
-                <li><strong>Chuẩn bị:</strong> Đi thuyền nan ngoài trời 2 tiếng bắt buộc phải trang bị mũ rộng vành, kính râm, kem chống nắng và nước uống đầy đủ.</li>
-                <li><strong>Tiền mặt:</strong> Khu du lịch Tam Cốc/Tràng An ít cây ATM, hãy chuẩn bị sẵn tiền mặt để thanh toán dịch vụ ăn uống nhỏ lẻ hoặc tip bác chèo thuyền (thường khoảng 50k - 100k).</li>
-            </ul>
+                        <!-- Spot 6: Đầm Vân Long -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/van_long_wetland_1783443704949.webp', 'Khu Bảo Tồn Đầm Vân Long — Khu Ramsar Thế Giới', 'Khu bảo tồn đất ngập nước nội địa lớn nhất đồng bằng Bắc Bộ, sở hữu mặt nước tĩnh lặng như gương soi và quần thể voọc mông trắng đông nhất Việt Nam.')">
+                            <div class="dest-card-img">
+                                <img src="images/van_long_wetland_1783443704949.webp" alt="Đầm Vân Long Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Ramsar Thế Giới</span>
+                                    <span class="tag">Voọc Mông Trắng</span>
+                                </div>
+                                <h3 class="dest-card-title">6. Đầm Vân Long — Vịnh Không Sóng</h3>
+                                <p class="dest-card-desc">Không gian hoang sơ không có tiếng động cơ cano, chỉ có tiếng mái chèo tre rẽ nước và tiếng chim hót giữa núi đá Cô Tiên.</p>
+                            </div>
+                        </div>
 
-            <div class="warning-box" style="margin-top: 1.5rem;">
-                <p>⚠️ Hãy là du khách văn minh: Không xả rác xuống sông khi đi thuyền, mặc trang phục lịch sự khi ghé thăm cố đô Hoa Lư hay chùa chiền tôn nghiêm.</p>
-            </div>
-        </article>
+                        <!-- Spot 7: Tuyệt Tịnh Cốc (Động Am Tiên) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoa_lu_am_tien_cave_1785641773711.webp', 'Động Am Tiên — Tuyệt Tịnh Cốc Thơ Mộng', 'Thung lũng biệt lập được bao bọc bởi vách đá dựng đứng, ở giữa là hồ nước Giải trong vắt quanh năm in bóng cổng thành đá cổ và chùa Am Tiên trên cao.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoa_lu_am_tien_cave_1785641773711.webp" alt="Động Am Tiên Tuyệt Tịnh Cốc Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Hồ Nước Ngọc Bích</span>
+                                    <span class="tag">Cổng Thành Cổ</span>
+                                </div>
+                                <h3 class="dest-card-title">7. Động Am Tiên — Tuyệt Tịnh Cốc</h3>
+                                <p class="dest-card-desc">Xưa kia từng là nơi nuôi nhốt dã thú răn đe phạm nhân thời Đinh, nay là chốn bồng lai thanh tịnh soi bóng mặt hồ ngọc bích.</p>
+                            </div>
+                        </div>
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <!-- QUICK INFO -->
-            <div class="sidebar-card">
-                <h4>📌 Thông tin nhanh</h4>
-                <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Cách Hà Nội ~95 km</div>
-                <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 2 – 3 ngày</div>
-                <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 5 – 6, 9 – 10</div>
-            </div>
+                        <!-- Spot 8: Chùa Bích Động -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/bich_dong_pagoda_1785483683589.webp', 'Chùa Bích Động — Nam Thiên Đệ Nhị Động', 'Cổ tự ba tầng Hạ - Trung - Thượng xây tựa vào vách núi đá vôi, nổi tiếng với chiếc cầu đá bắc qua hồ súng dẫn vào cổng chùa cổ kính phủ rêu phong.')">
+                            <div class="dest-card-img">
+                                <img src="images/bich_dong_pagoda_1785483683589.webp" alt="Chùa Bích Động cổng cổ Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Cổ Tự Kỳ Quan</span>
+                                    <span class="tag">Cổng Đá Rêu Phong</span>
+                                </div>
+                                <h3 class="dest-card-title">8. Chùa Bích Động — Cổ Tự Trong Hang</h3>
+                                <p class="dest-card-desc">Được chúa Trịnh Sâm ban tặng danh hiệu "Nam thiên đệ nhị động" (Động đẹp thứ nhì trời Nam), ẩn mình giữa sắc xanh kỳ bí của hoa lá và núi đá.</p>
+                            </div>
+                        </div>
 
-            <!-- TOC -->
-            <div class="sidebar-card">
-                <h4>📖 Mục lục</h4>
-                <ul class="toc-list">
-                    <li><a href="#phong-canh">📸 Danh thắng kì vĩ</a></li>
-                    <li><a href="#cam-nang">🚗 Di chuyển & Chi phí</a></li>
-                    <li><a href="#luu-tru-am-thuc">🏨 Lưu trú & Ẩm thực</a></li>
-                    <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & Lưu ý</a></li>
-                </ul>
-            </div>
-        </aside>
+                        <!-- Spot 9: Đền Thái Vi -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/tam_coc_thai_vi_1785642868140.webp', 'Đền Thái Vi — Dấu Tích Hành Cung Vũ Lâm', 'Ngôi đền bằng đá xanh nguyên khối thờ phụng các vua Trần Thái Tông, Trần Thánh Tông, danh tướng Trần Hưng Đạo và hoàng hậu Thuận Thiên.')">
+                            <div class="dest-card-img">
+                                <img src="images/tam_coc_thai_vi_1785642868140.webp" alt="Đền Thái Vi Tam Cốc Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Hành Cung Vũ Lâm</span>
+                                    <span class="tag">Kiến Trúc Đá Xanh</span>
+                                </div>
+                                <h3 class="dest-card-title">9. Đền Thái Vi — Hào Khí Đông A</h3>
+                                <p class="dest-card-desc">Kiến trúc đá nguyên khối sừng sững giữa thung lũng Ngũ Nhạc Sơn, minh chứng lịch sử cho sự chọn lựa địa bàn chiến lược chống giặc Mông Cổ của triều Trần.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 10: Thung Nắng -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/tam_coc_thung_nang_1785642894867.webp', 'Thung Nắng — Miền Thung Lũng Hoang Sơ', 'Thung lũng đá vôi ngập tràn ánh nắng vàng ấm áp, đầm lau sậy đung đưa theo gió và mặt nước trong veo rải rác những đóa hoa súng tím biếc.')">
+                            <div class="dest-card-img">
+                                <img src="images/tam_coc_thung_nang_1785642894867.webp" alt="Thung Nắng thuyền nan Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Bình Yên Thoát Tục</span>
+                                    <span class="tag">Hoa Súng Thung Lũng</span>
+                                </div>
+                                <h3 class="dest-card-title">10. Thung Nắng — Chốn Tĩnh Lặng Nguyên Sơ</h3>
+                                <p class="dest-card-desc">Lộ trình thuyền êm đềm thích hợp cho những ai yêu thích vẻ đẹp thiên nhiên hoang sơ không ồn ào chen chúc, ngắm nhìn đàn cá bơi lội dưới đáy rong rêu.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 6: CẨM NANG DI CHUYỂN -->
+                <section id="di-chuyen">
+                    <h2><span class="icon">🚗</span> 6. Cẩm nang di chuyển & Cung đường giao thông</h2>
+                    <p>Chỉ cách trung tâm thủ đô Hà Nội khoảng 90km về phía nam, Ninh Bình có hạ tầng giao thông kết nối hoàn hảo và thuận tiện bậc nhất miền Bắc:</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Phương tiện</th>
+                                    <th>Thời gian di chuyển</th>
+                                    <th>Mức giá ước tính</th>
+                                    <th>Đặc điểm & Lời khuyên</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Xe Limousine Dcar cao cấp</strong></td>
+                                    <td>1 giờ 15 phút - 1 giờ 30 phút</td>
+                                    <td><span class="price-tag">135.000 - 160.000 đ/vé</span></td>
+                                    <td>Đón trả tận nơi tại Hà Nội và trả về tận khách sạn/homestay Tràng An, Tam Cốc. Xe chạy cao tốc êm ái.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tàu hỏa Bắc - Nam (SE/TN)</strong></td>
+                                    <td>2 giờ - 2 giờ 15 phút</td>
+                                    <td><span class="price-tag">70.000 - 130.000 đ/vé</span></td>
+                                    <td>Khởi hành từ Ga Hà Nội tới Ga Ninh Bình (trung tâm TP). Trải nghiệm ngắm cảnh đồng quê thanh bình, an toàn tuyệt đối.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ô tô cá nhân / Xe tự lái</strong></td>
+                                    <td>1 giờ 15 phút</td>
+                                    <td><span class="price-tag">~100.000 đ phí BOT</span></td>
+                                    <td>Tuyến cao tốc Pháp Vân - Cầu Giẽ - Cao Bồ - Mai Sơn chạy thẳng vào trung tâm Ninh Bình rất thông thoáng.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Xe máy phượt tự do</strong></td>
+                                    <td>2 giờ 15 phút</td>
+                                    <td><span class="price-tag">~70.000 đ xăng</span></td>
+                                    <td>Đi theo Quốc lộ 1A cũ qua Thường Tín, Phủ Lý, Hà Nam. Phù hợp cho các bạn trẻ thích tự do dừng chân chụp ảnh.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Di chuyển nội địa tại Ninh Bình:</h3>
+                    <ul style="margin: 0.5rem 0 1.5rem 1.2rem; color: var(--text-sec); font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Thuê xe máy:</strong> Giá từ 100.000 - 150.000 VNĐ/ngày. Đây là phương tiện linh hoạt nhất để len lỏi qua các cung đường thung lũng đá vôi Tam Cốc - Hang Múa - Tràng An.</li>
+                        <li><strong>Thuê xe đạp dạo thôn quê:</strong> Các homestay tại Tam Cốc và Tràng An thường cho thuê hoặc mượn xe đạp miễn phí. Đạp xe trên con đường làng ngắm đồng lúa chín và đàn trâu gặm cỏ là nét văn hóa đặc trưng.</li>
+                        <li><strong>Taxi & Xe điện du lịch:</strong> Xe điện phục vụ rộng rãi tại Quần thể chùa Bái Đính và Cố đô Hoa Lư (30.000 - 50.000 VNĐ/lượt). Taxi truyền thống và taxi điện Mai Linh, Xanh SM hoạt động 24/7.</li>
+                    </ul>
+                </section>
+
+                <!-- MỤC 7: TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <section id="am-thuc">
+                    <h2><span class="icon">🍲</span> 7. Tinh hoa ẩm thực đặc sản</h2>
+                    <p>Ẩm thực Ninh Bình mang đậm dấu ấn của vùng núi đá vôi vôi hóa tự nhiên và đầm lầy trũng nước. Những đàn dê chạy nhảy gặm lá thuốc trên vách đá tai mèo kết hợp hạt ngọc trời đồng chiêm trũng đã kiến tạo nên những món ăn danh bất hư truyền:</p>
+
+                    <div class="culinary-grid">
+                        <!-- Món 1: Cơm cháy chà bông sốt dê -->
+                        <div class="culinary-card" onclick="openLightbox('images/ninhbinh_mon_com_chay_cha_bong.webp', 'Cơm Cháy Chà Bông Sốt Dê — Giòn Rụm Hạt Ngọc Trời', 'Cơm cháy Ninh Bình được ép từ gạo nếp hương dẻo thơm, phơi nắng tự nhiên rồi chiên ngập dầu giòn tan xốp phồng, rắc ruốc thịt heo đậm đà, chấm cùng bát nước sốt dê thơm sánh sánh nóng hổi.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/ninhbinh_mon_com_chay_cha_bong.webp" alt="Cơm cháy chà bông Ninh Bình sốt dê" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">1. Cơm Cháy Chà Bông Sốt Dê</h3>
+                                <p class="culinary-desc">Miếng cơm cháy vàng ươm, giòn rụm không gắt dầu, quết thêm lớp mỡ hành óng ánh và chà bông sợi tơi xốp. Bí quyết làm nên sự thăng hoa là bát nước sốt sền sệt nấu từ tim cật thịt dê núi nêm nếm đậm đà cay nồng tiêu ớt.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">45.000 - 90.000 VNĐ / phần</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 2: Thịt dê tái chanh -->
+                        <div class="culinary-card" onclick="openLightbox('images/ninhbinh_mon_thit_de_tai_chanh.webp', 'Thịt Dê Tái Chanh — Ngọt Thanh Dê Núi Đá Vôi', 'Thịt dê núi tươi thái mỏng chần qua nước sôi vừa chín tới, bóp trộn cùng nước cốt chanh tươi, sả bào, gừng thái chỉ, lá chanh và mè rang thơm lừng, cuộn kèm lá sung chát ngọt chấm tương Bần.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/ninhbinh_mon_thit_de_tai_chanh.webp" alt="Thịt dê núi tái chanh Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">2. Thịt Dê Tái Chanh Cuộn Lá Sung</h3>
+                                <p class="culinary-desc">Dê núi Ninh Bình được thả rông trên núi đá ăn các loại lá cây thuốc quý nên thịt săn chắc, thơm ngọt tự nhiên không hề có mùi gây. Vị chua thanh của chanh, cay ấm của gừng sả hòa quyện cùng vị chát bùi của lá sung và độ đậm đà của tương Bần.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">150.000 - 220.000 VNĐ / đĩa</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 3: Dê núi nướng tảng than hoa -->
+                        <div class="culinary-card" onclick="openLightbox('images/ninhbinh_mon_de_nuong_tang.webp', 'Dê Núi Nướng Tảng — Khói Thơm Than Hoa Ngút Ngàn', 'Từng tảng thịt đùi và sườn dê núi ướp cùng mật ong rừng, sả băm, dầu hào rồi nướng trực tiếp trên than hoa đỏ rực. Lớp da bên ngoài giòn rụm còn thớ thịt bên trong mọng nước ngọt mềm.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/ninhbinh_mon_de_nuong_tang.webp" alt="Dê núi nướng tảng than hoa Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">3. Dê Núi Nướng Tảng Than Hoa</h3>
+                                <p class="culinary-desc">Tảng thịt dê dày dặn xèo xèo trên vỉ than hồng, tỏa ra mùi thơm ngào ngạt của gia vị núi rừng. Miếng thịt cắt lát nóng hổi giữ trọn vẹn vị ngọt nguyên bản, chấm cùng muối hạt tiêu rừng hoặc chao ớt béo ngậy khiến thực khách say đắm.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">160.000 - 240.000 VNĐ / đĩa</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 4: Xôi trứng kiến Nho Quan -->
+                        <div class="culinary-card" onclick="openLightbox('images/ninhbinh_mon_xoi_trung_kien_nho_quan.webp', 'Xôi Trứng Kiến Nho Quan — Đặc Sản Quý Hiếm Đại Ngàn', 'Những hạt trứng kiến nâu bóng mẩy như hạt gạo, được đồng bào Mường vùng núi Nho Quan thu hái vào mùa xuân, xào thơm cùng mỡ gà và hành phi rồi trộn đều vào nếp nương đồ xôi nóng hổi.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/ninhbinh_mon_xoi_trung_kien_nho_quan.webp" alt="Xôi trứng kiến Nho Quan Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">4. Xôi Trứng Kiến Nho Quan</h3>
+                                <p class="culinary-desc">Món ăn quý hiếm mang phong vị núi rừng Cúc Phương. Khi thưởng thức, từng hạt trứng kiến vỡ tí tách trong khoang miệng, giải phóng vị béo ngậy, bùi bùi đặc trưng kết hợp với hạt xôi nếp nương dẻo quánh thơm lừng hành phi giòn tan.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">60.000 - 100.000 VNĐ / đĩa</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 5: Gỏi cá nhệch Kim Sơn -->
+                        <div class="culinary-card" onclick="openLightbox('images/ninhbinh_mon_goi_ca_nhech_kim_son.webp', 'Gỏi Cá Nhệch Kim Sơn — Tinh Hoa Ẩm Thực Vùng Cửa Biển', 'Thịt cá nhệch tươi sống được lọc da thái mỏng, bóp thính gạo nếp rang thơm lừng, ăn kèm hơn 15 loại lá rừng gia vị độc đáo và nước chẻo nấu từ xương cá nhệch sền sệt béo bùi.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/ninhbinh_mon_goi_ca_nhech_kim_son.webp" alt="Gỏi cá nhệch Kim Sơn Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">5. Gỏi Cá Nhệch Kim Sơn</h3>
+                                <p class="culinary-desc">Cá nhệch sống ở vùng đầm phá nước lợ cửa biển Kim Sơn có thịt dai ngọt đặc biệt. Thực khách cuộn lá sung, lá ổi, mơ lông, đinh lăng thành hình phễu, cho thịt cá nhệch vào trong rồi chan đẫm nước chẻo nóng hổi đậm đà, tạo nên hương vị bùng nổ khó quên.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">180.000 - 280.000 VNĐ / phần</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 6: Ốc núi Tam Điệp hấp sả gừng -->
+                        <div class="culinary-card" onclick="openLightbox('images/ninhbinh_mon_oc_nui_tam_diep.webp', 'Ốc Núi Tam Điệp Hấp Sả Gừng — Dược Vị Núi Đá Vôi', 'Loài ốc đá quý chỉ xuất hiện vào mùa mưa (tháng 4 - 8) trên rặng núi đá vôi Tam Điệp, chuyên ăn các loại rêu phong và lá thuốc quý, hấp cách thủy cùng sả gừng giữ nguyên độ giòn sần sật bùi thơm.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/ninhbinh_mon_oc_nui_tam_diep.webp" alt="Ốc núi Tam Điệp hấp sả gừng Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">6. Ốc Núi Tam Điệp Hấp Sả Gừng</h3>
+                                <p class="culinary-desc">Khác hẳn ốc nước ngọt thông thường, thịt ốc núi Tam Điệp dày, giòn sần sật và phảng phất vị thơm thuốc bắc thanh tao tự nhiên. Ốc chấm vào bát nước mắm gừng ớt tỏi ớt chua ngọt tạo nên trải nghiệm ẩm thực gây nghiện cho mọi thực khách sành ăn.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">85.000 - 140.000 VNĐ / đĩa</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 8: BẢNG GIÁ VÉ THAM QUAN NIÊM YẾT -->
+                <section id="gia-ve">
+                    <h2><span class="icon">🎟️</span> 8. Bảng giá vé tham quan & Dịch vụ thuyền đò niêm yết</h2>
+                    <p>Bảng tổng hợp biểu giá vé tham quan và dịch vụ thuyền đò được niêm yết chính thức tại các điểm danh thắng trọng điểm của tỉnh Ninh Bình (Cập nhật năm 2026):</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Khu Danh Thắng / Di Tích</th>
+                                    <th>Vé Người Lớn</th>
+                                    <th>Vé Trẻ Em (1m - 1m3)</th>
+                                    <th>Dịch Vụ Bao Gồm / Ghi Chú</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Khu Du Lịch Sinh Thái Tràng An</strong></td>
+                                    <td><span class="price-tag">250.000 đ/người</span></td>
+                                    <td><span class="price-tag">120.000 đ/người</span></td>
+                                    <td>Bao gồm vé thắng cảnh & thuyền đò 3-4 người/thuyền theo 1 trong 3 tuyến tham quan.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Danh Thắng Tam Cốc — Bích Động</strong></td>
+                                    <td><span class="price-tag">120.000 đ vé + 150.000 đ đò</span></td>
+                                    <td><span class="price-tag">60.000 đ vé cảnh</span></td>
+                                    <td>Đò chở tối đa 2 khách quốc tế hoặc 4 khách Việt Nam. Chùa Bích Động miễn phí vé vào cổng.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Khu Du Lịch Hang Múa (Ngọa Long Sơn)</strong></td>
+                                    <td><span class="price-tag">100.000 đ/người</span></td>
+                                    <td><span class="price-tag">Miễn phí dưới 1m</span></td>
+                                    <td>Tham quan hang động, leo 486 bậc thang đỉnh núi và check-in đầm sen trái tim.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Khu Di Tích Cố Đô Hoa Lư</strong></td>
+                                    <td><span class="price-tag">20.000 đ/người</span></td>
+                                    <td><span class="price-tag">10.000 đ/người</span></td>
+                                    <td>Tham quan Đền vua Đinh Tiên Hoàng và Đền vua Lê Đại Hành.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Động Am Tiên (Tuyệt Tịnh Cốc)</strong></td>
+                                    <td><span class="price-tag">50.000 đ/người</span></td>
+                                    <td><span class="price-tag">25.000 đ/người</span></td>
+                                    <td>Bao gồm vé tham quan lòng hồ, cổng thành cổ và chùa Am Tiên trên vách núi.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Khu Bảo Tồn Thiên Nhiên Đầm Vân Long</strong></td>
+                                    <td><span class="price-tag">20.000 đ vé + 60.000 đ đò</span></td>
+                                    <td><span class="price-tag">35.000 đ trọn gói</span></td>
+                                    <td>Thuyền nan tre chở 2 người/thuyền, hành trình ngắm chim và cảnh non nước 1.5 tiếng.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Quần Thể Chùa Bái Đính</strong></td>
+                                    <td><span class="price-tag">Miễn phí vãn cảnh</span></td>
+                                    <td><span class="price-tag">Miễn phí</span></td>
+                                    <td>Xe điện: 30.000 đ/chiều (60.000 đ khứ hồi); Vé lên Bảo Tháp xá lợi: 50.000 đ/người.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vườn Quốc Gia Cúc Phương</strong></td>
+                                    <td><span class="price-tag">60.000 đ/người</span></td>
+                                    <td><span class="price-tag">10.000 - 20.000 đ</span></td>
+                                    <td>Tham quan rừng nguyên sinh, cây Chò ngàn năm, Trung tâm cứu hộ linh trưởng.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="disclaimer-box">
+                        * Giá vé trên được áp dụng theo quy định hiện hành của Ban Quản lý các Khu du lịch tỉnh Ninh Bình. Giá có thể thay đổi nhẹ vào các dịp nghỉ lễ Tết đặc biệt. Trẻ em cao dưới 1.0m được miễn phí tại hầu hết các điểm.
+                    </div>
+                </section>
+
+                <!-- MỤC 9: GỢI Ý LỊCH TRÌNH 3N2Đ & MẸO AN TOÀN -->
+                <section id="lich-trinh">
+                    <h2><span class="icon">🧭</span> 9. Gợi ý lịch trình & Mẹo trải nghiệm bản địa an toàn</h2>
+                    <p>Để tận hưởng trọn vẹn kỳ nghỉ dưỡng di sản vừa thư thái vừa ngắm trọn vẹn những khoảnh khắc đẹp nhất trong ngày, GO FAR đề xuất lịch trình trải nghiệm tối ưu 3 Ngày 2 Đêm:</p>
+
+                    <h3>Lịch trình gợi ý 3N2Đ: "Sắc Nắng Tràng An — Dấu Tích Ngàn Năm"</h3>
+                    <div style="margin: 1rem 0; padding-left: 1.2rem; border-left: 3px solid var(--accent); color: var(--text-sec); font-size: 0.95rem;">
+                        <p><strong>Ngày 1: Hà Nội — Tràng An Tuyệt Cảnh — Chiều Hoàng Hôn Hang Múa</strong><br>
+                        - 07h30: Xe Limousine đón từ Hà Nội, chạy cao tốc về Ninh Bình, nhận phòng homestay hoặc resort tại Tràng An/Tam Cốc.<br>
+                        - 09h30: Lên thuyền tham quan Tuyến 2 Tràng An (qua Hang Lấm, Hang Vạng, Thủy Đình, phim trường Kong cũ).<br>
+                        - 12h30: Ăn trưa đặc sản thịt dê núi tái chanh và cơm cháy chà bông.<br>
+                        - 15h30: Chinh phục 486 bậc thang đá Đỉnh Ngọa Long Hang Múa đón hoàng hôn buông xuống dòng sông Ngô Đồng.<br>
+                        - 19h00: Khám phá Phố cổ Hoa Lư rực rỡ ánh đèn lồng về đêm, thưởng thức ẩm thực đường phố và dạo quanh hồ Kỳ Lân.</p>
+
+                        <p style="margin-top: 1rem;"><strong>Ngày 2: Cố Đô Hoa Lư — Tuyệt Tịnh Cốc Am Tiên — Bái Đính Cổ Tự</strong><br>
+                        - 08h00: Thăm Khu di tích Cố đô Hoa Lư, dâng hương Đền Vua Đinh và Vua Lê, chiêm bái sập đá hoa văn rồng cuộn.<br>
+                        - 10h00: Khám phá hồ nước ngọc bích Động Am Tiên (Tuyệt Tịnh Cốc), đạp xe quanh bờ hồ rợp bóng cây xanh.<br>
+                        - 12h30: Ăn trưa tại nhà hàng đặc sản địa phương, thưởng thức món dê nướng tảng thơm lừng.<br>
+                        - 14h30: Chiêm bái Quần thể Chùa Bái Đính, đi dọc hành lang 500 vị La Hán và ngắm hoàng hôn từ Bảo tháp Xá lợi Phật.<br>
+                        - Tối: Nghỉ ngơi thư giãn tại resort, tận hưởng không gian thanh tịnh của núi rừng Cố đô.</p>
+
+                        <p style="margin-top: 1rem;"><strong>Ngày 3: Tam Cốc Mùa Lúa Vàng — Chùa Bích Động — Trở Về Hà Nội</strong><br>
+                        - 07h00: Đi thuyền sớm tại Tam Cốc khi nắng vừa lên, tận hưởng làn gió mát lành và mùi hương đồng nội lúa chín.<br>
+                        - 09h30: Check-in cổng chùa cổ Bích Động soi bóng hồ súng tím ngát hương.<br>
+                        - 11h30: Mua sắm đặc sản làm quà: cơm cháy chà bông đóng gói chân không, nem chua Yên Mạc, mắm tép Gia Viễn.<br>
+                        - 14h00: Lên xe Limousine trở về thủ đô Hà Nội, kết thúc chuyến hành trình khám phá di sản trọn vẹn.</p>
+                    </div>
+
+                    <h3>Mẹo an toàn & Trải nghiệm bản địa văn minh:</h3>
+                    <ul style="margin: 0.5rem 0 1rem 1.2rem; color: var(--text-sec); font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Tuân thủ mặc áo phao:</strong> Khi đi đò tại Tràng An, Tam Cốc hay Vân Long, hãy luôn cài khóa áo phao an toàn đúng quy cách suốt chuyến đi vì lòng sông và hang động có nhiều đoạn nước sâu.</li>
+                        <li><strong>Trang phục leo Hang Múa:</strong> Cung đường bậc thang đá Hang Múa dốc đứng và khá trơn khi trời mưa phùn, hãy mang giày thể thao bám dính tốt, mang theo chai nước lọc và mũ nón che nắng.</li>
+                        <li><strong>Văn hóa boa tiền tip người chèo đò:</strong> Các cô chú chèo đò phục vụ liên tục 2.5 - 3 tiếng bằng cả đôi chân và đôi tay rất vất vả, hãy bồi dưỡng một khoản tiền tip nhỏ (từ 50.000 - 100.000 VNĐ/thuyền) để khích lệ tinh thần bà con.</li>
+                        <li><strong>Trang phục đền chùa tôn nghiêm:</strong> Khi ghé thăm Cố đô Hoa Lư, Đền Thái Vi, Chùa Bái Đính và Chùa Bích Động, cần mặc trang phục kín đáo, lịch sự qua đầu gối, không nói to làm mất không gian thanh tịnh.</li>
+                    </ul>
+                </section>
+
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a> · <a href="policy.html">Điều khoản</a>
+            © 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch Việt Nam chuẩn xác & chuyên sâu.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            Biên tập nội dung: <strong>Sửu nhi</strong> • Ảnh: <strong>100% AI Travel Photography (GO FAR Studio)</strong>
+        </div>
     </footer>
 
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightboxDirect()">&times;</span>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="Chi tiết hình ảnh danh thắng Ninh Bình">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(src, title, caption) {
+            var modal = document.getElementById('lightboxModal');
+            var img = document.getElementById('lightboxImg');
+            var titleElem = document.getElementById('lightboxTitle');
+            var capElem = document.getElementById('lightboxCaption');
+            
+            img.src = src;
+            titleElem.textContent = title;
+            capElem.textContent = caption;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightboxDirect() {
+            var modal = document.getElementById('lightboxModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightboxModal') {
+                closeLightboxDirect();
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightboxDirect();
+            }
+        });
+    </script>
 </body>
 </html>
