@@ -3,25 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sapa — Ruộng bậc thang mây mù & Đỉnh Fansipan kỳ vĩ | GO FAR</title>
-    <meta name="description" content="Cẩm nang du lịch Sapa tự túc: Đỉnh Fansipan, bản Cát Cát, thung lũng Mường Hoa, đèo Ô Quy Hồ, bản Tả Phìn, nhà thờ Đá. Lịch trình, đi lại, món ngon vùng cao.">
+    <title>Sa Pa — Nóc Nhà Đông Dương & Tuyệt Đỉnh Ruộng Bậc Thang | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Sa Pa (Lào Cai) toàn diện 9 mục chuẩn mực: Đỉnh Fansipan 3.147,3m, thung lũng Mường Hoa, bãi đá cổ, đèo Ô Quy Hồ, 4 mùa mây ngàn, top 10 thắng cảnh, ẩm thực thắng cố cá hồi lợn bản, bảng giá niêm yết và lịch trình 3N2Đ.">
     <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="canonical" href="https://gofarvietnam.com/destination-sapa.html">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gofarvietnam.com/destination-sapa.html">
+    <meta property="og:title" content="Sa Pa — Nóc Nhà Đông Dương & Tuyệt Đỉnh Ruộng Bậc Thang | GO FAR">
+    <meta property="og:description" content="Cẩm nang du lịch Sa Pa toàn diện: Fansipan 3.147,3m, Mường Hoa, Bãi đá cổ, Đèo Ô Quy Hồ, 4 mùa di sản, ẩm thực bản địa và lịch trình 3N2Đ trọn vẹn.">
+    <meta property="og:image" content="https://gofarvietnam.com/images/sapa_hero.webp">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristDestination",
+        "name": "Sa Pa",
+        "description": "Khu du lịch quốc gia Sa Pa thuộc tỉnh Lào Cai, nổi tiếng với đỉnh Fansipan nóc nhà Đông Dương, ruộng bậc thang thung lũng Mường Hoa và văn hóa đa sắc tộc Tây Bắc.",
+        "url": "https://gofarvietnam.com/destination-sapa.html",
+        "image": "https://gofarvietnam.com/images/sapa_hero.webp",
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "22.3364",
+            "longitude": "103.8438"
+        },
+        "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Lào Cai, Việt Nam"
+        }
+    }
+    </script>
+
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
-            --bg-glass: rgba(255,255,255,0.04);
+            --bg: #0d1b2a;
+            --bg-sec: #1b263b;
+            --bg-card: rgba(27, 38, 59, 0.88);
+            --bg-glass: rgba(255, 255, 255, 0.05);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
             --accent: #FF8C32;
             --accent-gold: #fbbf24;
+            --accent-blue: #38bdf8;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -31,18 +65,19 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* NAV */
+        /* NAVIGATION */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: rgba(13, 27, 42, 0.95);
             border-bottom: 2px solid;
             border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
         }
         .nav-inner {
             max-width: 1350px;
@@ -50,88 +85,80 @@
             padding: 0 1.5rem;
             display: flex;
             align-items: center;
-            gap: 2rem;
+            justify-content: space-between;
         }
-        .nav-logo img { height: 45px; }
+        .nav-logo img { height: 44px; display: block; }
         .nav-back {
             color: var(--text-sec);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-decoration: none;
-            transition: color 0.3s;
-            display: flex;
+            font-weight: 500;
+            transition: color 0.2s, transform 0.2s;
+            display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            margin-left: auto;
         }
-        .nav-back:hover { color: var(--accent); }
+        .nav-back:hover { color: var(--accent); transform: translateX(-3px); }
 
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
+            display: flex;
+            align-items: flex-end;
         }
         .hero img {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 0;
         }
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(13, 27, 42, 0.3) 0%, rgba(13, 27, 42, 0.92) 100%);
+            z-index: 1;
         }
         .hero-content {
-            position: absolute;
-            bottom: 3rem;
-            left: 0; right: 0;
-            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
             max-width: 1350px;
             margin: 0 auto;
+            padding: 0 1.5rem 3.5rem;
+            width: 100%;
         }
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
-            border-radius: 99px;
-            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+            background: rgba(251, 191, 36, 0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251, 191, 36, 0.25);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            color: #fff;
         }
-        .hero-meta-line {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+        .hero-subtitle {
+            font-size: 1.1rem;
             color: var(--text-sec);
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            max-width: 880px;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
 
-        /* BREADCRUMB */
-        .breadcrumb {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
-
-        /* CONTENT LAYOUT */
+        /* ARTICLE LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
@@ -139,123 +166,246 @@
         }
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
 
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent);
+            padding-left: 0.4rem;
+        }
+
         /* MAIN CONTENT */
+        .article-main {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+        }
         .article-main h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.6rem;
+            color: #fff;
             margin: 2.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid rgba(255, 140, 50, 0.35);
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
-        .article-main h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
-        }
-
+        .article-main h2:first-of-type { margin-top: 0; }
+        .article-main h2 .icon { font-size: 1.4rem; }
         .article-main p {
+            margin-bottom: 1.2rem;
             color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .article-main strong { color: #fff; font-weight: 600; }
+
+        .intro-lead {
+            font-size: 1.12rem;
+            line-height: 1.8;
+            color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 140, 50, 0.08);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
 
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
+        .highlight-box {
+            background: rgba(255, 140, 50, 0.08);
+            border: 1px solid rgba(255, 140, 50, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
         }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
+        .highlight-box h4 {
             color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+
+        .legend-box {
+            background: rgba(251, 191, 36, 0.06);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-box p { margin: 0; font-size: 0.95rem; color: #e2e8f0; }
+
+        /* SEASONS GRID (MỤC 4 BẮT BUỘC ĐẶT NGAY SAU MỤC 3) */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .season-card {
+            background: rgba(13, 27, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 50, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .season-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.06);
+        }
+        .season-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(13, 27, 42, 0.88);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
             font-weight: 600;
-            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+        .season-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .season-time {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+        .season-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
-
-        /* PREMIUM CHECKIN CARDS */
+        /* CHECKIN GRID (MỤC 5) */
         .checkin-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
         .dest-card {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-sec);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
+            cursor: pointer;
         }
         .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+            border-color: rgba(255, 140, 50, 0.4);
         }
         .dest-card.double-col {
             grid-column: span 2;
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
         }
         .dest-card.single-col {
             grid-column: span 1;
@@ -271,16 +421,16 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            filter: brightness(0.9) saturate(1.15);
         }
         .dest-card:hover .dest-card-img img {
             transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+            filter: brightness(0.78) saturate(1.25);
         }
         .dest-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            background: linear-gradient(180deg, transparent 35%, rgba(13, 27, 42, 0.96) 100%);
             z-index: 1;
         }
         .dest-card-content {
@@ -295,748 +445,937 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
         .dest-card-tags .tag {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
+            color: #fff;
+            padding: 0.25rem 0.65rem;
             border-radius: var(--radius-sm);
-            color: #fff !important;
-            font-weight: 600;
+            backdrop-filter: blur(4px);
         }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
         }
         .dest-card-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
-            color: var(--text) !important;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         .dest-card-desc {
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             color: var(--text-sec);
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             line-clamp: 2;
             -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
+            overflow: hidden;
         }
-        .dest-card-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .dest-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .dest-rating .stars {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        .dest-rating span:last-child {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .dest-reviews {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .dest-card-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 0.4rem;
-        }
-        
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
 
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
+        /* CULINARY SHOWCASE (MỤC 7) */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
+        .culinary-card {
+            background: rgba(13, 27, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-        .sidebar-item {
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex;
-            align-items: center;
-            gap: 0.6rem;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 50, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.06);
+        }
+        .culinary-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(13, 27, 42, 0.85);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+        .culinary-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .culinary-price {
             font-size: 0.85rem;
-            color: var(--text-sec);
+            color: var(--accent);
+            font-weight: 600;
             margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .culinary-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            flex: 1;
         }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
-            color: var(--text-muted);
-            text-decoration: none;
+        .culinary-address {
             font-size: 0.82rem;
-            transition: color 0.2s;
+            color: var(--accent-gold);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
+            margin: 0;
         }
-        .toc-list a:hover { color: var(--accent); }
 
-        /* FOOTER */
-        .article-footer {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
+        /* TABLE */
+        .pricing-table-wrap {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(13, 27, 42, 0.6);
+        }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+        .pricing-table th, .pricing-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .pricing-table th {
+            background: rgba(27, 38, 59, 0.9);
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .pricing-table tr:hover td {
+            background: rgba(255, 140, 50, 0.04);
+        }
+        .pricing-table .price-tag {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .disclaimer-box {
+            font-size: 0.82rem;
             color: var(--text-muted);
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .article-footer a { color: var(--accent); text-decoration: none; }
-        .credits { font-style: italic; }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
+            font-style: italic;
+            margin-top: 0.5rem;
         }
 
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
-        }
-
-        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        /* LIGHTBOX MODAL */
         .lightbox-modal {
             display: none;
             position: fixed;
             z-index: 9999;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
-            box-sizing: border-box;
-            background-color: rgba(11, 22, 34, 0.96);
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            align-items: center;
-            flex-direction: column;
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
         }
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 52vh;
+        .lightbox-dialog {
+            max-width: 960px;
+            margin: 2rem auto;
+            background: var(--bg-card);
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lightbox-caption {
-            margin: auto;
-            display: block;
-            width: 85%;
-            max-width: 800px;
-            text-align: center;
-            color: var(--text-sec);
-            padding: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            position: relative;
         }
         .lightbox-close {
-            position: fixed;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.2rem;
+            color: #fff;
             cursor: pointer;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: background 0.2s, transform 0.2s;
         }
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: var(--accent);
-            text-decoration: none;
+        .lightbox-close:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+        .lightbox-img-wrap {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .lightbox-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .lightbox-caption-wrap {
+            padding: 1.5rem 2rem;
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .lightbox-caption {
+            font-size: 0.95rem;
+            color: var(--text-sec);
+            line-height: 1.7;
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        /* FOOTER */
+        .article-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .article-footer .credits {
+            margin-top: 0.5rem;
+            color: var(--accent);
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .seasons-grid, .checkin-grid, .culinary-grid { grid-template-columns: 1fr; }
+            .dest-card.single-col, .dest-card.double-col { grid-column: span 1; aspect-ratio: 16/9; }
         }
     </style>
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-sapa.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-sapa.html">
-    <meta property="og:title" content="Sapa — Ruộng bậc thang mây mù & Đỉnh Fansipan kỳ vĩ | GO FAR">
-    <meta property="og:description" content="Cẩm nang du lịch Sapa tự túc: Đỉnh Fansipan, bản Cát Cát, thung lũng Mường Hoa, đèo Ô Quy Hồ, bản Tả Phìn, nhà thờ Đá. Lịch trình, đi lại, món ngon vùng cao.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/sapa_fansipan.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-sapa.html">
-    <meta property="twitter:title" content="Sapa — Ruộng bậc thang mây mù & Đỉnh Fansipan kỳ vĩ | GO FAR">
-    <meta property="twitter:description" content="Cẩm nang du lịch Sapa tự túc: Đỉnh Fansipan, bản Cát Cát, thung lũng Mường Hoa, đèo Ô Quy Hồ, bản Tả Phìn, nhà thờ Đá. Lịch trình, đi lại, món ngon vùng cao.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/sapa_fansipan.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Sapa",
-    "description": "Cẩm nang du lịch Sapa tự túc: Đỉnh Fansipan, bản Cát Cát, thung lũng Mường Hoa, đèo Ô Quy Hồ, bản Tả Phìn, nhà thờ Đá. Lịch trình, đi lại, món ngon vùng cao.",
-    "image": "https://gofarvietnam.com/images/sapa_fansipan.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Miền Bắc",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
-        }
-    }
-}
-    </script>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                ← Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/sapa_hero.webp" alt="Sapa — Mây mù & Ruộng bậc thang">
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <img src="images/sapa_hero.webp" alt="Toàn cảnh thị xã Sa Pa và thung lũng Mường Hoa bồng bềnh trong biển mây">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Miền Bắc · Tây Bắc Bộ</span>
-            <h1>Sapa<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Mây mù & Ruộng bậc thang</span></h1>
-            <div class="hero-meta-line">
-                <span class="rating">⭐ 4.6 / 5.0</span>
-                <span>·</span>
-                <span>Tỉnh Lào Cai, Việt Nam</span>
-                <span>·</span>
-                <span>Cập nhật: 08/2026</span>
-            </div>
+            <span class="hero-tag">🏔️ Hoàng Liên Sơn • Lào Cai</span>
+            <h1>Sa Pa — Nóc Nhà Đông Dương & Tuyệt Đỉnh Ruộng Bậc Thang</h1>
+            <p class="hero-subtitle">Nơi đất trời giao hòa trên đỉnh Fansipan 3.147,3m huyền thoại, thung lũng Mường Hoa bồng bềnh sóng lúa bậc thang di sản và bản sắc văn hóa ngàn đời của các tộc người vùng cao Tây Bắc.</p>
         </div>
-    </section>
+    </header>
 
-    <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Sapa</strong>
-    </div>
-
+    <!-- MAIN CONTAINER -->
     <div class="article-layout">
         <div class="dashboard-layout">
-            <!-- MAIN ARTICLE -->
-            <article class="article-main">
-
-                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-                <p>Nằm ở độ cao trung bình từ 1.500m – 1.800m so với mực nước biển, thị xã du lịch Sapa ẩn mình dưới chân dãy Hoàng Liên Sơn hùng vĩ. Khí hậu nơi đây mang sắc thái ôn đới và cận nhiệt đới mát mẻ quanh năm, nhiệt độ trung bình chỉ dao động từ 15 - 18°C. Sapa nổi tiếng với những thửa ruộng bậc thang đẹp như tranh vẽ uốn lượn quanh sườn núi, cùng đỉnh Fansipan - nóc nhà của Đông Dương quanh năm mây mù bao phủ.</p>
-                <p>Vùng đất Sapa cũng là nơi sinh sống lâu đời của nhiều đồng bào dân tộc thiểu số như H'Mông, Dao đỏ, Tày, Giáy, Xá Phó. Đến với Sapa, du khách không chỉ được hòa mình vào thiên nhiên núi rừng đại ngàn huyền ảo, mà còn có cơ hội tìm hiểu văn hóa bản địa mộc mạc và thưởng thức các món ăn vùng cao đặc sắc.</p>
-
-                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
-                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Sapa. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
-
-                <div class="checkin-grid">
-                    
-                    <div class="dest-card double-col" data-legend="Fansipan cao 3.147,3m (theo số liệu đo đạc chính thức năm 2019 của Cục Đo đạc, Bản đồ và Thông tin địa lý Việt Nam), được mệnh danh là 'Nóc nhà Đông Dương'. Tên gọi cổ theo tiếng H'Mông là 'Hủa Xi Pan' (tức 'Khối đá khổng lồ chênh vênh'). Trong lịch sử thám hiểm của người Pháp cuối thế kỷ XIX, Fansipan được xác định là đỉnh cao nhất của dãy Hoàng Liên Sơn hùng vĩ, gắn liền với huyền thoại người khổng lồ đắp đá chống lũ cứu dân bản.">
-                        <div class="dest-card-img">
-                            <img src="images/sapa_fansipan.webp" alt="Đỉnh Fansipan" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Biểu tượng</span>
-                                <span class="tag">Nóc nhà Đông Dương</span>
-                            </div>
-                            <h3 class="dest-card-title">Đỉnh Fansipan</h3>
-                            <p class="dest-card-desc">Chinh phục đỉnh núi cao nhất Việt Nam ở độ cao 3.147,3m bằng cáp treo ba dây hiện đại, ngắm biển mây cuồn cuộn trôi dưới chân.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Bản Cát Cát (làng du lịch cổ người H'Mông Đen) hình thành từ giữa thế kỷ XIX. Vào đầu thế kỷ XX, người Pháp phát hiện ra thác nước tuyệt đẹp tại thung lũng này và đặt tên là Catact (thác Cát Cát), sau đó xây dựng một nhà máy thủy điện nhỏ phục vụ cho các biệt thự nghỉ dưỡng Sa Pa xưa.">
-                        <div class="dest-card-img">
-                            <img src="images/sapa_cat_cat.webp" alt="Bản Cát Cát" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Bản làng</span>
-                                <span class="tag">H'Mông</span>
-                            </div>
-                            <h3 class="dest-card-title">Bản Cát Cát</h3>
-                            <p class="dest-card-desc">Ngôi làng cổ kính mộc mạc của người H'Mông với cối xay nước bằng tre, nhà sàn gỗ cổ xưa và các sạp thổ cẩm rực rỡ sắc màu.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Bãi đá cổ Sa Pa phân bố trên thung lũng Mường Hoa là di tích quốc gia (xếp hạng năm 1994), chứa hàng trăm khối đá khắc họa tiết bản đồ địa hình cổ, ruộng bậc thang và ký tự lạ chưa được giải mã. Các nhà khảo cổ học nhận định đây là di sản khảo cổ độc đáo lưu vết cuộc sống cư dân Việt cổ thời tiền sử.">
-                        <div class="dest-card-img">
-                            <img src="images/sapa_muong_hoa.webp" alt="Thung lũng Mường Hoa" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Ruộng bậc thang</span>
-                                <span class="tag">Kỳ vĩ</span>
-                            </div>
-                            <h3 class="dest-card-title">Thung lũng Mường Hoa</h3>
-                            <p class="dest-card-desc">Mãn nhãn với những dải ruộng bậc thang tầng tầng lớp lớp uốn lượn xung quanh dòng suối Mường Hoa uốn mình mềm mại.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card double-col" data-legend="Ô Quy Hồ là đèo dài nhất Việt Nam (gần 50km) nối liền hai tỉnh Lào Cai và Lai Châu trên dãy Hoàng Liên Sơn. Lịch sử mở tuyến đường đèo thời thuộc Pháp đầy gian khổ gắn với sự tích tình yêu bi tráng giữa chàng tiều phu Ô Quy Hồ và nàng tiên thứ bảy. Tiếng chim oán than 'Ô Quy Hồ' kêu suốt mùa đông phản ánh tâm thức chế ngự thiên tai lạnh giá của người xưa.">
-                        <div class="dest-card-img">
-                            <img src="images/sapa_o_quy_ho.webp" alt="Đèo Ô Quy Hồ" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Đại đèo</span>
-                                <span class="tag">Hoàng hôn</span>
-                            </div>
-                            <h3 class="dest-card-title">Đèo Ô Quy Hồ</h3>
-                            <p class="dest-card-desc">Một trong "tứ đại đỉnh đèo" hiểm trở bậc nhất Việt Nam nối liền Lào Cai - Lai Châu, điểm ngắm hoàng hôn rực lửa kỳ vĩ nhất Tây Bắc.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Bản Tả Phìn là ngôi làng cổ của người Dao Đỏ nằm cách thị trấn Sa Pa 12km, nổi tiếng với nghề thêu thổ cẩm truyền thống và bí quyết tắm lá thuốc thảo dược gia truyền hàng trăm năm. Người Dao Đỏ tại đây lưu giữ bộ 'sách cổ' viết bằng chữ Nôm Dao ghi chép công thức bài thuốc nam và nghi lễ cúng rừng thiêng. Gần làng có tàn tích một tu viện Pháp cổ bỏ hoang từ thời thuộc địa, nay chìm trong sương mù rêu phong.">
-                        <div class="dest-card-img">
-                            <img src="images/sapa_ta_phin.webp" alt="Bản Tả Phìn" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Dao Đỏ</span>
-                                <span class="tag">Văn hóa</span>
-                            </div>
-                            <h3 class="dest-card-title">Bản Tả Phìn</h3>
-                            <p class="dest-card-desc">Nổi tiếng với văn hóa người Dao Đỏ thân thiện, bồn tắm lá thuốc cổ truyền tốt cho sức khỏe và phế tích tu viện đá cổ kính đổ nát.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Nhà thờ Đá Sa Pa (Notre-Dame de Rosaire) được người Pháp xây dựng năm 1895, là công trình kiến trúc Gothic cổ nhất vùng Tây Bắc Việt Nam. Tháp chuông đá cao sừng sững giữa trung tâm thị trấn đã chứng kiến hơn 130 năm lịch sử — từ thời Sa Pa là khu nghỉ dưỡng của sĩ quan Pháp, qua hai cuộc kháng chiến, đến thời kỳ phát triển du lịch rực rỡ ngày nay. Sân nhà thờ vào mỗi tối cuối tuần là nơi diễn ra phiên chợ tình Sa Pa nổi tiếng — nơi trai gái các dân tộc H'Mông, Dao hẹn hò bằng tiếng khèn và điệu múa truyền thống.">
-                        <div class="dest-card-img">
-                            <img src="images/sapa_stone_church.webp" alt="Nhà thờ Đá Sapa" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Kiến trúc Pháp</span>
-                                <span class="tag">Cổ kính</span>
-                            </div>
-                            <h3 class="dest-card-title">Nhà thờ Đá Sapa</h3>
-                            <p class="dest-card-desc">Biểu tượng kiến trúc gothic Pháp cổ kính nằm ngay trung tâm quảng trường thị xã, chìm trong làn sương trắng huyền ảo bồng bềnh.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Dãy núi mang hình dáng rồng ngẩng đầu lên trời ngay sát thị xã Sa Pa cổ kính. Bản chép lịch sử địa phương lưu truyền huyền thoại từ thủa hồng hoang lập đất, đôi rồng đang quấn quýt thì gặp trận lũ lớn tàn phá. Rồng cái kiệt sức kẹt lại hóa đá sừng sững, hướng đầu ngóng theo rồng đực bay về trời, tạo nên biểu tượng cảnh quan tự nhiên kỳ thú.">
-                        <div class="dest-card-img">
-                            <img src="images/sapa_ham_rong.webp" alt="Núi Hàm Rồng" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Ngắm cảnh</span>
-                                <span class="tag">Vườn hoa</span>
-                            </div>
-                            <h3 class="dest-card-title">Núi Hàm Rồng</h3>
-                            <p class="dest-card-desc">Công viên sinh thái nằm ngay phía sau Nhà thờ Đá, có cổng trời ngắm toàn cảnh thị xã Sapa thơ mộng dưới chân mây mù.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Thác Bạc (Silver Waterfall) nằm trên đèo Ô Quy Hồ ở độ cao 1.800m, nước đổ từ vách đá dựng đứng cao hơn 100m tạo thành dải lụa trắng bạc giữa rừng nguyên sinh Hoàng Liên Sơn. Thác là nguồn nước đầu nguồn quan trọng của hệ thống suối cung cấp nước sinh hoạt cho các bản làng H'Mông và Dao quanh vùng. Người dân bản địa tin rằng thác Bạc là nơi thần nước cư ngụ, không ai dám khai thác hay làm ô nhiễm dòng nước thiêng.">
-                        <div class="dest-card-img">
-                            <img src="images/sapa_thac_bac.webp" alt="Thác Bạc" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Thác nước</span>
-                                <span class="tag">Hùng vĩ</span>
-                            </div>
-                            <h3 class="dest-card-title">Thác Bạc</h3>
-                            <p class="dest-card-desc">Dòng thác đổ xối xả từ độ cao hơn 200m từ khe núi cao Hoàng Liên xuống chân đèo, nước tung bọt trắng xóa lấp lánh như bạc.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- DI CHUYỂN & CHI PHÍ -->
-                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-                <p>Nằm cách Hà Nội khoảng 300km, giao thông kết nối Hà Nội - Lào Cai qua đường cao tốc vô cùng thuận lợi:</p>
-                
-                <h3>1. Lựa chọn phương tiện đến Sapa</h3>
-                <ul>
-                    <li><strong>Xe khách cabin VIP ngủ đêm:</strong> Tuyến xe giường nằm cabin đơn/đôi chạy cao tốc thẳng lên thị xã Sapa chỉ mất khoảng 5 - 6 tiếng, êm ái và tiết kiệm.</li>
-                    <li><strong>Tàu hỏa du lịch:</strong> Đi tàu đêm từ ga Hà Nội đến ga Lào Cai, sau đó bắt xe buýt hoặc taxi trung chuyển chạy thêm 30km đèo dốc lên Sapa.</li>
-                    <li><strong>Tự lái xe ô tô riêng:</strong> Theo cao tốc Nội Bài - Lào Cai, sau đó qua cung đường đèo 4D lên thị xã (yêu cầu tay lái vững).</li>
-                </ul>
-
-                <h3>2. Chi phí cáp treo Fansipan (Khứ hồi)</h3>
-                <p>Vé cáp treo được bán trực tiếp tại ga cáp treo Fansipan Legend hoặc các đại lý du lịch với mức giá niêm yết theo quy định của tập đoàn Sun Group.</p>
-
-                <table class="info-table">
-                    <thead>
-                        <tr>
-                            <th>Dịch vụ tham quan</th>
-                            <th>Chi phí tham khảo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Vé cáp treo Fansipan khứ hồi (Người lớn)</td>
-                            <td><span class="price-tag">Giá theo quy định Sun World</span></td>
-                        </tr>
-                        <tr>
-                            <td>Vé tàu hỏa leo núi Mường Hoa (Ga Sapa - Ga cáp treo)</td>
-                            <td><span class="price-tag">Vé khứ hồi hành trình ngắn</span></td>
-                        </tr>
-                        <tr>
-                            <td>Vé tàu hỏa leo núi đỉnh Fansipan (Ga cáp treo lên đỉnh)</td>
-                            <td><span class="price-tag">Vé chiều lên</span> (Chiều xuống có thể đi bộ 600 bậc đá)</td>
-                        </tr>
-                        <tr>
-                            <td>Vé vào bản Cát Cát (Bảo tồn văn hóa H'Mông)</td>
-                            <td><span class="price-tag">Vé niêm yết tại cổng bản</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- LƯU TRÚ & ẨM THỰC -->
-                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực Tây Bắc</h2>
-                
-                <h3>1. Gợi ý lựa chọn nơi lưu trú</h3>
-                <ul>
-                    <li><strong>Trung tâm thị xã (Quanh hồ Sapa & Nhà thờ đá):</strong> Thuận tiện ăn uống, dạo chợ đêm, đi cà phê và mua sắm đồ lưu niệm thổ cẩm.</li>
-                    <li><strong>Khu vực các bản (Lao Chải, Tả Van):</strong> Nhiều resort nghỉ dưỡng sang trọng view thung lũng lúa hoặc homestay nhà sàn gỗ mộc mạc, yên tĩnh hòa mình với thiên nhiên ruộng đồng.</li>
-                </ul>
-
-                <h3>2. Ẩm thực vùng cao Sapa thơm ngon</h3>
-                <div class="food-list">
-                    <div class="food-item"><span class="name">🍲 Lẩu cá hồi / cá tầm tươi (Cá tươi rói nuôi tại suối nước lạnh Sapa, ăn kèm loạt rau rừng ngọt mát)</span></div>
-                    <div class="food-item"><span class="name">🍢 Đồ nướng Sapa (Thịt ba chỉ cuốn cải mèo nướng, xiên nướng than củi nóng hổi thơm phức)</span></div>
-                    <div class="food-item"><span class="name">🐷 Lợn bản cắp nách quay giòn bì thơm ngậy chấm hạt dổi mắc khén</span></div>
-                    <div class="food-item"><span class="name">🍷 Thắng cố trâu ăn kèm rượu ngô Bắc Hà nồng ấm say đắm lòng người</span></div>
-                </div>
-
-                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
-                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
-                
-                <h3>1. Mùa nào đi du lịch Sapa đẹp nhất?</h3>
-                <ul>
-                    <li><strong>Tháng 3 – 5:</strong> Mùa xuân ấm áp, trăm hoa đua nở khắp các triền đồi (hoa đào rừng, hoa mận trắng muốt, đỗ quyên Fansipan rực rỡ).</li>
-                    <li><strong>Tháng 9 – 10:</strong> Mùa lúa chín vàng óng ả trên những thửa ruộng bậc thang. Khí hậu thu dịu mát, khô ráo rất thích hợp săn mây.</li>
-                    <li><strong>Tháng 12 – 1:</strong> Mùa đông lạnh giá nhiệt độ có thể xuống dưới 0°C, thường xuyên xuất hiện sương muối và băng tuyết trên đỉnh Fansipan.</li>
-                </ul>
-
-                <h3>2. Cảnh báo an toàn đèo dốc & mây mù</h3>
-                <ul>
-                    <li><strong>Lái xe cẩn thận khi sương mù dày:</strong> Đèo dốc Sapa thường có sương mù bao phủ tầm nhìn dưới 5m vào chiều tối. Bật đèn sương mù và giữ tốc độ rất chậm.</li>
-                    <li><strong>Chuẩn bị áo ấm cẩn thận:</strong> Dù đi vào mùa hè, nhiệt độ ban đêm ở Sapa vẫn se lạnh (khoảng 15-17°C). Hãy mang theo một chiếc áo khoác nhẹ đề phòng cảm lạnh.</li>
-                </ul>
-
-                <div class="warning-box">
-                    <p>⚠️ Cảnh báo bảo vệ thiên nhiên: Hãy mang theo rác về sau khi trekking các bản làng hoặc leo núi Fansipan. Không tự ý bẻ hoa đỗ quyên hay vứt rác xuống thung lũng Mường Hoa xinh đẹp.</p>
-                </div>
-
-            </article>
-
-            <!-- SIDEBAR -->
+            
+            <!-- SIDEBAR WIDGETS -->
             <aside class="sidebar">
-                <!-- QUICK INFO -->
-                <div class="sidebar-card">
-                    <h4>📌 Thông tin nhanh</h4>
-                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Tỉnh Lào Cai, Việt Nam</div>
-                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 2 – 3 ngày</div>
-                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 3 – 5 & Tháng 9 – 11</div>
+                <div class="widget">
+                    <h3 class="widget-title">📌 Hồ Sơ Sa Pa</h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí hành chính:</span> <span class="val">Thị xã Sa Pa, Lào Cai</span></li>
+                        <li><span class="label">Địa hình:</span> <span class="val">Dãy Hoàng Liên Sơn kỳ vĩ</span></li>
+                        <li><span class="label">Độ cao trung bình:</span> <span class="val">1.500 m – 1.800 m</span></li>
+                        <li><span class="label">Điểm cao nhất:</span> <span class="val">Đỉnh Fansipan 3.147,3 m</span></li>
+                        <li><span class="label">Khoảng cách từ Hà Nội:</span> <span class="val">~315 km (CT05 & TL155: 4,5h)</span></li>
+                        <li><span class="label">Khí hậu:</span> <span class="val">Cận nhiệt & Ôn đới núi cao (14–20°C)</span></li>
+                        <li><span class="label">Danh hiệu Quốc gia:</span> <span class="val">Khu DLQG Sa Pa (QĐ 2043)</span></li>
+                        <li><span class="label">Di tích Thắng cảnh:</span> <span class="val">Ruộng bậc thang QG (2007)</span></li>
+                        <li><span class="label">Di sản Khảo cổ:</span> <span class="val">Bãi đá cổ Mường Hoa (1994)</span></li>
+                        <li><span class="label">Di sản Khu vực:</span> <span class="val">Vườn Di sản ASEAN Hoàng Liên</span></li>
+                        <li><span class="label">Thời điểm vàng:</span> <span class="val">Tháng 5 nước đổ, T9 lúa chín, T12 tuyết</span></li>
+                    </ul>
                 </div>
 
-                <!-- TOC -->
-                <div class="sidebar-card">
-                    <h4>📖 Mục lục</h4>
+                <div class="widget">
+                    <h3 class="widget-title">📑 Mục Lục Cẩm Nang</h3>
                     <ul class="toc-list">
-                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
-                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
-                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
-                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
-                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                        <li><a href="#tong-quan">1. Tổng Quan Xứ Mây Sa Pa</a></li>
+                        <li><a href="#lich-su-dia-ly">2. Địa Lý & Dấu Ấn Lịch Sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền Thoại & Truyền Tích Dân Gian</a></li>
+                        <li><a href="#bon-mua">4. Chuỗi Hình Ảnh 4 Mùa Du Lịch</a></li>
+                        <li><a href="#thang-canh">5. Top 10 Thắng Cảnh Biểu Tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm Nang Di Chuyển & Cung Đèo</a></li>
+                        <li><a href="#am-thuc">7. Tinh Hoa Ẩm Thực Vùng Cao</a></li>
+                        <li><a href="#gia-ve">8. Bảng Giá Vé & Dịch Vụ Niêm Yết</a></li>
+                        <li><a href="#lich-trinh">9. Lịch Trình 3N2Đ & Mẹo An Toàn</a></li>
                     </ul>
                 </div>
             </aside>
+
+            <!-- ARTICLE MAIN -->
+            <main class="article-main">
+
+                <!-- 1. TỔNG QUAN -->
+                <section id="tong-quan">
+                    <h2><span class="icon">🏔️</span> 1. Tổng Quan Vùng Đất Mây Ngàn Sa Pa</h2>
+                    <p class="intro-lead">
+                        Nằm nép mình dưới chân dãy Hoàng Liên Sơn hùng vĩ ở độ cao trung bình từ 1.500m đến 1.800m so với mực nước biển, <strong>thị xã Sa Pa</strong> (tỉnh Lào Cai) là viên ngọc khí hậu ôn đới độc nhất vô nhị của núi rừng Tây Bắc. Được thiên nhiên ưu đãi khí hậu mát mẻ quanh năm cùng cảnh quan thung lũng mây trôi huyền ảo, Sa Pa từ lâu đã xác lập vị thế là một trong những trung tâm du lịch nghỉ dưỡng hàng đầu Việt Nam và khu vực Đông Nam Á.
+                    </p>
+                    <p>
+                        Không chỉ lừng danh thế giới bởi đỉnh cao <strong>Fansipan (3.147,3m)</strong> – nóc nhà của ba nước Đông Dương, Sa Pa còn quyến rũ bước chân lữ khách bởi những dải ruộng bậc thang uốn lượn ngoạn mục men theo triền núi Mường Hoa, được các tạp chí du lịch quốc tế uy tín bình chọn vào danh sách những thửa ruộng bậc thang kỳ vĩ nhất hành tinh. Đây cũng là nơi giao hòa sống động của 6 cộng đồng dân tộc anh em: H'Mông, Dao đỏ, Tày, Giáy, Xá Phó và người Kinh, tạo nên bức tranh văn hóa bản địa mộc mạc mà đa sắc màu huyền thoại.
+                    </p>
+                </section>
+
+                <!-- 2. VỊ TRÍ ĐỊA LÝ & LỊCH SỬ -->
+                <section id="lich-su-dia-ly">
+                    <h2><span class="icon">📜</span> 2. Vị Trí Địa Lý & Dấu Ấn Lịch Sử Bản Địa</h2>
+                    <p>
+                        Về mặt hành chính, thị xã Sa Pa nằm ở phía tây tỉnh Lào Cai, cách trung tâm Thủ đô Hà Nội khoảng 315 km về hướng tây bắc. Địa hình Sa Pa bị chia cắt mạnh mẽ bởi những dãy núi cao hiểm trở thuộc hệ sơn mạch Hoàng Liên Sơn – phần đuôi cuối cùng phía đông nam của dãy Himalaya sừng sững, tạo nên sự phân tầng khí hậu rõ nét với nền nhiệt mùa hè mát dịu 18 – 22°C và mùa đông vùng cao có thể hạ xuống dưới 0°C kèm hiện tượng sương muối, băng giá và tuyết rơi kỳ thú.
+                    </p>
+                    <p>
+                        Theo các tài liệu nghiên cứu ngôn ngữ học dân tộc, tên gọi <strong>"Sa Pa"</strong> có khởi nguyên từ cụm từ <em>"Sa Pả"</em> trong tiếng H'Mông, trong đó <em>"Sa"</em> nghĩa là cát và <em>"Pả"</em> nghĩa là bãi cát. Xưa kia, tại vị trí trung tâm thị xã ngày nay từng có một bãi cát phù sa tương đối bằng phẳng bên dòng suối nhỏ, nơi đồng bào các bản làng vùng cao lân cận thường tụ họp họp chợ phiên cuối tuần. Khi người Pháp tiến hành thám hiểm địa lý vào cuối thế kỷ XIX, họ phiên âm chữ Quốc ngữ Latinh thành <em>"Cha Pa"</em> và xây dựng các biệt thự nghỉ dưỡng điều dưỡng khí hậu từ năm 1903. Về sau, danh xưng được chuẩn hóa thành <strong>Sa Pa</strong>.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4>⚖️ Căn Cứ Văn Bản Pháp Lý & Danh Hiệu Nhà Nước Của Sa Pa</h4>
+                        <p>
+                            • <strong>Quyết định số 2043/QĐ-TTg</strong> ngày 11/12/2017 của Thủ tướng Chính phủ: Phê duyệt Quy hoạch tổng thể phát triển Khu du lịch quốc gia Sa Pa, tỉnh Lào Cai đến năm 2030, định hướng trở thành đô thị du lịch sinh thái, văn hóa và nghỉ dưỡng tầm cỡ quốc tế.<br>
+                            • <strong>Nghị quyết số 767/NQ-UBTVQH14</strong> ngày 11/09/2019 của Ủy ban Thường vụ Quốc hội: Thành lập thị xã Sa Pa và các phường, xã trực thuộc tỉnh Lào Cai trên cơ sở toàn bộ diện tích tự nhiên và dân số của huyện Sa Pa.<br>
+                            • <strong>Quyết định số 3579/QĐ-BVHTTDL</strong> ngày 18/10/2007 của Bộ Văn hóa, Thể thao và Du lịch: Xếp hạng Di tích danh lam thắng cảnh cấp quốc gia đối với <em>Ruộng bậc thang Sa Pa</em> (Thung lũng Mường Hoa, Lao Chải, Tả Van, Hầu Thào).<br>
+                            • <strong>Quyết định số 2477/QĐ-BVHTT</strong> ngày 04/10/1994 của Bộ Văn hóa - Thông tin: Xếp hạng Di tích lịch sử - văn hóa cấp quốc gia <em>Bãi đá chạm khắc cổ thung lũng Mường Hoa</em>.<br>
+                            • <strong>Số liệu trắc địa quốc gia Fansipan:</strong> Ngày 26/06/2019, Cục Đo đạc, Bản đồ và Thông tin địa lý Việt Nam (Bộ Tài nguyên & Môi trường) công bố kết quả đo đạc chính xác đỉnh Fansipan đạt độ cao <strong>3.147,3 m</strong> (thay thế số liệu 3.143m thời Pháp thuộc).
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 3. HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai">
+                    <h2><span class="icon">✨</span> 3. Huyền Thoại & Truyền Tích Dân Gian Vùng Đất</h2>
+                    <p>
+                        Trong tâm thức người dân bản địa vùng cao Tây Bắc, dãy Hoàng Liên Sơn và đỉnh Fansipan không chỉ là thực thể địa lý tự nhiên mà là vùng đất thiêng liêng nơi ngự trị của các vị thần che chở cho bản làng. Tên gọi cổ xưa nhất của Fansipan trong tiếng H'Mông là <strong>"Hủa Xi Pan"</strong>, nghĩa là <em>"Khối đá khổng lồ chênh vênh"</em>. 
+                    </p>
+
+                    <div class="legend-box">
+                        <h4>🦅 Huyền Tích Đèo Ô Quy Hồ & Thác Tình Yêu</h4>
+                        <p>
+                            Dân gian vùng đèo Hoàng Liên Sơn còn lưu truyền mối tình bi thương giữa nàng tiên nữ thứ bảy trên trời và chàng tiều phu nghèo Ô Quy Hồ. Tương truyền, vì say mê tiếng sáo trúc réo rắt bên dòng thác hoang sơ của chàng tiều phu, nàng tiên thứ bảy ngày ngày giáng trần ngồi nghe chàng thổi sáo đến khi mặt trời lặn. Nhà Trời hay tin đã cấm nàng xuống trần và biến chàng thành một con rùa đen ngậm ngùi trên đỉnh đèo lộng gió. Nàng tiên vì nhớ thương người yêu da diết đã biến thành loài chim rừng có tiếng hót khắc khoải <em>"Ô Quy Hồ... Ô Quy Hồ..."</em> bay quanh triền núi lúc hoàng hôn. Dòng thác nơi hai người hò hẹn từ đó mang tên <strong>Thác Tình Yêu</strong>, và con đèo hiểm trở nối liền Lào Cai - Lai Châu được gọi là <strong>Đèo Ô Quy Hồ</strong>.
+                        </p>
+                    </div>
+
+                    <p>
+                        Bên cạnh đó, thung lũng Mường Hoa còn ẩn chứa bí ẩn thiên niên kỷ với quần thể gần 200 khối đá sa thạch chạm khắc cổ xưa nằm rải rác giữa các thửa ruộng bậc thang. Các hình vẽ mô tả con người, mặt trời, ruộng đồng bậc thang, nhà sàn và hệ thống ký tự cổ chưa được giải mã chính là thông điệp thiêng liêng mà tổ tiên người Việt cổ gửi gắm lại cho hậu thế về một nền văn minh nông nghiệp lúa nước rực rỡ thuở sơ khai.
+                    </p>
+                </section>
+
+                <!-- 4. CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua">
+                    <h2><span class="icon">🌸</span> 4. Chuỗi Hình Ảnh 4 Mùa Du Lịch Sa Pa</h2>
+                    <p>
+                        Khác với khí hậu nhiệt đới đồng bằng, Sa Pa mỗi mùa lại khoác lên mình một tấm áo kiêu kỳ đầy mê hoặc. Dưới đây là bức tranh 4 mùa đặc trưng được ghi lại với những nét độc đáo riêng biệt:
+                    </p>
+
+                    <div class="seasons-grid">
+                        
+                        <!-- Mùa Xuân -->
+                        <div class="season-card" data-legend="Mùa xuân Sa Pa (Tháng 2 - Tháng 4) là mùa hoa đào phai rừng và hoa mận trắng nở rộ khắp các triền đồi, vây quanh nếp nhà trình tường cổ kính của người H'Mông. Khí hậu se lạnh, sương sớm bồng bềnh cùng tiếng khèn du dương gọi bạn tình mùa lễ hội Gầu Tào.">
+                            <div class="season-img-wrap">
+                                <img src="images/sapa_mua_xuan_hoa_dao_hoa_man.webp" alt="Mùa xuân hoa đào hoa mận Sa Pa" loading="lazy">
+                                <span class="season-badge">Mùa Xuân</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Xuân Về Hoa Đào, Hoa Mận Bung Nở</h3>
+                                <span class="season-time">🗓️ Tháng 2 — Tháng 4 • Nhiệt độ: 12 – 18°C</span>
+                                <p class="season-desc">Khắp các sườn thung lũng Mường Hoa, Tả Phìn và Ô Quy Hồ bừng sáng trong sắc hồng phai của hoa đào rừng cổ thụ xen lẫn sắc trắng tinh khôi của hoa mận, tạo nên bức tranh xuân Tây Bắc say đắm lòng người.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Nước Đổ -->
+                        <div class="season-card" data-legend="Mùa nước đổ ải (Tháng 5 - Tháng 6) khi những cơn mưa đầu hạ trút xuống dãy Hoàng Liên Sơn. Đồng bào dẫn nước từ khe suối vào hàng ngàn bậc thang Mường Hoa, biến triền núi thành tấm gương khổng lồ phản chiếu mây trời và ánh bình minh rực rỡ.">
+                            <div class="season-img-wrap">
+                                <img src="images/sapa_mua_nuoc_do_ruong_bac_thang.webp" alt="Mùa nước đổ ruộng bậc thang Sa Pa" loading="lazy">
+                                <span class="season-badge">Mùa Nước Đổ</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Nước Đổ — Tuyệt Tác 'Gương Trời'</h3>
+                                <span class="season-time">🗓️ Tháng 5 — Tháng 6 • Nhiệt độ: 18 – 24°C</span>
+                                <p class="season-desc">Những thửa ruộng bậc thang uốn lượn lấp loáng nước như những dải lụa bạc xếp tầng tầng lớp lớp vươn lên tận trời xanh, lung linh huyền ảo dưới ánh ban mai và sắc xanh non của mạ mới cấy.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Lúa Chín -->
+                        <div class="season-card" data-legend="Mùa vàng Mường Hoa (Tháng 9 - Tháng 10) là thời khắc Sa Pa lộng lẫy nhất trong năm. Toàn bộ thung lũng chuyển sang màu vàng óng ả, hương lúa nương chín thơm ngào ngạt lan tỏa trong gió heo may vùng cao dưới bầu trời xanh ngắt.">
+                            <div class="season-img-wrap">
+                                <img src="images/sapa_mua_lua_chin_vang_muong_hoa.webp" alt="Mùa lúa chín vàng thung lũng Mường Hoa" loading="lazy">
+                                <span class="season-badge">Mùa Lúa Chín</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu Vàng Rực Rỡ Thung Lũng Mường Hoa</h3>
+                                <span class="season-time">🗓️ Tháng 9 — Tháng 10 • Nhiệt độ: 15 – 22°C</span>
+                                <p class="season-desc">Thời điểm vàng để trekking săn ảnh mùa lúa chín. Từng con sóng lúa vàng rực rỡ ôm ấp những nếp nhà sàn khói lam chiều, tạo nên kiệt tác nghệ thuật kiến tạo giữa bàn tay con người và thiên nhiên kỳ vĩ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Đông Băng Tuyết -->
+                        <div class="season-card" data-legend="Mùa đông Sa Pa (Tháng 12 - Tháng 1) với cơ hội săn mây cuồn cuộn trên đỉnh Fansipan và hiện tượng băng tuyết phủ trắng những mái chùa Phật giáo cổ kính ở độ cao trên 3.000m. Một trải nghiệm ngắm tuyết độc nhất vô nhị tại Việt Nam.">
+                            <div class="season-img-wrap">
+                                <img src="images/sapa_mua_dong_bang_tuyet_fansipan.webp" alt="Mùa đông băng tuyết trên đỉnh Fansipan" loading="lazy">
+                                <span class="season-badge">Mùa Băng Tuyết</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Đông Về Săn Mây & Ngắm Băng Tuyết Fansipan</h3>
+                                <span class="season-time">🗓️ Tháng 12 — Tháng 1 • Nhiệt độ: 2 – 10°C (Dưới 0°C trên đỉnh)</span>
+                                <p class="season-desc">Khi nền nhiệt hạ sâu, đỉnh Fansipan và đèo Ô Quy Hồ khoác lên lớp áo pha lê trắng xóa của băng giá. Không gian mờ ảo sương giăng cùng làn khói bếp sưởi ấm bên bếp than hồng tạo nên sức quyến rũ khó cưỡng.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 5. TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh">
+                    <h2><span class="icon">📸</span> 5. Top 10 Thắng Cảnh Biểu Tượng & Dấu Tích Lịch Sử</h2>
+                    <p>
+                        Hệ thống 10 danh thắng tiêu biểu định hình nên thương hiệu du lịch Sa Pa, kết hợp hoàn hảo giữa công trình kỳ vĩ, danh thắng tự nhiên và di sản văn hóa bản địa. Nhấp chuột vào từng thẻ hình ảnh để mở khung xem chi tiết:
+                    </p>
+
+                    <div class="checkin-grid">
+                        
+                        <!-- 1. Đỉnh Fansipan (double-col) -->
+                        <div class="dest-card double-col" data-legend="Đỉnh Fansipan cao 3.147,3m (theo số liệu đo đạc chính thức của Cục Đo đạc, Bản đồ và Thông tin địa lý Việt Nam), được mệnh danh là 'Nóc nhà Đông Dương'. Tuyến cáp treo ba dây kỷ lục thế giới đưa du khách vượt biển mây chiêm bái quần thể tâm linh thuần Việt thế kỷ XV - XVI với Đại tượng Phật A Di Đà bằng đồng cao 21,5m sừng sững trên đỉnh mây ngàn.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_fansipan.webp" alt="Đỉnh Fansipan nóc nhà Đông Dương" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Biểu Tượng Quốc Gia</span>
+                                    <span class="tag">Độ cao: 3.147,3 m</span>
+                                </div>
+                                <h3 class="dest-card-title">1. Đỉnh Fansipan — Nóc Nhà Đông Dương</h3>
+                                <p class="dest-card-desc">Cột mốc thiêng liêng trên đỉnh cao nhất ba nước Đông Dương, nơi du khách chạm tay vào biển mây cuồn cuộn và chiêm ngưỡng quần thể văn hóa tâm linh Phật giáo thuần Việt kỳ vĩ.</p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Nhà thờ Đá Sa Pa (single-col) -->
+                        <div class="dest-card single-col" data-legend="Nhà thờ Đá Sa Pa (Nhà thờ Đức Mẹ Mân Côi) được người Pháp khởi công xây dựng năm 1895 và hoàn thành đầu thế kỷ XX. Công trình được xây dựng hoàn toàn bằng đá đẽo liên kết bằng vôi, cát và mật mía, mang đậm phong cách kiến trúc Gothic La Mã cổ kính với tháp chuông cao 20m.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_stone_church.webp" alt="Nhà thờ đá cổ Sa Pa" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Kiến Trúc Pháp Cổ</span>
+                                    <span class="tag">Năm 1895</span>
+                                </div>
+                                <h3 class="dest-card-title">2. Nhà Thờ Đá Cổ Sa Pa</h3>
+                                <p class="dest-card-desc">Dấu ấn kiến trúc Gothic nguyên vẹn nhất của người Pháp giữa lòng phố núi, chứng nhân hơn một thế kỷ thăng trầm cùng Sa Pa.</p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Thung lũng Mường Hoa & Bãi đá cổ (single-col) -->
+                        <div class="dest-card single-col" data-legend="Thung lũng Mường Hoa trải dài qua các xã Hầu Thào, Lao Chải, Tả Van, sở hữu quần thể ruộng bậc thang Di tích quốc gia và Di tích quốc gia Bãi đá chạm khắc cổ với gần 200 khối sa thạch mang những ký tự bí ẩn của người tiền sử.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_muong_hoa.webp" alt="Thung lũng Mường Hoa và bãi đá cổ" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Di Tích Quốc Gia</span>
+                                    <span class="tag">Bãi Đá Cổ</span>
+                                </div>
+                                <h3 class="dest-card-title">3. Thung Lũng Mường Hoa & Bãi Đá Cổ</h3>
+                                <p class="dest-card-desc">Bức tranh thủy mặc sống động với dòng suối Hoa uốn lượn, những dải ruộng bậc thang tầng tầng lớp lớp và bãi đá cổ bí ẩn ngàn năm.</p>
+                            </div>
+                        </div>
+
+                        <!-- 4. Bản Cát Cát (single-col) -->
+                        <div class="dest-card single-col" data-legend="Bản Cát Cát hình thành từ giữa thế kỷ XIX, là bản làng truyền thống của đồng bào H'Mông Đen. Nơi đây lưu giữ nguyên vẹn nghề dệt thổ cẩm sợi lanh nhuộm chàm, nghề rèn nông cụ đúc bạc và nhà máy thủy điện cổ do người Pháp xây dựng năm 1925 bên dòng thác Cát Cát.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_cat_cat.webp" alt="Bản Cát Cát người H'Mông Đen" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Làng Cổ H'Mông</span>
+                                    <span class="tag">Thác Cát Cát</span>
+                                </div>
+                                <h3 class="dest-card-title">4. Bản Cát Cát — Làng Nghề Thủ Công Cổ</h3>
+                                <p class="dest-card-desc">Bản làng cổ tích dưới chân núi với những nếp nhà ván pơ mu, cọn nước róc rách, khung dệt thổ cẩm và sắc chàm truyền thống.</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Đèo Ô Quy Hồ & Cổng Trời (double-col) -->
+                        <div class="dest-card double-col" data-legend="Đèo Ô Quy Hồ (đèo Hoàng Liên Sơn) dài gần 50 km cắt ngang sườn núi trên Quốc lộ 4D, nối liền hai tỉnh Lào Cai và Lai Châu. Được mệnh danh là 'Vua đèo Tây Bắc' trong Tứ đại đỉnh đèo hiểm trở nhất Việt Nam, đỉnh đèo nằm ở độ cao 2.035m là điểm săn hoàng hôn và biển mây ngoạn mục bậc nhất.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_o_quy_ho.webp" alt="Đèo Ô Quy Hồ và Cổng Trời Hoàng Liên Sơn" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Tứ Đại Đỉnh Đèo</span>
+                                    <span class="tag">Độ cao: 2.035 m</span>
+                                </div>
+                                <h3 class="dest-card-title">5. Đèo Ô Quy Hồ — Cổng Trời Hoàng Liên Sơn</h3>
+                                <p class="dest-card-desc">Cung đèo huyền thoại dài gần 50km uốn lượn quanh vực sâu hun hút, nơi chiêm ngưỡng bức tranh hoàng hôn đỏ rực và đại dương mây trôi tráng lệ.</p>
+                            </div>
+                        </div>
+
+                        <!-- 6. Núi Hàm Rồng (single-col) -->
+                        <div class="dest-card single-col" data-legend="Núi Hàm Rồng nằm ngay sát trung tâm thị xã Sa Pa, có hình dáng đầu rồng hướng lên trời xanh ở độ cao 1.800m. Nơi đây có vườn lan tự nhiên với hàng trăm loài lan rừng quý hiếm, vườn đá Thạch Lâm kỳ vĩ và Sân Mây nhìn toàn cảnh thị xã Sa Pa và đỉnh Fansipan trong tầm mắt.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_ham_rong.webp" alt="Khu du lịch sinh thái Núi Hàm Rồng" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Sân Mây 1.800m</span>
+                                    <span class="tag">Vườn Lan Rừng</span>
+                                </div>
+                                <h3 class="dest-card-title">6. Khu Du Lịch Sinh Thái Núi Hàm Rồng</h3>
+                                <p class="dest-card-desc">Khu vườn bách thảo trên núi đá vôi với rừng đá Thạch Lâm kỳ vĩ, hoa cỏ ôn đới khoe sắc và đài ngắm cảnh Sân Mây ôm trọn phố thị.</p>
+                            </div>
+                        </div>
+
+                        <!-- 7. Bản Tả Phìn & Tu Viện Cổ (single-col) -->
+                        <div class="dest-card single-col" data-legend="Bản Tả Phìn là thủ phủ của người Dao đỏ nổi tiếng với bài thuốc tắm thảo dược cổ truyền hơn 30 vị thuốc quý hái từ rừng Hoàng Liên Sơn. Đầu bản là phế tích Tu viện Tả Phìn xây dựng năm 1942 bởi 12 nữ tu dòng Xitô mang phong cách kiến trúc Pháp cổ kính đầy bí ẩn.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_ta_phin.webp" alt="Bản Tả Phìn và tu viện cổ người Dao đỏ" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Tắm Lá Dao Đỏ</span>
+                                    <span class="tag">Tu Viện Cổ 1942</span>
+                                </div>
+                                <h3 class="dest-card-title">7. Bản Tả Phìn & Tu Viện Cổ Sa Pa</h3>
+                                <p class="dest-card-desc">Không gian thanh bình của người Dao đỏ với nghề thêu thổ cẩm, trải nghiệm ngâm bồn lá thuốc phục hồi sức khỏe và phế tích tu viện rêu phong.</p>
+                            </div>
+                        </div>
+
+                        <!-- 8. Thác Bạc (single-col) -->
+                        <div class="dest-card single-col" data-legend="Thác Bạc nằm trên Quốc lộ 4D hướng đi đèo Ô Quy Hồ, bắt nguồn từ đỉnh dãy Hoàng Liên Sơn đổ xuống hẻm sâu với độ cao hơn 200m. Dòng nước trắng xóa như dải lụa bạc lấp lánh dưới ánh mặt trời, bọt nước tung mờ ảo vang vọng cả góc rừng đại ngàn.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_thac_bac.webp" alt="Thác Bạc bọt nước tung trắng xóa" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Độ cao: 200 m</span>
+                                    <span class="tag">Trại Nuôi Cá Hồi</span>
+                                </div>
+                                <h3 class="dest-card-title">8. Thác Bạc — Dải Lụa Trắng Hoàng Liên</h3>
+                                <p class="dest-card-desc">Ngọn thác kỳ vĩ đổ từ độ cao 200m xuống hẻm núi sâu, tạo nên màn sương nước mát lạnh và là trung tâm nuôi cá hồi nước lạnh nổi tiếng.</p>
+                            </div>
+                        </div>
+
+                        <!-- 9. Thác Tình Yêu & Suối Vàng (double-col) -->
+                        <div class="dest-card double-col" data-legend="Thác Tình Yêu và Suối Vàng thuộc Vườn Quốc gia Hoàng Liên (Vườn Di sản ASEAN). Con thác cao gần 100m khởi nguồn từ đỉnh Fansipan chảy qua rừng trúc nguyên sinh và hoa đỗ quyên rực rỡ, đổ xuống dòng Suối Vàng với đáy sỏi vàng lấp lánh gắn liền với truyền thuyết chàng Ô Quy Hồ và nàng tiên thứ bảy.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_thac_tinh_yeu_suoi_vang.webp" alt="Thác Tình Yêu và Suối Vàng VQG Hoàng Liên" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Vườn Di Sản ASEAN</span>
+                                    <span class="tag">Suối Vàng</span>
+                                </div>
+                                <h3 class="dest-card-title">9. Thác Tình Yêu & Suối Vàng Vườn Quốc Gia Hoàng Liên</h3>
+                                <p class="dest-card-desc">Cung đường trekking xuyên rừng trúc xanh mát, chiêm ngưỡng ngọn thác mềm mại đổ xuống dòng Suối Vàng lấp lánh như dải lụa thêu giữa đại ngàn.</p>
+                            </div>
+                        </div>
+
+                        <!-- 10. Bản Lao Chải - Tả Van & Cầu Mây Cổ (single-col) -->
+                        <div class="dest-card single-col" data-legend="Bản Lao Chải - Tả Van là nơi cư ngụ lâu đời của đồng bào dân tộc Giáy và H'Mông ven suối Mường Hoa. Chiếc Cầu Mây Tả Van cổ xưa kết bằng mây rừng vắt qua dòng suối trong vắt cùng những homestay bình yên giữa biển lúa mang đến trải nghiệm lưu trú bản địa chân thực nhất.">
+                            <div class="dest-card-img">
+                                <img src="images/sapa_ban_ta_van_cau_may.webp" alt="Bản Lao Chải Tả Van và Cầu Mây cổ" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Cầu Mây Cổ</span>
+                                    <span class="tag">Homestay Bản Địa</span>
+                                </div>
+                                <h3 class="dest-card-title">10. Bản Lao Chải — Tả Van & Cầu Mây Cổ</h3>
+                                <p class="dest-card-desc">Trải nghiệm nhịp sống chậm bên dòng suối trong vắt, dạo bước qua chiếc cầu mây cổ đong đưa và ngắm nhìn sương sớm bảng lảng trên nương lúa.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 6. CẨM NANG DI CHUYỂN -->
+                <section id="di-chuyen">
+                    <h2><span class="icon">🚗</span> 6. Cẩm Nang Di Chuyển & Cung Đường Giao Thông</h2>
+                    <p>
+                        Từ khi tuyến <strong>Cao tốc Nội Bài – Lào Cai (CT05)</strong> và tuyến đường nối <strong>Tỉnh lộ 155</strong> mới hoàn thành (bao gồm cầu Móng Sến – cây cầu cạn có trụ cao nhất Việt Nam), việc di chuyển từ Hà Nội lên Sa Pa đã trở nên cực kỳ êm ái, an toàn và rút ngắn thời gian chỉ còn khoảng <strong>4,5 đến 5 giờ</strong>.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4>🚌 Các Phương Tiện Di Chuyển Lên Sa Pa Thuận Tiện Nhất:</h4>
+                        <p>
+                            • <strong>Xe khách giường nằm & Cabin tình yêu cao cấp:</strong> Khởi hành liên tục 24/7 từ Hà Nội (bến Mỹ Đình, Giáp Bát, Phố Cổ hoặc Sân bay Nội Bài). Giá vé xe giường nằm thông thường từ 250.000 – 300.000 VNĐ/vé; xe Limousine cabin riêng tư tiện nghi từ 350.000 – 450.000 VNĐ/vé/người (xe chạy thẳng lên trung tâm thị xã Sa Pa).<br>
+                            • <strong>Tàu hỏa du lịch Hà Nội — Lào Cai:</strong> Các chuyến tàu SP1, SP3 xuất phát từ Ga Hà Nội lúc 21h30 – 22h00 và đến Ga Lào Cai lúc 5h30 sáng hôm sau. Giá vé giường nằm khoang 4 điều hòa từ 450.000 – 750.000 VNĐ/vé. Từ Ga Lào Cai, du khách bắt xe buýt số 01 hoặc xe trung chuyển lên Sa Pa (khoảng 35 km, giá 40.000 – 50.000 VNĐ/người, thời gian 50 phút).<br>
+                            • <strong>Tự lái ôtô riêng:</strong> Chạy theo CT05 lộ trình Hà Nội – Vĩnh Phúc – Phú Thọ – Yên Bái – Lào Cai. Đến nút giao IC19 Lào Cai, rẽ vào đường tránh Tỉnh lộ 155 mới qua Cầu cạn Móng Sến để tránh đoạn dốc 3 tầng hiểm trở trên QL4D.
+                        </p>
+                    </div>
+
+                    <p>
+                        <strong>Phương tiện đi lại nội thị Sa Pa:</strong> Du khách có thể thuê xe máy (120.000 – 150.000 VNĐ/ngày cho xe số; 150.000 – 200.000 VNĐ/ngày cho xe ga) để tự do vi vu ngắm đèo Ô Quy Hồ và các bản làng. Lưu ý nên chọn xe số khỏe máy và kiểm tra kỹ hệ thống phanh trước khi vượt đèo dốc. Trong nội thị, dịch vụ xe điện và taxi địa phương phục vụ rất tiện lợi với giá cước niêm yết theo đồng hồ.
+                    </p>
+                </section>
+
+                <!-- 7. TINH HOA ẨM THỰC -->
+                <section id="am-thuc">
+                    <h2><span class="icon">🍲</span> 7. Tinh Hoa Ẩm Thực Vùng Cao Sa Pa</h2>
+                    <p>
+                        Ẩm thực Sa Pa là sự hòa quyện tuyệt vời giữa nguồn sản vật tự nhiên tinh khiết của khí hậu ôn đới núi cao và bí quyết chế biến gia vị thảo mộc rừng độc đáo của đồng bào các dân tộc Tây Bắc như hạt dổi, mắc khén, lá mắc mật và thảo quả.
+                    </p>
+
+                    <div class="culinary-grid">
+                        
+                        <!-- 1. Thắng Cố Ngựa -->
+                        <div class="culinary-card" data-legend="Thắng cố ngựa là món ăn truyền thống danh tiếng của người H'Mông vùng Tây Bắc. Nồi thắng cố nghi ngút khói ninh từ xương và thịt ngựa kết hợp 12 loại gia vị thảo mộc (thảo quả, hoa hồi, quế chi, sả, mắc khén) thơm lừng, nhấp cùng chén rượu ngô Bắc Hà cay nồng xua tan cái lạnh vùng cao.">
+                            <div class="culinary-img-wrap">
+                                <img src="images/sapa_mon_thang_co_ngua.webp" alt="Thắng cố ngựa truyền thống Sa Pa" loading="lazy">
+                                <span class="culinary-badge">Đặc Sản H'Mông</span>
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">Thắng Cố Ngựa Truyền Thống</h3>
+                                <span class="culinary-price">💰 350.000 — 600.000 VNĐ / nồi lẩu (3-4 người)</span>
+                                <p class="culinary-desc">Nồi thắng cố sôi lục bục với vị béo bùi của thịt ngựa tươi, vị cay the nồng ấm của thảo mộc rừng, ăn kèm rau rừng vùng cao và ớt nướng giã muối trắng.</p>
+                                <p class="culinary-address">📍 Quán Thắng Cố A Quỳnh (15 Thạch Sơn) • Nhà hàng A Phủ Sa Pa (15 Fansipan)</p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Lẩu Cá Tầm & Cá Hồi -->
+                        <div class="culinary-card" data-legend="Sa Pa sở hữu nguồn nước suối lạnh tinh khiết dưới chân núi Fansipan, là thủ phủ nuôi cá hồi vân và cá tầm lớn nhất Việt Nam. Thịt cá hồi hồng cam săn chắc không mỡ dùng làm sashimi hoặc nhúng lẩu chua cay; cá tầm sụn giòn ngọt ninh lẩu măng chua ăn kèm ngọn su su giòn ngọt.">
+                            <div class="culinary-img-wrap">
+                                <img src="images/sapa_mon_lau_ca_tam_ca_hoi.webp" alt="Lẩu cá tầm và cá hồi nước lạnh Sa Pa" loading="lazy">
+                                <span class="culinary-badge">Đặc Sản Nước Lạnh</span>
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">Lẩu Cá Hồi & Cá Tầm Nước Lạnh</h3>
+                                <span class="culinary-price">💰 400.000 — 700.000 VNĐ / set lẩu</span>
+                                <p class="culinary-desc">Nước lẩu chua thanh nấu cùng cà chua, dứa và lá rừng, nhúng từng lát cá hồi tươi rói và cá tầm giòn sụn ngọt thịt, hòa quyện với đọt su su Sa Pa tươi non.</p>
+                                <p class="culinary-address">📍 Nhà hàng Song Nhi Sa Pa (Thác Bạc) • Cá Hồi Vua Sa Pa (15 Lê Văn Tám)</p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Thịt Lợn Cắp Nách Quay -->
+                        <div class="culinary-card" data-legend="Lợn cắp nách là giống lợn bản địa của người Dao và người H'Mông thả rông trên triền đồi, chỉ ăn rau dại và ngô nên thịt rất săn chắc, ít mỡ. Lợn được tẩm ướp hạt dổi mắc khén quay nguyên con trên than hoa cho đến khi lớp da phồng rộp vàng giòn rụm.">
+                            <div class="culinary-img-wrap">
+                                <img src="images/sapa_mon_thit_lon_cap_nach_quay.webp" alt="Thịt lợn cắp nách quay giòn bì Sa Pa" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">Thịt Lợn Cắp Nách Quay Giòn Bì</h3>
+                                <span class="culinary-price">💰 250.000 — 350.000 VNĐ / đĩa (theo kg)</span>
+                                <p class="culinary-desc">Miếng thịt quay có lớp da giòn tan như bánh quy, phần mỡ mỏng không ngấy và thịt nạc ngọt mềm mọng nước, chấm cùng bát chẩm chéo cay the tê đầu lưỡi.</p>
+                                <p class="culinary-address">📍 Nhà hàng Đỗ Quyên (Đỉnh Hàm Rồng) • Khu phố nướng Cầu Mây Sa Pa</p>
+                            </div>
+                        </div>
+
+                        <!-- 4. Cơm Lam Ống Nứa & Gà Đen Nướng -->
+                        <div class="culinary-card" data-legend="Cơm lam Sa Pa được nướng từ loại nếp nương dẻo thơm ngâm nước suối rừng, nhồi vào ống nứa non bịt lá chuối nướng vần trên than hồng. Ăn kèm gà đen bản địa (giống gà xương đen thịt đen quý của người H'Mông) tẩm mật ong rừng nướng thơm phức.">
+                            <div class="culinary-img-wrap">
+                                <img src="images/sapa_mon_com_lam_ga_nuong_tay_bac.webp" alt="Cơm lam ống nứa và gà đồi nướng than hoa" loading="lazy">
+                                <span class="culinary-badge">Hương Vị Bản Làng</span>
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">Cơm Lam Ống Nứa & Gà Đen Nướng Than</h3>
+                                <span class="culinary-price">💰 150.000 — 280.000 VNĐ / suất</span>
+                                <p class="culinary-desc">Tách lớp nứa cháy xém để lộ lớp màng lụa mỏng ôm trọn hạt xôi dẻo quánh thơm mùi tre nứa, quyện cùng miếng gà đen ngọt đậm đà chấm muối vừng rang.</p>
+                                <p class="culinary-address">📍 Chợ đêm Sa Pa (Đường Điện Biên Phủ) • Bản Cát Cát • Dọc đèo Ô Quy Hồ</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Thịt Trâu Gác Bếp Mắc Khén -->
+                        <div class="culinary-card" data-legend="Món ăn dự trữ truyền thống của đồng bào Tây Bắc. Những thớ thịt bắp trâu tươi ngon nhất được thái dọc thớ, tẩm ướp ớt, gừng, tỏi, mắc khén và hạt dổi rồi treo lên gác bếp hun khói củi nhãn, củi dẻ hàng tháng trời đến khi khô quắt lại bên ngoài đỏ hồng bên trong.">
+                            <div class="culinary-img-wrap">
+                                <img src="images/sapa_mon_thit_trau_gac_bep_sapa.webp" alt="Thịt trâu gác bếp mắc khén Sa Pa" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">Thịt Trâu Gác Bếp Hun Khói Mắc Khén</h3>
+                                <span class="culinary-price">💰 750.000 — 950.000 VNĐ / kg (đóng gói chân không)</span>
+                                <p class="culinary-desc">Thớ thịt đỏ sẫm đượm mùi khói bếp củi thơm ngát, khi xé nhỏ nhai kỹ thấy vị ngọt tự nhiên của thịt trâu hòa quyện cùng vị cay nồng đặc trưng của gia vị rừng.</p>
+                                <p class="culinary-address">📍 Hợp tác xã Nông sản sạch Sa Pa • Cơ sở Viet's Farm Sa Pa • Chợ Sa Pa</p>
+                            </div>
+                        </div>
+
+                        <!-- 6. Rau Mầm Đá & Bò Cuốn Cải Mèo -->
+                        <div class="culinary-card" data-legend="Rau mầm đá là loại rau mọc tự nhiên trên các vách đá cheo leo ở độ cao trên 2.000m vào mùa đông rét buốt. Nhánh mầm đá trắng xanh luộc chấm kho quẹt trứng muối có vị giòn ngọt thanh tao. Kết hợp xiên thịt bò tơ cuốn cải mèo nướng than hoa thơm lừng.">
+                            <div class="culinary-img-wrap">
+                                <img src="images/sapa_mon_rau_mam_da_cuon_bo.webp" alt="Rau mầm đá luộc và bò cuốn cải mèo nướng" loading="lazy">
+                                <span class="culinary-badge">Đặc Sản Mùa Đông</span>
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">Rau Mầm Đá Luộc & Bò Cuốn Cải Mèo</h3>
+                                <span class="culinary-price">💰 80.000 — 150.000 VNĐ / đĩa</span>
+                                <p class="culinary-desc">Mầm đá giòn sần sật mọng nước chấm nước kho quẹt béo ngậy, đan xen cùng xiên bò nướng cuốn lá cải mèo ngăm ngăm đắng rồi chuyển dần sang vị ngọt hậu quyến rũ.</p>
+                                <p class="culinary-address">📍 Khu ẩm thực phố nướng Sa Pa • Nhà hàng Red Dzao House (4B Xuân Viên)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 8. BẢNG GIÁ VÉ & DỊCH VỤ NIÊM YẾT -->
+                <section id="gia-ve">
+                    <h2><span class="icon">🏷️</span> 8. Bảng Giá Vé Tham Quan & Dịch Vụ Niêm Yết (2026)</h2>
+                    <p>
+                        Bảng giá niêm yết chính thức áp dụng tại các điểm du lịch trọng điểm trên địa bàn thị xã Sa Pa được cập nhật theo quy định của Ban Quản lý Di tích & Doanh nghiệp du lịch:
+                    </p>
+
+                    <div class="pricing-table-wrap">
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Địa Điểm / Tuyến Tham Quan</th>
+                                    <th>Giá Vé Người Lớn</th>
+                                    <th>Giá Vé Trẻ Em (1m - 1m4)</th>
+                                    <th>Ghi Chú Dịch Vụ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><strong>Cáp treo Sun World Fansipan Legend</strong></td>
+                                    <td><span class="price-tag">850.000 VNĐ</span></td>
+                                    <td><span class="price-tag">550.000 VNĐ</span></td>
+                                    <td>Khứ hồi; Trẻ em dưới 1m miễn phí hoàn toàn</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><strong>Tàu hỏa leo núi Mường Hoa</strong></td>
+                                    <td><span class="price-tag">150.000 VNĐ</span></td>
+                                    <td><span class="price-tag">150.000 VNĐ</span></td>
+                                    <td>Tuyến Sun Plaza trung tâm Sa Pa đến Ga cáp treo</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><strong>Tàu hỏa leo đỉnh Fansipan (Chiều lên)</strong></td>
+                                    <td><span class="price-tag">150.000 VNĐ</span></td>
+                                    <td><span class="price-tag">150.000 VNĐ</span></td>
+                                    <td>Tuyến từ Ga Đỗ Quyên lên chóp đỉnh Fansipan</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>Tàu hỏa leo đỉnh Fansipan (Chiều xuống)</strong></td>
+                                    <td><span class="price-tag">120.000 VNĐ</span></td>
+                                    <td><span class="price-tag">120.000 VNĐ</span></td>
+                                    <td>Du khách có thể chọn đi bộ xuống để vãn cảnh chùa</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>Bản Cát Cát (Làng nghề H'Mông)</strong></td>
+                                    <td><span class="price-tag">150.000 VNĐ</span></td>
+                                    <td><span class="price-tag">70.000 VNĐ</span></td>
+                                    <td>Bao gồm xem biểu diễn văn nghệ dân tộc tại nhà máy thủy điện</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><strong>Khu du lịch Núi Hàm Rồng</strong></td>
+                                    <td><span class="price-tag">70.000 VNĐ</span></td>
+                                    <td><span class="price-tag">30.000 VNĐ</span></td>
+                                    <td>Tham quan vườn lan, vườn đá Thạch Lâm, đài ngắm Sân Mây</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td><strong>Thác Bạc (Quốc lộ 4D)</strong></td>
+                                    <td><span class="price-tag">20.000 VNĐ</span></td>
+                                    <td><span class="price-tag">10.000 VNĐ</span></td>
+                                    <td>Cầu vòm chụp ảnh toàn cảnh chân thác</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td><strong>Thác Tình Yêu & Suối Vàng (VQG Hoàng Liên)</strong></td>
+                                    <td><span class="price-tag">75.000 VNĐ</span></td>
+                                    <td><span class="price-tag">35.000 VNĐ</span></td>
+                                    <td>Tuyến trekking rừng trúc nguyên sinh và suối Vàng</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td><strong>Bản Tả Phìn & Tu Viện Cổ</strong></td>
+                                    <td><span class="price-tag">40.000 VNĐ</span></td>
+                                    <td><span class="price-tag">20.000 VNĐ</span></td>
+                                    <td>Vé vào bản; Dịch vụ ngâm lá thuốc Dao đỏ riêng (100k - 120k)</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td><strong>Nhà thờ Đá Cổ Sa Pa & Quảng trường</strong></td>
+                                    <td><span class="price-tag" style="color: #22c55e;">Miễn phí 100%</span></td>
+                                    <td><span class="price-tag" style="color: #22c55e;">Miễn phí 100%</span></td>
+                                    <td>Điểm sinh hoạt cộng đồng tự do, mở cửa quanh năm</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td><strong>Thung lũng Mường Hoa & Bãi Đá Cổ</strong></td>
+                                    <td><span class="price-tag" style="color: #22c55e;">Miễn phí 100%</span></td>
+                                    <td><span class="price-tag" style="color: #22c55e;">Miễn phí 100%</span></td>
+                                    <td>Ngắm cảnh tự do trên cung đường Tỉnh lộ 152 xuống bản</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="disclaimer-box">
+                        * Lưu ý miễn trừ trách nhiệm: Mức giá vé tham quan và dịch vụ niêm yết trên đây có hiệu lực tham khảo tại thời điểm công bố. Giá vé thực tế có thể thay đổi vào các dịp nghỉ lễ Quốc khánh, Tết Nguyên đán hoặc theo điều chỉnh chính sách kích cầu du lịch của UBND tỉnh Lào Cai và Tập đoàn Sun Group.
+                    </p>
+                </section>
+
+                <!-- 9. LỊCH TRÌNH 3N2Đ & MẸO AN TOÀN -->
+                <section id="lich-trinh">
+                    <h2><span class="icon">🧭</span> 9. Gợi Ý Lịch Trình (3N2Đ) & Mẹo Trải Nghiệm Bản Địa An Toàn</h2>
+                    
+                    <div class="highlight-box">
+                        <h4>🗓️ Lịch Trình Khám Phá Sa Pa 3 Ngày 2 Đêm Hoàn Hảo</h4>
+                        <p>
+                            • <strong>Ngày 1: Chạm Đỉnh Nóc Nhà Đông Dương & Săn Hoàng Hôn Ô Quy Hồ</strong><br>
+                            - <em>Sáng:</em> Đến Sa Pa nhận phòng khách sạn, dùng bữa sáng với bát phở gà đồi nóng hổi. Check-in Ga Sun Plaza đi tàu hỏa Mường Hoa lên cáp treo chinh phục <strong>Đỉnh Fansipan 3.147,3m</strong>. Chiêm bái Đại tượng Phật A Di Đà và vãn cảnh Kim Sơn Bảo Thắng Tự.<br>
+                            - <em>Chiều:</em> Thuê xe máy chạy cung đường QL4D ghé thăm <strong>Thác Bạc</strong>, trekking <strong>Thác Tình Yêu & Suối Vàng</strong>. Tiếp tục di chuyển lên đỉnh <strong>Đèo Ô Quy Hồ</strong> chiêm ngưỡng hoàng hôn nhuộm đỏ biển mây kỳ vĩ.<br>
+                            - <em>Tối:</em> Thưởng thức lẩu cá tầm măng chua tại thị xã. Dạo quanh <strong>Nhà thờ Đá Cổ Sa Pa</strong>, hòa mình vào không khí Chợ đêm và nhâm nhi thịt nướng than hoa.
+                        </p>
+                        <p style="margin-top: 0.8rem;">
+                            • <strong>Ngày 2: Bản Sắc Làng Cổ Cát Cát & Thung Lũng Mường Hoa — Tả Van</strong><br>
+                            - <em>Sáng:</em> Trekking xuống <strong>Bản Cát Cát</strong>, chiêm ngưỡng guồng nước khổng lồ, xem nghệ nhân H'Mông dệt lanh dệt thổ cẩm và check-in thác nước Cát Cát.<br>
+                            - <em>Chiều:</em> Men theo Tỉnh lộ 152 xuôi về <strong>Thung lũng Mường Hoa</strong>. Dừng chân khám phá Di tích <strong>Bãi đá cổ Sa Pa</strong>, check-in <strong>Cầu Mây Tả Van</strong> và hòa mình vào khung cảnh ruộng bậc thang bát ngát.<br>
+                            - <em>Tối:</em> Trải nghiệm bữa tối ẩm thực bản địa với món lợn cắp nách quay giòn bì và cá suối nướng tại homestay bản Tả Van.
+                        </p>
+                        <p style="margin-top: 0.8rem;">
+                            • <strong>Ngày 3: Khám Phá Núi Hàm Rồng & Trải Nghiệm Tắm Lá Thuốc Tả Phìn</strong><br>
+                            - <em>Sáng:</em> Dậy sớm leo bộ khám phá <strong>Núi Hàm Rồng</strong>, ngắm vườn lan rừng ôn đới, vượt qua hẻm Cổng Trời lên Sân Mây ngắm toàn cảnh thị xã Sa Pa trong sương sớm.<br>
+                            - <em>Trưa:</em> Di chuyển sang <strong>Bản Tả Phìn</strong>, trải nghiệm ngâm mình trong bồn gỗ pơ mu với nước lá thuốc gia truyền hơn 30 vị của người Dao đỏ để phục hồi thể lực sau những ngày trekking.<br>
+                            - <em>Chiều:</em> Mua đặc sản mận hậu, thịt trâu gác bếp và nấm hương rừng tại Chợ Sa Pa. Lên xe Limousine trở về Thủ đô Hà Nội.
+                        </p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>🛡️ Cẩm Nang Bản Địa & Cảnh Báo An Toàn Du Lịch Sa Pa</h4>
+                        <p><strong>1. Giữ ấm cơ thể theo lớp:</strong> Khí hậu Sa Pa thay đổi rất nhanh trong ngày, sáng sớm và ban đêm nhiệt độ hạ sâu có gió buốt. Luôn mang theo áo khoác chắn gió giữ nhiệt, khăn len và găng tay, đặc biệt khi đi cáp treo lên đỉnh Fansipan ở độ cao trên 3.000m không khí loãng và lạnh hơn thị xã từ 8 – 10°C.</p>
+                        <p><strong>2. An toàn lái xe đèo sương mù:</strong> Đèo Ô Quy Hồ và các cung đường vào bản làng dốc đứng và quanh co nhiều khúc cua tay áo. Tuyệt đối không tắt máy thả trôi xe ga khi xuống dốc; luôn bật đèn gầm/đèn sương mù khi tầm nhìn hạn chế và chủ động nhường đường cho xe tải lớn.</p>
+                        <p><strong>3. Ứng xử văn hóa bản địa văn minh:</strong> Khi vào tham quan các bản làng dân tộc thiểu số, không tự ý xoa đầu trẻ em, không chỉ trỏ chụp ảnh cận cảnh người dân mà chưa xin phép. Tuyệt đối không cho tiền trực tiếp trẻ em ăn xin ven đường để tránh tạo thói quen bỏ học đi xin ăn; nếu muốn chia sẻ hãy tặng bánh kẹo, sách vở hoặc thông qua các điểm trường bản địa.</p>
+                    </div>
+
+                </section>
+
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a>
+            © 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cổng thông tin & Cẩm nang Du lịch Việt Nam.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            🎨 100% Ảnh minh họa sinh động bởi AI • Biên soạn bởi Sửu nhi • Đối chiếu chuẩn mực Văn bản Nhà nước
+        </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img loading="lazy" class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Lightbox Zoom functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const destCards = document.querySelectorAll('.dest-card');
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
+        // Lightbox Modal Logic
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImg');
+        const modalTitle = document.getElementById('lightboxTitle');
+        const modalCaption = document.getElementById('lightboxCaption');
 
-            if (destCards.length && lightboxModal && lightboxImg) {
-                destCards.forEach(card => {
-                    card.style.cursor = 'zoom-in';
-                    card.addEventListener('click', () => {
-                        const img = card.querySelector('.dest-card-img img');
-                        if (!img) return;
+        function openLightbox(imgSrc, imgAlt, title, caption) {
+            modalImg.src = imgSrc;
+            modalImg.alt = imgAlt;
+            modalTitle.textContent = title;
+            modalCaption.textContent = caption;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
-                        let titleText = "";
-                        let descText = "";
+        document.querySelectorAll('.dest-card, .culinary-card, .season-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                const titleEl = this.querySelector('.dest-card-title, .culinary-title, .season-title');
+                const descEl = this.querySelector('.dest-card-desc, .culinary-desc, .season-desc');
+                const title = titleEl ? titleEl.textContent.trim() : (img ? img.alt : '');
+                const legend = this.getAttribute('data-legend') || (descEl ? descEl.textContent.trim() : '');
 
-                        const overlayH3 = card.querySelector('.dest-card-content h3');
-                        const overlayP = card.querySelector('.dest-card-content p');
-                        if (overlayH3) titleText = overlayH3.textContent;
-                        if (overlayP) descText = overlayP.textContent;
+                if (img) {
+                    openLightbox(img.src, img.alt, title, legend);
+                }
+            });
+        });
 
-                        if (!titleText && !descText) {
-                            titleText = img.alt || "Chi tiết hình ảnh";
-                        }
+        function closeLightbox(e) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-                        lightboxModal.style.display = 'flex';
-                        lightboxImg.src = img.src;
-                        
-                        let captionHTML = "";
-                        if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
-                        }
-                        if (descText) {
-                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
-                        }
-                        
-                        const legend = card.getAttribute('data-legend');
-                        if (legend) {
-                            captionHTML += `
-                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
-                                    ✨ Truyền thuyết & Sự tích Kỳ bí
-                                </span>
-                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
-                            </div>`;
-                        }
-                        lightboxCaption.innerHTML = captionHTML;
-                    });
-                });
-
-                lightboxClose.addEventListener('click', () => {
-                    lightboxModal.style.display = 'none';
-                });
-
-                lightboxModal.addEventListener('click', (e) => {
-                    if (e.target === lightboxModal || e.target === lightboxClose) {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
-                
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeLightbox();
             }
         });
     </script>
