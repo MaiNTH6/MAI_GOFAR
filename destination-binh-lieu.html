@@ -3,626 +3,544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bình Liêu — Thiên Đường Mùa Cỏ Lau & Sống Lưng Khủng Long 1305 | GO FAR</title>
-    <meta name="description" content="Khám phá Bình Liêu (Quảng Ninh): 'Vạn lý trường thành Việt Nam', Sống lưng khủng long mốc 1305, mùa cỏ lau trắng muốt ngút ngàn, đỉnh Cao Ly săn mây, thác Khe Vằn và lễ hội Hoa Sở tháng 12.">
-    <meta name="keywords" content="du lịch Bình Liêu, Sống lưng khủng long, mốc 1305, mùa cỏ lau Bình Liêu, thác Khe Vằn, đỉnh Cao Ly, đỉnh Cao Xiêm, hoa sở Bình Liêu, kinh nghiệm du lịch Bình Liêu">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    
-    <!-- Google Fonts -->
+    <title>Bình Liêu — Thiên Đường Cột Mốc Biên Cương & Vương Quốc Cỏ Lau Trắng | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Bình Liêu Quảng Ninh toàn diện chuẩn 9 mục: Sống lưng khủng long mốc 1305, các cột mốc biên giới 1300, 1302, 1327, Thác Khe Vằn, miến dong, gà đồi và 4 mùa tuyệt mỹ.">
+    <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
-            --bg: #0a141e;
-            --bg-card: #112233;
-            --bg-card-hover: #162c3e;
+            --bg: #0c1824;
+            --bg-sec: #132435;
+            --bg-card: rgba(19, 36, 53, 0.88);
+            --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
-            --text-sec: #94a3b8;
-            --text-muted: #64748b;
-            --accent: #ff8c32;
-            --accent-gold: #fbbf24;
-            --accent-cyan: #06b6d4;
-            --border: rgba(255, 255, 255, 0.08);
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #0284c7;
+            --accent-cyan: #38bdf8;
+            --accent-gold: #f59e0b;
+            --accent-warm: #ea580c;
             --radius: 16px;
             --radius-sm: 8px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            background-color: var(--bg);
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
             color: var(--text);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* HEADER / NAV */
+        /* NAV */
         .nav {
+            background: linear-gradient(135deg, #0c1824 0%, #163654 50%, #0c1824 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #0284c7, #38bdf8, transparent) 1;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: rgba(10, 20, 30, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 0.75rem 1.5rem;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
-
         .nav-inner {
             max-width: 1350px;
             margin: 0 auto;
+            padding: 0 1.5rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
-
-        .nav-logo img {
-            height: 38px;
-            width: auto;
-            display: block;
-        }
-
+        .nav-logo img { height: 45px; }
         .nav-back {
             color: var(--text-sec);
+            font-size: 0.85rem;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
+            transition: color 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s;
+            gap: 0.4rem;
+            margin-left: auto;
         }
+        .nav-back:hover { color: var(--accent-cyan); }
 
-        .nav-back:hover {
-            color: var(--accent);
-        }
-
-        /* HERO HEADER */
+        /* HERO */
         .hero {
             position: relative;
             height: 60vh;
             min-height: 420px;
             overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            padding-bottom: 3.5rem;
         }
-
         .hero img {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 1;
-            filter: brightness(0.85);
         }
-
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(10,20,30,0.2) 0%, rgba(10,20,30,0.85) 80%, var(--bg) 100%);
-            z-index: 2;
+            background: linear-gradient(180deg, rgba(12,24,36,0.2) 0%, rgba(12,24,36,0.92) 100%);
         }
-
         .hero-content {
-            position: relative;
-            z-index: 3;
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
             max-width: 1350px;
             margin: 0 auto;
-            padding: 0 1.5rem;
-            width: 100%;
         }
-
         .hero-tag {
             display: inline-block;
-            background: rgba(255, 140, 50, 0.15);
-            color: var(--accent);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 0.35rem 0.85rem;
-            border-radius: 9999px;
-            margin-bottom: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 0.35rem 0.9rem;
+            border-radius: 99px;
+            margin-bottom: 0.8rem;
         }
-
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-size: clamp(2rem, 5vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
-            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 0.6rem;
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
-
-        .hero-subtitle {
-            font-size: 1.15rem;
+        .hero-meta-line {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-size: 0.9rem;
             color: var(--text-sec);
-            max-width: 800px;
-            line-height: 1.6;
+            flex-wrap: wrap;
         }
+        .hero-meta-line .rating { color: var(--accent-gold); font-weight: 600; }
 
-        /* ARTICLE LAYOUT */
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--accent-cyan); }
+
+        /* LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 0 1.5rem 4rem;
+            padding: 1.5rem 1.5rem 4rem;
         }
-
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 320px 1fr;
+            grid-template-columns: 290px 1fr;
             gap: 2.5rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             align-items: start;
         }
 
         /* SIDEBAR */
         .sidebar {
-            position: sticky;
-            top: 90px;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .widget {
             background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: var(--radius);
             padding: 1.5rem;
-            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+            position: sticky;
+            top: 5rem;
+            max-height: calc(100vh - 6rem);
+            overflow-y: auto;
         }
-
-        .widget-title {
+        .sidebar-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-
-        .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-        .toc-list a {
+        .toc-list { list-style: none; }
+        .toc-item { margin-bottom: 0.45rem; }
+        .toc-link {
+            display: block;
+            padding: 0.4rem 0.6rem;
             color: var(--text-sec);
             text-decoration: none;
             font-size: 0.85rem;
+            border-radius: 6px;
             transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            border-left: 2px solid transparent;
         }
-        .toc-list a:hover { color: var(--accent); transform: translateX(4px); }
-
-        .quick-facts { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; }
-        .quick-facts li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.5rem; }
-        .quick-facts .label { color: var(--text-muted); }
-        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
-
-        /* MAIN CONTENT */
-        .article-main {
-            min-width: 0;
+        .toc-link:hover, .toc-link.active {
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.1);
+            border-left-color: var(--accent-cyan);
         }
 
-        .intro-lead {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #fff;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            border-left: 3px solid var(--accent);
-            background: rgba(255, 140, 50, 0.03);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            padding: 1.2rem 1.5rem;
-        }
-
-        .article-main h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1.25rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #fff;
-        }
-
-        .article-main h2 .icon {
-            font-size: 1.4rem;
-        }
-
-        .article-main h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.75rem;
-            color: var(--accent-gold);
-        }
-
-        .article-main p {
-            color: var(--text-sec);
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .article-main ul {
-            color: var(--text-sec);
-            font-size: 0.95rem;
-            margin: 0.5rem 0 1.5rem 1.5rem;
-            line-height: 1.8;
-        }
-        .article-main li { margin-bottom: 0.5rem; }
-
-        .tip-box {
-            background: rgba(251, 191, 36, 0.06);
-            border-left: 3px solid var(--accent-gold);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            padding: 1.2rem 1.5rem;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        .tip-box p { margin: 0; color: var(--text-sec); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.06);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            padding: 1.2rem 1.5rem;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        .warning-box p { margin: 0; color: var(--text-sec); }
-
-        /* CHECKIN GRID */
-        .checkin-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .dest-card {
+        /* CONTENT SECTIONS */
+        .content-section {
             background: var(--bg-card);
             border: 1px solid rgba(255,255,255,0.06);
             border-radius: var(--radius);
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
-
-        .dest-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 140, 50, 0.4);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.8rem;
+        }
+        .section-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--text);
         }
 
-        .dest-card.double-col {
-            grid-column: span 2;
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: rgba(2, 132, 199, 0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .highlight-box h4 {
+            color: var(--accent-cyan);
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+
+        /* QUOTE / CITATION */
+        .legal-quote {
+            background: rgba(245, 158, 11, 0.06);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+            color: var(--text-sec);
+        }
+        .legal-quote strong { color: var(--accent-gold); }
+
+        /* SEASONS GRID (MỤC 4) */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .season-card {
+            background: var(--bg-sec);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .season-img-wrap {
+            position: relative;
             aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
         }
-
-        .dest-card.single-col {
-            aspect-ratio: 4/3;
-        }
-
-        .dest-card-img {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .dest-card-img img {
+        .season-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.5s;
         }
-
-        .dest-card:hover .dest-card-img img {
+        .season-card:hover .season-img-wrap img {
             transform: scale(1.05);
         }
-
-        .dest-card-overlay {
+        .season-badge {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(10,20,30,0) 40%, rgba(10,20,30,0.92) 100%);
-            z-index: 2;
-        }
-
-        .dest-card-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            z-index: 3;
-        }
-
-        .dest-card-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .dest-card-tags .tag {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding: 0.2rem 0.6rem;
-            border-radius: var(--radius-sm);
-            backdrop-filter: blur(4px);
-        }
-
-        .dest-card-tags .tag.tag-hot {
-            background: var(--accent);
-            color: #fff;
+            top: 0.8rem;
+            left: 0.8rem;
+            background: rgba(12, 24, 36, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            font-size: 0.75rem;
             font-weight: 600;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(56, 189, 248, 0.3);
         }
-
-        .dest-card-title {
+        .season-body {
+            padding: 1.2rem;
+        }
+        .season-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.4rem;
-            color: #fff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            color: var(--text);
         }
-
-        .dest-card-desc {
-            font-size: 0.85rem;
+        .season-desc {
+            font-size: 0.88rem;
             color: var(--text-sec);
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+            line-height: 1.6;
+        }
+
+        /* LANDMARKS (MỤC 5) */
+        .landmarks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .dest-card {
+            background: var(--bg-sec);
+            border-radius: var(--radius);
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
-
-        /* RESPONSIVE TABLES */
-        .table-responsive {
+        .dest-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .dest-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .dest-img-wrap img {
             width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 1.5rem 0;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .dest-card:hover .dest-img-wrap img {
+            transform: scale(1.05);
+        }
+        .dest-body {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+        .dest-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .dest-meta {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
         }
 
-        .info-table {
+        /* CULINARY CARDS (MỤC 7) */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .culinary-card {
+            background: var(--bg-sec);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.05);
+        }
+        .culinary-body {
+            padding: 1.2rem;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+        .culinary-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.6rem;
+        }
+        .culinary-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 0.5rem;
+        }
+
+        /* TABLES (MỤC 8) */
+        .price-table-wrap {
+            overflow-x: auto;
+            margin-top: 1.2rem;
+        }
+        .price-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 0.9rem;
-            background: rgba(22, 44, 62, 0.5);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .info-table th {
-            background: rgba(255, 140, 50, 0.15);
-            color: var(--accent);
-            padding: 0.85rem 1rem;
             text-align: left;
-            font-weight: 600;
         }
-
-        .info-table td {
+        .price-table th {
+            background: rgba(2, 132, 199, 0.15);
+            color: var(--accent-cyan);
             padding: 0.85rem 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-sec);
-        }
-
-        .price-tag {
-            color: var(--accent-gold);
             font-weight: 600;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
         }
-
-        /* FOOD LIST */
-        .food-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .food-item {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius-sm);
-            padding: 1rem 1.25rem;
-            font-size: 0.9rem;
+        .price-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
             color: var(--text-sec);
         }
+        .price-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+            color: var(--text);
+        }
 
-        .food-item .name {
+        /* LIGHTBOX */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+        }
+        .lightbox-dialog {
+            max-width: 960px;
+            margin: auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-sec);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 2rem;
             color: #fff;
-            font-weight: 500;
-            display: block;
-            margin-bottom: 0.3rem;
+            cursor: pointer;
+            z-index: 10;
+            line-height: 1;
+        }
+        .lightbox-media {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+        .lightbox-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .lightbox-info {
+            padding: 1.2rem 1.5rem;
+        }
+        .lightbox-tag {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 0.3rem 0;
+        }
+        .lightbox-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.5;
         }
 
         /* FOOTER */
         .article-footer {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
             font-size: 0.85rem;
             color: var(--text-muted);
-            flex-wrap: wrap;
-            gap: 1rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .article-footer .credits {
+            margin-top: 0.5rem;
+            color: var(--text-sec);
         }
 
-        .article-footer a { color: var(--accent); text-decoration: none; }
-        .credits { font-style: italic; }
-
-        /* LIGHTBOX MODAL (SCROLLABLE & NO-CUTOFF) */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(10, 20, 30, 0.94);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            overflow-y: auto;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
-            padding: 2.5rem 1rem 3.5rem;
-            box-sizing: border-box;
-        }
-
-        .lightbox-modal::-webkit-scrollbar {
-            width: 8px;
-        }
-        .lightbox-modal::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.3);
-        }
-        .lightbox-modal::-webkit-scrollbar-thumb {
-            background: rgba(255, 140, 50, 0.4);
-            border-radius: 4px;
-        }
-        .lightbox-modal::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
-
-        .lightbox-dialog {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 860px;
-            margin: auto;
-            min-height: min-content;
-            box-sizing: border-box;
-            padding-bottom: 2rem;
-        }
-
-        .lightbox-content {
-            max-width: 100%;
-            max-height: 52vh;
-            width: auto;
-            border-radius: var(--radius);
-            box-shadow: 0 12px 48px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.15);
-            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            object-fit: contain;
-        }
-
-        .lightbox-caption {
-            margin-top: 1.25rem;
-            color: var(--text);
-            text-align: center;
-            max-width: 820px;
-            width: 100%;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .lightbox-close {
-            position: fixed;
-            top: 1.25rem;
-            right: 1.5rem;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(22, 44, 62, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            font-size: 1.8rem;
-            font-weight: 300;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10001;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-            line-height: 1;
-            padding: 0;
-        }
-
-        .lightbox-close:hover {
-            background: var(--accent);
-            color: #fff;
-            transform: scale(1.08);
-            border-color: var(--accent);
-        }
-
-        @keyframes zoomIn {
-            from {transform:scale(0.9); opacity: 0;}
-            to {transform:scale(1); opacity: 1;}
-        }
-
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 900px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .lightbox-modal {
-                padding: 3.5rem 0.75rem 2.5rem;
-            }
-            .lightbox-content {
-                max-height: 42vh;
-            }
-            .lightbox-caption {
-                font-size: 0.9rem;
-            }
-            .lightbox-close {
-                top: 0.75rem;
-                right: 0.75rem;
-                width: 38px;
-                height: 38px;
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero { height: 45vh; min-height: 300px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+            .seasons-grid, .landmarks-grid, .culinary-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -632,328 +550,571 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="images/logo.png" alt="GO FAR">
+                <img src="images/logo.png" alt="GO FAR Logo">
             </a>
-            <a href="index.html" class="nav-back">← Quay lại Trang chủ</a>
+            <a href="index.html" class="nav-back">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
     <!-- HERO -->
     <header class="hero">
-        <img src="images/binhlieu_hero.webp" alt="Mùa cỏ lau Bình Liêu" loading="eager">
+        <img src="images/binhlieu_hero.webp" alt="Sống lưng khủng long Bình Liêu ngập tràn cỏ lau trắng">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">🌾 Thiên Đường Cỏ Lau Biên Cương</span>
-            <h1>Bình Liêu — 'Vạn Lý Trường Thành' & Sống Lưng Khủng Long 1305</h1>
-            <p class="hero-subtitle">Cung đường tuần tra biên giới uốn lượn giữa ngút ngàn sóng hoa cỏ lau trắng muốt, thảo nguyên mây ngàn Cao Ly và những cột mốc thiêng liêng nơi địa đầu Đông Bắc.</p>
+            <span class="hero-tag">Sa Pa Thu Nhỏ Của Quảng Ninh • Thiên Đường Cột Mốc Biên Cương</span>
+            <h1>Bình Liêu — Bản Hùng Ca Cột Mốc Biên Thùy, Thác Bạc & Mùa Cỏ Lau Trắng Muốt</h1>
+            <div class="hero-meta-line">
+                <span>📍 Huyện Bình Liêu, tỉnh Quảng Ninh</span>
+                <span>⭐ <strong class="rating">4.9 / 5.0</strong> (436 đánh giá)</span>
+                <span>🛡️ Đường biên giới 43km • Di sản phi vật thể quốc gia Soóng Cọ</span>
+                <span>🎨 100% Ảnh AI Độc Bản 16:9</span>
+            </div>
         </div>
     </header>
 
-    <!-- ARTICLE LAYOUT -->
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <a href="index.html">Trang Chủ</a> &raquo;
+        <a href="index.html#destinations">Điểm Đến Đông Bắc</a> &raquo;
+        <span>Bình Liêu</span>
+    </div>
+
+    <!-- MAIN LAYOUT -->
     <div class="article-layout">
         <div class="dashboard-layout">
 
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR TOC -->
             <aside class="sidebar">
-                <div class="widget">
-                    <h3 class="widget-title">📌 Thông tin nhanh</h3>
-                    <ul class="quick-facts">
-                        <li><span class="label">Vị trí:</span> <span class="val">Huyện Bình Liêu, Quảng Ninh</span></li>
-                        <li><span class="label">Độ cao:</span> <span class="val">~300 – 1.429m so với mực biển</span></li>
-                        <li><span class="label">Khoảng cách:</span> <span class="val">~270km từ Hà Nội</span></li>
-                        <li><span class="label">Thời gian gợi ý:</span> <span class="val">2 ngày 1 đêm / 3N2Đ</span></li>
-                        <li><span class="label">Mùa đẹp nhất:</span> <span class="val">Tháng 10 – 12 (Cỏ lau & Hoa sở)</span></li>
-                        <li><span class="label">Đặc trưng:</span> <span class="val">Sống lưng 1305, Cỏ lau, Cao Ly, Khe Vằn</span></li>
-                    </ul>
-                </div>
-
-                <div class="widget">
-                    <h3 class="widget-title">🧭 Mục lục bài viết</h3>
-                    <ul class="toc-list">
-                        <li><a href="#tong-quan">1. 'Sapa thu nhỏ' Vùng Đông Bắc</a></li>
-                        <li><a href="#toa-do">2. 8 Tọa độ Thắng cảnh Biểu tượng</a></li>
-                        <li><a href="#di-chuyen">3. Hướng dẫn di chuyển từ Hà Nội (~270km)</a></li>
-                        <li><a href="#gia-ve">4. Bảng giá vé & Dịch vụ tham quan</a></li>
-                        <li><a href="#luu-tru">5. Lưu trú & Ẩm thực Bản địa</a></li>
-                        <li><a href="#thoi-diem">6. Lịch mùa vàng & Mẹo du lịch</a></li>
-                    </ul>
-                </div>
+                <div class="sidebar-title">Mục Lục Cẩm Nang</div>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#tong-quan" class="toc-link">1. Tổng quan điểm đến</a></li>
+                    <li class="toc-item"><a href="#lich-su-dia-ly" class="toc-link">2. Vị trí địa lý & Dấu ấn lịch sử</a></li>
+                    <li class="toc-item"><a href="#huyen-thoai" class="toc-link">3. Huyền thoại & Truyền tích dân gian</a></li>
+                    <li class="toc-item"><a href="#bon-mua" class="toc-link">4. Chuỗi hình ảnh 4 mùa du lịch</a></li>
+                    <li class="toc-item"><a href="#thang-canh" class="toc-link">5. Top 10 Thắng cảnh biểu tượng</a></li>
+                    <li class="toc-item"><a href="#di-chuyen" class="toc-link">6. Cẩm nang di chuyển & Cung đường</a></li>
+                    <li class="toc-item"><a href="#am-thuc" class="toc-link">7. Tinh hoa ẩm thực đặc sản</a></li>
+                    <li class="toc-item"><a href="#gia-ve" class="toc-link">8. Bảng giá vé & Dịch vụ niêm yết</a></li>
+                    <li class="toc-item"><a href="#lich-trinh" class="toc-link">9. Gợi ý lịch trình & Mẹo bản địa</a></li>
+                </ul>
             </aside>
 
-            <!-- MAIN ARTICLE -->
+            <!-- MAIN ARTICLES -->
             <main class="article-main">
 
-                <div class="intro-lead" id="tong-quan">
-                    Nếu bạn nghĩ Quảng Ninh chỉ có vịnh biển Hạ Long hay đảo ngọc Cô Tô, thì <strong>Bình Liêu</strong> sẽ mở ra một định nghĩa hoàn toàn mới về miền đất biên thùy địa đầu Đông Bắc. Nằm cách Hà Nội khoảng 270km, huyện miền núi Bình Liêu sở hữu đường biên giới tiếp giáp Trung Quốc dài hơn 43km uốn lượn trên sống núi hiểm trở. Mỗi độ cuối thu đầu đông (tháng 10 đến tháng 12), cả dải biên cương lại bừng sáng bởi triệu triệu bông cỏ lau trắng muốt phất phơ trong gió lạnh, biến cung đường tuần tra biên giới thành một <em>"Vạn lý trường thành Việt Nam"</em> đầy kiêu hãnh và thơ mộng.
-                </div>
+                <!-- MỤC 1: TỔNG QUAN -->
+                <section id="tong-quan" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">01</span>
+                        <h2 class="section-title">Tổng Quan: Sa Pa Thu Nhỏ Của Vùng Đất Mỏ Quảng Ninh</h2>
+                    </div>
+                    <p>
+                        Nằm cách thành phố Hạ Long hơn 100km về phía Đông Bắc, <strong>Bình Liêu</strong> là huyện miền núi biên giới thanh bình được ví như <em>"Sa Pa thu nhỏ của Quảng Ninh"</em> hay <em>"Vạn lý trường thành phương Bắc của Việt Nam"</em>. Nơi đây sở hữu khí hậu mát mẻ quanh năm, núi non trùng điệp ngút ngàn, đường tuần tra biên giới uốn lượn ngoạn mục và đặc biệt là hệ thống cột mốc chủ quyền thiêng liêng nằm rải rác trên các đỉnh núi cao.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Vào độ cuối thu đầu đông hàng năm (từ tháng 10 đến tháng 12), Bình Liêu lại bước vào mùa đẹp nhất khi cả cung đường Sống lưng khủng long mốc 1305 được phủ trắng xóa bởi bạt ngàn cánh đồng cỏ lau trắng muốt đung đưa trong gió heo may. Bên cạnh cảnh sắc thiên nhiên hùng vĩ, Bình Liêu còn là không gian văn hóa giàu bản sắc với hơn 96% dân số là đồng bào các dân tộc Tày, Dao Thanh Phán, Sán Chỉ — nơi lưu giữ những làn điệu Soóng Cọ tha thiết, nghề dệt thêu thổ cẩm và nghề làm miến dong truyền thống.
+                    </p>
+                    <div class="highlight-box">
+                        <h4>🌾 Điểm Nhấn Độc Đáo Bình Liêu</h4>
+                        <p>Cung đường tuần tra biên giới uốn lượn lưng chừng mây, trải nghiệm chạm tay vào cột mốc chủ quyền biên cương thiêng liêng, chiêm ngưỡng mùa cỏ lau trắng bồng bềnh và ngọn thác Khe Vằn ba tầng tung bọt trắng xóa.</p>
+                    </div>
+                </section>
 
-                <h2><span class="icon">🌿</span> 1. Bình Liêu — 'Sapa Thu Nhỏ' Của Vùng Đất Mỏ</h2>
-                <p>Với độ cao trung bình trên 600m và đỉnh cao nhất lên tới 1.429m (đỉnh Cao Xiêm — "Nóc nhà tỉnh Quảng Ninh"), Bình Liêu sở hữu nền khí hậu ôn đới vùng cao mát mẻ quanh năm, bốn mùa cảnh sắc thay đổi kỳ ảo: mùa xuân rực rỡ hoa trẩu, hoa đào; mùa hè róc rách suối mát thác Khe Vằn; mùa thu vàng ruộm ruộng bậc thang lúa chín; và đặc biệt nhất là mùa đông với thiên đường cỏ lau trắng bạt ngàn cùng mùa hoa sở trắng tinh khôi.</p>
-                <p>Vùng đất này là nơi chung sống gắn bó lâu đời của 5 dân tộc anh em: Tày (chiếm hơn 50%), Dao Thanh Phán, Sán Chỉ, Kinh và Hoa. Đến Bình Liêu, du khách không chỉ được thử thách đôi chân trên những bậc thang sống lưng khủng long cheo leo giữa mây trời, mà còn được đắm mình vào thanh âm réo rắt của điệu hát Soóng Cọ người Sán Chỉ, ngắm nhìn sắc chàm thêu tay rực rỡ của thiếu nữ Dao và thưởng thức bát miến dong đậm đà hương núi rừng.</p>
+                <!-- MỤC 2: VỊ TRÍ ĐỊA LÝ & DẤU ẤN LỊCH SỬ -->
+                <section id="lich-su-dia-ly" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">02</span>
+                        <h2 class="section-title">Vị Trí Địa Lý & Dấu Ấn Lịch Sử Bảo Vệ Biên Thùy</h2>
+                    </div>
+                    <p>
+                        Bình Liêu là huyện biên giới nằm ở phía Đông Bắc tỉnh Quảng Ninh, có đường biên giới trên đất liền dài hơn 43km tiếp giáp với huyện Phòng Thành (thành phố Phòng Thành Cảng, tỉnh Quảng Tây, Trung Quốc). Địa hình huyện bị chia cắt mạnh bởi các dãy núi cao thuộc cánh cung Ngân Sơn - Yên Tử, đỉnh cao nhất là núi Cao Xiêm đạt 1.429m mệnh danh là nóc nhà của Bình Liêu.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Trải qua hàng trăm năm lịch sử, nhân dân các dân tộc Bình Liêu luôn giữ vững vị trí phên dậu kiên trung của Tổ quốc. Đình Lục Nà xây dựng từ thời Hậu Lê là nơi thờ Thành hoàng làng Hoàng Cần — vị danh tướng có công đánh đuổi giặc ngoại xâm phương Bắc bảo vệ biên thùy. Ngày nay, đường tuần tra biên giới được bê tông hóa khang trang, không chỉ giữ vững quốc phòng an ninh mà còn mở ra cung đường phượt biên cương ngoạn mục bậc nhất cả nước.
+                    </p>
+                    <div class="legal-quote">
+                        <strong>📜 Căn cứ Văn bản Pháp quy Nhà nước:</strong><br>
+                        • <strong>Quyết định số 80/QĐ-TTg ngày 11/02/2023 của Thủ tướng Chính phủ:</strong> Phê duyệt Quy hoạch tỉnh Quảng Ninh thời kỳ 2021 - 2030, tầm nhìn đến 2050 định hướng phát triển du lịch sinh thái, khám phá biên cương Bình Liêu bền vững.<br>
+                        • <strong>Nghị định số 34/2014/NĐ-CP ngày 29/04/2014 của Chính phủ:</strong> Về Quy chế khu vực biên giới đất liền nước CHXHCN Việt Nam, hướng dẫn an ninh trật tự và thủ tục cư trú vành đai biên giới.<br>
+                        • <strong>Quyết định số 1357/QĐ-BVHTTDL ngày 11/04/2018 của Bộ Văn hóa, Thể thao và Du lịch:</strong> Công nhận <em>Lễ hội Soóng Cọ</em> của người Sán Chỉ tại huyện Bình Liêu là <strong>Di sản văn hóa phi vật thể quốc gia</strong>.<br>
+                        • <strong>Quyết định số 4870/QĐ-UBND của UBND tỉnh Quảng Ninh:</strong> Xếp hạng Di tích lịch sử văn hóa cấp tỉnh <em>Đình Lục Nà</em>.<br>
+                        • Cổng TTĐT Chính phủ: <code>chinhphu.vn</code> • Cổng TTĐT tỉnh Quảng Ninh: <code>quangninh.gov.vn</code> • Cổng TTĐT huyện Bình Liêu: <code>binhlieu.quangninh.gov.vn</code>.
+                    </div>
+                </section>
 
-                <!-- 8 CHECK-IN SPOTS -->
-                <h2 id="toa-do"><span class="icon">📸</span> 2. 8 Tọa độ Thắng cảnh Biểu tượng & Cột Mốc Biên Cương</h2>
-                <p><em>(Nhấp vào từng hình ảnh để xem chi tiết ảnh chất lượng cao và câu chuyện truyền tích lịch sử chính thống)</em></p>
+                <!-- MỤC 3: HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">03</span>
+                        <h2 class="section-title">Huyền Thoại & Truyền Tích Dân Gian Miền Biên Viễn</h2>
+                    </div>
+                    <p>
+                        Gắn liền với địa hình núi cao rừng thẳm, Bình Liêu ấp ủ những huyền thoại thiêng liêng thể hiện tinh thần kiên cường mở đất giữ cõi của các dân tộc:
+                    </p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-sec); line-height: 1.8;">
+                        <li>
+                            <strong>Huyền tích Bức Tường Đá Cổ Núi Cao Xiêm:</strong> Trên đỉnh Cao Xiêm cao 1.429m có một bức tường đá tự nhiên xếp tầng kỳ lạ dài hàng cây số. Dân gian truyền tụng đó là bức thành lũy do Long Vương dựng nên để ranh giới ngăn chặn quân xâm lăng và bảo vệ nguồn nước trong mát của ngọn thác Khe Vằn nuôi sống muôn loài.
+                        </li>
+                        <li>
+                            <strong>Truyền thuyết Lễ Hội Hát Soóng Cọ Người Sán Chỉ:</strong> Câu chuyện cảm động về đôi trai gái yêu nhau tha thiết nhưng vì tập tục môn đăng hộ đối không lấy được nhau. Họ hẹn nhau vào ngày 16 tháng 3 âm lịch hàng năm lên đỉnh núi hát đối đáp giãi bày nỗi niềm. Từ đó, người Sán Chỉ cứ đến ngày này lại mở hội hát Soóng Cọ (nghĩa là hát xướng đối đáp tìm bạn) suốt đêm thâu bên bờ suối.
+                        </li>
+                        <li>
+                            <strong>Thần tích Thành Hoàng Hoàng Cần Đình Lục Nà:</strong> Vị tướng quân người Tày dũng mãnh chỉ huy nghĩa binh địa phương bẻ gãy các đợt tiến công của giặc phương Bắc, gìn giữ bờ cõi non sông, được nhân dân lập đình thờ phụng ngàn năm khói hương.
+                        </li>
+                    </ul>
+                </section>
 
-                <div class="checkin-grid">
+                <!-- MỤC 4: CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">04</span>
+                        <h2 class="section-title">Chuỗi Hình Ảnh 4 Mùa Du Lịch Bình Liêu Tuyệt Mỹ</h2>
+                    </div>
+                    <p>
+                        Khí hậu miền núi Bình Liêu mang nét đặc trưng của vùng cao Đông Bắc, với 4 mùa nối tiếp nhau tạo nên những cảnh tượng ngoạn mục hiếm nơi nào có được. Dưới đây là bộ ảnh 4 mùa độc bản tái hiện vẻ đẹp tinh khôi nơi phên dậu Tổ quốc:
+                    </p>
 
-                    <!-- 1. Sống lưng khủng long & Mốc 1305 -->
-                    <div class="dest-card double-col" data-legend="Nằm trên ranh giới tự nhiên giữa xã Hoành Mô và xã Đồng Tâm ở độ cao hơn 1.000m so với mực biển, Cột mốc biên giới 1305 là cột mốc cao nhất và có địa hình hiểm trở nhất của toàn tỉnh Quảng Ninh. Con đường dẫn lên mốc chạy men theo đỉnh sống núi hẹp tựa sống lưng con khủng long khổng lồ, hai bên là vực sâu hun hút. Trước đây là đường mòn đất trơn trượt, từ năm 2017 huyện Bình Liêu đã đầu tư xây dựng con đường bậc thang bê tông kiên cố dài gần 2km với hơn 2.000 bậc đá có lan can bảo vệ. Cứ mỗi độ tháng 10 - 12, hai bên sống núi ngập tràn biển hoa cỏ lau trắng muốt bay dập dờn trong gió heo may, tạo nên bức tranh biên cương tráng lệ được mệnh danh là 'Vạn lý trường thành Việt Nam'.">
-                        <div class="dest-card-img">
-                            <img src="images/binhlieu_song_lung_khung_long_1305.webp" alt="Sống lưng khủng long mốc 1305 Bình Liêu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Biểu tượng Vạn Lý Trường Thành</span>
-                                <span class="tag">Hoành Mô</span>
+                    <div class="seasons-grid">
+                        <!-- MÙA XUÂN -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/binhlieu_mua_xuan_hoa_trau_hoa_so.webp', 'Mùa Xuân Bình Liêu — Hoa Trẩu & Hoa Sở Trắng Muốt', 'Mùa xuân biên cương ngập tràn sắc trắng tinh khiết của hoa trẩu và hoa sở bên những cung đường tuần tra biên giới mờ ảo trong làn sương sớm.')">
+                                <img src="images/binhlieu_mua_xuan_hoa_trau_hoa_so.webp" alt="Mùa xuân Bình Liêu hoa trẩu hoa sở" loading="lazy">
+                                <span class="season-badge">Tháng 1 - Tháng 3 • Mùa Xuân</span>
                             </div>
-                            <h3 class="dest-card-title">Sống Lưng Khủng Long & Cột Mốc 1305</h3>
-                            <p class="dest-card-desc">Con đường bậc thang hơn 2.000 bậc uốn lượn trên đỉnh sống núi giữa bạt ngàn biển cỏ lau trắng muốt dập dờn trong gió biên cương.</p>
-                        </div>
-                    </div>
-
-                    <!-- 2. Cột mốc 1300 -->
-                    <div class="dest-card single-col" data-legend="Tọa lạc trên đỉnh đồi cao thoáng đãng tại xã Vô Ngại, Cột mốc biên giới 1300 là một trong những cột mốc thơ mộng và dễ tiếp cận nhất tại Bình Liêu. Từ điểm dừng chân trên đường tuần tra biên giới, du khách chỉ cần leo khoảng 15 - 20 phút qua những bậc thang thoai thoải là lên tới chân mốc. Đồi mốc 1300 được mệnh danh là 'tọa độ hoàng hôn đẹp nhất Bình Liêu', nơi ánh nắng chiều tà nhuộm vàng rực rỡ những vạt cỏ lau trắng muốt và trải dài tầm mắt ngắm nhìn núi rừng biên giới đại ngàn.">
-                        <div class="dest-card-img">
-                            <img src="images/binhlieu_moc_1300_co_lau.webp" alt="Cột mốc biên giới 1300 Bình Liêu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">🌅 Hoàng hôn biên cương</span>
-                                <span class="tag">Vô Ngại</span>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Xuân: Sắc Trắng Hoa Trẩu, Hoa Sở & Lễ Hội Đình Lục Nà</h3>
+                                <p class="season-desc">Tiết trời mát mẻ đón sắc trắng tinh khôi của hoa trẩu bừng nở khắp triền đồi. Người dân nô nức trẩy hội đình Lục Nà và ngày hội Soóng Cọ hát đối giao duyên rộn rã.</p>
                             </div>
-                            <h3 class="dest-card-title">Cột Mốc Biên Giới 1300</h3>
-                            <p class="dest-card-desc">Cột mốc sừng sững trên đỉnh đồi lộng gió ngập tràn thảm hoa cỏ lau trắng tinh khôi soi bóng ráng chiều hoàng hôn rực rỡ.</p>
                         </div>
-                    </div>
 
-                    <!-- 3. Cột mốc 1302 -->
-                    <div class="dest-card single-col" data-legend="Nằm cách mốc 1300 chỉ khoảng 1km trên cùng cung đường tuần tra biên giới tuyệt đẹp, Cột mốc 1302 nổi tiếng với thảm cỏ lau dày đặc bao bọc bốn bề sườn núi. Những bậc thang đá dẫn lối uốn lượn mềm mại giữa rừng lau trắng xóa tựa như những nấc thang dẫn lên thiên đường. Đứng tại mốc 1302, du khách có thể phóng tầm mắt bao trọn thung lũng Bản Chuồng và những nếp nhà ngói âm dương mộc mạc phía xa.">
-                        <div class="dest-card-img">
-                            <img src="images/binhlieu_moc_1302_thao_nguyen.webp" alt="Cột mốc biên giới 1302 Bình Liêu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Nấc thang thiên đường</span>
-                                <span class="tag">Đồi cỏ lau</span>
+                        <!-- MÙA HẠ -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/binhlieu_mua_ha_thac_khe_van_nuoc_ngoc.webp', 'Mùa Hạ Bình Liêu — Thác Khe Vằn Nước Xanh Ngọc Bích', 'Dòng thác ba tầng Khe Vằn tuôn trào dữ dội giữa rừng già nguyên sinh đổ vào hồ nước trong xanh màu ngọc bích mát lạnh.')">
+                                <img src="images/binhlieu_mua_ha_thac_khe_van_nuoc_ngoc.webp" alt="Mùa hạ Bình Liêu thác Khe Vằn" loading="lazy">
                             </div>
-                            <h3 class="dest-card-title">Cột Mốc Biên Giới 1302</h3>
-                            <p class="dest-card-desc">Bậc thang đá uốn lượn giữa những vạt hoa lau trắng xóa bồng bềnh, điểm check-in trong trẻo tuyệt mỹ của giới trẻ.</p>
-                        </div>
-                    </div>
-
-                    <!-- 4. Cột mốc 1327 -->
-                    <div class="dest-card double-col" data-legend="Tọa lạc trên đỉnh núi Thanh Long thuộc xã Đồng Văn, Cột mốc 1327 được ví là 'chốt tiền tiêu' kiêu hãnh của Đồn biên phòng Cửa khẩu Hoành Mô. Để lên tới mốc 1327, du khách đi qua cung đường đèo quanh co rợp bóng thông mã vĩ và ruộng bậc thang người Dao. Tại đỉnh mốc có mỏm đá tự nhiên mang hình dáng đầu rồng uy nghiêm trông coi biên ải. Từ vị trí này có thể nhìn bao quát toàn bộ thung lũng xã Đồng Văn và các bản làng người Dao Thanh Phán thanh bình.">
-                        <div class="dest-card-img">
-                            <img src="images/binhlieu_moc_1327_thanh_long.webp" alt="Cột mốc 1327 đỉnh Thanh Long Bình Liêu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">⛰️ Đỉnh Thanh Long</span>
-                                <span class="tag">Đồng Văn</span>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Hạ: Thác Khe Vằn Ba Tầng & Thiên Đường Giải Nhiệt</h3>
+                                <p class="season-desc">Khi cái nóng hè gay gắt ở đồng bằng, thác Khe Vằn đổ nước ào ạt mát lạnh giữa rừng nguyên sinh. Điểm cắm trại, bơi lội và trốn nóng tuyệt vời bên dòng nước ngọc bích.</p>
                             </div>
-                            <h3 class="dest-card-title">Cột Mốc Biên Giới 1327 (Đỉnh Thanh Long)</h3>
-                            <p class="dest-card-desc">Cột mốc thiêng liêng trên đỉnh núi Thanh Long sừng sững trông coi dải biên ải Đông Bắc, nơi giao hòa giữa mây ngàn và rừng thông reo.</p>
                         </div>
-                    </div>
 
-                    <!-- 5. Thác Khe Vằn -->
-                    <div class="dest-card single-col" data-legend="Tọa lạc tại xã Húc Động, Thác Khe Vằn bắt nguồn từ dãy núi Thông Châu ở độ cao 1.070m, là thác nước tự nhiên hoang sơ và đẹp nhất tỉnh Quảng Ninh (được UBND tỉnh công nhận là di tích danh thắng cấp tỉnh theo Quyết định số 373/QĐ-UBND ngày 29/01/2011). Thác cao gần 100m chia làm 3 tầng nước kỳ vĩ: tầng trên cùng đổ từ vách đá cao xuống hồ nước trong vắt, tầng thứ hai rẽ nhánh luồn lách qua các khối đá khổng lồ, tầng thứ ba tung bọt trắng xóa giữa rừng nguyên sinh xanh thẳm. Nơi đây gắn liền với không gian văn hóa Hát Soóng Cọ của đồng bào dân tộc Sán Chỉ — Di sản văn hóa phi vật thể Quốc gia được Bộ VHTTDL ghi danh theo Quyết định số 3421/QĐ-BVHTTDL ngày 10/11/2023.">
-                        <div class="dest-card-img">
-                            <img src="images/binhlieu_thac_khe_van.webp" alt="Thác Khe Vằn Húc Động Bình Liêu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Đệ nhất danh thác</span>
-                                <span class="tag">Húc Động</span>
+                        <!-- MÙA THU -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/binhlieu_mua_thu_ruong_bac_thang_vang.webp', 'Mùa Thu Bình Liêu — Sóng Vàng Ruộng Bậc Thang Lục Hồn', 'Những thửa ruộng bậc thang Lục Hồn và Húc Động mùa lúa chín vàng óng ả uốn lượn dưới chân núi Cao Xiêm hùng vĩ.')">
+                                <img src="images/binhlieu_mua_thu_ruong_bac_thang_vang.webp" alt="Mùa thu Bình Liêu ruộng bậc thang lúa chín" loading="lazy">
                             </div>
-                            <h3 class="dest-card-title">Thác Khe Vằn (3 Tầng Nước)</h3>
-                            <p class="dest-card-desc">Quần thể 3 tầng thác đổ trắng xóa qua những thềm đá hoa cương khổng lồ giữa đại ngàn nguyên sinh hùng vĩ.</p>
-                        </div>
-                    </div>
-
-                    <!-- 6. Đỉnh Cao Ly -->
-                    <div class="dest-card single-col" data-legend="Trải rộng trên độ cao hơn 1.000m so với mực biển tại xã Húc Động, Cao Ly là cao nguyên núi đồi lộng gió với thảm cỏ tự nhiên bạt ngàn hơn 40km², được ví von là 'Đà Lạt thu nhỏ của Bình Liêu'. Khí hậu nơi đây mát lạnh quanh năm, biên độ nhiệt ngày đêm chênh lệch lớn tạo nên hiện tượng biển mây bồng bềnh cuồn cuộn dưới thung lũng vào sáng sớm mùa thu - đông. Đây là tọa độ cắm trại qua đêm, đốt lửa trại ngắm dải ngân hà và săn bình minh biển mây được cộng đồng phượt thủ yêu thích nhất.">
-                        <div class="dest-card-img">
-                            <img src="images/binhlieu_dinh_cao_ly_san_may.webp" alt="Đỉnh Cao Ly săn mây Bình Liêu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Thiên đường săn mây</span>
-                                <span class="tag">Cao nguyên gió</span>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu: Sóng Vàng Ruộng Bậc Thang Lục Hồn & Húc Động</h3>
+                                <p class="season-desc">Tháng 9 và 10, Bình Liêu rực rỡ trong sắc vàng óng ả của những sóng lúa chín bậc thang. Phụ nữ Dao Thanh Phán trong trang phục khăn đỏ rực rỡ gặt lúa rộn tiếng cười vui.</p>
                             </div>
-                            <h3 class="dest-card-title">Đỉnh Cao Ly (Thiên Đường Săn Mây)</h3>
-                            <p class="dest-card-desc">Thảo nguyên cỏ xanh bạt ngàn trên độ cao 1.000m, nơi đón bình minh biển mây trắng bồng bềnh và ngắm bầu trời sao đêm kỳ ảo.</p>
                         </div>
-                    </div>
 
-                    <!-- 7. Đỉnh Cao Xiêm -->
-                    <div class="dest-card single-col" data-legend="Với độ cao 1.429m so với mực biển, đỉnh Cao Xiêm (xã Lục Hồn) được mệnh danh là 'Nóc nhà của tỉnh Quảng Ninh'. Đỉnh núi nổi tiếng với kỳ quan bức tường thành đá xếp tay tự nhiên dài hàng cây số do người dân bản địa (Sán Chỉ, Dao) kỳ công xếp bằng những viên đá núi từ nhiều thế hệ trước để phân chia ranh giới bãi chăn thả gia súc. Cung trekking chinh phục đỉnh Cao Xiêm vượt qua rừng thông, đồi cỏ hoa sim tím và sườn đá dốc đứng là thử thách đầy kiêu hãnh cho những người yêu leo núi khám phá.">
-                        <div class="dest-card-img">
-                            <img src="images/binhlieu_dinh_cao_xiem_tuong_da.webp" alt="Đỉnh Cao Xiêm nóc nhà Quảng Ninh Bình Liêu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">1.429m Nóc nhà Quảng Ninh</span>
-                                <span class="tag">Lục Hồn</span>
+                        <!-- MÙA ĐÔNG -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/binhlieu_mua_dong_thien_duong_co_lau_trang.webp', 'Mùa Đông Bình Liêu — Thiên Đường Cỏ Lau Trắng Muốt Cột Mốc 1305', 'Hàng triệu bông cỏ lau trắng muốt nở rộ bao bọc con đường bậc thang sống lưng khủng long dẫn lên cột mốc 1305 trong ánh hoàng hôn vàng rực rỡ.')">
+                                <img src="images/binhlieu_mua_dong_thien_duong_co_lau_trang.webp" alt="Mùa đông Bình Liêu cỏ lau trắng mốc 1305" loading="lazy">
+                                <span class="season-badge">Tháng 10 - Tháng 12 • Mùa Đông</span>
                             </div>
-                            <h3 class="dest-card-title">Đỉnh Cao Xiêm (Tường Thành Đá Cổ)</h3>
-                            <p class="dest-card-desc">Bức tường thành đá bí ẩn xếp tay dài hàng cây số trên đỉnh núi 1.429m quanh năm mây mù che phủ kiêu hùng.</p>
-                        </div>
-                    </div>
-
-                    <!-- 8. Bản Sông Moóc & Rừng Hoa Sở -->
-                    <div class="dest-card single-col" data-legend="Nằm cheo leo trên sườn núi đá xã Đồng Văn ở độ cao hơn 700m, bản Sông Moóc là nơi định cư thuần chất của đồng bào người Dao Thanh Phán với những nếp nhà gỗ ngói âm dương bên ruộng bậc thang uốn lượn. Nơi đây là trung tâm tổ chức 'Hội hoa Sở Bình Liêu' thường niên vào mỗi dịp tháng 12 hàng năm. Khi gió mùa đông bắc tràn về, cả cánh rừng bừng sáng bởi hàng ngàn gốc sở đồng loạt bung nở hoa trắng tinh khôi nhụy vàng rực rỡ, hạt sở được thu hoạch để ép thành dầu sở quý giá — sản vật OCOP đặc trưng của vùng cao Bình Liêu.">
-                        <div class="dest-card-img">
-                            <img src="images/binhlieu_ban_song_mooc_hoa_so.webp" alt="Bản Sông Moóc hoa sở Bình Liêu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Mùa hội hoa sở</span>
-                                <span class="tag">Bản Dao Thanh Phán</span>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Đông: Thiên Đường Cỏ Lau Trắng & Lễ Hội Hoa Sở</h3>
+                                <p class="season-desc">Mùa cao điểm du lịch đẹp nhất năm: bạt ngàn cỏ lau trắng nở rộ khắp Sống lưng khủng long mốc 1305 tạo nên khung cảnh lãng mạn vô tiền khoáng hậu giữa mây ngàn gió núi.</p>
                             </div>
-                            <h3 class="dest-card-title">Bản Sông Moóc & Mùa Hoa Sở</h3>
-                            <p class="dest-card-desc">Bản người Dao Thanh Phán mộc mạc bên ruộng bậc thang ngập tràn sắc trắng tinh khôi của rừng hoa sở nở rộ tháng 12.</p>
                         </div>
                     </div>
+                </section>
 
-                </div>
-
-                <!-- DI CHUYỂN & KẾT NỐI -->
-                <h2 id="di-chuyen"><span class="icon">🚗</span> 3. Hướng Dẫn Di Chuyển & Cung Đường Từ Hà Nội (~270km)</h2>
-                
-                <h3>1. Lộ trình từ Hà Nội về Bình Liêu (~270km, 3,5 – 4 tiếng)</h3>
-                <ul>
-                    <li><strong>Bằng ô tô cá nhân / Xe limousine chạy cao tốc:</strong> Tuyến đường siêu tốc và êm ái nhất hiện nay: Xuất phát từ Hà Nội → Cao tốc Hà Nội - Hải Phòng (CT04) → Cầu Bạch Đằng → Cao tốc Hạ Long - Vân Đồn - Tiên Yên (CT06) → Đến nút giao Tiên Yên rẽ phải vào Quốc lộ 18C chạy thêm khoảng 30km đường trải nhựa đẹp là tới thẳng thị trấn Bình Liêu. Toàn tuyến hơn 230km là cao tốc tiêu chuẩn.</li>
-                    <li><strong>Bằng xe khách giường nằm:</strong> Đón xe từ Bến xe Mỹ Đình, Giáp Bát hoặc Gia Lâm chạy thẳng Bình Liêu (các nhà xe Hoàng Phú, Ka Long, Kiên Đức...) khởi hành hàng ngày, giá vé khoảng 200.000 – 280.000 VNĐ/vé.</li>
-                    <li><strong>Bằng xe máy cho dân phượt:</strong> Tuyến đường theo Quốc lộ 18 qua Bắc Ninh, Chí Linh, Uông Bí, Hạ Long, Cẩm Phả, Tiên Yên rồi rẽ Quốc lộ 18C lên Bình Liêu. Cung đường tuần tra biên giới tại Bình Liêu trải nhựa đẹp nhưng có nhiều đoạn đèo dốc quanh co đòi hỏi tay lái vững vàng.</li>
-                </ul>
-
-                <h3>2. Phương tiện dạo quanh các cột mốc Bình Liêu</h3>
-                <ul>
-                    <li><strong>Thuê xe máy tại thị trấn (150.000 – 200.000 VNĐ/ngày):</strong> Đây là phương tiện tối ưu nhất để chinh phục cung đường tuần tra biên giới uốn lượn nối các cột mốc 1300, 1302, 1305 và 1327.</li>
-                    <li><strong>Thuê xe bán tải / Taxi trọn gói:</strong> Dành cho nhóm bạn hoặc gia đình, xe ô tô có thể đi đến tận chân dốc các mốc 1300, 1302 và chân dốc Sống lưng khủng long 1305.</li>
-                </ul>
-
-                <div class="tip-box">
-                    <p>💡 <strong>Gợi ý lịch trình 2 ngày 1 đêm săn cỏ lau & sống lưng khủng long hoàn hảo:</strong><br>
-                    • <strong>Ngày 1:</strong> Hà Nội (6h00) → Cao tốc về Bình Liêu (10h00) → Ăn trưa miến dong gà đồi → Chiều check-in Thác Khe Vằn mát lạnh → Lên đồi mốc 1300 và 1302 ngắm biển cỏ lau đón hoàng hôn rực rỡ → Tối ngủ homestay thị trấn hoặc cắm trại đỉnh Cao Ly.<br>
-                    • <strong>Ngày 2:</strong> Sáng sớm chinh phục Sống lưng khủng long & Cột mốc 1305 (khoảng 2 – 3 tiếng đi và về) ngắm bạt ngàn cỏ lau trắng trong nắng sớm → Trưa ghé bản Sông Moóc ngắm hoa sở và mua đặc sản miến dong → Chiều thong thả theo cao tốc về lại Hà Nội (19h00).</p>
-                </div>
-
-                <!-- BẢNG GIÁ VÉ THAM QUAN -->
-                <h2 id="gia-ve"><span class="icon">🎫</span> 4. Bảng Giá Vé & Dịch Vụ Tham Quan Bình Liêu</h2>
-                <p>Mức giá vé niêm yết chính thức tại các danh thắng và chi phí trải nghiệm bản địa (cập nhật mới nhất):</p>
-
-                <div class="table-responsive">
-                    <table class="info-table">
-                        <thead>
-                            <tr>
-                                <th>Điểm tham quan / Dịch vụ</th>
-                                <th>Chi phí tham khảo</th>
-                                <th>Ghi chú & Trải nghiệm</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sống lưng khủng long & Cột mốc 1305</td>
-                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
-                                <td>Thắng cảnh tự nhiên (Gửi xe máy tại chân dốc: 10.000 – 20.000 VNĐ; thuê xe ôm lên dốc nếu không muốn đi bộ đoạn đầu: ~50k)</td>
-                            </tr>
-                            <tr>
-                                <td>Cột mốc biên giới 1300, 1302, 1327</td>
-                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
-                                <td>Tự do tham quan chụp ảnh đồi cỏ lau biên giới (chú ý giữ gìn vệ sinh và an ninh biên phòng)</td>
-                            </tr>
-                            <tr>
-                                <td>Danh lam thắng cảnh Thác Khe Vằn</td>
-                                <td><span class="price-tag">10.000 – 20.000 VNĐ</span></td>
-                                <td>Vé vào cửa tham quan sinh thái: 10.000 VNĐ/người (xe điện trung chuyển: 20.000 VNĐ/người nếu có nhu cầu; gửi xe: 5.000 VNĐ)</td>
-                            </tr>
-                            <tr>
-                                <td>Đỉnh Cao Ly (Săn mây & Cắm trại)</td>
-                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
-                                <td>Khu vực đồi cỏ tự nhiên tự do cắm trại (lưu ý dọn sạch rác và cẩn trọng lửa trại)</td>
-                            </tr>
-                            <tr>
-                                <td>Đỉnh Cao Xiêm (Tường thành đá 1.429m)</td>
-                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
-                                <td>Tự do trekking khám phá (nên có người bản địa dẫn đường nếu đi nhóm đông)</td>
-                            </tr>
-                            <tr>
-                                <td>Bản Sông Moóc & Vườn hoa Sở</td>
-                                <td><span class="price-tag" style="color: #10b981;">Miễn phí vào cổng</span></td>
-                                <td>Tự do dạo bản người Dao, ngắm hoa sở nở rộ vào dịp tháng 12 hàng năm</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- LƯU TRÚ & ẨM THỰC -->
-                <h2 id="luu-tru"><span class="icon">🍲</span> 5. Lưu Trú & Tinh Hoa Ẩm Thực Vùng Cao Bình Liêu</h2>
-                
-                <h3>1. Gợi ý điểm lưu trú tại Bình Liêu</h3>
-                <ul>
-                    <li><strong>Homestay nhà sàn bản địa:</strong> Sông Moóc House, A Dào Homestay, Bình Liêu Horizon... Không gian yên tĩnh giữa núi rừng, chủ nhà người Dao, Tày thân thiện, giá từ 250.000 – 500.000 VNĐ/phòng.</li>
-                    <li><strong>Khách sạn tại trung tâm thị trấn:</strong> Khách sạn Bình Sơn, Khách sạn Anh Dũng... tiện nghi đầy đủ, thuận tiện ăn uống buổi tối tại chợ phiên thị trấn.</li>
-                    <li><strong>Cắm trại lều trại trên đỉnh Cao Ly:</strong> Trải nghiệm ngủ lều đón gió lạnh vùng cao, ngắm biển mây sớm mai và ngắm dải ngân hà tuyệt đẹp.</li>
-                </ul>
-
-                <h3>2. Tinh hoa ẩm thực vùng cao Bình Liêu</h3>
-                <div style="margin: 1.5rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/binhlieu_am_thuc_mien_dong_ga_doi.webp" alt="Ẩm thực Bình Liêu miến dong gà đồi" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 420px;" loading="lazy">
-                    <div style="padding: 0.75rem 1.25rem; background: var(--bg-card); font-size: 0.85rem; color: var(--text-sec); border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-                        <span>🍲 Mâm cỗ đặc sản Bình Liêu: Miến dong trứ danh, gà đồi luộc vàng giòn, cá suối nướng và xôi ngũ sắc nếp nương</span>
-                        <span style="font-size: 0.8rem; color: var(--accent);">🎨 Ảnh AI GO FAR</span>
+                <!-- MỤC 5: TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">05</span>
+                        <h2 class="section-title">Top 10 Thắng Cảnh Biểu Tượng Nhất Định Phải Đến</h2>
                     </div>
-                </div>
-                <div class="food-list">
-                    <div class="food-item">
-                        <span class="name">🍜 Miến dong Bình Liêu trứ danh</span>
-                        Sản phẩm đạt chuẩn OCOP 4 sao và nâng tầm OCOP 5 sao cấp quốc gia làm 100% từ củ dong riềng đỏ bản địa (trồng tại Húc Động, Đồng Tâm), sợi miến hanh nâu tự nhiên, dai giòn sần sật, nấu canh gà đồi hay xào lòng mề thơm nức mũi.
-                    </div>
-                    <div class="food-item">
-                        <span class="name">🍗 Gà đồi Tiên Yên / Bình Liêu</span>
-                        Đàn gà thả tự do trên các triền dốc đá, thịt săn chắc ngọt đậm, luộc chín da vàng óng giòn rụm chấm muối tiêu chanh ớt gừng cay nồng.
-                    </div>
-                    <div class="food-item">
-                        <span class="name">🐟 Cá suối nướng than hoa</span>
-                        Những con cá suối tươi rói bắt từ khe đá thác Khe Vằn kẹp thanh tre nướng trên than hồng, thịt thơm ngọt bùi ăn kèm lá lốt và xôi nếp nương dẻo quánh.
-                    </div>
-                    <div class="food-item">
-                        <span class="name">🌿 Bánh ngải cứu & Xôi ngũ sắc</span>
-                        Món bánh truyền thống của người Tày làm từ bột nếp thơm giã nhuyễn với lá ngải rừng ngọt bùi thanh mát, cùng đĩa xôi ngũ sắc nhuộm từ lá rừng tự nhiên rực rỡ sắc màu.
-                    </div>
-                </div>
+                    <p>
+                        Bình Liêu sở hữu quần thể thắng cảnh biên cương độc nhất vô nhị, từ những bậc thang sống lưng khủng long ngút ngàn đến các ngọn thác ba tầng kỳ vĩ:
+                    </p>
 
-                <!-- THỜI ĐIỂM & LƯU Ý -->
-                <h2 id="thoi-diem"><span class="icon">🗓️</span> 6. Lịch Mùa Vàng & Mẹo Du Lịch Bản Địa</h2>
-                
-                <h3>1. Lịch các mùa đẹp nhất trong năm tại Bình Liêu</h3>
-                <ul>
-                    <li><strong>Tháng 10 – Tháng 11 (Mùa Cỏ Lau Nở Trắng Rực Rỡ Nhất):</strong> Mùa du lịch đỉnh cao nhất năm. Cả dải biên cương biến thành biển hoa cỏ lau trắng muốt bồng bềnh trong gió lạnh, tiết trời thu đông se lạnh nắng vàng tuyệt mỹ.</li>
-                    <li><strong>Tháng 12 (Hội Hoa Sở & Mùa Săn Mây Cao Ly):</strong> Hoa sở trắng tinh nhụy vàng bung nở ngút ngàn các cánh rừng; nhiệt độ vùng cao xuống thấp là thời điểm săn biển mây cuồn cuộn trên đỉnh Cao Ly.</li>
-                    <li><strong>Tháng 3 – Tháng 4 (Mùa Hoa Trẩu & Lễ Hội Soóng Cọ):</strong> Rừng hoa trẩu trắng muốt rơi đầy đường tuần tra, mùa hội hát giao duyên Soóng Cọ của người Sán Chỉ.</li>
-                    <li><strong>Tháng 7 – Tháng 9 (Mùa Ruộng Bậc Thang Lúa Chín):</strong> Những triền ruộng bậc thang Sông Moóc, Khe O, Cao Thắng vàng óng ả uốn lượn dưới chân núi.</li>
-                </ul>
+                    <div class="landmarks-grid">
+                        <!-- 1. SỐNG LƯNG KHỦNG LONG 1305 -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_song_lung_khung_long_1305.webp', 'Sống Lưng Khủng Long & Cột Mốc 1305', 'Cung đường bậc thang bê tông dài gần 2km uốn lượn ngoạn mục trên sống núi hẹp dẫn lên cột mốc biên giới 1305 cao nhất Quảng Ninh.')">
+                                <img src="images/binhlieu_song_lung_khung_long_1305.webp" alt="Sống lưng khủng long mốc 1305" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">1. Sống Lưng Khủng Long & Cột Mốc 1305</h3>
+                                <p class="dest-desc">Biểu tượng du lịch số 1 Bình Liêu với cung đường bậc thang bê tông kiên cố men theo sống núi hiểm trở. Chinh phục hơn 2.000 bậc thang giữa bạt ngàn cỏ lau để chạm tay vào cột mốc 1305 thiêng liêng ở độ cao gần 1.000m.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Hoành Mô, Bình Liêu</span>
+                                    <span>🛡️ Cột mốc biên cương thiêng liêng</span>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="warning-box">
-                    <p>⚠️ <strong>Lưu ý quan trọng khi chinh phục biên cương Bình Liêu:</strong><br>
-                    • <strong>Quy định khu vực biên giới:</strong> Các cột mốc 1300, 1302, 1305, 1327 nằm trên đường biên giới quốc gia, du khách luôn mang theo giấy tờ tùy thân (CCCD / Hộ chiếu) để xuất trình khi lực lượng Bộ đội Biên phòng kiểm tra; tuyệt đối không vượt qua đường biên giới hay có hành vi xâm phạm mốc quốc giới.<br>
-                    • <strong>Chuẩn bị trang phục leo sống lưng khủng long:</strong> Cung đường mốc 1305 dốc và dài hơn 2.000 bậc, cần chuẩn bị giày thể thao bám dính tốt, gậy leo núi, mũ che nắng và nước uống đầy đủ.<br>
-                    • <strong>Giữ gìn vệ sinh đồi cỏ lau:</strong> Không bẻ cành hoa sở, không vứt rác bừa bãi trên đường tuần tra biên giới và các bãi cắm trại đỉnh Cao Ly.</p>
-                </div>
+                        <!-- 2. CỘT MỐC 1300 -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1300_co_lau.webp', 'Cột Mốc Biên Giới 1300 Rợp Bóng Cỏ Lau', 'Cột mốc chủ quyền nằm trên đỉnh đồi thoai thoải bao bọc bởi đồi cỏ lau trắng muốt tuyệt đẹp bên đường tuần tra.')">
+                                <img src="images/binhlieu_moc_1300_co_lau.webp" alt="Cột mốc 1300 Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">2. Cột Mốc Biên Giới 1300 (Đồi Cỏ Lau)</h3>
+                                <p class="dest-desc">Nằm cách đường tuần tra biên giới chỉ khoảng 100 bậc tam cấp dễ đi. Cột mốc tọa lạc trên đỉnh đồi thoáng đãng với thảm cỏ lau trắng muốt vây quanh, điểm chụp ảnh lưu niệm chủ quyền không thể bỏ lỡ.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Tuyến đường tuần tra biên giới</span>
+                                    <span>🌾 Điểm check-in cỏ lau thơ mộng</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. CỘT MỐC 1302 -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1302_thao_nguyen.webp', 'Cột Mốc Biên Giới 1302 Thảo Nguyên Xanh', 'Cột mốc nằm giữa thảo nguyên xanh ngát uốn lượn, tầm nhìn bao quát toàn bộ vùng biên cương hùng vĩ.')">
+                                <img src="images/binhlieu_moc_1302_thao_nguyen.webp" alt="Cột mốc 1302 Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">3. Cột Mốc Biên Giới 1302 (Thảo Nguyên)</h3>
+                                <p class="dest-desc">Tọa lạc trên đỉnh đồi có thảo nguyên cỏ xanh bao la tiếp giáp mốc 1300. Cung đường uốn lượn mềm mại như dải lụa vắt qua triền núi nhìn sang các bản làng biên giới hai nước Việt - Trung.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Cung đường tuần tra biên giới</span>
+                                    <span>⛰️ Toàn cảnh biên cương hùng vĩ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. CỘT MỐC 1327 -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1327_thanh_long.webp', 'Cột Mốc Biên Giới 1327 Đỉnh Thanh Lân', 'Cột mốc nằm trên đỉnh núi Thanh Lân mờ ảo trong mây mù, nơi có cây đa cổ thụ và tầm nhìn bao la bát ngát.')">
+                                <img src="images/binhlieu_moc_1327_thanh_long.webp" alt="Cột mốc 1327 Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">4. Cột Mốc 1327 (Đỉnh Núi Thanh Lân)</h3>
+                                <p class="dest-desc">Được mệnh danh là "mốc thiên đình" nằm trên đỉnh núi Thanh Lân quanh năm mây mù bao phủ thuộc xã Đồng Văn. Nơi đây có cây đa cổ thụ sừng sững bên mốc đá hoa cương uy nghiêm giữa lộng gió biên cương.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Đồng Văn, Bình Liêu</span>
+                                    <span>☁️ Mốc thiên đình săn mây</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. THÁC KHE VẰN -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_thac_khe_van.webp', 'Thác Khe Vằn Ba Tầng Kỳ Vĩ', 'Ngọn thác ba tầng nước đổ trắng xóa từ vách đá bazan cao gần 100m giữa rừng già nguyên sinh Húc Động.')">
+                                <img src="images/binhlieu_thac_khe_van.webp" alt="Thác Khe Vằn Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">5. Thác Khe Vằn Ba Tầng (Kỳ Quan Nước)</h3>
+                                <p class="dest-desc">Thác nước tự nhiên ba tầng tuyệt đẹp bắt nguồn từ dãy núi Thông Châu. Nước đổ từ độ cao 100m qua các bậc đá bazan cổ tạo thành những bể bơi tự nhiên trong vắt giữa rừng già nguyên sinh.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Húc Động, Bình Liêu</span>
+                                    <span>🌊 Dòng thác ba tầng cao 100m</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. BẢN SÔNG MOÓC -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_ban_song_mooc_hoa_so.webp', 'Bản Sông Moóc & Lễ Hội Hoa Sở', 'Ngôi bản cổ người Dao Thanh Phán rợp bóng hoa sở trắng muốt, nếp nhà trình tường rêu phong bên sườn núi Phiêng Hiển.')">
+                                <img src="images/binhlieu_ban_song_mooc_hoa_so.webp" alt="Bản Sông Moóc Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">6. Bản Sông Moóc & Lễ Hội Hoa Sở</h3>
+                                <p class="dest-desc">Bản làng nguyên sơ của đồng bào Dao Thanh Phán nằm ở độ cao hơn 1.000m trên sườn núi Phiêng Hiển. Nơi đây là trung tâm tổ chức Lễ hội Hoa Sở tháng 12 với những rừng cây hoa sở trắng muốt bạt ngàn.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Đồng Văn, Bình Liêu</span>
+                                    <span>🌸 Thủ phủ hoa sở & văn hóa Dao</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. ĐỈNH CAO XIÊM -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_dinh_cao_xiem_tuong_da.webp', 'Đỉnh Cao Xiêm & Bức Tường Đá Cổ', 'Nóc nhà Bình Liêu ở độ cao 1.429m với bức tường đá bazan cổ bí ẩn trải dài dọc sống núi giữa ngàn mây.')">
+                                <img src="images/binhlieu_dinh_cao_xiem_tuong_da.webp" alt="Đỉnh Cao Xiêm Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">7. Đỉnh Cao Xiêm (Nóc Nhà Bình Liêu 1.429m)</h3>
+                                <p class="dest-desc">Đỉnh núi cao nhất Bình Liêu nổi tiếng với bức tường đá cổ bí ẩn dài hàng km do người xưa xếp thủ công để phân chia ranh giới chăn thả gia súc. Cung đường trekking lý tưởng mở ra tầm nhìn toàn cảnh vịnh Bái Tử Long.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Lục Hồn, Bình Liêu</span>
+                                    <span>🏔️ Trekking nóc nhà 1.429m</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8. ĐỈNH CAO LY SĂN MÂY -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_dinh_cao_ly_san_may.webp', 'Đỉnh Cao Ly — Tọa Độ Săn Mây & Cắm Trại', 'Đồng cỏ thảo nguyên bao la trên độ cao 1.000m nơi ngắm trọn biển mây bồng bềnh cuộn trào đón bình minh.')">
+                                <img src="images/binhlieu_dinh_cao_ly_san_may.webp" alt="Đỉnh Cao Ly Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">8. Đỉnh Cao Ly & Thảo Nguyên Săn Mây</h3>
+                                <p class="dest-desc">Dãy núi cao hơn 1.000m với thảo nguyên cỏ rộng lớn hơn 40ha chăn thả bò dê tự do. Nơi đây là điểm cắm trại qua đêm đón bình minh và ngắm biển mây cuồn cuộn tràn qua các thung lũng đẹp nhất Bình Liêu.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Húc Động, Bình Liêu</span>
+                                    <span>⛺ Cắm trại dã ngoại & biển mây</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 9. RUỘNG BẬC THANG LỤC HỒN -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_ruong_bac_thang_luc_hon.webp', 'Ruộng Bậc Thang Lục Hồn Mùa Lúa Chín', 'Những tầng ruộng bậc thang vàng ươm dưới chân núi Cao Xiêm, con suối nhỏ uốn lượn qua bản làng người Tày.')">
+                                <img src="images/binhlieu_ruong_bac_thang_luc_hon.webp" alt="Ruộng bậc thang Lục Hồn" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">9. Ruộng Bậc Thang Lục Hồn & Khe O</h3>
+                                <p class="dest-desc">Thung lũng ruộng bậc thang quy mô bậc nhất huyện Bình Liêu dưới chân núi Cao Xiêm. Những dải ruộng vàng ươm uốn lượn mềm mại hòa cùng những ngôi nhà gỗ truyền thống của người Tày và người Dao.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Lục Hồn, Bình Liêu</span>
+                                    <span>🌾 Mùa lúa chín tháng 10 - 11</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10. ĐÌNH LỤC NÀ -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_dinh_luc_na_le_hoi.webp', 'Đình Lục Nà — Di Tích Lịch Sử Văn Hóa Biên Cương', 'Ngôi đình cổ kính thờ Thành hoàng Hoàng Cần, cái nôi văn hóa tâm linh của đồng bào các dân tộc Bình Liêu.')">
+                                <img src="images/binhlieu_dinh_luc_na_le_hoi.webp" alt="Đình Lục Nà Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">10. Đình Lục Nà (Di Tích Lịch Sử Văn Hóa)</h3>
+                                <p class="dest-desc">Ngôi đình duy nhất tại huyện Bình Liêu thờ Thành hoàng Hoàng Cần có công đánh giặc giữ nước. Nơi tổ chức Lễ hội Đình Lục Nà vào ngày 16 tháng Giêng âm lịch với các trò chơi dân gian ném còn, đẩy gậy, kéo co sôi nổi.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Bản Bản Cáu, xã Lục Hồn</span>
+                                    <span>🏛️ Di tích lịch sử cấp tỉnh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 6: CẨM NANG DI CHUYỂN -->
+                <section id="di-chuyen" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">06</span>
+                        <h2 class="section-title">Cẩm Nang Di Chuyển & Cung Đường Giao Thông</h2>
+                    </div>
+                    <p>
+                        Nhờ hệ thống cao tốc hiện đại của Quảng Ninh, việc di chuyển từ Hà Nội lên Bình Liêu ngày nay rất nhanh chóng và thuận lợi:
+                    </p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-sec); line-height: 1.8;">
+                        <li>
+                            <strong>Đường bộ (Ô tô / Limousine):</strong> Hà Nội &rarr; Cao tốc Hà Nội - Hải Phòng - Vân Đồn - Tiên Yên &rarr; Rẽ ra nút giao Tiên Yên đi Quốc lộ 18C thẳng lên thị trấn Bình Liêu. Toàn tuyến dài 270km chạy cao tốc hơn 230km, thời gian di chuyển chỉ mất khoảng 3h30 - 4h.
+                        </li>
+                        <li>
+                            <strong>Xe khách Limousine đưa đón tận nơi:</strong> Các nhà xe Limousine 9 - 11 chỗ chạy tuyến Hà Nội - Bình Liêu liên tục hàng ngày (nhà xe Quân Nam, Bằng Phấn) với giá vé từ 250.000 - 300.000 VNĐ/người/lượt.
+                        </li>
+                        <li>
+                            <strong>Thuê xe máy tại Bình Liêu:</strong> Rất sẵn tại thị trấn Bình Liêu và các homestay với giá 150.000 - 200.000 VNĐ/ngày. Đi xe máy là phương tiện tuyệt vời nhất để tự do vượt đèo ngắm các cột mốc biên cương.
+                        </li>
+                    </ul>
+                    <div class="highlight-box">
+                        <h4>🛡️ Quy Định Bắt Buộc Khi Lên Cột Mốc Biên Giới</h4>
+                        <p>Thực hiện nghiêm túc <strong>Nghị định số 34/2014/NĐ-CP của Chính phủ</strong>: Tất cả du khách khi lên vành đai biên giới tuần tra (mốc 1300, 1302, 1305, 1327) bắt buộc phải mang theo CCCD bản gốc để xuất trình khi có sự kiểm tra của lực lượng Bộ đội Biên phòng. Khách nước ngoài phải có giấy phép cấp bởi Công an tỉnh Quảng Ninh.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 7: TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <section id="am-thuc" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">07</span>
+                        <h2 class="section-title">Tinh Hoa Ẩm Thực Bình Liêu — Hương Vị Biên Cương Đông Bắc</h2>
+                    </div>
+                    <p>
+                        Ẩm thực Bình Liêu đậm đà bản sắc núi rừng kết hợp giữa kỹ nghệ truyền thống của người Tày và người Dao:
+                    </p>
+
+                    <div class="culinary-grid">
+                        <!-- MÓN 1: MIẾN DONG GÀ ĐỒI -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/binhlieu_am_thuc_mien_dong_ga_doi.webp', 'Miến Dong Bình Liêu Nấu Gà Đồi', 'Sợi miến dong riềng thủ công trong suốt dai giòn nấu trong nước luộc gà đồi Tiên Yên béo ngậy thơm nức.')">
+                                <img src="images/binhlieu_am_thuc_mien_dong_ga_doi.webp" alt="Miến dong Bình Liêu gà đồi" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">1. Miến Dong Bình Liêu Nấu Gà Đồi</h3>
+                                <p class="culinary-desc">Đặc sản OCOP 4 sao trứ danh làm từ 100% củ dong riềng đỏ bản địa. Sợi miến màu xanh chì tự nhiên, nấu lâu không bị nát, dai giòn sần sật trong nước dùng ngọt đậm đà từ gà đồi thả rông.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 40.000 - 60.000 VNĐ/bát</span>
+                                    <span>Địa chỉ: Xã Húc Động, các quán ăn TT Bình Liêu</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 2: GÀ BẢN NƯỚNG MẬT ONG -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/binhlieu_mon_ga_ban_nuong_mat_ong.webp', 'Gà Bản Tiên Yên / Bình Liêu Nướng Mật Ong Rừng', 'Gà đồi thả rông thịt săn chắc nướng than hoa vàng rộm da cánh gián, phết mật ong rừng thơm nức mũi.')">
+                                <img src="images/binhlieu_mon_ga_ban_nuong_mat_ong.webp" alt="Gà bản nướng mật ong Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">2. Gà Bản Nướng Than Hoa Mật Ong Rừng</h3>
+                                <p class="culinary-desc">Giống gà bản địa thả chạy đồi thịt săn chắc, thơm ngọt từ xương. Gà nướng nguyên con trên than củi hồng quết mật ong rừng óng ả, chấm muối ớt chanh hạt dổi cay the ấm lòng lữ khách.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 250.000 - 320.000 VNĐ/con</span>
+                                    <span>Địa chỉ: Các homestay và quán ăn Húc Động, Đồng Văn</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 3: XÔI BẢY MÀU & BÁNH COÓC MÒ -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/binhlieu_mon_xoi_bay_mau_banh_cooc_mo.webp', 'Xôi Bảy Màu Người Tày & Bánh Coóc Mò', 'Mẹt xôi nếp nương bảy màu rực rỡ từ lá rừng thiên nhiên cùng bánh coóc mò gói hình sừng trâu độc đáo.')">
+                                <img src="images/binhlieu_mon_xoi_bay_mau_banh_cooc_mo.webp" alt="Xôi bảy màu bánh coóc mò Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">3. Xôi Bảy Màu Người Tày & Bánh Coóc Mò</h3>
+                                <p class="culinary-desc">Nếp nương thơm dẻo nhuộm 7 sắc màu tự nhiên từ lá cẩm, hoa trẩu, nghệ và tro bếp. Cùng bánh coóc mò (nghĩa là sừng bò) gói lá chuối dẻo bùi chấm mật mía ngọt ngào truyền thống.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 30.000 - 50.000 VNĐ/phần</span>
+                                    <span>Địa chỉ: Chợ phiên Đồng Văn & phiên chợ Bình Liêu</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 4: CÁ SUỐI KHE VẰN -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/binhlieu_mon_ca_suoi_khe_van_chien_gion.webp', 'Cá Suối Khe Vằn Chiên Giòn Rụm', 'Những mẻ cá suối tự nhiên bắt từ ghềnh đá Khe Vằn chiên vàng ruộm ăn cả xương, chấm mắm tỏi gừng cay nồng.')">
+                                <img src="images/binhlieu_mon_ca_suoi_khe_van_chien_gion.webp" alt="Cá suối Khe Vằn chiên giòn" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">4. Cá Suối Khe Vằn Chiên Giòn Rụm</h3>
+                                <p class="culinary-desc">Cá bơi ngược dòng nước lạnh thác Khe Vằn thịt dai ngọt thơm béo. Cá bắt lên làm sạch chiên vàng giòn rụm ăn được cả xương, cuốn bánh tráng rau rừng chấm nước mắm gừng ớt cay xè.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 90.000 - 130.000 VNĐ/đĩa</span>
+                                    <span>Địa chỉ: Các quán ăn ven thác Khe Vằn</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 5: THỊT LỢN BẢN XÀO MĂNG TRÚC -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/binhlieu_mon_thit_lon_ban_xao_mang_truc.webp', 'Thịt Lợn Bản Xào Măng Trúc Rừng', 'Thịt lợn cắp nách bì dày giòn sần sật xào cùng măng trúc đắng hái từ rừng già thơm ngào ngạt hạt sẻn.')">
+                                <img src="images/binhlieu_mon_thit_lon_ban_xao_mang_truc.webp" alt="Thịt lợn bản xào măng trúc Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">5. Thịt Lợn Bản Xào Măng Trúc Rừng</h3>
+                                <p class="culinary-desc">Lợn cắp nách chăn thả tự nhiên thịt đỏ au săn chắc, xào đảo cùng những búp măng trúc rừng tươi ngọt hơi đắng nhẹ, thơm nồng hạt sẻn núi rừng làm món nhắm rượu tuyệt hảo.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 110.000 - 160.000 VNĐ/đĩa</span>
+                                    <span>Địa chỉ: Quán ăn bản địa TT Bình Liêu</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 6: RƯỢU MEN LÁ THẢO MỘC -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/binhlieu_mon_ruou_men_la_thao_moc.webp', 'Rượu Men Lá Thảo Mộc Bình Liêu', 'Chén rượu trong vắt nấu từ gạo nương và men của 36 vị lá thuốc rừng, hương thơm nồng ấm say lòng lữ khách.')">
+                                <img src="images/binhlieu_mon_ruou_men_la_thao_moc.webp" alt="Rượu men lá Bình Liêu" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">6. Rượu Men Lá Thảo Mộc Bình Liêu</h3>
+                                <p class="culinary-desc">Rượu nấu từ men lá bí truyền tổng hợp từ hơn 30 vị thảo mộc rừng quý hiếm. Nước rượu trong vắt, uống êm say dịu không đau đầu, giúp lưu thông khí huyết và sưởi ấm mùa đông biên cương.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 60.000 - 100.000 VNĐ/lít</span>
+                                    <span>Địa chỉ: Xã Lục Hồn & Đồng Văn</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 8: BẢNG GIÁ VÉ & DỊCH VỤ NIÊM YẾT -->
+                <section id="gia-ve" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">08</span>
+                        <h2 class="section-title">Bảng Giá Vé Tham Quan & Dịch Vụ Niêm Yết</h2>
+                    </div>
+                    <p>
+                        Giá vé và chi phí dịch vụ du lịch tại Bình Liêu rất bình dân, được quản lý chặt chẽ bởi địa phương:
+                    </p>
+
+                    <div class="price-table-wrap">
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Điểm Tham Quan / Dịch Vụ</th>
+                                    <th>Mức Giá Tham Khảo</th>
+                                    <th>Ghi Chú & Khuyến Nghị</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Khu danh thắng Thác Khe Vằn</strong></td>
+                                    <td>20.000 VNĐ/người lớn<br>10.000 VNĐ/trẻ em</td>
+                                    <td>Đã bao gồm bảo hiểm du lịch tham quan thác nước ba tầng.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sống Lưng Khủng Long & Cột Mốc 1305</strong></td>
+                                    <td>MIỄN PHÍ VÀO CỬA</td>
+                                    <td>Gửi xe máy tại chân dốc: 10.000 VNĐ/xe. Xe ôm chở lên chân bậc thang: 50.000 VNĐ.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cột mốc biên giới 1300, 1302, 1327</strong></td>
+                                    <td>MIỄN PHÍ THAM QUAN</td>
+                                    <td>Bắt buộc xuất trình CCCD bản gốc khi có yêu cầu kiểm tra biên phòng.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Di tích lịch sử Đình Lục Nà</strong></td>
+                                    <td>MIỄN PHÍ VÀO CỬA</td>
+                                    <td>Chiêm bái tôn nghiêm, trang phục lịch sự nơi thờ phụng Thành hoàng.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thuê xe máy tại trung tâm thị trấn</strong></td>
+                                    <td>150.000 - 200.000 VNĐ/ngày</td>
+                                    <td>Xe số máy khỏe (Wave, Sirius) đổ đầy bình xăng trước khi lên vành đai.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Giá phòng Homestay cộng đồng</strong></td>
+                                    <td>100.000 VNĐ/giường dorm<br>400.000 - 800.000 VNĐ/phòng riêng</td>
+                                    <td>Trải nghiệm nhà trình tường người Dao tại bản Sông Moóc hoặc thị trấn.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 1.5rem; background: rgba(245, 158, 11, 0.08); border-color: var(--accent-gold);">
+                        <h4>⚖️ Chính Sách Miễn / Giảm Theo Quy Định Nhà Nước</h4>
+                        <p>Thực hiện các chính sách ưu đãi của Nhà nước: Miễn phí vé tham quan Thác Khe Vằn đối với người có công cách mạng, Mẹ Việt Nam Anh hùng, thương bệnh binh, người khuyết tật nặng và trẻ em dưới 1,2m.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 9: LỊCH TRÌNH GỢI Ý & MẸO TRẢI NGHIỆM -->
+                <section id="lich-trinh" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">09</span>
+                        <h2 class="section-title">Gợi Ý Lịch Trình 2N1Đ Săn Cỏ Lau & Mẹo Bản Địa An Toàn</h2>
+                    </div>
+                    <p>
+                        Lịch trình tối ưu hóa trải nghiệm chinh phục trọn vẹn 4 cột mốc sống lưng khủng long và ngắm mùa cỏ lau trắng:
+                    </p>
+
+                    <div style="margin: 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.3rem;">📅 Ngày 1: Hà Nội — Bình Liêu — Thác Khe Vằn — Cột Mốc 1300 & 1302</h4>
+                        <p style="color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            • <em>Sáng:</em> Xuất phát từ Hà Nội chạy cao tốc Hải Phòng - Vân Đồn đến Tiên Yên, rẽ Quốc lộ 18C lên Bình Liêu ăn trưa tô miến dong gà đồi nóng hổi.<br>
+                            • <em>Chiều:</em> Khám phá Thác Khe Vằn ba tầng tung bọt trắng mát lạnh, sau đó chạy xe máy lên cung đường tuần tra check-in cột mốc 1300 rợp bóng cỏ lau và mốc 1302 ngắm hoàng hôn thảo nguyên.<br>
+                            • <em>Tối:</em> Thưởng thức gà bản nướng mật ong hạt dổi, cá suối chiên giòn và nhâm nhi chén rượu men lá ấm áp bên bếp lửa homestay.
+                        </p>
+                    </div>
+
+                    <div style="margin: 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.3rem;">📅 Ngày 2: Chinh Phục Sống Lưng Khủng Long 1305 — Cột Mốc 1327 — Hà Nội</h4>
+                        <p style="color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            • <em>Sáng:</em> Dậy sớm lúc 6h00 bắt đầu hành trình chinh phục Sống lưng khủng long mốc 1305 giữa biển cỏ lau trắng muốt và mây ngàn bồng bềnh.<br>
+                            • <em>Trưa:</em> Di chuyển qua xã Đồng Văn check-in mốc "thiên đình" 1327 đỉnh Thanh Lân, ghé bản Sông Moóc ngắm hoa sở trắng muốt và ăn trưa thịt lợn bản xào măng trúc.<br>
+                            • <em>Chiều:</em> Ghé đình Lục Nà thắp hương bái tạ Thành hoàng làng, mua miến dong thủ công làm quà rồi chạy cao tốc về lại Hà Nội, kết thúc chuyến đi đầy tự hào biên cương.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box" style="background: rgba(234, 88, 12, 0.08); border-color: rgba(234, 88, 12, 0.3);">
+                        <h4>💡 Mẹo Chinh Phục Cột Mốc Biên Giới An Toàn</h4>
+                        <ul style="margin: 0.5rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Thể lực leo mốc 1305:</strong> Đoạn bậc thang dài hơn 2km dốc đứng, cần khởi động kỹ cơ chân, đi giày thể thao bám chống trơn và mang theo ít nhất 1 chai nước lọc cùng thanh năng lượng/socola.</li>
+                            <li><strong>Quy định mang CCCD:</strong> Luôn mang theo căn cước công dân bản gốc trong người khi lên cung đường tuần tra biên giới để xuất trình trạm kiểm soát biên phòng.</li>
+                            <li><strong>Bảo vệ cảnh quan cỏ lau:</strong> Không bẻ cành hoa sở, không dẫm đạp làm gãy nát bãi cỏ lau trắng để chụp ảnh sống ảo; tuyệt đối mang toàn bộ rác ni-lông về thị trấn tiêu hủy.</li>
+                        </ul>
+                    </div>
+                </section>
 
             </main>
         </div>
@@ -962,82 +1123,53 @@
     <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <strong>GO FAR</strong> — Go Straight Ahead · Bản quyền nội dung thuộc về GO FAR
+            &copy; 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch Việt Nam chất lượng cao.
         </div>
         <div class="credits">
-            Biên tập bởi <strong>Sửu nhi</strong> · 🎨 Ảnh nghệ thuật khởi tạo bởi AI
+            Biên tập: Sửu nhi • Hình ảnh: 100% AI thế hệ mới (21 hình ảnh độc bản) • Căn cứ: QĐ 80/QĐ-TTg, NĐ 34/2014/NĐ-CP, QĐ 1357/QĐ-BVHTTDL & Pháp luật Việt Nam.
         </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL (SCROLLABLE & NO-CUTOFF) -->
-    <div id="lightboxModal" class="lightbox-modal">
-        <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">&times;</button>
-        <div class="lightbox-dialog">
-            <img class="lightbox-content" id="lightboxImg" alt="Chi tiết thắng cảnh Bình Liêu">
-            <div id="lightboxCaption" class="lightbox-caption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-media">
+                <img id="lightboxImg" src="" alt="Chi tiết hình ảnh">
+            </div>
+            <div class="lightbox-info">
+                <span class="lightbox-tag">Kỳ Quan Bình Liêu</span>
+                <h3 id="lightboxTitle" class="lightbox-title">Tiêu đề ảnh</h3>
+                <p id="lightboxDesc" class="lightbox-desc">Mô tả chi tiết ảnh.</p>
+            </div>
         </div>
     </div>
 
-    <!-- SCRIPT -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
+        function openLightbox(src, title, desc) {
+            var modal = document.getElementById('lightboxModal');
+            var img = document.getElementById('lightboxImg');
+            var t = document.getElementById('lightboxTitle');
+            var d = document.getElementById('lightboxDesc');
+            if (modal && img) {
+                img.src = src;
+                if (t) t.innerText = title || 'Thắng cảnh Bình Liêu';
+                if (d) d.innerText = desc || '';
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
 
-            document.querySelectorAll('.dest-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const img = card.querySelector('img');
-                    if (!img) return;
+        function closeLightbox(event) {
+            var modal = document.getElementById('lightboxModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-                    lightboxModal.style.display = 'flex';
-                    lightboxModal.scrollTop = 0;
-                    lightboxImg.src = img.src;
-                    
-                    const titleText = card.querySelector('.dest-card-title')?.innerText || '';
-                    const descText = card.querySelector('.dest-card-desc')?.innerText || '';
-                    const legend = card.getAttribute('data-legend') || '';
-                    
-                    let captionHTML = '';
-                    if (titleText) {
-                        captionHTML += `<strong style="font-size: 1.4rem; color: var(--accent-gold); display: block; margin-bottom: 0.4rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
-                    }
-                    if (descText) {
-                        captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; margin-bottom: 1rem;">${descText}</span>`;
-                    }
-                    if (legend) {
-                        captionHTML += `
-                        <div style="background: rgba(22, 44, 62, 0.92); border: 1px solid rgba(255, 140, 50, 0.4); border-radius: 12px; padding: 1.25rem 1.5rem; text-align: left; box-shadow: 0 8px 32px rgba(0,0,0,0.4); margin-bottom: 1.5rem;">
-                            <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 600;">
-                                ✨ Dấu ấn Lịch sử & Điển tích Biên Cương
-                            </span>
-                            <span style="font-size: 0.92rem; color: #f8fafc; line-height: 1.75; display: block;">${legend}</span>
-                        </div>`;
-                    }
-                    lightboxCaption.innerHTML = captionHTML;
-                });
-            });
-
-            const closeLightbox = () => {
-                lightboxModal.style.display = 'none';
-            };
-
-            lightboxClose.addEventListener('click', closeLightbox);
-
-            lightboxModal.addEventListener('click', (e) => {
-                const dialog = document.querySelector('.lightbox-dialog');
-                if (e.target === lightboxModal || e.target === dialog) {
-                    closeLightbox();
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
-                    closeLightbox();
-                }
-            });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>
