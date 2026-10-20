@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hội An — Phố cổ đèn lồng & Di sản văn hóa thế giới | GO FAR</title>
-    <meta name="description" content="Cẩm nang du lịch Hội An tự túc chi tiết: Chùa Cầu, hội quán Phúc Kiến, nhà cổ Tấn Ký, phố cổ đèn lồng, thả đèn hoa đăng sông Hoài. Đi lại, lưu trú, ăn uống.">
+    <title>Hội An — Di Sản Văn Hóa Thế Giới & Phố Cổ Đèn Lồng Lung Linh | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Hội An toàn diện: Chùa Cầu 400 năm, phố đèn lồng sông Hoài, nhà cổ Tấn Ký, rừng dừa Bảy Mẫu, biển An Bàng, 4 mùa phố cổ, cao lầu & cơm gà bà Buội.">
     <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +13,16 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg: #181510;
+            --bg-sec: #262017;
+            --bg-card: rgba(38, 32, 23, 0.88);
             --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent: #FF8C32;
-            --accent-gold: #fbbf24;
+            --accent: #F59E0B;
+            --accent-gold: #FBBF24;
+            --accent-warm: #EF4444;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -31,13 +32,14 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* NAV */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: linear-gradient(135deg, #181510 0%, #2b2318 50%, #181510 100%);
             border-bottom: 2px solid;
-            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            border-image: linear-gradient(90deg, transparent, #F59E0B, #EF4444, transparent) 1;
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -68,8 +70,8 @@
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
         }
         .hero img {
@@ -80,7 +82,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(24,21,16,0.25) 0%, rgba(24,21,16,0.92) 100%);
         }
         .hero-content {
             position: absolute;
@@ -93,169 +95,288 @@
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
-            border-radius: 99px;
-            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+            background: rgba(251,191,36,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(251,191,36,0.25);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            color: #fff;
         }
-        .hero-meta-line {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+        .hero-subtitle {
+            font-size: 1.1rem;
             color: var(--text-sec);
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            max-width: 860px;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
 
-        /* BREADCRUMB */
-        .breadcrumb {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
-
-        /* CONTENT LAYOUT */
+        /* ARTICLE LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
             padding: 0 1.5rem 4rem;
         }
+
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
 
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent);
+            padding-left: 0.4rem;
+        }
+
         /* MAIN CONTENT */
+        .article-main {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .article-main section {
+            margin-bottom: 3.5rem;
+        }
         .article-main h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 1.6rem;
+            color: #fff;
+            margin: 0 0 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid rgba(245, 158, 11, 0.35);
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
+        .article-main h2 .icon { font-size: 1.4rem; }
         .article-main h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            margin: 1.5rem 0 0.8rem;
         }
-
         .article-main p {
+            margin-bottom: 1.2rem;
             color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .article-main strong { color: #fff; font-weight: 600; }
+
+        .intro-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
+            background: rgba(245, 158, 11, 0.08);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
 
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
+        .highlight-box {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
         }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
+        .highlight-box h4 {
             color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+
+        .legend-box {
+            background: rgba(251, 191, 36, 0.06);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-gold);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-box p { margin: 0; font-size: 0.95rem; color: #e2e8f0; }
+
+        /* SEASONS GRID */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .season-card {
+            background: rgba(24, 21, 16, 0.7);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .season-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.05);
+        }
+        .season-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(24, 21, 16, 0.85);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
             font-weight: 600;
-            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(251,191,36,0.3);
+        }
+        .season-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .season-time {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+        .season-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-        }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
-
-        /* PREMIUM CHECKIN CARDS */
+        /* CHECKIN GRID */
         .checkin-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
         .dest-card {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-sec);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
+            cursor: pointer;
         }
         .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+            border-color: rgba(245, 158, 11, 0.4);
         }
         .dest-card.double-col {
             grid-column: span 2;
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
         }
         .dest-card.single-col {
             grid-column: span 1;
@@ -271,16 +392,16 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            filter: brightness(0.9) saturate(1.15);
         }
         .dest-card:hover .dest-card-img img {
             transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+            filter: brightness(0.78) saturate(1.25);
         }
         .dest-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            background: linear-gradient(180deg, transparent 35%, rgba(24, 21, 16, 0.96) 100%);
             z-index: 1;
         }
         .dest-card-content {
@@ -295,145 +416,156 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
         .dest-card-tags .tag {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
+            color: #fff;
+            padding: 0.25rem 0.65rem;
             border-radius: var(--radius-sm);
-            color: #fff !important;
-            font-weight: 600;
+            backdrop-filter: blur(4px);
         }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #181510;
+            font-weight: 700;
         }
         .dest-card-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
-            color: var(--text) !important;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .dest-card-desc {
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             color: var(--text-sec);
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            line-clamp: 2;
             -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
+            overflow: hidden;
         }
-        .dest-card-meta {
+
+        /* CULINARY SHOWCASE */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .culinary-card {
+            background: rgba(24, 21, 16, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            flex-direction: column;
+            cursor: pointer;
         }
-        .dest-rating {
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.05);
+        }
+        .culinary-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+        .culinary-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            flex: 1;
+        }
+        .culinary-price {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
-        .dest-rating .stars {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        .dest-rating span:last-child {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .dest-reviews {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .dest-card-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 0.4rem;
-        }
-        
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
 
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
+        /* TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
         }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
+            background: rgba(38, 32, 23, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
+        .info-table th {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-sec);
-            margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .price-tag {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
+        .disclaimer-box {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.82rem;
-            transition: color 0.2s;
+            margin-top: 0.8rem;
+            font-style: italic;
         }
-        .toc-list a:hover { color: var(--accent); }
 
         /* FOOTER */
         .article-footer {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.06);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             flex-wrap: wrap;
             gap: 1rem;
@@ -441,603 +573,764 @@
         .article-footer a { color: var(--accent); text-decoration: none; }
         .credits { font-style: italic; }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
-        }
-
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
-        }
-
-        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        /* LIGHTBOX MODAL */
         .lightbox-modal {
             display: none;
             position: fixed;
             z-index: 9999;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
+            background-color: rgba(14, 12, 9, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
             box-sizing: border-box;
-            background-color: rgba(11, 22, 34, 0.96);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            align-items: center;
-            flex-direction: column;
         }
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 52vh;
+        .lightbox-dialog {
+            position: relative;
+            max-width: 960px;
+            margin: 2rem auto;
+            background: rgba(38, 32, 23, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
             animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .lightbox-caption {
-            margin: auto;
+        .lightbox-img-wrap {
+            width: 100%;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
             display: block;
-            width: 85%;
-            max-width: 800px;
-            text-align: center;
-            color: var(--text-sec);
-            padding: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-caption-wrap {
+            padding: 1.8rem 2rem;
+            background: linear-gradient(180deg, rgba(38, 32, 23, 0.9) 0%, rgba(24, 21, 16, 0.95) 100%);
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+        .lightbox-caption {
+            color: #e2e8f0;
+            font-size: 0.96rem;
+            line-height: 1.75;
         }
         .lightbox-close {
-            position: fixed;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #fff;
+            font-size: 32px;
             font-weight: bold;
-            transition: 0.3s;
             cursor: pointer;
+            z-index: 10;
+            line-height: 1;
+            transition: color 0.2s, transform 0.2s;
+            background: rgba(0, 0, 0, 0.5);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: var(--accent);
-            text-decoration: none;
+        .lightbox-close:hover {
+            color: var(--accent-gold);
+            transform: scale(1.1);
         }
 
         @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
+            from { transform: scale(0.92); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
-    </style>
 
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-hoi-an.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-hoi-an.html">
-    <meta property="og:title" content="Hội An — Phố cổ đèn lồng & Di sản văn hóa thế giới | GO FAR">
-    <meta property="og:description" content="Cẩm nang du lịch Hội An tự túc chi tiết: Chùa Cầu, hội quán Phúc Kiến, nhà cổ Tấn Ký, phố cổ đèn lồng, thả đèn hoa đăng sông Hoài. Đi lại, lưu trú, ăn uống.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/hoian_chua_cau.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-hoi-an.html">
-    <meta property="twitter:title" content="Hội An — Phố cổ đèn lồng & Di sản văn hóa thế giới | GO FAR">
-    <meta property="twitter:description" content="Cẩm nang du lịch Hội An tự túc chi tiết: Chùa Cầu, hội quán Phúc Kiến, nhà cổ Tấn Ký, phố cổ đèn lồng, thả đèn hoa đăng sông Hoài. Đi lại, lưu trú, ăn uống.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/hoian_chua_cau.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Hội An",
-    "description": "Cẩm nang du lịch Hội An tự túc chi tiết: Chùa Cầu, hội quán Phúc Kiến, nhà cổ Tấn Ký, phố cổ đèn lồng, thả đèn hoa đăng sông Hoài. Đi lại, lưu trú, ăn uống.",
-    "image": "https://gofarvietnam.com/images/hoian_chua_cau.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Miền Trung",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .checkin-grid { grid-template-columns: 1fr; }
+            .dest-card.double-col, .dest-card.single-col {
+                grid-column: span 1;
+                aspect-ratio: 16/9;
+            }
+            .seasons-grid, .culinary-grid { grid-template-columns: 1fr; }
+            .hero { height: 45vh; }
+            .article-main { padding: 1.5rem; }
         }
-    }
-}
-    </script>
+    </style>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/hoian_hero.webp" alt="Hội An — Phố cổ đèn lồng">
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/hoian_hero.webp" alt="Toàn cảnh Đô thị cổ Hội An lung linh đèn lồng bên sông Hoài">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Miền Trung · Di sản Văn hóa Thế giới</span>
-            <h1>Hội An<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Phố cổ đèn lồng</span></h1>
-            <div class="hero-meta-line">
-                <span class="rating">⭐ 4.9 / 5.0</span>
-                <span>·</span>
-                <span>Tỉnh Quảng Nam, Việt Nam</span>
-                <span>·</span>
-                <span>Cập nhật: 08/2026</span>
-            </div>
+            <span class="hero-tag">🔥 Di sản Văn hóa Thế giới UNESCO • Thành phố Sáng tạo UCCN</span>
+            <h1>Hội An — Miền Hoài Niệm Phố Cổ & Vạn Ánh Đèn Lồng</h1>
+            <p class="hero-subtitle">Thương cảng quốc tế sầm uất bậc nhất Đông Nam Á thế kỷ XVI - XIX, nơi thời gian ngưng đọng trên từng nếp ngói âm dương rêu phong, bức tường vàng cổ kính và dòng sông Hoài thơ mộng.</p>
         </div>
-    </section>
+    </header>
 
-    <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Hội An</strong>
-    </div>
-
+    <!-- CONTENT LAYOUT -->
     <div class="article-layout">
         <div class="dashboard-layout">
-            <!-- MAIN ARTICLE -->
-            <article class="article-main">
-
-                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-                <p>Hội An là một đô thị cổ nằm ở hạ lưu sông Thu Bồn, thuộc vùng đồng bằng ven biển tỉnh Quảng Nam, cách thành phố Đà Nẵng khoảng 30km về phía Nam. Nhờ những chính sách bảo tồn lịch sử xuất sắc, Hội An gần như giữ được nguyên vẹn hơn 1.000 di tích kiến trúc cổ xưa như phố xá, nhà cửa, hội quán, đình chùa, giếng cổ...</p>
-                <p>Được UNESCO công nhận là Di sản Văn hóa Thế giới từ năm 1999, phố cổ Hội An mê hoặc lòng người bởi vẻ đẹp mộc mạc của những mảng tường vàng rêu phong cổ kính, mái ngói âm dương xám xịt và sắc màu rực rỡ ấm cúng của hàng ngàn chiếc đèn lồng thủ công thắp sáng lung linh khi màn đêm buông xuống.</p>
-
-                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
-                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Hội An. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
-
-                <div class="checkin-grid">
-                    
-                    <div class="dest-card double-col" data-legend="Vào thế kỷ XVII, Chùa Cầu (Lai Viễn Kiều) được xây dựng bởi các thương nhân Nhật Bản tại Faifo (Hội An). Theo tín ngưỡng giao thoa Việt - Nhật, công trình tựa như một thanh gươm yểm xuống lưng con thủy quái Namazu (dân gian Việt gọi là con Cù, người Hoa gọi là Câu Long). Truyền thuyết kể rằng loài quái vật này đầu nằm ở Nhật Bản, mình vắt qua Việt Nam và đuôi ở Ấn Độ; mỗi khi nó quẫy cựa sẽ gây động chất, bão lũ tai ương cho các quốc gia. Để chế ngự thiên tai và giữ an lành cho thương cảng, người xưa lập thêm đền thờ Bắc Đế Trấn Vũ (vị thần trị thủy) ngay trên cầu, tạo nên biểu tượng bang giao lịch sử độc bản.">
-                        <div class="dest-card-img">
-                            <img src="images/hoian_chua_cau.webp" alt="Chùa Cầu (Japanese Covered Bridge)" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Biểu tượng</span>
-                                <span class="tag">Lịch sử</span>
-                            </div>
-                            <h3 class="dest-card-title">Chùa Cầu (Japanese Covered Bridge)</h3>
-                            <p class="dest-card-desc">Cây cầu cổ kính xây từ thế kỷ XVII bởi các thương nhân Nhật Bản, kiến trúc độc đáo vắt ngang qua lạch nước nhỏ tĩnh mịch.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Vào năm 1697, nơi đây ban đầu là ngôi chùa gỗ mang tên Kim Sơn Tự do người Việt dựng lên. Đến năm 1757, thương gia bang Phúc Kiến (Trung Hoa) đã mua lại ngôi chùa cũ, quyên góp tiền bạc trùng tu nguy nga gạch ngói để làm nơi hội họp bang hội và thờ cúng Thiên Hậu Thánh Mẫu – vị thần trị thủy bảo hộ các thương thuyền vượt biển an lành sang Faifo. Hậu điện của hội quán còn thờ Lục Tánh Vương Gia – 6 vị tướng trung thần nhà Minh lánh nạn sang Đàng Trong nước Nam, tạo dựng cuộc sống bang giao thịnh vượng.">
-                        <div class="dest-card-img">
-                            <img src="images/hoian_phuc_kien.webp" alt="Hội quán Phúc Kiến" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Tâm linh</span>
-                                <span class="tag">Kiến trúc</span>
-                            </div>
-                            <h3 class="dest-card-title">Hội quán Phúc Kiến</h3>
-                            <p class="dest-card-desc">Công trình tâm linh Trung Hoa uy nghiêm lộng lẫy với cổng tam quan rực đỏ, hồ cá chép và các khoanh nhang vòng lớn tỏa hương thơm nhẹ.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Xây dựng vào năm 1741, ngôi nhà cổ hơn 200 năm tuổi này là nơi sinh sống của 7 thế hệ gia tộc họ Lê tại thương cảng cổ Faifo. Tấn Ký (nghĩa là 'sự ký thác phát đạt') mang kiến trúc hình ống giao thoa ba nền văn hóa Việt - Hoa - Nhật độc đáo, kết nối hoàn toàn bằng mộng gỗ mà không dùng đinh sắt. Nơi đây hiện lưu giữ 'Chén Khổng Tử' – cổ vật vô giá hoạt động theo nguyên lý bình thông nhau, chỉ giữ nước khi rót dưới tám phần, gửi gắm triết lý sâu sắc của người xưa về sự kiềm chế và tinh thần 'biết đủ' trong cuộc sống.">
-                        <div class="dest-card-img">
-                            <img src="images/hoian_tan_ky.webp" alt="Nhà cổ Tấn Ký" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Di sản</span>
-                                <span class="tag">Nhà cổ</span>
-                            </div>
-                            <h3 class="dest-card-title">Nhà cổ Tấn Ký</h3>
-                            <p class="dest-card-desc">Ngôi nhà cổ hơn 200 năm tuổi đại diện tiêu biểu cho kiến trúc nhà phố cổ kết hợp gỗ lim bền chắc giao thoa văn hóa Việt - Hoa - Nhật.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card double-col" data-legend="Nghề làm đèn lồng Hội An khởi nguồn từ sự giao thoa văn hóa giữa người Việt với thương nhân Hoa, Nhật thế kỷ XVI - XVII. Dân gian tôn vinh nghệ nhân Xã Đường là ông tổ nghề – người chuyên chế tác đèn kéo quân và đầu lân cho lễ hội cổ xưa. Trải qua thăng trầm, đèn lồng được Việt hóa bằng khung tre dẻo dai bọc lụa Hà Đông mềm mại. Đến cuối thế kỷ XX, nghệ nhân Huỳnh Văn Ba sáng tạo ra cấu trúc đèn lồng xếp gọn đột phá, đưa biểu tượng ánh sáng lung linh của phố cổ Faifo vươn tầm thế giới.">
-                        <div class="dest-card-img">
-                            <img src="images/hoian_lantern_street.webp" alt="Phố cổ đèn lồng" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Lãng mạn</span>
-                                <span class="tag">Check-in</span>
-                            </div>
-                            <h3 class="dest-card-title">Phố cổ đèn lồng</h3>
-                            <p class="dest-card-desc">Những ngõ nhỏ rợp bóng đèn lồng đủ kiểu dáng thắp sáng rực rỡ rực rỡ sắc màu, mang lại vẻ đẹp cổ tích huyền ảo lung linh.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Sông Hoài – nhánh sông Thu Bồn hiền hòa chảy qua lòng phố cổ – chính là dòng hải lộ lịch sử chứng kiến bao cuộc bang giao, giao thương sầm uất của Faifo thế kỷ XVII - XVIII. Nghi thức thả đèn hoa đăng trên dòng sông này bắt nguồn từ tín ngưỡng Phật giáo cổ xưa và phong tục cầu an của cư dân vùng duyên hải. Vào năm 1998, nét đẹp văn hóa này được khôi phục thành nghi lễ tâm linh định kỳ trong các 'Đêm rằm phố cổ'. Mỗi chiếc đèn hoa bằng giấy màu nâng niu ngọn nến sáng lấp lánh trôi xuôi dòng sông mang theo lời nguyện cầu 'quốc thái dân an', cầu mong mưa thuận gió hòa và gia đạo bình an vạn đại.">
-                        <div class="dest-card-img">
-                            <img src="images/hoian_hoai_river.webp" alt="Sông Hoài & Thả đèn hoa đăng" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Dòng sông</span>
-                                <span class="tag">Trải nghiệm</span>
-                            </div>
-                            <h3 class="dest-card-title">Sông Hoài & Thả đèn hoa đăng</h3>
-                            <p class="dest-card-desc">Trải nghiệm ngồi thuyền gỗ lững lờ trôi và tự tay thả những chiếc đèn giấy hoa đăng nhỏ lấp lánh mang theo ước nguyện bình an.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Chợ Hội An bên bờ sông Hoài không chỉ là nơi giao thương bản địa mà vốn là trung tâm mậu dịch quốc tế sầm uất bậc nhất Đông Nam Á từ thế kỷ XVI - XVIII. Nơi đây từng là điểm bến nước tập kết hàng hóa trực tiếp của các đội thuyền buồm phương Tây, Nhật Bản và Trung Hoa trong các kỳ hội chợ giao thương Faifo kéo dài hàng tháng trời. Những sạp hàng tấp nập hôm nay tiếp nối dòng chảy lịch sử giao thoa văn hóa ẩm thực, sản vật xứ Quảng, lưu giữ hơi thở kinh tế sinh động của một di sản thế giới.">
-                        <div class="dest-card-img">
-                            <img src="images/hoian_market.webp" alt="Chợ Hội An nhộn nhịp" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Ẩm thực</span>
-                                <span class="tag">Đời sống</span>
-                            </div>
-                            <h3 class="dest-card-title">Chợ Hội An nhộn nhịp</h3>
-                            <p class="dest-card-desc">Khu chợ ẩm thực phong phú tấp nập với những sạp hàng bày bán hoa quả tươi ngon, quà lưu niệm và các món ăn đường phố hấp dẫn.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Làng gốm Thanh Hà có lịch sử hơn 500 năm, khởi nguồn từ cuối thế kỷ XV khi các dòng tộc tiền hiền từ Thanh Hóa - Nghệ An di cư vào Nam mang theo nghề gốm đất nung truyền thống. Nằm hiền hòa bên dòng sông Thu Bồn, làng nghề từng cực thịnh vào thế kỷ XVII - XVIII khi cung cấp gạch ngói xây dựng thương cảng cổ Faifo và được triều Nguyễn sắc phong là 'thổ sản quốc gia'. Mỗi món gốm mộc mạc không tráng men hôm nay chính là di sản sống động kế thừa nét đẹp lao động bền bỉ nửa thiên niên kỷ của người dân xứ Quảng.">
-                        <div class="dest-card-img">
-                            <img src="images/hoian_thanh_ha.webp" alt="Làng gốm Thanh Hà" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Làng nghề</span>
-                                <span class="tag">Đất nung</span>
-                            </div>
-                            <h3 class="dest-card-title">Làng gốm Thanh Hà</h3>
-                            <p class="dest-card-desc">Làng nghề gốm đất nung truyền thống hơn 500 tuổi nằm yên bình ven sông Thu Bồn với các sản phẩm gốm mộc mạc tinh xảo.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Làng rau Trà Quế được khai hoang lập nghiệp từ thế kỷ XVI bởi những ngư dân phía Bắc di cư vào phương Nam. Ban đầu sinh sống bằng nghề chài lưới ven sông Đế Võng, về sau họ chuyển sang trồng rau thơm hữu cơ bằng phương pháp bón rong biển độc đáo lấy từ đầm nước ngọt. Tên gọi nguyên thủy của làng là Nhự Quế. Đến thế kỷ XIX, một vị vua triều Nguyễn khi tuần du ghé thăm đã thưởng thức thứ rau thơm mang vị cay nồng của quế hòa quyện hương thanh khiết của hoa trà, từ đó cảm kích ngự ban tên gọi Trà Quế lưu truyền vạn đại.">
-                        <div class="dest-card-img">
-                            <img src="images/hoian_tra_que.webp" alt="Làng rau Trà Quế" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Sinh thái</span>
-                                <span class="tag">Nông nghiệp</span>
-                            </div>
-                            <h3 class="dest-card-title">Làng rau Trà Quế</h3>
-                            <p class="dest-card-desc">Làng trồng rau thơm xanh mát sạch bằng phương pháp bón rong biển độc đáo, mang đến hương vị thảo mộc nồng nàn đặc trưng.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- DI CHUYỂN & CHI PHÍ -->
-                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-                <p>Nằm sát thành phố Đà Nẵng, việc di chuyển đến Hội An vô cùng dễ dàng và linh hoạt bằng nhiều loại phương tiện:</p>
-                
-                <h3>1. Gợi ý di chuyển từ Đà Nẵng đến Hội An</h3>
-                <ul>
-                    <li><strong>Thuê xe máy tự lái:</strong> Lựa chọn phổ biến nhất của các bạn trẻ, chạy xe dọc theo tuyến đường biển Võ Nguyên Giáp chỉ mất khoảng 40 - 50 phút ngắm biển lộng gió.</li>
-                    <li><strong>Taxi / Grab:</strong> Thích hợp cho gia đình hoặc nhóm bạn đi đông, chi phí vừa phải, di chuyển an toàn và thoải mái.</li>
-                    <li><strong>Xe buýt:</strong> Tuyến xe buýt nội đô Đà Nẵng - Hội An tiết kiệm chi phí nhưng thời gian di chuyển lâu hơn.</li>
-                </ul>
-
-                <h3>2. Giá vé tham khảo khu phố cổ</h3>
-                <p>Khách du lịch nước ngoài và nội địa được khuyến khích mua vé tham quan phố cổ Hội An tại các quầy bán vé. Tấm vé này cho phép bạn tham quan các di tích tiêu biểu tự chọn như nhà cổ, hội quán và chùa Cầu cổ kính.</p>
-
-                <table class="info-table">
-                    <thead>
-                        <tr>
-                            <th>Dịch vụ tham quan</th>
-                            <th>Chi phí tham khảo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Vé tham quan phố cổ Hội An (Bao gồm 3 điểm di tích tùy chọn)</td>
-                            <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
-                        </tr>
-                        <tr>
-                            <td>Đi thuyền gỗ trên sông Hoài ngắm cảnh (Khứ hồi)</td>
-                            <td><span class="price-tag">Theo quy định bến thuyền</span> (Khoảng 15 - 20 phút ngoạn cảnh)</td>
-                        </tr>
-                        <tr>
-                            <td>Mua đèn hoa đăng bằng giấy thả sông</td>
-                            <td><span class="price-tag">Tự do mua lẻ</span> tại ven sông Hoài</td>
-                        </tr>
-                        <tr>
-                            <td>Vé tham quan Làng gốm Thanh Hà (Có tặng kèm sản phẩm đất nung nhỏ)</td>
-                            <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- LƯU TRÚ & ẨM THỰC -->
-                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực cổ trấn</h2>
-                
-                <h3>1. Gợi ý lưu trú nghỉ ngơi</h3>
-                <ul>
-                    <li><strong>Trong khu vực cận rìa Phố cổ:</strong> Các khách sạn 3 sao nhỏ xinh, homestay kiến trúc thô mộc bằng gỗ, giúp bạn đi bộ vào phố cổ chỉ mất 5 - 10 phút.</li>
-                    <li><strong>Khu vực ven sông hoặc biển An Bàng:</strong> Thích hợp nghỉ dưỡng bungalow thoáng đãng yên tĩnh, đạp xe ra biển đón gió mát buổi chiều.</li>
-                </ul>
-
-                <h3>2. Các món ngon Hội An trứ danh</h3>
-                <div class="food-list">
-                    <div class="food-item"><span class="name">🍜 Cao lầu Hội An (Sợi mì dai giòn màu vàng đục, thịt xá xíu ăn kèm rau sống Trà Quế và tóp mỡ)</span></div>
-                    <div class="food-item"><span class="name">🥯 Bánh mì Hội An (Bánh mì Phượng hoặc bánh mì Madam Khánh nổi tiếng vỏ giòn rụm nhân đậm đà)</span></div>
-                    <div class="food-item"><span class="name">🐔 Cơm gà Hội An (Cơm gà bà Buội hạt dẻo thơm màu nghệ vàng, thịt gà xé phay trộn gỏi chua ngọt)</span></div>
-                    <div class="food-item"><span class="name">🥟 Bánh vạc / Bánh bao hoa hồng trắng (Vỏ bột lọc mỏng trong vắt nhân tôm thơm ngọt chấm mắm ngọt)</span></div>
-                </div>
-
-                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
-                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
-                
-                <h3>1. Thời điểm du lịch Hội An đẹp nhất</h3>
-                <ul>
-                    <li><strong>Tháng 2 – 4:</strong> Thời điểm vàng của năm. Thời tiết cuối xuân mát mẻ, trời nắng ấm tạnh ráo, độ ẩm thấp, lý tưởng tuyệt đối để tham quan đi bộ.</li>
-                    <li><strong>Tháng 5 – 8:</strong> Mùa hè nắng đẹp rực rỡ, thích hợp kết hợp đi biển An Bàng hoặc lặn biển ngắm san hô tại Cù Lao Chàm.</li>
-                    <li><strong>Tối ngày Rằm (14 âm lịch hàng tháng):</strong> Lễ hội Đêm rằm phố cổ. Toàn bộ khu phố sẽ tắt đèn điện, thắp đèn lồng lung linh huyền ảo và thả hoa đăng dọc sông Hoài rất đẹp.</li>
-                </ul>
-
-                <h3>2. Một số mẹo nhỏ an toàn</h3>
-                <ul>
-                    <li><strong>Tránh mùa mưa lũ:</strong> Tháng 10 – 11 là mùa mưa bão lớn miền Trung. Nước sông Thu Bồn dâng cao có thể gây ngập lụt các ngõ phố cổ sát sông Hoài. Hãy tránh thời điểm này.</li>
-                    <li><strong>Thuê xe đạp dạo phố:</strong> Phố cổ cấm các phương tiện động cơ chạy vào các khung giờ cao điểm (sáng và chiều tối). Bạn nên thuê xe đạp của homestay để tự do vi vu.</li>
-                    <li><strong>Giữ trật tự tôn nghiêm:</strong> Vui lòng mặc đồ lịch sự kín kẽ khi vào tham quan các di tích tâm linh như chùa Cầu, nhà cổ hay các hội quán linh thiêng.</li>
-                </ul>
-
-                <div class="warning-box">
-                    <p>⚠️ Lưu ý bảo tồn di sản: Hãy giữ gìn vệ sinh chung, không viết vẽ lên các bức tường vàng cổ kính của phố cổ. Không mua bán đèn hoa đăng từ những người chèo kéo dọc đường không có thẻ đăng ký bến thuyền.</p>
-                </div>
-
-            </article>
 
             <!-- SIDEBAR -->
             <aside class="sidebar">
-                <!-- QUICK INFO -->
-                <div class="sidebar-card">
-                    <h4>📌 Thông tin nhanh</h4>
-                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Tỉnh Quảng Nam, Việt Nam</div>
-                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 1 – 2 ngày</div>
-                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 2 – 4 & Đêm Rằm</div>
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Thông Tin Nhanh
+                    </h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span><span class="val">Quảng Nam (~30km từ Đà Nẵng)</span></li>
+                        <li><span class="label">Thời kỳ:</span><span class="val">Thương cảng Faifo (Tk XVI - XIX)</span></li>
+                        <li><span class="label">Danh hiệu:</span><span class="val">UNESCO (1999) & UCCN (2023)</span></li>
+                        <li><span class="label">Biểu tượng:</span><span class="val">Chùa Cầu, Sông Hoài, Đèn lồng</span></li>
+                        <li><span class="label">Thời điểm đẹp:</span><span class="val">Tháng 2 - 4 & Tháng 5 - 8</span></li>
+                        <li><span class="label">Đặc sản cốt lõi:</span><span class="val">Cao lầu, Cơm gà, Bánh mì</span></li>
+                    </ul>
                 </div>
 
-                <!-- TOC -->
-                <div class="sidebar-card">
-                    <h4>📖 Mục lục</h4>
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                        Mục Lục Hướng Dẫn
+                    </h3>
                     <ul class="toc-list">
-                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
-                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
-                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
-                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
-                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                        <li><a href="#tong-quan">1. Tổng quan điểm đến</a></li>
+                        <li><a href="#lich-su-dia-ly">2. Vị trí địa lý & Dấu ấn lịch sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền thoại & Truyền tích dân gian</a></li>
+                        <li><a href="#bon-mua">4. Chuỗi hình ảnh 4 mùa du lịch</a></li>
+                        <li><a href="#thang-canh">5. Top 10 Thắng cảnh biểu tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm nang di chuyển & Cung đường</a></li>
+                        <li><a href="#am-thuc">7. Tinh hoa ẩm thực đặc sản</a></li>
+                        <li><a href="#gia-ve">8. Bảng giá vé tham quan niêm yết</a></li>
+                        <li><a href="#lich-trinh">9. Lịch trình 3N2Đ & Mẹo bản địa</a></li>
                     </ul>
                 </div>
             </aside>
+
+            <!-- MAIN CONTENT -->
+            <main class="article-main">
+
+                <!-- MỤC 1: TỔNG QUAN -->
+                <section id="tong-quan">
+                    <h2><span class="icon">🧭</span> 1. Tổng quan điểm đến</h2>
+                    <div class="intro-lead">
+                        Nằm nép mình bên hạ lưu dòng sông Thu Bồn thơ mộng, <strong>Đô thị cổ Hội An</strong> là hình mẫu hoàn hảo và hiếm hoi về một thương cảng truyền thống châu Á còn được bảo tồn gần như nguyên vẹn toàn bộ cấu trúc không gian đô thị từ thế kỷ XVI - XIX. Nơi đây là điểm giao thoa văn hóa rực rỡ giữa Việt Nam, Nhật Bản, Trung Hoa và phương Tây suốt hơn 400 năm lịch sử.
+                    </div>
+                    <p>Khác biệt với nhịp sống hối hả hiện đại, Hội An níu chân du khách bằng không gian bình yên, trầm mặc. Những con phố nhỏ rợp bóng hoa giấy đỏ rực bên bức tường vàng nghệ đặc trưng, những nếp nhà gỗ mái ngói âm dương rêu phong trăm tuổi, cùng dòng sông Hoài lấp lánh hàng ngàn ánh hoa đăng khi đêm về tạo nên bức tranh thủy mặc sống động và lãng mạn vô bờ bến.</p>
+                    <p>Được UNESCO vinh danh là <strong>Di sản Văn hóa Thế giới</strong> từ năm 1999 và mới đây nhất là thành viên chính thức của <strong>Mạng lưới các Thành phố Sáng tạo Toàn cầu (UCCN 2023)</strong> về Thủ công và Nghệ thuật Dân gian, Hội An tiếp tục khẳng định sức sống mãnh liệt của một di sản sống, nơi cộng đồng cư dân bản địa vẫn ngày ngày sinh hoạt, giữ gìn phong tục tập quán và nghề thủ công truyền thống.</p>
+                </section>
+
+                <!-- MỤC 2: VỊ TRÍ ĐỊA LÝ & DẤU ẤN LỊCH SỬ -->
+                <section id="lich-su-dia-ly">
+                    <h2><span class="icon">📜</span> 2. Vị trí địa lý & Dấu ấn lịch sử</h2>
+                    <p>Thành phố Hội An nằm ở vùng hạ lưu sông Thu Bồn, thuộc vùng đồng bằng ven biển tỉnh Quảng Nam, cách trung tâm thành phố Đà Nẵng khoảng 30km về phía nam. Địa hình Hội An bằng phẳng, được bao bọc bởi hệ thống sông ngòi kênh rạch chằng chịt đổ ra cửa biển Cửa Đại, nơi có cụm đảo Cù Lao Chàm chắn gió bão. Khí hậu mang tính chất nhiệt đới gió mùa miền Trung với mùa khô rực rỡ từ tháng 2 đến tháng 8 và mùa mưa từ tháng 9 đến tháng 1 năm sau.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>⚖️ Căn cứ Pháp lý & Quyết định Xếp hạng Di sản Chính thống</h4>
+                        <p>Hồ sơ khoa học và giá trị ngoại hạng toàn cầu của Đô thị cổ Hội An được khẳng định qua các công ước quốc tế và văn bản pháp luật Nhà nước:</p>
+                        <ul style="margin: 0.6rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Công ước UNESCO (04/12/1999):</strong> Tại Kỳ họp thứ 23 Ủy ban Di sản Thế giới ở Marrakesh (Morocco), <em>Đô thị cổ Hội An</em> được công nhận là Di sản Văn hóa Thế giới theo tiêu chí (ii) về sự giao lưu văn hóa và tiêu chí (v) về hình mẫu thương cảng truyền thống châu Á.</li>
+                            <li><strong>Quyết định số 1419/QĐ-TTg ngày 02/10/2009 của Thủ tướng Chính phủ:</strong> Xếp hạng Di tích quốc gia đặc biệt đối với <em>Đô thị cổ Hội An</em>, thành phố Hội An, tỉnh Quảng Nam.</li>
+                            <li><strong>UNESCO vinh danh Thành phố Sáng tạo (31/10/2023):</strong> Hội An chính thức gia nhập <em>Mạng lưới các Thành phố Sáng tạo của UNESCO (UCCN)</em> trên lĩnh vực Thủ công và Nghệ thuật Dân gian.</li>
+                            <li><strong>Quyết định số 2162/QĐ-TTg của Thủ tướng Chính phủ:</strong> Phê duyệt Quy hoạch tổng thể bảo tồn, tôn tạo và phát huy giá trị Di sản văn hóa thế giới Đô thị cổ Hội An gắn với phát triển thành phố Hội An và du lịch giai đoạn 2012 - 2025.</li>
+                            <li><strong>Di sản văn hóa phi vật thể quốc gia:</strong> Bộ VHTTDL ghi danh <em>Nghề gốm Thanh Hà</em>, <em>Nghề mộc Kim Bồng</em>, <em>Nghề trồng rau Trà Quế</em> và <em>Nghề làm đèn lồng Hội An</em>.</li>
+                        </ul>
+                        <div style="margin-top: 0.8rem; font-size: 0.82rem; color: var(--accent-gold); border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.5rem;">
+                            🏛️ <em>Nguồn tư liệu di sản & văn bản quy phạm pháp luật chính thống:</em> Cổng TTĐT Chính phủ (chinhphu.vn) • Cổng TTĐT Bộ Văn hóa, Thể thao và Du lịch (bvhttdl.gov.vn) • Cục Di sản Văn hóa (dsvh.gov.vn) • Cổng TTĐT Tỉnh Quảng Nam (quangnam.gov.vn).
+                        </div>
+                    </div>
+
+                    <p>Về dấu ấn lịch sử, từ thế kỷ II đến thế kỷ XV dưới thời Vương quốc Champa cổ đại, vùng đất này đã là cửa ngõ giao thương đường biển sầm uất mang tên Đại Chiêm Hải Khẩu. Bước sang thế kỷ XVI dưới thời các chúa Nguyễn mở mang bờ cõi Đàng Trong, Hội An nhanh chóng vươn lên thành một trong những thương cảng quốc tế hưng thịnh nhất châu Á mang tên <strong>Faifo</strong>.</p>
+                    <p>Nơi đây từng là bến đỗ tấp nập của các đoàn thương thuyền Châu Ấn Thuyền (Shuinsen) từ Nhật Bản, thuyền buôn của các bang thương nhân người Hoa (Phúc Kiến, Triều Châu, Quảng Đông, Hải Nam) cùng các thương đoàn Hà Lan, Bồ Đào Nha, Anh, Pháp đến trao đổi lụa tơ tằm, trầm hương, đồ gốm sứ và gia vị. Sự cộng cư hòa hợp giữa các cộng đồng dân cư đã sản sinh ra một nền văn hóa kiến trúc, ẩm thực và nếp sống khoan hòa, bao dung độc nhất vô nhị.</p>
+                </section>
+
+                <!-- MỤC 3: HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai">
+                    <h2><span class="icon">🏮</span> 3. Huyền thoại & Truyền tích dân gian vùng đất</h2>
+                    
+                    <div class="legend-box">
+                        <h4>🐉 Thần tích Chùa Cầu & Thanh kiếm trấn yểm Thủy quái Cù (Mamazu)</h4>
+                        <p>Trong tâm thức dân gian của người dân phố Hội và thương nhân Nhật Bản xưa, dưới lòng đại dương sâu thẳm có một con thủy quái khổng lồ mang tên Cù (người Nhật gọi là Namazu). Đầu của con Cù nằm ở tận đất nước Nhật Bản, đuôi vắt sang Ấn Độ Dương, còn chiếc lưng gồ ghề lại nằm ngay dưới vùng đất Hội An. Mỗi khi con quái vật này cựa mình, nước biển dâng cao gây ra sóng thần động đất dữ dội ở Nhật Bản và lũ lụt triền miên ở Hội An. Vào đầu thế kỷ XVII, các thương nhân Nhật Bản đã cùng người dân địa phương dựng nên cây cầu ngói bắc qua lạch nước sông Hoài, lập bàn thờ Bắc Đế Trấn Vũ (thần trị thủy) bên trong miếu, tựa như một thanh kiếm thần cắm thẳng vào sống lưng con Cù, trấn yểm cho đất trời yên ổn, phố cảng muôn đời bình yên.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>💧 Huyền thoại Giếng cổ Bá Lễ & Mạch nước thần ngàn năm</h4>
+                        <p>Nằm sâu trong con hẻm nhỏ đường Phan Châu Trinh, giếng Bá Lễ được đào từ thời người Chăm cổ thế kỷ X. Trải qua hơn 1.000 năm lịch sử với bao mùa nắng hạn và bão lũ, mạch nước ngầm giếng Bá Lễ chưa bao giờ cạn, nước giếng quanh năm trong vắt, ngọt lịm và thanh mát lạ thường. Người sành ăn xứ Hội khẳng định rằng: sợi mì Cao Lầu muốn giòn dai đậm đà, nước Mót thảo mộc muốn thơm ngát ngọt thanh thì bắt buộc phải dùng chính nguồn nước giếng Bá Lễ ngâm gạo và chưng cất, nếu thay bằng nước nơi khác thì hương vị đặc trưng ấy sẽ hoàn toàn biến mất.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>🕯️ Sự tích Hoa Đăng Sông Hoài & Lời nguyện cầu bình an</h4>
+                        <p>Tục thả đèn hoa đăng trên dòng sông Hoài vào các đêm rằm bắt nguồn từ nét đẹp tâm linh của cư dân thương cảng cổ. Những chiếc đèn hoa bằng giấy màu lung linh ngọn nến nhỏ được thả trôi theo dòng nước mang theo lời nguyện cầu sức khỏe, bình an cho gia đình, đồng thời là nghi thức tưởng nhớ những người đi biển không may bỏ mình nơi sóng gió biển khơi. Ngắm hàng ngàn đốm sáng bập bềnh trên sóng nước là trải nghiệm thanh lọc tâm hồn tuyệt mỹ.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 4: CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua">
+                    <h2><span class="icon">🌸</span> 4. Chuỗi hình ảnh 4 mùa du lịch</h2>
+                    <p>Hội An mỗi mùa trong năm đều mang một nhịp đập cảm xúc thi vị. Từ sắc xuân rực rỡ đón Tết truyền thống, nắng hạ vàng ươm hoa giấy nhuộm phố, đến đêm thu trăng rằm hoa đăng lung linh và mùa đông nước nổi sông Hoài:</p>
+
+                    <div class="seasons-grid">
+                        <!-- Mùa Xuân -->
+                        <div class="season-card" onclick="openLightbox('images/hoian_mua_xuan_tet_pho_co.webp', 'Mùa Xuân (Tháng 1 - 3): Tết Cổ Truyền Phố Cổ & Mai Vàng Rực Rỡ', 'Không khí rộn ràng đón Tết Nguyên Đán tại phố cổ Hội An. Những chậu mai vàng khoe sắc rực rỡ trước hiên nhà gỗ cổ kính, câu đối đỏ và đèn lồng tết trang hoàng rực sáng khắp các nẻo đường.')">
+                            <div class="season-img-wrap">
+                                <img src="images/hoian_mua_xuan_tet_pho_co.webp" alt="Mùa xuân Tết cổ truyền phố cổ Hội An" loading="lazy">
+                                <span class="season-badge">Tháng 1 - 3</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Xuân: Tết Phố Cổ Rực Rỡ Sắc Mai Vàng</h3>
+                                <span class="season-time">Thời điểm: Tháng 1 đến hết tháng 3 Dương lịch</span>
+                                <p class="season-desc">Tiết trời mùa xuân mát mẻ, nắng nhẹ chan hòa. Cả phố cổ ngập tràn sắc vàng của hoa mai, sắc đỏ của lồng đèn và câu đối Tết. Các trò chơi dân gian như bài chòi, đập niêu đất, hội hoa xuân trên sông Hoài tạo nên không khí tưng bừng hoài cổ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Hạ -->
+                        <div class="season-card" onclick="openLightbox('images/hoian_mua_ha_nang_vang_hoa_giay.webp', 'Mùa Hạ (Tháng 4 - 6): Nắng Vàng Óng Ả & Giàn Hoa Giấy Nhuộm Tường Vàng', 'Khoảnh khắc kinh điển của Hội An khi vòm hoa giấy rực sắc hồng tím bung nở che phủ bức tường vàng nghệ trăm năm tuổi. Bầu trời hè xanh ngắt và nắng sớm chan hòa tạo nên góc check-in tuyệt mỹ.')">
+                            <div class="season-img-wrap">
+                                <img src="images/hoian_mua_ha_nang_vang_hoa_giay.webp" alt="Mùa hạ nắng vàng hoa giấy tường vàng Hội An" loading="lazy">
+                                <span class="season-badge">Tháng 4 - 6</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Hạ: Nắng Vàng Ruộm & Giàn Hoa Giấy Rực Rỡ</h3>
+                                <span class="season-time">Thời điểm: Tháng 4 đến tháng 6 Dương lịch</span>
+                                <p class="season-desc">Mùa hoa giấy rực rỡ nhất trong năm. Ánh nắng hè miền Trung làm bừng sáng những bức tường vàng nhuốm màu thời gian. Thời tiết hoàn hảo để đạp xe ra bãi biển An Bàng tắm mát, thưởng thức hải sản và lặn ngắm san hô Cù Lao Chàm.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Thu -->
+                        <div class="season-card" onclick="openLightbox('images/hoian_mua_thu_dem_ram_hoa_dang.webp', 'Mùa Thu (Tháng 7 - 9): Đêm Rằm Hoa Đăng Phố Hoài & Lễ Hội Trăng Rằm', 'Khung cảnh lung linh kỳ ảo đêm rằm Trung thu phố cổ. Toàn bộ đèn điện tắt nhường chỗ cho hàng ngàn chiếc đèn lồng lụa tỏa sáng ấm áp, mặt sông Hoài rực rỡ với muôn đóa hoa đăng trôi lững lờ.')">
+                            <div class="season-img-wrap">
+                                <img src="images/hoian_mua_thu_dem_ram_hoa_dang.webp" alt="Mùa thu đêm rằm hoa đăng phố cổ Hội An" loading="lazy">
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu: Vạn Ánh Hoa Đăng Lung Linh Phố Hoài</h3>
+                                <span class="season-time">Thời điểm: Tháng 7 đến tháng 9 Dương lịch</span>
+                                <p class="season-desc">Thời điểm lãng mạn nhất trong năm khi tiết trời vào thu dịu mát. Lễ hội đêm rằm phố cổ (ngày 14 Âm lịch hàng tháng) tái hiện không gian cổ xưa thế kỷ XVII với tiếng đàn ca, bài chòi và ánh hoa đăng bồng bềnh như dải ngân hà trên sông.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Đông -->
+                        <div class="season-card" onclick="openLightbox('images/hoian_mua_dong_pho_co_mua_lu.webp', 'Mùa Đông (Tháng 10 - 12): Mùa Nước Nổi Sông Hoài & Nét Trầm Lãng Tử', 'Trải nghiệm chèo thuyền nan dạo phố cổ khi nước sông Hoài dâng nhẹ mấp mé hiên nhà. Mưa đông lất phất làm nổi bật nét cổ kính, u hoài và sự kiên cường thích ứng bình thản của người dân xứ Hội.')">
+                            <div class="season-img-wrap">
+                                <img src="images/hoian_mua_dong_pho_co_mua_lu.webp" alt="Mùa đông nước nổi sông Hoài Hội An" loading="lazy">
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Đông: Mùa Nước Nổi Sông Hoài & Trầm Mặc Cổ Kính</h3>
+                                <span class="season-time">Thời điểm: Tháng 10 đến tháng 12 Dương lịch</span>
+                                <p class="season-desc">Mùa đông mang lại một Hội An rất đỗi khác biệt. Ngồi trong quán cà phê gác gỗ ngắm mưa rơi trên mái ngói rêu phong, nhâm nhi tách trà thảo mộc nóng ấm và thưởng thức bát cao lầu cay nồng là cảm giác khó quên.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 5: TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh">
+                    <h2><span class="icon">📸</span> 5. Top 10 Thắng cảnh biểu tượng & Dấu tích lịch sử</h2>
+                    <p>Khám phá trọn vẹn 10 công trình kiến trúc cổ và danh thắng biểu tượng nhất làm nên danh tiếng toàn cầu của Đô thị cổ Hội An:</p>
+
+                    <div class="checkin-grid">
+                        <!-- Spot 1: Chùa Cầu (Double Col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/hoian_chua_cau.webp', 'Chùa Cầu (Lai Viễn Kiều) — Trái Tim Biểu Tượng 400 Năm Di Sản', 'Cây cầu ngói bằng gỗ dài 18m bắc qua lạch nước sông Hoài do các thương nhân Nhật Bản xây dựng vào đầu thế kỷ XVII. Điểm nhấn kiến trúc mái vòm cong mềm mại bằng ngói âm dương, bên trong thờ thần Bắc Đế Trấn Vũ.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_chua_cau.webp" alt="Chùa Cầu Lai Viễn Kiều Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Top 1 Biểu Tượng</span>
+                                    <span class="tag">Di tích Quốc gia Đặc biệt</span>
+                                </div>
+                                <h3 class="dest-card-title">1. Chùa Cầu (Lai Viễn Kiều) — Linh Hồn Phố Hội</h3>
+                                <p class="dest-card-desc">Biểu tượng bất hủ in trên tờ tiền polyme 20.000 VNĐ, minh chứng sống động cho mối bang giao hữu nghị Việt - Nhật suốt bốn thế kỷ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 2: Hội quán Phúc Kiến -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_phuc_kien.webp', 'Hội Quán Phúc Kiến — Kiệt Tác Kiến Trúc Tâm Linh Hoa Lệ', 'Xây dựng năm 1697 bởi cộng đồng bang Phúc Kiến, nơi thờ Thiên Hậu Thánh Mẫu phù hộ cho người đi biển. Nổi bật với cổng tam quan lợp ngói thanh lưu ly rực rỡ và những vòng hương trầm khổng lồ treo cao.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_phuc_kien.webp" alt="Hội quán Phúc Kiến Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Kiến Trúc Lộng Lẫy</span>
+                                    <span class="tag">Thiên Hậu Thánh Mẫu</span>
+                                </div>
+                                <h3 class="dest-card-title">2. Hội Quán Phúc Kiến — Đền Thần Cổ Kính</h3>
+                                <p class="dest-card-desc">Hội quán lớn nhất và nguy nga nhất trong ngũ bang hội quán người Hoa tại Hội An, nơi lưu giữ nhiều bảo vật gốm sứ tinh xảo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 3: Nhà cổ Tấn Ký -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_tan_ky.webp', 'Nhà Cổ Tấn Ký — Tuyệt Tác Gỗ Trầm Tích Ba Nền Văn Hóa', 'Ngôi nhà cổ hơn 200 năm tuổi của gia tộc họ Lê, kiến trúc hình ống hai mặt tiền mở ra đường Nguyễn Thái Học và Bạch Đằng, kết hợp hài hòa phong cách kiến trúc Việt, Nhật và Hoa.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_tan_ky.webp" alt="Nhà cổ Tấn Ký Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Di Sản Trăm Năm</span>
+                                    <span class="tag">Chén Khổng Tử</span>
+                                </div>
+                                <h3 class="dest-card-title">3. Nhà Cổ Tấn Ký — Dấu Tích Thương Gia</h3>
+                                <p class="dest-card-desc">Ngôi nhà cổ đầu tiên được công nhận Di tích quốc gia, nơi lưu giữ báu vật chén Khổng Tử và hệ thống tời chống lũ độc đáo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 4: Phố Đèn Lồng (Double Col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/hoian_lantern_street.webp', 'Phố Đèn Lồng Hội An — Không Gian Cổ Tích Rực Rỡ Đêm Kinh Kỳ', 'Hàng ngàn chiếc đèn lồng thủ công muôn hình vạn trạng bằng lụa Hà Đông và khung tre uốn lượn thắp sáng rực rỡ các con phố cổ Trần Phú, Nguyễn Thái Học, Châu Thượng Văn khi màn đêm buông xuống.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_lantern_street.webp" alt="Phố đèn lồng Hội An lung linh" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Must-Checkin</span>
+                                    <span class="tag">Nghệ Thuật Thủ Công</span>
+                                </div>
+                                <h3 class="dest-card-title">4. Phố Đèn Lồng — Thiên Đường Sắc Màu Về Đêm</h3>
+                                <p class="dest-card-desc">Di sản văn hóa phi vật thể của Hội An, biến từng ngõ nhỏ rêu phong thành cung đường cổ tích lung linh huyền ảo trong mắt bạn bè quốc tế.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 5: Dòng Sông Hoài -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_hoai_river.webp', 'Dòng Sông Hoài — Mạch Nguồn Thơ Mộng Phố Cổ', 'Nhánh sông Thu Bồn êm đềm chảy qua trung tâm phố cổ, bến đỗ của hàng trăm chiếc thuyền nan đưa đón du khách thả hoa đăng cầu an và ngắm cảnh phố phường rọi bóng nước.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_hoai_river.webp" alt="Sông Hoài phố cổ Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Thả Hoa Đăng</span>
+                                    <span class="tag">Thuyền Nan Sông Hoài</span>
+                                </div>
+                                <h3 class="dest-card-title">5. Sông Hoài — Trầm Tích Thuyền Đò</h3>
+                                <p class="dest-card-desc">Linh hồn của phố Hoài, nơi lãng đãng những câu hò điệu lý và ánh nến hoa đăng trôi nhẹ nhàng trong gió đêm.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 6: Chợ Hội An -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_market.webp', 'Chợ Hội An — Thiên Đường Ẩm Thực Bản Địa Sầm Uất', 'Khu chợ cổ nằm ngay bên bờ sông Hoài, được tạp chí Lonely Planet bình chọn là một trong những thiên đường ẩm thực đường phố hấp dẫn nhất thế giới.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_market.webp" alt="Chợ Hội An ẩm thực" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Ẩm Thực Dân Gian</span>
+                                    <span class="tag">Chợ Ven Sông</span>
+                                </div>
+                                <h3 class="dest-card-title">6. Chợ Hội An — Hồn Quê Phố Cổ</h3>
+                                <p class="dest-card-desc">Nơi hội tụ trọn vẹn hương vị xứ Quảng với các quầy cao lầu, mì Quảng, bánh bèo, chè bắp thơm phức và hải sản tươi rói.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 7: Làng gốm Thanh Hà -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_thanh_ha.webp', 'Làng Gốm Thanh Hà — 500 Năm Đất Sét Nung Bên Sông Thu Bồn', 'Làng nghề thủ công truyền thống hình thành từ thế kỷ XVI. Trải qua hơn 500 năm, các nghệ nhân vẫn giữ kỹ thuật chuốt gốm bằng bàn xoay chân và nung đất sét đỏ tự nhiên không tráng men.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_thanh_ha.webp" alt="Làng gốm Thanh Hà Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Di Sản Phi Vật Thể</span>
+                                    <span class="tag">Làng Nghề 500 Năm</span>
+                                </div>
+                                <h3 class="dest-card-title">7. Làng Gốm Thanh Hà — Đất Nung Truyền Thống</h3>
+                                <p class="dest-card-desc">Tự tay trải nghiệm nhào nặn đất sét trên bàn xoay và chiêm ngưỡng công viên gốm đất nung lớn nhất Việt Nam.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 8: Làng rau Trà Quế -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_tra_que.webp', 'Làng Rau Trà Quế — Vườn Thảo Mộc Xanh Hữu Cơ', 'Làng nghề trồng rau gia vị hơn 300 năm tuổi nổi tiếng với kỹ thuật bón rong vớt từ đầm Trà Quế, tạo nên những luống rau thơm, é, húng, ngò có hương vị cay nồng ngọt thơm tinh khiết.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_tra_que.webp" alt="Làng rau Trà Quế Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Rau Sạch Hữu Cơ</span>
+                                    <span class="tag">Du Lịch Xanh Eco</span>
+                                </div>
+                                <h3 class="dest-card-title">8. Làng Rau Trà Quế — Hương Đồng Cỏ Nội</h3>
+                                <p class="dest-card-desc">Trải nghiệm hóa thân làm nông dân tưới rau bằng gáo đôi truyền thống và thưởng thức món tôm hữu đặc sản ngọt bùi.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 9: Rừng dừa Bảy Mẫu Cẩm Thanh -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_rung_dua_bay_mau.webp', 'Rừng Dừa Bảy Mẫu Cẩm Thanh — Miền Tây Sông Nước Thu Nhỏ', 'Khu rừng dừa nước bạt ngàn rộng hơn 100ha tại xã Cẩm Thanh, căn cứ cách mạng kiên cường thời kháng chiến, nay là điểm du lịch sinh thái nổi tiếng với màn múa thuyền thúng ngoạn mục.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_rung_dua_bay_mau.webp" alt="Rừng dừa Bảy Mẫu Cẩm Thanh Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Vũ Điệu Thuyền Thúng</span>
+                                    <span class="tag">Rừng Dừa Nước</span>
+                                </div>
+                                <h3 class="dest-card-title">9. Rừng Dừa Bảy Mẫu — Sông Nước Cẩm Thanh</h3>
+                                <p class="dest-card-desc">Lênh đênh thuyền thúng len lỏi qua rặng dừa xanh mướt, xem nghệ nhân quay thuyền thúng điêu luyện và câu cua đá thú vị.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 10: Bãi biển An Bàng -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_bien_an_bang.webp', 'Bãi Biển An Bàng — Top Bãi Biển Đẹp Nhất Châu Á', 'Nằm cách phố cổ chỉ 4km, bãi biển An Bàng giữ vẹn nguyên vẻ đẹp hoang sơ với dải cát vàng mịn màng, sóng êm trong xanh và hàng quán bar mộc mạc phong cách boho.')">
+                            <div class="dest-card-img">
+                                <img src="images/hoian_bien_an_bang.webp" alt="Bãi biển An Bàng Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Biển Đẹp Châu Á</span>
+                                    <span class="tag">Hoang Sơ Tĩnh Lặng</span>
+                                </div>
+                                <h3 class="dest-card-title">10. Bãi Biển An Bàng — Nắng Vàng Biển Xanh</h3>
+                                <p class="dest-card-desc">Chốn nghỉ dưỡng bình yên thư thái, đón bình minh rạng rỡ và thưởng thức nước dừa tươi bên làn gió biển mát lành.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 6: CẨM NANG DI CHUYỂN -->
+                <section id="di-chuyen">
+                    <h2><span class="icon">🚗</span> 6. Cẩm nang di chuyển & Cung đường giao thông</h2>
+                    <p>Hội An có vị trí giao thông vô cùng thuận tiện, chỉ cách sân bay quốc tế và ga đường sắt trung tâm Đà Nẵng khoảng 30km (chưa đầy 45 phút di chuyển):</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Phương tiện di chuyển</th>
+                                    <th>Thời gian di chuyển</th>
+                                    <th>Mức giá tham khảo</th>
+                                    <th>Đặc điểm & Lời khuyên trải nghiệm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Xe buýt điện / Taxi / Xe đưa đón</strong> (Sân bay Đà Nẵng -> Hội An)</td>
+                                    <td>40 - 50 phút</td>
+                                    <td><span class="price-tag">250.000 - 350.000 đ/chuyến</span></td>
+                                    <td>Đi theo đường biển Võ Nguyên Giáp - Lạc Long Quân ngắm cảnh bờ biển thơ mộng. Xe buýt công cộng số 1 chỉ 30.000 đ/vé.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Xe đạp dạo phố cổ</strong> (Phương tiện phổ biến nhất)</td>
+                                    <td>Chủ động theo giờ</td>
+                                    <td><span class="price-tag">Miễn phí - 40.000 đ/ngày</span></td>
+                                    <td>Hầu hết các khách sạn, homestay đều trang bị xe đạp miễn phí cho khách. Thích hợp dạo phố cổ và đạp xe ra biển An Bàng.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thuê xe máy tự lái</strong> (Khám phá ngoại thành Hội An)</td>
+                                    <td>Theo ngày</td>
+                                    <td><span class="price-tag">120.000 - 150.000 đ/ngày</span></td>
+                                    <td>Linh hoạt vi vu rừng dừa Bảy Mẫu, làng gốm Thanh Hà, VinWonders Nam Hội An hoặc bãi biển Cửa Đại.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thuyền nan dạo sông Hoài</strong> (Bến sông Bạch Đằng)</td>
+                                    <td>20 - 30 phút</td>
+                                    <td><span class="price-tag">150.000 - 200.000 đ/thuyền</span></td>
+                                    <td>Thuyền chở tối đa 4 - 5 người. Trải nghiệm thả hoa đăng giấy cầu an lung linh trên mặt sông vào buổi chiều tà và đêm tối.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Quy định phố đi bộ & Xe không động cơ tại Hội An:</h3>
+                    <ul style="margin: 0.5rem 0 1.5rem 1.2rem; color: var(--text-sec); font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Khung giờ cấm xe máy:</strong> Sáng từ 09h00 - 11h00, Chiều - Tối từ 15h00 - 21h30 hàng ngày. Toàn bộ khu vực trung tâm phố cổ chỉ dành riêng cho người đi bộ và xe đạp, mang lại không gian trong lành, an toàn tuyệt đối.</li>
+                        <li><strong>Gửi xe bên ngoài phố cổ:</strong> Du khách đi xe máy cần gửi tại các bãi xe được cấp phép ở các trục đường vành đai: Hoàng Diệu, Phan Chu Trinh, Hai Bà Trưng (giá gửi 5.000 - 10.000 VNĐ/xe).</li>
+                    </ul>
+                </section>
+
+                <!-- MỤC 7: TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <section id="am-thuc">
+                    <h2><span class="icon">🍲</span> 7. Tinh hoa ẩm thực đặc sản</h2>
+                    <p>Ẩm thực Hội An là bản hòa tấu tinh tế của sự giao thoa văn hóa thương cảng. Những món ăn tuy mộc mạc, bình dị nhưng thấm đượm gia vị thảo mộc Trà Quế và bí quyết chế biến gia truyền trăm năm của các gia tộc phố Hội:</p>
+
+                    <div class="culinary-grid">
+                        <!-- Món 1: Cao lầu Hội An -->
+                        <div class="culinary-card" onclick="openLightbox('images/hoian_mon_cao_lau.webp', 'Cao Lầu Hội An — Độc Bản Tinh Hoa Giếng Cổ Bá Lễ', 'Sợi mì cao lầu màu vàng nâu ngâm tro củi Cù Lao Chàm và nước giếng Bá Lễ dẻo dai sần sật, phủ lên trên từng lát thịt xá xíu ngũ vị thơm lừng, da heo chiên giòn tan (tóp mỡ), giá đỗ chần và rau thơm Trà Quế tươi non.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hoian_mon_cao_lau.webp" alt="Cao lầu Hội An chuẩn vị giếng Bá Lễ" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">1. Cao Lầu Hội An Chuẩn Vị Giếng Bá Lễ</h3>
+                                <p class="culinary-desc">Món ăn độc bản không nơi nào có thể sao chép trọn vẹn. Nước sốt thịt xíu đậm đà rưới vừa đủ làm ướt sợi mì, khi ăn trộn đều cùng tương ớt xào Hội An cay the và rau đắng nhỏ xíu tạo nên hương vị bùng nổ lưu luyến.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">35.000 - 55.000 VNĐ / bát</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 2: Mì Quảng tôm thịt -->
+                        <div class="culinary-card" onclick="openLightbox('images/hoian_mon_mi_quang.webp', 'Mì Quảng Tôm Thịt Đậm Đà — Hồn Quê Xứ Quảng', 'Tô mì Quảng vàng ươm màu nghệ với những con tôm sông rim mặn ngọt, thịt ba chỉ heo ngấm đẫm gia vị, trứng cút bùi ngậy, rắc đậu phộng rang giòn tan, ăn kèm miếng bánh tráng mè nướng rụm và rổ rau sống hoa chuối tươi mát.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hoian_mon_mi_quang.webp" alt="Mì Quảng Hội An tôm thịt" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">2. Mì Quảng Tôm Thịt Đậm Đà</h3>
+                                <p class="culinary-desc">Khác với phở hay bún, nước nhưỡng của mì Quảng chỉ chan xâm xấp đáy tô nhưng cô đọng vị ngọt béo đậm đà của tôm thịt ninh kỹ. Bẻ vụn miếng bánh tráng giòn rụm vào tô rồi trộn đều, cảm nhận trọn vẹn phong vị mộc mạc đồng quê.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">30.000 - 45.000 VNĐ / tô</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 3: Cơm gà bà Buội -->
+                        <div class="culinary-card" onclick="openLightbox('images/hoian_mon_com_ga_ba_buoi.webp', 'Cơm Gà Bà Buội — Hạt Gạo Vàng Óng Da Gà Giòn Sần Sật', 'Đĩa cơm gà vàng ươm nấu từ gạo tẻ ngâm nước luộc gà béo ngậy trộn nghệ tươi thơm dẻo, bên trên là thịt gà ta thả vườn xé phay da vàng giòn sần sật bóp gỏi hành tây, rau răm Trà Quế và đĩa nước mạ đậm đà.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hoian_mon_com_ga_ba_buoi.webp" alt="Cơm gà Bà Buội Hội An" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">3. Cơm Gà Bà Buội Vàng Óng</h3>
+                                <p class="culinary-desc">Thương hiệu cơm gà nức tiếng phố cổ từ những năm 50 thế kỷ trước. Miếng thịt gà chắc ngọt không hề bở, vị chua cay của gỏi hành tây hòa quyện cùng hạt cơm bùi béo và thìa tương ớt rim cay nồng khiến thực khách nhớ mãi.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">45.000 - 65.000 VNĐ / đĩa</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 4: Bánh mì Hội An -->
+                        <div class="culinary-card" onclick="openLightbox('images/hoian_mon_banh_mi_hoi_an.webp', 'Bánh Mì Hội An (Madam Khánh & Phượng) — Ổ Bánh Mì Ngon Nhất Hành Tinh', 'Ổ bánh mì vỏ mỏng giòn rụm nóng hổi nhồi đẫm hơn 10 loại nhân: pate gan béo ngậy, thịt xíu mềm ngọt, chả lụa, dưa leo, rau thơm Trà Quế, đồ chua và thứ nước sốt bí truyền sánh mịn thơm nức mũi.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hoian_mon_banh_mi_hoi_an.webp" alt="Bánh mì Hội An Madam Khánh" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">4. Bánh Mì Hội An (Madam Khánh / Phượng)</h3>
+                                <p class="culinary-desc">Được cố đầu bếp huyền thoại Anthony Bourdain ca tụng là "bản giao hưởng ẩm thực trong một ổ bánh mì". Từng vết cắn giòn tan bùng nổ hương vị thơm béo của pate, vị đậm đà của thịt nướng và sự thanh mát của rau dưa tươi rói.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">25.000 - 40.000 VNĐ / chiếc</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 5: Bánh bao bánh vạc (White Rose) -->
+                        <div class="culinary-card" onclick="openLightbox('images/hoian_mon_banh_bao_banh_vac.webp', 'Bánh Bao Bánh Vạc (White Rose) — Đóa Hồng Trắng Trong Suốt Thanh Nhã', 'Những chiếc bánh nhỏ xinh bằng bột gạo lọc trong suốt tạo hình khéo léo như cánh hoa hồng trắng e ấp, ôm lấy nhân tôm thịt xay nhuyễn thơm mùi hành tiêu, rắc hành phi vàng ruộm chấm nước mắm ớt thanh ngọt.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hoian_mon_banh_bao_banh_vac.webp" alt="Bánh bao bánh vạc White Rose Hội An" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">5. Bánh Bao Bánh Vạc (Bông Hồng Trắng)</h3>
+                                <p class="culinary-desc">Được người Pháp ưu ái gọi tên "White Rose" vì vẻ ngoài thanh tao như đóa hồng nở rộ. Vỏ bánh mềm dai dẻo quánh quyện vị ngọt tự nhiên của tôm đất tươi sống tạo nên món khai vị quý phái chốn thương cảng cổ.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">60.000 - 90.000 VNĐ / đĩa</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 6: Nước Mót thảo mộc hoa sen -->
+                        <div class="culinary-card" onclick="openLightbox('images/hoian_mon_nuoc_mot_thao_moc.webp', 'Nước Mót Thảo Mộc Hoa Sen — Thức Uống Thanh Tao Giải Nhiệt Phố Hoài', 'Ly nước thảo mộc thanh mát nấu từ sả tươi, gừng già, hoa cúc, quế, la hán quả và mật ong rừng, điểm xuyết một cánh sen hồng e ấp và chiếc lá chè xanh mát trên miệng ly giấy mộc mạc.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/hoian_mon_nuoc_mot_thao_moc.webp" alt="Nước Mót thảo mộc hoa sen Hội An" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">6. Nước Mót Thảo Mộc Hoa Sen</h3>
+                                <p class="culinary-desc">Thức uống giải nhiệt thần thánh trên đường Trần Phú. Ngụm nước mát rượi thơm nồng hương thảo mộc, ngọt thanh dịu nhẹ nơi cổ họng xua tan mọi oi ả nắng hè, trở thành biểu tượng phong cách tao nhã của du khách khi dạo phố Hội.</p>
+                                <div class="culinary-price">
+                                    <span>💵 Mức giá:</span>
+                                    <strong class="price-tag">15.000 - 20.000 VNĐ / ly</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 8: BẢNG GIÁ VÉ THAM QUAN NIÊM YẾT -->
+                <section id="gia-ve">
+                    <h2><span class="icon">🎟️</span> 8. Bảng giá vé tham quan niêm yết</h2>
+                    <p>Bảng giá vé tham quan khu phố cổ và các điểm du lịch sinh thái làng nghề niêm yết chính thức bởi Trung tâm Văn hóa - Thể thao & Truyền thanh - Truyền hình TP Hội An (Cập nhật năm 2026):</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Khu Vực Tham Quan / Làng Nghề</th>
+                                    <th>Giá Vé Khách Việt Nam</th>
+                                    <th>Giá Vé Khách Quốc Tế</th>
+                                    <th>Quyền Lợi Tham Quan & Ghi Chú</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Vé Tham Quan Phố Cổ Hội An</strong></td>
+                                    <td><span class="price-tag">80.000 đ/vé (3 điểm)</span></td>
+                                    <td><span class="price-tag">120.000 đ/vé (5 điểm)</span></td>
+                                    <td>Bao gồm không gian chung phố cổ, Chùa Cầu, xem biểu diễn nghệ thuật cổ truyền và tự chọn tham quan các nhà cổ, hội quán.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Khu Du Lịch Sinh Thái Rừng Dừa Bảy Mẫu</strong></td>
+                                    <td><span class="price-tag">30.000 đ vé vào cổng</span></td>
+                                    <td><span class="price-tag">30.000 đ</span></td>
+                                    <td>Thuê thuyền thúng tham quan: 150.000 đ/thúng (chở 2 người lớn + 1 trẻ nhỏ, hành trình 45 phút kèm xem múa thúng).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Làng Gốm Thủ Công Thanh Hà</strong></td>
+                                    <td><span class="price-tag">35.000 đ/người</span></td>
+                                    <td><span class="price-tag">35.000 đ</span></td>
+                                    <td>Bao gồm vé vào làng nghề, tặng 1 sản phẩm gốm tò he con giáp mang về và tự tay trải nghiệm chuốt gốm trên bàn xoay.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Công Viên Đất Nung Thanh Hà (Gốm Xanh)</strong></td>
+                                    <td><span class="price-tag">50.000 đ/người</span></td>
+                                    <td><span class="price-tag">50.000 đ</span></td>
+                                    <td>Bảo tàng gốm kiến trúc đất nung độc đáo trưng bày các kỳ quan thế giới thu nhỏ bằng gốm đỏ.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Làng Rau Hữu Cơ Trà Quế</strong></td>
+                                    <td><span class="price-tag">35.000 đ/người</span></td>
+                                    <td><span class="price-tag">35.000 đ</span></td>
+                                    <td>Tham quan vườn rau thảo mộc, trải nghiệm làm nông dân và ngâm chân nước thảo dược.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bãi Biển An Bàng & Cửa Đại</strong></td>
+                                    <td><span class="price-tag">Miễn phí vào bãi</span></td>
+                                    <td><span class="price-tag">Miễn phí</span></td>
+                                    <td>Tự do tắm biển, gửi xe máy 5.000 - 10.000 đ, thuê ghế dù từ 30.000 - 50.000 đ hoặc gọi đồ uống tại quán ven biển.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="disclaimer-box">
+                        * Tiền bán vé tham quan phố cổ được trích nộp hoàn toàn vào quỹ trùng tu, bảo tồn di sản Đô thị cổ Hội An và tái đầu tư cơ sở hạ tầng du lịch. Trẻ em dưới 16 tuổi được miễn phí vé vào cổng.
+                    </div>
+                </section>
+
+                <!-- MỤC 9: GỢI Ý LỊCH TRÌNH 3N2Đ & MẸO AN TOÀN -->
+                <section id="lich-trinh">
+                    <h2><span class="icon">🧭</span> 9. Gợi ý lịch trình & Mẹo trải nghiệm bản địa an toàn</h2>
+                    <p>Để tận hưởng nhịp sống chậm rãi, sâu lắng của phố cổ và kết hợp nghỉ dưỡng biển đảo sinh thái, GO FAR đề xuất lịch trình trải nghiệm tối ưu 3 Ngày 2 Đêm:</p>
+
+                    <h3>Lịch trình gợi ý 3N2Đ: "Chuyện Tình Phố Hoài — Hồn Xưa Cổ Kính"</h3>
+                    <div style="margin: 1rem 0; padding-left: 1.2rem; border-left: 3px solid var(--accent); color: var(--text-sec); font-size: 0.95rem;">
+                        <p><strong>Ngày 1: Đà Nẵng — Check-in Hội An — Dạo Bộ Phố Cổ — Thả Hoa Đăng Sông Hoài</strong><br>
+                        - 09h00: Di chuyển từ sân bay Đà Nẵng về Hội An, nhận phòng khách sạn hoặc homestay xinh xắn gần phố cổ.<br>
+                        - 10h30: Thưởng thức bữa trưa cơm gà bà Buội trứ danh hạt cơm vàng dẻo thơm.<br>
+                        - 14h30: Mua vé tham quan di sản: check-in Chùa Cầu 400 năm, chiêm ngưỡng nhà cổ Tấn Ký và Hội quán Phúc Kiến.<br>
+                        - 17h00: Nhâm nhi ly nước Mót thảo mộc mát lạnh, chụp ảnh giàn hoa giấy rực hồng trên nền tường vàng nghệ.<br>
+                        - 18h30: Ăn tối bát cao lầu đậm đà giòn rụm và đĩa bánh bao bánh vạc trắng ngần.<br>
+                        - 20h00: Lên thuyền nan thả hoa đăng lung linh trên dòng sông Hoài, hòa mình vào không gian hát bài chòi rộn rã.</p>
+
+                        <p style="margin-top: 1rem;"><strong>Ngày 2: Rừng Dừa Bảy Mẫu — Làng Gốm Thanh Hà — Chiều Biển An Bàng — Phố Đêm</strong><br>
+                        - 08h00: Ăn sáng ổ bánh mì Madam Khánh giòn tan ngập tràn nhân pate thịt nướng.<br>
+                        - 09h00: Đi thuyền thúng khám phá Rừng dừa nước Bảy Mẫu Cẩm Thanh, xem nghệ nhân biểu diễn quay thúng ngoạn mục.<br>
+                        - 11h30: Ghé Làng gốm Thanh Hà, tự tay chuốt chiếc bình hoa nhỏ bằng đất sét nung làm kỷ niệm.<br>
+                        - 12h30: Ăn trưa tô mì Quảng ếch hoặc mì Quảng tôm thịt đậm đà.<br>
+                        - 15h30: Đạp xe ra Bãi biển An Bàng tắm biển mát lạnh, nằm thư giãn trên ghế dù tre nhâm nhi nước dừa tươi.<br>
+                        - 19h00: Thưởng thức hải sản biển tươi rói bên bờ cát hoặc trở về phố cổ ăn kem ống truyền thống và dạo chợ đêm.</p>
+
+                        <p style="margin-top: 1rem;"><strong>Ngày 3: Làng Rau Trà Quế — Cafe View Nóc Phố Cổ — Mua Quà Lưu Niệm — Tạm Biệt</strong><br>
+                        - 07h30: Đạp xe hít thở không khí trong lành tại Làng rau Trà Quế, trải nghiệm tưới rau bằng gáo đôi.<br>
+                        - 09h30: Lên quán cafe Faifo hoặc 92 Station ngắm trọn vẹn toàn cảnh mái ngói âm dương rêu phong phố cổ từ trên cao.<br>
+                        - 11h00: Mua sắm quà tặng ý nghĩa: đèn lồng lụa Hội An gấp gọn, bánh đậu xanh nhân thịt Hội An, tương ớt xào phố Hội.<br>
+                        - 12h30: Ăn trưa nhẹ nhàng tô bún thịt nướng hoặc bánh ướt cuốn thịt nướng thơm lừng ven sông.<br>
+                        - 14h00: Xe đưa về sân bay Đà Nẵng, kết thúc chuyến hành trình lắng đọng hoài niệm cổ tích.</p>
+                    </div>
+
+                    <h3>Mẹo trải nghiệm bản địa & Bảo vệ di sản văn minh:</h3>
+                    <ul style="margin: 0.5rem 0 1rem 1.2rem; color: var(--text-sec); font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Bảo vệ kiến trúc gỗ cổ kính:</strong> Không viết vẽ bậy lên tường vàng, không trèo lên lan can Chùa Cầu hay dẫm đạp mạnh lên sàn gỗ các nhà cổ hàng trăm năm tuổi.</li>
+                        <li><strong>Ủng hộ sản phẩm thủ công địa phương:</strong> Đèn lồng, đồ gốm, lụa tơ tằm là tâm huyết của các nghệ nhân, mua sắm sản phẩm chính gốc là cách thiết thực nhất để tiếp sức cho Mạng lưới Thành phố Sáng tạo UCCN Hội An.</li>
+                        <li><strong>Ý thức giữ gìn vệ sinh sông Hoài:</strong> Khi thả hoa đăng, hãy chọn đèn giấy tự phân hủy thân thiện môi trường, không vứt rác, vỏ chai nhựa hay tàn thuốc xuống dòng sông.</li>
+                        <li><strong>Thời điểm chụp ảnh đẹp nhất:</strong> Hãy dậy sớm lúc 06h00 - 07h30 sáng khi nắng mai vừa lên, phố cổ vắng lặng không một bóng xe, sương sớm dịu dàng là lúc ghi lại những khung hình hoài niệm đẹp nhất.</li>
+                    </ul>
+                </section>
+
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a>
+            © 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch Việt Nam chuẩn xác & chuyên sâu.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            Biên tập nội dung: <strong>Sửu nhi</strong> • Ảnh: <strong>100% AI Travel Photography (GO FAR Studio)</strong>
+        </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img loading="lazy" class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightboxDirect()">&times;</span>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="Chi tiết hình ảnh danh thắng Hội An">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Lightbox Zoom functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const destCards = document.querySelectorAll('.dest-card');
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
+        function openLightbox(src, title, caption) {
+            var modal = document.getElementById('lightboxModal');
+            var img = document.getElementById('lightboxImg');
+            var titleElem = document.getElementById('lightboxTitle');
+            var capElem = document.getElementById('lightboxCaption');
+            
+            img.src = src;
+            titleElem.textContent = title;
+            capElem.textContent = caption;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
-            if (destCards.length && lightboxModal && lightboxImg) {
-                destCards.forEach(card => {
-                    card.style.cursor = 'zoom-in';
-                    card.addEventListener('click', () => {
-                        const img = card.querySelector('.dest-card-img img');
-                        if (!img) return;
+        function closeLightboxDirect() {
+            var modal = document.getElementById('lightboxModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-                        let titleText = "";
-                        let descText = "";
+        function closeLightbox(event) {
+            if (event.target.id === 'lightboxModal') {
+                closeLightboxDirect();
+            }
+        }
 
-                        const overlayH3 = card.querySelector('.dest-card-content h3');
-                        const overlayP = card.querySelector('.dest-card-content p');
-                        if (overlayH3) titleText = overlayH3.textContent;
-                        if (overlayP) descText = overlayP.textContent;
-
-                        if (!titleText && !descText) {
-                            titleText = img.alt || "Chi tiết hình ảnh";
-                        }
-
-                        lightboxModal.style.display = 'flex';
-                        lightboxImg.src = img.src;
-                        
-                        let captionHTML = "";
-                        if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
-                        }
-                        if (descText) {
-                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
-                        }
-                        
-                        const legend = card.getAttribute('data-legend');
-                        if (legend) {
-                            captionHTML += `
-                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
-                                    ✨ Truyền thuyết & Sự tích Kỳ bí
-                                </span>
-                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
-                            </div>`;
-                        }
-                        lightboxCaption.innerHTML = captionHTML;
-                    });
-                });
-
-                lightboxClose.addEventListener('click', () => {
-                    lightboxModal.style.display = 'none';
-                });
-
-                lightboxModal.addEventListener('click', (e) => {
-                    if (e.target === lightboxModal || e.target === lightboxClose) {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
-                
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightboxDirect();
             }
         });
     </script>
