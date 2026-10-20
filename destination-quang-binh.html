@@ -3,614 +3,673 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quảng Bình — Vương Quốc Hang Động & Miền Di Sản Kỳ Vĩ | GO FAR</title>
-    <meta name="description" content="Cẩm nang du lịch Quảng Bình toàn diện: Khám phá VQG Phong Nha - Kẻ Bàng 2 lần UNESCO, kỳ quan Sơn Đoòng, Động Thiên Đường, Suối Nước Moọc, sông Chày hang Tối, di tích Hang Tám Cô, Vũng Chùa - Đảo Yến và ẩm thực cháo canh.">
-    <meta name="keywords" content="du lịch Quảng Bình, kinh nghiệm đi Quảng Bình, Phong Nha Kẻ Bàng, Sơn Đoòng, Động Thiên Đường, Động Phong Nha, Suối Nước Moọc, Sông Chày Hang Tối, Hang Tám Cô, Vũng Chùa Đảo Yến, Đèo Ngang, biển Nhật Lệ, cháo canh Quảng Bình">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    
-    <!-- Google Fonts -->
+    <title>Quảng Bình — Vương Quốc Hang Động & Di Sản Thiên Nhiên Thế Giới | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Quảng Bình trọn vẹn: Di sản UNESCO Vườn quốc gia Phong Nha - Kẻ Bàng, hang Sơn Đoòng lớn nhất thế giới, động Thiên Đường, suối Nước Moọc, cháo canh cá lóc và 4 mùa kỳ vĩ.">
+    <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
-            --bg: #0a141e;
-            --bg-card: #112233;
-            --bg-card-hover: #162c3e;
+            --bg: #0d1912;
+            --bg-sec: #14281e;
+            --bg-card: rgba(20, 40, 30, 0.88);
+            --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
-            --text-sec: #94a3b8;
-            --text-muted: #64748b;
-            --accent: #ff8c32;
-            --accent-gold: #fbbf24;
-            --accent-cyan: #06b6d4;
-            --border: rgba(255, 255, 255, 0.08);
+            --text-sec: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #059669;
+            --accent-gold: #34d399;
+            --accent-warm: #f59e0b;
             --radius: 16px;
             --radius-sm: 8px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            background-color: var(--bg);
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
             color: var(--text);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* HEADER / NAV */
+        /* NAV */
         .nav {
+            background: linear-gradient(135deg, #0d1912 0%, #163625 50%, #0d1912 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #059669, #34d399, transparent) 1;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: rgba(10, 20, 30, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 0.75rem 1.5rem;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
-
         .nav-inner {
             max-width: 1350px;
             margin: 0 auto;
+            padding: 0 1.5rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
-
-        .nav-logo img {
-            height: 38px;
-            width: auto;
-            display: block;
-        }
-
+        .nav-logo img { height: 45px; }
         .nav-back {
             color: var(--text-sec);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s;
-        }
-
-        .nav-back:hover {
-            color: var(--accent);
-        }
-
-        /* BREADCRUMB */
-        .breadcrumb-wrap {
-            max-width: 1350px;
-            margin: 1rem auto 0;
-            padding: 0 1.5rem;
-        }
-
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
             font-size: 0.85rem;
-            color: var(--text-muted);
-            list-style: none;
-        }
-
-        .breadcrumb a {
-            color: var(--text-sec);
             text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--accent);
-        }
-
-        .breadcrumb .sep {
-            color: var(--text-muted);
-        }
-
-        .breadcrumb .current {
-            color: var(--accent-gold);
-            font-weight: 500;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            max-width: 1350px;
-            margin: 1rem auto 2rem;
-            padding: 0 1.5rem;
-        }
-
-        .hero-banner {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            height: 480px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(10, 20, 30, 0.1) 0%, rgba(10, 20, 30, 0.85) 75%, var(--bg) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2.5rem;
-        }
-
-        .hero-badge-wrap {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-badge {
-            background: rgba(255, 140, 50, 0.2);
-            color: var(--accent);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            padding: 0.35rem 0.85rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .hero-badge.gold {
-            background: rgba(251, 191, 36, 0.2);
-            color: var(--accent-gold);
-            border-color: rgba(251, 191, 36, 0.4);
-        }
-
-        .hero-badge.cyan {
-            background: rgba(6, 182, 212, 0.2);
-            color: var(--accent-cyan);
-            border-color: rgba(6, 182, 212, 0.4);
-        }
-
-        .hero-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.75rem, 2.5vw, 2.45rem);
-            font-weight: 700;
-            line-height: 1.28;
-            color: #ffffff;
-            margin-bottom: 0.75rem;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-            text-wrap: balance;
-        }
-
-        .hero-title .title-line-1,
-        .hero-title .title-line-2 {
-            display: inline-block;
-        }
-
-        .hero-title .title-line-2 {
-            white-space: nowrap;
-        }
-
-        .hero-sub {
-            font-size: 1.15rem;
-            color: #e2e8f0;
-            max-width: 900px;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .meta-bar {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            font-size: 0.88rem;
-            color: var(--text-sec);
-            flex-wrap: wrap;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 0.75rem;
-        }
-
-        .meta-item {
+            transition: color 0.3s;
             display: flex;
             align-items: center;
             gap: 0.4rem;
+            margin-left: auto;
+        }
+        .nav-back:hover { color: var(--accent-gold); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 420px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(13,25,18,0.25) 0%, rgba(13,25,18,0.92) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 0; right: 0;
+            padding: 0 1.5rem;
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            background: rgba(52,211,153,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(52,211,153,0.25);
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-sec);
+            margin-top: 0.5rem;
+            max-width: 860px;
         }
 
-        /* LAYOUT & SIDEBAR */
-        .container {
+        /* ARTICLE LAYOUT */
+        .article-layout {
             max-width: 1350px;
             margin: 0 auto;
             padding: 0 1.5rem 4rem;
         }
 
-        .layout-grid {
+        .dashboard-layout {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 320px 1fr;
             gap: 2.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
 
-        /* STICKY QUICK NAV */
+        /* SIDEBAR */
         .sidebar {
             position: sticky;
-            top: 5rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .sidebar-title {
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 1.1rem;
             color: var(--accent-gold);
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
         }
-
-        .sidebar-menu {
+        .quick-facts {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.8rem;
+            font-size: 0.88rem;
         }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
 
-        .sidebar-link {
-            display: block;
-            padding: 0.5rem 0.75rem;
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
             color: var(--text-sec);
             text-decoration: none;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            border-left: 2px solid transparent;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
         }
-
-        .sidebar-link:hover, .sidebar-link.active {
-            color: #ffffff;
-            background: rgba(255, 140, 50, 0.15);
-            border-left-color: var(--accent);
+        .toc-list a:hover {
+            color: var(--accent-gold);
+            padding-left: 0.4rem;
         }
 
         /* MAIN CONTENT */
+        .article-main section {
+            margin-bottom: 3.5rem;
+        }
         .article-main h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 700;
-            color: #ffffff;
-            margin: 2.5rem 0 1.25rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
+            color: #fff;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             gap: 0.6rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.6rem;
         }
-
-        .article-main h2:first-of-type {
-            margin-top: 0;
-        }
-
         .article-main h2 .icon {
-            color: var(--accent);
+            font-size: 1.6rem;
         }
-
-        .article-main h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--accent-gold);
-            margin: 1.75rem 0 0.75rem;
-        }
-
         .article-main p {
-            color: #cbd5e1;
-            margin-bottom: 1.25rem;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .article-main ul {
-            margin-bottom: 1.25rem;
-            padding-left: 1.5rem;
-            color: #cbd5e1;
-        }
-
-        .article-main li {
-            margin-bottom: 0.6rem;
-        }
-
-        /* HIGHLIGHT BOX */
-        .highlight-box {
-            background: rgba(17, 34, 51, 0.75);
-            border-left: 4px solid var(--accent);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-            color: #f1f5f9;
+            margin-bottom: 1.2rem;
+            color: var(--text-sec);
             font-size: 1rem;
+            text-align: justify;
+        }
+        .intro-lead {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.2rem;
+            background: rgba(5,150,105,0.08);
+            padding: 1rem 1.2rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
 
-        .warning-box {
-            background: rgba(251, 191, 36, 0.08);
-            border-left: 4px solid var(--accent-gold);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            padding: 1.25rem 1.5rem;
+        .highlight-box {
+            background: rgba(5, 150, 105, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.25);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1.8rem 0;
+        }
+        .highlight-box h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+        }
+
+        .legend-box {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: var(--radius);
+            padding: 1.5rem;
             margin: 1.5rem 0;
         }
-
-        .warning-box p {
-            margin: 0;
-            color: #fef08a;
-            font-size: 0.95rem;
+        .legend-box h4 {
+            color: var(--accent-warm);
+            margin-bottom: 0.6rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
         }
 
-        /* SPOTS GRID */
-        .dest-grid {
+        /* 4 SEASONS GRID (MỤC 4) */
+        .seasons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin: 2rem 0;
         }
-
-        .dest-card {
+        .season-card {
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 1px solid rgba(255,255,255,0.06);
             border-radius: var(--radius);
             overflow: hidden;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
-            cursor: pointer;
         }
-
-        .dest-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 140, 50, 0.3);
+        .season-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(52,211,153,0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
         }
-
-        .dest-card-img-wrap {
+        .season-img-wrap {
             position: relative;
-            height: 220px;
+            aspect-ratio: 16/9;
             overflow: hidden;
         }
-
-        .dest-card-img-wrap img {
+        .season-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .dest-card:hover .dest-card-img-wrap img {
+        .season-card:hover .season-img-wrap img {
             transform: scale(1.06);
         }
-
-        .dest-card-tag {
+        .season-badge {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: rgba(10, 20, 30, 0.75);
-            backdrop-filter: blur(8px);
+            top: 0.8rem;
+            left: 0.8rem;
+            background: rgba(13,25,18,0.85);
             color: var(--accent-gold);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
             font-size: 0.75rem;
             font-weight: 600;
-            padding: 0.3rem 0.7rem;
-            border-radius: 50px;
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(52,211,153,0.3);
         }
-
-        .dest-card-body {
-            padding: 1.25rem;
+        .season-body {
+            padding: 1.4rem;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            gap: 0.6rem;
+            flex: 1;
         }
-
-        .dest-card-loc {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.35rem;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .dest-card-title {
+        .season-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0.6rem;
-            line-height: 1.35;
+            color: #fff;
         }
-
-        .dest-card-desc {
-            font-size: 0.92rem;
+        .season-time {
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+        .season-desc {
+            font-size: 0.9rem;
             color: var(--text-sec);
             line-height: 1.6;
-            margin-bottom: 1rem;
-            flex-grow: 1;
+            margin-bottom: 0 !important;
         }
 
-        .dest-card-cta {
-            font-size: 0.85rem;
-            color: var(--accent);
+        /* 10 LANDMARKS GRID (MỤC 5) */
+        .dest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .dest-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-sec);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s;
+            cursor: pointer;
+        }
+        .dest-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(52, 211, 153, 0.4);
+        }
+        .dest-card.featured {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+        .dest-card.single-col {
+            grid-column: span 1;
+            aspect-ratio: 3/4;
+        }
+        .dest-card-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .dest-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.9) saturate(1.15);
+        }
+        .dest-card:hover .dest-card-img img {
+            transform: scale(1.06);
+            filter: brightness(0.78) saturate(1.25);
+        }
+        .dest-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(13, 25, 18, 0.96) 100%);
+            z-index: 1;
+        }
+        .dest-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+        }
+        .dest-card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .dest-card-tags .tag {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(4px);
+        }
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+        }
+        .dest-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
             font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .dest-card-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* CULINARY SHOWCASE */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .culinary-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        .culinary-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(52, 211, 153, 0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .culinary-img-wrap {
+            aspect-ratio: 16/9;
+            position: relative;
+            overflow: hidden;
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.06);
+        }
+        .culinary-body {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .culinary-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0 !important;
+        }
+        .culinary-price {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            border-top: 1px solid var(--border);
-            padding-top: 0.75rem;
         }
 
-        /* DATA TABLE */
-        .table-wrap {
+        /* TABLES */
+        .table-responsive {
+            width: 100%;
             overflow-x: auto;
-            margin: 1.5rem 0 2rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border);
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
         }
-
-        table {
+        .info-table {
             width: 100%;
             border-collapse: collapse;
-            text-align: left;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            background: rgba(20, 40, 30, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        th {
-            background: rgba(17, 34, 51, 0.9);
+        .info-table th {
+            background: rgba(5, 150, 105, 0.15);
             color: var(--accent-gold);
+            padding: 0.85rem 1rem;
+            text-align: left;
             font-weight: 600;
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-            font-family: 'Space Grotesk', sans-serif;
         }
-
-        td {
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-            color: #cbd5e1;
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-sec);
         }
-
-        tr:last-child td {
-            border-bottom: none;
+        .price-tag {
+            color: var(--accent-warm);
+            font-weight: 600;
         }
-
-        tr:nth-child(even) td {
-            background: rgba(255, 255, 255, 0.02);
+        .disclaimer-box {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            font-style: italic;
         }
 
         /* FOOTER */
         .article-footer {
-            border-top: 1px solid var(--border);
+            max-width: 1350px;
+            margin: 0 auto;
             padding: 2.5rem 1.5rem;
-            margin-top: 4rem;
-            background: rgba(10, 20, 30, 0.5);
+            border-top: 1px solid rgba(255,255,255,0.06);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
             flex-wrap: wrap;
             gap: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            max-width: 1350px;
-            margin-left: auto;
-            margin-right: auto;
         }
+        .article-footer a { color: var(--accent-gold); text-decoration: none; }
+        .credits { font-style: italic; }
 
-        .credits strong {
-            color: var(--accent-gold);
-        }
-
-        /* LIGHTBOX MODAL (SCROLLABLE & NO-CUTOFF) */
+        /* LIGHTBOX MODAL */
         .lightbox-modal {
             display: none;
             position: fixed;
-            z-index: 2000;
+            z-index: 9999;
             inset: 0;
-            background: rgba(5, 10, 15, 0.95);
-            backdrop-filter: blur(16px);
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(6, 15, 10, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
+            box-sizing: border-box;
         }
-
         .lightbox-dialog {
-            max-width: 900px;
-            width: 100%;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .lightbox-content {
-            width: 100%;
-            max-height: 55vh;
-            object-fit: cover;
+            position: relative;
+            max-width: 960px;
+            margin: 2rem auto;
+            background: rgba(20, 40, 30, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
         }
-
-        .lightbox-caption {
-            color: #e2e8f0;
-            width: 100%;
-            text-align: center;
-        }
-
         .lightbox-close {
-            position: fixed;
-            top: 1.5rem;
-            right: 2rem;
-            color: #ffffff;
-            font-size: 2.5rem;
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            color: #fff;
+            font-size: 2rem;
             font-weight: 300;
             cursor: pointer;
-            background: none;
-            border: none;
-            line-height: 1;
-            transition: color 0.2s, transform 0.2s;
-            z-index: 2010;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+            transition: background 0.2s;
         }
-
         .lightbox-close:hover {
-            color: var(--accent);
-            transform: scale(1.1);
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--accent-gold);
+        }
+        .lightbox-media {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .lightbox-info {
+            padding: 1.8rem 2rem 2.2rem;
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .lightbox-desc {
+            font-size: 0.95rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+        }
+        .lightbox-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            background: rgba(52, 211, 153, 0.2);
+            color: var(--accent-gold);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
         }
 
-        @media (max-width: 992px) {
-            .layout-grid {
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .dashboard-layout {
                 grid-template-columns: 1fr;
             }
             .sidebar {
-                display: none;
+                position: static;
+                order: 2;
             }
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            .hero-banner {
-                height: 380px;
+            .article-main {
+                order: 1;
             }
         }
-
-        @media (max-width: 640px) {
-            .hero-banner {
-                height: 300px;
-            }
-            .hero-title {
-                font-size: 1.7rem;
-            }
-            .hero-overlay {
-                padding: 1.25rem;
-            }
-            .dest-grid {
+        @media (max-width: 768px) {
+            .seasons-grid, .dest-grid, .culinary-grid {
                 grid-template-columns: 1fr;
+            }
+            .dest-card.featured, .dest-card.single-col {
+                grid-column: span 1;
+                aspect-ratio: 16/9;
+            }
+            .hero {
+                height: 50vh;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -618,380 +677,587 @@
 <body>
 
     <!-- NAV -->
-    <header class="nav">
+    <nav class="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
                 <img src="images/logo.png" alt="GO FAR Logo">
             </a>
             <a href="index.html" class="nav-back">
-                <span>←</span> Quay lại trang chủ
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
             </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/quangbinh_hero.webp" alt="Toàn cảnh Vườn quốc gia Phong Nha Kẻ Bàng Quảng Bình kỳ quan hang động thế giới">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">🔥 Di sản Thiên nhiên Thế giới UNESCO • Di tích Quốc gia Đặc biệt</span>
+            <h1>Quảng Bình — Vương Quốc Hang Động & Kỳ Quan Địa Chất Bất Hủ</h1>
+            <p class="hero-subtitle">Vương quốc ngầm kỳ vĩ hơn 400 triệu năm tuổi nơi lưu giữ hang Sơn Đoòng lớn nhất hành tinh, dòng sông ngầm Phong Nha huyền thoại và cánh rừng nguyên sinh đá vôi cổ nhất Đông Nam Á.</p>
         </div>
     </header>
 
-    <!-- BREADCRUMB -->
-    <div class="breadcrumb-wrap">
-        <ul class="breadcrumb">
-            <li><a href="index.html">Trang chủ</a></li>
-            <li class="sep">/</li>
-            <li><a href="index.html#destinations">Điểm đến</a></li>
-            <li class="sep">/</li>
-            <li class="current">Quảng Bình</li>
-        </ul>
-    </div>
+    <!-- CONTENT LAYOUT -->
+    <div class="article-layout">
+        <div class="dashboard-layout">
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-banner">
-            <img src="images/quangbinh_hero.webp" alt="Toàn cảnh Vườn quốc gia Phong Nha - Kẻ Bàng Quảng Bình kỳ vĩ">
-            <div class="hero-overlay">
-                <div class="hero-badge-wrap">
-                    <span class="hero-badge gold">2 Lần Di Sản Thế Giới UNESCO</span>
-                    <span class="hero-badge cyan">Vương Quốc Hang Động Toàn Cầu</span>
-                    <span class="hero-badge">Di Tích Quốc Gia Đặc Biệt</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line-1">Quảng Bình — Vương Quốc Hang Động</span>
-                    <span class="title-line-2">& Miền Di Sản Kỳ Vĩ</span>
-                </h1>
-                <p class="hero-sub">Vùng đất khúc ruột miền Trung nơi sở hữu hệ thống karst cổ đại hơn 400 triệu năm, những dòng sông ngầm huyền ảo, kỳ quan hang Sơn Đoòng lớn nhất hành tinh cùng những trang sử hào hùng trên dãy Trường Sơn.</p>
-                <div class="meta-bar">
-                    <div class="meta-item">✍️ Tác giả: <strong>Sửu nhi</strong></div>
-                    <div class="meta-item">📍 Địa phận: <strong>Tỉnh Quảng Bình, Bắc Trung Bộ</strong></div>
-                    <div class="meta-item">⏱️ Thời gian đọc: <strong>10 phút</strong></div>
-                    <div class="meta-item">📅 Cập nhật: <strong>15/10/2026</strong></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAIN CONTENT CONTAINER -->
-    <div class="container">
-        <div class="layout-grid">
-            
-            <!-- STICKY SIDEBAR NAVIGATION -->
+            <!-- SIDEBAR -->
             <aside class="sidebar">
-                <div class="sidebar-title">📑 Mục Lục Cẩm Nang</div>
-                <ul class="sidebar-menu">
-                    <li><a href="#tong-quan" class="sidebar-link">1. Tổng quan & Vị thế Di sản Kép</a></li>
-                    <li><a href="#toa-do" class="sidebar-link">2. Mười Tọa độ check-in & Sử tích</a></li>
-                    <li><a href="#cam-nang-tham-hiem" class="sidebar-link">3. Cẩm nang thám hiểm hang động an toàn</a></li>
-                    <li><a href="#lo-trinh" class="sidebar-link">4. Hướng dẫn di chuyển từ Hà Nội</a></li>
-                    <li><a href="#bang-gia" class="sidebar-link">5. Bảng giá vé niêm yết chính thức</a></li>
-                    <li><a href="#am-thuc" class="sidebar-link">6. Cẩm nang ẩm thực đặc sản</a></li>
-                    <li><a href="#thoi-diem" class="sidebar-link">7. Thời điểm lý tưởng & Lưu ý</a></li>
-                </ul>
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Thông Tin Nhanh
+                    </h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span><span class="val">Tỉnh Quảng Bình, Bắc Trung Bộ</span></li>
+                        <li><span class="label">Quy mô di sản:</span><span class="val">Phong Nha - Kẻ Bàng (123.326 ha)</span></li>
+                        <li><span class="label">UNESCO vinh danh:</span><span class="val">2003 & 2015 (Tiêu chí viii, ix, x)</span></li>
+                        <li><span class="label">Di tích QGĐB:</span><span class="val">QĐ 1272/QĐ-TTg & QĐ 2383/QĐ-TTg</span></li>
+                        <li><span class="label">Thời điểm đẹp:</span><span class="val">Tháng 3 - 8 (Mùa khô khám phá)</span></li>
+                        <li><span class="label">Đặc sản tiêu biểu:</span><span class="val">Cháo canh cá lóc, Khoai gieo, Bánh lọc</span></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                        Mục Lục Hướng Dẫn
+                    </h3>
+                    <ul class="toc-list">
+                        <li><a href="#tong-quan">1. Tổng quan điểm đến</a></li>
+                        <li><a href="#lich-su-dia-ly">2. Vị trí địa lý & Dấu ấn lịch sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền thoại Vương quốc Hang động</a></li>
+                        <li><a href="#bon-mua">4. Chuỗi hình ảnh 4 mùa du lịch</a></li>
+                        <li><a href="#thang-canh">5. Top 10 Thắng cảnh biểu tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm nang di chuyển & Cung đường</a></li>
+                        <li><a href="#am-thuc">7. Tinh hoa ẩm thực đặc sản</a></li>
+                        <li><a href="#gia-ve">8. Bảng giá vé tham quan niêm yết</a></li>
+                        <li><a href="#lich-trinh">9. Lịch trình 3N2Đ & Mẹo thám hiểm an toàn</a></li>
+                    </ul>
+                </div>
             </aside>
 
-            <!-- ARTICLE MAIN BODY -->
+            <!-- MAIN CONTENT -->
             <main class="article-main">
 
-                <!-- TỔNG QUAN -->
-                <h2 id="tong-quan"><span class="icon">⛰️</span> 1. Tổng Quan & Vị Thế Di Sản Kép Phong Nha - Kẻ Bàng</h2>
-                <p>Nằm ở khu vực Bắc Trung Bộ với chiều ngang hẹp nhất Việt Nam (chỉ khoảng 40,3km từ biên giới Lào ra mép biển Đông tại huyện Quảng Ninh), <strong>Quảng Bình</strong> là vùng đất hội tụ đầy đủ biển xanh, đồng bằng, núi cao và đặc biệt là hệ thống địa chất karst kỳ vĩ bậc nhất thế giới. Trái tim của du lịch Quảng Bình là <strong>Vườn Quốc gia Phong Nha - Kẻ Bàng</strong> — viên ngọc vô giá được Tổ chức UNESCO hai lần vinh danh là Di sản Thiên nhiên Thế giới:</p>
+                <!-- MỤC 1: TỔNG QUAN -->
+                <section id="tong-quan">
+                    <h2><span class="icon">🧭</span> 1. Tổng quan điểm đến</h2>
+                    <div class="intro-lead">
+                        Nằm trên dải đất hẹp miền Trung với lưng tựa dãy Trường Sơn hùng vĩ, mặt hướng biển Đông bao la, <strong>Quảng Bình</strong> được cộng đồng thám hiểm quốc tế tôn vinh là <em>"Vương quốc hang động của thế giới"</em>. Nơi đây sở hữu khối núi đá vôi karst cổ nhất châu Á hình thành từ kỷ Cổ sinh hơn 400 triệu năm trước, cùng hơn 400 hang động kỳ vĩ ẩn mình dưới tán rừng nhiệt đới nguyên sinh bạt ngàn.
+                    </div>
+                    <p>Vườn quốc gia Phong Nha - Kẻ Bàng là di sản hiếm hoi của thế giới hai lần được UNESCO ghi danh nhờ giá trị địa chất - địa mạo ngoại hạng toàn cầu và hệ sinh thái đa dạng sinh học phong phú bậc nhất hành tinh. Tại đây, hang Sơn Đoòng được kỷ lục Guinness ghi nhận là hang động tự nhiên lớn nhất thế giới, chứa đựng cả một hệ sinh thái rừng nhiệt đới, dòng sông ngầm chảy xiết và khí hậu biệt lập bên trong lòng đất.</p>
+                    <p>Bên cạnh kỳ quan ngầm, Quảng Bình còn say lòng du khách với dòng sông Son trong xanh như ngọc bích, bãi biển Nhật Lệ thơ mộng, đồi cát Quang Phú trải dài ngút mắt và bề dày lịch sử oanh liệt của tuyến đường Trường Sơn huyền thoại.</p>
+                </section>
 
-                <div class="highlight-box">
-                    <p>🏛️ <strong>Dấu ấn Di sản Thế giới & Di tích Quốc gia Đặc biệt:</strong><br>
-                    • <strong>Di sản Thiên nhiên Thế giới (Năm 2003):</strong> Được UNESCO công nhận lần 1 theo tiêu chí (viii) về giá trị ngoại hạng toàn cầu của hệ thống địa chất, địa mạo karst cổ trên 400 triệu năm tuổi.<br>
-                    • <strong>Di sản Thiên nhiên Thế giới (Năm 2015):</strong> Được UNESCO vinh danh lần 2 theo tiêu chí (ix) và (x) về hệ sinh thái nguyên sinh và đa dạng sinh học độc đáo hàng đầu Đông Nam Á.<br>
-                    • <strong>Di tích Lịch sử Quốc gia Đặc biệt:</strong> Tuyến đường Trường Sơn — Đường Hồ Chí Minh huyền thoại qua địa phận Quảng Bình (với các trọng điểm Hang Tám Cô, Bến phà Long Đại, Bến phà Xuân Sơn, Cổng Trời...).</p>
-                </div>
-
-                <!-- 10 TỌA ĐỘ CHECK-IN -->
-                <h2 id="toa-do"><span class="icon">📍</span> 2. Mười Tọa Độ Check-in & Dấu Ấn Lịch Sử Quảng Bình</h2>
-                <p>Nhấp vào từng thẻ thắng cảnh bên dưới để chiêm ngưỡng bộ ảnh nghệ thuật AI độc quyền cùng những trang sử liệu hào hùng, tích xưa gắn liền với từng tấc đất, ngọn sóng Quảng Bình:</p>
-
-                <div class="dest-grid">
+                <!-- MỤC 2: VỊ TRÍ ĐỊA LÝ & DẤU ẤN LỊCH SỬ -->
+                <section id="lich-su-dia-ly">
+                    <h2><span class="icon">📜</span> 2. Vị trí địa lý & Dấu ấn lịch sử</h2>
+                    <p>Tỉnh Quảng Bình nằm ở Bắc Trung Bộ, nơi hẹp nhất theo chiều Đông - Tây của dải đất hình chữ S (chỉ khoảng 50km). Vườn quốc gia Phong Nha - Kẻ Bàng có diện tích vùng lõi 123.326 ha thuộc địa bàn các huyện Bố Trạch và Minh Hóa, tiếp giáp với Khu bảo tồn Hin Namno của nước bạn Lào. Khí hậu Quảng Bình chia làm hai mùa rõ rệt: mùa khô từ tháng 3 đến tháng 8 chan hòa nắng vàng (thích hợp nhất cho thám hiểm hang động) và mùa mưa bão từ tháng 9 đến tháng 11.</p>
                     
-                    <!-- SPOT 1: HANG SƠN ĐOÒNG -->
-                    <article class="dest-card" data-legend="Được ông Hồ Khanh - một người thợ rừng địa phương phát hiện năm 1990 và đoàn thám hiểm Hiệp hội Hang động Hoàng gia Anh (BCRA) do Howard Limbert dẫn đầu công bố vào năm 2009. Sơn Đoòng chính thức được Kỷ lục Guinness thế giới công nhận là hang động tự nhiên lớn nhất hành tinh với thể tích ước tính 38,5 triệu m³. Vòm hang nơi cao nhất lên tới 200m và rộng 150m, đủ sức chứa cả một tòa nhà chọc trời 40 tầng hoặc hạ cánh cả chiếc máy bay Boeing 747. Hang sở hữu hệ sinh thái độc nhất vô nhị với 2 hố sụt khổng lồ đón ánh sáng mặt trời nuôi dưỡng cả một khu rừng nhiệt đới nguyên sinh trong lòng hang ('Vườn Edam'), cùng thạch nhũ 'Bức Tường Việt Nam' cao tới 90m.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_hang_son_doong.webp" alt="Vẻ đẹp kỳ vĩ của hố sụt ánh sáng trong Hang Sơn Đoòng" loading="lazy">
-                            <span class="dest-card-tag">Kỷ lục hang lớn nhất thế giới</span>
+                    <div class="highlight-box">
+                        <h4>⚖️ Căn cứ Pháp lý & Quyết định Xếp hạng Di sản Chính thống</h4>
+                        <p>Giá trị ngoại hạng toàn cầu của di sản Phong Nha - Kẻ Bàng và các di tích lịch sử tại Quảng Bình được xác lập qua các văn bản pháp quy của Nhà nước và quyết định của UNESCO:</p>
+                        <ul style="margin: 0.6rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Công nhận Di sản Thiên nhiên Thế giới lần 1 (03/07/2003):</strong> Kỳ họp thứ 27 của Ủy ban Di sản Thế giới UNESCO tại Paris (Pháp) ghi danh Vườn quốc gia Phong Nha - Kẻ Bàng theo tiêu chuẩn (viii) về địa chất và địa mạo nổi bật toàn cầu.</li>
+                            <li><strong>Công nhận Di sản Thế giới lần 2 (08/07/2015):</strong> Kỳ họp thứ 39 tại Bonn (Đức) tiếp tục công nhận bổ sung theo tiêu chuẩn (ix) về tiến trình sinh thái và tiêu chuẩn (x) về đa dạng sinh học và các loài bị đe dọa.</li>
+                            <li><strong>Quyết định số 1272/QĐ-TTg ngày 12/08/2009 của Thủ tướng Chính phủ:</strong> Xếp hạng Vườn quốc gia Phong Nha - Kẻ Bàng là <em>Di tích Quốc gia Đặc biệt</em> (Đợt 1).</li>
+                            <li><strong>Quyết định số 2383/QĐ-TTg ngày 09/12/2013 của Thủ tướng Chính phủ:</strong> Xếp hạng <em>Di tích lịch sử Đường Trường Sơn - Đường Hồ Chí Minh</em> (hệ thống bến phà Xuân Sơn, Hang Tám Cô, đường 20 Quyết Thắng) là Di tích Quốc gia Đặc biệt.</li>
+                            <li><strong>Quyết định số 2128/QĐ-TTg ngày 29/12/2017 của Thủ tướng Chính phủ:</strong> Phê duyệt Quy hoạch chung xây dựng Khu du lịch quốc gia Phong Nha - Kẻ Bàng, tỉnh Quảng Bình đến năm 2030.</li>
+                        </ul>
+                        <div style="margin-top: 0.8rem; font-size: 0.82rem; color: var(--accent-gold); border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.5rem;">
+                            🏛️ <em>Nguồn tư liệu di sản & văn bản quy phạm pháp luật chính thống:</em> Cổng TTĐT Chính phủ (chinhphu.vn) • Cổng TTĐT Bộ Văn hóa, Thể thao và Du lịch (bvhttdl.gov.vn) • Cục Di sản Văn hóa (dsvh.gov.vn) • Cổng TTĐT Tỉnh Quảng Bình (quangbinh.gov.vn).
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Vườn Quốc gia Phong Nha - Kẻ Bàng</div>
-                            <h3 class="dest-card-title">Hang Sơn Đoòng — Kỳ Quan Lớn Nhất Thế Giới</h3>
-                            <p class="dest-card-desc">Hang động tự nhiên lớn nhất hành tinh, kỳ quan địa chất sở hữu hệ sinh thái rừng nguyên sinh, hố sụt khổng lồ và sông ngầm độc nhất vô nhị.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                    </div>
+
+                    <p>Về dấu ấn lịch sử, Quảng Bình là vùng "địa linh nhân kiệt", yết hầu quân sự hiểm yếu trong chiều dài dựng nước và giữ nước. Từ thế kỷ XVII trong cuộc phân tranh Trịnh - Nguyễn, Quân sư Đào Duy Từ đã cho đắp hệ thống Lũy Thầy (Lũy Đào Duy Từ) kiên cố cùng <strong>Quảng Bình Quan</strong> khống chế con đường thiên lý Bắc Nam. Thời kỳ kháng chiến chống Mỹ, mảnh đất "tuyến lửa" Quảng Bình là đầu mối xuất phát của tuyến đường Hồ Chí Minh huyền thoại, nơi ghi dấu sự hy sinh anh dũng của các chiến sĩ công binh, thanh niên xung phong tại <strong>Hang Tám Cô</strong> và bến phà Xuân Sơn.</p>
+                </section>
+
+                <!-- MỤC 3: HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai">
+                    <h2><span class="icon">⛰️</span> 3. Huyền thoại Vương quốc Hang động</h2>
+                    
+                    <div class="legend-box">
+                        <h4>🌍 Huyền thoại Sơn Đoòng & Chàng thợ rừng Hồ Khanh</h4>
+                        <p>Năm 1990, trong một chuyến đi rừng tìm trầm hương sâu trong lõi Vườn quốc gia Phong Nha - Kẻ Bàng, người thợ sơn tràng Hồ Khanh bất ngờ gặp phải cơn giông rừng dữ dội. Khi tìm chỗ trú ẩn bên chân vách đá dựng đứng, ông phát hiện một làn sương mù mát lạnh tỏa ra từ miệng hang cùng tiếng gió rít và tiếng nước gầm réo ầm ầm từ lòng đất sâu thẳm. Phải mất gần 20 năm sau, vào năm 2009, Hồ Khanh mới dẫn đoàn thám hiểm Hiệp hội Hang động Hoàng gia Anh (BCRA) do ông Howard Limbert dẫn đầu quay lại tìm đúng tọa độ kỳ bí này. Cửa hang mở ra trước sự kinh ngạc tột cùng của nhân loại: Hang Sơn Đoòng — hang động tự nhiên vĩ đại nhất hành tinh có thể chứa trọn một tòa nhà 40 tầng ở New York hay một chiếc máy bay Boeing 747 bay qua.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>💧 Huyền tích Suối Nước Moọc: Nguồn nước mọc lên từ lòng đất đá</h4>
+                        <p>Theo tiếng bản địa của đồng bào Arem và Vân Kiều, "Moọc" có nghĩa là "mọc lên" hay "đùn lên". Dân gian truyền tụng rằng giữa mùa khô hạn gay gắt của miền Trung, khi muôn loài cây cỏ đều héo rũ, một dòng suối xanh màu ngọc bích kỳ lạ bỗng nhiên phun trào cuồn cuộn từ chân vách núi đá vôi, nuôi dưỡng sự sống tốt tươi cho cả cánh rừng. Các nhà khoa học sau này lý giải dòng suối bắt nguồn từ một hệ thống sông ngầm karst khổng lồ chảy trong lòng núi đá vôi hàng chục cây số trước khi lộ thiên phun trào tạo nên cảnh sắc thần tiên.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>🏰 Huyền thoại Cổng Trời Đèo Ngang & Nàng thơ Bà Huyện Thanh Quan</h4>
+                        <p>Đèo Ngang (Hoành Sơn Quan) là ranh giới tự nhiên hiểm trở nối liền Quảng Bình và Hà Tĩnh. Tương truyền năm 1069 dưới triều Lý, Hoành Sơn đã là phòng tuyến biên viễn trọng yếu. Năm 1833, vua Minh Mạng cho xây dựng cửa ải Hoành Sơn Quan bằng đá kiên cố trên đỉnh đèo, tục gọi Cổng Trời. Vẻ đẹp trầm mặc, hoài cổ của non sông nơi đây đã đi vào áng thơ bất hủ của Bà Huyện Thanh Quan: <em>"Bước tới Đèo Ngang bóng xế tà, cỏ cây chen đá lá chen hoa..."</em></p>
+                    </div>
+                </section>
+
+                <!-- MỤC 4: CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua">
+                    <h2><span class="icon">🌸</span> 4. Chuỗi hình ảnh 4 mùa du lịch</h2>
+                    <p>Khí hậu Quảng Bình chuyển hóa sâu sắc theo mùa tạo nên những trải nghiệm thám hiểm và thưởng ngoạn cảnh quan kỳ vĩ hoàn toàn khác biệt trong năm:</p>
+
+                    <div class="seasons-grid">
+                        <!-- Mùa Xuân -->
+                        <div class="season-card" onclick="openLightbox('images/quangbinh_mua_xuan_le_hoi_song_son.webp', 'Mùa Xuân (Tháng 1 - 3): Lễ Hội Rước Nước Sông Son & Trẩy Hội Chùa Cổ', 'Mùa xuân trong lành trên dòng sông Son dẫn vào cửa động Phong Nha. Làn nước xanh màu ngọc bích phẳng lặng lượn lờ giữa những vách núi karst phủ đầy mầm xanh mới, những con thuyền hoa rực rỡ cờ hội lướt nhẹ trong làn nắng xuân ấm áp.')">
+                            <div class="season-img-wrap">
+                                <img src="images/quangbinh_mua_xuan_le_hoi_song_son.webp" alt="Mùa xuân dòng sông Son xanh biếc dẫn vào động Phong Nha" loading="lazy">
+                                <span class="season-badge">Tháng 1 - 3</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Xuân: Sông Son Xanh Biếc & Du Xuân Trẩy Hội</h3>
+                                <span class="season-time">Thời điểm: Tháng 1 đến hết tháng 3 Dương lịch</span>
+                                <p class="season-desc">Tiết trời mát mẻ, nắng nhẹ chan hòa, nước sông Son trong vắt ngọc bích. Thời điểm lý tưởng cho các chuyến du ngoạn thong dong vãn cảnh chùa Hoằng Phúc cổ tự nghìn năm và trải nghiệm thuyền nan khám phá động Phong Nha.</p>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 2: ĐỘNG THIÊN ĐƯỜNG -->
-                    <article class="dest-card" data-legend="Nằm sâu trong lòng Di sản Thiên nhiên Thế giới VQG Phong Nha - Kẻ Bàng ở độ cao 360m so với mực nước biển, Động Thiên Đường được phát hiện năm 2005 và mệnh danh là 'Hoàng cung trong lòng đất'. Với chiều dài đo đạc lên tới 31,4km, đây là hang động khô dài nhất châu Á. Bước qua cửa hang hẹp chỉ vừa một người lách, không gian bên trong mở ra rộng thênh thang với những cột nhũ đá trắng muốt và vàng óng tựa tháp hoa sen, cung tiên nữ lấp lánh như dát ngọc. Lối đi cầu gỗ dài 1.000m uốn lượn phục vụ du khách tham quan trong điều kiện nhiệt độ mát lạnh 20°C quanh năm.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_dong_thien_duong.webp" alt="Không gian tráng lệ như hoàng cung trong Động Thiên Đường" loading="lazy">
-                            <span class="dest-card-tag">Hang động khô dài nhất Châu Á</span>
+                        <!-- Mùa Hạ -->
+                        <div class="season-card" onclick="openLightbox('images/quangbinh_mua_ha_kham_pha_hang_dong.webp', 'Mùa Hạ (Tháng 4 - 8): Mùa Vàng Thám Hiểm Hang Động & Suối Moọc Mát Lạnh', 'Thời điểm thám hiểm rực rỡ nhất trong năm tại Phong Nha - Kẻ Bàng. Làn nước mát lạnh 18-20°C của Suối Nước Moọc và Sông Chày xua tan hoàn toàn cái nóng mùa hè, mở ra thiên đường chèo thuyền kayak, đu dây zipline và lội suối băng rừng.')">
+                            <div class="season-img-wrap">
+                                <img src="images/quangbinh_mua_ha_kham_pha_hang_dong.webp" alt="Mùa hè thám hiểm hang động suối Moọc Quảng Bình" loading="lazy">
+                                <span class="season-badge">Tháng 4 - 8</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Hạ: Mùa Vàng Thám Hiểm & Giải Nhiệt Suối Moọc</h3>
+                                <span class="season-time">Thời điểm: Tháng 4 đến hết tháng 8 Dương lịch</span>
+                                <p class="season-desc">Mùa khô tuyệt đối, điều kiện an toàn hoàn hảo nhất để chinh phục các tour trekking mạo hiểm như Sơn Đoòng, Tú Làn, Hang Én, bơi trong hang Tối và đắm mình trong làn nước ngọc bích của suối Nước Moọc.</p>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Km 16 nhánh Tây Đường Hồ Chí Minh, Bố Trạch</div>
-                            <h3 class="dest-card-title">Động Thiên Đường — Hoàng Cung Lòng Đất</h3>
-                            <p class="dest-card-desc">Kiệt tác hang khô 31,4km với hệ thống thạch nhũ lung linh kỳ ảo tựa hoàng cung tráng lệ, điểm đến chiêm bái nghệ thuật kiến tạo của thiên nhiên.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+
+                        <!-- Mùa Thu -->
+                        <div class="season-card" onclick="openLightbox('images/quangbinh_mua_thu_hoang_hon_nhat_le.webp', 'Mùa Thu (Tháng 9 - 10): Hoàng Hôn Dát Vàng Cửa Biển Sông Nhật Lệ', 'Cảnh sắc mùa thu tĩnh lặng và thơ mộng bên dòng sông Nhật Lệ đổ ra biển Đông. Từng vệt mây chiều dát vàng cam rực rỡ soi bóng xuống mặt nước êm đềm, xa xa là dải cát trắng mịn màng của đồi cát Quang Phú trong làn gió thu se lạnh.')">
+                            <div class="season-img-wrap">
+                                <img src="images/quangbinh_mua_thu_hoang_hon_nhat_le.webp" alt="Mùa thu hoàng hôn trên sông Nhật Lệ Đồng Hới" loading="lazy">
+                                <span class="season-badge">Tháng 9 - 10</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu: Biển Êm Nhật Lệ & Hoàng Hôn Tĩnh Lặng</h3>
+                                <span class="season-time">Thời điểm: Tháng 9 đến hết tháng 10 Dương lịch</span>
+                                <p class="season-desc">Thời điểm giao mùa dịu dàng, lượng khách không quá đông. Rất thích hợp cho các kỳ nghỉ dưỡng thảnh thơi tại các resort ven biển Đồng Hới, dạo bước trên đồi cát Quang Phú và thưởng thức hải sản mực nhảy nướng than hoa.</p>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 3: ĐỘNG PHONG NHA -->
-                    <article class="dest-card" data-legend="Biểu tượng du lịch số một của Quảng Bình, từng được các nhà thám hiểm quốc tế vinh danh với 7 kỷ lục thế giới: hang có sông ngầm đẹp nhất, cửa hang cao rộng nhất, bãi cát bãi đá ngầm đẹp nhất, hồ nước ngầm đẹp nhất, hang khô rộng đẹp nhất, thạch nhũ tráng lệ nhất và hang nước dài nhất. Hành trình ngồi thuyền gỗ ngược dòng sông Son xanh biếc tiến vào cửa vòm đá vôi đưa du khách đến với thế giới thần tiên của Hang Bi Ký, Cung Đình, Tiên Sơn... nơi còn lưu lại những dấu tích chữ khắc cổ của người Chăm Pa từ thế kỷ IX - X.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_dong_phong_nha.webp" alt="Thuyền nan đi vào cửa Động Phong Nha trên dòng sông Son ngọc bích" loading="lazy">
-                            <span class="dest-card-tag">Kỳ quan đệ nhất động</span>
+                        <!-- Mùa Đông -->
+                        <div class="season-card" onclick="openLightbox('images/quangbinh_mua_dong_thanh_binh_rung_nguyen_sinh.webp', 'Mùa Đông (Tháng 11 - 12): Sương Mờ Bảng Lảng Rừng Nguyên Sinh Karst Kẻ Bàng', 'Không gian mùa đông thanh bình huyền ảo của khối núi đá vôi cổ nhất Đông Nam Á. Sương mù luồn qua những vách núi đá dựng đứng và tán rừng nguyên sinh rậm rạp, mang lại vẻ đẹp điện ảnh kỳ bí như miền cổ tích.')">
+                            <div class="season-img-wrap">
+                                <img src="images/quangbinh_mua_dong_thanh_binh_rung_nguyen_sinh.webp" alt="Mùa đông sương mờ rừng nguyên sinh Phong Nha Kẻ Bàng" loading="lazy">
+                                <span class="season-badge">Tháng 11 - 12</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Đông: Sương Khói Đại Ngàn & Khám Phá Khô Ráo</h3>
+                                <span class="season-time">Thời điểm: Tháng 11 đến hết tháng 12 Dương lịch</span>
+                                <p class="season-desc">Tiết trời se lạnh của mùa đông miền Trung. Du khách ưu tiên tham quan các hang động khô trên cạn như Động Thiên Đường (nhiệt độ bên trong hang luôn ổn định 20-22°C ấm áp) và thưởng thức các món lẩu gà đồi, cháo canh nóng hổi thơm nồng ớt cay.</p>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Thị trấn Phong Nha, huyện Bố Trạch</div>
-                            <h3 class="dest-card-title">Động Phong Nha & Dòng Sông Son</h3>
-                            <p class="dest-card-desc">Thuyền rẽ sóng trên dòng sông Son màu ngọc bích, tiến sâu vào vòm hang kỳ vĩ dài gần 8km với hệ thống thạch nhũ ngàn năm huyền ảo.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                    </div>
+                </section>
+
+                <!-- MỤC 5: TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh">
+                    <h2><span class="icon">🏞️</span> 5. Top 10 Thắng cảnh biểu tượng & Dấu tích lịch sử</h2>
+                    <p>Khám phá 10 kỳ quan hang động và danh lam thắng cảnh làm rạng danh non sông Việt Nam trên bản đồ địa lý thế giới:</p>
+
+                    <div class="dest-grid">
+                        <!-- Spot 1: Hang Sơn Đoòng (Featured) -->
+                        <div class="dest-card featured" onclick="openLightbox('images/quangbinh_hang_son_doong.webp', '1. Hang Sơn Đoòng — Hang Động Tự Nhiên Lớn Nhất Thế Giới', 'Được phát hiện năm 2009 bởi đoàn thám hiểm BCRA và Hồ Khanh, hang Sơn Đoòng dài gần 9km, thể tích ước tính 38.5 triệu m³. Hang sở hữu thạch nhũ khổng lồ cao tới 80m, hố sụt khổng lồ mở ra khu rừng nguyên sinh Vườn Edam xanh tốt ngay trong lòng đất và bức tường Vạn Lý Trường Thành Việt Nam cao 90m.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_hang_son_doong.webp" alt="Hang Sơn Đoòng kỳ quan thiên nhiên lớn nhất thế giới" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Kỷ Lục Thế Giới</span>
+                                    <span class="tag">Lớn Nhất Hành Tinh</span>
+                                </div>
+                                <h3 class="dest-card-title">1. Hang Sơn Đoòng — Kỳ Quan Vĩ Đại Nhất Trái Đất</h3>
+                                <p class="dest-card-desc">Kỳ quan ngầm vĩ đại nhất hành tinh với khu rừng nguyên sinh và con sông ngầm riêng biệt ẩn sâu trong lòng đất.</p>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 4: SUỐI NƯỚC MOỌC -->
-                    <article class="dest-card" data-legend="Ẩn mình dưới tán rừng nguyên sinh Kẻ Bàng rợp bóng mát, Suối Nước Moọc là hiện tượng địa chất thủy văn vô cùng kỳ thú: dòng nước ngầm trong lòng núi đá vôi phun trào mãnh liệt lên mặt đất tạo thành dòng suối mát lành có màu xanh ngọc bích trong vắt quanh năm ở nhiệt độ 20°C. 'Moọc' trong tiếng địa phương nghĩa là mọc lên từ lòng đất. Hệ thống cầu tre uốn lượn bên bờ suối róc rách, những giàn phong lan rừng nở ngát hương thơm và mặt nước trong veo nhìn thấu tận đáy sỏi tạo nên chốn thần tiên hạ giới.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_suoi_nuoc_mooc.webp" alt="Dòng suối Nước Moọc xanh màu ngọc bích giữa rừng nguyên sinh" loading="lazy">
-                            <span class="dest-card-tag">Tuyệt tác suối ngầm karst</span>
+                        <!-- Spot 2: Động Phong Nha -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_dong_phong_nha.webp', '2. Động Phong Nha — Kỳ Quan Đệ Nhất Động Nước Của Việt Nam', 'Nổi tiếng với 7 tiêu chí kỷ lục thế giới do hiệp hội hang động hoàng gia Anh bình chọn: hang nước dài nhất, cửa hang cao và rộng nhất, bãi cát và bãi đá ngầm đẹp nhất, hồ nước ngầm đẹp nhất, hang khô rộng đẹp nhất, thạch nhũ tráng lệ và sông ngầm dài nhất thế giới.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_dong_phong_nha.webp" alt="Động Phong Nha sông ngầm thạch nhũ kỳ ảo" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Đệ Nhất Động Nước</span>
+                                    <span class="tag">7 Kỷ Lục Hang Động</span>
+                                </div>
+                                <h3 class="dest-card-title">2. Động Phong Nha</h3>
+                                <p class="dest-card-desc">Du thuyền trên dòng sông Son êm ả luồn vào lòng núi chiêm ngưỡng 7 kỷ lục thạch nhũ kỳ vĩ.</p>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Nhánh Tây Đường Hồ Chí Minh, Bố Trạch</div>
-                            <h3 class="dest-card-title">Suối Nước Moọc — Dòng Nước Ngọc Bích</h3>
-                            <p class="dest-card-desc">Dòng suối ngầm karst phun trào từ lòng núi đá vôi với làn nước xanh ngọc trong vắt 20°C quanh năm giữa rừng nguyên sinh.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+
+                        <!-- Spot 3: Động Thiên Đường -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_dong_thien_duong.webp', '3. Động Thiên Đường — Hoàng Cung Trong Lòng Đất Dài Nhất Châu Á', 'Được mệnh danh là hoàng cung ngầm tráng lệ bậc nhất với chiều dài khảo sát lên tới 31.4km. Hệ thống cầu gỗ dài 1km dẫn lối du khách đi giữa rừng măng đá, nhũ đá tầng tầng lớp lớp tinh khiết lấp lánh như cung điện dát ngọc của thiên cung.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_dong_thien_duong.webp" alt="Động Thiên Đường hoàng cung trong lòng đất Quảng Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Hoàng Cung Lòng Đất</span>
+                                    <span class="tag">Dài 31.4km</span>
+                                </div>
+                                <h3 class="dest-card-title">3. Động Thiên Đường</h3>
+                                <p class="dest-card-desc">Cung điện ngầm tráng lệ dài nhất châu Á với muôn vàn kiệt tác nhũ đá rực rỡ tựa chốn bồng lai.</p>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 5: SÔNG CHÀY & HANG TỐI -->
-                    <article class="dest-card" data-legend="Điểm du lịch sinh thái kết hợp mạo hiểm hàng đầu tại Việt Nam. Sông Chày bắt nguồn từ vùng núi đá vôi mang dòng nước xanh ngắt một màu lam ngọc độc đáo nhờ hàm lượng canxi cacbonat hòa tan cao. Tại đây, du khách được trải nghiệm đường trượt zipline dài 400m từ trạm quan sát thú bay vút qua dòng sông Chày sang cửa Hang Tối, chèo thuyền kayak và thám hiểm lòng hang nguyên sơ với trải nghiệm ngâm mình trong hồ bùn khoáng tự nhiên ấm áp, bồng bềnh không trọng lực.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_song_chay_hang_toi.webp" alt="Sông Chày màu ngọc bích và tuyến zipline qua vách núi" loading="lazy">
-                            <span class="dest-card-tag">Trải nghiệm zipline & tắm bùn</span>
+                        <!-- Spot 4: Suối Nước Moọc -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_suoi_nuoc_mooc.webp', '4. Suối Nước Moọc — Thiên Đường Giải Nhiệt Xanh Màu Ngọc Bích', 'Nằm ẩn mình dưới tán rừng nguyên sinh rậm rạp của Vườn quốc gia. Dòng nước suối phun trào từ lòng đất mát lạnh 20°C quanh năm, chảy qua những ghềnh đá rêu phong phủ đầy hoa dại, là điểm chèo kayak và tắm suối tuyệt vời nhất mùa hè.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_suoi_nuoc_mooc.webp" alt="Suối Nước Moọc xanh ngọc bích tuyệt mỹ" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Suối Ngọc Bích</span>
+                                    <span class="tag">Mát Lạnh 20°C</span>
+                                </div>
+                                <h3 class="dest-card-title">4. Suối Nước Moọc</h3>
+                                <p class="dest-card-desc">Tuyệt tác thiên nhiên phun trào từ lòng đất, thiên đường sinh thái mát lạnh giữa rừng nguyên sinh.</p>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Xã Sơn Trạch (nay là thị trấn Phong Nha)</div>
-                            <h3 class="dest-card-title">Sông Chày & Hang Tối</h3>
-                            <p class="dest-card-desc">Thử thách đu dây zipline vượt sông Chày màu xanh biếc, chèo thuyền kayak và ngâm mình tắm bùn khoáng tự nhiên trong hang Tối kỳ thú.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+
+                        <!-- Spot 5: Sông Chày - Hang Tối -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_song_chay_hang_toi.webp', '5. Sông Chày & Hang Tối — Đu Dây Zipline & Trải Nghiệm Tắm Bùn Khoáng Tự Nhiên', 'Điểm đến phiêu lưu mạo hiểm hàng đầu tại Phong Nha. Trải nghiệm tuyến đu dây zipline dài 400m vượt qua dòng sông Chày xanh biếc, chèo thuyền kayak và thám hiểm Hang Tối với hồ bùn khoáng tự nhiên ấm mịn độc nhất vô nhị.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_song_chay_hang_toi.webp" alt="Sông Chày Hang Tối tắm bùn zipline mạo hiểm" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Zipline 400m</span>
+                                    <span class="tag">Tắm Bùn Hang Động</span>
+                                </div>
+                                <h3 class="dest-card-title">5. Sông Chày - Hang Tối</h3>
+                                <p class="dest-card-desc">Thử thách mạo hiểm đu dây zipline vượt sông và thư giãn ngâm mình trong bùn khoáng tự nhiên quý giá.</p>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 6: HANG TÁM CÔ -->
-                    <article class="dest-card" data-legend="Tọa lạc tại Km 16.5 Đường 20 Quyết Thắng (xã Tân Trạch, huyện Bố Trạch), Hang Tám Cô là chứng tích lịch sử bi tráng và linh thiêng nhất trên tuyến đường Trường Sơn máu lửa. Ngày 14/11/1972, máy bay B-52 ném bom dữ dội khiến khối đá tảng nặng hàng nghìn tấn đổ sập bịt kín cửa hang, giam giữ 8 chiến sĩ thanh niên xung phong quê Hoằng Hóa (Thanh Hóa) tuổi đời mới 18 - 20. Đồng đội bên ngoài nỗ lực cứu chữa suốt 9 ngày đêm bằng mọi phương tiện nhưng bất lực. Sự hy sinh anh dũng của các anh chị đã trở thành tượng đài bất tử của ý chí quật cường giữ vững huyết mạch giao thông chi viện miền Nam.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_hang_tam_co.webp" alt="Đài tưởng niệm thiêng liêng Di tích lịch sử Hang Tám Cô Đường 20 Quyết Thắng" loading="lazy">
-                            <span class="dest-card-tag">Di tích Lịch sử Quốc gia</span>
+                        <!-- Spot 6: Hang Tám Cô & Đền Tưởng Niệm (Featured) -->
+                        <div class="dest-card featured" onclick="openLightbox('images/quangbinh_hang_tam_co.webp', '6. Hang Tám Cô & Đền Tưởng Niệm Đường 20 Quyết Thắng — Bản Hùng Ca Bất Tử', 'Tọa lạc trên cung đường 20 Quyết Thắng lịch sử, đây là nơi ghi dấu sự hy sinh anh dũng đến hơi thở cuối cùng của 8 nữ liệt sĩ thanh niên xung phong quê Hoằng Hóa (Thanh Hóa) vào tháng 11/1972 khi bị bom Mỹ đánh sập tảng đá nghìn tấn bịt kín cửa hang. Di tích Quốc gia Đặc biệt linh thiêng nơi du khách dâng hương tri ân thế hệ cha anh.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_hang_tam_co.webp" alt="Hang Tám Cô di tích lịch sử quốc gia đặc biệt đường 20 Quyết Thắng" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Di Tích QG Đặc Biệt</span>
+                                    <span class="tag">Đường 20 Quyết Thắng</span>
+                                </div>
+                                <h3 class="dest-card-title">6. Hang Tám Cô & Cung Đường 20 Quyết Thắng — Dấu Ấn Anh Hùng</h3>
+                                <p class="dest-card-desc">Bản hùng ca bi tráng của 8 cô gái thanh niên xung phong kiên cường giữ vững mạch máu giao thông thời kỳ kháng chiến.</p>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Km 16.5 Đường 20 Quyết Thắng, Tân Trạch</div>
-                            <h3 class="dest-card-title">Di Tích Hang Tám Cô — Đường 20 Quyết Thắng</h3>
-                            <p class="dest-card-desc">Khúc tráng ca bất tử của 8 chiến sĩ thanh niên xung phong kiên cường hy sinh năm 1972 để giữ vững huyết mạch đường Trường Sơn lịch sử.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+
+                        <!-- Spot 7: Vũng Chùa - Đảo Yến -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_vung_chua_dao_yen.webp', '7. Vũng Chùa - Đảo Yến — Nơi An Nghỉ Ngàn Thu Của Đại Tướng Võ Nguyên Giáp', 'Nằm dưới chân dãy Hoành Sơn nhìn ra biển Đông tĩnh lặng, nơi Đại tướng Tổng Tư lệnh Võ Nguyên Giáp lựa chọn làm nơi an giấc ngàn thu. Địa thế phong thủy tuyệt mỹ tựa núi ngắm biển, nơi muôn triệu người con đất Việt luôn hướng về với lòng kính yêu vô hạn.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_vung_chua_dao_yen.webp" alt="Vũng Chùa Đảo Yến nơi an nghỉ Đại tướng Võ Nguyên Giáp" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Đại Tướng Võ Nguyên Giáp</span>
+                                    <span class="tag">Cõi Thiêng Non Nước</span>
+                                </div>
+                                <h3 class="dest-card-title">7. Vũng Chùa - Đảo Yến</h3>
+                                <p class="dest-card-desc">Nơi an nghỉ vĩnh hằng của Người anh cả Quân đội nhân dân Việt Nam giữa non xanh nước biếc biển trời quê hương.</p>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 7: VŨNG CHÙA - ĐẢO YẾN -->
-                    <article class="dest-card" data-legend="Nằm dưới chân dãy Hoành Sơn uy nghi thuộc xã Quảng Đông (huyện Quảng Trạch), hướng thẳng ra vịnh biển Đông xanh ngắt có Đảo Yến chở che sóng gió. Vũng Chùa sở hữu thế đất phong thủy 'rồng cuộn hổ ngồi' tuyệt mỹ, nơi tựa lưng vào núi Thọ Sơn (Mũi Rồng). Đây là nơi an nghỉ ngàn thu của Đại tướng Võ Nguyên Giáp - người học trò xuất sắc của Chủ tịch Hồ Chí Minh, người anh cả của Quân đội Nhân dân Việt Nam anh hùng, vị Tổng tư lệnh đã cùng toàn dân làm nên chiến thắng Điện Biên Phủ 'lừng lẫy năm châu, chấn động địa cầu'.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_vung_chua_dao_yen.webp" alt="Nơi an nghỉ của Đại tướng Võ Nguyên Giáp tại Vũng Chùa Đảo Yến" loading="lazy">
-                            <span class="dest-card-tag">Địa chỉ đỏ tri ân</span>
+                        <!-- Spot 8: Bãi biển Nhật Lệ & Đồi cát Quang Phú -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_bien_nhat_le_doi_cat.webp', '8. Biển Nhật Lệ & Đồi Cát Quang Phú — Bãi Biển Thơ Mộng & Trượt Cát Trắng', 'Bãi biển Nhật Lệ cát trắng mịn thoai thoải nằm ngay trung tâm thành phố Đồng Hới, nước biển trong xanh êm đềm. Liền kề đó là đồi cát Quang Phú nhấp nhô như sa mạc thu nhỏ với những cồn cát vàng đổi màu theo từng khoảnh khắc trong ngày.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_bien_nhat_le_doi_cat.webp" alt="Biển Nhật Lệ và đồi cát Quang Phú Quảng Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Biển Thơ Mộng</span>
+                                    <span class="tag">Trượt Cát Sa Mạc</span>
+                                </div>
+                                <h3 class="dest-card-title">8. Biển Nhật Lệ & Đồi Cát Quang Phú</h3>
+                                <p class="dest-card-desc">Dải bờ biển ngọc ngà thơ mộng kết hợp đồi cát trắng trải dài bất tận nhìn ra vịnh biển xanh mát.</p>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Xã Quảng Đông, huyện Quảng Trạch</div>
-                            <h3 class="dest-card-title">Vũng Chùa - Đảo Yến — Nơi An Nghỉ Đại Tướng</h3>
-                            <p class="dest-card-desc">Chốn yên nghỉ thanh bình của Đại tướng Võ Nguyên Giáp bên rặng thông xanh ngút ngàn dưới chân dãy Hoành Sơn lộng gió biển.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+
+                        <!-- Spot 9: Quảng Bình Quan & Lũy Thầy -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_quang_binh_quan.webp', '9. Quảng Bình Quan & Lũy Thầy — Cổng Thành Lịch Sử Thời Trịnh Nguyễn', 'Cổng thành cổ kiên cố được quân sư Đào Duy Từ cho xây đắp vào năm 1639 dưới thời chúa Nguyễn Phúc Nguyên để chốt giữ đường thiên lý Bắc Nam. Trải qua bao cuộc chiến tranh khốc liệt, cửa quan vẫn đứng uy nghi giữa lòng thành phố Đồng Hới như chứng nhân lịch sử 400 năm.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_quang_binh_quan.webp" alt="Quảng Bình Quan cổng thành cổ kính Đồng Hới" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Di Tích Lịch Sử</span>
+                                    <span class="tag">Lũy Thầy 1639</span>
+                                </div>
+                                <h3 class="dest-card-title">9. Quảng Bình Quan</h3>
+                                <p class="dest-card-desc">Cổng thành cổ kính sừng sững giữa phố biển, biểu tượng kiên cường của vùng đất địa đầu tuyến lửa.</p>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 8: ĐÈO NGANG & HOÀNH SƠN QUAN -->
-                    <article class="dest-card" data-legend="Con đèo huyền thoại dài 6km trên Quốc lộ 1A vượt qua dãy Hoành Sơn - ranh giới địa lý và lịch sử tự nhiên giữa Hà Tĩnh và Quảng Bình. Trên đỉnh đèo ở độ cao 256m sừng sững Hoành Sơn Quan (thường gọi là 'Cổng Trời'), được xây dựng bằng gạch vồ và đá tảng kiên cố vào năm Minh Mạng thứ 14 (1833) nhằm kiểm soát cửa ải thiên lý Bắc - Nam. Đèo Ngang đi vào thi ca bất hủ qua bài thơ 'Qua Đèo Ngang' của nữ sĩ Bà Huyện Thanh Quan ('Bước tới Đèo Ngang bóng xế tà / Cỏ cây chen đá, lá chen hoa...').">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_deo_ngang_hoanh_son_quan.webp" alt="Cổng thành cổ Hoành Sơn Quan sừng sững trên đỉnh Đèo Ngang" loading="lazy">
-                            <span class="dest-card-tag">Di tích Lịch sử Thế kỷ XIX</span>
+                        <!-- Spot 10: Đèo Ngang & Hoành Sơn Quan -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_deo_ngang_hoanh_son_quan.webp', '10. Đèo Ngang & Cổng Trời Hoành Sơn Quan — Thắng Cảnh Thơ Ca Bất Hủ', 'Con đèo hiểm trở nổi tiếng trong thi ca nối liền Quảng Bình và Hà Tĩnh. Trên đỉnh đèo ở độ cao 250m là cổng ải Hoành Sơn Quan xây bằng đá hoa cương từ thời vua Minh Mạng năm 1833, nơi thu trọn vào tầm mắt muôn trùng núi non trùng điệp và biển khơi xanh ngắt.')">
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_deo_ngang_hoanh_son_quan.webp" alt="Đèo Ngang Hoành Sơn Quan cổng trời lịch sử" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Thắng Cảnh Thi Ca</span>
+                                    <span class="tag">Cổng Trời 1833</span>
+                                </div>
+                                <h3 class="dest-card-title">10. Đèo Ngang & Hoành Sơn Quan</h3>
+                                <p class="dest-card-desc">Cổng ải đá cổ kính trên đỉnh đèo lộng gió, nơi lắng đọng những vần thơ bất hủ đi cùng năm tháng.</p>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Đỉnh dãy Hoành Sơn, giáp ranh Hà Tĩnh</div>
-                            <h3 class="dest-card-title">Đèo Ngang & Hoành Sơn Quan</h3>
-                            <p class="dest-card-desc">Cổng trời cổ kính xây năm 1833 trên đỉnh đèo lộng gió, nơi hội tụ trang sử mở cõi và bài thơ bất hủ của nữ sĩ Bà Huyện Thanh Quan.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+                    </div>
+                </section>
+
+                <!-- MỤC 6: CẨM NANG DI CHUYỂN & CUNG ĐƯỜNG GIAO THÔNG -->
+                <section id="di-chuyen">
+                    <h2><span class="icon">🚗</span> 6. Cẩm nang di chuyển & Cung đường giao thông</h2>
+                    <p>Quảng Bình là nút thắt giao thông huyết mạch của dải đất miền Trung với đầy đủ hạ tầng sân bay quốc tế, đường sắt xuyên Việt và các tuyến cao tốc hiện đại:</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Phương tiện</th>
+                                    <th>Chặng khởi hành / Đầu mối</th>
+                                    <th>Thời gian di chuyển</th>
+                                    <th>Giá vé tham khảo</th>
+                                    <th>Lưu ý & Trải nghiệm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Máy bay</strong></td>
+                                    <td>Hà Nội (HAN) / TP.HCM (SGN) &rarr; Sân bay Đồng Hới (VDH)</td>
+                                    <td>1 giờ – 1.5 giờ</td>
+                                    <td><span class="price-tag">850.000 – 1.900.000đ/lượt</span></td>
+                                    <td>Sân bay cách trung tâm Đồng Hới 6km, cách Phong Nha 45km. Các hãng VNA, Vietjet, Bamboo khai thác hàng ngày.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tàu hỏa (Đường sắt Bắc Nam)</strong></td>
+                                    <td>Hà Nội / Đà Nẵng / Huế &rarr; Ga Đồng Hới</td>
+                                    <td>8 – 10h (từ HN) / 3h (từ Huế)</td>
+                                    <td><span class="price-tag">350.000 – 850.000đ/vé</span></td>
+                                    <td>Đi tàu đêm nằm khoang 4 giường từ Hà Nội ngủ một giấc sáng sớm đến nơi rất tiện lợi, tiết kiệm đêm khách sạn.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Xe khách chất lượng cao / Limousine</strong></td>
+                                    <td>Hà Nội (bến Mỹ Đình, Giáp Bát) &rarr; Đồng Hới / Phong Nha</td>
+                                    <td>8 – 9 giờ chạy đêm</td>
+                                    <td><span class="price-tag">280.000 – 400.000đ/vé</span></td>
+                                    <td>Nhiều hãng xe chạy thẳng vào thị trấn Phong Nha (Hưng Thành, Camel, Queen Cafe) rất thuận tiện cho khách du lịch.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thuê xe máy / Ô tô tự lái tại chỗ</strong></td>
+                                    <td>Di chuyển Đồng Hới &rarr; Phong Nha theo đường Hồ Chí Minh Đông</td>
+                                    <td>45 – 50 phút (45km)</td>
+                                    <td><span class="price-tag">120.000 – 150.000đ/ngày (xe máy)</span></td>
+                                    <td>Đường xá phẳng phiu, hai bên đường là đồng lúa và núi đá vôi tuyệt đẹp, cung đường Hồ Chí Minh nhánh Tây lái xe rất thích.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- MỤC 7: TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <section id="am-thuc">
+                    <h2><span class="icon">🍲</span> 7. Tinh hoa ẩm thực đặc sản Quảng Bình</h2>
+                    <p>Ẩm thực Quảng Bình đậm đà hương vị mặn mòi của gió Lào cát trắng, kết hợp nguồn hải sản biển tươi ngon và đặc sản rừng núi Trường Sơn độc đáo:</p>
+
+                    <div class="culinary-grid">
+                        <!-- Món 1: Cháo canh cá lóc -->
+                        <div class="culinary-card" onclick="openLightbox('images/quangbinh_mon_chao_canh_ca_loc.webp', 'Cháo Canh Cá Lóc Quảng Bình — Món Ăn Sáng Quốc Dân Đậm Đà', 'Sợi bánh canh nhào nặn thủ công từ bột gạo và bột năng dai dai, chan nước dùng ninh từ xương cá ngọt thanh tự nhiên. Topping ngập tràn phi lê cá lóc đồng xào nghệ vàng ươm thơm phức, hành tăm phi thơm và ăn kèm miếng ram giòn rụm nóng hổi.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/quangbinh_mon_chao_canh_ca_loc.webp" alt="Cháo canh cá lóc Quảng Bình nóng hổi ăn kèm ram giòn" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">1. Cháo Canh Cá Lóc & Ram Giòn</h3>
+                                <p class="culinary-desc">Bữa sáng linh hồn của người Quảng Bình. Sợi bột cán tay dẻo dai chan nước hầm cá ngọt thanh, cá lóc xào nghệ thơm nồng và thanh ram chiên giòn rụm.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 30.000 – 45.000đ/tô</span>
+                                    <span style="margin-left: auto;">📍 Cháo canh Gia Bảo, Quán Bà Hồng Đồng Hới</span>
+                                </div>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 9: BÃI BIỂN NHẬT LỆ & ĐỒI CÁT QUANG PHÚ -->
-                    <article class="dest-card" data-legend="Tọa lạc ngay cửa sông Nhật Lệ thuộc trung tâm TP. Đồng Hới, Bãi biển Nhật Lệ được thiên nhiên ban tặng bãi cát trắng mịn màng thoai thoải dài ngút ngàn, làn nước biển trong xanh màu ngọc bích và sóng vỗ êm đềm quanh năm. Liền kề phía Bắc là Đồi cát Quang Phú - những cồn cát vàng óng ả nhấp nhô tuyệt đẹp, nơi ngọn gió biển liên tục thổi qua tạo nên những đường vân sóng cát thay đổi hình dáng kỳ ảo theo từng giờ, mang lại trải nghiệm trượt cát và ngắm hoàng hôn say đắm lòng người.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_bien_nhat_le_doi_cat.webp" alt="Bãi biển Nhật Lệ thơ mộng và đồi cát Quang Phú trong nắng mai" loading="lazy">
-                            <span class="dest-card-tag">Bãi biển thơ mộng & đồi cát</span>
+                        <!-- Món 2: Bánh bột lọc tôm sông -->
+                        <div class="culinary-card" onclick="openLightbox('images/quangbinh_mon_banh_loc_bot_loc.webp', 'Bánh Bột Lọc Tôm Sông Quảng Bình — Trong Veo Đậm Đà Vị Cay', 'Lớp bột lọc trong suốt dai giòn sần sật bọc lấy con tôm sông nhỏ đỏ au và thịt ba chỉ rim đậm đà. Bánh được gói lá chuối hấp nóng hoặc đem chiên phồng giòn tan, chấm nước mắm ớt cay xé lưỡi đúng chuẩn vị xứ Quảng.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/quangbinh_mon_banh_loc_bot_loc.webp" alt="Bánh bột lọc tôm sông lá chuối thơm nức Quảng Bình" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">2. Bánh Bột Lọc Tôm Sông Rán & Hấp</h3>
+                                <p class="culinary-desc">Vỏ bánh trong vắt thấy rõ tôm sông đỏ âu cùng thịt rim mộc nhĩ, chấm nước mắm ớt cay nồng đậm đà khó quên.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 25.000 – 40.000đ/đĩa</span>
+                                    <span style="margin-left: auto;">📍 Bánh lọc Mệ Xuân, Quán Dì Thái đường Lê Thành Đồng</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Trung tâm Thành phố Đồng Hới</div>
-                            <h3 class="dest-card-title">Biển Nhật Lệ & Đồi Cát Quang Phú</h3>
-                            <p class="dest-card-desc">Bãi cát trắng mịn óng ả bên làn nước biển trong xanh của thành phố hoa hồng Đồng Hới, kết hợp trượt cát mạo hiểm tại đồi cát Quang Phú.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+
+                        <!-- Món 3: Khoai gieo Hải Ninh -->
+                        <div class="culinary-card" onclick="openLightbox('images/quangbinh_mon_khoai_deo.webp', 'Khoai Gieo Hải Ninh — Món Quà Dẻo Ngọt Chắt Chiu Từ Cát Bỏng', 'Được làm từ giống khoai lang đỏ trồng trên cát trắng Hải Ninh phơi sương phơi nắng ròng rã cả tháng trời. Từng lát khoai dẻo quánh màu hổ phách óng ánh, nhai càng lâu vị ngọt tự nhiên càng lan tỏa bùi béo đậm đà, là món quà đất mặn nồng hậu tình người.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/quangbinh_mon_khoai_deo.webp" alt="Khoai gieo khoai dẻo Hải Ninh ngọt bùi dẻo thơm" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">3. Khoai Gieo / Khoai Dẻo Hải Ninh</h3>
+                                <p class="culinary-desc">Đặc sản quý giá chắt chiu từ nắng gió dải cát miền Trung. Miếng khoai dẻo quánh óng ánh màu hổ phách ngọt đậm đà nhâm nhi cùng chén trà sen ấm áp.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 110.000 – 150.000đ/kg</span>
+                                    <span style="margin-left: auto;">📍 Chợ Đồng Hới, Hợp tác xã khoai gieo Hải Ninh</span>
+                                </div>
+                            </div>
                         </div>
-                    </article>
 
-                    <!-- SPOT 10: QUẢNG BÌNH QUAN & THÀNH CỔ ĐỒNG HỚI -->
-                    <article class="dest-card" data-legend="Công trình kiến trúc quân sự cổ kính xây dựng năm 1631 dưới sự chỉ huy của Quân sư tài ba Đào Duy Từ, là chốt chặn hiểm yếu nhất trong hệ thống Lũy Thầy (Lũy Đào Duy Từ) kiên cố giúp Chúa Nguyễn Đàng Trong đánh lui 7 cuộc tấn công quy mô lớn của quân Trịnh Đàng Ngoài suốt gần nửa thế kỷ (1627 - 1672). Cửa ải án ngữ trên đường thiên lý Bắc - Nam và dòng sông Nhật Lệ, được vua Minh Mạng cho đại trùng tu năm 1825 bằng gạch đá hoa cương kiên cố và khắc ghi hình ảnh vào Dụ Đỉnh (Anh Đỉnh) trước Thế Miếu Đại Nội Huế.">
-                        <div class="dest-card-img-wrap">
-                            <img src="images/quangbinh_quang_binh_quan.webp" alt="Di tích cổng thành Quảng Bình Quan kiêu hãnh giữa trung tâm thành phố Đồng Hới" loading="lazy">
-                            <span class="dest-card-tag">Di tích Quân sự Thế kỷ XVII</span>
+                        <!-- Món 4: Dê núi Phong Nha nướng than hoa -->
+                        <div class="culinary-card" onclick="openLightbox('images/quangbinh_mon_de_nui_phong_nha.webp', 'Dê Núi Nướng Tảng Than Hoa Phong Nha — Thịt Săn Chắc Ngọt Đậm', 'Dê được chăn thả tự nhiên leo trèo trên các vách đá vôi Phong Nha nên thịt săn chắc, thơm và không hề có mùi hôi. Tảng thịt dê ướp sả ớt nướng trực tiếp trên than củi hồng xèo xèo, thái mỏng chấm tương bần gừng cay xộc mũi ăn kèm lá sung non.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/quangbinh_mon_de_nui_phong_nha.webp" alt="Dê núi Phong Nha nướng tảng than hoa thơm lừng" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">4. Dê Núi Phong Nha Nướng Tảng Than Hoa</h3>
+                                <p class="culinary-desc">Thịt dê leo vách đá săn chắc, thơm ngọt nướng than hồng xèo xèo giữ trọn độ mọng nước chấm tương bần ấm nồng.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 220.000 – 350.000đ/đĩa</span>
+                                    <span style="margin-left: auto;">📍 Quán Dê Dũng Khương, Nhà hàng Phong Nha Quán</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="dest-card-body">
-                            <div class="dest-card-loc">📍 Trung tâm Thành phố Đồng Hới</div>
-                            <h3 class="dest-card-title">Quảng Bình Quan & Hệ Thống Lũy Thầy</h3>
-                            <p class="dest-card-desc">Chứng tích quân sự lẫy lừng thế kỷ XVII do danh thần Đào Duy Từ thiết kế, chốt chặn kiên cố thời Trịnh - Nguyễn phân tranh.</p>
-                            <div class="dest-card-cta">Chiêm ngưỡng & Xem sử tích →</div>
+
+                        <!-- Món 5: Gà đồi nướng muối cheo Phong Nha -->
+                        <div class="culinary-card" onclick="openLightbox('images/quangbinh_mon_ga_doi_nuong_muoi_cheo.webp', 'Gà Đồi Nướng Muối Cheo Phong Nha — Đặc Sản Rừng Núi Độc Nhất Vô Nhị', 'Gà thả vườn chạy bộ đồi núi thịt chắc ngọt, được nướng than hoa vàng ươm giòn bì phết mật ong rừng. Điều làm nên danh tiếng là bát muối cheo — thức chấm truyền thống của người Bru-Vân Kiều làm từ lá é, lá chanh, ớt xanh rừng và muối hạt giã nhuyễn thơm lừng cay tê tái.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/quangbinh_mon_ga_doi_nuong_muoi_cheo.webp" alt="Gà đồi nướng than hoa chấm muối cheo lá é Phong Nha" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">5. Gà Đồi Nướng Chấm Muối Cheo</h3>
+                                <p class="culinary-desc">Gà đồi thả tự nhiên nướng giòn rụm thơm lừng ăn kèm cơm lam dẻo thơm và chấm muối cheo lá rừng thảo mộc cay nồng độc đáo.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 250.000 – 320.000đ/con</span>
+                                    <span style="margin-left: auto;">📍 Suối Moọc, Quán Đông Mai Phong Nha</span>
+                                </div>
+                            </div>
                         </div>
-                    </article>
 
-                </div>
+                        <!-- Món 6: Cá trắm sông Son kho nghệ -->
+                        <div class="culinary-card" onclick="openLightbox('images/quangbinh_mon_ca_ngao_song_son.webp', 'Cá Trắm Sông Son Kho Nghệ Lá Gừng — Bữa Cơm Đậm Chất Dân Dã', 'Cá trắm nuôi lồng trên dòng sông Son chảy xiết ăn rong tảo nên thịt trắng phau, bùi béo và chắc nịch. Niêu cá kho tộ đậm đà sắc vàng nghệ tươi, ớt cay xè và lá gừng non thơm nức ăn cùng cơm gạo đỏ rẫy là trải nghiệm khó quên.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/quangbinh_mon_ca_ngao_song_son.webp" alt="Cá trắm sông Son kho nghệ thơm nức niêu đất" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">6. Cá Trắm Sông Son Kho Nghệ Niêu Đất</h3>
+                                <p class="culinary-desc">Cá nuôi dòng nước chảy ngọc bích thịt chắc ngọt, kho liu riu trong niêu đất với nghệ tươi và ớt hiểm thơm phức đưa cơm.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 120.000 – 180.000đ/niêu</span>
+                                    <span style="margin-left: auto;">📍 Nhà hàng Thu Huế, Bến thuyền sông Son</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                <!-- CẨM NANG THÁM HIỂM HANG ĐỘNG AN TOÀN -->
-                <h2 id="cam-nang-tham-hiem"><span class="icon">🔦</span> 3. Cẩm Nang Thám Hiểm Hang Động An Toàn & Chuẩn Mực</h2>
-                <p>Quảng Bình là thủ phủ hang động với nhiều loại hình trải nghiệm: từ tuyến tham quan đại trà có lối đi cầu gỗ (Phong Nha, Thiên Đường) đến các tour mạo hiểm cấp độ cao (Sơn Đoòng, Tú Làn, Hang Én). Để có chuyến thám hiểm trọn vẹn, du khách cần lưu ý:</p>
+                <!-- MỤC 8: BẢNG GIÁ VÉ THAM QUAN & DỊCH VỤ NIÊM YẾT -->
+                <section id="gia-ve">
+                    <h2><span class="icon">🎫</span> 8. Bảng giá vé tham quan & Dịch vụ niêm yết</h2>
+                    <p>Bảng giá vé tham quan danh lam thắng cảnh tại Quảng Bình được Trung tâm Du lịch Phong Nha - Kẻ Bàng và các đơn vị quản lý niêm yết công khai:</p>
 
-                <h3>1. Trang bị cá nhân cần chuẩn bị</h3>
-                <ul>
-                    <li><strong>Giày chuyên dụng leo núi / lội nước:</strong> Chọn giày có độ bám gai cao, mau ráo nước để vượt qua đá tai mèo sắc nhọn và lội suối đá trơn trượt.</li>
-                    <li><strong>Trang phục mau khô & quần áo dài tay:</strong> Tránh cọ xát với vách đá và giữ ấm khi vào sâu trong hang (nhiệt độ lòng hang thường dao động 18 - 22°C).</li>
-                    <li><strong>Đèn pin đội đầu chống nước & túi chống nước:</strong> Bắt buộc trang bị để giữ an toàn cho điện thoại, máy ảnh khi tham gia các hoạt động chèo kayak hoặc bơi hang.</li>
-                </ul>
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Điểm tham quan / Dịch vụ</th>
+                                    <th>Nội dung trải nghiệm</th>
+                                    <th>Giá vé người lớn</th>
+                                    <th>Giá vé trẻ em / Ghi chú</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Động Phong Nha</strong></td>
+                                    <td>Thuyền máy sông Son + Khám phá động nước thạch nhũ</td>
+                                    <td><span class="price-tag">150.000đ/vé</span></td>
+                                    <td>Thuyền vận chuyển: 550.000đ/chuyến (chở tối đa 12 khách). Trẻ em dưới 1.3m miễn phí.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Động Thiên Đường</strong></td>
+                                    <td>Khám phá cầu gỗ 1km trong lòng cung điện ngầm</td>
+                                    <td><span class="price-tag">250.000đ/vé</span></td>
+                                    <td>Trẻ em 1m – 1.3m: 125.000đ. Xe điện trung chuyển: 100.000 – 200.000đ/xe khứ hồi.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Suối Nước Moọc</strong></td>
+                                    <td>Vé trọn gói: Vé vào cổng + tắm suối + chèo thuyền kayak + nhảy cầu</td>
+                                    <td><span class="price-tag">180.000đ/vé trọn gói</span></td>
+                                    <td>Vé ngắm cảnh không tắm: 80.000đ/người. Trẻ em dưới 1.3m: miễn phí hoặc giảm 50%.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sông Chày - Hang Tối</strong></td>
+                                    <td>Trọn gói: Đu dây zipline 400m + chèo kayak + thám hiểm hang Tối + tắm bùn</td>
+                                    <td><span class="price-tag">450.000đ/vé trọn gói</span></td>
+                                    <td>Mùa đông giảm còn 250.000đ. Cần mặc đồ bơi gọn gàng để tham gia tắm bùn.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hang Tám Cô & Vũng Chùa</strong></td>
+                                    <td>Dâng hương tưởng niệm các anh hùng liệt sĩ và Đại tướng</td>
+                                    <td><span class="price-tag">Miễn phí hoàn toàn</span></td>
+                                    <td>Mở cửa đón khách trang nghiêm tất cả các ngày trong năm.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="disclaimer-box">📌 <em>Lưu ý:</em> Người có công với cách mạng, người khuyết tật nặng và trẻ em dưới 1m được miễn phí vé tham quan. Người cao tuổi từ đủ 60 tuổi trở lên (quốc tịch Việt Nam) được giảm 50% giá vé khi xuất trình CCCD gốc.</p>
+                </section>
 
-                <h3>2. Quy tắc bảo vệ di sản thiên nhiên (Không để lại gì ngoài những dấu chân)</h3>
-                <ul>
-                    <li><strong>Tuyệt đối không chạm tay vào thạch nhũ sống:</strong> Mồ hôi và dầu từ da người sẽ làm ngưng trệ quá trình tích tụ khoáng chất hàng triệu năm và làm đen nhũ đá.</li>
-                    <li><strong>Thu gom toàn bộ rác thải cá nhân:</strong> Nghiêm cấm xả rác, khạc nhổ hoặc bẻ gãy bất kỳ mẫu thạch nhũ nào trong khuôn viên Vườn Quốc gia.</li>
-                </ul>
+                <!-- MỤC 9: GỢI Ý LỊCH TRÌNH & MẸO TRẢI NGHIỆM BẢN ĐỊA -->
+                <section id="lich-trinh">
+                    <h2><span class="icon">🗺️</span> 9. Gợi ý lịch trình 3N2Đ & Mẹo thám hiểm an toàn</h2>
+                    
+                    <div class="highlight-box">
+                        <h4>🧗 Gợi Ý Lịch Trình 3 Ngày 2 Đêm (3N2Đ) Khám Phá Trọn Vẹn Kỳ Quan Hang Động</h4>
+                        <ul style="margin: 0.5rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.7;">
+                            <li><strong>Ngày 1: Đến Đồng Hới &rarr; Động Thiên Đường &rarr; Giải nhiệt Suối Nước Moọc</strong>
+                                <br>&bull; Sáng: Hạ cánh sân bay Đồng Hới hoặc tàu hỏa đến ga. Xe đưa về thị trấn Phong Nha nhận phòng resort ven sông Son, ăn trưa với cháo canh cá lóc.
+                                <br>&bull; Chiều: Khám phá Động Thiên Đường với cầu gỗ 1km ngắm rừng nhũ đá lộng lẫy. Sau đó di chuyển sang Suối Nước Moọc tắm suối mát lạnh và chèo thuyền kayak.
+                                <br>&bull; Tối: Thưởng thức bữa tối gà đồi nướng chấm muối cheo lá é và cá trắm sông Son kho nghệ niêu đất.
+                            </li>
+                            <li style="margin-top: 0.8rem;"><strong>Ngày 2: Động Phong Nha &rarr; Zipline Tắm bùn Hang Tối &rarr; Về phố biển Đồng Hới</strong>
+                                <br>&bull; Sáng: Xuống bến thuyền sông Son lên thuyền rồng vào thám hiểm Động Phong Nha nước trong xanh ngọc bích.
+                                <br>&bull; Chiều: Thử thách cảm giác mạnh đu dây Zipline vượt sông Chày và tắm bùn khoáng tự nhiên trong lòng Hang Tối. Chiều muộn lái xe về thành phố Đồng Hới nhận phòng khách sạn.
+                                <br>&bull; Tối: Dạo biển Nhật Lệ, ăn bánh bột lọc tôm sông rán giòn và mực nhảy hấp gừng ven biển.
+                            </li>
+                            <li style="margin-top: 0.8rem;"><strong>Ngày 3: Đồi cát Quang Phú &rarr; Vũng Chùa Đảo Yến &rarr; Quảng Bình Quan &rarr; Mua quà về</strong>
+                                <br>&bull; Sáng: Dậy sớm đón bình minh và trượt cát tại Đồi cát Quang Phú. Di chuyển ra Vũng Chùa dâng hương viếng mộ Đại tướng Võ Nguyên Giáp.
+                                <br>&bull; Trưa: Check-in chụp ảnh Quảng Bình Quan cổ kính giữa lòng thành phố, ghé Chợ Đồng Hới mua khoai gieo Hải Ninh, mực khô, bánh lọc về làm quà trước khi ra sân bay/ga tàu.
+                            </li>
+                        </ul>
+                    </div>
 
-                <!-- LỘ TRÌNH TỪ HÀ NỘI -->
-                <h2 id="lo-trinh"><span class="icon">🚗</span> 4. Hướng Dẫn Di Chuyển Từ Thủ Đô Hà Nội Đến Quảng Bình</h2>
-                <p>Khoảng cách đường bộ từ trung tâm Thủ đô Hà Nội đến Thành phố Đồng Hới (Quảng Bình) khoảng <strong>500km</strong>. Hiện nay hạ tầng giao thông kết nối vô cùng thuận lợi với 3 phương án:</p>
-
-                <h3>Phương án 1: Đường hàng không bay thẳng Hà Nội → Đồng Hới (Nhanh nhất)</h3>
-                <ul>
-                    <li><strong>Chặng bay:</strong> Sân bay Quốc tế Nội Bài (HAN) → Cảng hàng không Đồng Hới (VDH).</li>
-                    <li><strong>Thời gian bay:</strong> Đúng <strong>1 giờ đồng hồ</strong> (khai thác bởi Vietnam Airlines, Bamboo Airways, Vietjet Air).</li>
-                    <li><strong>Ưu điểm:</strong> Tiết kiệm tối đa thời gian, sân bay Đồng Hới chỉ cách trung tâm thành phố khoảng 6km rất tiện di chuyển.</li>
-                </ul>
-
-                <h3>Phương án 2: Tàu hỏa Bắc - Nam (Trải nghiệm ngắm cảnh thư thái)</h3>
-                <ul>
-                    <li><strong>Hành trình:</strong> Ga Hà Nội → Ga Đồng Hới (các chuyến tàu SE1, SE3, SE5, SE7, QB1).</li>
-                    <li><strong>Thời gian chạy:</strong> Khoảng <strong>8,5 đến 10 giờ</strong>.</li>
-                    <li><strong>Kinh nghiệm:</strong> Bạn nên chọn chuyến tàu đêm khởi hành lúc 20h00 - 22h00 tối từ Hà Nội, ngủ một giấc êm ái trên toa giường nằm có điều hòa và thức dậy lúc sáng sớm tại Đồng Hới sẵn sàng bắt đầu hành trình.</li>
-                </ul>
-
-                <h3>Phương án 3: Đường bộ cao tốc Bắc - Nam phía Đông</h3>
-                <ul>
-                    <li><strong>Lộ trình cao tốc:</strong> Hà Nội (Cao tốc Pháp Vân - Cầu Giẽ) → Cao Bồ - Mai Sơn (Ninh Bình) → Mai Sơn - QL45 (Thanh Hóa) → Nghi Sơn - Diễn Châu (Nghệ An) → Diễn Châu - Bãi Vọt (Hà Tĩnh) → Tiếp nối Quốc lộ 1A hoặc các đoạn cao tốc mới vào Quảng Bình.</li>
-                    <li><strong>Thời gian di chuyển:</strong> Khoảng <strong>6 đến 7 giờ</strong> chạy ô tô cá nhân hoặc xe khách giường nằm chất lượng cao.</li>
-                </ul>
-
-                <!-- BẢNG GIÁ VÉ CHÍNH THỨC -->
-                <h2 id="bang-gia"><span class="icon">🎟️</span> 5. Bảng Giá Vé Tham Quan Niêm Yết Chính Thức</h2>
-                <p>Dưới đây là biểu phí dịch vụ và vé tham quan niêm yết theo quy định của Hội đồng Nhân dân tỉnh Quảng Bình và Ban Quản lý Vườn Quốc gia Phong Nha - Kẻ Bàng:</p>
-
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Địa điểm / Thắng cảnh</th>
-                                <th>Mức giá niêm yết</th>
-                                <th>Chi tiết dịch vụ bao gồm</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Động Phong Nha</strong></td>
-                                <td><strong>150.000 VNĐ / người</strong></td>
-                                <td>Vé vào cửa tham quan hang động (Trẻ em dưới 1,3m miễn phí)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Thuyền tham quan Động Phong Nha</strong></td>
-                                <td><strong>700.000 VNĐ / thuyền</strong></td>
-                                <td>Áp dụng tuyến 1 động (Phong Nha hoặc Tiên Sơn), chở tối đa 12 khách (đã gồm áo phao). Tuyến kết hợp 2 động: <strong>750.000 VNĐ / thuyền</strong>. Có quầy hỗ trợ ghép đoàn tại bến.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Động Tiên Sơn</strong></td>
-                                <td><strong>80.000 VNĐ / người</strong></td>
-                                <td>Vé tham quan hang khô Tiên Sơn trên núi đá vôi (Trẻ em dưới 1,3m miễn phí)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Động Thiên Đường</strong></td>
-                                <td><strong>250.000 VNĐ / người</strong></td>
-                                <td>Vé tham quan 1.000m cầu gỗ (Trẻ em 1,1m – 1,3m: 125.000 VNĐ; dưới 1,1m: Miễn phí). Xe điện trung chuyển tùy chọn: từ 100.000 – 200.000 VNĐ / xe.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Suối Nước Moọc (Vé ngắm cảnh)</strong></td>
-                                <td><strong>80.000 VNĐ / người</strong></td>
-                                <td>Vé vào cổng tham quan sinh thái cầu tre, chụp ảnh (Trẻ em: 40.000 VNĐ)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Suối Nước Moọc (Vé trọn gói)</strong></td>
-                                <td><strong>180.000 VNĐ / người</strong></td>
-                                <td>Trọn gói tắm suối, chèo kayak, nhảy cầu, áo phao, cứu hộ (Trẻ em: 100.000 VNĐ; dưới 1,1m miễn phí)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Sông Chày - Hang Tối (Trọn gói)</strong></td>
-                                <td><strong>450.000 VNĐ / người</strong></td>
-                                <td>Mùa hè cao điểm: 450.000 VNĐ (Mùa thấp điểm tháng 9 – 3: 299.000 VNĐ). Bao gồm Zipline 400m, tắm bùn Hang Tối, kayak, trò chơi nước.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Sông Chày (Chỉ tắm suối & Kayak)</strong></td>
-                                <td><strong>150.000 VNĐ / người</strong></td>
-                                <td>Vé dịch vụ tắm sông Chày, chèo thuyền kayak, trò chơi nước (không vào Hang Tối)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Di tích Hang Tám Cô</strong></td>
-                                <td><strong>Miễn phí 100%</strong></td>
-                                <td>Di tích lịch sử Quốc gia, mở cửa đón khách dâng hương tri ân quanh năm</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Vũng Chùa - Đảo Yến</strong></td>
-                                <td><strong>Miễn phí 100%</strong></td>
-                                <td>Nơi an nghỉ Đại tướng Võ Nguyên Giáp, mở cửa tự do trang nghiêm</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Đèo Ngang & Hoành Sơn Quan</strong></td>
-                                <td><strong>Miễn phí 100%</strong></td>
-                                <td>Di tích cổng thành trên đỉnh đèo, tham quan ngắm cảnh tự do</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- ẨM THỰC ĐẶC SẢN -->
-                <h2 id="am-thuc"><span class="icon">🍲</span> 6. Cẩm Nang Ẩm Thực Đặc Sản Quảng Bình</h2>
-                <div style="border-radius: var(--radius); overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--border); box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
-                    <img src="images/quangbinh_am_thuc_chao_canh_khoai_deo.webp" alt="Mâm ẩm thực đặc sản cháo canh cá lóc và khoai gieo Hải Ninh Quảng Bình" style="width: 100%; height: auto; max-height: 420px; object-fit: cover; display: block;" loading="lazy">
-                </div>
-                <p>Ẩm thực Quảng Bình mang phong vị mộc mạc, đậm đà của dải đất miền Trung nắng gió, nơi sản vật của rừng già và biển khơi hòa quyện:</p>
-
-                <ul>
-                    <li><strong>Cháo Canh Cá Lóc Quảng Bình:</strong> Món ăn sáng biểu tượng với sợi bánh canh nhào từ bột gạo hoặc bột mì mềm dai, nước dùng hầm xương ngọt thanh đậm đà, cá lóc đồng rim nghệ vàng ươm, ăn kèm rau cải xanh thái chỉ và ram (chả giò) nóng giòn tan.</li>
-                    <li><strong>Khoai Gieo Hải Ninh:</strong> Món quà quê nức tiếng chế biến từ giống khoai lang đỏ trồng trên cát trắng, phơi qua nhiều lần nắng gió biển để tạo nên những thanh khoai dẻo quánh, ngọt bùi tự nhiên nhai càng lâu càng đượm vị.</li>
-                    <li><strong>Bánh Bột Lọc & Bánh Bèo Tôm Cháy:</strong> Vỏ bánh bột lọc trong suốt dai giòn bọc nhân tôm sông và thịt mộc nhĩ xào đậm đà, chấm nước mắm ớt cay xé lưỡi đặc trưng miền Trung.</li>
-                    <li><strong>Chắt Chắt Sông Gianh Xúc Bánh Tráng:</strong> Con chắt chắt (loài nhuyễn thể nhỏ hơn hến sống ở đáy sông Gianh) xào thơm cùng hành hoa, ớt tươi, xúc ăn kèm bánh tráng mè nướng giòn rụm.</li>
-                    <li><strong>Đẻn Biển (Rắn biển):</strong> Đặc sản quý hiếm của vùng biển Quảng Bình với các món ram đẻn biển giòn rụm, đẻn nướng sả ớt hoặc rượu tiết đẻn biển bổ dưỡng.</li>
-                </ul>
-
-                <!-- THỜI ĐIỂM LÝ TƯỞNG -->
-                <h2 id="thoi-diem"><span class="icon">☀️</span> 7. Thời Điểm Du Lịch Lý Tưởng & Lưu Ý Thời Tiết</h2>
-                <p>Khí hậu Quảng Bình chia làm hai mùa rõ rệt, du khách cần lưu ý thời gian biểu để chuyến đi trọn vẹn nhất:</p>
-
-                <ul>
-                    <li><strong>Mùa khô (Tháng 4 đến tháng 8):</strong> Là <strong>thời điểm vàng lý tưởng nhất</strong> để du lịch Quảng Bình. Trời nắng đẹp, nước sông Son, suối Moọc trong vắt màu ngọc bích, các hang động ngập nước mở cửa đón khách an toàn, sóng biển Nhật Lệ êm ả thích hợp tắm biển và thám hiểm hang động.</li>
-                    <li><strong>Mùa mưa bão (Tháng 9 đến tháng 11):</strong> Thường có mưa lớn và lũ lụt, mực nước sông Son dâng cao làm ngập cửa Động Phong Nha và các tour hang động nước sẽ tạm ngừng khai thác để đảm bảo an toàn. Nếu đi vào mùa này, bạn nên theo dõi kỹ dự báo thời tiết và ưu tiên các hang khô như Động Thiên Đường.</li>
-                    <li><strong>Mùa xuân (Tháng 12 đến tháng 3):</strong> Tiết trời se lạnh, không khí trong lành, cây cối đâm chồi nảy lộc, rất phù hợp cho các chuyến du xuân vãn cảnh, viếng Vũng Chùa - Đảo Yến và dâng hương tại Hang Tám Cô.</li>
-                </ul>
-
-                <div class="warning-box">
-                    <p>⚠️ <strong>Lưu ý quan trọng khi vào hang động & di tích tâm linh:</strong><br>
-                    • Khi viếng Di tích Hang Tám Cô và mộ Đại tướng tại Vũng Chùa, du khách bắt buộc mặc trang phục kín đáo, lịch sự, giữ trật tự và không nói cười lớn tiếng.<br>
-                    • Không bôi kem chống nắng hoặc chất hóa học ngay trước khi bơi tại Suối Nước Moọc để bảo vệ hệ sinh thái rêu đá và sinh vật thủy sinh tự nhiên.</p>
-                </div>
+                    <div class="highlight-box" style="background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3);">
+                        <h4>💡 Mẹo Bản Địa Thám Hiểm Hang Động & Quy Tắc An Toàn Bắt Buộc</h4>
+                        <ul style="margin: 0.5rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Trang phục thám hiểm:</strong> Mang theo dép rọ hoặc giày thể thao lội nước chuyên dụng có độ bám cao chống trơn trượt trên vách đá; mang theo 2-3 bộ đồ bơi khô nhanh để thay sau khi tắm suối và tắm bùn.</li>
+                            <li><strong>Túi chống nước cho thiết bị:</strong> Bắt buộc trang bị túi chống nước chuyên dụng cho điện thoại và máy ảnh khi tham gia chèo kayak, zipline sông Chày và tắm suối Moọc.</li>
+                            <li><strong>Bảo vệ tuyệt đối thạch nhũ:</strong> Tuyệt đối không chạm tay vào thạch nhũ non đang phát triển trong hang, không bẻ gãy nhũ đá làm kỷ niệm; mồ hôi và vi khuẩn từ tay người có thể làm chết quá trình kết tụ thạch nhũ hàng triệu năm.</li>
+                            <li><strong>Quy định bảo tồn di sản:</strong> Không xả rác, không mang đồ ăn có mùi vào sâu trong hang động và vùng lõi rừng nguyên sinh Vườn quốc gia.</li>
+                        </ul>
+                    </div>
+                </section>
 
             </main>
         </div>
@@ -1000,81 +1266,53 @@
     <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <strong>GO FAR</strong> — Go Straight Ahead · Bản quyền nội dung thuộc về GO FAR
+            &copy; 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch Việt Nam chất lượng cao.
         </div>
         <div class="credits">
-            Biên tập bởi <strong>Sửu nhi</strong> · 🎨 Ảnh nghệ thuật khởi tạo bởi AI
+            Biên tập: Sửu nhi • Hình ảnh: 100% AI thế hệ mới (21 hình ảnh độc bản) • Căn cứ: UNESCO & Pháp luật Việt Nam.
         </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL (SCROLLABLE & NO-CUTOFF) -->
-    <div id="lightboxModal" class="lightbox-modal">
-        <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">&times;</button>
-        <div class="lightbox-dialog">
-            <img class="lightbox-content" id="lightboxImg" alt="Chi tiết thắng cảnh Quảng Bình">
-            <div id="lightboxCaption" class="lightbox-caption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-media">
+                <img id="lightboxImg" src="" alt="Chi tiết hình ảnh">
+            </div>
+            <div class="lightbox-info">
+                <span class="lightbox-tag">Kỳ Quan Hang Động Quảng Bình</span>
+                <h3 id="lightboxTitle" class="lightbox-title">Tiêu đề ảnh</h3>
+                <p id="lightboxDesc" class="lightbox-desc">Mô tả chi tiết ảnh.</p>
+            </div>
         </div>
     </div>
 
-    <!-- SCRIPT -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
+        function openLightbox(src, title, desc) {
+            var modal = document.getElementById('lightboxModal');
+            var img = document.getElementById('lightboxImg');
+            var t = document.getElementById('lightboxTitle');
+            var d = document.getElementById('lightboxDesc');
+            if (modal && img) {
+                img.src = src;
+                if (t) t.innerText = title || 'Thắng cảnh Quảng Bình';
+                if (d) d.innerText = desc || '';
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
 
-            document.querySelectorAll('.dest-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    const img = card.querySelector('img');
-                    if (!img) return;
+        function closeLightbox(event) {
+            var modal = document.getElementById('lightboxModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-                    lightboxModal.style.display = 'flex';
-                    lightboxModal.scrollTop = 0;
-                    lightboxImg.src = img.src;
-                    
-                    const titleText = card.querySelector('.dest-card-title')?.innerText || '';
-                    const descText = card.querySelector('.dest-card-desc')?.innerText || '';
-                    const legend = card.getAttribute('data-legend') || '';
-                    
-                    let captionHTML = '';
-                    if (titleText) {
-                        captionHTML += `<strong style="font-size: 1.4rem; color: var(--accent-gold); display: block; margin-bottom: 0.4rem; font-family: 'Space Grotesk', sans-serif;">${titleText}</strong>`;
-                    }
-                    if (descText) {
-                        captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; margin-bottom: 1rem;">${descText}</span>`;
-                    }
-                    if (legend) {
-                        captionHTML += `
-                        <div style="background: rgba(22, 44, 62, 0.92); border: 1px solid rgba(255, 140, 50, 0.4); border-radius: 12px; padding: 1.25rem 1.5rem; text-align: left; box-shadow: 0 8px 32px rgba(0,0,0,0.4); margin-bottom: 1.5rem;">
-                            <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-weight: 600;">
-                                ✨ Dấu Ấn Lịch Sử & Kỳ Quan Thiên Nhiên
-                            </span>
-                            <span style="font-size: 0.92rem; color: #f8fafc; line-height: 1.75; display: block;">${legend}</span>
-                        </div>`;
-                    }
-                    lightboxCaption.innerHTML = captionHTML;
-                });
-            });
-
-            const closeLightbox = () => {
-                lightboxModal.style.display = 'none';
-            };
-
-            lightboxClose.addEventListener('click', closeLightbox);
-
-            lightboxModal.addEventListener('click', (e) => {
-                const dialog = document.querySelector('.lightbox-dialog');
-                if (e.target === lightboxModal || e.target === dialog) {
-                    closeLightbox();
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
-                    closeLightbox();
-                }
-            });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>
