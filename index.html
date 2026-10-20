@@ -1,754 +1,1491 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GO FAR — Go Straight Ahead | Du Lịch Việt Nam</title>
-    <meta name="description" content="GO FAR - Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI. Tác giả: Sửu nhi.">
-    <meta name="author" content="Sửu nhi">
-    <!-- Google Search Console: xác minh bằng file /googled0258d4a0ccca414.html.
-         KHÔNG thêm lại thẻ meta google-site-verification trừ khi dán đúng token
-         (~43 ký tự) do GSC cấp — tên file không phải là token hợp lệ. -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6">
-
-    <link rel="canonical" href="https://gofarvietnam.com/">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/">
-    <meta property="og:title" content="GO FAR — Go Straight Ahead | Du Lịch Việt Nam">
-    <meta property="og:description" content="GO FAR - Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI. Tác giả: Sửu nhi.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/logo.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/">
-    <meta property="twitter:title" content="GO FAR — Go Straight Ahead | Du Lịch Việt Nam">
-    <meta property="twitter:description" content="GO FAR - Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI. Tác giả: Sửu nhi.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/logo.png">
-
-    <!-- Structured Data — khai báo GO FAR là trang thông tin, KHÔNG phải công ty tour.
-         Cần thiết vì AI Overview của Google từng nhầm GO FAR với một hãng tour xe máy.
-         Khi có tài khoản Pinterest/Facebook/YouTube, thêm URL vào mảng "sameAs". -->
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "Organization",
-            "@id": "https://gofarvietnam.com/#organization",
-            "name": "GO FAR",
-            "alternateName": "GO FAR Vietnam",
-            "url": "https://gofarvietnam.com/",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://gofarvietnam.com/images/logo.png"
-            },
-            "description": "GO FAR là trang cẩm nang thông tin du lịch Việt Nam, tổng hợp và biên tập review về các điểm đến. Đây là trang thông tin miễn phí — GO FAR không kinh doanh tour, không bán vé, không cho thuê xe và không cung cấp dịch vụ lưu trú.",
-            "founder": {
-                "@type": "Person",
-                "name": "Sửu nhi"
-            },
-            "areaServed": {
-                "@type": "Country",
-                "name": "Việt Nam"
-            },
-            "sameAs": []
-        },
-        {
-            "@type": "WebSite",
-            "@id": "https://gofarvietnam.com/#website",
-            "name": "GO FAR",
-            "url": "https://gofarvietnam.com/",
-            "inLanguage": "vi",
-            "description": "Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI.",
-            "publisher": {
-                "@id": "https://gofarvietnam.com/#organization"
-            }
-        }
-    ]
-}
-    </script>
-</head>
-<body>
-
-    <!-- PAGE LOADER -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <div class="loader-logo-ring ring-1"></div>
-                <div class="loader-logo-ring ring-2"></div>
-                <img src="images/logo.png" alt="GO FAR" class="loader-logo-img">
-            </div>
-            <div class="loader-bar"><div class="loader-progress"></div></div>
-            <p class="loader-text">Đang tải hành trình...</p>
-        </div>
-    </div>
-
-    <!-- CURSOR GLOW -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <!-- NAV -->
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <img src="images/logo.png" alt="GoFar Logo" class="logo-img">
-            </a>
-            <div class="nav-links" id="navLinks">
-                <a href="#destinations" class="nav-link">Điểm Đến</a>
-                <a href="#about" class="nav-link">Giới Thiệu</a>
-            </div>
-            <div class="nav-actions">
-                <button class="btn-search" id="btnSearch" aria-label="Search">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                </button>
-                <button class="btn-menu" id="btnMenu" aria-label="Menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- SEARCH MODAL -->
-    <div class="search-modal" id="searchModal">
-        <div class="search-modal-inner">
-            <button class="search-close" id="searchClose">&times;</button>
-            <h2 class="search-title">Tìm kiếm điểm đến</h2>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Gõ tên nơi bạn muốn tới..." autocomplete="off">
-                <div class="search-filters">
-                    <button class="filter-tag active" data-filter="all">Tất cả</button>
-                    <button class="filter-tag" data-filter="heritage">Di sản</button>
-                    <button class="filter-tag" data-filter="mountain">Núi rừng</button>
-                    <button class="filter-tag" data-filter="beach">Biển đảo</button>
-                    <button class="filter-tag" data-filter="city">Phố thị</button>
-                </div>
-            </div>
-            <div class="search-results" id="searchResults"></div>
-        </div>
-    </div>
-
-
-
-    <!-- MANIFESTO -->
-
-
-    <!-- HOME HERO HEADER -->
-    <header class="home-hero">
-        <div class="container">
-            <div class="home-hero-content" data-scroll>
-                <span class="home-hero-tag">🧭 GO FAR — GO STRAIGHT AHEAD</span>
-                <h1 class="home-hero-title">Chiêm ngưỡng Việt Nam<br><span class="highlight">kỳ vĩ & lộng lẫy.</span></h1>
-                <p class="home-hero-subtitle">Nơi lưu giữ và lan tỏa những góc nhìn nghệ thuật tuyệt mỹ về cảnh sắc thiên nhiên, danh lam thắng cảnh và nét đẹp văn hóa con người Việt Nam.</p>
-                
-                <div class="category-tabs">
-                    <button class="cat-tab active" data-category="all">📍 Tất cả</button>
-                    <button class="cat-tab" data-category="heritage">🏯 Di sản</button>
-                    <button class="cat-tab" data-category="mountain">⛰️ Núi rừng</button>
-                    <button class="cat-tab" data-category="beach">🌊 Biển đảo</button>
-                    <button class="cat-tab" data-category="city">🏙️ Phố thị</button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- DESTINATIONS BENTO GRID -->
-    <section class="destinations" id="destinations">
-        <div class="container">
-
-            <div class="dest-grid bento-grid" data-scroll>
-                <a class="dest-card" href="destination-ha-giang.html" data-category="mountain" data-scroll data-content-id="dest-ha-giang">
-                    <div class="dest-card-img"><img src="images/hagiang_hero.webp" alt="Hà Giang" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Mã Pí Lèng & 4 Mùa</span>
-                            <span class="tag">Công viên UNESCO</span>
-                        </div>
-                        <h3 class="dest-card-title">Hà Giang</h3>
-                        <p class="dest-card-desc">Địa đầu cực Bắc thiêng liêng. Đèo Mã Pí Lèng, sông Nho Quế, Cột cờ Lũng Cú & mùa hoa tam giác mạch kỳ vĩ.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">312 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-mu-cang-chai.html" data-category="mountain" data-scroll data-content-id="dest-mu-cang-chai">
-                    <div class="dest-card-img"><img src="images/mucangchai_mam_xoi.webp" alt="Mù Cang Chải" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Mùa vàng</span>
-                            <span class="tag">Tây Bắc</span>
-                        </div>
-                        <h3 class="dest-card-title">Mù Cang Chải</h3>
-                        <p class="dest-card-desc">Tuyệt tác ruộng bậc thang Di tích Quốc gia Đặc biệt. Đồi Mâm Xôi, Đồi Móng Ngựa, đèo Khau Phạ.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">286 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-ninh-binh.html" data-category="heritage" data-scroll data-content-id="dest-ninh-binh">
-                    <div class="dest-card-img"><img src="images/ninh_binh_hero_1783439944952.webp" alt="Ninh Bình" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Tràng An & 4 Mùa</span>
-                            <span class="tag">Di sản Kép UNESCO</span>
-                        </div>
-                        <h3 class="dest-card-title">Ninh Bình</h3>
-                        <p class="dest-card-desc">Di sản Kép thế giới độc nhất. Tràng An, Tam Cốc, Hang Múa — non nước hữu tình & Cố đô Hoa Lư.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">280 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-ta-xua.html" data-category="mountain" data-scroll data-content-id="dest-ta-xua">
-                    <div class="dest-card-img"><img src="images/taxua_dinosaur_backbone.webp" alt="Tà Xùa" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">☁️ Săn mây</span>
-                        </div>
-                        <h3 class="dest-card-title">Tà Xùa</h3>
-                        <p class="dest-card-desc">Thiên đường mây hạ giới. Sống lưng khủng long nổi tiếng.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">189 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-moc-chau.html" data-category="mountain" data-scroll data-content-id="dest-moc-chau">
-                    <div class="dest-card-img"><img src="images/mocchau_doi_che_trai_tim.webp" alt="Mộc Châu" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Thảo Nguyên & 4 Mùa</span>
-                            <span class="tag">Tây Bắc</span>
-                        </div>
-                        <h3 class="dest-card-title">Mộc Châu</h3>
-                        <p class="dest-card-desc">Thảo nguyên 4 mùa hoa mận trắng Nà Ka, hoa cải Pa Phách, đồi chè trái tim uốn lượn và cầu kính Bạch Long kỷ lục thế giới.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">342 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-cao-bang.html" data-category="mountain" data-scroll data-content-id="dest-cao-bang">
-                    <div class="dest-card-img"><img src="images/caobang_thac_ban_gioc.webp" alt="Cao Bằng" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Bản Giốc & 4 Mùa</span>
-                            <span class="tag">Đông Bắc</span>
-                        </div>
-                        <h3 class="dest-card-title">Cao Bằng</h3>
-                        <p class="dest-card-desc">Kỳ quan Thác Bản Giốc lớn nhất Đông Nam Á, suối nguồn Pác Bó, Núi Mắt Thần và động Ngườm Ngao kỳ ảo.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">368 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-binh-lieu.html" data-category="mountain" data-scroll data-content-id="dest-binh-lieu">
-                    <div class="dest-card-img"><img src="images/binhlieu_song_lung_khung_long_1305.webp" alt="Bình Liêu" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🌾 Mùa cỏ lau</span>
-                            <span class="tag">Đông Bắc</span>
-                        </div>
-                        <h3 class="dest-card-title">Bình Liêu</h3>
-                        <p class="dest-card-desc">"Vạn lý trường thành Việt Nam", Sống lưng khủng long mốc 1305, mùa cỏ lau trắng ngút ngàn và đỉnh săn mây Cao Ly.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">295 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-mang-den.html" data-category="mountain" data-scroll data-content-id="dest-mang-den">
-                    <div class="dest-card-img"><img src="images/mangden_hero.webp" alt="Măng Đen" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🌸 Mai anh đào</span>
-                            <span class="tag">Tây Nguyên</span>
-                        </div>
-                        <h3 class="dest-card-title">Măng Đen</h3>
-                        <p class="dest-card-desc">"Nàng thơ giữa đại ngàn", rừng thông mờ sương, thác Pa Sỹ 45m, hồ Đắk Ke hoa anh đào và nhà Rông Kon Bring.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">324 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-con-dao.html" data-category="beach" data-scroll data-content-id="dest-con-dao">
-                    <div class="dest-card-img"><img src="images/condao_hero.webp" alt="Côn Đảo" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🐢 Rùa biển</span>
-                            <span class="tag">Bà Rịa - Vũng Tàu</span>
-                        </div>
-                        <h3 class="dest-card-title">Côn Đảo</h3>
-                        <p class="dest-card-desc">Bản hùng ca bất diệt Hàng Dương, viếng mộ cô Sáu linh thiêng, bãi Đầm Trầu ngắm máy bay và mùa rùa đẻ trứng Hòn Bảy Cạnh.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">358 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-ha-long.html" data-category="beach" data-scroll data-content-id="dest-ha-long">
-                    <div class="dest-card-img"><img src="images/halong_hero.webp" alt="Hạ Long" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">UNESCO</span>
-                        </div>
-                        <h3 class="dest-card-title">Vịnh Hạ Long</h3>
-                        <p class="dest-card-desc">Kỳ quan thiên nhiên thế giới với hàng ngàn đảo đá vôi.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★☆</span> <span>4.8</span></div>
-                            <span class="dest-reviews">312 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-da-nang.html" data-category="city" data-scroll data-content-id="dest-da-nang">
-                    <div class="dest-card-img"><img src="images/danang_hero.webp" alt="Đà Nẵng" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Phố thị</span>
-                            <span class="tag">Biển cả</span>
-                        </div>
-                        <h3 class="dest-card-title">Đà Nẵng</h3>
-                        <p class="dest-card-desc">Thành phố đáng sống nhất Việt Nam, biển Mỹ Khê tuyệt đẹp.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.7</span></div>
-                            <span class="dest-reviews">156 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">📷 AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-hoi-an.html" data-category="heritage" data-scroll data-content-id="dest-hoi-an">
-                    <div class="dest-card-img"><img src="images/hoian_hero.webp" alt="Hội An" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Phố Cổ & 4 Mùa</span>
-                            <span class="tag">Di sản Văn hóa UNESCO</span>
-                        </div>
-                        <h3 class="dest-card-title">Hội An</h3>
-                        <p class="dest-card-desc">Thương cảng cổ thế kỷ XVI, vạn ánh đèn lồng lung linh bên dòng sông Hoài hoài niệm.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">278 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-hue.html" data-category="heritage" data-scroll data-content-id="dest-hue">
-                    <div class="dest-card-img"><img src="images/hue_hero.webp" alt="Cố đô Huế" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Cố Đô & 4 Mùa</span>
-                            <span class="tag">Di sản Thế giới UNESCO</span>
-                        </div>
-                        <h3 class="dest-card-title">Cố đô Huế</h3>
-                        <p class="dest-card-desc">Kinh đô 13 triều vua Nguyễn. Đại Nội tráng lệ, lăng tẩm hoàng gia, dòng sông Hương thơ mộng & ẩm thực đỉnh cao.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">385 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-phu-quoc.html" data-category="beach" data-scroll data-content-id="dest-phu-quoc">
-                    <div class="dest-card-img"><img src="images/phuquoc_hero.webp" alt="Phú Quốc" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Đảo Ngọc & 4 Mùa</span>
-                            <span class="tag">Đảo Ngọc</span>
-                        </div>
-                        <h3 class="dest-card-title">Phú Quốc</h3>
-                        <p class="dest-card-desc">Bãi Sao cát trắng như kem, cáp treo Hòn Thơm vượt biển kỷ lục thế giới, làng chài Rạch Vẹm vương quốc sao biển và hoàng hôn Bãi Trường rực rỡ.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">520 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-an-giang.html" data-category="heritage" data-scroll data-content-id="dest-an-giang">
-                    <div class="dest-card-img"><img src="images/angiang_hero.webp" alt="An Giang" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Thất Sơn & 4 Mùa</span>
-                            <span class="tag">Miền Tây</span>
-                        </div>
-                        <h3 class="dest-card-title">An Giang</h3>
-                        <p class="dest-card-desc">Rừng tràm Trà Sư thảm bèo xanh ngọc bích, Miếu Bà Chúa Xứ Núi Sam linh thiêng, rặng thốt nốt Tri Tôn và lẩu cá linh bông điên điển.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">318 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-quang-binh.html" data-category="heritage" data-scroll data-content-id="dest-quang-binh">
-                    <div class="dest-card-img"><img src="images/quangbinh_hero.webp" alt="Quảng Bình" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">👑 UNESCO Kép</span>
-                            <span class="tag">Vương quốc hang động</span>
-                        </div>
-                        <h3 class="dest-card-title">Quảng Bình</h3>
-                        <p class="dest-card-desc">Phong Nha - Kẻ Bàng kỳ vĩ, Sơn Đoòng lớn nhất thế giới, động Thiên Đường hoàng cung và suối Nước Moọc ngọc bích.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">392 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-can-tho.html" data-category="heritage" data-scroll data-content-id="dest-can-tho">
-                    <div class="dest-card-img"><img src="images/cantho_hero.webp" alt="Cần Thơ" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Chợ Nổi & 4 Mùa</span>
-                            <span class="tag">Thủ Phủ Tây Đô</span>
-                        </div>
-                        <h3 class="dest-card-title">Cần Thơ</h3>
-                        <p class="dest-card-desc">Sông Hậu hiền hòa, bồng bềnh Chợ nổi Cái Răng lúc bình minh, nét đài các nhà cổ Bình Thủy và miệt vườn Phong Điền trĩu quả ngọt.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">368 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 100% Ảnh AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-tay-ninh.html" data-category="mountain" data-scroll data-content-id="dest-tay-ninh">
-                    <div class="dest-card-img"><img src="images/tayninh_hero.webp" alt="Tây Ninh" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Núi Bà Đen & 4 Mùa</span>
-                            <span class="tag">Nóc Nhà Nam Bộ</span>
-                        </div>
-                        <h3 class="dest-card-title">Tây Ninh</h3>
-                        <p class="dest-card-desc">Đỉnh núi Bà Đen 986m săn mây đĩa bay, tượng Phật Bà bằng đồng cao nhất châu Á, Tòa Thánh Cao Đài độc nhất và bánh tráng phơi sương.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">412 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 100% Ảnh AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-sapa.html" data-category="mountain" data-scroll data-content-id="dest-sapa">
-                    <div class="dest-card-img"><img src="images/sapa_hero.webp" alt="Sa Pa — Nóc Nhà Đông Dương" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Fansipan & 4 Mùa</span>
-                            <span class="tag">Mường Hoa</span>
-                        </div>
-                        <h3 class="dest-card-title">Sa Pa</h3>
-                        <p class="dest-card-desc">Đỉnh Fansipan 3.147,3m nóc nhà Đông Dương, sóng lúa bậc thang Mường Hoa và 4 mùa mây ngàn Tây Bắc.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">420 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 100% Ảnh AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-da-lat.html" data-category="mountain" data-scroll data-content-id="dest-da-lat">
-                    <div class="dest-card-img"><img src="images/dalat_hero.webp" alt="Đà Lạt" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Langbiang & 4 Mùa</span>
-                            <span class="tag">Di sản ngàn hoa</span>
-                        </div>
-                        <h3 class="dest-card-title">Đà Lạt</h3>
-                        <p class="dest-card-desc">Thành phố ngàn hoa mộng mơ trên cao nguyên Lâm Viên với rừng thông bạt ngàn, di sản kiến trúc trăm năm và biển mây cuồn cuộn.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">528 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 AI</span>
-                            <span class="credit-author">Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a class="dest-card" href="destination-quy-nhon.html" data-category="beach" data-scroll data-content-id="dest-quy-nhon">
-                    <div class="dest-card-img"><img src="images/quynhon_hero.webp" alt="Quy Nhơn" loading="lazy"></div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Kỳ Co & 4 Mùa</span>
-                            <span class="tag">Biển Đảo Xứ Nẫu</span>
-                        </div>
-                        <h3 class="dest-card-title">Quy Nhơn</h3>
-                        <p class="dest-card-desc">Vịnh biển vầng trăng khuyết hoang sơ tuyệt mỹ, làn nước ngọc bích Kỳ Co, Eo Gió đón bình minh và tháp Chăm Pa cổ kính.</p>
-                        <div class="dest-card-meta">
-                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
-                            <span class="dest-reviews">386 reviews</span>
-                        </div>
-                        <div class="dest-card-credits">
-                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
-                            <span class="credit-author">Tác giả: Sửu nhi</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="dest-more" data-scroll>
-                <button class="btn-outline">Xem thêm điểm đến →</button>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-left" data-scroll>
-                    <span class="section-tag">02 / Về chúng tôi</span>
-                    <h2 class="section-title">GO FAR<span class="logo-dot">.</span></h2>
-                     <p class="about-text">
-                        GO FAR ra đời với sứ mệnh lan tỏa và tôn vinh vẻ đẹp bất tận của du lịch Việt Nam. Chúng tôi chắt lọc những thông tin cẩm nang hữu ích nhất nhằm giới thiệu những nét đẹp đặc trưng của mỗi vùng đất di sản.
-                    </p>
-                    <p class="about-text">
-                        Toàn bộ hình ảnh danh thắng trên nền tảng được tái hiện độc bản 100% bằng Trí tuệ nhân tạo (AI) — mang đến trải nghiệm thị giác mới lạ, sống động mà vẫn tôn trọng tác quyền nghệ thuật.
-                    </p>
-                    <div class="about-values">
-                        <div class="value">
-                            <span class="value-icon">◈</span>
-                            <span>Chân thật</span>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">◈</span>
-                            <span>Phóng khoáng</span>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">◈</span>
-                            <span>Cộng đồng</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-right" data-scroll>
-                    <div class="about-card-stack">
-                        <div class="about-photo" style="--rotation: -3deg;">
-                            <img src="images/sapa.webp" alt="Sapa trip">
-                            <span class="photo-caption">Sapa, mùa lúa chín — AI illustration</span>
-                        </div>
-                        <div class="about-photo" style="--rotation: 2deg;">
-                            <img src="images/hoian.webp" alt="Hội An trip">
-                            <span class="photo-caption">Hội An, đêm rằm — AI illustration</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- ARTICLE DETAIL MODAL -->
-    <div class="article-modal" id="articleModal">
-        <div class="modal-overlay" id="modalOverlay"></div>
-        <div class="modal-container">
-            <button class="modal-close" id="modalClose">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            </button>
-            <div class="modal-body">
-                <div class="modal-image-side">
-                    <img id="modalImg" src="" alt="">
-                    <div class="modal-image-overlay"></div>
-                </div>
-                <div class="modal-content-side">
-                    <div class="modal-header">
-                        <span class="modal-tag" id="modalTag">Category</span>
-                        <h2 class="modal-title" id="modalTitle">Title</h2>
-                        <div class="modal-meta">
-                            <span id="modalRating">★ 5.0</span>
-                            <span class="dot">·</span>
-                            <span id="modalLocation">Location</span>
-                        </div>
-                    </div>
-                    <div class="modal-text-content">
-                        <div id="modalReview" class="modal-review">
-                            <!-- Review text here -->
-                        </div>
-                        <div class="modal-tips-box">
-                            <h4>💡 Bí kíp nhỏ</h4>
-                            <p id="modalTips"></p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="modal-author">
-                            <div class="avatar-sm">SN</div>
-                            <div>
-                                <span class="author-name">Sửu nhi</span>
-                                <span class="author-label">Tác giả · Biên tập viên</span>
-                            </div>
-                        </div>
-                        <span class="modal-attribution">Được tổng hợp từ nhiều nguồn</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FOOTER (Enhanced Spacing) -->
-    <footer class="footer" style="padding: var(--space-lg) 0; background: var(--bg-primary);">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="nav-logo">
-                        <img src="images/logo.png" alt="GoFar Logo" class="logo-img">
-                    </a>
-                    <p class="footer-tagline">Đi là để cảm.</p>
-                    <div class="footer-social">
-                        <a href="javascript:void(0)" class="social-link" aria-label="Facebook">FB</a>
-                        <a href="javascript:void(0)" class="social-link" aria-label="Instagram">IG</a>
-                        <a href="javascript:void(0)" class="social-link" aria-label="TikTok">TT</a>
-                        <a href="javascript:void(0)" class="social-link" aria-label="YouTube">YT</a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Khám phá</h4>
-                    <a href="javascript:void(0)" class="region-link" data-region="Miền Bắc">Miền Bắc</a>
-                    <a href="javascript:void(0)" class="region-link" data-region="Miền Trung">Miền Trung</a>
-                    <a href="javascript:void(0)" class="region-link" data-region="Miền Nam">Miền Nam</a>
-                    <a href="javascript:void(0)" class="region-link" data-region="Tây Nguyên">Tây Nguyên</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Về GO FAR</h4>
-                    <a href="#about">Giới thiệu</a>
-                    <a href="javascript:void(0)">Đội ngũ</a>
-                    <a href="javascript:void(0)">Liên hệ</a>
-                    <a href="javascript:void(0)">Hợp tác</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Hỗ trợ</h4>
-                    <a href="javascript:void(0)">FAQ</a>
-                    <a href="policy.html">Điều khoản</a>
-                    <a href="policy.html">Bảo mật</a>
-                    <a href="javascript:void(0)">Feedback</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 GO FAR. Nội dung biên tập từ nhiều nguồn. Hình ảnh 100% AI-generated.</p>
-                <p class="footer-made">Made with ♥ bởi những kẻ mê đi. · <a href="admin.html" style="color: var(--text-muted); text-decoration: none; opacity: 0.5; font-size: 0.7rem;" title="Admin Dashboard">⚙ Admin</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- BACK TO TOP -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
-    </button>
-
-    <script src="data.js?v=6"></script>
-    <script src="script.js?v=6"></script>
-</body>
-</html>
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GO FAR — Go Straight Ahead | Du Lịch Việt Nam</title>
+
+    <meta name="description" content="GO FAR - Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI. Tác giả: Sửu nhi.">
+
+    <meta name="author" content="Sửu nhi">
+
+    <!-- Google Search Console: xác minh bằng file /googled0258d4a0ccca414.html.
+
+         KHÔNG thêm lại thẻ meta google-site-verification trừ khi dán đúng token
+
+         (~43 ký tự) do GSC cấp — tên file không phải là token hợp lệ. -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=6">
+
+
+
+    <link rel="canonical" href="https://gofarvietnam.com/">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Open Graph / Facebook -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://gofarvietnam.com/">
+
+    <meta property="og:title" content="GO FAR — Go Straight Ahead | Du Lịch Việt Nam">
+
+    <meta property="og:description" content="GO FAR - Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI. Tác giả: Sửu nhi.">
+
+    <meta property="og:image" content="https://gofarvietnam.com/images/logo.png">
+
+
+
+    <!-- Twitter -->
+
+    <meta property="twitter:card" content="summary_large_image">
+
+    <meta property="twitter:url" content="https://gofarvietnam.com/">
+
+    <meta property="twitter:title" content="GO FAR — Go Straight Ahead | Du Lịch Việt Nam">
+
+    <meta property="twitter:description" content="GO FAR - Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI. Tác giả: Sửu nhi.">
+
+    <meta property="twitter:image" content="https://gofarvietnam.com/images/logo.png">
+
+
+
+    <!-- Structured Data — khai báo GO FAR là trang thông tin, KHÔNG phải công ty tour.
+
+         Cần thiết vì AI Overview của Google từng nhầm GO FAR với một hãng tour xe máy.
+
+         Khi có tài khoản Pinterest/Facebook/YouTube, thêm URL vào mảng "sameAs". -->
+
+    <script type="application/ld+json">
+
+{
+
+    "@context": "https://schema.org",
+
+    "@graph": [
+
+        {
+
+            "@type": "Organization",
+
+            "@id": "https://gofarvietnam.com/#organization",
+
+            "name": "GO FAR",
+
+            "alternateName": "GO FAR Vietnam",
+
+            "url": "https://gofarvietnam.com/",
+
+            "logo": {
+
+                "@type": "ImageObject",
+
+                "url": "https://gofarvietnam.com/images/logo.png"
+
+            },
+
+            "description": "GO FAR là trang cẩm nang thông tin du lịch Việt Nam, tổng hợp và biên tập review về các điểm đến. Đây là trang thông tin miễn phí — GO FAR không kinh doanh tour, không bán vé, không cho thuê xe và không cung cấp dịch vụ lưu trú.",
+
+            "founder": {
+
+                "@type": "Person",
+
+                "name": "Sửu nhi"
+
+            },
+
+            "areaServed": {
+
+                "@type": "Country",
+
+                "name": "Việt Nam"
+
+            },
+
+            "sameAs": []
+
+        },
+
+        {
+
+            "@type": "WebSite",
+
+            "@id": "https://gofarvietnam.com/#website",
+
+            "name": "GO FAR",
+
+            "url": "https://gofarvietnam.com/",
+
+            "inLanguage": "vi",
+
+            "description": "Tổng hợp review du lịch Việt Nam. Nội dung biên tập từ nhiều nguồn. Ảnh minh họa bởi AI.",
+
+            "publisher": {
+
+                "@id": "https://gofarvietnam.com/#organization"
+
+            }
+
+        }
+
+    ]
+
+}
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <!-- PAGE LOADER -->
+
+    <div class="page-loader" id="pageLoader">
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+
+                <div class="loader-logo-ring ring-1"></div>
+
+                <div class="loader-logo-ring ring-2"></div>
+
+                <img src="images/logo.png" alt="GO FAR" class="loader-logo-img">
+
+            </div>
+
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+
+            <p class="loader-text">Đang tải hành trình...</p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CURSOR GLOW -->
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+
+
+    <!-- NAV -->
+
+    <nav class="nav" id="nav">
+
+        <div class="nav-inner">
+
+            <a href="index.html" class="nav-logo">
+
+                <img src="images/logo.png" alt="GoFar Logo" class="logo-img">
+
+            </a>
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="#destinations" class="nav-link">Điểm Đến</a>
+
+                <a href="#about" class="nav-link">Giới Thiệu</a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button class="btn-search" id="btnSearch" aria-label="Search">
+
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+
+                </button>
+
+                <button class="btn-menu" id="btnMenu" aria-label="Menu">
+
+                    <span></span><span></span><span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- SEARCH MODAL -->
+
+    <div class="search-modal" id="searchModal">
+
+        <div class="search-modal-inner">
+
+            <button class="search-close" id="searchClose">&times;</button>
+
+            <h2 class="search-title">Tìm kiếm điểm đến</h2>
+
+            <div class="search-box">
+
+                <input type="text" id="searchInput" placeholder="Gõ tên nơi bạn muốn tới..." autocomplete="off">
+
+                <div class="search-filters">
+
+                    <button class="filter-tag active" data-filter="all">Tất cả</button>
+
+                    <button class="filter-tag" data-filter="heritage">Di sản</button>
+
+                    <button class="filter-tag" data-filter="mountain">Núi rừng</button>
+
+                    <button class="filter-tag" data-filter="beach">Biển đảo</button>
+
+                    <button class="filter-tag" data-filter="city">Phố thị</button>
+
+                </div>
+
+            </div>
+
+            <div class="search-results" id="searchResults"></div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- MANIFESTO -->
+
+
+
+
+
+    <!-- HOME HERO HEADER -->
+
+    <header class="home-hero">
+
+        <div class="container">
+
+            <div class="home-hero-content" data-scroll>
+
+                <span class="home-hero-tag">🧭 GO FAR — GO STRAIGHT AHEAD</span>
+
+                <h1 class="home-hero-title">Chiêm ngưỡng Việt Nam<br><span class="highlight">kỳ vĩ & lộng lẫy.</span></h1>
+
+                <p class="home-hero-subtitle">Nơi lưu giữ và lan tỏa những góc nhìn nghệ thuật tuyệt mỹ về cảnh sắc thiên nhiên, danh lam thắng cảnh và nét đẹp văn hóa con người Việt Nam.</p>
+
+                
+
+                <div class="category-tabs">
+
+                    <button class="cat-tab active" data-category="all">📍 Tất cả</button>
+
+                    <button class="cat-tab" data-category="heritage">🏯 Di sản</button>
+
+                    <button class="cat-tab" data-category="mountain">⛰️ Núi rừng</button>
+
+                    <button class="cat-tab" data-category="beach">🌊 Biển đảo</button>
+
+                    <button class="cat-tab" data-category="city">🏙️ Phố thị</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- DESTINATIONS BENTO GRID -->
+
+    <section class="destinations" id="destinations">
+
+        <div class="container">
+
+
+
+            <div class="dest-grid bento-grid" data-scroll>
+
+                <a class="dest-card" href="destination-ha-giang.html" data-category="mountain" data-scroll data-content-id="dest-ha-giang">
+
+                    <div class="dest-card-img"><img src="images/hagiang_hero.webp" alt="Hà Giang" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Mã Pí Lèng & 4 Mùa</span>
+
+                            <span class="tag">Công viên UNESCO</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Hà Giang</h3>
+
+                        <p class="dest-card-desc">Địa đầu cực Bắc thiêng liêng. Đèo Mã Pí Lèng, sông Nho Quế, Cột cờ Lũng Cú & mùa hoa tam giác mạch kỳ vĩ.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">312 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-mu-cang-chai.html" data-category="mountain" data-scroll data-content-id="dest-mu-cang-chai">
+
+                    <div class="dest-card-img"><img src="images/mucangchai_mam_xoi.webp" alt="Mù Cang Chải" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Mùa vàng</span>
+
+                            <span class="tag">Tây Bắc</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Mù Cang Chải</h3>
+
+                        <p class="dest-card-desc">Tuyệt tác ruộng bậc thang Di tích Quốc gia Đặc biệt. Đồi Mâm Xôi, Đồi Móng Ngựa, đèo Khau Phạ.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">286 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-ninh-binh.html" data-category="heritage" data-scroll data-content-id="dest-ninh-binh">
+
+                    <div class="dest-card-img"><img src="images/ninh_binh_hero_1783439944952.webp" alt="Ninh Bình" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Tràng An & 4 Mùa</span>
+
+                            <span class="tag">Di sản Kép UNESCO</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Ninh Bình</h3>
+
+                        <p class="dest-card-desc">Di sản Kép thế giới độc nhất. Tràng An, Tam Cốc, Hang Múa — non nước hữu tình & Cố đô Hoa Lư.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">280 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-ta-xua.html" data-category="mountain" data-scroll data-content-id="dest-ta-xua">
+
+                    <div class="dest-card-img"><img src="images/taxua_dinosaur_backbone.webp" alt="Tà Xùa" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">☁️ Săn mây</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Tà Xùa</h3>
+
+                        <p class="dest-card-desc">Thiên đường mây hạ giới. Sống lưng khủng long nổi tiếng.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">189 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-moc-chau.html" data-category="mountain" data-scroll data-content-id="dest-moc-chau">
+
+                    <div class="dest-card-img"><img src="images/mocchau_doi_che_trai_tim.webp" alt="Mộc Châu" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Thảo Nguyên & 4 Mùa</span>
+
+                            <span class="tag">Tây Bắc</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Mộc Châu</h3>
+
+                        <p class="dest-card-desc">Thảo nguyên 4 mùa hoa mận trắng Nà Ka, hoa cải Pa Phách, đồi chè trái tim uốn lượn và cầu kính Bạch Long kỷ lục thế giới.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">342 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-cao-bang.html" data-category="mountain" data-scroll data-content-id="dest-cao-bang">
+
+                    <div class="dest-card-img"><img src="images/caobang_thac_ban_gioc.webp" alt="Cao Bằng" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Bản Giốc & 4 Mùa</span>
+
+                            <span class="tag">Đông Bắc</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Cao Bằng</h3>
+
+                        <p class="dest-card-desc">Kỳ quan Thác Bản Giốc lớn nhất Đông Nam Á, suối nguồn Pác Bó, Núi Mắt Thần và động Ngườm Ngao kỳ ảo.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">368 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-binh-lieu.html" data-category="mountain" data-scroll data-content-id="dest-binh-lieu">
+
+                    <div class="dest-card-img"><img src="images/binhlieu_song_lung_khung_long_1305.webp" alt="Bình Liêu" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🌾 Mùa cỏ lau</span>
+
+                            <span class="tag">Đông Bắc</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Bình Liêu</h3>
+
+                        <p class="dest-card-desc">"Vạn lý trường thành Việt Nam", Sống lưng khủng long mốc 1305, mùa cỏ lau trắng ngút ngàn và đỉnh săn mây Cao Ly.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">295 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-mang-den.html" data-category="mountain" data-scroll data-content-id="dest-mang-den">
+
+                    <div class="dest-card-img"><img src="images/mangden_hero.webp" alt="Măng Đen" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🌸 Mai anh đào</span>
+
+                            <span class="tag">Tây Nguyên</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Măng Đen</h3>
+
+                        <p class="dest-card-desc">"Nàng thơ giữa đại ngàn", rừng thông mờ sương, thác Pa Sỹ 45m, hồ Đắk Ke hoa anh đào và nhà Rông Kon Bring.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">324 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-con-dao.html" data-category="beach" data-scroll data-content-id="dest-con-dao">
+
+                    <div class="dest-card-img"><img src="images/condao_hero.webp" alt="Côn Đảo" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🐢 Rùa biển</span>
+
+                            <span class="tag">Bà Rịa - Vũng Tàu</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Côn Đảo</h3>
+
+                        <p class="dest-card-desc">Bản hùng ca bất diệt Hàng Dương, viếng mộ cô Sáu linh thiêng, bãi Đầm Trầu ngắm máy bay và mùa rùa đẻ trứng Hòn Bảy Cạnh.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">358 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-ha-long.html" data-category="beach" data-scroll data-content-id="dest-ha-long">
+                    <div class="dest-card-img"><img src="images/halong_hero.webp" alt="Vịnh Hạ Long" loading="lazy"></div>
+                    <div class="dest-card-overlay"></div>
+                    <div class="dest-card-content">
+                        <div class="dest-card-tags">
+                            <span class="tag tag-hot">🔥 Kỳ Quan & 4 Mùa</span>
+                            <span class="tag">Di sản Thế giới UNESCO</span>
+                        </div>
+                        <h3 class="dest-card-title">Vịnh Hạ Long</h3>
+                        <p class="dest-card-desc">Kỳ quan thiên nhiên thế giới với 1.969 đảo đá vôi, hang động kỳ vĩ và du thuyền 5 sao đẳng cấp.</p>
+                        <div class="dest-card-meta">
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+                            <span class="dest-reviews">312 reviews</span>
+                        </div>
+                        <div class="dest-card-credits">
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <a class="dest-card" href="destination-da-nang.html" data-category="city" data-scroll data-content-id="dest-da-nang">
+
+                    <div class="dest-card-img"><img src="images/danang_hero.webp" alt="Đà Nẵng" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag">Phố thị</span>
+
+                            <span class="tag">Biển cả</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Đà Nẵng</h3>
+
+                        <p class="dest-card-desc">Thành phố đáng sống nhất Việt Nam, biển Mỹ Khê tuyệt đẹp.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.7</span></div>
+
+                            <span class="dest-reviews">156 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">📷 AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-hoi-an.html" data-category="heritage" data-scroll data-content-id="dest-hoi-an">
+
+                    <div class="dest-card-img"><img src="images/hoian_hero.webp" alt="Hội An" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Phố Cổ & 4 Mùa</span>
+
+                            <span class="tag">Di sản Văn hóa UNESCO</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Hội An</h3>
+
+                        <p class="dest-card-desc">Thương cảng cổ thế kỷ XVI, vạn ánh đèn lồng lung linh bên dòng sông Hoài hoài niệm.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">278 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-hue.html" data-category="heritage" data-scroll data-content-id="dest-hue">
+
+                    <div class="dest-card-img"><img src="images/hue_hero.webp" alt="Cố đô Huế" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Cố Đô & 4 Mùa</span>
+
+                            <span class="tag">Di sản Thế giới UNESCO</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Cố đô Huế</h3>
+
+                        <p class="dest-card-desc">Kinh đô 13 triều vua Nguyễn. Đại Nội tráng lệ, lăng tẩm hoàng gia, dòng sông Hương thơ mộng & ẩm thực đỉnh cao.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">385 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-phu-quoc.html" data-category="beach" data-scroll data-content-id="dest-phu-quoc">
+
+                    <div class="dest-card-img"><img src="images/phuquoc_hero.webp" alt="Phú Quốc" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Đảo Ngọc & 4 Mùa</span>
+
+                            <span class="tag">Đảo Ngọc</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Phú Quốc</h3>
+
+                        <p class="dest-card-desc">Bãi Sao cát trắng như kem, cáp treo Hòn Thơm vượt biển kỷ lục thế giới, làng chài Rạch Vẹm vương quốc sao biển và hoàng hôn Bãi Trường rực rỡ.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">520 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-an-giang.html" data-category="heritage" data-scroll data-content-id="dest-an-giang">
+
+                    <div class="dest-card-img"><img src="images/angiang_hero.webp" alt="An Giang" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Thất Sơn & 4 Mùa</span>
+
+                            <span class="tag">Miền Tây</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">An Giang</h3>
+
+                        <p class="dest-card-desc">Rừng tràm Trà Sư thảm bèo xanh ngọc bích, Miếu Bà Chúa Xứ Núi Sam linh thiêng, rặng thốt nốt Tri Tôn và lẩu cá linh bông điên điển.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">318 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-quang-binh.html" data-category="heritage" data-scroll data-content-id="dest-quang-binh">
+
+                    <div class="dest-card-img"><img src="images/quangbinh_hero.webp" alt="Quảng Bình" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">👑 UNESCO Kép</span>
+
+                            <span class="tag">Vương quốc hang động</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Quảng Bình</h3>
+
+                        <p class="dest-card-desc">Phong Nha - Kẻ Bàng kỳ vĩ, Sơn Đoòng lớn nhất thế giới, động Thiên Đường hoàng cung và suối Nước Moọc ngọc bích.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">392 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-can-tho.html" data-category="heritage" data-scroll data-content-id="dest-can-tho">
+
+                    <div class="dest-card-img"><img src="images/cantho_hero.webp" alt="Cần Thơ" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Chợ Nổi & 4 Mùa</span>
+
+                            <span class="tag">Thủ Phủ Tây Đô</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Cần Thơ</h3>
+
+                        <p class="dest-card-desc">Sông Hậu hiền hòa, bồng bềnh Chợ nổi Cái Răng lúc bình minh, nét đài các nhà cổ Bình Thủy và miệt vườn Phong Điền trĩu quả ngọt.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">368 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 100% Ảnh AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-tay-ninh.html" data-category="mountain" data-scroll data-content-id="dest-tay-ninh">
+
+                    <div class="dest-card-img"><img src="images/tayninh_hero.webp" alt="Tây Ninh" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Núi Bà Đen & 4 Mùa</span>
+
+                            <span class="tag">Nóc Nhà Nam Bộ</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Tây Ninh</h3>
+
+                        <p class="dest-card-desc">Đỉnh núi Bà Đen 986m săn mây đĩa bay, tượng Phật Bà bằng đồng cao nhất châu Á, Tòa Thánh Cao Đài độc nhất và bánh tráng phơi sương.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">412 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 100% Ảnh AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-sapa.html" data-category="mountain" data-scroll data-content-id="dest-sapa">
+
+                    <div class="dest-card-img"><img src="images/sapa_hero.webp" alt="Sa Pa — Nóc Nhà Đông Dương" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Fansipan & 4 Mùa</span>
+
+                            <span class="tag">Mường Hoa</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Sa Pa</h3>
+
+                        <p class="dest-card-desc">Đỉnh Fansipan 3.147,3m nóc nhà Đông Dương, sóng lúa bậc thang Mường Hoa và 4 mùa mây ngàn Tây Bắc.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">420 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 100% Ảnh AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-da-lat.html" data-category="mountain" data-scroll data-content-id="dest-da-lat">
+
+                    <div class="dest-card-img"><img src="images/dalat_hero.webp" alt="Đà Lạt" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Langbiang & 4 Mùa</span>
+
+                            <span class="tag">Di sản ngàn hoa</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Đà Lạt</h3>
+
+                        <p class="dest-card-desc">Thành phố ngàn hoa mộng mơ trên cao nguyên Lâm Viên với rừng thông bạt ngàn, di sản kiến trúc trăm năm và biển mây cuồn cuộn.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">528 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 AI</span>
+
+                            <span class="credit-author">Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a class="dest-card" href="destination-quy-nhon.html" data-category="beach" data-scroll data-content-id="dest-quy-nhon">
+
+                    <div class="dest-card-img"><img src="images/quynhon_hero.webp" alt="Quy Nhơn" loading="lazy"></div>
+
+                    <div class="dest-card-overlay"></div>
+
+                    <div class="dest-card-content">
+
+                        <div class="dest-card-tags">
+
+                            <span class="tag tag-hot">🔥 Kỳ Co & 4 Mùa</span>
+
+                            <span class="tag">Biển Đảo Xứ Nẫu</span>
+
+                        </div>
+
+                        <h3 class="dest-card-title">Quy Nhơn</h3>
+
+                        <p class="dest-card-desc">Vịnh biển vầng trăng khuyết hoang sơ tuyệt mỹ, làn nước ngọc bích Kỳ Co, Eo Gió đón bình minh và tháp Chăm Pa cổ kính.</p>
+
+                        <div class="dest-card-meta">
+
+                            <div class="dest-rating"><span class="stars">★★★★★</span> <span>4.9</span></div>
+
+                            <span class="dest-reviews">386 reviews</span>
+
+                        </div>
+
+                        <div class="dest-card-credits">
+
+                            <span class="credit-img">🎨 Ảnh gen bởi AI</span>
+
+                            <span class="credit-author">Tác giả: Sửu nhi</span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="dest-more" data-scroll>
+
+                <button class="btn-outline">Xem thêm điểm đến →</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div class="about-left" data-scroll>
+
+                    <span class="section-tag">02 / Về chúng tôi</span>
+
+                    <h2 class="section-title">GO FAR<span class="logo-dot">.</span></h2>
+
+                     <p class="about-text">
+
+                        GO FAR ra đời với sứ mệnh lan tỏa và tôn vinh vẻ đẹp bất tận của du lịch Việt Nam. Chúng tôi chắt lọc những thông tin cẩm nang hữu ích nhất nhằm giới thiệu những nét đẹp đặc trưng của mỗi vùng đất di sản.
+
+                    </p>
+
+                    <p class="about-text">
+
+                        Toàn bộ hình ảnh danh thắng trên nền tảng được tái hiện độc bản 100% bằng Trí tuệ nhân tạo (AI) — mang đến trải nghiệm thị giác mới lạ, sống động mà vẫn tôn trọng tác quyền nghệ thuật.
+
+                    </p>
+
+                    <div class="about-values">
+
+                        <div class="value">
+
+                            <span class="value-icon">◈</span>
+
+                            <span>Chân thật</span>
+
+                        </div>
+
+                        <div class="value">
+
+                            <span class="value-icon">◈</span>
+
+                            <span>Phóng khoáng</span>
+
+                        </div>
+
+                        <div class="value">
+
+                            <span class="value-icon">◈</span>
+
+                            <span>Cộng đồng</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="about-right" data-scroll>
+
+                    <div class="about-card-stack">
+
+                        <div class="about-photo" style="--rotation: -3deg;">
+
+                            <img src="images/sapa.webp" alt="Sapa trip">
+
+                            <span class="photo-caption">Sapa, mùa lúa chín — AI illustration</span>
+
+                        </div>
+
+                        <div class="about-photo" style="--rotation: 2deg;">
+
+                            <img src="images/hoian.webp" alt="Hội An trip">
+
+                            <span class="photo-caption">Hội An, đêm rằm — AI illustration</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!-- ARTICLE DETAIL MODAL -->
+
+    <div class="article-modal" id="articleModal">
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+
+        <div class="modal-container">
+
+            <button class="modal-close" id="modalClose">
+
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+
+            </button>
+
+            <div class="modal-body">
+
+                <div class="modal-image-side">
+
+                    <img id="modalImg" src="" alt="">
+
+                    <div class="modal-image-overlay"></div>
+
+                </div>
+
+                <div class="modal-content-side">
+
+                    <div class="modal-header">
+
+                        <span class="modal-tag" id="modalTag">Category</span>
+
+                        <h2 class="modal-title" id="modalTitle">Title</h2>
+
+                        <div class="modal-meta">
+
+                            <span id="modalRating">★ 5.0</span>
+
+                            <span class="dot">·</span>
+
+                            <span id="modalLocation">Location</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-text-content">
+
+                        <div id="modalReview" class="modal-review">
+
+                            <!-- Review text here -->
+
+                        </div>
+
+                        <div class="modal-tips-box">
+
+                            <h4>💡 Bí kíp nhỏ</h4>
+
+                            <p id="modalTips"></p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <div class="modal-author">
+
+                            <div class="avatar-sm">SN</div>
+
+                            <div>
+
+                                <span class="author-name">Sửu nhi</span>
+
+                                <span class="author-label">Tác giả · Biên tập viên</span>
+
+                            </div>
+
+                        </div>
+
+                        <span class="modal-attribution">Được tổng hợp từ nhiều nguồn</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER (Enhanced Spacing) -->
+
+    <footer class="footer" style="padding: var(--space-lg) 0; background: var(--bg-primary);">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a href="#" class="nav-logo">
+
+                        <img src="images/logo.png" alt="GoFar Logo" class="logo-img">
+
+                    </a>
+
+                    <p class="footer-tagline">Đi là để cảm.</p>
+
+                    <div class="footer-social">
+
+                        <a href="javascript:void(0)" class="social-link" aria-label="Facebook">FB</a>
+
+                        <a href="javascript:void(0)" class="social-link" aria-label="Instagram">IG</a>
+
+                        <a href="javascript:void(0)" class="social-link" aria-label="TikTok">TT</a>
+
+                        <a href="javascript:void(0)" class="social-link" aria-label="YouTube">YT</a>
+
+                    </div>
+
+                </div>
+
+                <div class="footer-links">
+
+                    <h4>Khám phá</h4>
+
+                    <a href="javascript:void(0)" class="region-link" data-region="Miền Bắc">Miền Bắc</a>
+
+                    <a href="javascript:void(0)" class="region-link" data-region="Miền Trung">Miền Trung</a>
+
+                    <a href="javascript:void(0)" class="region-link" data-region="Miền Nam">Miền Nam</a>
+
+                    <a href="javascript:void(0)" class="region-link" data-region="Tây Nguyên">Tây Nguyên</a>
+
+                </div>
+
+                <div class="footer-links">
+
+                    <h4>Về GO FAR</h4>
+
+                    <a href="#about">Giới thiệu</a>
+
+                    <a href="javascript:void(0)">Đội ngũ</a>
+
+                    <a href="javascript:void(0)">Liên hệ</a>
+
+                    <a href="javascript:void(0)">Hợp tác</a>
+
+                </div>
+
+                <div class="footer-links">
+
+                    <h4>Hỗ trợ</h4>
+
+                    <a href="javascript:void(0)">FAQ</a>
+
+                    <a href="policy.html">Điều khoản</a>
+
+                    <a href="policy.html">Bảo mật</a>
+
+                    <a href="javascript:void(0)">Feedback</a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>© 2026 GO FAR. Nội dung biên tập từ nhiều nguồn. Hình ảnh 100% AI-generated.</p>
+
+                <p class="footer-made">Made with ♥ bởi những kẻ mê đi. · <a href="admin.html" style="color: var(--text-muted); text-decoration: none; opacity: 0.5; font-size: 0.7rem;" title="Admin Dashboard">⚙ Admin</a></p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- BACK TO TOP -->
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+
+    </button>
+
+
+
+    <script src="data.js?v=6"></script>
+
+    <script src="script.js?v=6"></script>
+
+</body>
+
+</html>
+

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vịnh Hạ Long — Kỳ quan thiên nhiên thế giới & Di sản UNESCO | GO FAR</title>
-    <meta name="description" content="Cẩm nang du lịch Vịnh Hạ Long chi tiết: Hang Sửng Sốt, đảo Ti Tốp, hang Luồn, hòn Trống Mái, hòn Đỉnh Hương, vịnh Lan Hạ. Lịch trình, đi lại, món ăn đặc sản.">
+    <title>Vịnh Hạ Long — Kỳ Quan Thiên Nhiên Thế Giới & Biển Đảo Huyền Thoại | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Vịnh Hạ Long trọn vẹn: 1.969 hòn đảo đá vôi, hang Sửng Sốt, đảo Ti Tốp, vịnh Bái Tử Long, chả mực giã tay, du thuyền 5 sao và 4 mùa kỳ vĩ.">
     <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +13,16 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg: #0b151e;
+            --bg-sec: #132230;
+            --bg-card: rgba(19, 34, 48, 0.88);
             --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent: #FF8C32;
-            --accent-gold: #fbbf24;
+            --accent: #0284c7;
+            --accent-gold: #38bdf8;
+            --accent-warm: #f59e0b;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -31,13 +32,14 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* NAV */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: linear-gradient(135deg, #0b151e 0%, #172c3f 50%, #0b151e 100%);
             border-bottom: 2px solid;
-            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            border-image: linear-gradient(90deg, transparent, #0284c7, #38bdf8, transparent) 1;
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -63,13 +65,13 @@
             gap: 0.4rem;
             margin-left: auto;
         }
-        .nav-back:hover { color: var(--accent); }
+        .nav-back:hover { color: var(--accent-gold); }
 
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
         }
         .hero img {
@@ -80,7 +82,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(11,21,30,0.25) 0%, rgba(11,21,30,0.92) 100%);
         }
         .hero-content {
             position: absolute;
@@ -93,169 +95,270 @@
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
-            border-radius: 99px;
-            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+            background: rgba(56,189,248,0.15);
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(56,189,248,0.25);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            color: #fff;
         }
-        .hero-meta-line {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+        .hero-subtitle {
+            font-size: 1.1rem;
             color: var(--text-sec);
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            max-width: 860px;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
 
-        /* BREADCRUMB */
-        .breadcrumb {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
-
-        /* CONTENT LAYOUT */
+        /* ARTICLE LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
             padding: 0 1.5rem 4rem;
         }
+
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
 
+        /* SIDEBAR */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+        }
+        .widget-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
+        }
+        .quick-facts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+        }
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+            padding-bottom: 0.4rem;
+        }
+        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .val { color: var(--text); font-weight: 500; text-align: right; }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+        }
+        .toc-list a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+        }
+        .toc-list a:hover {
+            color: var(--accent-gold);
+            padding-left: 0.4rem;
+        }
+
         /* MAIN CONTENT */
+        .article-main section {
+            margin-bottom: 3.5rem;
+        }
         .article-main h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             gap: 0.6rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.6rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
-        .article-main h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
+        .article-main h2 .icon {
+            font-size: 1.6rem;
         }
-
         .article-main p {
+            margin-bottom: 1.2rem;
             color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-align: justify;
         }
-
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
-        }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
-            color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
+        .intro-lead {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.2rem;
+            background: rgba(2,132,199,0.06);
             padding: 1rem 1.2rem;
-            margin: 1rem 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
 
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
+        .highlight-box {
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1.8rem 0;
         }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
+        .highlight-box h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+        }
 
-        /* PREMIUM CHECKIN CARDS */
-        .checkin-grid {
+        .legend-box {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legend-box h4 {
+            color: var(--accent-warm);
+            margin-bottom: 0.6rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+        }
+
+        /* 4 SEASONS GRID (MỤC 4) */
+        .seasons-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
+        }
+        .season-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        .season-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56,189,248,0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+        .season-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.06);
+        }
+        .season-badge {
+            position: absolute;
+            top: 0.8rem;
+            left: 0.8rem;
+            background: rgba(11,21,30,0.85);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(56,189,248,0.3);
+        }
+        .season-body {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            flex: 1;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .season-time {
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+        .season-desc {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0 !important;
+        }
+
+        /* 10 LANDMARKS GRID (MỤC 5) */
+        .dest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
         .dest-card {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--bg-sec);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s;
             cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
         }
         .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(56, 189, 248, 0.4);
         }
-        .dest-card.double-col {
+        .dest-card.featured {
             grid-column: span 2;
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
         }
         .dest-card.single-col {
             grid-column: span 1;
@@ -271,16 +374,16 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            filter: brightness(0.9) saturate(1.15);
         }
         .dest-card:hover .dest-card-img img {
             transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+            filter: brightness(0.78) saturate(1.25);
         }
         .dest-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
+            background: linear-gradient(180deg, transparent 35%, rgba(11, 21, 30, 0.96) 100%);
             z-index: 1;
         }
         .dest-card-content {
@@ -295,752 +398,937 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
         .dest-card-tags .tag {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
+            color: #fff;
+            padding: 0.25rem 0.65rem;
             border-radius: var(--radius-sm);
-            color: #fff !important;
-            font-weight: 600;
+            backdrop-filter: blur(4px);
         }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
+        .dest-card-tags .tag.tag-hot {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
         }
         .dest-card-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
-            color: var(--text) !important;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .dest-card-desc {
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             color: var(--text-sec);
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            line-clamp: 2;
             -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
+            overflow: hidden;
         }
-        .dest-card-meta {
+
+        /* CULINARY SHOWCASE */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .culinary-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
+            cursor: pointer;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            flex-direction: column;
         }
-        .dest-rating {
+        .culinary-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .culinary-img-wrap {
+            aspect-ratio: 16/9;
+            position: relative;
+            overflow: hidden;
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.06);
+        }
+        .culinary-body {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .culinary-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0 !important;
+        }
+        .culinary-price {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 0.6rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
-        .dest-rating .stars {
+
+        /* TABLES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: rgba(19, 34, 48, 0.5);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .info-table th {
+            background: rgba(2, 132, 199, 0.15);
             color: var(--accent-gold);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        .dest-rating span:last-child {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
+            padding: 0.85rem 1rem;
+            text-align: left;
             font-weight: 600;
-            color: var(--text);
         }
-        .dest-reviews {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .dest-card-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 0.4rem;
-        }
-        
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
-
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
-        }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
+        .info-table td {
+            padding: 0.85rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-sec);
-            margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .price-tag {
+            color: var(--accent-warm);
+            font-weight: 600;
         }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
+        .disclaimer-box {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.82rem;
-            transition: color 0.2s;
+            margin-top: 0.8rem;
+            font-style: italic;
         }
-        .toc-list a:hover { color: var(--accent); }
 
         /* FOOTER */
         .article-footer {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.06);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             flex-wrap: wrap;
             gap: 1rem;
         }
-        .article-footer a { color: var(--accent); text-decoration: none; }
+        .article-footer a { color: var(--accent-gold); text-decoration: none; }
         .credits { font-style: italic; }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
-        }
-
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
-        }
-
-        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        /* LIGHTBOX MODAL */
         .lightbox-modal {
             display: none;
             position: fixed;
             z-index: 9999;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
+            background-color: rgba(6, 12, 18, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
+            padding: 2.5rem 1rem 3.5rem;
             box-sizing: border-box;
-            background-color: rgba(11, 22, 34, 0.96);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            align-items: center;
-            flex-direction: column;
         }
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 52vh;
+        .lightbox-dialog {
+            position: relative;
+            max-width: 960px;
+            margin: 2rem auto;
+            background: rgba(19, 34, 48, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lightbox-caption {
-            margin: auto;
-            display: block;
-            width: 85%;
-            max-width: 800px;
-            text-align: center;
-            color: var(--text-sec);
-            padding: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
         }
         .lightbox-close {
-            position: fixed;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
             cursor: pointer;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+            transition: background 0.2s;
         }
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: var(--accent);
-            text-decoration: none;
+        .lightbox-close:hover {
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--accent-gold);
+        }
+        .lightbox-media {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .lightbox-info {
+            padding: 1.8rem 2rem 2.2rem;
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .lightbox-desc {
+            font-size: 0.95rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+        }
+        .lightbox-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            background: rgba(56, 189, 248, 0.2);
+            color: var(--accent-gold);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+            .article-main {
+                order: 1;
+            }
+        }
+        @media (max-width: 768px) {
+            .seasons-grid, .dest-grid, .culinary-grid {
+                grid-template-columns: 1fr;
+            }
+            .dest-card.featured, .dest-card.single-col {
+                grid-column: span 1;
+                aspect-ratio: 16/9;
+            }
+            .hero {
+                height: 50vh;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-ha-long.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-ha-long.html">
-    <meta property="og:title" content="Vịnh Hạ Long — Kỳ quan thiên nhiên thế giới & Di sản UNESCO | GO FAR">
-    <meta property="og:description" content="Cẩm nang du lịch Vịnh Hạ Long chi tiết: Hang Sửng Sốt, đảo Ti Tốp, hang Luồn, hòn Trống Mái, hòn Đỉnh Hương, vịnh Lan Hạ. Lịch trình, đi lại, món ăn đặc sản.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/halong_sung_sot.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-ha-long.html">
-    <meta property="twitter:title" content="Vịnh Hạ Long — Kỳ quan thiên nhiên thế giới & Di sản UNESCO | GO FAR">
-    <meta property="twitter:description" content="Cẩm nang du lịch Vịnh Hạ Long chi tiết: Hang Sửng Sốt, đảo Ti Tốp, hang Luồn, hòn Trống Mái, hòn Đỉnh Hương, vịnh Lan Hạ. Lịch trình, đi lại, món ăn đặc sản.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/halong_sung_sot.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Vịnh Hạ Long",
-    "description": "Cẩm nang du lịch Vịnh Hạ Long chi tiết: Hang Sửng Sốt, đảo Ti Tốp, hang Luồn, hòn Trống Mái, hòn Đỉnh Hương, vịnh Lan Hạ. Lịch trình, đi lại, món ăn đặc sản.",
-    "image": "https://gofarvietnam.com/images/halong_sung_sot.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Miền Bắc",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
-        }
-    }
-}
-    </script>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/halong_hero.webp" alt="Vịnh Hạ Long — Kỳ quan đá vôi">
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/halong_hero.webp" alt="Toàn cảnh Vịnh Hạ Long kỳ vĩ với hàng ngàn đảo đá vôi nhô lên từ làn nước biển ngọc bích">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Miền Bắc · Di sản Thiên nhiên Thế giới</span>
-            <h1>Vịnh Hạ Long<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Kỳ quan đá vôi</span></h1>
-            <div class="hero-meta-line">
-                <span class="rating">⭐ 4.8 / 5.0</span>
-                <span>·</span>
-                <span>Tỉnh Quảng Ninh, Việt Nam</span>
-                <span>·</span>
-                <span>Cập nhật: 08/2026</span>
-            </div>
+            <span class="hero-tag">🔥 Di sản Thiên nhiên Thế giới UNESCO • Di tích Quốc gia Đặc biệt</span>
+            <h1>Vịnh Hạ Long — Kỳ Quan Địa Chất & Muôn Trùng Đảo Biếc</h1>
+            <p class="hero-subtitle">Kỳ quan thiên nhiên vô giá với 1.969 hòn đảo đá vôi triệu năm sừng sững giữa vịnh biển ngọc bích, nơi Rồng Mẹ hạ giới phun châu nhả ngọc dựng nên thành lũy muôn đời bảo vệ bờ cõi non sông.</p>
         </div>
-    </section>
+    </header>
 
-    <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Vịnh Hạ Long</strong>
-    </div>
-
+    <!-- CONTENT LAYOUT -->
     <div class="article-layout">
         <div class="dashboard-layout">
-            <!-- MAIN ARTICLE -->
-            <article class="article-main">
-
-                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-                <p>Vịnh Hạ Long được ví như một bức tranh thủy mặc khổng lồ kỳ vĩ của thiên nhiên tạo tác, với hàng ngàn đảo đá vôi nhô lên từ mặt nước biển xanh ngọc lục bảo phẳng lặng. Trải rộng trên diện tích hơn 1.500 km², vịnh sở hữu hệ thống hang động thạch nhũ lung linh huyền ảo cùng hệ sinh thái biển vô cùng phong phú.</p>
-                <p>Được UNESCO hai lần công nhận là Di sản Thiên nhiên Thế giới (vào các năm 1994 và 2000), Vịnh Hạ Long thu hút du khách trong và ngoài nước tham gia trải nghiệm nghỉ đêm trên du thuyền gỗ truyền thống, chèo thuyền kayak khám phá hang luồn và thưởng ngoạn hoàng hôn buông lơi rực rỡ.</p>
-
-                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
-                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Vịnh Hạ Long. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
-
-                <div class="checkin-grid">
-                    
-                    <div class="dest-card double-col" data-legend="Hang Sửng Sốt (nghĩa là 'hang Ngạc Nhiên') nằm trên đảo Bồ Hòn, là hang động lớn nhất và đẹp nhất Vịnh Hạ Long. Hang được người Pháp phát hiện năm 1901 và đặt tên là 'Grotte des Surprises' (hang Bất Ngờ) vì quy mô hoành tráng vượt ngoài tưởng tượng. Bên trong hang gồm 2 ngăn rộng lớn với hệ thống thạch nhũ hàng triệu năm tuổi, nổi bật nhất là khối nhũ đá hình thanh gươm và vết chân ngựa gắn với truyền thuyết Thánh Gióng đánh giặc Ân.">
-                        <div class="dest-card-img">
-                            <img src="images/halong_sung_sot.webp" alt="Hang Sửng Sốt" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Kỳ quan</span>
-                                <span class="tag">Hang động</span>
-                            </div>
-                            <h3 class="dest-card-title">Hang Sửng Sốt</h3>
-                            <p class="dest-card-desc">Hang động rộng lớn và lộng lẫy bậc nhất vịnh với hàng ngàn khối thạch nhũ lung linh kỳ ảo được chiếu sáng rực rỡ.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Hòn đảo ban đầu có tên Cát Nàng. Vào ngày 22/01/1962, Chủ tịch Hồ Chí Minh cùng nhà du hành vũ trụ người Nga Gherman Titov đã lên thăm đảo. Để vinh danh người bạn quốc tế lớn và thắt chặt tình hữu nghị Việt - Xô, Bác Hồ đã đặt lại tên cho đảo là Ti Tốp.">
-                        <div class="dest-card-img">
-                            <img src="images/halong_titop.webp" alt="Đảo Ti Tốp" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Bãi biển</span>
-                                <span class="tag">Đỉnh núi</span>
-                            </div>
-                            <h3 class="dest-card-title">Đảo Ti Tốp</h3>
-                            <p class="dest-card-desc">Hòn đảo xinh đẹp nổi tiếng với bãi cát trắng mịn hình vầng trăng khuyết và đỉnh núi ngắm trọn vẹn toàn cảnh vịnh từ trên cao.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Hang Luồn là hang xuyên thủy nằm trên đảo Bồ Hòn, du khách chèo thuyền kayak hoặc thuyền nan xuyên qua vòm đá thấp dài 60m để lọt vào hồ nước mặn bên trong — một 'vịnh trong vịnh' kín đáo tuyệt đẹp. Dạng địa hình này gọi là 'hồ nước mặn karst' (lagoon), được tạo nên bởi quá trình xâm thực đá vôi hàng triệu năm. Ngư dân xưa dùng hang luồn này như lối tắt bí mật để tránh bão biển.">
-                        <div class="dest-card-img">
-                            <img src="images/halong_hang_luon.webp" alt="Hang Luồn" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Chèo thuyền</span>
-                                <span class="tag">Lagoon</span>
-                            </div>
-                            <h3 class="dest-card-title">Hang Luồn</h3>
-                            <p class="dest-card-desc">Cổng vòm đá tự nhiên sát mực nước biển, điểm lý tưởng để chèo thuyền kayak xuyên qua lòng núi đi vào hồ nước phẳng lặng kín gió.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card double-col" data-legend="Hòn Trống Mái (hòn Gà Chọi) là biểu tượng của du lịch Vịnh Hạ Long – Di sản Thiên nhiên Thế giới. Địa chất hai khối đá vôi đứng chênh vênh giữa sóng biển được hình thành qua hàng triệu năm xâm thực địa chất, tượng trưng cho lòng thủy chung bất diệt của cư dân chài lưới vùng vịnh.">
-                        <div class="dest-card-img">
-                            <img src="images/halong_trong_mai.webp" alt="Hòn Trống Mái (Hòn Gà Chọi)" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Biểu tượng</span>
-                                <span class="tag">Nghệ thuật</span>
-                            </div>
-                            <h3 class="dest-card-title">Hòn Trống Mái (Hòn Gà Chọi)</h3>
-                            <p class="dest-card-desc">Cặp đảo đá hình hai chú gà hướng mỏ vào nhau, biểu tượng lịch sử lâu đời và nghệ thuật vô giá của Vịnh Hạ Long.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Hòn Đỉnh Hương (còn gọi Lư Hương) là khối đá vôi nhỏ hình chiếc lư hương khổng lồ nhô lên giữa mặt vịnh, được in trên tờ tiền polymer 200.000 đồng — mệnh giá lớn nhất Việt Nam. Trong văn hóa Việt, lư hương là vật thờ linh thiêng tượng trưng cho sự kết nối giữa trời đất và con người. Ngư dân Hạ Long tin rằng Hòn Đỉnh Hương là lư hương thiên tạo của thần biển, bảo hộ bình an cho những chuyến ra khơi.">
-                        <div class="dest-card-img">
-                            <img src="images/halong_dinh_huong.webp" alt="Hòn Đỉnh Hương" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Tâm linh</span>
-                                <span class="tag">Islet</span>
-                            </div>
-                            <h3 class="dest-card-title">Hòn Đỉnh Hương</h3>
-                            <p class="dest-card-desc">Phiến đá lớn hình chiếc lư hương sừng sững giữa biển khơi, xuất hiện trang trọng trên tờ tiền 200.000 VNĐ.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Làng chài Cửa Vạn là một trong những làng chài nổi cổ xưa nhất Vịnh Hạ Long, với lịch sử hơn 200 năm. Cư dân sống trên nhà bè nổi giữa vịnh, mưu sinh bằng nghề đánh bắt và nuôi trồng hải sản qua nhiều thế hệ. Năm 2014, theo chủ trương bảo vệ di sản, toàn bộ cư dân được di dời lên bờ, kết thúc lối sống 'thủy cư' độc đáo trên vịnh. Làng chài Cửa Vạn từng được Journeyetc.com bình chọn trong Top 16 ngôi làng cổ đẹp nhất thế giới.">
-                        <div class="dest-card-img">
-                            <img src="images/halong_cua_van.webp" alt="Làng chài Cửa Vạn" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Bản địa</span>
-                                <span class="tag">Độc đáo</span>
-                            </div>
-                            <h3 class="dest-card-title">Làng chài Cửa Vạn</h3>
-                            <p class="dest-card-desc">Ngôi làng nổi cổ kính mộc mạc bên vách núi đá vôi, lưu giữ những nét sinh hoạt sông nước truyền thống đặc trưng.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Vịnh Lan Hạ nằm kề bên Vịnh Hạ Long thuộc đảo Cát Bà (Hải Phòng), sở hữu khoảng 400 hòn đảo đá vôi nhưng ít du khách hơn nên giữ được vẻ hoang sơ nguyên bản. Tên 'Lan Hạ' theo Hán-Việt mang ý nghĩa 'đóa hoa lan rơi xuống trần thế' — gợi tả vẻ đẹp thanh khiết của vịnh biển giữa núi đá. Vịnh Lan Hạ là nơi duy nhất tại khu vực Hạ Long - Cát Bà có bãi cát trắng tự nhiên trên đảo, với hơn 130 bãi tắm nhỏ xinh ẩn mình giữa vách đá.">
-                        <div class="dest-card-img">
-                            <img src="images/halong_lan_ha.webp" alt="Vịnh Lan Hạ" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Hoang sơ</span>
-                                <span class="tag">Bãi cát</span>
-                            </div>
-                            <h3 class="dest-card-title">Vịnh Lan Hạ</h3>
-                            <p class="dest-card-desc">Vùng vịnh xanh mát bình yên tiếp giáp Cát Bà với nhiều bãi tắm nhỏ hoang sơ tựa như chốn thiên đường ẩn dật.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Hang Đầu Gỗ (nghĩa là 'hang chứa cọc gỗ') là hang động khô lớn nhất Vịnh Hạ Long. Theo chính sử, năm 1288, Hưng Đạo Đại Vương Trần Quốc Tuấn đã cho giấu hàng ngàn cọc gỗ lim trong hang này trước khi mang ra cắm xuống sông Bạch Đằng, tạo nên trận thủy chiến huyền thoại đánh tan quân Nguyên - Mông xâm lược. Người Pháp đặt tên là 'Grotte des Merveilles' (hang Kỳ Diệu) vì vẻ đẹp thạch nhũ ngoạn mục bên trong.">
-                        <div class="dest-card-img">
-                            <img src="images/halong_dau_go.webp" alt="Hang Đầu Gỗ" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Lịch sử</span>
-                                <span class="tag">Hang động</span>
-                            </div>
-                            <h3 class="dest-card-title">Hang Đầu Gỗ</h3>
-                            <p class="dest-card-desc">Hang động cổ kính trầm mặc gắn liền với chiến tích lịch sử cất giấu cọc gỗ chiến đấu chống quân Nguyên Mông triều Trần.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- DI CHUYỂN & CHI PHÍ -->
-                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-                <p>Nằm cách Hà Nội khoảng 150km, hạ tầng giao thông kết nối Hạ Long vô cùng hiện đại và nhanh chóng qua đường cao tốc Bắc Bộ:</p>
-                
-                <h3>1. Gợi ý phương tiện đến Hạ Long</h3>
-                <ul>
-                    <li><strong>Xe limousine đón tận nơi:</strong> Dịch vụ limousine chạy tuyến Hà Nội - Hạ Long đón trả tận khách sạn cực kỳ tiện lợi, tần suất 30 phút/chuyến.</li>
-                    <li><strong>Xe khách giường nằm:</strong> Đón từ các bến xe Mỹ Đình, Giáp Bát về bến xe Bãi Cháy (Quảng Ninh) với mức chi phí tiết kiệm.</li>
-                    <li><strong>Tàu hỏa du lịch:</strong> Có tuyến tàu hỏa từ ga Yên Viên đi Hạ Long phù hợp cho những ai thích ngắm cảnh đường sắt mộc mạc.</li>
-                </ul>
-
-                <h3>2. Trải nghiệm du thuyền ngắm vịnh</h3>
-                <p>Để tham quan vịnh, bạn bắt buộc phải mua vé tại Cảng tàu du lịch quốc tế Tuần Châu hoặc cảng tàu khách quốc tế Hạ Long. Có hai hình thức chính là: <strong>Tàu ghép đi trong ngày</strong> (4 - 6 tiếng) hoặc đặt các tour <strong>Du thuyền ngủ đêm cao cấp 5 sao</strong> trọn gói.</p>
-
-                <h3>3. Giá vé tham khảo</h3>
-                <table class="info-table">
-                    <thead>
-                        <tr>
-                            <th>Hình thức tham quan</th>
-                            <th>Giá vé trung bình</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Vé thắng cảnh tham quan Vịnh (Bắt buộc)</td>
-                            <td><span class="price-tag">Vé niêm yết tại cảng</span> (Bao gồm phí qua cảng hành khách)</td>
-                        </tr>
-                        <tr>
-                            <td>Tàu tiếng tham quan trong ngày (Tuyến 4 tiếng / 6 tiếng)</td>
-                            <td><span class="price-tag">Theo giá thuê tàu ghép</span> (Có thể tự thuê tàu riêng nếu đi đoàn đông)</td>
-                        </tr>
-                        <tr>
-                            <td>Chèo thuyền Kayak hoặc đò nan tại Hang Luồn</td>
-                            <td><span class="price-tag">Giá dịch vụ tại bến</span></td>
-                        </tr>
-                        <tr>
-                            <td>Tour du thuyền ngủ đêm (Trọn gói phòng nghỉ + ăn uống)</td>
-                            <td><span class="price-tag">Thay đổi theo mùa</span> (Thay đổi linh hoạt theo hạng du thuyền từ 3 đến 5 sao)</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- LƯU TRÚ & ẨM THỰC -->
-                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực biển</h2>
-                
-                <h3>1. Lựa chọn lưu trú tại thành phố</h3>
-                <ul>
-                    <li><strong>Khu vực Bãi Cháy:</strong> Trung tâm du lịch sôi động nhất với bãi tắm nhân tạo lớn, công viên Sun World, chợ đêm du lịch và hàng loạt khách sạn cao tầng view biển đa dạng phân khúc.</li>
-                    <li><strong>Khu vực Hòn Gai:</strong> Yên bình và mang đậm phong vị cuộc sống dân địa phương, gần núi Bài Thơ cổ kính và các quán hải sản ngon bổ rẻ ven biển.</li>
-                    <li><strong>Đảo Tuần Châu:</strong> Phù hợp cho nghỉ dưỡng biệt thự riêng tư, cũng là bến đỗ khởi hành của các du thuyền lớn.</li>
-                </ul>
-
-                <h3>2. Ẩm thực Quảng Ninh tuyệt hảo</h3>
-                <div class="food-list">
-                    <div class="food-item"><span class="name">🥞 Chả mực giã tay ăn kèm xôi nóng hoặc bánh cuốn nước mắm cốt cay</span></div>
-                    <div class="food-item"><span class="name">🦀 Bún cù kỳ (Thịt càng cù kỳ ngọt dai ngập trong nước dùng riêu cua béo ngậy)</span></div>
-                    <div class="food-item"><span class="name">🐚 Ốc móng tay xào bơ tỏi, hàu sữa nướng mỡ hành thơm nức mũi</span></div>
-                    <div class="food-item"><span class="name">🍜 Bánh đa hải sản tươi rói (Đầy ắp tôm, bề bề, mực ống và chả cá thu bùi bùi)</span></div>
-                </div>
-
-                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
-                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
-                
-                <h3>1. Mùa nào vịnh Hạ Long đẹp nhất?</h3>
-                <ul>
-                    <li><strong>Tháng 3 – 5:</strong> Tiết trời mát mẻ dễ chịu, nắng dịu và rất ít sương mù, thuận lợi ngắm cảnh và chèo thuyền ngoạn cảnh.</li>
-                    <li><strong>Tháng 9 – 11:</strong> Mùa thu Hạ Long lộng gió, trời xanh ngắt, nước trong xanh rất thích hợp để trải nghiệm ngủ đêm lãng mạn trên các du thuyền.</li>
-                    <li><strong>Tháng 6 – 8:</strong> Mùa hè nhiệt độ cao thích hợp tắm biển nhưng cũng là mùa mưa bão miền Bắc. Du thuyền có thể bị cấm biển xuất phát đột xuất nếu có gió lớn.</li>
-                </ul>
-
-                <h3>2. Lưu ý an toàn sống còn</h3>
-                <ul>
-                    <li><strong>Mặc áo phao bắt buộc:</strong> Bắt buộc mặc áo phao cứu hộ trong suốt quá trình đi tàu đò nan hay tự chèo thuyền kayak trên vịnh để đảm bảo an toàn.</li>
-                    <li><strong>Bảo vệ tài sản cá nhân:</strong> Khi chèo thuyền hoặc tham quan các hang động ẩm ướt, hãy cất điện thoại, máy ảnh vào túi chống nước chuyên dụng để tránh rơi rớt trơn trượt.</li>
-                    <li><strong>Tránh mùa mưa bão:</strong> Luôn theo dõi sát sao dự báo thời tiết trước 2 - 3 ngày khởi hành để tránh trùng lịch cấm biển do áp thấp nhiệt đới hay bão lớn.</li>
-                </ul>
-
-                <div class="warning-box">
-                    <p>⚠️ Lưu ý bảo vệ môi trường: Vịnh Hạ Long nghiêm cấm mang chai nhựa và túi nilon sử dụng một lần lên tàu du lịch nhằm bảo vệ nguồn nước trong sạch của di sản thiên nhiên thế giới. Hãy là một du khách văn minh!</p>
-                </div>
-
-            </article>
 
             <!-- SIDEBAR -->
             <aside class="sidebar">
-                <!-- QUICK INFO -->
-                <div class="sidebar-card">
-                    <h4>📌 Thông tin nhanh</h4>
-                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Tỉnh Quảng Ninh, Việt Nam</div>
-                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 2 – 3 ngày</div>
-                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 3 – 5 & Tháng 9 – 11</div>
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Thông Tin Nhanh
+                    </h3>
+                    <ul class="quick-facts">
+                        <li><span class="label">Vị trí:</span><span class="val">TP. Hạ Long, Tỉnh Quảng Ninh</span></li>
+                        <li><span class="label">Quy mô:</span><span class="val">1.969 hòn đảo đá vôi (1.553 km²)</span></li>
+                        <li><span class="label">UNESCO vinh danh:</span><span class="val">1994, 2000 & 2023 (Liên tỉnh)</span></li>
+                        <li><span class="label">Xếp hạng QG:</span><span class="val">Di tích Quốc gia Đặc biệt (2009)</span></li>
+                        <li><span class="label">Thời điểm đẹp:</span><span class="val">Tháng 3 - 5 & Tháng 9 - 11</span></li>
+                        <li><span class="label">Đặc sản tiêu biểu:</span><span class="val">Chả mực giã tay, Sá sùng, Bún bề bề</span></li>
+                    </ul>
                 </div>
 
-                <!-- TOC -->
-                <div class="sidebar-card">
-                    <h4>📖 Mục lục</h4>
+                <div class="widget">
+                    <h3 class="widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                        Mục Lục Hướng Dẫn
+                    </h3>
                     <ul class="toc-list">
-                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
-                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
-                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
-                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
-                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
+                        <li><a href="#tong-quan">1. Tổng quan điểm đến</a></li>
+                        <li><a href="#lich-su-dia-ly">2. Vị trí địa lý & Dấu ấn lịch sử</a></li>
+                        <li><a href="#huyen-thoai">3. Huyền thoại Rồng Mẹ hạ giới</a></li>
+                        <li><a href="#bon-mua">4. Chuỗi hình ảnh 4 mùa du lịch</a></li>
+                        <li><a href="#thang-canh">5. Top 10 Thắng cảnh biểu tượng</a></li>
+                        <li><a href="#di-chuyen">6. Cẩm nang di chuyển & Cung đường</a></li>
+                        <li><a href="#am-thuc">7. Tinh hoa ẩm thực đặc sản</a></li>
+                        <li><a href="#gia-ve">8. Bảng giá vé tham quan niêm yết</a></li>
+                        <li><a href="#lich-trinh">9. Lịch trình 2N1Đ / 3N2Đ & Mẹo bản địa</a></li>
                     </ul>
                 </div>
             </aside>
+
+            <!-- MAIN CONTENT -->
+            <main class="article-main">
+
+                <!-- MỤC 1: TỔNG QUAN -->
+                <section id="tong-quan">
+                    <h2><span class="icon">🧭</span> 1. Tổng quan điểm đến</h2>
+                    <div class="intro-lead">
+                        Tọa lạc tại bờ tây vịnh Bắc Bộ thuộc tỉnh Quảng Ninh, <strong>Vịnh Hạ Long</strong> là kiệt tác địa chất tự nhiên có một không hai trên hành tinh, nơi hội tụ 1.969 hòn đảo đá vôi muôn hình vạn trạng nhô lên từ mặt nước biển trong vắt như ngọc bích. Vịnh Hạ Long không chỉ là niềm tự hào của du lịch Việt Nam mà còn là biểu tượng di sản thiên nhiên được bạn bè quốc tế ngưỡng vọng.
+                    </div>
+                    <p>Trải qua hơn 500 triệu năm kiến tạo địa chất phức tạp và quá trình phong hóa karst ngập triều qua các kỷ băng hà, Vịnh Hạ Long sở hữu hệ thống hang động thạch nhũ huyền ảo bậc nhất thế giới cùng hệ sinh thái nhiệt đới hải đảo nguyên sinh giàu tính đa dạng sinh học. Từ những đỉnh núi hình tháp nhọn hoắt, vách đá dựng đứng soi bóng đáy nước đến các áng, tùng kín gió được bao bọc bởi rừng ngập mặn và rạn san hô rực rỡ, mỗi góc nhìn nơi đây đều mang vẻ đẹp siêu thực kỳ vĩ.</p>
+                    <p>Nổi tiếng với văn hóa làng chài nổi cổ truyền hàng ngàn năm, ẩm thực hải sản phong phú và hệ thống du thuyền 5 sao đẳng cấp thế giới, Hạ Long mang đến cho du khách trải nghiệm vừa đậm đà bản sắc vừa đỉnh cao nghỉ dưỡng quốc tế.</p>
+                </section>
+
+                <!-- MỤC 2: VỊ TRÍ ĐỊA LÝ & DẤU ẤN LỊCH SỬ -->
+                <section id="lich-su-dia-ly">
+                    <h2><span class="icon">📜</span> 2. Vị trí địa lý & Dấu ấn lịch sử</h2>
+                    <p>Vịnh Hạ Long có diện tích tự nhiên khoảng 1.553 km² bao gồm 1.969 hòn đảo, trong đó khu vực vùng lõi di sản được bảo vệ nghiêm ngặt có diện tích 434 km² với 775 hòn đảo. Phía tây và tây bắc giáp đất liền thành phố Hạ Long và thành phố Cẩm Phả; phía đông nam và phía nam mở rộng ra Vịnh Bắc Bộ và tiếp giáp với quần đảo Cát Bà (Hải Phòng). Khí hậu Hạ Long là khí hậu miền biển hai mùa rõ rệt: mùa hạ nóng ẩm mưa nhiều và mùa đông khô lạnh mát mẻ.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>⚖️ Căn cứ Pháp lý & Quyết định Xếp hạng Di sản Chính thống</h4>
+                        <p>Giá trị ngoại hạng toàn cầu của Vịnh Hạ Long đã được cộng đồng quốc tế và Nhà nước Việt Nam khẳng định bằng hệ thống văn bản pháp lý cao nhất:</p>
+                        <ul style="margin: 0.6rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Công nhận Di sản Thế giới lần 1 (17/12/1994):</strong> Kỳ họp thứ 18 của Ủy ban Di sản Thế giới UNESCO tại Phuket (Thái Lan) chính thức ghi danh Vịnh Hạ Long là Di sản Thiên nhiên Thế giới theo tiêu chuẩn (vii) về giá trị thẩm mỹ cảnh quan thiên nhiên ngoại hạng toàn cầu.</li>
+                            <li><strong>Công nhận Di sản Thế giới lần 2 (02/12/2000):</strong> Kỳ họp thứ 24 của Ủy ban Di sản Thế giới tại Cairns (Úc) công nhận lần thứ hai về giá trị địa chất - địa mạo nổi bật toàn cầu theo tiêu chuẩn (viii).</li>
+                            <li><strong>Mở rộng Di sản liên tỉnh Vịnh Hạ Long - Quần đảo Cát Bà (16/09/2023):</strong> Tại Kỳ họp thứ 45 ở Riyadh (Ả Rập Xê Út), UNESCO chính thức công nhận <em>Vịnh Hạ Long - Quần đảo Cát Bà</em> là Di sản Thiên nhiên Thế giới liên tỉnh/thành phố đầu tiên của Việt Nam.</li>
+                            <li><strong>Quyết định số 1272/QĐ-TTg ngày 12/08/2009 của Thủ tướng Chính phủ:</strong> Xếp hạng Vịnh Hạ Long là <em>Di tích Quốc gia Đặc biệt</em> (Đợt 1).</li>
+                            <li><strong>Quyết định số 702/QĐ-TTg ngày 07/06/2021 của Thủ tướng Chính phủ:</strong> Phê duyệt Điều chỉnh Quy hoạch chung thành phố Hạ Long đến năm 2040, tầm nhìn đến năm 2050 (định vị Hạ Long là trung tâm du lịch quốc gia mang tầm quốc tế).</li>
+                        </ul>
+                        <div style="margin-top: 0.8rem; font-size: 0.82rem; color: var(--accent-gold); border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.5rem;">
+                            🏛️ <em>Nguồn tư liệu di sản & văn bản quy phạm pháp luật chính thống:</em> Cổng TTĐT Chính phủ (chinhphu.vn) • Cổng TTĐT Bộ Văn hóa, Thể thao và Du lịch (bvhttdl.gov.vn) • Cục Di sản Văn hóa (dsvh.gov.vn) • Cổng TTĐT Tỉnh Quảng Ninh (quangninh.gov.vn).
+                        </div>
+                    </div>
+
+                    <p>Về dấu ấn lịch sử - khảo cổ, Vịnh Hạ Long là cái nôi của các nền văn hóa tiền sử rực rỡ cách đây từ 25.000 đến 3.000 năm trước: <em>Văn hóa Soi Nhụ</em> (thời đồ đá cũ), <em>Văn hóa Cái Bèo</em> và <em>Văn hóa Hạ Long</em> (thời đồ đá mới với kỹ thuật chế tác rìu đá có vai, gốm xốp trang trí hoa văn vặn thừng độc đáo). Dấu tích người tiền sử cư trú còn nguyên vẹn trong các hang động Mê Cung, Tiên Ông, Bồ Nái.</p>
+                    <p>Trong lịch sử dựng nước và giữ nước, vùng biển đảo Hạ Long là phên dậu Đông Bắc hiểm yếu của Tổ quốc. Nơi đây gắn liền với chiến công hiển hách của Hưng Đạo Đại Vương Trần Quốc Tuấn trong trận thủy chiến Bạch Đằng Giang năm 1288 đánh tan đoàn thuyền lương quân xâm lược Nguyên - Mông, mà dấu tích cọc gỗ lim giấu trong hang núi vẫn lưu danh muôn thuở tại <strong>Động Đầu Gỗ</strong>.</p>
+                </section>
+
+                <!-- MỤC 3: HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai">
+                    <h2><span class="icon">🐉</span> 3. Huyền thoại Rồng Mẹ hạ giới</h2>
+                    
+                    <div class="legend-box">
+                        <h4>💎 Truyền thuyết Rồng Mẹ phun châu nhả ngọc ngăn giặc ngoại xâm</h4>
+                        <p>Từ thuở khai thiên lập địa khi người Việt mới lập nước, giặc ngoại bang từ phương Bắc theo đường biển ồ ạt kéo thuyền chiến vào cướp phá. Thương xót dân lành cơ cực, Ngọc Hoàng đã phái đàn Rồng gồm Rồng Mẹ dẫn theo đàn Rồng Con giáng trần giúp người trần đánh giặc. Khi thuyền giặc vừa tiến vào cửa vịnh, đàn Rồng lập tức phun ra muôn ngàn viên ngọc châu lấp lánh. Những viên ngọc vừa chạm mặt nước liền hóa thành muôn trùng vách đá khổng lồ, dựng nên bức tường thành đá vôi sừng sững giữa biển khơi. Thuyền giặc đâm vào đá vỡ tan tành, bờ cõi nước Việt sạch bóng quân thù. Sau chiến thắng, thấy non xanh nước biếc thanh bình, đàn Rồng không về trời mà quyết định ở lại trần gian chở che con dân đất Việt. Nơi Rồng Mẹ đáp xuống gọi là <strong>Hạ Long</strong>, nơi Rồng Con quây quần gọi là <strong>Bái Tử Long</strong>, và nơi đàn Rồng quẫy đuôi quạt trắng xóa gọi là <strong>Bạch Long Vĩ</strong>.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>🪵 Huyền tích Động Đầu Gỗ & Dấu tích cọc Bạch Đằng 1288</h4>
+                        <p>Tương tự như huyền thoại giữ nước, Động Đầu Gỗ nằm ở độ cao 27m so với mực nước biển, vốn mang tên dân gian Giấu Gỗ. Tương truyền trong chiến dịch kháng chiến chống quân Nguyên Mông năm 1288, Hưng Đạo Đại Vương Trần Quốc Tuấn đã cho quân lính đẵn hàng ngàn cây gỗ lim rừng về cất giấu bí mật trong lòng hang đá này để vót nhọn bịt sắt, trước khi đem cắm cọc ngầm dưới lòng sông Bạch Đằng, tạo nên trận địa cọc bẫy lịch sử nhấn chìm đoàn thuyền giặc của Ô Mã Nhi.</p>
+                    </div>
+
+                    <div class="legend-box">
+                        <h4>💑 Huyền thoại Tình yêu vĩnh hằng: Hang Trinh Nữ & Hang Trống</h4>
+                        <p>Đối diện nhau qua một vụng biển xanh biếc trên dãy đảo Bồ Hòn là hai hang động mang câu chuyện tình yêu son sắt. Người con gái làng chài nghèo xinh đẹp vì giữ trọn lời thề thủy chung với người yêu nghèo đi biển xa, đã kiên quyết từ chối ép hôn của tên chúa đảo giàu có độc ác. Nàng bị đày ra đảo hoang, kiệt sức hóa đá trong tư thế vươn tay ngóng chờ người yêu (Hang Trinh Nữ). Chàng trai chèo thuyền giữa giông bão tìm nàng, thuyền vỡ giạt vào hang đối diện, chàng lấy đá gõ vào vách núi gọi nàng cho đến khi hóa đá (Hang Trống). Tiếng gió lùa qua vách đá ngàn đời tựa như tiếng trống giục giã và lời hẹn thề bất tử của lứa đôi.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 4: CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua">
+                    <h2><span class="icon">🌸</span> 4. Chuỗi hình ảnh 4 mùa du lịch</h2>
+                    <p>Khác biệt với biển đảo phương Nam quanh năm nắng ấm, Vịnh Hạ Long mang vẻ đẹp bốn mùa chuyển hóa diệu kỳ theo nhịp thời gian miền Bắc. Mỗi mùa trong năm trên vịnh là một bức tranh thủy mặc độc đáo lay động giác quan du khách:</p>
+
+                    <div class="seasons-grid">
+                        <!-- Mùa Xuân -->
+                        <div class="season-card" onclick="openLightbox('images/halong_mua_xuan_suong_mo_vinh.webp', 'Mùa Xuân (Tháng 1 - 3): Sương Mờ Bảng Lảng Tranh Thủy Mặc Vịnh Di Sản', 'Sáng sớm mùa xuân trên vịnh Hạ Long với dải sương mây huyền ảo lững lờ trôi giữa hàng ngàn tháp đá karst trùng điệp. Cánh buồm gỗ truyền thống lướt nhẹ trên mặt nước phẳng lặng tựa như bước ra từ bức tranh cổ họa nghìn năm.')">
+                            <div class="season-img-wrap">
+                                <img src="images/halong_mua_xuan_suong_mo_vinh.webp" alt="Mùa xuân sương mờ trên vịnh Hạ Long" loading="lazy">
+                                <span class="season-badge">Tháng 1 - 3</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Xuân: Vịnh Trong Sương Khói Thủy Mặc</h3>
+                                <span class="season-time">Thời điểm: Tháng 1 đến hết tháng 3 Dương lịch</span>
+                                <p class="season-desc">Tiết trời se lạnh, sương giăng lãng đãng bao phủ các đỉnh núi đá vôi. Không gian tĩnh lặng, huyền bí mang vẻ đẹp thiền định, là thời điểm lý tưởng cho du khách muốn ngắm vịnh tĩnh tâm trên các du thuyền cao cấp.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Hạ -->
+                        <div class="season-card" onclick="openLightbox('images/halong_mua_ha_nang_vang_cheo_kayak.webp', 'Mùa Hạ (Tháng 4 - 8): Biển Xanh Ngọc Bích & Nắng Vàng Rực Rỡ Chèo Kayak', 'Mùa hè rực rỡ nhất trong năm tại Hạ Long. Bầu trời xanh ngắt không một gợn mây, ánh nắng rực rỡ chiếu rọi xuyên thấu làn nước biển ngọc bích, mở ra thiên đường chèo thuyền kayak khám phá các hang luồn và bãi tắm hoang sơ.')">
+                            <div class="season-img-wrap">
+                                <img src="images/halong_mua_ha_nang_vang_cheo_kayak.webp" alt="Mùa hè nắng vàng chèo kayak vịnh Hạ Long" loading="lazy">
+                                <span class="season-badge">Tháng 4 - 8</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Hạ: Nắng Vàng Biển Ngọc & Chèo Kayak</h3>
+                                <span class="season-time">Thời điểm: Tháng 4 đến hết tháng 8 Dương lịch</span>
+                                <p class="season-desc">Thời điểm sôi động nhất của du lịch biển đảo. Nắng vàng rực rỡ, nước biển trong vắt nhìn thấy đáy, lý tưởng cho các hoạt động tắm biển Ti Tốp, lặn ngắm san hô, chèo kayak luồn qua vòm hang đá và bay thủy phi cơ ngắm cảnh từ trên cao.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Thu -->
+                        <div class="season-card" onclick="openLightbox('images/halong_mua_thu_hoang_hon_vang.webp', 'Mùa Thu (Tháng 9 - 11): Hoàng Hôn Dát Vàng Muôn Trùng Đảo Biếc', 'Khoảnh khắc hoàng hôn mùa thu rực rỡ dát một lớp vàng cam kiêu sa lên mặt biển phẳng lặng. Từng lớp núi đá vôi sẫm màu đan xen cùng du thuyền cao cấp thả neo bình yên giữa lòng vịnh kỳ quan.')">
+                            <div class="season-img-wrap">
+                                <img src="images/halong_mua_thu_hoang_hon_vang.webp" alt="Mùa thu hoàng hôn dát vàng trên vịnh Hạ Long" loading="lazy">
+                                <span class="season-badge">Tháng 9 - 11</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu: Hoàng Hôn Dát Vàng Lộng Lẫy</h3>
+                                <span class="season-time">Thời điểm: Tháng 9 đến hết tháng 11 Dương lịch</span>
+                                <p class="season-desc">Mùa thu là mùa đẹp nhất, lãng mạn nhất của Hạ Long. Không khí mát mẻ, trời trong xanh, gió nhẹ và hoàng hôn tím biếc dát vàng trên muôn trùng đảo đá. Trải nghiệm tiệc trà chiều hoàng hôn trên boong tàu là trải nghiệm đắt giá không thể bỏ lỡ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mùa Đông -->
+                        <div class="season-card" onclick="openLightbox('images/halong_mua_dong_du_thuyen_sang_trong.webp', 'Mùa Đông (Tháng 12 - 1): Du Thuyền Nghỉ Dưỡng An Tĩnh Sương Khói Kỳ Ảo', 'Không gian mùa đông thanh bình tĩnh lặng, du thuyền 5 sao đẳng cấp màu trắng lướt qua làn sương bạc, ánh sáng vàng ấm cúng tỏa ra từ các cabin sang trọng giữa muôn trùng núi đá vây quanh.')">
+                            <div class="season-img-wrap">
+                                <img src="images/halong_mua_dong_du_thuyen_sang_trong.webp" alt="Mùa đông du thuyền sang trọng trên vịnh Hạ Long" loading="lazy">
+                                <span class="season-badge">Tháng 12 - 1</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Đông: Du Thuyền Nghỉ Dưỡng & Ẩm Thực Ấm Áp</h3>
+                                <span class="season-time">Thời điểm: Tháng 12 đến hết tháng 1 năm sau</span>
+                                <p class="season-desc">Tiết trời lành lạnh tạo cảm giác ấm áp đặc biệt bên trong những cabin du thuyền sang trọng bằng gỗ quý. Du khách tận hưởng bữa tối hải sản nóng hổi bên ánh nến, nhâm nhi rượu vang ngắm vịnh đêm mờ sương và tham gia câu mực đêm thú vị.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 5: TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh">
+                    <h2><span class="icon">🏞️</span> 5. Top 10 Thắng cảnh biểu tượng & Dấu tích lịch sử</h2>
+                    <p>Khám phá 10 danh thắng ngoại hạng định danh vẻ đẹp độc nhất vô nhị của quần thể Di sản Thiên nhiên Thế giới Vịnh Hạ Long:</p>
+
+                    <div class="dest-grid">
+                        <!-- Spot 1: Hòn Trống Mái (Featured) -->
+                        <div class="dest-card featured" onclick="openLightbox('images/halong_trong_mai.webp', '1. Hòn Trống Mái (Hòn Gà Chọi) — Biểu Tượng Vĩnh Hằng Của Du Lịch Việt Nam', 'Nằm ở phía tây nam vịnh Hạ Long, đôi hòn đảo đá vôi cao hơn 12m có hình dáng tựa như một chú gà trống và một chú gà mái khổng lồ đang âu yếm hướng mỏ vào nhau giữa mênh mông sóng nước. Trải qua triệu năm sóng vỗ, chân đá bị bào mòn thanh mảnh nhưng khối đá nghìn tấn vẫn đứng vững chãi, trở thành biểu tượng logo chính thức của du lịch Việt Nam.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_trong_mai.webp" alt="Hòn Trống Mái biểu tượng du lịch vịnh Hạ Long" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Biểu Tượng Quốc Gia</span>
+                                    <span class="tag">Kiệt Tác Địa Chất</span>
+                                </div>
+                                <h3 class="dest-card-title">1. Hòn Trống Mái (Hòn Gà Chọi) — Biểu Tượng Vĩnh Hằng Của Vịnh Biển</h3>
+                                <p class="dest-card-desc">Đôi chim gà khổng lồ sừng sững nghìn năm giữa sóng nước trong xanh, kiệt tác điêu khắc của thiên nhiên được in dấu trên biểu trưng du lịch quốc gia.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 2: Đảo Ti Tốp -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_titop.webp', '2. Đảo Ti Tốp — Bãi Tắm Vầng Trăng Khuyết & Đỉnh Vọng Cảnh 360 Độ', 'Hòn đảo mang tên nhà du hành vũ trụ Liên Xô Gherman Titov sau chuyến thăm cùng Chủ tịch Hồ Chí Minh năm 1962. Đảo sở hữu bãi tắm cát trắng mịn hình vầng trăng khuyết ôm lấy chân núi. Leo hơn 400 bậc đá lên chòi vọng cảnh trên đỉnh núi, du khách sẽ thu trọn vào tầm mắt toàn cảnh 360 độ vịnh Hạ Long đẹp đến nghẹt thở.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_titop.webp" alt="Đảo Ti Tốp vịnh Hạ Long bãi tắm vầng trăng khuyết" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Góc Nhìn 360°</span>
+                                    <span class="tag">Bãi Tắm Vầng Trăng</span>
+                                </div>
+                                <h3 class="dest-card-title">2. Đảo Ti Tốp</h3>
+                                <p class="dest-card-desc">Chinh phục 400 bậc đá ngắm nhìn toàn cảnh vịnh từ trên cao và hòa mình vào làn nước biển trong xanh bờ cát mịn.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 3: Hang Sửng Sốt -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_sung_sot.webp', '3. Hang Sửng Sốt — Thánh Đường Địa Chất Bậc Nhất Đảo Bồ Hòn', 'Đúng như tên gọi người Pháp đặt Grotte des Surprises, hang động rộng hơn 10.000m² nằm trên đảo Bồ Hòn khiến bất kỳ ai bước vào cũng phải sửng sốt kinh ngạc. Hai ngăn hang thênh thang như nhà hát opera khổng lồ với trần vòm cao hơn 30m, nhũ đá muôn hình kết tụ thành hình tượng rồng, ngựa Thánh Gióng, cây đa và những ngọn thác đá lấp lánh như dát kim cương.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_sung_sot.webp" alt="Hang Sửng Sốt thạch nhũ kỳ vĩ đảo Bồ Hòn" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Hang Rộng Nhất</span>
+                                    <span class="tag">Di Sản Địa Mạo</span>
+                                </div>
+                                <h3 class="dest-card-title">3. Hang Sửng Sốt</h3>
+                                <p class="dest-card-desc">Cung điện ngầm tráng lệ rộng hơn 10.000m² với muôn vàn nhũ đá kỳ ảo như nhà hát opera tự nhiên khổng lồ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 4: Động Đầu Gỗ -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_dau_go.webp', '4. Động Đầu Gỗ — Cổ Kính Huyền Bí & Dấu Tích Chiến Công Bạch Đằng 1288', 'Nằm trên dãy đảo Đầu Gỗ, hang động cổ kính này rêu phong cổ tích với 3 gian vòm hoang sơ. Vua Khải Định từng ngự lãm năm 1918 và cho khắc bia ca ngợi cảnh đẹp. Đây là nơi ghi dấu trang sử vàng cất giấu cọc gỗ lim của Trần Hưng Đạo trước trận đánh tan quân Nguyên Mông năm 1288.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_dau_go.webp" alt="Động Đầu Gỗ cổ kính dấu ấn lịch sử hào hùng" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Di Tích Lịch Sử</span>
+                                    <span class="tag">Bạch Đằng 1288</span>
+                                </div>
+                                <h3 class="dest-card-title">4. Động Đầu Gỗ</h3>
+                                <p class="dest-card-desc">Hang động trầm tích cổ kính gắn liền huyền tích giấu cọc lim phục vụ trận thủy chiến lịch sử Bạch Đằng Giang.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 5: Hang Luồn -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_hang_luon.webp', '5. Hang Luồn — Cổng Vòm Nước Tự Nhiên & Thiên Đường Chèo Kayak', 'Là một đường hầm nước tự nhiên hình cánh cung dài 60m, trần hang chỉ cao 2.5 - 4m trên mặt nước tùy thủy triều. Luồn qua vòm hang bằng thuyền nan hoặc kayak, du khách bước vào một thung lũng nước kín gió phẳng lặng như gương, bao bọc bởi vách đá dựng đứng với bầy khỉ vàng hoang dã chuyền cành ríu rít.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_hang_luon.webp" alt="Hang Luồn cổng vòm chèo kayak vịnh Hạ Long" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Chèo Kayak</span>
+                                    <span class="tag">Thung Lũng Nước Kín</span>
+                                </div>
+                                <h3 class="dest-card-title">5. Hang Luồn</h3>
+                                <p class="dest-card-desc">Vòm hầm đá tự nhiên mở lối vào hồ nước ngọc bích biệt lập, nơi sinh sống của bầy khỉ hoang dã thân thiện.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 6: Hòn Đỉnh Hương (Featured) -->
+                        <div class="dest-card featured" onclick="openLightbox('images/halong_dinh_huong.webp', '6. Hòn Đỉnh Hương — Biểu Tượng Lư Hương Thiêng In Trên Tờ Tiền 200.000 VNĐ', 'Hòn đảo đá hình lư hương khổng lồ đứng uy nghiêm trên bốn phiến đá mảnh mai giữa luồng nước Đầu Gỗ. Tựa như một đỉnh trầm hương thiêng liêng dâng lên đất trời và biển cả, Hòn Đỉnh Hương là hình ảnh danh giá được Ngân hàng Nhà nước Việt Nam lựa chọn in trang trọng trên mặt sau tờ tiền polyme mệnh giá 200.000 đồng.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_dinh_huong.webp" alt="Hòn Đỉnh Hương in trên tờ tiền 200000 VNĐ" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 In Trên Tiền 200.000đ</span>
+                                    <span class="tag">Tâm Linh Biển Cả</span>
+                                </div>
+                                <h3 class="dest-card-title">6. Hòn Đỉnh Hương — Lư Hương Khổng Lồ Của Đất Trời Vịnh Biển</h3>
+                                <p class="dest-card-desc">Biểu tượng tâm linh thiêng liêng tạ ơn biển trời, dấu ấn văn hóa bất hủ xuất hiện trên tờ tiền quốc gia Việt Nam.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 7: Làng chài Cửa Vạn -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_cua_van.webp', '7. Làng Chài Cửa Vạn — Ngôi Làng Nổi Cổ Xưa Đẹp Nhất Thế Giới', 'Từng được chuyên trang du lịch quốc tế vinh danh trong top những ngôi làng cổ tích đẹp nhất hành tinh. Những nếp nhà bè gỗ nổi sơn màu rực rỡ nép mình dưới chân vách núi đá vôi sừng sững, nơi lưu giữ tập quán sinh hoạt, chèo thuyền nan, hát giao duyên và văn hóa ngư dân vịnh biển truyền thống hàng trăm năm.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_cua_van.webp" alt="Làng chài Cửa Vạn nhà nổi cổ truyền vịnh Hạ Long" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Di Sản Sống</span>
+                                    <span class="tag">Văn Hóa Làng Chài</span>
+                                </div>
+                                <h3 class="dest-card-title">7. Làng Chài Cửa Vạn</h3>
+                                <p class="dest-card-desc">Bức tranh thanh bình của những nếp nhà bè nổi nép mình bên chân núi đá, lưu giữ hồn cốt văn hóa người vạn chài cổ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 8: Vịnh Lan Hạ -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_lan_ha.webp', '8. Vịnh Lan Hạ — Thiên Đường Đảo Ngọc Liền Kề Quần Đảo Cát Bà', 'Nằm ở phía nam vịnh Hạ Long, Vịnh Lan Hạ có hơn 400 hòn đảo phủ đầy thảm thực vật xanh mướt và 139 bãi cát trắng mịn hoang sơ. Sau quyết định mở rộng di sản UNESCO liên tỉnh năm 2023, Lan Hạ - Cát Bà kết nối trọn vẹn thành chuỗi hành trình du thuyền nghỉ dưỡng thượng lưu.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_lan_ha.webp" alt="Vịnh Lan Hạ nước biển trong xanh đảo Cát Bà" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">UNESCO 2023</span>
+                                    <span class="tag">139 Bãi Cát Trắng</span>
+                                </div>
+                                <h3 class="dest-card-title">8. Vịnh Lan Hạ</h3>
+                                <p class="dest-card-desc">Vịnh biển hoang sơ tuyệt mỹ với hàng trăm bãi tắm mini nước trong như pha lê tiếp giáp quần thể Cát Bà.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 9: Vịnh Bái Tử Long -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_vinh_bai_tu_long.webp', '9. Vịnh Bái Tử Long — Vùng Vịnh Nguyên Sơ & Vườn Quốc Gia Biển Kỳ Vĩ', 'Nằm về phía đông bắc vịnh Hạ Long, Bái Tử Long là vùng vịnh rộng lớn mang vẻ đẹp hoang sơ tĩnh lặng tuyệt đối. Sở hữu Vườn quốc gia Bái Tử Long (Vườn di sản ASEAN) với hệ sinh thái rừng ngập mặn, rạn san hô nguyên sinh, đây là điểm đến mơ ước của những hải trình du thuyền thám hiểm cao cấp.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_vinh_bai_tu_long.webp" alt="Vịnh Bái Tử Long hoang sơ kỳ vĩ" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Vườn Di Sản ASEAN</span>
+                                    <span class="tag">Hoang Sơ Tĩnh Lặng</span>
+                                </div>
+                                <h3 class="dest-card-title">9. Vịnh Bái Tử Long</h3>
+                                <p class="dest-card-desc">Không gian hoang sơ không tì vết, nơi đàn Rồng Con quần tụ chở che non nước miền viễn Đông Bắc.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 10: Bãi Cháy & Cầu Bãi Cháy -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_bai_chay_ha_long.webp', '10. Bãi Cháy & Cầu Bãi Cháy — Đô Thị Du Lịch Biển Năng Động & Sun World Hạ Long', 'Khu trung tâm du lịch sầm uất bậc nhất thành phố Hạ Long với bãi tắm nhân tạo cát trắng trải dài 4km, cầu Bãi Cháy dây văng một mặt phẳng kỷ lục bắc qua eo biển Cửa Lục, tổ hợp vui chơi giải trí quốc tế Sun World Ha Long Complex và tuyến cáp treo Nữ Hoàng đạt 2 kỷ lục Guinness thế giới.')">
+                            <div class="dest-card-img">
+                                <img src="images/halong_bai_chay_ha_long.webp" alt="Bãi Cháy và Cầu Bãi Cháy rực rỡ ánh đèn về đêm" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag">Đô Thị Biển Hiện Đại</span>
+                                    <span class="tag">Cáp Treo Kỷ Lục</span>
+                                </div>
+                                <h3 class="dest-card-title">10. Bãi Cháy & Cầu Bãi Cháy</h3>
+                                <p class="dest-card-desc">Trái tim giải trí và nghỉ dưỡng sôi động ven bờ với bãi biển cát trắng miên man và cầu dây văng tráng lệ.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 6: CẨM NANG DI CHUYỂN & CUNG ĐƯỜNG GIAO THÔNG -->
+                <section id="di-chuyen">
+                    <h2><span class="icon">🚗</span> 6. Cẩm nang di chuyển & Cung đường giao thông</h2>
+                    <p>Hạ Long hiện sở hữu hệ thống hạ tầng giao thông đồng bộ và hiện đại bậc nhất Việt Nam với đầy đủ sân bay quốc tế, cao tốc xuyên suốt và các cảng tàu khách du lịch đẳng cấp 5 sao quốc tế:</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Phương tiện</th>
+                                    <th>Lộ trình / Đầu mối</th>
+                                    <th>Thời gian</th>
+                                    <th>Chi phí tham khảo</th>
+                                    <th>Đặc điểm & Lưu ý</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Xe Limousine / Ô tô riêng</strong></td>
+                                    <td>Hà Nội &rarr; Cao tốc Hà Nội - Hải Phòng &rarr; Cao tốc Hải Phòng - Hạ Long</td>
+                                    <td>1.5 – 2 giờ</td>
+                                    <td><span class="price-tag">220.000 – 280.000đ/vé</span></td>
+                                    <td>Đón trả tận nơi tại Hà Nội và các khách sạn Bãi Cháy, Tuần Châu. Xe chạy êm, xuất bến liên tục mỗi 30 phút.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Máy bay (Vân Đồn)</strong></td>
+                                    <td>TP.HCM / Đà Nẵng &rarr; Cảng HKQT Vân Đồn (VDO) &rarr; Cao tốc về Hạ Long</td>
+                                    <td>2 giờ bay + 45p xe</td>
+                                    <td><span class="price-tag">1.200.000 – 2.800.000đ/vé</span></td>
+                                    <td>Sân bay tư nhân hiện đại nhất Việt Nam, có tuyến buýt miễn phí đưa đón khách từ sân bay về trung tâm TP. Hạ Long.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Máy bay (Cát Bi Hải Phòng)</strong></td>
+                                    <td>Các tỉnh thành &rarr; Sân bay Cát Bi (HPH) &rarr; Cầu Bạch Đằng &rarr; Hạ Long</td>
+                                    <td>Tùy chặng bay + 35p xe</td>
+                                    <td><span class="price-tag">900.000 – 2.200.000đ/vé</span></td>
+                                    <td>Nhiều chuyến bay nội địa dày đặc mỗi ngày, đi taxi/xe riêng qua cầu Bạch Đằng sang Hạ Long chỉ 30km rất nhanh.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thủy phi cơ Hải Âu</strong></td>
+                                    <td>Sân bay Nội Bài &rarr; Vịnh Hạ Long (Cảng Tuần Châu)</td>
+                                    <td>45 phút bay</td>
+                                    <td><span class="price-tag">1.800.000 – 2.500.000đ/lượt</span></td>
+                                    <td>Ngắm toàn cảnh vịnh di sản từ độ cao 300m, trải nghiệm cất/hạ cánh trên mặt nước vô cùng phấn khích.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>⚓ Hai Cảng Tàu Khách Quốc Tế Hiện Đại Nhất Việt Nam</h4>
+                        <p>Khi đến Hạ Long để xuống tàu tham quan hoặc lên du thuyền ngủ đêm, du khách cần lưu ý chính xác bến cảng của nhà tàu:</p>
+                        <ul style="margin: 0.5rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>Cảng tàu khách quốc tế Tuần Châu:</strong> Cảng du thuyền nhân tạo lớn nhất Việt Nam, phục vụ đa số các tuyến tàu tiếng ban ngày (Tuyến 1, 2) và nhiều du thuyền cao cấp ngủ đêm.</li>
+                            <li><strong>Cảng tàu khách quốc tế Hạ Long (Cảng Sun Group - Bãi Cháy):</strong> Nằm ngay trung tâm Bãi Cháy, chuyên đón các siêu du thuyền quốc tế 5 sao và các tàu tham quan cao cấp thế hệ mới.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- MỤC 7: TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <section id="am-thuc">
+                    <h2><span class="icon">🦀</span> 7. Tinh hoa ẩm thực đặc sản Hạ Long</h2>
+                    <p>Hạ Long không chỉ quyến rũ bởi non xanh nước biếc mà còn làm say lòng thực khách bởi nguồn hải sản dồi dào, tươi ngon nức tiếng miền biển Đông Bắc:</p>
+
+                    <div class="culinary-grid">
+                        <!-- Món 1: Chả mực giã tay -->
+                        <div class="culinary-card" onclick="openLightbox('images/halong_mon_cha_muc_gia_tay.webp', 'Chả Mực Giã Tay Hạ Long — Tinh Hoa Hải Sản Lọt Top Món Ngon Thế Giới', 'Được làm từ 100% mực mai tươi sống đánh bắt từ vịnh Bắc Bộ. Mực được giã tay thủ công bằng cối đá và chày gỗ lim để giữ độ giòn sần sật tự nhiên, nêm tiêu hạt và thì là rồi chiên vàng ruộm trong chảo dầu sôi, tỏa hương thơm ngào ngạt không nơi nào sánh bằng.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/halong_mon_cha_muc_gia_tay.webp" alt="Chả mực giã tay Hạ Long vàng ruộm giòn sần sật" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">1. Chả Mực Giã Tay Hạ Long</h3>
+                                <p class="culinary-desc">Hạt ngọc ẩm thực đất mỏ. Từng miếng chả vàng ươm, vỏ ngoài giòn rụm bên trong ngọt đậm vị mực tươi giòn sần sật giã tay truyền thống.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 450.000 – 550.000đ/kg</span>
+                                    <span style="margin-left: auto;">📍 Chợ Hạ Long 1, Thoan, Hoài Phương</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 2: Sá sùng Quan Lạn -->
+                        <div class="culinary-card" onclick="openLightbox('images/halong_mon_sa_sung_quan_lan.webp', 'Sá Sùng Quan Lạn Xào Tỏi — Vàng Ròng Đắt Đỏ Bậc Nhất Vùng Biển Đảo', 'Loài địa sâm quý hiếm sinh sống dưới các bãi cát sạch đảo Quan Lạn. Sá sùng tươi xào tỏi giòn ngọt lịm hoặc sá sùng khô rang vàng giòn rụm nhâm nhi bia lạnh. Đây còn là linh hồn bí mật tạo vị ngọt thanh sâu lắng cho các nồi nước dùng phở truyền thống đất Bắc.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/halong_mon_sa_sung_quan_lan.webp" alt="Sá sùng Quan Lạn xào tỏi tươi đậm đà ngọt bùi" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">2. Sá Sùng Quan Lạn Xào Tỏi Tươi</h3>
+                                <p class="culinary-desc">Đặc sản quý như vàng ròng của biển đảo Vân Đồn - Quan Lạn. Thịt sá sùng dai giòn, ngọt thanh đậm đà xào thơm nức mũi với tép tỏi ta.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 3.500.000 – 5.500.000đ/kg khô</span>
+                                    <span style="margin-left: auto;">📍 Nhà hàng bè nổi Hòn Gai, Bãi Cháy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 3: Bún hải sản bề bề -->
+                        <div class="culinary-card" onclick="openLightbox('images/halong_mon_bun_hai_san_be_be.webp', 'Bún Hải Sản Bề Bề Hạ Long — Bữa Sáng Đậm Đà Hương Vị Biển Khơi', 'Bát bún đầy đặn nghi ngút khói với nước dùng ninh từ vỏ tôm, cua biển và xương ống ngọt thanh chua dịu. Topping xếp đầy những con bề bề (tôm tít) bóc nõn thịt chắc nịch, tôm tươi, mực giòn, chả cá chiên vàng và rau muống chẻ mát lành.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/halong_mon_bun_hai_san_be_be.webp" alt="Bún bề bề hải sản Hạ Long ngọt thanh đậm đà" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">3. Bún Hải Sản Bề Bề Hạ Long</h3>
+                                <p class="culinary-desc">Món ăn sáng quốc dân của người dân thành phố biển. Bề bề bóc nõn tươi rói quyện cùng nước dùng chua cay ngọt thanh đậm đà phong vị biển khơi.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 45.000 – 70.000đ/bát</span>
+                                    <span style="margin-left: auto;">📍 Bún bề bề Bãi Cháy, Đông Bắc Hòn Gai</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 4: Sam biển 7 món -->
+                        <div class="culinary-card" onclick="openLightbox('images/halong_mon_sam_bien_7_mon.webp', 'Sam Biển Nướng Mỡ Hành Hạ Long — Đặc Sản Độc Đáo Khó Chế Biến', 'Sam là loài giáp xác sống từng đôi không tách rời. Dưới bàn tay điêu luyện của đầu bếp Hạ Long, sam được chế biến thành 7 món đặc sắc: tiết canh sam, chân sam xào chua ngọt, trứng sam nướng mỡ hành thơm nức bùi béo ăn kèm bưởi đào thái sợi và rau răm.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/halong_mon_sam_bien_7_mon.webp" alt="Sam biển nướng mỡ hành thơm phức trứng vàng béo ngậy" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">4. Sam Biển 7 Món Nướng Mỡ Hành</h3>
+                                <p class="culinary-desc">Đặc sản quý hiếm chỉ có ở vùng biển mặn. Trứng sam vàng ươm bùi béo, thịt sam nướng mỡ hành xèo xèo thơm nức mũi chấm nước mắm ớt chua cay.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 250.000 – 400.000đ/suất</span>
+                                    <span style="margin-left: auto;">📍 Sam Bà Tỵ ngõ 6 Cao Thắng, Sam Hùng Mít</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 5: Bánh cuốn chả mực -->
+                        <div class="culinary-card" onclick="openLightbox('images/halong_mon_banh_cuon_cha_muc.webp', 'Bánh Cuốn Nóng Chả Mực — Bữa Sáng Hòa Quyện Tuyệt Hảo', 'Từng lớp bánh ướt mỏng tang, mướt mát cuộn mộc nhĩ thịt băm rắc hành phi thơm nức mũi. Khi ăn chấm cùng bát nước mắm chua ngọt ấm nóng, đu đủ ngâm giòn và những miếng chả mực giã tay mới chiên phồng nóng hổi giòn rụm sần sật.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/halong_mon_banh_cuon_cha_muc.webp" alt="Bánh cuốn chả mực nóng hổi nức tiếng Hạ Long" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">5. Bánh Cuốn Nóng Chả Mực</h3>
+                                <p class="culinary-desc">Sự kết hợp hoàn hảo giữa bánh tráng mỏng mềm mướt và chả mực giòn sần sật nức danh, chấm nước mắm tiêu dưa góp ấm lòng ngày mới.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 40.000 – 60.000đ/đĩa</span>
+                                    <span style="margin-left: auto;">📍 Bánh cuốn Bà Ngân, Bà Yến phố Rạp Bạch Đằng</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Món 6: Sữa chua trân châu Hạ Long -->
+                        <div class="culinary-card" onclick="openLightbox('images/halong_mon_sua_chua_tran_chau_ha_long.webp', 'Sữa Chua Trân Châu Cốt Dừa Hạ Long — Món Tráng Miệng Gây Sốt Toàn Quốc', 'Món ăn vặt trứ danh xuất phát từ đất mỏ làm xiêu lòng giới trẻ khắp mọi miền. Sữa chua dẻo mịn chua ngọt mát lạnh, kết hợp bát trân châu dẻo dai ngập trong nước cốt dừa ấm nóng béo ngậy rắc vừng rang bùi bùi và dừa nạo sần sật.')">
+                            <div class="culinary-img-wrap">
+                                <img src="images/halong_mon_sua_chua_tran_chau_ha_long.webp" alt="Sữa chua trân châu cốt dừa thơm béo Hạ Long" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">6. Sữa Chua Trân Châu Cốt Dừa Hạ Long</h3>
+                                <p class="culinary-desc">Món tráng miệng huyền thoại khởi nguồn từ Hạ Long. Vị chua thanh dẻo quánh của sữa chua hòa quyện cùng trân châu ấm nóng ngập cốt dừa thơm béo.</p>
+                                <div class="culinary-price">
+                                    <span>💰 Giá: 25.000 – 40.000đ/ly</span>
+                                    <span style="margin-left: auto;">📍 Sữa chua cô Nghi, Sữa chua Búp Cô Cương</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 8: BẢNG GIÁ VÉ THAM QUAN & DỊCH VỤ NIÊM YẾT -->
+                <section id="gia-ve">
+                    <h2><span class="icon">🎫</span> 8. Bảng giá vé tham quan & Dịch vụ niêm yết</h2>
+                    <p>Giá vé tham quan danh lam thắng cảnh Vịnh Hạ Long được Hội đồng Nhân dân và Ủy ban Nhân dân tỉnh Quảng Ninh niêm yết minh bạch theo từng tuyến hải trình cụ thể:</p>
+
+                    <div class="table-responsive">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Tuyến tham quan</th>
+                                    <th>Cảnh điểm trong tuyến</th>
+                                    <th>Thời gian tàu</th>
+                                    <th>Vé thắng cảnh</th>
+                                    <th>Vé tàu ghép (tham khảo)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tuyến 1 (Truyền thống)</strong></td>
+                                    <td>Cảng &rarr; Động Thiên Cung &rarr; Động Đầu Gỗ &rarr; Hòn Chó Đá &rarr; Hòn Đỉnh Hương &rarr; Hòn Trống Mái</td>
+                                    <td>3.5 – 4 giờ</td>
+                                    <td><span class="price-tag">250.000đ/người</span></td>
+                                    <td>150.000 – 200.000đ/người</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tuyến 2 (Hấp dẫn nhất)</strong></td>
+                                    <td>Cảng &rarr; Đảo Ti Tốp &rarr; Hang Sửng Sốt &rarr; Hang Luồn &rarr; Hồ Động Tiên &rarr; Hang Trống</td>
+                                    <td>5.5 – 6 giờ</td>
+                                    <td><span class="price-tag">250.000đ/người</span></td>
+                                    <td>200.000 – 250.000đ/người</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tuyến 3 (Văn hóa biển)</strong></td>
+                                    <td>Cảng &rarr; Trung tâm Văn hóa nổi Cửa Vạn &rarr; Hang Tiên Ông &rarr; Áng Dù &rarr; Hồ Ba Hầm</td>
+                                    <td>Cả ngày</td>
+                                    <td><span class="price-tag">200.000đ/người</span></td>
+                                    <td>Thuê trọn tàu theo chuyến</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vé ngủ đêm trên vịnh</strong></td>
+                                    <td>Ngủ đêm 1 đêm (2N1Đ) trên các tuyến quy định</td>
+                                    <td>2 ngày 1 đêm</td>
+                                    <td><span class="price-tag">550.000đ/người</span></td>
+                                    <td>Bao gồm trong giá tour cruise</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phí qua cảng Tuần Châu / Sun</strong></td>
+                                    <td>Phí tiện ích hành khách tại nhà ga quốc tế</td>
+                                    <td>Mỗi lượt xuất cảng</td>
+                                    <td><span class="price-tag">40.000đ/lượt</span></td>
+                                    <td>Thu kèm vé thắng cảnh</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="disclaimer-box">📌 <em>Lưu ý:</em> Trẻ em dưới 1.2m hoặc dưới 7 tuổi được miễn phí vé thắng cảnh vịnh. Người cao tuổi từ đủ 60 tuổi trở lên (quốc tịch Việt Nam) được giảm 50% giá vé thắng cảnh khi xuất trình CCCD gốc. Giá vé tàu ghép có thể biến động nhẹ vào dịp lễ Tết hoặc cuối tuần cao điểm mùa hè.</p>
+                </section>
+
+                <!-- MỤC 9: GỢI Ý LỊCH TRÌNH & MẸO TRẢI NGHIỆM BẢN ĐỊA -->
+                <section id="lich-trinh">
+                    <h2><span class="icon">🗺️</span> 9. Gợi ý lịch trình & Mẹo trải nghiệm bản địa an toàn</h2>
+                    
+                    <div class="highlight-box">
+                        <h4>🛥️ Gợi ý Hải Trình 2 Ngày 1 Đêm (2N1Đ) Du Thuyền Cao Cấp Chuẩn Gu</h4>
+                        <ul style="margin: 0.5rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.7;">
+                            <li><strong>Ngày 1: Hà Nội &rarr; Hạ Long &rarr; Hang Sửng Sốt &rarr; Đảo Ti Tốp &rarr; Tiệc hoàng hôn</strong>
+                                <br>&bull; 08:30: Xe Limousine đón từ Hà Nội chạy cao tốc 1.5h đến Cảng tàu khách quốc tế Hạ Long.
+                                <br>&bull; 12:00: Check-in du thuyền 5 sao, thưởng thức đồ uống chào mừng và dùng buffet hải sản tươi sống trong lúc tàu nhổ neo lướt qua Hòn Trống Mái, Đỉnh Hương.
+                                <br>&bull; 14:30: Thám hiểm kỳ quan Hang Sửng Sốt rộng lớn trên đảo Bồ Hòn.
+                                <br>&bull; 16:00: Tắm biển Ti Tốp hoặc leo 400 bậc đá ngắm hoàng hôn vịnh từ trên đỉnh núi.
+                                <br>&bull; 17:30: Sunset Party trên sundeck với trà chiều, vang nhẹ và ngắm hoàng hôn dát vàng.
+                                <br>&bull; 19:30: Tiệc tối hải sản thượng hạng, câu mực đêm cùng thủy thủ đoàn.
+                            </li>
+                            <li style="margin-top: 0.8rem;"><strong>Ngày 2: Thái Cực Quyền đón bình minh &rarr; Chèo Kayak Hang Luồn &rarr; Trả phòng về bờ</strong>
+                                <br>&bull; 06:30: Tập Taichi đón ánh bình minh tinh khôi trên boong thượng.
+                                <br>&bull; 07:30: Thuyền nan đưa khách vào Hang Luồn ngắm bầy khỉ hoang dã chuyền vách đá.
+                                <br>&bull; 09:30: Thưởng thức bữa trưa sớm (brunch) trong lúc tàu thong dong quay về bến cảng.
+                                <br>&bull; 11:30: Cập cảng Tuần Châu, ghé Chợ Hạ Long 1 mua chả mực giã tay nóng hổi làm quà trước khi về Hà Nội.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box" style="background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3);">
+                        <h4>💡 Mẹo Bản Địa Tránh Bẫy & Bảo Vệ Môi Trường Vịnh Di Sản</h4>
+                        <ul style="margin: 0.5rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Quy định Không Rác Thải Nhựa (Say No to Single-Use Plastic):</strong> Ban Quản lý Vịnh Hạ Long cấm tuyệt đối mang chai nhựa một lần, túi ni-lông xuống tàu tham quan vịnh. Hãy mang theo bình nước cá nhân để tiếp nước trên tàu.</li>
+                            <li><strong>Chọn tuyến đi phù hợp:</strong> Khách đi trong ngày ưu tiên chọn <em>Tuyến 2 (6 tiếng)</em> vì có đầy đủ Sửng Sốt, Ti Tốp và chèo thuyền Kayak Hang Luồn, giá trị trải nghiệm vượt trội so với Tuyến 1 chỉ 4 tiếng.</li>
+                            <li><strong>Mua chả mực chuẩn gốc:</strong> Luôn thử trước tại quầy chả mực giã tay truyền thống trong Chợ Hạ Long 1 (Hòn Gai). Chả mực thật cắn vào sần sật miếng mực nang dày, không bị bột hay bở.</li>
+                            <li><strong>Mang trang phục:</strong> Giày thể thao bám tốt chống trơn trượt khi leo hang đá và bậc đá Ti Tốp; áo khoác gió nhẹ nếu đi vào các tháng mùa thu - đông.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a>
+            &copy; 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch Việt Nam chất lượng cao.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            Biên tập: Sửu nhi • Hình ảnh: 100% AI thế hệ mới (21 hình ảnh độc bản) • Căn cứ: UNESCO & Pháp luật Việt Nam.
+        </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img loading="lazy" class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-media">
+                <img id="lightboxImg" src="" alt="Chi tiết hình ảnh">
+            </div>
+            <div class="lightbox-info">
+                <span class="lightbox-tag">Kỳ Quan Vịnh Hạ Long</span>
+                <h3 id="lightboxTitle" class="lightbox-title">Tiêu đề ảnh</h3>
+                <p id="lightboxDesc" class="lightbox-desc">Mô tả chi tiết ảnh.</p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Lightbox Zoom functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const destCards = document.querySelectorAll('.dest-card');
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
-
-            if (destCards.length && lightboxModal && lightboxImg) {
-                destCards.forEach(card => {
-                    card.style.cursor = 'zoom-in';
-                    card.addEventListener('click', () => {
-                        const img = card.querySelector('.dest-card-img img');
-                        if (!img) return;
-
-                        let titleText = "";
-                        let descText = "";
-
-                        const overlayH3 = card.querySelector('.dest-card-content h3');
-                        const overlayP = card.querySelector('.dest-card-content p');
-                        if (overlayH3) titleText = overlayH3.textContent;
-                        if (overlayP) descText = overlayP.textContent;
-
-                        if (!titleText && !descText) {
-                            titleText = img.alt || "Chi tiết hình ảnh";
-                        }
-
-                        lightboxModal.style.display = 'flex';
-                        lightboxImg.src = img.src;
-                        
-                        let captionHTML = "";
-                        if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
-                        }
-                        if (descText) {
-                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
-                        }
-                        
-                        const legend = card.getAttribute('data-legend');
-                        if (legend) {
-                            captionHTML += `
-                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
-                                    ✨ Truyền thuyết & Sự tích Kỳ bí
-                                </span>
-                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
-                            </div>`;
-                        }
-                        lightboxCaption.innerHTML = captionHTML;
-                    });
-                });
-
-                lightboxClose.addEventListener('click', () => {
-                    lightboxModal.style.display = 'none';
-                });
-
-                lightboxModal.addEventListener('click', (e) => {
-                    if (e.target === lightboxModal || e.target === lightboxClose) {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
-                
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
+        function openLightbox(src, title, desc) {
+            var modal = document.getElementById('lightboxModal');
+            var img = document.getElementById('lightboxImg');
+            var t = document.getElementById('lightboxTitle');
+            var d = document.getElementById('lightboxDesc');
+            if (modal && img) {
+                img.src = src;
+                if (t) t.innerText = title || 'Thắng cảnh Hạ Long';
+                if (d) d.innerText = desc || '';
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
             }
+        }
+
+        function closeLightbox(event) {
+            var modal = document.getElementById('lightboxModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>
