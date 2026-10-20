@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đà Nẵng — Cầu Vàng, Bà Nà Hills & Thành phố biển | GO FAR</title>
-    <meta name="description" content="Hướng dẫn du lịch Đà Nẵng chi tiết: Bà Nà Hills, Sơn Trà, Ngũ Hành Sơn, Mỹ Khê, Cầu Rồng, Rạn Nam Ô. Đi lại, chi phí, ẩm thực, lịch trình chi tiết.">
+    <title>Đà Nẵng — Đô Thị Biển Đáng Sống, Cầu Rồng & Kỳ Quan Thiên Nhiên Miền Trung | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Đà Nẵng toàn diện chuẩn 9 mục: Di tích Quốc gia Đặc biệt Ngũ Hành Sơn, Cầu Vàng Bà Nà Hills, Bán đảo Sơn Trà, Bãi biển Mỹ Khe, Cầu Rồng phun lửa, ẩm thực và 4 mùa tuyệt mỹ.">
     <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,17 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg: #0d1e2d;
+            --bg-sec: #132739;
+            --bg-card: rgba(19, 39, 57, 0.88);
             --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent: #FF8C32;
-            --accent-gold: #fbbf24;
-            --green: #2D5A27;
+            --accent: #0284c7;
+            --accent-cyan: #38bdf8;
+            --accent-gold: #f59e0b;
+            --accent-warm: #ea580c;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -32,13 +33,14 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* NAV */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: linear-gradient(135deg, #0d1e2d 0%, #163654 50%, #0d1e2d 100%);
             border-bottom: 2px solid;
-            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, #2D5A27, transparent) 1;
+            border-image: linear-gradient(90deg, transparent, #0284c7, #38bdf8, transparent) 1;
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -64,13 +66,13 @@
             gap: 0.4rem;
             margin-left: auto;
         }
-        .nav-back:hover { color: var(--accent); }
+        .nav-back:hover { color: var(--accent-cyan); }
 
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
         }
         .hero img {
@@ -81,7 +83,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(13,30,45,0.2) 0%, rgba(13,30,45,0.92) 100%);
         }
         .hero-content {
             position: absolute;
@@ -94,757 +96,1112 @@
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 0.35rem 0.9rem;
             border-radius: 99px;
             margin-bottom: 0.8rem;
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 5vw, 3.4rem);
             font-weight: 700;
             line-height: 1.15;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         .hero-meta-line {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+            gap: 1.2rem;
+            font-size: 0.9rem;
             color: var(--text-sec);
             flex-wrap: wrap;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
+        .hero-meta-line .rating { color: var(--accent-gold); font-weight: 600; }
 
         /* BREADCRUMB */
         .breadcrumb {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
+            padding: 1rem 1.5rem 0;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--accent-cyan); }
 
-        /* CONTENT LAYOUT */
+        /* LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 0 1.5rem 4rem;
+            padding: 1.5rem 1.5rem 4rem;
         }
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 290px 1fr;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
             align-items: start;
         }
 
-        /* MAIN CONTENT */
-        .article-main h2 {
+        /* SIDEBAR */
+        .sidebar {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            position: sticky;
+            top: 5rem;
+            max-height: calc(100vh - 6rem);
+            overflow-y: auto;
+        }
+        .sidebar-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .toc-list { list-style: none; }
+        .toc-item { margin-bottom: 0.45rem; }
+        .toc-link {
+            display: block;
+            padding: 0.4rem 0.6rem;
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+        .toc-link:hover, .toc-link.active {
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.1);
+            border-left-color: var(--accent-cyan);
+        }
+
+        /* CONTENT SECTIONS */
+        .content-section {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .section-header {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.8rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
-        .article-main h3 {
+        .section-num {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
         }
-
-        .article-main p {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
-        }
-
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
-        }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
-            color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--text);
         }
 
         /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
+        .highlight-box {
+            background: rgba(2, 132, 199, 0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
         }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
+        .highlight-box h4 {
+            color: var(--accent-cyan);
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
         }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
 
-        /* PREMIUM CHECKIN CARDS */
-        .checkin-grid {
+        /* QUOTE / CITATION */
+        .legal-quote {
+            background: rgba(245, 158, 11, 0.06);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+            color: var(--text-sec);
+        }
+        .legal-quote strong { color: var(--accent-gold); }
+
+        /* SEASONS GRID (MỤC 4) */
+        .seasons-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin-top: 1.5rem;
-            margin-bottom: 2rem;
         }
-        .dest-card {
-            position: relative;
+        .season-card {
+            background: var(--bg-sec);
             border-radius: var(--radius);
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
             cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
         }
-        .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
-        }
-        .dest-card.double-col {
-            grid-column: span 2;
-            aspect-ratio: 16/7;
-        }
-        .dest-card.single-col {
-            grid-column: span 1;
-            aspect-ratio: 3/4;
-        }
-        .dest-card-img {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .dest-card-img img {
+        .season-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            transition: transform 0.5s;
         }
-        .dest-card:hover .dest-card-img img {
-            transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.05);
         }
-        .dest-card-overlay {
+        .season-badge {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
-            z-index: 1;
-        }
-        .dest-card-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            z-index: 2;
-        }
-        .dest-card-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .dest-card-tags .tag {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
-            border-radius: var(--radius-sm);
-            color: #fff !important;
+            top: 0.8rem;
+            left: 0.8rem;
+            background: rgba(13, 30, 45, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            font-size: 0.75rem;
             font-weight: 600;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(56, 189, 248, 0.3);
         }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
+        .season-body {
+            padding: 1.2rem;
         }
-        .dest-card-title {
+        .season-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
-            color: var(--text) !important;
-        }
-        .dest-card-desc {
-            font-size: 0.82rem;
-            color: var(--text-sec);
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            line-clamp: 2;
-            -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
-        }
-
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
-
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
-        }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
             color: var(--text);
         }
-        .sidebar-item {
+        .season-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+        }
+
+        /* LANDMARKS (MỤC 5) */
+        .landmarks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .dest-card {
+            background: var(--bg-sec);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .dest-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .dest-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .dest-card:hover .dest-img-wrap img {
+            transform: scale(1.05);
+        }
+        .dest-body {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+        .dest-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .dest-meta {
+            margin-top: auto;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
+            gap: 0.8rem;
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+        }
+
+        /* CULINARY CARDS (MỤC 7) */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .culinary-card {
+            background: var(--bg-sec);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.05);
+        }
+        .culinary-body {
+            padding: 1.2rem;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+        .culinary-desc {
+            font-size: 0.88rem;
             color: var(--text-sec);
+            line-height: 1.6;
             margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
-            color: var(--text-muted);
-            text-decoration: none;
+        .culinary-meta {
+            display: flex;
+            justify-content: space-between;
             font-size: 0.82rem;
-            transition: color 0.2s;
+            color: var(--accent-gold);
+            font-weight: 500;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 0.5rem;
         }
-        .toc-list a:hover { color: var(--accent); }
+
+        /* TABLES (MỤC 8) */
+        .price-table-wrap {
+            overflow-x: auto;
+            margin-top: 1.2rem;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        .price-table th {
+            background: rgba(2, 132, 199, 0.15);
+            color: var(--accent-cyan);
+            padding: 0.85rem 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+        }
+        .price-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-sec);
+        }
+        .price-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+            color: var(--text);
+        }
+
+        /* LIGHTBOX */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+        }
+        .lightbox-dialog {
+            max-width: 960px;
+            margin: auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-sec);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10;
+            line-height: 1;
+        }
+        .lightbox-media {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+        .lightbox-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .lightbox-info {
+            padding: 1.2rem 1.5rem;
+        }
+        .lightbox-tag {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 0.3rem 0;
+        }
+        .lightbox-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.5;
+        }
 
         /* FOOTER */
         .article-footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
             max-width: 1350px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-            gap: 1rem;
         }
-        .article-footer a { color: var(--accent); text-decoration: none; }
-        .credits { font-style: italic; }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .article-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
+        .article-footer .credits {
+            margin-top: 0.5rem;
+            color: var(--text-sec);
         }
 
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+            .seasons-grid, .landmarks-grid, .culinary-grid { grid-template-columns: 1fr; }
         }
     </style>
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-da-nang.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-da-nang.html">
-    <meta property="og:title" content="Đà Nẵng — Cầu Vàng, Bà Nà Hills & Thành phố biển | GO FAR">
-    <meta property="og:description" content="Hướng dẫn du lịch Đà Nẵng chi tiết: Bà Nà Hills, Sơn Trà, Ngũ Hành Sơn, Mỹ Khê, Cầu Rồng, Rạn Nam Ô. Đi lại, chi phí, ẩm thực, lịch trình chi tiết.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/danang_ba_na_hills.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-da-nang.html">
-    <meta property="twitter:title" content="Đà Nẵng — Cầu Vàng, Bà Nà Hills & Thành phố biển | GO FAR">
-    <meta property="twitter:description" content="Hướng dẫn du lịch Đà Nẵng chi tiết: Bà Nà Hills, Sơn Trà, Ngũ Hành Sơn, Mỹ Khê, Cầu Rồng, Rạn Nam Ô. Đi lại, chi phí, ẩm thực, lịch trình chi tiết.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/danang_ba_na_hills.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Đà Nẵng",
-    "description": "Hướng dẫn du lịch Đà Nẵng chi tiết: Bà Nà Hills, Sơn Trà, Ngũ Hành Sơn, Mỹ Khê, Cầu Rồng, Rạn Nam Ô. Đi lại, chi phí, ẩm thực, lịch trình chi tiết.",
-    "image": "https://gofarvietnam.com/images/danang_ba_na_hills.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Miền Trung",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
-        }
-    }
-}
-    </script>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/danang_hero.webp" alt="Thành phố Đà Nẵng bên sông Hàn">
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/danang_hero.webp" alt="Thành phố Đà Nẵng lung linh bên sông Hàn">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Miền Trung · Thành phố biển</span>
-            <h1>Đà Nẵng<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Thành phố đáng sống</span></h1>
+            <span class="hero-tag">Đô Thị Biển Đáng Sống • Hạt Nhân Miền Trung</span>
+            <h1>Đà Nẵng — Bản Hòa Ca Của Sóng Biển, Cầu Rồng & Kỳ Quan Thiên Nhiên</h1>
             <div class="hero-meta-line">
-                <span class="rating">⭐ 4.8 / 5.0</span>
-                <span>·</span>
-                <span>Sân bay Quốc tế Đà Nẵng</span>
-                <span>·</span>
-                <span>Cập nhật: 08/2026</span>
+                <span>📍 Duyên hải Nam Trung Bộ</span>
+                <span>⭐ <strong class="rating">4.9 / 5.0</strong> (628 đánh giá)</span>
+                <span>🏆 Di tích Quốc gia Đặc biệt Ngũ Hành Sơn • Di sản phi vật thể quốc gia</span>
+                <span>🎨 100% Ảnh AI Độc Bản 16:9</span>
             </div>
         </div>
-    </section>
+    </header>
 
+    <!-- BREADCRUMB -->
     <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Đà Nẵng</strong>
+        <a href="index.html">Trang Chủ</a> &raquo;
+        <a href="index.html#destinations">Điểm Đến Miền Trung</a> &raquo;
+        <span>Đà Nẵng</span>
     </div>
 
+    <!-- MAIN LAYOUT -->
     <div class="article-layout">
         <div class="dashboard-layout">
-            <!-- MAIN -->
-            <article class="article-main">
 
-            <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-            <p>Đà Nẵng được mệnh danh là <strong>"thành phố đáng sống nhất Việt Nam"</strong> — nơi hội tụ hoàn hảo giữa vẻ đẹp hoang sơ của biển xanh, núi rừng và nét hiện đại, năng động của một đô thị trẻ trung. Nằm ở trung tâm của dải đất miền Trung, Đà Nẵng sở hữu những bãi biển cát trắng mịn trải dài tuyệt đẹp như biển Mỹ Khê, bán đảo Sơn Trà kỳ vĩ vươn mình ra biển lớn và Ngũ Hành Sơn huyền thoại phong sương.</p>
-            <p>Bên cạnh cảnh quan thiên nhiên trù phú, Đà Nẵng còn thu hút du khách nhờ các công trình kiến trúc biểu tượng mang tầm quốc tế như Cầu Vàng (Golden Bridge) ẩn hiện trong mây ngàn Bà Nà Hills hay Cầu Rồng phun lửa/nước độc đáo thắp sáng bầu trời đêm sông Hàn.</p>
-
-            <!-- DANH THẮNG NỔI BẬT -->
-            <h2 id="phong-canh"><span class="icon">📸</span> Các danh thắng tại Đà Nẵng</h2>
-            <p>Đà Nẵng hội tụ những tuyệt tác non nước hoang sơ cùng các công trình biểu tượng hiện đại. Bấm xem chi tiết để xem cẩm nang đầy đủ của từng địa điểm:</p>
-
-            <div class="checkin-grid">
-                <!-- Ba Na Hills -->
-                <a href="destination-ba-na-hills.html" class="dest-card double-col">
-                    <div class="dest-card-img">
-                        <img src="images/danang_ba_na_hills.webp" alt="Cầu Vàng Bà Nà Hills" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag tag-hot">🔥 Kỳ quan</span>
-                            <span class="tag">Giải trí</span>
-                        </div>
-                        <h3 class="dest-card-title">Bà Nà Hills & Cầu Vàng</h3>
-                        <p class="dest-card-desc">Trải nghiệm cáp treo vượt mây ngàn khám phá Cầu Vàng biểu tượng thế giới nâng đỡ bởi đôi bàn tay đá khổng lồ phong sương và Làng Pháp cổ kính thơ mộng.</p>
-                    </div>
-                </a>
-
-                <!-- Son Tra -->
-                <a href="destination-son-tra.html" class="dest-card single-col">
-                    <div class="dest-card-img">
-                        <img src="images/danang_son_tra.webp" alt="Chùa Linh Ứng Sơn Trà" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Bán đảo</span>
-                            <span class="tag">Tâm linh</span>
-                        </div>
-                        <h3 class="dest-card-title">Bán đảo Sơn Trà & Chùa Linh Ứng</h3>
-                        <p class="dest-card-desc">Bức bình phong xanh của thành phố biển với tượng Phật Bà Quan Âm cao 67m mặt hướng ra biển khơi bạt ngàn và cung đường uốn lượn kỳ vĩ.</p>
-                    </div>
-                </a>
-
-                <!-- Ngu Hanh Son -->
-                <a href="destination-ngu-hanh-son.html" class="dest-card single-col">
-                    <div class="dest-card-img">
-                        <img src="images/danang_ngu_hanh_son.webp" alt="Danh thắng Ngũ Hành Sơn" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Hang động</span>
-                            <span class="tag">Di tích</span>
-                        </div>
-                        <h3 class="dest-card-title">Danh thắng Ngũ Hành Sơn</h3>
-                        <p class="dest-card-desc">Cụm 5 ngọn núi đá vôi kỳ vĩ với những hang động huyền bí như động Huyền Không, động Tàng Chơn cổ kính và làng đá mỹ nghệ Non Nước lâu đời.</p>
-                    </div>
-                </a>
-
-                <!-- My Khe -->
-                <a href="destination-my-khe.html" class="dest-card single-col">
-                    <div class="dest-card-img">
-                        <img src="images/danang_my_khe.webp" alt="Bãi biển Mỹ Khê" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Bãi biển</span>
-                            <span class="tag">Mùa hè</span>
-                        </div>
-                        <h3 class="dest-card-title">Bãi biển Mỹ Khê</h3>
-                        <p class="dest-card-desc">Một trong những bãi biển quyến rũ nhất hành tinh với cát trắng mịn màng, sóng vỗ hiền hòa và các trò chơi thể thao biển sôi động.</p>
-                    </div>
-                </a>
-
-                <!-- Cau Rong -->
-                <a href="destination-cau-rong.html" class="dest-card single-col">
-                    <div class="dest-card-img">
-                        <img src="images/danang_cau_rong.webp" alt="Cầu Rồng sông Hàn" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Biểu tượng</span>
-                            <span class="tag">Sông Hàn</span>
-                        </div>
-                        <h3 class="dest-card-title">Cầu Rồng & Sông Hàn</h3>
-                        <p class="dest-card-desc">Biểu tượng phun lửa và phun nước độc đáo vào dịp cuối tuần, cùng trải nghiệm du thuyền thưởng ngoạn sông Hàn lộng lẫy về đêm.</p>
-                    </div>
-                </a>
-
-                <!-- Nam O -->
-                <a href="destination-nam-o.html" class="dest-card double-col">
-                    <div class="dest-card-img">
-                        <img src="images/danang_nam_o.webp" alt="Rạn đá rêu Nam Ô" loading="lazy">
-                    </div>
-                    <div class="dest-card-overlay"></div>
-                    <div class="dest-card-content">
-                        <div class="dest-card-tags">
-                            <span class="tag">Hoang sơ</span>
-                            <span class="tag">Bãi rêu</span>
-                        </div>
-                        <h3 class="dest-card-title">Bãi đá rêu xanh Rạn Nam Ô</h3>
-                        <p class="dest-card-desc">Tác phẩm tuyệt mỹ của thiên nhiên hoang sơ với những khối đá phủ rêu xanh ngắt trải dọc bờ biển mỗi dịp đầu xuân và làng nước mắm Nam Ô truyền thống lâu đời.</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- CẨM NANG THỰC TẾ -->
-            <h2 id="cam-nang"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-            <p>Đà Nẵng sở hữu cơ sở hạ tầng giao thông vô cùng phát triển, là đầu mối giao thương miền Trung:</p>
-            
-            <h3>1. Phương tiện di chuyển đến Đà Nẵng</h3>
-            <ul>
-                <li><strong>Máy bay:</strong> Sân bay Quốc tế Đà Nẵng nằm ngay trong lòng thành phố. Có hàng chục chuyến bay thẳng mỗi ngày từ Hà Nội, TP.HCM và quốc tế.</li>
-                <li><strong>Tàu hỏa:</strong> Ga Đà Nẵng là ga đường sắt lớn của tuyến Bắc - Nam, chạy thẳng vào khu vực trung tâm thành phố. Hành trình ga đi qua đèo Hải Vân cực kỳ mãn nhãn.</li>
-                <li><strong>Xe khách giường nằm:</strong> Thuận tiện và tiết kiệm, xe đỗ tại Bến xe trung tâm Đà Nẵng, kết nối với hầu hết các tỉnh thành cả nước.</li>
-            </ul>
-
-            <h3>2. Di chuyển trong thành phố</h3>
-            <p>Phương tiện lý tưởng nhất là <strong>thuê xe máy tự lái</strong> (tùy theo loại xe và thời điểm thuê) để tự do vi vu đèo Sơn Trà, đi Ngũ Hành Sơn hay dạo phố cổ Hội An lân cận. Taxi và Grab công nghệ hoạt động cực kỳ năng động và phủ sóng rộng rãi.</p>
-
-            <h3>3. Vé tham quan các điểm chính</h3>
-            <table class="info-table">
-                <thead>
-                    <tr>
-                        <th>Địa điểm tham quan</th>
-                        <th>Chi phí vé</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cáp treo Bà Nà Hills (Khứ hồi)</td>
-                        <td><span class="price-tag">Thay đổi theo mùa</span> (Kiểm tra bảng giá Sun World mới nhất)</td>
-                    </tr>
-                    <tr>
-                        <td>Danh thắng Ngũ Hành Sơn</td>
-                        <td><span class="price-tag">Vé niêm yết tại quầy</span> (Có phí thang cuốn nếu chọn sử dụng)</td>
-                    </tr>
-                    <tr>
-                        <td>Động Âm Phủ (Ngũ Hành Sơn)</td>
-                        <td><span class="price-tag">Vé niêm yết tại quầy</span></td>
-                    </tr>
-                    <tr>
-                        <td>Chùa Linh Ứng Bãi Bụt (Sơn Trà)</td>
-                        <td><span class="price-tag">Miễn phí</span> (Gửi xe tùy tâm quyên góp bảo tự)</td>
-                    </tr>
-                    <tr>
-                        <td>Bãi biển Mỹ Khê</td>
-                        <td><span class="price-tag">Miễn phí</span> tắm biển tự do</td>
-                    </tr>
-                </tbody>
-            </table>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-            <!-- LƯU TRÚ & ẨM THỰC -->
-            <h2 id="luu-tru-am-thuc"><span class="icon">🏨</span> Lưu trú & Ẩm thực</h2>
-            
-            <h3>1. Gợi ý nơi ở</h3>
-            <ul>
-                <li><strong>Dọc bãi biển (Võ Nguyên Giáp, Trường Sa):</strong> Tập trung các khách sạn cao tầng view biển lộng gió, resort sang trọng từ 3 đến 5 sao. Phù hợp cho những ai yêu thích tắm biển, đón bình minh.</li>
-                <li><strong>Khu vực trung tâm (Bạch Đằng, Trần Phú):</strong> View sông Hàn thơ mộng, gần các cây cầu biểu tượng, thuận tiện khám phá ẩm thực đường phố và chợ đêm.</li>
-            </ul>
-
-            <h3>2. Món ngon phải thử</h3>
-            <div class="food-list">
-                <div class="food-item"><span class="name">🍜 Mì Quảng (ếch, gà, tôm thịt ăn kèm bánh tráng giòn và rau sống)</span></div>
-                <div class="food-item"><span class="name">🥓 Bánh tráng cuốn thịt heo hai đầu da (chấm mắm nêm đậm đà đặc trưng)</span></div>
-                <div class="food-item"><span class="name">🐟 Bún chả cá Đà Nẵng (vị nước dùng thanh ngọt từ rau củ, chả cá thu dai bùi)</span></div>
-                <div class="food-item"><span class="name">🦀 Hải sản tươi sống (chip chip hấp sả, tôm mũ ni xào bơ tỏi, cua rang me)</span></div>
-                <div class="food-item"><span class="name">🥞 Bánh xèo nem lụi (vỏ giòn rụm màu nghệ, nước tương gan đậu phộng béo ngậy)</span></div>
-            </div>
-
-            <!-- KINH NGHIỆM & LƯU Ý -->
-            <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm & Lưu ý an toàn</h2>
-            
-            <h3>1. Thời điểm lý tưởng đi du lịch</h3>
-            <ul>
-                <li><strong>Tháng 2 – 5:</strong> Mùa xuân mát mẻ, trời nắng nhẹ, độ ẩm thấp, rất thích hợp cho việc di chuyển và leo núi dạo mát.</li>
-                <li><strong>Tháng 6 – 8:</strong> Mùa cao điểm du lịch biển. Trời nắng đẹp rực rỡ, nước biển trong vắt nhìn rõ đáy cát, phù hợp hoàn toàn cho tắm biển và chơi thể thao nước.</li>
-                <li><strong>Tháng 9 – 12:</strong> Mùa mưa bão miền Trung, thường xuyên có mưa lớn gây cản trở các tuyến cáp treo hay leo đèo Sơn Trà. Nên tránh thời điểm này.</li>
-            </ul>
-
-            <h3>2. Cảnh báo an toàn & Mẹo nhỏ</h3>
-            <ul>
-                <li><strong>An toàn tắm biển:</strong> Luôn bơi ở khu vực có phao giới hạn và đội ngũ cứu hộ chốt giữ (cờ xanh). Tuyệt đối tránh bơi khi có cờ đỏ báo động sóng lớn hoặc lúc đêm muộn.</li>
-                <li><strong>Đường lên Sơn Trà:</strong> Dốc đèo lên đỉnh Bàn Cờ, hải đăng Sơn Trà dốc đứng nguy hiểm. Theo quy định, cấm xe máy tay ga lưu thông lên một số đoạn dốc đứng để tránh tai nạn đứt phanh. Hãy thuê xe số hoặc đi xe trung chuyển.</li>
-                <li><strong>Khỉ hoang Sơn Trà:</strong> Khỉ tại khu vực chùa Linh Ứng khá bạo dạn. Không nên cho khỉ ăn trực tiếp để tránh bị cắn hoặc giật đồ đạc cá nhân.</li>
-            </ul>
-
-            <div class="warning-box" style="margin-top: 1.5rem;">
-                <p>⚠️ Lưu ý bảo vệ môi trường: Không xả rác bừa bãi tại bãi biển Mỹ Khê và khu bảo tồn thiên nhiên Sơn Trà. Khi vào các khu vực tâm linh tôn kính như chùa Linh Ứng hay hang động Ngũ Hành Sơn, vui lòng ăn mặc kín kẽ, đi nhẹ nói khẽ.</p>
-            </div>
-            </article>
-
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR TOC -->
             <aside class="sidebar">
-                <!-- QUICK INFO -->
-                <div class="sidebar-card">
-                    <h4>📌 Thông tin nhanh</h4>
-                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Miền Trung Việt Nam</div>
-                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 3 – 4 ngày</div>
-                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 2 – 8</div>
-                </div>
-
-                <!-- TOC -->
-                <div class="sidebar-card">
-                    <h4>📖 Mục lục</h4>
-                    <ul class="toc-list">
-                        <li><a href="#phong-canh">📸 Danh thắng nổi bật</a></li>
-                        <li><a href="#cam-nang">🚗 Di chuyển & Chi phí</a></li>
-                        <li><a href="#luu-tru-am-thuc">🏨 Lưu trú & Ẩm thực</a></li>
-                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & Lưu ý</a></li>
-                    </ul>
-                </div>
+                <div class="sidebar-title">Mục Lục Cẩm Nang</div>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#tong-quan" class="toc-link">1. Tổng quan điểm đến</a></li>
+                    <li class="toc-item"><a href="#lich-su-dia-ly" class="toc-link">2. Vị trí địa lý & Dấu ấn lịch sử</a></li>
+                    <li class="toc-item"><a href="#huyen-thoai" class="toc-link">3. Huyền thoại & Truyền tích dân gian</a></li>
+                    <li class="toc-item"><a href="#bon-mua" class="toc-link">4. Chuỗi hình ảnh 4 mùa du lịch</a></li>
+                    <li class="toc-item"><a href="#thang-canh" class="toc-link">5. Top 10 Thắng cảnh biểu tượng</a></li>
+                    <li class="toc-item"><a href="#di-chuyen" class="toc-link">6. Cẩm nang di chuyển & Cung đường</a></li>
+                    <li class="toc-item"><a href="#am-thuc" class="toc-link">7. Tinh hoa ẩm thực đặc sản</a></li>
+                    <li class="toc-item"><a href="#gia-ve" class="toc-link">8. Bảng giá vé & Dịch vụ niêm yết</a></li>
+                    <li class="toc-item"><a href="#lich-trinh" class="toc-link">9. Gợi ý lịch trình & Mẹo bản địa</a></li>
+                </ul>
             </aside>
+
+            <!-- MAIN ARTICLES -->
+            <main class="article-main">
+
+                <!-- MỤC 1: TỔNG QUAN -->
+                <section id="tong-quan" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">01</span>
+                        <h2 class="section-title">Tổng Quan: Thành Phố Đáng Sống & Trái Tim Di Sản Miền Trung</h2>
+                    </div>
+                    <p>
+                        Tọa lạc tại vị trí yết hầu của dải đất miền Trung, <strong>Đà Nẵng</strong> từ lâu đã khẳng định vị thế là đô thị biển năng động bậc nhất Việt Nam — nơi hội tụ hoàn hảo giữa non xanh nước biếc, hạ tầng du lịch đẳng cấp quốc tế và lòng hiếu khách nồng hậu của người dân xứ Quảng. Thành phố sở hữu đường bờ biển dài thoai thoải với bờ cát trắng mịn từng được tạp chí <em>Forbes</em> danh tiếng bình chọn là một trong những bãi biển quyến rũ nhất hành tinh.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Không chỉ có thiên nhiên tráng lệ, Đà Nẵng còn được mệnh danh là <em>"Thành phố của những cây cầu kỷ lục"</em>: từ chiếc Cầu Sông Hàn quay 90 độ đầu tiên tại Việt Nam, Cầu Rồng phun lửa phun nước kỳ vĩ, Cầu Thuận Phước vươn mình ra vịnh biển cho đến Cầu Vàng sừng sững giữa ngàn mây Bà Nà Hills làm say đắm truyền thông quốc tế. Nơi đây đồng thời là tâm điểm kết nối ba Di sản Văn hóa Thế giới được UNESCO vinh danh: Cố đô Huế, Đô thị cổ Hội An và Thánh địa Mỹ Sơn.
+                    </p>
+                    <div class="highlight-box">
+                        <h4>💎 Điểm Nhấn Tinh Hoa Đà Nẵng</h4>
+                        <p>Thành phố năng động, xanh - sạch - đẹp, an ninh trật tự kiểu mẫu, bãi biển công cộng hoàn toàn miễn phí cùng hệ sinh thái ẩm thực phong phú với chi phí vô cùng hợp lý, đáp ứng trọn vẹn từ trải nghiệm nghỉ dưỡng 5 sao đến hành trình du lịch bụi tự do.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 2: VỊ TRÍ ĐỊA LÝ & DẤU ẤN LỊCH SỬ -->
+                <section id="lich-su-dia-ly" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">02</span>
+                        <h2 class="section-title">Vị Trí Địa Lý & Dấu Ấn Lịch Sử Dựng Xây Đô Thị</h2>
+                    </div>
+                    <p>
+                        Về mặt địa lý, thành phố Đà Nẵng trải dài từ tọa độ 15°55' đến 16°14' vĩ độ Bắc và từ 107°55' đến 108°20' kinh độ Đông. Phía Bắc giáp tỉnh Thừa Thiên Huế qua ranh giới tự nhiên hiểm trở của đèo Hải Vân; phía Tây và Nam giáp tỉnh Quảng Nam; phía Đông mở rộng ra Biển Đông lộng gió. Đặc biệt, theo <strong>Nghị định số 07/CP ngày 23/01/1997 của Chính phủ</strong>, huyện đảo Hoàng Sa là đơn vị hành chính thiêng liêng trực thuộc thành phố Đà Nẵng, khẳng định chủ quyền lãnh thổ bất khả xâm phạm của Tổ quốc.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Trải qua hàng trăm năm lịch sử, từ cửa ngõ giao thương sông Hàn và vịnh Tourane thời nhà Nguyễn đến thương cảng quân sự chiến lược trong hai cuộc kháng chiến vệ quốc, Đà Nẵng đã có bước chuyển mình kỳ tích. Sau ngày chia tách tỉnh Quảng Nam - Đà Nẵng năm 1997, thành phố đã thực hiện cuộc cách mạng chỉnh trang đô thị ngoạn mục, biến những làng chài nghèo nàn thành đại lộ thênh thang và chuỗi resort ven biển hàng đầu châu Á.
+                    </p>
+                    <div class="legal-quote">
+                        <strong>📜 Căn cứ Văn bản Pháp quy Nhà nước:</strong><br>
+                        • <strong>Nghị quyết số 43-NQ/TW ngày 24/01/2019 của Bộ Chính trị:</strong> Xác định xây dựng Đà Nẵng trở thành đô thị sinh thái, hiện đại, thông minh và trung tâm du lịch quốc tế của cả nước.<br>
+                        • <strong>Quyết định số 1288/QĐ-TTg ngày 02/11/2023 của Thủ tướng Chính phủ:</strong> Phê duyệt Quy hoạch thành phố Đà Nẵng thời kỳ 2021 - 2030, tầm nhìn đến 2050 làm trung tâm du lịch nghỉ dưỡng biển cao cấp và dịch vụ chất lượng cao.<br>
+                        • <strong>Quyết định số 1820/QĐ-TTg ngày 24/12/2018 của Thủ tướng Chính phủ:</strong> Xếp hạng <em>Danh lam thắng cảnh Ngũ Hành Sơn</em> là <strong>Di tích Quốc gia Đặc biệt</strong>.<br>
+                        • <strong>Quyết định số 2619/QĐ-BVHTTDL ngày 10/11/2023 của Bộ VH-TT-DL:</strong> Đưa <em>Nghề làm nước mắm Nam Ô</em> vào Danh mục Di sản văn hóa phi vật thể quốc gia.<br>
+                        • <strong>Quyết định số 1059/QĐ-BVHTTDL ngày 27/05/2021:</strong> Công nhận <em>Lễ hội Quán Thế Âm Ngũ Hành Sơn</em> là Di sản văn hóa phi vật thể quốc gia.
+                    </div>
+                </section>
+
+                <!-- MỤC 3: HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">03</span>
+                        <h2 class="section-title">Huyền Thoại & Truyền Tích Dân Gian Vùng Đất</h2>
+                    </div>
+                    <p>
+                        Gắn liền với địa hình sơn thủy hữu tình, Đà Nẵng là mảnh đất ấp ủ những huyền tích lung linh được lưu truyền qua nhiều thế hệ:
+                    </p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-sec); line-height: 1.8;">
+                        <li>
+                            <strong>Huyền tích Trứng Rồng sinh Ngũ Hành Sơn:</strong> Truyền thuyết kể rằng thuở khai thiên lập địa, một con rồng thần khổng lồ từ biển Đông bay vào bờ đẻ một quả trứng ngọc rồi bay đi. Một cụ già đạo hạnh đã được thần Kim Quy trao cho một chiếc móng rồng để bảo vệ quả trứng trước móng vuốt chim ưng. Khi trứng nở thành một thiếu nữ xinh đẹp tuyệt trần, vỏ trứng vỡ ra thành 5 mảnh đá cẩm thạch hóa thành 5 ngọn núi Ngũ Hành kỳ vĩ: Kim Sơn, Mộc Sơn, Thủy Sơn, Hỏa Sơn và Thổ Sơn.
+                        </li>
+                        <li>
+                            <strong>Truyền thuyết Bàn Cờ Tiên đỉnh Sơn Trà:</strong> Trên đỉnh cao 696m của bán đảo Sơn Trà quanh năm mây phủ, hai vị tiên ông Đế Thích và Bát Tiên giáng trần ngồi đánh cờ nhiều ngày bất phân thắng bại. Bỗng một ngày nọ, những nàng tiên nữ giáng trần tắm tại bãi Tiên Sa bên dưới, tiếng cười đùa làm một vị tiên lơ là đánh sai một nước cờ dẫn đến thua cuộc. Giận mình, tiên ông đập bàn cờ bay về trời, để lại phiến đá bàn cờ trầm mặc giữa biển mây.
+                        </li>
+                        <li>
+                            <strong>Huyền thoại Giếng Tiên & Bãi rạn Nam Ô:</strong> Nơi dòng sông Cu Đê đổ ra biển lớn gắn với dấu chân mở cõi của Huyền Trân Công chúa và các bậc tiền nhân khai hoang, tích trữ nguồn nước ngọt tinh khiết từ giếng tiên cổ để ủ chượp nên hương vị nước mắm cá cơm Nam Ô danh bất hư truyền.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- MỤC 4: CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">04</span>
+                        <h2 class="section-title">Chuỗi Hình Ảnh 4 Mùa Du Lịch Đà Nẵng Tuyệt Mỹ</h2>
+                    </div>
+                    <p>
+                        Khí hậu Đà Nẵng mang tính chất nhiệt đới gió mùa chan hòa nắng ấm, với mỗi mùa trong năm lại khoác lên mình một diện mạo quyến rũ riêng biệt. Dưới đây là bộ ảnh 4 mùa độc bản tái hiện trọn vẹn nhịp thở thiên nhiên thành phố biển:
+                    </p>
+
+                    <div class="seasons-grid">
+                        <!-- MÙA XUÂN -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/danang_mua_xuan_le_hoi_quan_the_am.webp', 'Mùa Xuân Đà Nẵng — Lễ Hội Quán Thế Âm & Sắc Mai Vàng', 'Tiết trời mùa xuân mát lành 21-25°C, vạt hoa mai vàng rực rỡ bên sân chùa Ngũ Hành Sơn và chùa Linh Ứng Bãi Bụt, hòa cùng không khí lễ hội Quán Thế Âm linh thiêng tôn nghiêm.')">
+                                <img src="images/danang_mua_xuan_le_hoi_quan_the_am.webp" alt="Mùa xuân Đà Nẵng lễ hội Quán Thế Âm" loading="lazy">
+                                <span class="season-badge">Tháng 1 - Tháng 3 • Mùa Xuân</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Xuân: Lễ Hội Linh Thiêng & Mai Vàng Khoe Sắc</h3>
+                                <p class="season-desc">Tiết trời dịu mát, nắng xuân dịu dàng. Hàng vạn du khách trẩy hội Quán Thế Âm Ngũ Hành Sơn (Di sản phi vật thể quốc gia) và chiêm bái Linh Ứng Bãi Bụt cầu bình an năm mới.</p>
+                            </div>
+                        </div>
+
+                        <!-- MÙA HẠ -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/danang_mua_ha_bien_my_khe_nang_vang.webp', 'Mùa Hạ Đà Nẵng — Biển Mỹ Khe Nắng Vàng & Thiên Đường Thể Thao Biển', 'Bầu trời xanh thẳm, bờ cát trắng mịn trải dài lấp lánh dưới nắng vàng, làn nước ngọc bích phẳng lặng lý tưởng cho bơi lội, lướt ván và dù bay trên không.')">
+                                <img src="images/danang_mua_ha_bien_my_khe_nang_vang.webp" alt="Mùa hạ Đà Nẵng bãi biển Mỹ Khe" loading="lazy">
+                                <span class="season-badge">Tháng 4 - Tháng 8 • Mùa Hạ</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Hạ: Nắng Vàng Rực Rỡ & Lễ Hội Pháo Hoa DIFF</h3>
+                                <p class="season-desc">Mùa cao điểm du lịch rực rỡ nhất: biển Mỹ Khe trong vắt quyến rũ, chèo SUP lặn ngắm san hô Sơn Trà và thưởng thức đại tiệc âm thanh ánh sáng Pháo hoa Quốc tế bên sông Hàn.</p>
+                            </div>
+                        </div>
+
+                        <!-- MÙA THU -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/danang_mua_thu_hoang_hon_cau_thuan_phuoc.webp', 'Mùa Thu Đà Nẵng — Hoàng Hôn Vàng Cầu Thuận Phước', 'Hoàng hôn mùa thu buông xuống rực rỡ sắc cam vàng nơi cửa sông Hàn giao hòa cùng biển cả, cầu Thuận Phước kiêu hãnh in bóng trên mặt nước phẳng lặng.')">
+                                <img src="images/danang_mua_thu_hoang_hon_cau_thuan_phuoc.webp" alt="Mùa thu Đà Nẵng hoàng hôn cầu Thuận Phước" loading="lazy">
+                                <span class="season-badge">Tháng 9 - Tháng 10 • Mùa Thu</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu: Hoàng Hôn Lãng Mạn & Phố Đêm Lộng Gió</h3>
+                                <p class="season-desc">Không khí thanh bình, ánh chiều tà dát vàng lên cây cầu dây võng Thuận Phước. Khoảnh khắc lý tưởng để tản bộ ven đường Bạch Đằng ngắm nhịp sống thị dân êm đềm.</p>
+                            </div>
+                        </div>
+
+                        <!-- MÙA ĐÔNG -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/danang_mua_dong_san_may_dinh_ban_co.webp', 'Mùa Đông Đà Nẵng — Săn Mây Đỉnh Bàn Cờ & Hải Vân Quan', 'Biển mây trắng xóa cuồn cuộn tràn qua các đỉnh núi bán đảo Sơn Trà và đèo Hải Vân, tượng tiên ông Đế Thích an nhiên trầm mặc giữa chốn bồng lai tiên cảnh.')">
+                                <img src="images/danang_mua_dong_san_may_dinh_ban_co.webp" alt="Mùa đông Đà Nẵng săn mây Đỉnh Bàn Cờ" loading="lazy">
+                                <span class="season-badge">Tháng 11 - Tháng 12 • Mùa Đông</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Đông: Săn Biển Mây Bồng Bềnh & Ẩm Thực Ấm Nồng</h3>
+                                <p class="season-desc">Thời tiết se lạnh 19-22°C đưa du khách lên đỉnh Bàn Cờ ngắm mây trôi bềnh bồng, sau đó về phố thưởng thức tô bún chả cá sôi sùng sục và đĩa bánh xèo giòn rụm.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 5: TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">05</span>
+                        <h2 class="section-title">Top 10 Thắng Cảnh Biểu Tượng Nhất Định Phải Đến</h2>
+                    </div>
+                    <p>
+                        Đà Nẵng sở hữu hệ thống danh lam thắng cảnh đa dạng hiếm có, từ công trình kỳ vĩ nhân tạo trên đỉnh núi cao đến rừng nguyên sinh ôm trọn bờ biển ngọc bích:
+                    </p>
+
+                    <div class="landmarks-grid">
+                        <!-- 1. BÀ NÀ HILLS & CẦU VÀNG -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_ba_na_hills.webp', 'Bà Nà Hills & Cầu Vàng (Golden Bridge)', 'Kiệt tác kiến trúc Cầu Vàng được nâng đỡ bởi đôi bàn tay đá khổng lồ rêu phong vươn ra từ sườn núi Chúa ở độ cao 1.487m.')">
+                                <img src="images/danang_ba_na_hills.webp" alt="Bà Nà Hills Cầu Vàng" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">1. Sun World Ba Na Hills & Cầu Vàng</h3>
+                                <p class="dest-desc">Tọa lạc trên đỉnh núi Chúa ở độ cao gần 1.500m với khí hậu 4 mùa trong 1 ngày. Cầu Vàng nổi tiếng toàn cầu như một dải lụa vàng lơ lửng giữa lưng chừng trời, cùng Làng Pháp cổ kính và hầm rượu Debay trăm năm.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Hòa Phú, Hòa Vang</span>
+                                    <span>🚠 Cáp treo đạt kỷ lục thế giới</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. BÁN ĐẢO SƠN TRÀ -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_son_tra.webp', 'Bán đảo Sơn Trà — Lá Phổi Xanh Đà Nẵng', 'Khu bảo tồn thiên nhiên Sơn Trà với thảm thực vật nhiệt đới đa dạng, ngôi nhà của loài vọoc chà vá chân nâu quý hiếm.')">
+                                <img src="images/danang_son_tra.webp" alt="Bán đảo Sơn Trà Đà Nẵng" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">2. Bán Đảo Sơn Trà & Đỉnh Bàn Cờ</h3>
+                                <p class="dest-desc">"Lá phổi xanh" ôm trọn thành phố, nổi tiếng với cung đường uốn lượn ven biển, trạm Rada Mắt thần Đông Dương, cây đa ngàn năm tuổi và cơ hội tận mắt chiêm ngưỡng loài Vọoc chà vá chân nâu đặc hữu.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Quận Sơn Trà</span>
+                                    <span>🐒 Bảo tồn Vọoc chà vá chân nâu</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. NGŨ HÀNH SƠN -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_ngu_hanh_son.webp', 'Di tích Quốc gia Đặc biệt Danh thắng Ngũ Hành Sơn', 'Quần thể 5 ngọn núi đá vôi cẩm thạch huyền bí với các hang động thạch nhũ lung linh và những ngôi cổ tự nghìn năm.')">
+                                <img src="images/danang_ngu_hanh_son.webp" alt="Ngũ Hành Sơn Đà Nẵng" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">3. Danh Thắng Ngũ Hành Sơn (Di Tích QG Đặc Biệt)</h3>
+                                <p class="dest-desc">Quần thể 5 ngọn núi Kim, Mộc, Thủy, Hỏa, Thổ với hệ thống hang động Huyền Không, Hoa Nghiêm, Âm Phủ kỳ ảo cùng hai ngôi cổ tự Tam Thai và Linh Ứng trầm mặc theo Quyết định 1820/QĐ-TTg.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Phường Hòa Hải, Ngũ Hành Sơn</span>
+                                    <span>🏛️ Di tích Quốc gia Đặc biệt</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. BÃI BIỂN MỸ KHÊ -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_my_khe.webp', 'Bãi biển Mỹ Khe — Top Bãi Biển Quyến Rũ Nhất Hành Tinh', 'Dải cát trắng thoai thoải trải dài ôm lấy làn nước biển xanh trong ngắt, sóng êm hiền hòa quanh năm.')">
+                                <img src="images/danang_my_khe.webp" alt="Bãi biển Mỹ Khe Đà Nẵng" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">4. Bãi Biển Mỹ Khe (Top Hành Tinh)</h3>
+                                <p class="dest-desc">Bãi biển biểu tượng dài gần 10km với độ dốc thoai thoải, nước ấm quanh năm, an toàn bơi lội với đội ngũ cứu hộ thường trực chuyên nghiệp và các hoạt động cano lướt sóng, dù lượn sôi động.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Đường Võ Nguyên Giáp</span>
+                                    <span>🏖️ Tạp chí Forbes bình chọn</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. CẦU RỒNG -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_cau_rong.webp', 'Cầu Rồng Phun Lửa & Phun Nước Biểu Tượng', 'Cây cầu thép mô phỏng hình dáng rồng thời Lý vươn mình ra biển lớn, điểm hẹn ngắm phun lửa phun nước mỗi dịp cuối tuần.')">
+                                <img src="images/danang_cau_rong.webp" alt="Cầu Rồng Đà Nẵng phun lửa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">5. Cầu Rồng Phun Lửa Biểu Tượng</h3>
+                                <p class="dest-desc">Kiến trúc cầu độc nhất vô nhị dài 666m mô phỏng con rồng thời Lý đang bay lượn trên sông Hàn. Cứ đúng 21h00 thứ Bảy, Chủ Nhật và các ngày lễ lớn, đầu rồng sẽ phun những luồng lửa và nước ấn tượng.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Bắt qua sông Hàn, TT Đà Nẵng</span>
+                                    <span>🔥 Phun lửa 21:00 cuối tuần</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. RẠN NAM Ô -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_nam_o.webp', 'Rạn Nam Ô — Rêu Xanh Cổ Tích & Làng Nghề Nước Mắm', 'Bãi đá rêu xanh mướt trải dài bờ biển Nam Ô, cái nôi của di sản phi vật thể quốc gia nước mắm cổ truyền.')">
+                                <img src="images/danang_nam_o.webp" alt="Rạn Nam Ô Đà Nẵng rêu xanh" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">6. Rạn Nam Ô & Làng Nghề Nước Mắm Cổ Truyền</h3>
+                                <p class="dest-desc">Bãi rạn đá tự nhiên phủ kín rêu xanh mướt mắt vào mùa xuân, điểm check-in hoang sơ tuyệt đẹp kết hợp trải nghiệm làng nghề ủ chượp nước mắm cá cơm than (Di sản phi vật thể quốc gia theo QĐ 2619/QĐ-BVHTTDL).</p>
+                                <div class="dest-meta">
+                                    <span>📍 Phường Hòa Hiệp Nam, Liên Chiểu</span>
+                                    <span>🌿 Mùa rêu tháng 2 - 3</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. CHÙA LINH ỨNG BÃI BỤT -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_chua_linh_ung_bai_but.webp', 'Chùa Linh Ứng Bãi Bụt & Tượng Phật Bà Quan Âm 67m', 'Ngôi chùa linh thiêng tựa lưng vào bán đảo Sơn Trà, nơi có tượng Quán Thế Âm Bồ Tát bằng đá trắng cao 67m sừng sững trông ra biển Đông.')">
+                                <img src="images/danang_chua_linh_ung_bai_but.webp" alt="Chùa Linh Ứng Bãi Bụt Sơn Trà" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">7. Chùa Linh Ứng Bãi Bụt & Tượng Phật Bà 67m</h3>
+                                <p class="dest-desc">Ngôi chùa lớn nhất trong "tam giác tâm linh" Linh Ứng Đà Nẵng. Điểm nhấn là pho tượng Phật Quán Thế Âm cao 67m (tương đương tòa nhà 30 tầng), một tay bắt ấn tam muội, một tay cầm bình nước cam lộ tưới an lành cho ngư dân.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Bãi Bụt, bán đảo Sơn Trà</span>
+                                    <span>🙏 Tượng Phật đứng cao nhất VN</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8. ĐÈO HẢI VÂN -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_deo_hai_van_thien_ha_de_nhat_hung_quan.webp', 'Đèo Hải Vân — Thiên Hạ Đệ Nhất Hùng Quan', 'Cung đèo hiểm trở bậc nhất Việt Nam uốn lượn bên sườn núi đá dốc đứng sát mép biển Đông, cửa ngõ lịch sử nối liền Huế và Đà Nẵng.')">
+                                <img src="images/danang_deo_hai_van_thien_ha_de_nhat_hung_quan.webp" alt="Đèo Hải Vân thiên hạ đệ nhất hùng quan" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">8. Đèo Hải Vân & Di Tích Hải Vân Quan</h3>
+                                <p class="dest-desc">Cung đường đèo dài 21km vắt qua dãy Bạch Mã từng được vua Lê Thánh Tông ban tặng danh hiệu <em>"Thiên hạ đệ nhất hùng quan"</em>. Di tích Hải Vân Quan trên đỉnh đèo vừa được trùng tu bài bản, mở ra tầm nhìn toàn cảnh vịnh Lăng Cô và Đà Nẵng.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Ranh giới Đà Nẵng - TT Huế</span>
+                                    <span>🏍️ Cung phượt mạo hiểm huyền thoại</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 9. CẦU SÔNG HÀN -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_cau_song_han_quay.webp', 'Cầu Sông Hàn Quay 90 Độ', 'Cây cầu quay duy nhất tại Việt Nam do chính kỹ sư và nhân dân Đà Nẵng chung sức xây dựng, xoay trục mở đường cho tàu bè qua lại.')">
+                                <img src="images/danang_cau_song_han_quay.webp" alt="Cầu Sông Hàn quay 90 độ" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">9. Cầu Sông Hàn — Cầu Quay Đầu Tiên Việt Nam</h3>
+                                <p class="dest-desc">Biểu tượng bất diệt cho ý chí và sức mạnh đồng lòng của người Đà Nẵng. Cầu quay 90 độ quanh trục giữa lòng sông từ 23h00 - 24h00 thứ Bảy và Chủ Nhật để phục vụ du khách và lưu thông tàu thuyền cảng Tiên Sa.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Nối quận Hải Châu & Sơn Trà</span>
+                                    <span>⚙️ Cầu quay 90° cuối tuần</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10. CHỢ CỒN & CHỢ HÀN -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_cho_con_thien_duong_am_thuc.webp', 'Chợ Cồn & Chợ Hàn — Thiên Đường Ẩm Thực Xứ Quảng', 'Khu ẩm thực náo nhiệt với hàng trăm quầy hàng ngập tràn hương vị đặc sản miền Trung từ ốc hút, bánh xèo đến chả bò.')">
+                                <img src="images/danang_cho_con_thien_duong_am_thuc.webp" alt="Khu ẩm thực Chợ Cồn Đà Nẵng" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">10. Chợ Cồn & Chợ Hàn: Thiên Đường Ẩm Thực</h3>
+                                <p class="dest-desc">Khu chợ truyền thống sầm uất bậc nhất trung tâm thành phố. Chợ Cồn là "thánh địa ăn vặt" với đủ món đặc sản nóng hổi; còn Chợ Hàn là trung tâm mua sắm đặc sản mắm nêm, chả bò, hải sản khô làm quà uy tín.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Đường Hùng Vương & Trần Phú</span>
+                                    <span>🛍️ Đặc sản mua sắm & Food tour</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 6: CẨM NANG DI CHUYỂN -->
+                <section id="di-chuyen" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">06</span>
+                        <h2 class="section-title">Cẩm Nang Di Chuyển & Cung Đường Giao Thông</h2>
+                    </div>
+                    <p>
+                        Là đầu mối giao thông của cả nước, việc tiếp cận Đà Nẵng vô cùng thuận tiện qua cả 4 đường: hàng không, đường sắt, đường bộ và đường biển:
+                    </p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-sec); line-height: 1.8;">
+                        <li>
+                            <strong>Đường hàng không (Sân bay Quốc tế Đà Nẵng - DAD):</strong> Nằm ngay trong lòng nội đô, cách bãi biển Mỹ Khe chỉ 5km. Có các đường bay thẳng dày đặc từ Hà Nội, TP.HCM, Hải Phòng, Cần Thơ (thời gian bay 1h15 - 1h30) với giá vé khứ hồi dao động từ 1.200.000 - 2.800.000 VNĐ.
+                        </li>
+                        <li>
+                            <strong>Đường sắt Bắc - Nam (Ga Đà Nẵng):</strong> Tuyến tàu Thống Nhất đưa du khách qua đoạn đèo Hải Vân kỳ vĩ — một trong những cung đường sắt ven biển đẹp nhất thế giới. Điểm đến ngay tại trung tâm quận Thanh Khê.
+                        </li>
+                        <li>
+                            <strong>Phương tiện đi lại nội đô:</strong>
+                            <br>• <em>Thuê xe máy:</em> Từ 100.000 - 150.000 VNĐ/ngày (giao nhận xe tận sân bay/khách sạn).
+                            <br>• <em>Taxi & Grab:</em> Rất phổ biến, minh bạch giá cả, gọi xe chỉ trong 2-3 phút.
+                            <br>• <em>Xe buýt du lịch & Xe buýt điện DanangBus:</em> Mạng lưới tuyến phủ khắp các điểm danh thắng nội thành và kết nối thẳng sang Phố cổ Hội An.
+                        </li>
+                    </ul>
+                    <div class="highlight-box">
+                        <h4>⚠️ Lưu Ý An Toàn Giao Thông Sơn Trà</h4>
+                        <p>Từ năm 2019, Ban Quản lý Bán đảo Sơn Trà cấm hoàn toàn xe máy tay ga lưu thông trên các đoạn dốc hiểm trở (đoạn từ trạm phát sóng lên Đỉnh Bàn Cờ và đoạn qua Cây đa ngàn năm) để tránh tai nạn do mất phanh. Du khách hãy chọn xe số, xe côn tay hoặc xe trung chuyển.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 7: TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <section id="am-thuc" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">07</span>
+                        <h2 class="section-title">Tinh Hoa Ẩm Thực Đà Nẵng — Đậm Đà Dư Vị Xứ Quảng</h2>
+                    </div>
+                    <p>
+                        Ẩm thực Đà Nẵng là sự giao thoa hài hòa giữa phong vị biển khơi tươi rói và nghệ thuật gia vị nồng nàn đặc trưng của đất Quảng. Dưới đây là 6 món ngon trứ danh nhất định phải thử:
+                    </p>
+
+                    <div class="culinary-grid">
+                        <!-- MÓN 1: MÌ QUẢNG -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/danang_mon_mi_quang_ech.webp', 'Mì Quảng Ếch Đà Nẵng', 'Sợi mì gạo nhuộm vàng nghệ dẻo dai, thịt ếch đồng om sả ớt trong niêu đất sôi lục bục, ăn kèm bánh tráng mè nướng giòn và hoa chuối non.')">
+                                <img src="images/danang_mon_mi_quang_ech.webp" alt="Mì Quảng ếch Đà Nẵng" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">1. Mì Quảng Ếch & Mì Quảng Truyền Thống</h3>
+                                <p class="culinary-desc">Món ăn linh hồn xứ Quảng với sợi mì gạo dày dai nhuộm nghệ, nước nhưn om tôm, thịt heo hoặc ếch đồng đậm đà chỉ chan xâm xấp đáy tô, rắc đậu phộng rang giòn và ăn kèm bánh tráng mè nướng thơm lừng.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 35.000 - 65.000 VNĐ/tô</span>
+                                    <span>Địa chỉ: Mì Quảng Ếch Bếp Trang, Mì Quảng Bà Mua</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 2: BÁNH TRÁNG CUỐN THỊT HEO -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/danang_mon_banh_trang_cuon_thit_heo.webp', 'Bánh Tráng Cuốn Thịt Heo Hai Đầu Da', 'Lát thịt ba chỉ luộc khéo léo với hai đầu mỡ trong veo, cuốn cùng bánh tráng phơi sương Đại Lộc và hơn 10 loại rau rừng, chấm mắm nêm đậm đà.')">
+                                <img src="images/danang_mon_banh_trang_cuon_thit_heo.webp" alt="Bánh tráng cuốn thịt heo hai đầu da" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">2. Bánh Tráng Cuốn Thịt Heo Hai Đầu Da</h3>
+                                <p class="culinary-desc">Đặc sản nức tiếng với kỹ thuật luộc thịt tài tình giữ cho hai đầu mỡ trong veo, cuốn cùng lá bánh tráng phơi sương Đại Lộc dẻo dai, lát phở mỏng, dưa leo, xoài xanh và rổ rau ghém đồ sộ chấm mắm nêm cá cơm nguyên chất.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 70.000 - 130.000 VNĐ/suất</span>
+                                    <span>Địa chỉ: Ẩm thực Trần, Quán Mậu 35 Đỗ Thúc Tịnh</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 3: GỎI CÁ NAM Ô -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/danang_mon_goi_ca_nam_o.webp', 'Gỏi Cá Nam Ô (Gỏi Khô & Gỏi Ướt)', 'Thịt cá trích tươi rói vừa đánh bắt được bóp thính lạc rang thơm phức (gỏi khô) hoặc ngâm trong nước cốt mắm ớt cay nồng (gỏi ướt).')">
+                                <img src="images/danang_mon_goi_ca_nam_o.webp" alt="Gỏi cá Nam Ô Đà Nẵng" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">3. Gỏi Cá Nam Ô (Gỏi Khô & Gỏi Ướt)</h3>
+                                <p class="culinary-desc">Được ví như "sashimi xứ Quảng", cá trích tươi sống vừa đánh bắt tại rạn Nam Ô được lọc xương khéo léo. Gỏi khô phủ thính đậu phộng mè vàng ươm; gỏi ướt thấm đẫm nước sốt mắm ớt gừng cay tê, cuốn cùng lá rừng Sơn Trà.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 70.000 - 110.000 VNĐ/phần</span>
+                                    <span>Địa chỉ: Quán Gỏi cá Thanh Hương, Quán Bà Mỳ Nam Ô</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 4: BÚN CHẢ CÁ -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/danang_mon_bun_cha_ca_da_nang.webp', 'Bún Chả Cá Đà Nẵng', 'Tô bún chả cá ngọt thanh tự nhiên từ nước hầm xương cá, bí đỏ, thơm, cà chua, bên trên đầy đặn chả cá hấp và chiên dai ngọt.')">
+                                <img src="images/danang_mon_bun_cha_ca_da_nang.webp" alt="Bún chả cá Đà Nẵng" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">4. Bún Chả Cá Đà Nẵng</h3>
+                                <p class="culinary-desc">Món ăn sáng quen thuộc mà say lòng người với nước dùng nấu từ xương cá biển, bí đỏ, bắp cải, cà chua và măng tươi ngọt thanh tự nhiên. Chả cá mối, cá thu quết tay chiên vàng ruộm hoặc hấp dai giòn sần sật.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 30.000 - 55.000 VNĐ/tô</span>
+                                    <span>Địa chỉ: Bún chả cá 109 Nguyễn Chí Thanh, Bún chả cá Bà Phiến</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 5: BÊ THUI CẦU MỐNG -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/danang_mon_be_thui_cau_mong.webp', 'Bê Thui Cầu Mống', 'Miếng thịt bê non thui nguyên con bằng than củi vàng giòn phần da, thịt tái hồng mềm ngọt, chấm mắm cái cá cơm ớt tỏi cay xé.')">
+                                <img src="images/danang_mon_be_thui_cau_mong.webp" alt="Bê thui Cầu Mống" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">5. Bê Thui Cầu Mống (Thịt Tái Hồng Bì Giòn)</h3>
+                                <p class="culinary-desc">Bê non nguyên con được thui khéo léo trên than củi hồng để da vàng giòn tan mà thớ thịt bên trong vẫn giữ màu hồng đào mềm mọng ngọt lịm. Cuốn cùng khế chua, chuối chát, rau sống và chấm chén mắm cái cá cơm dầm tỏi ớt.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 150.000 - 250.000 VNĐ/dĩa</span>
+                                    <span>Địa chỉ: Bê thui Rạng 395 Điện Biên Phủ, Bê thui Mười Hiển</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 6: CHÈ SẦU LIÊN -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/danang_mon_che_sau_rieng_da_nang.webp', 'Chè Sầu Riêng Liên Đà Nẵng', 'Bát chè ngập tràn nước cốt dừa béo ngậy, múi sầu riêng thơm lừng vàng óng hòa quyện cùng thạch hạt lựu, mít ngọt và sương sa sảng khoái.')">
+                                <img src="images/danang_mon_che_sau_rieng_da_nang.webp" alt="Chè sầu riêng Đà Nẵng" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">6. Chè Thái Sầu Riêng Liên (Chè Sầu Đà Nẵng)</h3>
+                                <p class="culinary-desc">Thương hiệu chè giải nhiệt huyền thoại gây thương nhớ khắp cả nước. Vị ngọt thanh béo ngậy của nước cốt dừa tươi quyện cùng cơm sầu riêng Đắk Lắk vàng tươi đậm đà, thạch dừa giòn sần sật và mít xắt sợi thanh mát.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 25.000 - 40.000 VNĐ/bát</span>
+                                    <span>Địa chỉ: Chè Liên 189 Hoàng Diệu, 175 Hải Phòng</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 8: BẢNG GIÁ VÉ & DỊCH VỤ NIÊM YẾT -->
+                <section id="gia-ve" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">08</span>
+                        <h2 class="section-title">Bảng Giá Vé Tham Quan & Dịch Vụ Niêm Yết</h2>
+                    </div>
+                    <p>
+                        Bảng tổng hợp mức giá vé niêm yết chính thức áp dụng tại các điểm du lịch tiêu biểu tại Đà Nẵng (cập nhật mới nhất):
+                    </p>
+
+                    <div class="price-table-wrap">
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Tên Điểm Đến / Dịch Vụ</th>
+                                    <th>Đối Tượng Áp Dụng</th>
+                                    <th>Mức Giá Niêm Yết</th>
+                                    <th>Ghi Chú & Chính Sách Miễn Giảm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sun World Ba Na Hills</strong> (Cáp treo + Cầu Vàng + Fantasy Park)</td>
+                                    <td>Khách ngoại tỉnh / Quốc tế</td>
+                                    <td>900.000 VNĐ/người lớn<br>750.000 VNĐ/trẻ em</td>
+                                    <td>Trẻ em dưới 1m: Miễn phí. Người Đà Nẵng: 600.000 VNĐ/người lớn.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Danh thắng Ngũ Hành Sơn</strong></td>
+                                    <td>Người lớn<br>Học sinh / Sinh viên</td>
+                                    <td>40.000 VNĐ/lượt<br>10.000 VNĐ/lượt</td>
+                                    <td>Thang máy khứ hồi: 30.000 VNĐ. Vé Động Âm Phủ: 20.000 VNĐ/người.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bảo tàng Điêu khắc Chăm</strong></td>
+                                    <td>Người lớn<br>Học sinh / Sinh viên</td>
+                                    <td>60.000 VNĐ/lượt<br>10.000 VNĐ/lượt</td>
+                                    <td>Bao gồm máy thuyết minh tự động Audio Guide đa ngôn ngữ.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Di tích Hải Vân Quan</strong></td>
+                                    <td>Du khách trong & ngoài nước</td>
+                                    <td>70.000 VNĐ/lượt</td>
+                                    <td>Áp dụng theo nghị quyết thống nhất giữa Đà Nẵng & Thừa Thiên Huế.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Du thuyền ngắm cảnh Sông Hàn</strong></td>
+                                    <td>Khách du lịch</td>
+                                    <td>150.000 - 200.000 VNĐ/lượt</td>
+                                    <td>Hành trình 45 phút, xem múa Chăm, xem Cầu Rồng phun lửa cuối tuần.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bãi biển Mỹ Khe, Phạm Văn Đồng</strong></td>
+                                    <td>Tất cả người dân & du khách</td>
+                                    <td>MIỄN PHÍ 100%</td>
+                                    <td>Tắm biển tự do, có phao an toàn và nhân viên cứu hộ túc trực.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 1.5rem; background: rgba(245, 158, 11, 0.08); border-color: var(--accent-gold);">
+                        <h4>⚖️ Chính Sách Miễn / Giảm Vé Theo Quy Định Nhà Nước</h4>
+                        <p>Thực hiện nghiêm túc Nghị định của Chính phủ và quy định của UBND thành phố Đà Nẵng: Miễn phí 100% vé tham quan tại các di tích công cộng đối với người có công với cách mạng, Bà mẹ Việt Nam Anh hùng, thương binh, người khuyết tật đặc biệt nặng và trẻ em dưới 6 tuổi.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 9: LỊCH TRÌNH GỢI Ý & MẸO TRẢI NGHIỆM -->
+                <section id="lich-trinh" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">09</span>
+                        <h2 class="section-title">Gợi Ý Lịch Trình 4N3Đ & Mẹo Du Lịch Bản Địa An Toàn</h2>
+                    </div>
+                    <p>
+                        Lịch trình tối ưu hóa trải nghiệm kết hợp tắm biển nghỉ dưỡng, khám phá di sản và vui chơi giải trí đỉnh cao:
+                    </p>
+
+                    <div style="margin: 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.3rem;">📅 Ngày 1: Đón Chào Đà Nẵng — Bán Đảo Sơn Trà — Tắm Biển Mỹ Khe — Cầu Rồng</h4>
+                        <p style="color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            • <em>Sáng:</em> Đến sân bay Đà Nẵng, nhận phòng khách sạn ven biển Võ Nguyên Giáp, thưởng thức tô mì Quảng ếch Bếp Trang nóng hổi.<br>
+                            • <em>Chiều:</em> Lên bán đảo Sơn Trà viếng Chùa Linh Ứng Bãi Bụt, ngắm tượng Phật Bà 67m trông ra biển Đông. Sau đó về bãi tắm Mỹ Khe thả mình vào làn nước mát.<br>
+                            • <em>Tối:</em> Ăn hải sản tươi sống Năm Đảnh hoặc Bé Mặn, dạo bến sông Hàn ngắm Cầu Rồng phun lửa phun nước lúc 21h00.
+                        </p>
+                    </div>
+
+                    <div style="margin: 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.3rem;">📅 Ngày 2: Chinh Phục Núi Chúa Bà Nà Hills — Cầu Vàng — Chợ Đêm Helio</h4>
+                        <p style="color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            • <em>Sáng:</em> Lên cáp treo Bà Nà Hills sớm trước 8h30 để ngắm Cầu Vàng không gian vắng người, tham quan vườn hoa Le Jardin D'Amour và hầm rượu Pháp.<br>
+                            • <em>Chiều:</em> Khám phá Làng Pháp cổ kính, vui chơi tại Fantasy Park và thưởng thức buffet ẩm thực quốc tế.<br>
+                            • <em>Tối:</em> Trở về trung tâm dạo chợ đêm ẩm thực Helio náo nhiệt, thưởng thức bát chè sầu Liên ngọt mát.
+                        </p>
+                    </div>
+
+                    <div style="margin: 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.3rem;">📅 Ngày 3: Danh Thắng Ngũ Hành Sơn — Làng Đá Non Nước — Kết Nối Hội An</h4>
+                        <p style="color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            • <em>Sáng:</em> Khám phá Quần thể Di tích Quốc gia Đặc biệt Ngũ Hành Sơn, leo lên Động Huyền Không ngắm tia nắng trời rọi chiếu linh thiêng, ghé Làng điêu khắc đá Non Nước.<br>
+                            • <em>Chiều:</em> Thưởng thức bánh tráng cuốn thịt heo hai đầu da, sau đó di chuyển 25km vào Phố cổ Hội An tản bộ ngắm hoa đăng sông Hoài.<br>
+                            • <em>Tối:</em> Thưởng thức cao lầu Hội An, đón gió đêm trở về khách sạn Đà Nẵng nghỉ ngơi.
+                        </p>
+                    </div>
+
+                    <div style="margin: 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.3rem;">📅 Ngày 4: Rạn Nam Ô — Mua Sắm Chợ Cồn / Chợ Hàn — Tạm Biệt Đà Nẵng</h4>
+                        <p style="color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            • <em>Sáng:</em> Ghé Rạn Nam Ô check-in bãi đá rêu xanh, thưởng thức tô gỏi cá Nam Ô tươi giòn trứ danh.<br>
+                            • <em>Trưa:</em> Tới Chợ Cồn làm một chuyến food tour bánh xèo, nem lụi, bún mắm nêm; ghé Chợ Hàn mua chả bò và mực một nắng làm quà.<br>
+                            • <em>Chiều:</em> Trả phòng khách sạn, di chuyển ra sân bay Đà Nẵng kết thúc chuyến đi trọn vẹn và an toàn.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box" style="background: rgba(234, 88, 12, 0.08); border-color: rgba(234, 88, 12, 0.3);">
+                        <h4>💡 Mẹo Bản Địa Tránh Rủi Ro & Quy Tắc Văn Minh Du Lịch</h4>
+                        <ul style="margin: 0.5rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>An toàn khi tắm biển:</strong> Luôn tắm trong khu vực cờ hiệu giới hạn an toàn của đội cứu hộ; tuyệt đối không tắm khi có cờ đỏ cảnh báo dòng chảy xa bờ (Rip current).</li>
+                            <li><strong>Bảo vệ động vật hoang dã Sơn Trà:</strong> Tuyệt đối không cho khỉ hay vọoc ăn thức ăn của con người; không ném đá xua đuổi làm kích động đàn khỉ.</li>
+                            <li><strong>Cấm xe tay ga đường dốc Sơn Trà:</strong> Tuyệt đối tuân thủ chỉ dẫn của trạm gác kiểm lâm, không sử dụng xe tay ga leo đỉnh Bàn Cờ.</li>
+                            <li><strong>Mua sắm đặc sản minh bạch:</strong> Tại Chợ Cồn và Chợ Hàn, các gian hàng đều niêm yết giá; bạn có thể hỏi giá trước và nếm thử mắm nêm, chả bò thoải mái trước khi mua.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a> · <a href="policy.html">Điều khoản</a>
+            &copy; 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch Việt Nam chất lượng cao.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            Biên tập: Sửu nhi • Hình ảnh: 100% AI thế hệ mới (21 hình ảnh độc bản) • Căn cứ: NQ 43-NQ/TW, QĐ 1288/QĐ-TTg, QĐ 1820/QĐ-TTg & Pháp luật Việt Nam.
+        </div>
     </footer>
 
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-media">
+                <img id="lightboxImg" src="" alt="Chi tiết hình ảnh">
+            </div>
+            <div class="lightbox-info">
+                <span class="lightbox-tag">Kỳ Quan Đà Nẵng</span>
+                <h3 id="lightboxTitle" class="lightbox-title">Tiêu đề ảnh</h3>
+                <p id="lightboxDesc" class="lightbox-desc">Mô tả chi tiết ảnh.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(src, title, desc) {
+            var modal = document.getElementById('lightboxModal');
+            var img = document.getElementById('lightboxImg');
+            var t = document.getElementById('lightboxTitle');
+            var d = document.getElementById('lightboxDesc');
+            if (modal && img) {
+                img.src = src;
+                if (t) t.innerText = title || 'Thắng cảnh Đà Nẵng';
+                if (d) d.innerText = desc || '';
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeLightbox(event) {
+            var modal = document.getElementById('lightboxModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 </body>
 </html>
