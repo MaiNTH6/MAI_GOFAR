@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tà Xùa — Thiên đường săn mây & Sống lưng khủng long | GO FAR</title>
-    <meta name="description" content="Cẩm nang du lịch Tà Xùa chi tiết: Sống lưng khủng long Háng Đồng, Mỏm cá heo, Cây cô đơn, Đỉnh gió. Lịch trình, đi lại, món ăn đặc sản.">
+    <title>Tà Xùa — Thiên Đường Săn Mây Bắc Yên & Sống Lưng Khủng Long Kỳ Vĩ | GO FAR</title>
+    <meta name="description" content="Cẩm nang du lịch Tà Xùa toàn diện chuẩn 9 mục: Sống lưng khủng long Háng Đồng, Mỏm cá heo, Cây cô đơn, rừng rêu cổ tích, chè Shan Tuyết cổ thụ và 4 mùa mây ngàn tuyệt mỹ.">
     <meta name="author" content="Sửu nhi — GO FAR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +13,17 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #1A374D;
-            --bg-sec: #162c3e;
-            --bg-card: rgba(22, 44, 62, 0.85);
+            --bg: #0b1520;
+            --bg-sec: #122232;
+            --bg-card: rgba(18, 34, 50, 0.88);
             --bg-glass: rgba(255,255,255,0.04);
             --text: #f8fafc;
             --text-sec: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent: #FF8C32;
-            --accent-gold: #fbbf24;
+            --accent: #0284c7;
+            --accent-cyan: #38bdf8;
+            --accent-gold: #f59e0b;
+            --accent-warm: #ea580c;
             --radius: 16px;
             --radius-sm: 8px;
         }
@@ -31,13 +33,14 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* NAV */
         .nav {
-            background: linear-gradient(135deg, #1A374D 0%, #1e3f56 50%, #1A374D 100%);
+            background: linear-gradient(135deg, #0b1520 0%, #17324c 50%, #0b1520 100%);
             border-bottom: 2px solid;
-            border-image: linear-gradient(90deg, transparent, #FF8C32, #fbbf24, transparent) 1;
+            border-image: linear-gradient(90deg, transparent, #0284c7, #38bdf8, transparent) 1;
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -63,13 +66,13 @@
             gap: 0.4rem;
             margin-left: auto;
         }
-        .nav-back:hover { color: var(--accent); }
+        .nav-back:hover { color: var(--accent-cyan); }
 
         /* HERO */
         .hero {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
+            height: 60vh;
+            min-height: 420px;
             overflow: hidden;
         }
         .hero img {
@@ -80,7 +83,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(26,55,77,0.2) 0%, rgba(26,55,77,0.9) 100%);
+            background: linear-gradient(180deg, rgba(11,21,32,0.2) 0%, rgba(11,21,32,0.92) 100%);
         }
         .hero-content {
             position: absolute;
@@ -93,946 +96,1077 @@
         .hero-tag {
             display: inline-block;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent);
-            background: rgba(255,140,50,0.15);
-            border: 1px solid rgba(255,140,50,0.3);
-            padding: 0.3rem 0.8rem;
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 0.35rem 0.9rem;
             border-radius: 99px;
             margin-bottom: 0.8rem;
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 5vw, 3.4rem);
             font-weight: 700;
             line-height: 1.15;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         .hero-meta-line {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            font-size: 0.85rem;
+            gap: 1.2rem;
+            font-size: 0.9rem;
             color: var(--text-sec);
             flex-wrap: wrap;
         }
-        .hero-meta-line .rating { color: var(--accent-gold); }
+        .hero-meta-line .rating { color: var(--accent-gold); font-weight: 600; }
 
         /* BREADCRUMB */
         .breadcrumb {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.8rem;
+            padding: 1rem 1.5rem 0;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent); }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--accent-cyan); }
 
-        /* CONTENT LAYOUT */
+        /* LAYOUT */
         .article-layout {
             max-width: 1350px;
             margin: 0 auto;
-            padding: 0 1.5rem 4rem;
+            padding: 1.5rem 1.5rem 4rem;
         }
         .dashboard-layout {
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin: 2rem 0;
+            grid-template-columns: 290px 1fr;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
             align-items: start;
         }
 
-        /* MAIN CONTENT */
-        .article-main h2 {
+        /* SIDEBAR */
+        .sidebar {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            position: sticky;
+            top: 5rem;
+            max-height: calc(100vh - 6rem);
+            overflow-y: auto;
+        }
+        .sidebar-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .toc-list { list-style: none; }
+        .toc-item { margin-bottom: 0.45rem; }
+        .toc-link {
+            display: block;
+            padding: 0.4rem 0.6rem;
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+        .toc-link:hover, .toc-link.active {
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.1);
+            border-left-color: var(--accent-cyan);
+        }
+
+        /* CONTENT SECTIONS */
+        .content-section {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius);
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .section-header {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.8rem;
         }
-        .article-main h2 .icon { font-size: 1.3rem; }
-
-        .article-main h3 {
+        .section-num {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
         }
-
-        .article-main p {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
-        }
-
-        .article-main ul, .article-main ol {
-            color: var(--text-sec);
-            font-size: 0.92rem;
-            margin: 0.5rem 0 1rem 1.5rem;
-        }
-        .article-main li { margin-bottom: 0.4rem; }
-
-        /* INFO TABLE */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0 1.5rem;
-            font-size: 0.88rem;
-        }
-        .info-table th, .info-table td {
-            padding: 0.7rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .info-table th {
-            color: var(--text-muted);
-            font-weight: 500;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .info-table td { color: var(--text-sec); }
-        .info-table tr:hover { background: var(--bg-glass); }
-
-        .price-tag {
-            display: inline-block;
-            background: rgba(255,140,50,0.12);
-            color: var(--accent);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--text);
         }
 
         /* HIGHLIGHT BOX */
-        .tip-box {
-            background: var(--bg-card);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
+        .highlight-box {
+            background: rgba(2, 132, 199, 0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
         }
-        .tip-box p { margin: 0; font-size: 0.88rem; }
-        .tip-box strong { color: var(--text); }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.08);
-            border-left: 3px solid #ef4444;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
+        .highlight-box h4 {
+            color: var(--accent-cyan);
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
         }
-        .warning-box p { margin: 0; font-size: 0.88rem; color: var(--text-sec); }
 
-        /* PREMIUM CHECKIN CARDS */
-        .checkin-grid {
+        /* QUOTE / CITATION */
+        .legal-quote {
+            background: rgba(245, 158, 11, 0.06);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+            color: var(--text-sec);
+        }
+        .legal-quote strong { color: var(--accent-gold); }
+
+        /* SEASONS GRID (MỤC 4) */
+        .seasons-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin-top: 1.5rem;
-            margin-bottom: 2rem;
         }
-        .dest-card {
-            position: relative;
+        .season-card {
+            background: var(--bg-sec);
             border-radius: var(--radius);
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .season-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .season-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
             cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-            display: block;
-            text-decoration: none;
-            color: var(--text) !important;
         }
-        .dest-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(255, 140, 50, 0.15), 0 0 0 1px rgba(255, 140, 50, 0.2);
-        }
-        .dest-card.double-col {
-            grid-column: span 2;
-            aspect-ratio: 16/7;
-        }
-        .dest-card.single-col {
-            grid-column: span 1;
-            aspect-ratio: 3/4;
-        }
-        .dest-card-img {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .dest-card-img img {
+        .season-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
-            filter: brightness(0.9) saturate(1.1);
+            transition: transform 0.5s;
         }
-        .dest-card:hover .dest-card-img img {
-            transform: scale(1.06);
-            filter: brightness(0.75) saturate(1.2);
+        .season-card:hover .season-img-wrap img {
+            transform: scale(1.05);
         }
-        .dest-card-overlay {
+        .season-badge {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(22, 44, 62, 0.96) 100%);
-            z-index: 1;
-        }
-        .dest-card-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            z-index: 2;
-        }
-        .dest-card-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .dest-card-tags .tag {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            padding: 0.25rem 0.6rem;
-            border-radius: var(--radius-sm);
-            color: #fff !important;
-            font-weight: 600;
-        }
-        .dest-card-tags .tag-hot {
-            background: rgba(255, 140, 50, 0.25);
-            border: 1px solid rgba(255, 140, 50, 0.4);
-            color: var(--accent) !important;
-        }
-        .dest-card-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-            color: var(--text) !important;
-        }
-        .dest-card-desc {
-            font-size: 0.82rem;
-            color: var(--text-sec);
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            line-clamp: 2;
-            -webkit-box-orient: vertical;
-            margin-bottom: 0.75rem;
-        }
-        .dest-card-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .dest-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .dest-rating .stars {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        .dest-rating span:last-child {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .dest-reviews {
+            top: 0.8rem;
+            left: 0.8rem;
+            background: rgba(11, 21, 32, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
             font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .dest-card-credits {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 0.4rem;
-        }
-        
-        /* FOOD ITEM */
-        .food-list { margin: 1rem 0; }
-        .food-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
-        .food-item .name { color: var(--text); font-weight: 500; }
-        .food-item .price { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
-
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 80px;
-            align-self: start;
-        }
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .sidebar-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        .season-body {
+            padding: 1.2rem;
+        }
+        .season-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
             color: var(--text);
         }
-        .sidebar-item {
+        .season-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+        }
+
+        /* LANDMARKS (MỤC 5) */
+        .landmarks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .dest-card {
+            background: var(--bg-sec);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .dest-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .dest-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .dest-card:hover .dest-img-wrap img {
+            transform: scale(1.05);
+        }
+        .dest-body {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+        .dest-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .dest-meta {
+            margin-top: auto;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
+            gap: 0.8rem;
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+        }
+
+        /* CULINARY CARDS (MỤC 7) */
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .culinary-card {
+            background: var(--bg-sec);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .culinary-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .culinary-img-wrap {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .culinary-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .culinary-card:hover .culinary-img-wrap img {
+            transform: scale(1.05);
+        }
+        .culinary-body {
+            padding: 1.2rem;
+        }
+        .culinary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+        .culinary-desc {
+            font-size: 0.88rem;
             color: var(--text-sec);
+            line-height: 1.6;
             margin-bottom: 0.6rem;
         }
-        .sidebar-item .icon { font-size: 1rem; flex-shrink: 0; }
-
-        .toc-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .toc-list li { margin-bottom: 0.4rem; }
-        .toc-list a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.82rem;
-            transition: color 0.2s;
-        }
-        .toc-list a:hover { color: var(--accent); }
-
-        /* FOOTER */
-        .article-footer {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
+        .culinary-meta {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .article-footer a { color: var(--accent); text-decoration: none; }
-        .credits { font-style: italic; }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar { position: static; }
-            .checkin-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-            .dest-card.double-col, .dest-card.single-col {
-                grid-column: span 1 !important;
-                aspect-ratio: 4/3;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero { height: 40vh; min-height: 280px; }
-            .hero-content { bottom: 1.5rem; }
-            .article-layout { padding: 0 1.25rem 3rem; }
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 0.5rem;
         }
 
-        .dest-card-meta, 
-        .dest-card-credits {
-            display: none !important;
+        /* TABLES (MỤC 8) */
+        .price-table-wrap {
+            overflow-x: auto;
+            margin-top: 1.2rem;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        .price-table th {
+            background: rgba(2, 132, 199, 0.15);
+            color: var(--accent-cyan);
+            padding: 0.85rem 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+        }
+        .price-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-sec);
+        }
+        .price-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+            color: var(--text);
         }
 
-        /* LIGHTBOX MODAL FOR ZOOMING IMAGES */
+        /* LIGHTBOX */
         .lightbox-modal {
             display: none;
             position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
             z-index: 9999;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
-            box-sizing: border-box;
-            background-color: rgba(11, 22, 34, 0.96);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            align-items: center;
-            flex-direction: column;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
         }
-        .lightbox-content {
+        .lightbox-dialog {
+            max-width: 960px;
             margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 52vh;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-sec);
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .lightbox-caption {
-            margin: auto;
-            display: block;
-            width: 85%;
-            max-width: 800px;
-            text-align: center;
-            color: var(--text-sec);
-            padding: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
         }
         .lightbox-close {
-            position: fixed;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 2rem;
+            color: #fff;
             cursor: pointer;
+            z-index: 10;
+            line-height: 1;
         }
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: var(--accent);
-            text-decoration: none;
+        .lightbox-media {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+        .lightbox-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .lightbox-info {
+            padding: 1.2rem 1.5rem;
+        }
+        .lightbox-tag {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 0.3rem 0;
+        }
+        .lightbox-desc {
+            font-size: 0.88rem;
+            color: var(--text-sec);
+            line-height: 1.5;
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        /* FOOTER */
+        .article-footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .article-footer .credits {
+            margin-top: 0.5rem;
+            color: var(--text-sec);
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+            .seasons-grid, .landmarks-grid, .culinary-grid { grid-template-columns: 1fr; }
         }
     </style>
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    
-    
-    
-
-    <!-- Structured Data -->
-    
-
-    <link rel="canonical" href="https://gofarvietnam.com/destination-ta-xua.html">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gofarvietnam.com/destination-ta-xua.html">
-    <meta property="og:title" content="Tà Xùa — Thiên đường săn mây & Sống lưng khủng long | GO FAR">
-    <meta property="og:description" content="Cẩm nang du lịch Tà Xùa chi tiết: Sống lưng khủng long Háng Đồng, Mỏm cá heo, Cây cô đơn, Đỉnh gió. Lịch trình, đi lại, món ăn đặc sản.">
-    <meta property="og:image" content="https://gofarvietnam.com/images/taxua_dinosaur_backbone.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gofarvietnam.com/destination-ta-xua.html">
-    <meta property="twitter:title" content="Tà Xùa — Thiên đường săn mây & Sống lưng khủng long | GO FAR">
-    <meta property="twitter:description" content="Cẩm nang du lịch Tà Xùa chi tiết: Sống lưng khủng long Háng Đồng, Mỏm cá heo, Cây cô đơn, Đỉnh gió. Lịch trình, đi lại, món ăn đặc sản.">
-    <meta property="twitter:image" content="https://gofarvietnam.com/images/taxua_dinosaur_backbone.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Tà Xùa",
-    "description": "Cẩm nang du lịch Tà Xùa chi tiết: Sống lưng khủng long Háng Đồng, Mỏm cá heo, Cây cô đơn, Đỉnh gió. Lịch trình, đi lại, món ăn đặc sản.",
-    "image": "https://gofarvietnam.com/images/taxua_dinosaur_backbone.webp",
-    "touristType": [
-        "Nature",
-        "Adventure",
-        "Culture",
-        "Local Food"
-    ],
-    "location": {
-        "@type": "Place",
-        "name": "Miền Bắc",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "VN"
-        }
-    }
-}
-    </script>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="GO FAR"></a>
-            <a href="index.html" class="nav-back">← Về trang chủ</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+            </a>
+            <a href="index.html" class="nav-back">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Quay lại Trang Chủ
+            </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <img loading="lazy" src="images/taxua_dinosaur_backbone.webp" alt="Tà Xùa — Thiên đường săn mây">
+    <!-- HERO -->
+    <header class="hero">
+        <img src="images/taxua_hero.webp" alt="Biển mây Tà Xùa cuồn cuộn sóng thần">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">📍 Miền Bắc · Săn mây Tây Bắc</span>
-            <h1>Tà Xùa<br><span style="font-family:'Caveat',cursive; color: var(--accent); font-weight: 500;">— Thiên đường săn mây</span></h1>
+            <span class="hero-tag">Thiên Đường Săn Mây • Đỉnh Trời Tây Bắc</span>
+            <h1>Tà Xùa — Kỳ Quan Sóng Thần Biển Mây & Sống Lưng Khủng Long Huyền Bí</h1>
             <div class="hero-meta-line">
-                <span class="rating">⭐ 4.9 / 5.0</span>
-                <span>·</span>
-                <span>Cách Hà Nội ~220 km</span>
-                <span>·</span>
-                <span>Cập nhật: 08/2026</span>
+                <span>📍 Xã Tà Xùa, huyện Bắc Yên, tỉnh Sơn La</span>
+                <span>⭐ <strong class="rating">4.9 / 5.0</strong> (512 đánh giá)</span>
+                <span>🏔️ Độ cao 1.600m - 2.865m • Cây Di sản chè Shan Tuyết cổ thụ</span>
+                <span>🎨 100% Ảnh AI Độc Bản 16:9</span>
             </div>
         </div>
-    </section>
+    </header>
 
+    <!-- BREADCRUMB -->
     <div class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="index.html#destinations">Điểm đến</a> › <strong>Tà Xùa</strong>
+        <a href="index.html">Trang Chủ</a> &raquo;
+        <a href="index.html#destinations">Điểm Đến Tây Bắc</a> &raquo;
+        <span>Tà Xùa</span>
     </div>
 
+    <!-- MAIN LAYOUT -->
     <div class="article-layout">
         <div class="dashboard-layout">
-            <!-- MAIN ARTICLE -->
-            <article class="article-main">
 
-                <h2 id="tong-quan"><span class="icon">📋</span> Tổng quan</h2>
-                <p>Tà Xùa là một xã vùng cao thuộc huyện Bắc Yên, tỉnh Sơn La, giáp ranh với Yên Bái. Nằm ở độ cao từ 1.500m đến 1.800m so với mực nước biển, Tà Xùa được mệnh danh là thiên đường mây của Việt Nam với các biển mây cuồn cuộn xuất hiện quanh năm bao bọc lấy thung lũng trập trùng.</p>
-                <p>Nơi đây thu hút đông đảo du khách trẻ tuổi tới chinh phục Sống Lưng Khủng Long Háng Đồng đầy thử thách, check-in Mỏm Cá Heo, Cây cô đơn và ngắm nhìn những ruộng chè cổ thụ Shan Tuyết hàng trăm năm tuổi ẩn hiện trong sương mờ.</p>
-
-                <h2 id="phong-canh"><span class="icon">📸</span> Tọa độ Check-in Nổi bật</h2>
-                <p>Khám phá các tọa độ ngắm cảnh và chụp hình đỉnh nhất tại Tà Xùa. Bấm vào hình ảnh để xem phóng to chi tiết:</p>
-
-                <div class="checkin-grid">
-                    
-                    <div class="dest-card double-col" data-legend="Nằm ở độ cao trên 1.600m tại xã Háng Đồng, sống núi dốc đứng chạy dọc thung lũng là ranh giới tự nhiên hiểm trở vùng cao Sơn La. Theo sử sách truyền miệng người Mông, đây là vết tích hóa thạch của rồng đất cổ đại trấn giữ địa giới bản làng, ngày nay đóng vai trò như tuyến phòng thủ tự nhiên chống sương gió Tây Bắc.">
-                        <div class="dest-card-img">
-                            <img src="images/taxua_dinosaur_backbone.webp" alt="Sống lưng khủng long Háng Đồng" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Chinh phục</span>
-                                <span class="tag">Biển mây</span>
-                            </div>
-                            <h3 class="dest-card-title">Sống lưng khủng long Háng Đồng</h3>
-                            <p class="dest-card-desc">Sống núi đá nhô thẳng ra giữa thung lũng sâu thẳm, bao bọc bởi biển mây bồng bềnh tuyệt mỹ mỗi sớm bình minh.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Mỏm đá tự nhiên tạo tác độc đáo nhô ra bên mép vực sâu nhìn xuống dòng suối sương mù Tà Xùa. Đây là địa danh quen thuộc đánh dấu con đường mòn vượt đèo qua các bản làng rẻo cao của đồng bào thiểu số vùng Tây Bắc từ nhiều thế hệ.">
-                        <div class="dest-card-img">
-                            <img src="images/taxua_dolphin_rock.webp" alt="Mỏm cá heo Tà Xùa" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Độc đáo</span>
-                                <span class="tag">Sườn núi</span>
-                            </div>
-                            <h3 class="dest-card-title">Mỏm cá heo Tà Xùa</h3>
-                            <p class="dest-card-desc">Tảng đá nhô ra khỏi sườn núi có hình thù tựa như miệng một chú cá heo khổng lồ đang bơi giữa đại dương mây.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Đứng đơn độc trên đỉnh đồi gió ngóng xuống thung lũng sông Hồng. Cây táo mèo (sơn tra) hoang dã đại diện cho sức sống dẻo dai của thực vật rẻo cao Tây Bắc, gắn với các tích cổ kể về ý chí kiên cường và lòng thủy chung của người Mông chịu thương chịu khó trước bão giông cuộc sống.">
-                        <div class="dest-card-img">
-                            <img src="images/taxua_lonely_tree.webp" alt="Cây cô đơn Tà Xùa" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Thơ mộng</span>
-                                <span class="tag">Vách vực</span>
-                            </div>
-                            <h3 class="dest-card-title">Cây cô đơn Tà Xùa</h3>
-                            <p class="dest-card-desc">Cây thông cô đơn kiên cường vươn mình trên vách đá ngắm dòng sông xanh mát uốn lượn dưới đáy vực sâu.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card double-col" data-legend="Đỉnh gió Tà Xùa ở độ cao 2.865m nằm trong dãy Hoàng Liên Sơn phía Tây, nơi gió thổi quanh năm với tốc độ mạnh tạo nên hiện tượng biển mây cuồn cuộn tuyệt đẹp vào mùa đông. Trong tiếng H'Mông, 'Tà Xùa' nghĩa là 'sân phơi thuốc' — gắn với vùng đất có rừng chè Shan Tuyết cổ thụ hàng trăm năm tuổi và thảo dược quý. Đây từng là vùng đất hoang vu bí ẩn mà đến thời Pháp thuộc vẫn chưa có người ngoài nào đặt chân đến.">
-                        <div class="dest-card-img">
-                            <img src="images/taxua_dinh_gio.webp" alt="Đỉnh gió Tà Xùa" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Hoàng hôn</span>
-                                <span class="tag">Ngắm mây</span>
-                            </div>
-                            <h3 class="dest-card-title">Đỉnh gió Tà Xùa</h3>
-                            <p class="dest-card-desc">Điểm ngắm hoàng hôn đỉnh nhất với biển mây rực sắc hồng cam rực rỡ lãng mạn vô cùng.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Thảo nguyên xanh mướt trải dài trên sống núi Tà Xùa ở độ cao hơn 2.000m, nơi đồng bào Mông chăn thả gia súc tự do qua bao thế hệ. Vùng thảo nguyên này là nơi trồng thảo quả và sơn tra (táo mèo) — hai cây trồng đặc sản tạo sinh kế chính cho bà con dân tộc vùng cao. Mỗi mùa thu, khi quả sơn tra chín vàng rực trên sườn đồi, cả bản làng cùng nhau thu hoạch trong niềm vui lễ hội mùa màng.">
-                        <div class="dest-card-img">
-                            <img src="images/taxua_meadow.webp" alt="Thảo nguyên Tà Xùa" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Thiên nhiên</span>
-                                <span class="tag">Cắm trại</span>
-                            </div>
-                            <h3 class="dest-card-title">Thảo nguyên Tà Xùa</h3>
-                            <p class="dest-card-desc">Thảo nguyên cỏ xanh mướt rộng lớn lộng gió trên đỉnh núi mang phong vị khoáng đạt phóng khoáng.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Xã Háng Đồng nằm ở độ cao trung bình 1.500m, là xã vùng cao đặc biệt khó khăn thuộc huyện Bắc Yên, tỉnh Sơn La — được thành lập năm 2008 tách từ xã Tà Xùa. Cư dân chủ yếu là đồng bào Mông sinh sống bằng nghề trồng lúa nương, ngô và chăn nuôi. Sự hoang sơ nguyên bản và văn hóa bản địa chưa bị thương mại hóa chính là giá trị đặc biệt thu hút những du khách yêu khám phá.">
-                        <div class="dest-card-img">
-                            <img src="images/taxua_hang_dong_village.webp" alt="Xã Háng Đồng hoang sơ" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Bản làng</span>
-                                <span class="tag">Văn hóa</span>
-                            </div>
-                            <h3 class="dest-card-title">Xã Háng Đồng hoang sơ</h3>
-                            <p class="dest-card-desc">Bản làng người H'Mông bình yên với những mái nhà gỗ đơn sơ mộc mạc nép mình bên triền dốc mây mù.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Các quán cà phê săn mây trên đỉnh Tà Xùa là sản phẩm du lịch cộng đồng do chính đồng bào Mông địa phương xây dựng và vận hành từ khoảng năm 2018 trở đi. Trước đó, vùng đất này gần như biệt lập với thế giới bên ngoài. Chính cộng đồng mạng và các nhiếp ảnh gia phong cảnh đã 'phát hiện' ra vẻ đẹp biển mây Tà Xùa và chia sẻ rộng rãi, biến nơi đây từ một xã nghèo hẻo lánh thành điểm đến săn mây nổi tiếng nhất Tây Bắc.">
-                        <div class="dest-card-img">
-                            <img src="images/taxua_cloud_hunting.webp" alt="Cafe săn mây trung tâm" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Check-in</span>
-                                <span class="tag">Thư giãn</span>
-                            </div>
-                            <h3 class="dest-card-title">Cafe săn mây trung tâm</h3>
-                            <p class="dest-card-desc">Những quán cafe ban công bằng gỗ ấm cúng ngắm nhìn biển mây cuồn cuộn ngay dưới chân thoải mái vô cùng.</p>
-                        </div>
-                    </div>
-
-                    <div class="dest-card single-col" data-legend="Mỏm đá đầu rùa là tảng đá tự nhiên có hình dáng giống đầu rùa nhô ra khỏi vách núi trên đỉnh Tà Xùa, nhìn xuống biển mây mênh mông. Trong văn hóa Việt Nam, rùa là một trong Tứ Linh (Long, Lân, Quy, Phụng) tượng trưng cho sự trường thọ, bền vững và trí tuệ. Rùa thần Kim Quy từng xuất hiện trong truyền thuyết vua An Dương Vương xây thành Cổ Loa và trong sự tích Hồ Gươm trả gươm báu cho Lê Lợi.">
-                        <div class="dest-card-img">
-                            <img src="images/taxua_turtle_rock.webp" alt="Mỏm đá đầu rùa" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Kỳ quan</span>
-                                <span class="tag">Độc đáo</span>
-                            </div>
-                            <h3 class="dest-card-title">Mỏm đá đầu rùa</h3>
-                            <p class="dest-card-desc">Khối đá tự nhiên nhô thẳng ra khoảng không có hình dáng đầu rùa ngắm nhìn thung lũng sâu hun hút sương mờ.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- DI CHUYỂN & CHI PHÍ -->
-                <h2 id="di-chuyen"><span class="icon">🚗</span> Di chuyển & Chi phí</h2>
-                <p>Khám phá vùng cao Tà Xùa đòi hỏi sự chuẩn bị kỹ càng về phương tiện di chuyển do địa hình đèo dốc đặc trưng của Tây Bắc:</p>
-                
-                <h3>1. Phương tiện di chuyển đến Tà Xùa</h3>
-                <ul>
-                    <li><strong>Xe limousine chạy thẳng:</strong> Rất nhiều hãng xe Limousine đưa đón trực tiếp từ trung tâm Hà Nội lên thẳng trung tâm xã Tà Xùa chỉ trong vòng 5 - 6 tiếng, vô cùng tiện lợi.</li>
-                    <li><strong>Xe khách giường nằm:</strong> Bạn bắt xe khách giường nằm từ bến xe Mỹ Đình đi thị trấn Bắc Yên, sau đó thuê xe máy hoặc bắt taxi di chuyển thêm 15km lên Tà Xùa.</li>
-                </ul>
-
-                <h3>2. Di chuyển tại Tà Xùa</h3>
-                <p><strong>Thuê xe máy tự lái</strong> ngay tại trung tâm xã Tà Xùa hoặc Bắc Yên là cách tốt nhất để cảm nhận trọn vẹn biển mây. Hãy chọn những chiếc xe số hoặc xe côn còn mới, phanh tốt để đảm bảo an toàn vượt các dốc cua cực kỳ dựng đứng.</p>
-
-                <h3>3. Giá vé tham quan một số điểm chính</h3>
-                <table class="info-table">
-                    <thead>
-                        <tr>
-                            <th>Địa điểm tham quan</th>
-                            <th>Giá vé tham khảo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sống lưng khủng long Háng Đồng</td>
-                            <td><span class="price-tag">Miễn phí</span> (Chỉ mất phí gửi xe máy tại bãi đỗ)</td>
-                        </tr>
-                        <tr>
-                            <td>Mỏm cá heo & Cây cô đơn</td>
-                            <td><span class="price-tag">Miễn phí</span> tự do chụp ảnh</td>
-                        </tr>
-                        <tr>
-                            <td>Thảo nguyên Tà Xùa</td>
-                            <td><span class="price-tag">Miễn phí</span> (Có khu vực cắm trại tự túc tính phí nhỏ bảo vệ môi trường)</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="price-disclaimer-note" style="font-size: 0.88rem; color: var(--text-sec); font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                    * <em>Lưu ý: Bảng giá trên chỉ mang tính chất tham khảo tại thời điểm cập nhật và có thể thay đổi theo từng thời kỳ hoặc chính sách điều chỉnh của Ban quản lý khu du lịch.</em>
-                </p>
-
-                <!-- LƯU TRÚ & ẨM THỰC -->
-                <h2 id="luu-tru"><span class="icon">🏨</span> Lưu trú & Ẩm thực săn mây</h2>
-                
-                <h3>1. Lựa chọn nơi lưu trú</h3>
-                <ul>
-                    <li><strong>Homestay view biển mây:</strong> Tập trung dọc sườn núi trung tâm xã Tà Xùa hoặc đường đi Háng Đồng. Phòng nghỉ bằng gỗ, bungalow lãng mạn giúp bạn ngắm mây ngay khi vừa mở cửa sổ phòng ngủ.</li>
-                    <li><strong>Nhà nghỉ trung tâm:</strong> Các nhà nghỉ bình dân ấm cúng ngay trung tâm xã, thuận tiện ăn uống và mua sắm nhu yếu phẩm.</li>
-                </ul>
-
-                <h3>2. Món ngon ẩm thực Tây Bắc</h3>
-                <div class="food-list">
-                    <div class="food-item"><span class="name">🍲 Lẩu gà đen Tà Xùa (Gà đen bản địa ngọt ngọt nấu cùng lá ngải thuốc bắc)</span></div>
-                    <div class="food-item"><span class="name">🍢 Thịt lợn bản nướng mắc khén (Thịt lợn rừng thơm ngọt nướng than củi)</span></div>
-                    <div class="food-item"><span class="name">🍵 Trà Shan Tuyết cổ thụ (Búp chè Shan tuyết hàng trăm năm tuổi vị thanh ngọt)</span></div>
-                </div>
-
-                <!-- KINH NGHIỆM & THỜI ĐIỂM -->
-                <h2 id="kinh-nghiem"><span class="icon">🗓️</span> Thời điểm vàng & Cảnh báo an toàn</h2>
-                
-                <h3>1. Mùa săn mây lý tưởng nhất</h3>
-                <ul>
-                    <li><strong>Tháng 10 – 4 năm sau:</strong> Mùa đông và mùa xuân Tây Bắc là thời gian vàng để săn mây. Xác suất gặp biển mây bồng bềnh cuộn trào dày đặc rất cao, đặc biệt sau những ngày mưa ẩm nhiệt độ giảm sâu.</li>
-                    <li><strong>Tháng 5 – 8:</strong> Mùa hè trời trong xanh lộng gió, thích hợp đi trốn nóng ngắm thảo nguyên xanh và những dải núi trập trùng kỳ vĩ.</li>
-                </ul>
-
-                <h3>2. Lưu ý an toàn sống còn</h3>
-                <ul>
-                    <li><strong>Hạn chế tự lái xe máy xuống sống lưng:</strong> Đoạn dốc đi xuống Sống Lưng Khủng Long cực kỳ hẹp, dốc và hai bên là vực sâu gió thổi mạnh. Nếu không phải tay lái bản địa quen đường, khuyên bạn nên đi bộ hoặc thuê xe ôm của bà con H'Mông chở khứ hồi.</li>
-                    <li><strong>Theo dõi thời tiết liên tục:</strong> Không nên đi vào những ngày mưa lớn sạt lở đèo dốc Bắc Yên - Tà Xùa vô cùng nguy hiểm.</li>
-                    <li><strong>Trang bị đồ ấm đầy đủ:</strong> Nhiệt độ ban đêm ở Tà Xùa xuống rất thấp (có thể dưới 10 độ C vào mùa đông). Hãy mang theo áo phao dày, găng tay và khăn len ấm.</li>
-                </ul>
-
-                <div class="warning-box">
-                    <p>⚠️ Lưu ý bảo vệ thiên nhiên: Hãy mang rác về sau khi tham quan Sống Lưng Khủng Long hoặc cắm trại ở thảo nguyên Tà Xùa. Không bẻ cành cây cô đơn để leo trèo chụp hình gây hư hại biểu tượng cảnh quan.</p>
-                </div>
-
-            </article>
-
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR TOC -->
             <aside class="sidebar">
-                <!-- QUICK INFO -->
-                <div class="sidebar-card">
-                    <h4>📌 Thông tin nhanh</h4>
-                    <div class="sidebar-item"><span class="icon">📍</span> Vị trí: Vùng cao Sơn La, Việt Nam</div>
-                    <div class="sidebar-item"><span class="icon">⏱️</span> Thời gian gợi ý: 2 – 3 ngày</div>
-                    <div class="sidebar-item"><span class="icon">⭐</span> Mùa đẹp nhất: Tháng 10 – 4 năm sau</div>
-                </div>
-
-                <!-- TOC -->
-                <div class="sidebar-card">
-                    <h4>📖 Mục lục</h4>
-                    <ul class="toc-list">
-                        <li><a href="#tong-quan">📋 Tổng quan</a></li>
-                        <li><a href="#phong-canh">📸 Tọa độ Check-in</a></li>
-                        <li><a href="#di-chuyen">🚗 Di chuyển & Chi phí</a></li>
-                        <li><a href="#luu-tru">🏨 Lưu trú & Ẩm thực</a></li>
-                        <li><a href="#kinh-nghiem">🗓️ Kinh nghiệm & An toàn</a></li>
-                    </ul>
-                </div>
+                <div class="sidebar-title">Mục Lục Cẩm Nang</div>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#tong-quan" class="toc-link">1. Tổng quan điểm đến</a></li>
+                    <li class="toc-item"><a href="#lich-su-dia-ly" class="toc-link">2. Vị trí địa lý & Dấu ấn lịch sử</a></li>
+                    <li class="toc-item"><a href="#huyen-thoai" class="toc-link">3. Huyền thoại & Truyền tích dân gian</a></li>
+                    <li class="toc-item"><a href="#bon-mua" class="toc-link">4. Chuỗi hình ảnh 4 mùa du lịch</a></li>
+                    <li class="toc-item"><a href="#thang-canh" class="toc-link">5. Top 10 Thắng cảnh biểu tượng</a></li>
+                    <li class="toc-item"><a href="#di-chuyen" class="toc-link">6. Cẩm nang di chuyển & Cung đường</a></li>
+                    <li class="toc-item"><a href="#am-thuc" class="toc-link">7. Tinh hoa ẩm thực đặc sản</a></li>
+                    <li class="toc-item"><a href="#gia-ve" class="toc-link">8. Bảng giá vé & Dịch vụ niêm yết</a></li>
+                    <li class="toc-item"><a href="#lich-trinh" class="toc-link">9. Gợi ý lịch trình & Mẹo bản địa</a></li>
+                </ul>
             </aside>
+
+            <!-- MAIN ARTICLES -->
+            <main class="article-main">
+
+                <!-- MỤC 1: TỔNG QUAN -->
+                <section id="tong-quan" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">01</span>
+                        <h2 class="section-title">Tổng Quan: Thiên Đường Săn Mây Ngoạn Mục Nhất Việt Nam</h2>
+                    </div>
+                    <p>
+                        Ẩn mình giữa trập trùng núi non hiểm trở của huyện Bắc Yên, tỉnh Sơn La, <strong>Tà Xùa</strong> là dãy núi cao sừng sững đóng vai trò ranh giới tự nhiên giữa hai tỉnh Sơn La và Yên Bái. Với đỉnh cao nhất đạt 2.865m, Tà Xùa xếp thứ 10 trong top những đỉnh núi cao nhất Việt Nam, được giới xê dịch trong và ngoài nước xưng tụng là <em>"Thiên đường săn mây số một miền Bắc"</em>.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Nhờ địa hình lòng chảo độc đáo được bao bọc bởi các dãy núi cao chắn gió, thung lũng Tà Xùa sở hữu hiện tượng <strong>"sóng thần biển mây"</strong> dày đặc, bềnh bồng cuộn trào từ sáng sớm tinh mơ cho đến tận trưa nắng mà không hề tan biến. Nơi đây quyến rũ bước chân phượt thủ bởi những kỳ quan thiên tạo có một không hai: Sống lưng khủng long Háng Đồng cheo leo, Mỏm cá heo kỳ thú vươn mình ra vực thẳm, Cây cô đơn trầm mặc bên suối Sập và khu rừng nguyên sinh rêu phong cổ tích ma mị trên độ cao 2.600m.
+                    </p>
+                    <div class="highlight-box">
+                        <h4>☁️ Điểm Nhấn Săn Mây Tà Xùa</h4>
+                        <p>Xác suất săn mây thành công cực cao (trên 80% từ tháng 11 đến tháng 4 năm sau), biển mây dày đặc trắng xóa dâng lên sát mép đường đèo, hòa cùng không gian văn hóa bản địa mộc mạc của đồng bào H'Mông và những búp chè Shan Tuyết cổ thụ trăm năm.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 2: VỊ TRÍ ĐỊA LÝ & DẤU ẤN LỊCH SỬ -->
+                <section id="lich-su-dia-ly" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">02</span>
+                        <h2 class="section-title">Vị Trí Địa Lý & Dấu Ấn Lịch Sử Dãy Núi Ba Đỉnh</h2>
+                    </div>
+                    <p>
+                        Dãy núi Tà Xùa gồm ba đỉnh núi lớn hợp thành một kỳ quan tự nhiên kỳ vĩ: đỉnh cao nhất 2.865m nơi dựng cột mốc trắc địa, đỉnh thứ hai lưu giữ dấu tích cột cờ thời kháng chiến, và đỉnh thứ ba tựa như đầu một con khủng long khổng lồ thời tiền sử. Vùng đất này thuộc xã Tà Xùa, huyện Bắc Yên, nằm cách thủ đô Hà Nội khoảng 240km và cách thị trấn Mộc Châu hơn 100km theo Quốc lộ 37 và Tỉnh lộ 112.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Trước đây, Tà Xùa là xã vùng cao đặc biệt khó khăn, quanh năm sương phủ mây mù cách trở giao thông. Tuy nhiên, bằng nỗ lực kiên cường mở đường vượt đèo của tỉnh Sơn La và sức sống bền bỉ của đồng bào H'Mông gìn giữ rừng chè Shan Tuyết cổ thụ, Tà Xùa đã vươn mình thành điểm sáng rực rỡ trên bản đồ du lịch sinh thái mạo hiểm Tây Bắc.
+                    </p>
+                    <div class="legal-quote">
+                        <strong>📜 Căn cứ Văn bản Pháp quy Nhà nước:</strong><br>
+                        • <strong>Quyết định số 1676/QĐ-TTg ngày 25/12/2023 của Thủ tướng Chính phủ:</strong> Phê duyệt Quy hoạch tỉnh Sơn La thời kỳ 2021 - 2030, tầm nhìn đến 2050 xác định phát triển khu du lịch sinh thái, khám phá trải nghiệm Tà Xùa - Bắc Yên.<br>
+                        • <strong>Quyết định số 209/QĐ-TTg ngày 07/02/2017 của Thủ tướng Chính phủ:</strong> Phê duyệt Quy hoạch tổng thể phát triển Khu du lịch quốc gia Mộc Châu liên kết vùng du lịch văn hóa Bắc Yên - lòng hồ thủy điện sông Đà.<br>
+                        • <strong>Nghị quyết số 18-NQ/TU của Tỉnh ủy Sơn La:</strong> Về phát triển du lịch tỉnh Sơn La bền vững, bảo tồn văn hóa đồng bào dân tộc thiểu số và bảo vệ nghiêm ngặt hệ sinh thái rừng phòng hộ Tà Xùa.<br>
+                        • <strong>Quần thể Cây Di sản Việt Nam:</strong> Công nhận hàng trăm cây chè Shan Tuyết cổ thụ bản Bẹ, xã Tà Xùa có niên đại 200 - 300 năm tuổi.<br>
+                        • Cổng TTĐT tỉnh Sơn La: <code>sonla.gov.vn</code> • Cổng TTĐT huyện Bắc Yên: <code>bacyen.sonla.gov.vn</code>.
+                    </div>
+                </section>
+
+                <!-- MỤC 3: HUYỀN THOẠI & TRUYỀN TÍCH DÂN GIAN -->
+                <section id="huyen-thoai" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">03</span>
+                        <h2 class="section-title">Huyền Thoại & Truyền Tích Dân Gian Đồng Bào H'Mông</h2>
+                    </div>
+                    <p>
+                        Gắn liền với cuộc sống mộc mạc bên triền núi đá, Tà Xùa ấp ủ những huyền tích thiêng liêng lưu truyền qua tiếng khèn Mông ngàn đời:
+                    </p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-sec); line-height: 1.8;">
+                        <li>
+                            <strong>Huyền tích Con Khủng Long Ngủ Vùi Giữa Biển Mây:</strong> Người già bản Háng Đồng kể rằng thuở xưa khi trời đất còn liền nhau, một con rồng đất (khủng long thần) khổng lồ đã giúp dân bản ngăn chặn lũ dữ từ thượng nguồn sông Đà. Sau trận chiến cam go bảo vệ mùa màng, linh thú kiệt sức nằm xuống giữa hai thung lũng sâu, hóa thân thành dãy núi đá nhấp nhô uốn lượn. Xương sống của rồng hóa thành con đường mòn nhỏ hẹp cheo leo — ngày nay được gọi là Sống lưng khủng long.
+                        </li>
+                        <li>
+                            <strong>Sự tích Cây Chè Bất Tử Shan Tuyết Bản Bẹ:</strong> Huyền thoại về một nàng sơn nữ H'Mông hiếu thảo đã vượt qua hiểm nguy leo lên đỉnh núi quanh năm băng giá tìm thuốc cứu mẹ. Cảm động trước tấm lòng thơm thảo, thần núi đã ban cho nàng những hạt mầm cây cổ thụ có búp phủ tuyết trắng tinh khôi. Khi uống nước lá chè đun sôi, mẹ nàng khỏi bệnh và dân bản trường thọ, sinh sôi nảy nở ấm no.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- MỤC 4: CHUỖI HÌNH ẢNH 4 MÙA DU LỊCH (BẮT BUỘC ĐẶT NGAY SAU MỤC 3) -->
+                <section id="bon-mua" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">04</span>
+                        <h2 class="section-title">Chuỗi Hình Ảnh 4 Mùa Du Lịch Tà Xùa Tuyệt Mỹ</h2>
+                    </div>
+                    <p>
+                        Khí hậu núi cao Tà Xùa quanh năm trong lành mát mẻ, với 4 mùa thay áo dệt nên những tuyệt tác thiên nhiên lay động tâm can. Dưới đây là bộ ảnh 4 mùa độc bản tái hiện trọn vẹn cảnh sắc đỉnh trời Tây Bắc:
+                    </p>
+
+                    <div class="seasons-grid">
+                        <!-- MÙA XUÂN -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/taxua_mua_xuan_hoa_tao_meo_hoa_man.webp', 'Mùa Xuân Tà Xùa — Tinh Khôi Sắc Trắng Hoa Sơn Tra & Hoa Mận', 'Mùa xuân Tà Xùa ngập tràn sắc trắng tinh khiết của hoa sơn tra (táo mèo) và hoa mận rừng, vương vấn bên những nếp nhà trình tường H'Mông mộc mạc.')">
+                                <img src="images/taxua_mua_xuan_hoa_tao_meo_hoa_man.webp" alt="Mùa xuân Tà Xùa hoa sơn tra hoa mận" loading="lazy">
+                                <span class="season-badge">Tháng 1 - Tháng 3 • Mùa Xuân</span>
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Xuân: Sắc Trắng Tinh Khôi Hoa Sơn Tra & Hoa Mận</h3>
+                                <p class="season-desc">Khi hơi ấm mùa xuân xua bớt băng giá, khắp các sườn đồi Tà Xùa bừng sáng sắc trắng hoa táo mèo và hoa mận. Tiếng khèn Mông rộn rã đón Tết truyền thống bên hiên nhà gỗ.</p>
+                            </div>
+                        </div>
+
+                        <!-- MÙA HẠ -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/taxua_mua_nuoc_do_xim_vang.webp', 'Mùa Hạ Tà Xùa — Mùa Nước Đổ Gương Trời Ruộng Bậc Thang Xím Vàng', 'Những thửa ruộng bậc thang Xím Vàng mùa đổ ải lấp lánh phản chiếu bầu trời như hàng nghìn tấm gương khổng lồ giữa núi rừng xanh thẳm.')">
+                                <img src="images/taxua_mua_nuoc_do_xim_vang.webp" alt="Mùa hạ Tà Xùa mùa nước đổ Xím Vàng" loading="lazy">
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Hạ: Mùa Nước Đổ Xím Vàng & Thiên Đường Trốn Nóng</h3>
+                                <p class="season-desc">Cao nguyên 1.800m mát rượi 20°C là điểm trốn nóng tuyệt hảo. Thung lũng ruộng bậc thang Xím Vàng bước vào mùa đổ ải lấp lánh như ngàn tấm gương phản chiếu mây trời.</p>
+                            </div>
+                        </div>
+
+                        <!-- MÙA THU -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/taxua_mua_thu_lua_chin_vang.webp', 'Mùa Thu Tà Xùa — Sóng Lúa Chín Vàng Rực Rỡ & Hương Táo Mèo Rừng', 'Mùa thu Tà Xùa rực rỡ sắc vàng của những sóng lúa chín bậc thang Xím Vàng, hương thơm ngào ngạt của mùa thu hoạch táo mèo rừng chín đỏ.')">
+                                <img src="images/taxua_mua_thu_lua_chin_vang.webp" alt="Mùa thu Tà Xùa lúa chín vàng" loading="lazy">
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Thu: Sóng Lúa Vàng Bậc Thang & Hương Táo Mèo Rừng</h3>
+                                <p class="season-desc">Các triền núi khoác lên màu áo vàng rực rỡ của mùa gặt lúa nương. Những cây táo mèo trĩu quả chín thơm phức, gió thu dịu mát đưa lữ khách vào cõi mộng mơ.</p>
+                            </div>
+                        </div>
+
+                        <!-- MÙA ĐÔNG -->
+                        <div class="season-card">
+                            <div class="season-img-wrap" onclick="openLightbox('images/taxua_mua_dong_song_than_bien_may.webp', 'Mùa Đông Tà Xùa — Sóng Thần Biển Mây Háng Đồng Đại Ngàn', 'Cao điểm mùa săn mây mùa đông với biển mây trắng muốt cuồn cuộn như sóng thần tràn qua Sống lưng khủng long Háng Đồng dưới ánh bình minh rực rỡ.')">
+                                <img src="images/taxua_mua_dong_song_than_bien_may.webp" alt="Mùa đông Tà Xùa sóng thần biển mây" loading="lazy">
+                            </div>
+                            <div class="season-body">
+                                <h3 class="season-title">Mùa Đông: Sóng Thần Biển Mây Cuộn Trào & Hoàng Hôn Đỉnh Gió</h3>
+                                <p class="season-desc">Mùa cao điểm săn mây kỳ vĩ nhất năm: biển mây bồng bềnh đặc quánh như sóng thần tràn qua Sống lưng khủng long Háng Đồng, ánh hoàng hôn nhuộm đỏ rực Đỉnh Gió.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 5: TOP 10 THẮNG CẢNH BIỂU TƯỢNG -->
+                <section id="thang-canh" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">05</span>
+                        <h2 class="section-title">Top 10 Thắng Cảnh Biểu Tượng Nhất Định Phải Đến</h2>
+                    </div>
+                    <p>
+                        Tà Xùa sở hữu hệ thống danh thắng kỳ vĩ và những góc check-in biểu tượng hàng đầu vùng cao Tây Bắc:
+                    </p>
+
+                    <div class="landmarks-grid">
+                        <!-- 1. SỐNG LƯNG KHỦNG LONG -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dinosaur_backbone.webp', 'Sống Lưng Khủng Long Háng Đồng', 'Con đường mòn sống núi hẹp cheo leo giữa hai vực thẳm sâu hun hút ngập tràn biển mây trắng xóa bồng bềnh.')">
+                                <img src="images/taxua_dinosaur_backbone.webp" alt="Sống lưng khủng long Háng Đồng" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">1. Sống Lưng Khủng Long Háng Đồng</h3>
+                                <p class="dest-desc">Điểm săn mây huyền thoại dài hơn 1,5km nằm chênh vênh giữa hai thung lũng sâu ngập tràn biển mây. Cảm giác đi bộ dọc con đường mòn nhỏ hẹp như đang bước đi trên lưng rồng bay giữa ngàn mây trời.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Bản Háng Đồng, Bắc Yên</span>
+                                    <span>🐉 Tọa độ săn mây số 1 VN</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. MỎM CÁ HEO -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dolphin_rock.webp', 'Mỏm Đá Cá Heo Tà Xùa', 'Phiến đá tự nhiên vươn dài ra không trung tựa như chú cá heo đang tung mình bơi lội giữa đại dương mây trắng.')">
+                                <img src="images/taxua_dolphin_rock.webp" alt="Mỏm cá heo Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">2. Mỏm Đá Cá Heo (Dolphin Rock)</h3>
+                                <p class="dest-desc">Tạo tác kỳ diệu của tự nhiên với phiến đá bazan nhô hẳn ra ngoài mép vực thẳm như chiếc đầu cá heo đang ngoi lên khỏi biển mây. Điểm chụp ảnh mạo hiểm thu hút đông đảo du khách check-in.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Cung đường Tà Xùa - Xím Vàng</span>
+                                    <span>🐬 Điểm check-in mạo hiểm</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. CÂY CÔ ĐƠN -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_lonely_tree.webp', 'Cây Cô Đơn Tà Xùa Bên Suối Sập', 'Cây táo mèo cổ thụ đứng sừng sững đơn độc trên mỏm đồi nhìn xuống dòng suối Sập và thung lũng mây sâu thẳm.')">
+                                <img src="images/taxua_lonely_tree.webp" alt="Cây cô đơn Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">3. Cây Cô Đơn Tà Xùa (Suối Sập)</h3>
+                                <p class="dest-desc">Cây táo mèo đứng trơ trọi kiên cường trên mỏm núi cao nhìn xuống vực suối Sập. Hình ảnh cành cây vươn ra khoảng không bao la trong ráng chiều hoàng hôn mang vẻ đẹp cô liêu, thơ mộng đến nao lòng.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Hướng đi xã Háng Đồng</span>
+                                    <span>🌳 Góc check-in hoàng hôn triệu view</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. ĐỈNH GIÓ -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dinh_gio.webp', 'Đỉnh Gió Tà Xùa — Tọa Độ Ngắm Hoàng Hôn', 'Đỉnh đồi lộng gió nơi ngắm trọn vẹn cảnh mặt trời lặn nhuộm vàng rực cả biển mây và thung lũng bản làng.')">
+                                <img src="images/taxua_dinh_gio.webp" alt="Đỉnh Gió Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">4. Đỉnh Gió & Hoàng Hôn Nhuộm Đỏ</h3>
+                                <p class="dest-desc">Tọa độ lý tưởng nhất để đón những cơn gió đại ngàn lồng lộng và chiêm ngưỡng khoảnh khắc hoàng hôn buông xuống. Biển mây chuyển sắc từ vàng cam sang tím thẫm đẹp như tranh sơn dầu kỳ ảo.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Trung tâm Tà Xùa</span>
+                                    <span>🌅 Hoàng hôn lãng mạn bậc nhất</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. THẢO NGUYÊN TÀ XÙA -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_meadow.webp', 'Thảo Nguyên Xanh Mướt Tà Xùa', 'Đồi cỏ mênh mông xanh ngắt trải dài như thảo nguyên Thụy Sĩ, điểm cắm trại ngắm sao trời và bình minh.')">
+                                <img src="images/taxua_meadow.webp" alt="Thảo nguyên Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">5. Thảo Nguyên Tà Xùa Mênh Mông</h3>
+                                <p class="dest-desc">Đồi cỏ thoai thoải xanh mướt trải dài tít tắp gợi nhớ khung cảnh thảo nguyên châu Âu. Nơi đây là điểm cắm trại lý tưởng ngoài trời, ngắm bầu trời sao đêm lung linh và đón ánh bình minh đầu tiên rọi chiếu.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Đồi thảo nguyên Tà Xùa</span>
+                                    <span>⛺ Cắm trại dã ngoại & ngắm sao</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. MỎM ĐẦU RÙA -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_turtle_rock.webp', 'Mỏm Đá Đầu Rùa Tà Xùa', 'Khối đá tự nhiên hình đầu rùa khổng lồ nhô ra vực sâu ở độ cao hơn 2.000m, bao quanh là thung lũng mây trôi.')">
+                                <img src="images/taxua_turtle_rock.webp" alt="Mỏm đầu rùa Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">6. Mỏm Đá Đầu Rùa Kỳ Vĩ</h3>
+                                <p class="dest-desc">Tảng đá tự nhiên kỳ dị nhô hẳn ra ngoài sườn núi hiểm trở mang hình dáng đầu một chú rùa khổng lồ ngước nhìn trời xanh. Đứng tại mỏm đá có thể phóng tầm mắt ngắm trọn biển mây bạt ngàn dưới chân.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Vách đá Tà Xùa</span>
+                                    <span>🐢 Thạch quan kỳ bí</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. BẢN HÁNG ĐỒNG -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_hang_dong_village.webp', 'Bản Làng Háng Đồng Trong Sương Mù', 'Những nếp nhà gỗ pơ mu của đồng bào H'Mông nép mình bên sườn đồi trong màn sương khói lam chiều bình yên.')">
+                                <img src="images/taxua_hang_dong_village.webp" alt="Bản Háng Đồng Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">7. Bản Làng Háng Đồng Mộc Mạc</h3>
+                                <p class="dest-desc">Bản làng nguyên sơ của 100% đồng bào người H'Mông sinh sống bên chân Sống lưng khủng long. Những nếp nhà gỗ pơ mu cổ kính, bắp ngô vàng phơi trước hiên và khói bếp bảng lảng tạo nên bức tranh vùng cao yên ả.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Háng Đồng, Bắc Yên</span>
+                                    <span>🏡 Văn hóa bản địa H'Mông</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8. RUỘNG BẬC THANG XÍM VÀNG -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_ruong_bac_thang_xim_vang.webp', 'Ruộng Bậc Thang Xím Vàng Kỳ Vĩ', 'Những dải ruộng bậc thang tầng tầng lớp lớp uốn lượn men theo sườn núi dốc đứng, kiệt tác canh tác của người Mông.')">
+                                <img src="images/taxua_ruong_bac_thang_xim_vang.webp" alt="Ruộng bậc thang Xím Vàng" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">8. Ruộng Bậc Thang Xím Vàng</h3>
+                                <p class="dest-desc">Được ví như "Mù Cang Chải của Sơn La", thung lũng ruộng bậc thang Xím Vàng có độ dốc lớn nhất Tây Bắc. Những đường cong uốn lượn tầng tầng lớp lớp ôm trọn sườn núi tạo nên kiệt tác điêu khắc trên đất kỳ vĩ.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Xã Xím Vàng, cách Tà Xùa 14km</span>
+                                    <span>🌾 Mùa lúa chín tháng 9 - 10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 9. RỪNG RÊU CỔ TÍCH -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_rung_nguyen_sinh_reu_phong.webp', 'Rừng Nguyên Sinh Rêu Phong Cổ Tích Tà Xùa', 'Khu rừng rêu ma mị ở độ cao 2.600m với những thân cây cổ thụ phủ kín thảm rêu xanh mướt và phong lan rừng.')">
+                                <img src="images/taxua_rung_nguyen_sinh_reu_phong.webp" alt="Rừng rêu cổ tích Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">9. Rừng Nguyên Sinh Rêu Phong Cổ Tích</h3>
+                                <p class="dest-desc">Khu rừng rêu ma mị huyền ảo nằm ở độ cao từ 2.400m - 2.800m trên đường trekking đỉnh Tà Xùa. Toàn bộ thân cây cổ thụ, cành nhánh và mặt đất đều được bao phủ bởi lớp rêu nhung xanh mướt như bước vào xứ sở thần tiên.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Đỉnh Tà Xùa 2.865m</span>
+                                    <span>🧙 Rừng rêu ma mị độc nhất vô nhị</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10. RỪNG CHÈ SHAN TUYẾT CỔ THỤ -->
+                        <div class="dest-card">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_che_co_thu_shan_tuyet.webp', 'Rừng Chè Shan Tuyết Cổ Thụ Hàng Trăm Năm Tuổi', 'Những gốc chè Shan Tuyết cổ thụ hàng trăm năm tuổi thân xù xì bám đầy rêu mốc trên đỉnh núi cao bốn mùa mây phủ.')">
+                                <img src="images/taxua_che_co_thu_shan_tuyet.webp" alt="Chè Shan Tuyết cổ thụ Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">10. Rừng Chè Shan Tuyết Cổ Thụ (Cây Di Sản)</h3>
+                                <p class="dest-desc">Quần thể hàng trăm cây chè Shan Tuyết cổ thụ 200 - 300 năm tuổi tại bản Bẹ đã được công nhận là Cây Di sản Việt Nam. Búp chè ngậm sương mù tinh khiết cho ra loại trà nước vàng óng, vị ngọt hậu thanh tao quý giá.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Bản Bẹ, xã Tà Xùa</span>
+                                    <span>🍵 Cây Di sản Việt Nam</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 6: CẨM NANG DI CHUYỂN -->
+                <section id="di-chuyen" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">06</span>
+                        <h2 class="section-title">Cẩm Nang Di Chuyển & Cung Đường Giao Thông</h2>
+                    </div>
+                    <p>
+                        Cung đường từ Hà Nội lên Tà Xùa dài khoảng 240km, có thể di chuyển bằng xe khách hoặc xe máy/ô tô cá nhân:
+                    </p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-sec); line-height: 1.8;">
+                        <li>
+                            <strong>Tuyến đường bộ:</strong> Hà Nội &rarr; Quốc lộ 32 &rarr; Thị xã Sơn Tây &rarr; Cầu Trung Hà &rarr; Thanh Sơn (Phú Thọ) &rarr; Thu Cúc &rarr; Phù Yên &rarr; Bắc Yên (Sơn La). Từ thị trấn Bắc Yên vượt cung đường đèo dốc dài 14km theo Tỉnh lộ 112 để lên đến trung tâm xã Tà Xùa.
+                        </li>
+                        <li>
+                            <strong>Xe khách giường nằm / Limousine:</strong> Có các hãng xe chạy thẳng từ bến xe Mỹ Đình, Yên Nghĩa lên tận trung tâm xã Tà Xùa (nhà xe Nguyên Hằng, Khánh Thịnh, Tà Xùa Tour) với giá vé từ 250.000 - 350.000 VNĐ/vé/chiều.
+                        </li>
+                        <li>
+                            <strong>Thuê xe máy tại Tà Xùa:</strong> Rất thuận tiện tại các homestay với giá 150.000 - 200.000 VNĐ/ngày. Nếu đi Sống lưng khủng long Háng Đồng, bạn có thể thuê xe ôm người bản địa (giá khứ hồi khoảng 100.000 VNĐ) để đảm bảo an toàn tuyệt đối.
+                        </li>
+                    </ul>
+                    <div class="highlight-box">
+                        <h4>⚠️ Cảnh Báo An Toàn Đường Đèo Bắc Yên</h4>
+                        <p>Đoạn đèo 14km từ Bắc Yên lên Tà Xùa có độ dốc cao và nhiều khúc cua gấp; thường xuyên bị sương mù bao phủ tầm nhìn dưới 5m vào sáng sớm và chiều tối. Luôn bật đèn vàng phá sương, đi chậm về số thấp và tuyệt đối không vượt ẩu ở các khúc cua khuất tầm nhìn.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 7: TINH HOA ẨM THỰC ĐẶC SẢN -->
+                <section id="am-thuc" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">07</span>
+                        <h2 class="section-title">Tinh Hoa Ẩm Thực Tà Xùa — Đậm Đà Phong Vị Núi Rừng Tây Bắc</h2>
+                    </div>
+                    <p>
+                        Ẩm thực Tà Xùa mộc mạc, thuần khiết từ sản vật tự nhiên được chế biến cùng các loại gia vị hoang dã nức tiếng Tây Bắc:
+                    </p>
+
+                    <div class="culinary-grid">
+                        <!-- MÓN 1: CHÈ SHAN TUYẾT -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/taxua_mon_che_shan_tuyet_co_thu.webp', 'Trà Shan Tuyết Cổ Thụ Tà Xùa', 'Nước trà vàng óng như mật ong rừng, hương thơm cốm ngát đượm vị sương núi, búp tuyết trắng tinh phủ đầy lông tơ quý hiếm.')">
+                                <img src="images/taxua_mon_che_shan_tuyet_co_thu.webp" alt="Trà Shan Tuyết cổ thụ Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">1. Trà Shan Tuyết Cổ Thụ Tà Xùa</h3>
+                                <p class="culinary-desc">Đệ nhất danh trà Tây Bắc được thu hái từ những cây chè cổ thụ trên 200 năm tuổi. Nước trà sánh vàng mật ong, tiền chát dịu nhẹ và hậu ngọt sâu lắng kéo dài, tỏa hương thơm ngát của sương núi đại ngàn.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 500.000 - 1.500.000 VNĐ/kg</span>
+                                    <span>Địa chỉ: Hợp tác xã chè Shan Tuyết bản Bẹ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 2: GÀ ĐEN H'MÔNG NƯỚNG MẬT ONG -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/taxua_mon_ga_den_nuong_mat_ong.webp', 'Gà Đen H'Mông Nướng Mật Ong Rừng Hạt Dổi', 'Gà xương đen thịt đen tẩm ướp hạt dổi rừng nướng than hoa vàng giòn da, thịt thơm ngọt đậm đà chấm muối ớt chẩm chéo.')">
+                                <img src="images/taxua_mon_ga_den_nuong_mat_ong.webp" alt="Gà đen H'Mông nướng mật ong Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">2. Gà Đen H'Mông Nướng Mật Ong Hạt Dổi</h3>
+                                <p class="culinary-desc">Giống gà đen bản địa quý hiếm của người H'Mông thịt săn chắc, thơm ngọt từ xương. Gà nướng nguyên con trên than hồng phết mật ong rừng óng ả, chấm muối ớt hạt dổi mắc khén cay nồng tê tái.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 250.000 - 300.000 VNĐ/con</span>
+                                    <span>Địa chỉ: Các homestay và quán ăn bản địa Tà Xùa</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 3: THỊT LỢN BẢN NƯỚNG MẮC KHÉN -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/taxua_mon_thit_lon_ban_nuong_mac_khen.webp', 'Thịt Lợn Bản Cắp Nách Nướng Mắc Khén', 'Thịt lợn đen thả rông nướng xiên que trên than củi, bì giòn rụm thơm lừng mùi mắc khén rừng và hạt dổi.')">
+                                <img src="images/taxua_mon_thit_lon_ban_nuong_mac_khen.webp" alt="Thịt lợn bản nướng mắc khén" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">3. Thịt Lợn Bản Cắp Nách Nướng Mắc Khén</h3>
+                                <p class="culinary-desc">Lợn đen bản địa thả rông trên triền núi thịt thơm chắc, lớp bì dày giòn tan. Từng xiên thịt nướng xèo xèo trên than củi tỏa mùi thơm đặc trưng của hạt mắc khén và lá rừng hoang dại.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 120.000 - 180.000 VNĐ/đĩa</span>
+                                    <span>Địa chỉ: Bếp Mông Tà Xùa, Quán Mây</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 4: RƯỢU TÁO MÈO BẮC YÊN -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/taxua_mon_ruou_tao_meo_bac_yen.webp', 'Rượu Táo Mèo Rừng Bắc Yên', 'Chén rượu táo mèo màu hổ phách sóng sánh, vị chua chát ngọt thanh nồng ấm xua tan giá lạnh sương mù.')">
+                                <img src="images/taxua_mon_ruou_tao_meo_bac_yen.webp" alt="Rượu táo mèo Bắc Yên Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">4. Rượu Táo Mèo Rừng Bắc Yên (Sơn Tra)</h3>
+                                <p class="culinary-desc">Được ngâm ủ từ quả táo mèo rừng tươi mọc tự nhiên trên các đỉnh núi cao Bắc Yên. Rượu màu nâu đỏ hổ phách sánh mịn, hương thơm nồng, vị ngọt chát êm dịu làm ấm lòng lữ khách trong đêm lạnh.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 70.000 - 120.000 VNĐ/lít</span>
+                                    <span>Địa chỉ: Chợ phiên Bắc Yên & trung tâm xã Tà Xùa</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 5: XÔI NẾP NƯƠNG NGŨ SẮC -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/taxua_mon_xoi_nep_nuong_ngu_sac.webp', 'Xôi Nếp Nương Ngũ Sắc Tây Bắc', 'Chõ xôi nếp nương bốc khói nghi ngút nhuộm màu hoàn toàn tự nhiên từ lá cẩm, nghệ, gấc và lá dứa thơm phức.')">
+                                <img src="images/taxua_mon_xoi_nep_nuong_ngu_sac.webp" alt="Xôi nếp nương ngũ sắc Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">5. Xôi Nếp Nương Ngũ Sắc Tây Bắc</h3>
+                                <p class="culinary-desc">Hạt nếp nương dẻo quánh đồ trong chõ gỗ thơm phức, nhuộm 5 màu tự nhiên từ lá rừng tượng trưng cho ngũ hành. Ăn kèm muối vừng rừng bùi béo hay vài lát lạp xưởng hun khói gác bếp.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 30.000 - 50.000 VNĐ/phần</span>
+                                    <span>Địa chỉ: Các chợ phiên vùng cao Tà Xùa</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MÓN 6: CANH RÊU ĐÁ & MĂNG TRÚC -->
+                        <div class="culinary-card">
+                            <div class="culinary-img-wrap" onclick="openLightbox('images/taxua_mon_canh_reu_da_suoi_sap.webp', 'Canh Rêu Đá Suối Sập & Măng Trúc Chẩm Chéo', 'Rêu đá suối trong lành nấu canh ngọt mát kết hợp đĩa măng trúc rừng luộc giòn sần sật chấm chẳm chéo thơm lừng.')">
+                                <img src="images/taxua_mon_canh_reu_da_suoi_sap.webp" alt="Canh rêu đá măng trúc Tà Xùa" loading="lazy">
+                            </div>
+                            <div class="culinary-body">
+                                <h3 class="culinary-title">6. Canh Rêu Đá Suối Sập & Măng Trúc Luộc</h3>
+                                <p class="culinary-desc">Sản vật hiếm hoi từ dòng suối Sập trong vắt: rêu đá non được vò sạch nấu canh thanh ngọt mát lành; kèm đĩa măng trúc đắng luộc giòn sần sật chấm chẳm chéo cay nồng đặc trưng Tây Bắc.</p>
+                                <div class="culinary-meta">
+                                    <span>Giá: 50.000 - 90.000 VNĐ/bát</span>
+                                    <span>Địa chỉ: Homestay bản địa Háng Đồng & Tà Xùa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MỤC 8: BẢNG GIÁ VÉ & DỊCH VỤ NIÊM YẾT -->
+                <section id="gia-ve" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">08</span>
+                        <h2 class="section-title">Bảng Giá Vé Tham Quan & Dịch Vụ Niêm Yết</h2>
+                    </div>
+                    <p>
+                        Các điểm tham quan thiên nhiên tại Tà Xùa hầu hết mở cửa tự do, chi phí chủ yếu đến từ phương tiện hỗ trợ và trải nghiệm bản địa:
+                    </p>
+
+                    <div class="price-table-wrap">
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Điểm Đến / Loại Dịch Vụ</th>
+                                    <th>Mức Giá Tham Khảo</th>
+                                    <th>Ghi Chú & Khuyến Nghị</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sống Lưng Khủng Long Háng Đồng</strong></td>
+                                    <td>MIỄN PHÍ VÀO CỬA</td>
+                                    <td>Xe ôm bản địa chở từ bãi xe vào sống lưng: 50.000 VNĐ/lượt (100.000 VNĐ khứ hồi).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mỏm Cá Heo & Cây Cô Đơn</strong></td>
+                                    <td>MIỄN PHÍ VÀO CỬA</td>
+                                    <td>Tự do chụp ảnh, giữ gìn vệ sinh và không leo trèo lên cành cây cô đơn.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Đỉnh Gió & Thảo Nguyên Tà Xùa</strong></td>
+                                    <td>MIỄN PHÍ VÀO CỬA</td>
+                                    <td>Phí dọn vệ sinh khi cắm trại qua đêm: 20.000 - 30.000 VNĐ/người.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Trekking Rừng Rêu Đỉnh Tà Xùa</strong></td>
+                                    <td>600.000 - 900.000 VNĐ/ngày</td>
+                                    <td>Thuê porter dẫn đường bản địa kiêm mang vác hành lý và nấu nướng trên núi.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thuê xe máy tại trung tâm xã</strong></td>
+                                    <td>150.000 - 200.000 VNĐ/ngày</td>
+                                    <td>Nên chọn xe số (Wave/Sirius) máy khỏe để vượt dốc an toàn.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Giá phòng Homestay ngắm mây</strong></td>
+                                    <td>350.000 - 1.200.000 VNĐ/đêm</td>
+                                    <td>Đa dạng từ giường dorm cộng đồng đến bungalow kính view trọn biển mây.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 1.5rem; background: rgba(245, 158, 11, 0.08); border-color: var(--accent-gold);">
+                        <h4>⚖️ Quy Tắc Du Lịch Có Trách Nhiệm Vùng Cao</h4>
+                        <p>Thực hiện nghiêm túc hướng dẫn của UBND huyện Bắc Yên: Bảo vệ tuyệt đối rừng nguyên sinh rêu phong và quần thể Cây Di sản chè Shan Tuyết; không khắc vẽ bậy lên vách đá; mang toàn bộ rác thải nhựa về điểm tập kết trung tâm.</p>
+                    </div>
+                </section>
+
+                <!-- MỤC 9: LỊCH TRÌNH GỢI Ý & MẸO TRẢI NGHIỆM -->
+                <section id="lich-trinh" class="content-section">
+                    <div class="section-header">
+                        <span class="section-num">09</span>
+                        <h2 class="section-title">Gợi Ý Lịch Trình 2N1Đ Săn Mây & Mẹo Bản Địa An Toàn</h2>
+                    </div>
+                    <p>
+                        Lịch trình tối ưu hóa cơ hội săn biển mây ngoạn mục và khám phá trọn vẹn nét đẹp văn hóa Tà Xùa:
+                    </p>
+
+                    <div style="margin: 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.3rem;">📅 Ngày 1: Hà Nội — Bắc Yên — Cây Cô Đơn — Mỏm Cá Heo — Hoàng Hôn Đỉnh Gió</h4>
+                        <p style="color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            • <em>Sáng:</em> Khởi hành từ Hà Nội theo Quốc lộ 32, dừng chân ăn trưa thịt chua Thanh Sơn (Phú Thọ) hoặc thị trấn Bắc Yên.<br>
+                            • <em>Chiều:</em> Lên tới Tà Xùa nhận phòng homestay ngắm mây, sau đó vi vu xe máy check-in Cây Cô Đơn và Mỏm Cá Heo.<br>
+                            • <em>Tối:</em> Lên Đỉnh Gió đón hoàng hôn rực rỡ, thưởng thức nồi lẩu gà đen H'Mông nghi ngút khói và nhâm nhi chén rượu táo mèo cay ấm.
+                        </p>
+                    </div>
+
+                    <div style="margin: 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.3rem;">📅 Ngày 2: Săn Sóng Thần Biển Mây Háng Đồng — Chè Cổ Thụ Bản Bẹ — Hà Nội</h4>
+                        <p style="color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            • <em>5h00 Sáng:</em> Xuất phát đi Sống lưng khủng long Háng Đồng, đón bình minh rọi sáng biển mây cuồn cuộn như sóng thần đại ngàn.<br>
+                            • <em>Sáng:</em> Ghé bản Bẹ chiêm ngưỡng quần thể Cây Di sản chè Shan Tuyết cổ thụ, thưởng thức ấm trà Shan Tuyết nóng hổi.<br>
+                            • <em>Trưa:</em> Trả phòng homestay, xuôi đèo Bắc Yên thưởng thức bữa cơm trưa gà đồi măng trúc.<br>
+                            • <em>Chiều:</em> Khởi hành về lại Hà Nội, kết thúc chuyến săn mây thành công và ngập tràn cảm xúc.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box" style="background: rgba(234, 88, 12, 0.08); border-color: rgba(234, 88, 12, 0.3);">
+                        <h4>💡 Mẹo Săn Mây Bách Phát Bách Trúng Của Dân Bản Địa</h4>
+                        <ul style="margin: 0.5rem 0 0 1.2rem; color: var(--text-sec); font-size: 0.92rem; line-height: 1.6;">
+                            <li><strong>Công thức săn mây:</strong> Hãy theo dõi dự báo thời tiết: ngày hôm trước có mưa phùn nhẹ hoặc độ ẩm trên 85%, sáng hôm sau trời hửng nắng, gió lặng dưới cấp 2 &rarr; 99% sẽ xuất hiện biển mây đặc quánh.</li>
+                            <li><strong>Trang phục giữ ấm:</strong> Sáng sớm nhiệt độ trên Sống lưng khủng long có thể xuống dưới 10°C kèm sương muối, bắt buộc mang áo gió chống nước, khăn ấm, găng tay và giày bám chống trơn trượt.</li>
+                            <li><strong>Bình tĩnh khi mất mây:</strong> Nếu trung tâm Tà Xùa bị mây mù bao phủ (mù mịt), hãy di chuyển ngay sang phía Sống lưng khủng long hoặc đường đi Xím Vàng vì các thung lũng bên kia thường có nắng và biển mây cực đẹp.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="article-footer">
         <div>
-            <a href="index.html">← Về trang chủ</a>
+            &copy; 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch Việt Nam chất lượng cao.
         </div>
-        <div class="credits">🎨 Ảnh minh họa: AI-generated · Tác giả: Sửu nhi · © 2026 GO FAR</div>
+        <div class="credits">
+            Biên tập: Sửu nhi • Hình ảnh: 100% AI thế hệ mới (21 hình ảnh độc bản) • Căn cứ: QĐ 1676/QĐ-TTg, QĐ 209/QĐ-TTg, NQ 18-NQ/TU & Pháp luật Việt Nam.
+        </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL FOR ZOOMING IMAGES -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img loading="lazy" class="lightbox-content" id="lightboxImg" alt="Hình ảnh chi tiết điểm đến">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-media">
+                <img id="lightboxImg" src="" alt="Chi tiết hình ảnh">
+            </div>
+            <div class="lightbox-info">
+                <span class="lightbox-tag">Kỳ Quan Tà Xùa</span>
+                <h3 id="lightboxTitle" class="lightbox-title">Tiêu đề ảnh</h3>
+                <p id="lightboxDesc" class="lightbox-desc">Mô tả chi tiết ảnh.</p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Lightbox Zoom functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const destCards = document.querySelectorAll('.dest-card');
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
-
-            if (destCards.length && lightboxModal && lightboxImg) {
-                destCards.forEach(card => {
-                    card.style.cursor = 'zoom-in';
-                    card.addEventListener('click', () => {
-                        const img = card.querySelector('.dest-card-img img');
-                        if (!img) return;
-
-                        let titleText = "";
-                        let descText = "";
-
-                        const overlayH3 = card.querySelector('.dest-card-content h3');
-                        const overlayP = card.querySelector('.dest-card-content p');
-                        if (overlayH3) titleText = overlayH3.textContent;
-                        if (overlayP) descText = overlayP.textContent;
-
-                        if (!titleText && !descText) {
-                            titleText = img.alt || "Chi tiết hình ảnh";
-                        }
-
-                        lightboxModal.style.display = 'flex';
-                        lightboxImg.src = img.src;
-                        
-                        let captionHTML = "";
-                        if (titleText) {
-                            captionHTML += `<strong style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${titleText}</strong>`;
-                        }
-                        if (descText) {
-                            captionHTML += `<span style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.6; display: block; font-family: 'Inter', sans-serif; max-width: 750px; margin: 0 auto 1rem;">${descText}</span>`;
-                        }
-                        
-                        const legend = card.getAttribute('data-legend');
-                        if (legend) {
-                            captionHTML += `
-                            <div style="background: rgba(22, 44, 62, 0.85); border: 1px solid rgba(255, 140, 50, 0.35); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                                <span style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; text-transform: uppercase; color: var(--accent); font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: 600;">
-                                    ✨ Truyền thuyết & Sự tích Kỳ bí
-                                </span>
-                                <span style="font-size: 0.9rem; color: #f8fafc; line-height: 1.7; font-family: 'Inter', sans-serif; display: block;">${legend}</span>
-                            </div>`;
-                        }
-                        lightboxCaption.innerHTML = captionHTML;
-                    });
-                });
-
-                lightboxClose.addEventListener('click', () => {
-                    lightboxModal.style.display = 'none';
-                });
-
-                lightboxModal.addEventListener('click', (e) => {
-                    if (e.target === lightboxModal || e.target === lightboxClose) {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
-                
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        lightboxModal.style.display = 'none';
-                    }
-                });
+        function openLightbox(src, title, desc) {
+            var modal = document.getElementById('lightboxModal');
+            var img = document.getElementById('lightboxImg');
+            var t = document.getElementById('lightboxTitle');
+            var d = document.getElementById('lightboxDesc');
+            if (modal && img) {
+                img.src = src;
+                if (t) t.innerText = title || 'Thắng cảnh Tà Xùa';
+                if (d) d.innerText = desc || '';
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
             }
+        }
+
+        function closeLightbox(event) {
+            var modal = document.getElementById('lightboxModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>
