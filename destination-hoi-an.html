@@ -673,6 +673,56 @@
             .hero { height: 45vh; }
             .article-main { padding: 1.5rem; }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -960,39 +1010,28 @@
                             </div>
                         </div>
 
-                        <!-- Spot 7: Làng gốm Thanh Hà -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_thanh_ha.webp', 'Làng Gốm Thanh Hà — 500 Năm Đất Sét Nung Bên Sông Thu Bồn', 'Làng nghề thủ công truyền thống hình thành từ thế kỷ XVI. Trải qua hơn 500 năm, các nghệ nhân vẫn giữ kỹ thuật chuốt gốm bằng bàn xoay chân và nung đất sét đỏ tự nhiên không tráng men.')">
+                        <!-- Spot 7: Làng gốm Thanh Hà (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/hoian_lang_gom_thanh_ha.webp', 'Làng Gốm Thanh Hà — Di Sản Đất Nung Hơn 500 Năm Bên Sông Thu Bồn', 'Hình thành từ cuối thế kỷ XV bởi các nghệ nhân Thanh Hóa vào khai hoang lập nghiệp. Làng nghề gìn giữ nguyên vẹn kỹ thuật chuốt gốm thủ công bằng chân đạp bàn xoay và nung bằng củi gỗ trong các lò bầu cổ truyền, sản sinh những sản phẩm đất nung màu đỏ gạch mộc mạc.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/hoian_lang_gom_thanh_ha.webp', 'Làng gốm đất nung Thanh Hà Hội An', 'Làng Gốm Thanh Hà — Di Sản Đất Nung Hơn 500 Năm Bên Sông Thu Bồn', 'Hình thành từ cuối thế kỷ XV bởi các nghệ nhân Thanh Hóa vào khai hoang lập nghiệp. Làng nghề gìn giữ nguyên vẹn kỹ thuật chuốt gốm thủ công bằng chân đạp bàn xoay và nung bằng củi gỗ trong các lò bầu cổ truyền, sản sinh những sản phẩm đất nung màu đỏ gạch mộc mạc.')">📸 Gốm nung sân phơi</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/hoian_thanh_ha.webp', 'Nghệ nhân chuốt gốm thủ công Thanh Hà', 'Nghệ Thuật Chuốt Gốm Bàn Xoay Thủ Công Thanh Hà', 'Nghệ nhân Thanh Hà dùng đôi tay tài hoa chuốt từng khối đất sét trên bàn xoay thủ công và chế tác đồ gốm gia dụng, tò he thổi vang tiếng chim.')">📸 Nghệ nhân chuốt gốm</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/hoian_thanh_ha.webp" alt="Làng gốm Thanh Hà Hội An" loading="lazy">
+                                <img src="images/hoian_lang_gom_thanh_ha.webp" alt="Làng gốm đất nung Thanh Hà Hội An" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Di Sản Phi Vật Thể</span>
-                                    <span class="tag">Làng Nghề 500 Năm</span>
+                                    <span class="tag tag-hot">🔥 Di Sản Làng Nghề 500 Năm</span>
+                                    <span class="tag">Gốm Đất Nung Thủ Công</span>
+                                    <span class="tag">Bên Sông Thu Bồn</span>
                                 </div>
-                                <h3 class="dest-card-title">7. Làng Gốm Thanh Hà — Đất Nung Truyền Thống</h3>
-                                <p class="dest-card-desc">Tự tay trải nghiệm nhào nặn đất sét trên bàn xoay và chiêm ngưỡng công viên gốm đất nung lớn nhất Việt Nam.</p>
+                                <h3 class="dest-card-title">7. Làng Gốm Thanh Hà — Hồn Đất Nung 500 Năm Bên Dòng Thu Bồn</h3>
+                                <p class="dest-card-desc">Làng nghề gốm cổ truyền hình thành từ thế kỷ XV, nơi lưu giữ kỹ nghệ chuốt gốm bàn xoay chân đạp, lò nung củi cổ kính và bảo tàng gốm đất nung lớn nhất Việt Nam.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 8: Làng rau Trà Quế -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hoian_tra_que.webp', 'Làng Rau Trà Quế — Vườn Thảo Mộc Xanh Hữu Cơ', 'Làng nghề trồng rau gia vị hơn 300 năm tuổi nổi tiếng với kỹ thuật bón rong vớt từ đầm Trà Quế, tạo nên những luống rau thơm, é, húng, ngò có hương vị cay nồng ngọt thơm tinh khiết.')">
-                            <div class="dest-card-img">
-                                <img src="images/hoian_tra_que.webp" alt="Làng rau Trà Quế Hội An" loading="lazy">
-                            </div>
-                            <div class="dest-card-overlay"></div>
-                            <div class="dest-card-content">
-                                <div class="dest-card-tags">
-                                    <span class="tag">Rau Sạch Hữu Cơ</span>
-                                    <span class="tag">Du Lịch Xanh Eco</span>
-                                </div>
-                                <h3 class="dest-card-title">8. Làng Rau Trà Quế — Hương Đồng Cỏ Nội</h3>
-                                <p class="dest-card-desc">Trải nghiệm hóa thân làm nông dân tưới rau bằng gáo đôi truyền thống và thưởng thức món tôm hữu đặc sản ngọt bùi.</p>
-                            </div>
-                        </div>
-
-                        <!-- Spot 9: Rừng dừa Bảy Mẫu Cẩm Thanh -->
+                        <!-- Spot 8: Rừng dừa Bảy Mẫu Cẩm Thanh (single-col) -->
                         <div class="dest-card single-col" onclick="openLightbox('images/hoian_rung_dua_bay_mau.webp', 'Rừng Dừa Bảy Mẫu Cẩm Thanh — Miền Tây Sông Nước Thu Nhỏ', 'Khu rừng dừa nước bạt ngàn rộng hơn 100ha tại xã Cẩm Thanh, căn cứ cách mạng kiên cường thời kháng chiến, nay là điểm du lịch sinh thái nổi tiếng với màn múa thuyền thúng ngoạn mục.')">
                             <div class="dest-card-img">
                                 <img src="images/hoian_rung_dua_bay_mau.webp" alt="Rừng dừa Bảy Mẫu Cẩm Thanh Hội An" loading="lazy">
@@ -1001,14 +1040,14 @@
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
                                     <span class="tag tag-hot">Vũ Điệu Thuyền Thúng</span>
-                                    <span class="tag">Rừng Dừa Nước</span>
+                                    <span class="tag">Cẩm Thanh</span>
                                 </div>
-                                <h3 class="dest-card-title">9. Rừng Dừa Bảy Mẫu — Sông Nước Cẩm Thanh</h3>
+                                <h3 class="dest-card-title">8. Rừng Dừa Bảy Mẫu — Sông Nước Cẩm Thanh</h3>
                                 <p class="dest-card-desc">Lênh đênh thuyền thúng len lỏi qua rặng dừa xanh mướt, xem nghệ nhân quay thuyền thúng điêu luyện và câu cua đá thú vị.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 10: Bãi biển An Bàng -->
+                        <!-- Spot 9: Bãi biển An Bàng (single-col) -->
                         <div class="dest-card single-col" onclick="openLightbox('images/hoian_bien_an_bang.webp', 'Bãi Biển An Bàng — Top Bãi Biển Đẹp Nhất Châu Á', 'Nằm cách phố cổ chỉ 4km, bãi biển An Bàng giữ vẹn nguyên vẻ đẹp hoang sơ với dải cát vàng mịn màng, sóng êm trong xanh và hàng quán bar mộc mạc phong cách boho.')">
                             <div class="dest-card-img">
                                 <img src="images/hoian_bien_an_bang.webp" alt="Bãi biển An Bàng Hội An" loading="lazy">
@@ -1019,8 +1058,29 @@
                                     <span class="tag">Biển Đẹp Châu Á</span>
                                     <span class="tag">Hoang Sơ Tĩnh Lặng</span>
                                 </div>
-                                <h3 class="dest-card-title">10. Bãi Biển An Bàng — Nắng Vàng Biển Xanh</h3>
+                                <h3 class="dest-card-title">9. Bãi Biển An Bàng — Nắng Vàng Biển Xanh</h3>
                                 <p class="dest-card-desc">Chốn nghỉ dưỡng bình yên thư thái, đón bình minh rạng rỡ và thưởng thức nước dừa tươi bên làn gió biển mát lành.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 10: Làng Rau Trà Quế (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/hoian_lang_rau_tra_que.webp', 'Làng Rau Trà Quế — Di Sản Văn Hóa Phi Vật Thể Quốc Gia Hơn 400 Năm', 'Làng nghề trồng rau thơm truyền thống hình thành từ thế kỷ XVII tại xã Cẩm Hà. Điểm đặc biệt là đất đai được bón hoàn toàn bằng rong vớt từ đầm Trà Quế nước lợ, tạo nên hơn 20 loại rau thơm gia vị có hương vị cay thơm nồng nàn độc nhất vô nhị làm nên linh hồn ẩm thực cao lầu, mì Quảng.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/hoian_lang_rau_tra_que.webp', 'Bình minh trên luống rau làng Trà Quế Hội An', 'Làng Rau Trà Quế — Di Sản Văn Hóa Phi Vật Thể Quốc Gia Hơn 400 Năm', 'Làng nghề trồng rau thơm truyền thống hình thành từ thế kỷ XVII tại xã Cẩm Hà. Điểm đặc biệt là đất đai được bón hoàn toàn bằng rong vớt từ đầm Trà Quế nước lợ, tạo nên hơn 20 loại rau thơm gia vị có hương vị cay thơm nồng nàn độc nhất vô nhị làm nên linh hồn ẩm thực cao lầu, mì Quảng.')">📸 Bình minh Trà Quế</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/hoian_tra_que.webp', 'Luống rau thơm xanh mướt Trà Quế Hội An', 'Nghề Trồng Rau Thơm Truyền Thống Trà Quế', 'Người nông dân Trà Quế gánh rong bón luống, tưới rau bằng gáo đôi truyền thống tạo nên bức tranh đồng quê thanh bình di sản.')">📸 Luống rau xanh mướt</button>
+                            </div>
+                            <div class="dest-card-img">
+                                <img src="images/hoian_lang_rau_tra_que.webp" alt="Làng rau Trà Quế xanh mướt buổi bình minh Hội An" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Di Sản Phi Vật Thể Quốc Gia</span>
+                                    <span class="tag">Canh Tác Hữu Cơ Bón Rong Đầm</span>
+                                    <span class="tag">Linh Hồn Ẩm Thực Phố Hội</span>
+                                </div>
+                                <h3 class="dest-card-title">10. Làng Rau Trà Quế — Hương Đồng Cỏ Nội 400 Năm Tuổi</h3>
+                                <p class="dest-card-desc">Làng nghề trồng rau gia vị nức tiếng được công nhận là Di sản phi vật thể Quốc gia, nơi lưu giữ nghệ thuật canh tác bằng rong đầm nước lợ và trải nghiệm một ngày làm nông dân phố Hội mộc mạc.</p>
                             </div>
                         </div>
                     </div>
@@ -1335,6 +1395,28 @@
                 closeLightboxDirect();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, title, caption) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            card.onclick = function() {
+                openLightbox(imgSrc, title, caption);
+            };
+        }
+
     </script>
 </body>
 </html>

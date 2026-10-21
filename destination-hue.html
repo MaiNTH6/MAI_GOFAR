@@ -673,6 +673,56 @@
             .hero { height: 45vh; }
             .article-main { padding: 1.5rem; }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -957,19 +1007,24 @@
                             </div>
                         </div>
 
-                        <!-- Spot 7: Làng hương Thủy Xuân -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hue_lang_huong.webp', 'Làng Hương Thủy Xuân — Rực Rỡ Đóa Hoa Hương Trầm Trăm Năm', 'Nằm trên cung đường lên Lăng Tự Đức, làng nghề làm hương trầm truyền thống hơn 700 năm tuổi nổi tiếng với những bó hương xòe tròn như đóa hoa đủ sắc màu: vàng, đỏ, xanh, tím rực rỡ dưới nắng.')">
+                        <!-- Spot 7: Làng hương Thủy Xuân (Featured Di Sản) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/hue_lang_huong_thuy_xuan.webp', 'Làng Hương Thủy Xuân — Sắc Màu Di Sản Dưới Chân Đồi Vọng Cảnh', 'Làng nghề làm hương trầm truyền thống hơn 700 năm tuổi trên đường Huyền Trân Công Chúa. Những bó hương xòe rộng rực rỡ sắc đỏ, vàng, lục, tím bung nở như những đóa hoa khổng lồ phơi mình dưới nắng sớm, ngào ngạt hương trầm quế thơm ngát khắp nẻo đường Cố đô.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/hue_lang_huong_thuy_xuan.webp', 'Làng hương Thủy Xuân rực rỡ sắc màu Huế', 'Làng Hương Thủy Xuân — Sắc Màu Di Sản Dưới Chân Đồi Vọng Cảnh', 'Làng nghề làm hương trầm truyền thống hơn 700 năm tuổi trên đường Huyền Trân Công Chúa. Những bó hương xòe rộng rực rỡ sắc đỏ, vàng, lục, tím bung nở như những đóa hoa khổng lồ phơi mình dưới nắng sớm, ngào ngạt hương trầm quế thơm ngát khắp nẻo đường Cố đô.')">📸 Sắc màu làng hương</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/hue_lang_huong.webp', 'Bó hương trầm thủ công Thủy Xuân Huế', 'Nghệ Thuật Se Hương Trầm Thủ Công Thủy Xuân', 'Cận cảnh những bó hương trầm được se tay tỉ mỉ từ bột trầm, hoa hồi và vỏ quế thơm ngát của các nghệ nhân làng Thủy Xuân.')">📸 Hương trầm se tay</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/hue_lang_huong.webp" alt="Làng hương Thủy Xuân Huế" loading="lazy">
+                                <img src="images/hue_lang_huong_thuy_xuan.webp" alt="Làng hương Thủy Xuân sắc màu di sản Huế" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Làng Nghề 700 Năm</span>
-                                    <span class="tag">Check-in Sống Ảo</span>
+                                    <span class="tag tag-hot">🔥 Di Sản Làng Nghề 700 Năm</span>
+                                    <span class="tag">Hương Trầm Cổ Truyền</span>
+                                    <span class="tag">Đồi Vọng Cảnh</span>
                                 </div>
-                                <h3 class="dest-card-title">7. Làng Hương Thủy Xuân — Sắc Màu Di Sản</h3>
-                                <p class="dest-card-desc">Không gian ngát hương thơm trầm ấm và điểm dừng chân chụp ảnh cổ phục Việt rực rỡ bậc nhất xứ Huế.</p>
+                                <h3 class="dest-card-title">7. Làng Hương Thủy Xuân — Đóa Hoa Rực Rỡ Chốn Cố Đô</h3>
+                                <p class="dest-card-desc">Làng nghề làm hương trầm cổ truyền hơn 7 thế kỷ, nơi hàng ngàn bó chân hương xòe rộng muôn sắc màu như vườn hoa bung nở rực rỡ trong nắng vàng, thơm ngát mùi trầm xứ kinh kỳ.</p>
                             </div>
                         </div>
 
@@ -1005,19 +1060,24 @@
                             </div>
                         </div>
 
-                        <!-- Spot 10: Lăng Đồng Khánh -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hue_lang_dong_khanh.webp', 'Lăng Đồng Khánh (Tư Lăng) — Dấu Ấn Giao Thoa Mỹ Thuật Á - Âu', 'Nằm nép mình bên chân đồi thuộc làng Cư Sĩ. Công trình đánh dấu thời kỳ chuyển tiếp trong nghệ thuật kiến trúc cung đình với các chi tiết tranh kính màu, cột trụ đắp nổi xi măng và điện Ngưng Hy sơn son thếp vàng rực rỡ.')">
+                        <!-- Spot 10: Nhà Rường Cổ Huế & Quần Thể Nhà Vườn (Featured Di Sản) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/hue_nha_ruong_co_kim_long.webp', 'Nhà Rường Cổ Huế — Kiệt Tác Kiến Trúc Gỗ & Nhà Vườn Xứ Thần Kinh', 'Nhà rường cổ truyền xứ Huế (tiêu biểu tại làng cổ Kim Long, Phú Mộng) được dựng bằng gỗ mít, gỗ lim quý hiếm với hệ khung kèo rường chạm trổ hoa sen, mây rồng tinh xảo không dùng đinh kim loại. Mái ngói liệt rêu phong ẩn mình giữa khu vườn cây trái xum xuê, hồ sen và bình phong đá cổ kính.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/hue_nha_ruong_co_kim_long.webp', 'Nhà rường cổ Kim Long Phú Mộng xứ Huế', 'Nhà Rường Cổ Huế — Kiệt Tác Kiến Trúc Gỗ & Nhà Vườn Xứ Thần Kinh', 'Nhà rường cổ truyền xứ Huế (tiêu biểu tại làng cổ Kim Long, Phú Mộng) được dựng bằng gỗ mít, gỗ lim quý hiếm với hệ khung kèo rường chạm trổ hoa sen, mây rồng tinh xảo không dùng đinh kim loại. Mái ngói liệt rêu phong ẩn mình giữa khu vườn cây trái xum xuê, hồ sen và bình phong đá cổ kính.')">📸 Nhà rường cổ Kim Long</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/hue_lang_dong_khanh.webp', 'Lăng Đồng Khánh kiến trúc mỹ thuật Á Âu', 'Lăng Đồng Khánh — Giao Thoa Mỹ Thuật Cung Đình', 'Điện Ngưng Hy sơn son thếp vàng lộng lẫy và các chi tiết khảm sành sứ, tranh kính màu tinh xảo thời kỳ chuyển tiếp nghệ thuật cung đình triều Nguyễn.')">📸 Kiến trúc cung đình</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/hue_lang_dong_khanh.webp" alt="Lăng Đồng Khánh Tư Lăng Huế" loading="lazy">
+                                <img src="images/hue_nha_ruong_co_kim_long.webp" alt="Nhà rường cổ Kim Long nhà vườn xứ Huế" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Điện Ngưng Hy</span>
-                                    <span class="tag">Sơn Son Thếp Vàng</span>
+                                    <span class="tag tag-hot">🔥 Di Sản Kiến Trúc Thuần Việt</span>
+                                    <span class="tag">Nhà Rường Cổ Kim Long</span>
+                                    <span class="tag">Vườn Thần Kinh Xanh Mát</span>
                                 </div>
-                                <h3 class="dest-card-title">10. Lăng Đồng Khánh — Giao Thoa Mỹ Thuật</h3>
-                                <p class="dest-card-desc">Nội thất điện Ngưng Hy được giới chuyên môn đánh giá là bảo tàng nghệ thuật sơn son thếp vàng tinh xảo bậc nhất triều Nguyễn.</p>
+                                <h3 class="dest-card-title">10. Nhà Rường Cổ Huế & Quần Thể Nhà Vườn — Hồn Xưa Xứ Thần Kinh</h3>
+                                <p class="dest-card-desc">Kiệt tác kiến trúc nhà gỗ rường cột chạm khắc kỳ công hòa quyện cùng nghệ thuật phong thủy sân vườn, hồ sen và bình phong cổ kính, lưu giữ cốt cách phong lưu, tao nhã trăm năm của con người xứ Huế.</p>
                             </div>
                         </div>
                     </div>
@@ -1345,6 +1405,28 @@
                 closeLightboxDirect();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, title, caption) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            card.onclick = function() {
+                openLightbox(imgSrc, title, caption);
+            };
+        }
+
     </script>
 </body>
 </html>
