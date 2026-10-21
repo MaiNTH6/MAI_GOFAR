@@ -673,6 +673,56 @@
             .hero { height: 45vh; }
             .article-main { padding: 1.5rem; }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -956,7 +1006,28 @@
                             </div>
                         </div>
 
-                        <!-- Spot 7: Tuyệt Tịnh Cốc (Động Am Tiên) -->
+                        <!-- Spot 7: Làng Nghề Thêu Ren Văn Lâm (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/ninhbinh_lang_theu_van_lam.webp', 'Làng Nghề Thêu Ren Cổ Truyền Văn Lâm — Tinh Hoa Chỉ Đạo Hơn 700 Năm', 'Làng nghề thêu ren Văn Lâm nằm ngay bên bến thuyền Tam Cốc, có lịch sử từ thế kỷ XIII thời vua Trần Thái Tông khi hoàng hậu Trần Thị Dung truyền dạy nghề cho dân làng. Nghệ nhân Văn Lâm luồn từng sợi chỉ ngũ sắc thêu nên những bức tranh tơ tằm cảnh sắc non nước Tràng An, hoa sen và các dải ren đăng ten tinh xảo nức danh xuất khẩu quốc tế.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/ninhbinh_lang_theu_van_lam.webp', 'Xưởng thêu ren cổ truyền Văn Lâm Tam Cốc', 'Làng Nghề Thêu Ren Cổ Truyền Văn Lâm — Tinh Hoa Chỉ Đạo Hơn 700 Năm', 'Làng nghề thêu ren Văn Lâm nằm ngay bên bến thuyền Tam Cốc, có lịch sử từ thế kỷ XIII thời vua Trần Thái Tông khi hoàng hậu Trần Thị Dung truyền dạy nghề cho dân làng. Nghệ nhân Văn Lâm luồn từng sợi chỉ ngũ sắc thêu nên những bức tranh tơ tằm cảnh sắc non nước Tràng An, hoa sen và các dải ren đăng ten tinh xảo nức danh xuất khẩu quốc tế.')">📸 Thêu ren Văn Lâm 700 năm</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/tam_coc_co_vien_lau_1785642882154.webp', 'Làng cổ Cố Viên Lầu Tam Cốc Ninh Bình', 'Làng Cổ Cố Viên Lầu — Không Gian Nhà Cổ Bắc Bộ Trăm Năm', 'Quần thể hơn 20 nếp nhà rường cổ truyền thống từ thế kỷ XVIII - XIX quy tụ bên dòng sông Ngô Đồng, lưu giữ nét sinh hoạt phong lưu cổ kính của làng quê Bắc Bộ xưa.')">📸 Làng cổ Cố Viên Lầu</button>
+                            </div>
+                            <div class="dest-card-img">
+                                <img src="images/ninhbinh_lang_theu_van_lam.webp" alt="Làng nghề thêu ren cổ truyền Văn Lâm Tam Cốc Ninh Bình" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Di Sản Làng Nghề 700 Năm</span>
+                                    <span class="tag">Thêu Ren Thủ Công Văn Lâm</span>
+                                    <span class="tag">Bến Đò Tam Cốc</span>
+                                </div>
+                                <h3 class="dest-card-title">7. Làng Nghề Thêu Ren Văn Lâm — Tinh Hoa Bàn Tay Vàng 7 Thế Kỷ</h3>
+                                <p class="dest-card-desc">Cái nôi thêu ren thủ công trứ danh miền Bắc gắn liền thời nhà Trần mở cõi, nơi nghệ nhân cần mẫn luồn từng sợi chỉ tơ dệt nên gấm vóc hoa sen và không gian làng cổ Cố Viên Lầu trầm mặc.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 8: Động Am Tiên - Tuyệt Tịnh Cốc (single-col) -->
                         <div class="dest-card single-col" onclick="openLightbox('images/hoa_lu_am_tien_cave_1785641773711.webp', 'Động Am Tiên — Tuyệt Tịnh Cốc Thơ Mộng', 'Thung lũng biệt lập được bao bọc bởi vách đá dựng đứng, ở giữa là hồ nước Giải trong vắt quanh năm in bóng cổng thành đá cổ và chùa Am Tiên trên cao.')">
                             <div class="dest-card-img">
                                 <img src="images/hoa_lu_am_tien_cave_1785641773711.webp" alt="Động Am Tiên Tuyệt Tịnh Cốc Ninh Bình" loading="lazy">
@@ -967,59 +1038,47 @@
                                     <span class="tag">Hồ Nước Ngọc Bích</span>
                                     <span class="tag">Cổng Thành Cổ</span>
                                 </div>
-                                <h3 class="dest-card-title">7. Động Am Tiên — Tuyệt Tịnh Cốc</h3>
-                                <p class="dest-card-desc">Xưa kia từng là nơi nuôi nhốt dã thú răn đe phạm nhân thời Đinh, nay là chốn bồng lai thanh tịnh soi bóng mặt hồ ngọc bích.</p>
+                                <h3 class="dest-card-title">8. Động Am Tiên — Tuyệt Tịnh Cốc</h3>
+                                <p class="dest-card-desc">Hồ nước xanh như ngọc bích nằm lọt thỏm giữa bốn bề vách núi đá dựng đứng, chốn bồng lai thanh tịnh thoát tục.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 8: Chùa Bích Động -->
+                        <!-- Spot 9: Chùa Bích Động (single-col) -->
                         <div class="dest-card single-col" onclick="openLightbox('images/bich_dong_pagoda_1785483683589.webp', 'Chùa Bích Động — Nam Thiên Đệ Nhị Động', 'Cổ tự ba tầng Hạ - Trung - Thượng xây tựa vào vách núi đá vôi, nổi tiếng với chiếc cầu đá bắc qua hồ súng dẫn vào cổng chùa cổ kính phủ rêu phong.')">
                             <div class="dest-card-img">
-                                <img src="images/bich_dong_pagoda_1785483683589.webp" alt="Chùa Bích Động cổng cổ Ninh Bình" loading="lazy">
+                                <img src="images/bich_dong_pagoda_1785483683589.webp" alt="Chùa Bích Động Cổ Tự Ninh Bình" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Cổ Tự Kỳ Quan</span>
-                                    <span class="tag">Cổng Đá Rêu Phong</span>
+                                    <span class="tag">Nam Thiên Đệ Nhị Động</span>
+                                    <span class="tag">Cổ Tự 1428</span>
                                 </div>
-                                <h3 class="dest-card-title">8. Chùa Bích Động — Cổ Tự Trong Hang</h3>
-                                <p class="dest-card-desc">Được chúa Trịnh Sâm ban tặng danh hiệu "Nam thiên đệ nhị động" (Động đẹp thứ nhì trời Nam), ẩn mình giữa sắc xanh kỳ bí của hoa lá và núi đá.</p>
+                                <h3 class="dest-card-title">9. Chùa Bích Động — Cổ Tự Trong Hang</h3>
+                                <p class="dest-card-desc">Cổng chùa bằng đá rêu phong soi bóng hồ sen thơm ngát, dẫn lối lên các tầng hang động tĩnh mịch linh thiêng.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 9: Đền Thái Vi -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/tam_coc_thai_vi_1785642868140.webp', 'Đền Thái Vi — Dấu Tích Hành Cung Vũ Lâm', 'Ngôi đền bằng đá xanh nguyên khối thờ phụng các vua Trần Thái Tông, Trần Thánh Tông, danh tướng Trần Hưng Đạo và hoàng hậu Thuận Thiên.')">
+                        <!-- Spot 10: Quần Thể Nhà Thờ Đá Phát Diệm (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/ninhbinh_nha_tho_da_phat_diem.webp', 'Nhà Thờ Đá Phát Diệm — Kiệt Tác Kiến Trúc Đá Đình Chùa Giao Thoa Á - Âu', 'Quần thể thánh đường độc nhất vô nhị được cụ Sáu (Linh mục Phêrô Trần Lục) chủ trì xây dựng suốt 24 năm (1875 - 1898) hoàn toàn bằng đá khối tự nhiên và gỗ lim nguyên cây. Tháp chuông Phương Đình mang hình dáng cổng tam quan mái ngói cong như đình chùa Việt Nam, chạm khắc hoa sen, tùng cúc trúc mai giao hòa cùng biểu tượng Công giáo phương Tây.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/ninhbinh_nha_tho_da_phat_diem.webp', 'Tháp chuông Phương Đình Nhà thờ đá Phát Diệm', 'Nhà Thờ Đá Phát Diệm — Kiệt Tác Kiến Trúc Đá Đình Chùa Giao Thoa Á - Âu', 'Quần thể thánh đường độc nhất vô nhị được cụ Sáu (Linh mục Phêrô Trần Lục) chủ trì xây dựng suốt 24 năm (1875 - 1898) hoàn toàn bằng đá khối tự nhiên và gỗ lim nguyên cây. Tháp chuông Phương Đình mang hình dáng cổng tam quan mái ngói cong như đình chùa Việt Nam, chạm khắc hoa sen, tùng cúc trúc mai giao hòa cùng biểu tượng Công giáo phương Tây.')">📸 Nhà thờ đá Phát Diệm</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/tam_coc_thai_vi_1785642868140.webp', 'Đền Thái Vi thờ các vị vua Trần Tam Cốc', 'Đền Thái Vi — Hào Khí Đông A Thời Trần', 'Ngôi đền bằng đá cổ kính tựa lưng vào núi đá Cấm Sơn thờ các vị vua Trần Thái Tông, Trần Thánh Tông và hoàng hậu Thuận Thiên giữa thung lũng Tam Cốc non xanh nước biếc.')">📸 Đền Thái Vi hào khí Đông A</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/tam_coc_thai_vi_1785642868140.webp" alt="Đền Thái Vi Tam Cốc Ninh Bình" loading="lazy">
+                                <img src="images/ninhbinh_nha_tho_da_phat_diem.webp" alt="Nhà thờ đá Phát Diệm kiệt tác kiến trúc Kim Sơn Ninh Bình" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Hành Cung Vũ Lâm</span>
-                                    <span class="tag">Kiến Trúc Đá Xanh</span>
+                                    <span class="tag tag-hot">🔥 Kiệt Tác Đá Đông - Tây</span>
+                                    <span class="tag">Tháp Chuông Phương Đình</span>
+                                    <span class="tag">Gỗ Lim & Đá Khối 1875</span>
                                 </div>
-                                <h3 class="dest-card-title">9. Đền Thái Vi — Hào Khí Đông A</h3>
-                                <p class="dest-card-desc">Kiến trúc đá nguyên khối sừng sững giữa thung lũng Ngũ Nhạc Sơn, minh chứng lịch sử cho sự chọn lựa địa bàn chiến lược chống giặc Mông Cổ của triều Trần.</p>
+                                <h3 class="dest-card-title">10. Quần Thể Nhà Thờ Đá Phát Diệm — Trầm Tích Đá Giao Thoa Đông Tây</h3>
+                                <p class="dest-card-desc">Kiệt tác kiến trúc đá độc bản thế giới xây dựng ròng rã 24 năm bằng đá khối và gỗ lim, nơi mái đình cong thuần Việt giao thoa tuyệt mỹ cùng thánh đường Công giáo và đền Thái Vi hào khí Đông A.</p>
                             </div>
-                        </div>
-
-                        <!-- Spot 10: Thung Nắng -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/tam_coc_thung_nang_1785642894867.webp', 'Thung Nắng — Miền Thung Lũng Hoang Sơ', 'Thung lũng đá vôi ngập tràn ánh nắng vàng ấm áp, đầm lau sậy đung đưa theo gió và mặt nước trong veo rải rác những đóa hoa súng tím biếc.')">
-                            <div class="dest-card-img">
-                                <img src="images/tam_coc_thung_nang_1785642894867.webp" alt="Thung Nắng thuyền nan Ninh Bình" loading="lazy">
-                            </div>
-                            <div class="dest-card-overlay"></div>
-                            <div class="dest-card-content">
-                                <div class="dest-card-tags">
-                                    <span class="tag">Bình Yên Thoát Tục</span>
-                                    <span class="tag">Hoa Súng Thung Lũng</span>
-                                </div>
-                                <h3 class="dest-card-title">10. Thung Nắng — Chốn Tĩnh Lặng Nguyên Sơ</h3>
-                                <p class="dest-card-desc">Lộ trình thuyền êm đềm thích hợp cho những ai yêu thích vẻ đẹp thiên nhiên hoang sơ không ồn ào chen chúc, ngắm nhìn đàn cá bơi lội dưới đáy rong rêu.</p>
-                            </div>
-                        </div>
-                    </div>
+                        </div></div>
                 </section>
 
                 <!-- MỤC 6: CẨM NANG DI CHUYỂN -->
@@ -1341,6 +1400,28 @@
                 closeLightboxDirect();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, title, caption) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            card.onclick = function() {
+                openLightbox(imgSrc, title, caption);
+            };
+        }
+
     </script>
 </body>
 </html>

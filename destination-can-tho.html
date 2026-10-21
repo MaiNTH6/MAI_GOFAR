@@ -691,6 +691,56 @@
             .lightbox-content { max-height: 42vh; }
             .lightbox-caption-wrap { padding: 1.2rem; }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -851,163 +901,175 @@
 
                 <div class="checkin-grid">
 
-                    <!-- 1. Chợ nổi Cái Răng -->
-                    <div class="dest-card double-col" data-legend="Chợ nổi Cái Răng nằm trên sông Cần Thơ, cách trung tâm thành phố khoảng 6km. Được công nhận là Di sản văn hóa phi vật thể quốc gia theo Quyết định 266/QĐ-BVHTTDL ngày 10/3/2016. Chợ hình thành tự phát từ đầu thế kỷ XX khi đường bộ chưa phát triển, trở thành đầu mối bán buôn nông sản quy mô lớn nhất đồng bằng châu thổ. Nét văn hóa độc nhất là 'Cây bẹo' treo nông sản đầu mũi ghe và những chiếc ghe ẩm thực phục vụ hủ tiếu, bún riêu, cà phê kho ngay trên mặt nước bồng bềnh.">
+                    <!-- 1. Chợ nổi Cái Răng (double-col) -->
+                    <div class="dest-card double-col" data-legend="Chợ nổi Cái Răng nằm trên sông Cần Thơ, cách trung tâm thành phố khoảng 6km. Được công nhận là Di sản văn hóa phi vật thể quốc gia theo Quyết định 266/QĐ-BVHTTDL năm 2016. Chợ họp từ 5h00 đến 9h00 sáng với hàng trăm ghe xuồng buôn bán nông sản miệt vườn, nổi bật với hình thức tiếp thị dân gian độc đáo 'cây bẹo' (treo gì bán nấy, treo mà không bán, không treo mà bán).">
                         <div class="dest-card-img">
-                            <img src="images/cantho_cho_noi_cai_rang.webp" alt="Chợ nổi Cái Răng Cần Thơ" loading="lazy">
+                            <img src="images/cantho_mua_nuoc_noi_cho_noi.webp" alt="Chợ nổi Cái Răng Cần Thơ tấp nập thuyền ghe buôn bán nông sản" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Di sản Quốc gia</span>
-                                <span class="tag">Bình minh sông Hậu</span>
+                                <span class="tag tag-hot">🔥 Di Sản Quốc Gia</span>
+                                <span class="tag">Văn Hóa Sông Nước</span>
+                                <span class="tag">Họp Chợ 5h - 9h</span>
                             </div>
                             <h3 class="dest-card-title">1. Chợ Nổi Cái Răng (Di Sản Quốc Gia)</h3>
-                            <p class="dest-card-desc">Bức tranh giao thương sông nước bồng bềnh lúc bình minh với hàng trăm ghe xuồng chở đầy hoa trái nhiệt đới và cây bẹo độc đáo.</p>
+                            <p class="dest-card-desc">Bức tranh giao thương sông nước độc nhất vô nhị miền Tây, rộn rã tiếng máy nổ và hình ảnh cây bẹo treo sản vật chào mời du khách.</p>
                         </div>
                     </div>
 
-                    <!-- 2. Bến Ninh Kiều & Cầu Tình Yêu -->
-                    <div class="dest-card single-col" data-legend="Bến Ninh Kiều hình thành từ thế kỷ XIX thời Pháp thuộc, ban đầu mang tên Hàng Dương, đến năm 1957 được đổi tên thành Ninh Kiều theo sự kiện chiến thắng lịch sử của nghĩa quân Lam Sơn năm 1426. Tọa lạc bên hữu ngạn sông Hậu, bến Ninh Kiều ngày nay là công viên đi bộ sầm uất với Tượng đài Chủ tịch Hồ Chí Minh bằng đồng cao 7,2m. Cầu đi bộ Ninh Kiều (Cầu Tình Yêu) uốn lượn hình chữ S với hai đóa hoa sen phát sáng LED rực rỡ bắc qua rạch Khai Luông là điểm hẹn hò ngắm cảnh lãng mạn bậc nhất Tây Đô.">
+                    <!-- 2. Bến Ninh Kiều (single-col) -->
+                    <div class="dest-card single-col" data-legend="Bến Ninh Kiều (nay là Công viên Ninh Kiều) nằm bên ngã ba sông Hậu và sông Cần Thơ, hình thành từ thế kỷ XIX thời vua Tự Đức. Cầu đi bộ Ninh Kiều (Cầu Tình Yêu) dài gần 200m uốn lượn hình chữ S với hai đài hoa sen rực rỡ đèn LED về đêm, mở ra tầm nhìn tuyệt đẹp hướng ra cầu Cần Thơ dây văng kỳ vĩ.">
                         <div class="dest-card-img">
-                            <img src="images/cantho_ben_ninh_kieu_cau_tinh_yeu.webp" alt="Bến Ninh Kiều và Cầu Tình Yêu Cần Thơ" loading="lazy">
+                            <img src="images/cantho_ben_ninh_kieu_cau_tinh_yeu.webp" alt="Bến Ninh Kiều và Cầu Tình Yêu Cần Thơ lung linh về đêm" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Biểu tượng Tây Đô</span>
-                                <span class="tag">Lung linh về đêm</span>
+                                <span class="tag tag-hot">Biểu Tượng Đô Thị</span>
+                                <span class="tag">Sông Hậu</span>
                             </div>
                             <h3 class="dest-card-title">2. Bến Ninh Kiều & Cầu Tình Yêu</h3>
-                            <p class="dest-card-desc">Công viên ven sông Hậu lộng gió, ngắm du thuyền lộng lẫy và cầu đi bộ hoa sen lung linh ánh đèn lúc hoàng hôn.</p>
+                            <p class="dest-card-desc">Trái tim thơ mộng của Cần Thơ, nơi dạo bước ngắm dòng sông Hậu hiền hòa và cầu đi bộ rực rỡ sắc màu khi phố lên đèn.</p>
                         </div>
                     </div>
 
-                    <!-- 3. Nhà cổ Bình Thủy -->
-                    <div class="dest-card single-col" data-legend="Nhà cổ Bình Thủy (Nhà thờ họ Dương) tại số 144 Bùi Hữu Nghĩa, quận Bình Thủy được Bộ VHTTDL xếp hạng Di tích kiến trúc nghệ thuật cấp quốc gia năm 2009. Ngôi nhà 5 gian 2 mái do ông Dương Chấn Kỷ khởi dựng năm 1870, hoàn thành đầu thế kỷ XX. Đây là hình mẫu tuyệt mỹ về sự kết hợp Đông - Tây: mặt tiền mang kiến trúc biệt thự Pháp với vòm cuốn, cột corinthian và hoa sắt, nhưng bên trong bài trí theo phong thủy Á Đông thuần khiết với bao lam sơn son thếp vàng và bộ bàn ghế cẩm thạch Vân Nam. Ngôi nhà từng được chọn làm bối cảnh chính cho phim điện ảnh thế giới 'Người tình' (L'Amant).">
+                    <!-- 3. Thiền viện Trúc Lâm Phương Nam (single-col) -->
+                    <div class="dest-card single-col" data-legend="Khánh thành năm 2014 tại xã Mỹ Khánh (huyện Phong Điền), đây là ngôi thiền viện lớn nhất miền Tây Nam Bộ với diện tích gần 4 hecta. Quần thể mang đậm phong cách kiến trúc thời Lý - Trần thuần Việt với các công trình chính điện, tháp chuông, tháp trống được dựng hoàn toàn bằng gỗ lim nhập khẩu quý hiếm và tượng Phật Thích Ca bằng đồng nặng 3,5 tấn.">
                         <div class="dest-card-img">
-                            <img src="images/cantho_nha_co_binh_thuy.webp" alt="Nhà cổ Bình Thủy Cần Thơ" loading="lazy">
+                            <img src="images/cantho_thien_vien_truc_lam_phuong_nam.webp" alt="Thiền viện Trúc Lâm Phương Nam Cần Thơ uy nghiêm thanh tịnh" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Di tích Quốc gia</span>
-                                <span class="tag">Phim Người tình</span>
+                                <span class="tag">Thiền Viện Lớn Nhất Miền Tây</span>
+                                <span class="tag">Phong Điền</span>
                             </div>
-                            <h3 class="dest-card-title">3. Nhà Cổ Bình Thủy (Họ Dương)</h3>
-                            <p class="dest-card-desc">Viên ngọc kiến trúc Pháp - Việt hơn 150 năm tuổi với kho tàng cổ vật quý hiếm và khu vườn phong lan tao nhã.</p>
+                            <h3 class="dest-card-title">3. Thiền Viện Trúc Lâm Phương Nam</h3>
+                            <p class="dest-card-desc">Chốn thiền môn thanh tịnh giữa miệt vườn Nam Bộ, kiến trúc gỗ lim thời Lý - Trần uy nghiêm bên hồ sen tĩnh mịch.</p>
                         </div>
                     </div>
 
-                    <!-- 4. Thiền viện Trúc Lâm Phương Nam -->
-                    <div class="dest-card single-col" data-legend="Tọa lạc tại ấp Mỹ Nhơn, xã Mỹ Khánh, huyện Phong Điền; khánh thành ngày 17/5/2014. Với khuôn viên rộng gần 4 hecta, đây là ngôi thiền viện lớn nhất miền Tây Nam Bộ theo dòng thiền Trúc Lâm Yên Tử do Phật hoàng Trần Nhân Tông sáng lập. Toàn bộ chính điện và các công trình rường cột được dựng từ 1.000 khối gỗ lim nhập khẩu, lợp ngói mũi hài theo đúng phong cách kiến trúc thời Lý - Trần thuần Việt, mang lại không gian thanh tịnh và uy nghiêm giữa đồng bằng trù phú.">
+                    <!-- 4. Cồn Sơn — Du Lịch Sinh Thái Miệt Vườn (double-col) -->
+                    <div class="dest-card double-col" data-legend="Cồn Sơn là cồn đất nổi phù sa màu mỡ giữa dòng sông Hậu thuộc quận Bình Thủy. Nơi đây tiên phong mô hình du lịch cộng đồng sinh thái miệt vườn bền vững, nơi du khách được thưởng thức buffet bánh dân gian Nam Bộ hơn 50 loại, tham quan bè nuôi cá tra cá thát lát trên sông Hậu và chiêm ngưỡng màn biểu diễn độc đáo 'cá lóc bay' ngoạn mục.">
                         <div class="dest-card-img">
-                            <img src="images/cantho_thien_vien_truc_lam_phuong_nam.webp" alt="Thiền viện Trúc Lâm Phương Nam Cần Thơ" loading="lazy">
+                            <img src="images/cantho_con_son_ca_loc_bay.webp" alt="Trải nghiệm du lịch sinh thái cộng đồng Cồn Sơn Cần Thơ" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Kiến trúc gỗ lim</span>
-                                <span class="tag">Trúc Lâm Yên Tử</span>
+                                <span class="tag tag-hot">🔥 Sinh Thái Miệt Vườn</span>
+                                <span class="tag">Màn Diễn Cá Lóc Bay</span>
+                                <span class="tag">50+ Bánh Dân Gian</span>
                             </div>
-                            <h3 class="dest-card-title">4. Thiền Viện Trúc Lâm Phương Nam</h3>
-                            <p class="dest-card-desc">Thiền viện Phật giáo lớn nhất miền Tây với chánh điện gỗ lim uy nghiêm, hồ sen thơm ngát và tượng Phật thanh tịnh.</p>
+                            <h3 class="dest-card-title">4. Cồn Sơn & Trải Nghiệm Sinh Thái "Cá Lóc Bay"</h3>
+                            <p class="dest-card-desc">Làng du lịch cộng đồng mộc mạc giữa sông Hậu, thưởng thức buffet bánh dân gian ba miền và ngắm đàn cá lóc tung mình đớp mồi trên mặt nước.</p>
                         </div>
                     </div>
 
-                    <!-- 5. Miệt vườn Phong Điền -->
-                    <div class="dest-card single-col" data-legend="Huyện Phong Điền được mệnh danh là 'Vương quốc trái cây' của thủ phủ Tây Đô với hơn 8.500 hecta vườn cây ăn trái quanh năm trĩu quả. Nhờ nguồn phù sa ngọt ngào từ sông Cần Thơ bồi đắp, Phong Điền nức tiếng với giống dâu Hạ Châu đặc sản duy nhất, sầu riêng Ri6, chôm chôm nhãn, vú sữa Lò Rèn và măng cụt. Du khách tới đây có thể tự tay hái quả chín trên cây, chèo xuồng ba lá len lỏi trong rạch nhỏ và thưởng thức bữa cơm đồng quê đậm chất Nam Bộ.">
+                    <!-- 5. Chùa Khmer Munir Ansay (single-col) -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc tại số 36 Đại lộ Hòa Bình (quận Ninh Kiều), chùa Munir Ansay (Munirangsyaram) xây dựng năm 1946 là ngôi chùa Khmer cổ kính và lộng lẫy nhất Cần Thơ. Kiến trúc mang đậm triết lý Phật giáo Nam tông với tháp bảo Angkor mạ vàng rực rỡ, các bức tượng thần Chằn Yeak xua đuổi tà khí và phù điêu đắp nổi tinh xảo kể về cuộc đời Đức Phật.">
                         <div class="dest-card-img">
-                            <img src="images/cantho_miet_vuon_phong_dien.webp" alt="Miệt vườn trái cây Phong Điền Cần Thơ" loading="lazy">
+                            <img src="images/cantho_chua_khmer_munir_ansay.webp" alt="Chùa Khmer Munir Ansay lộng lẫy kiến trúc Angkor tại Cần Thơ" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Thủ phủ trái cây</span>
+                                <span class="tag">Kiến Trúc Angkor</span>
+                                <span class="tag">Phật Giáo Nam Tông</span>
+                            </div>
+                            <h3 class="dest-card-title">5. Chùa Khmer Munir Ansay</h3>
+                            <p class="dest-card-desc">Ngôi chùa Khmer rực rỡ sắc vàng son giữa lòng Tây Đô, lưu giữ nét đẹp văn hóa tâm linh độc đáo của đồng bào Khmer.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Chùa Ông - Quảng Triệu Hội Quán (single-col) -->
+                    <div class="dest-card single-col" data-legend="Chùa Ông (Quảng Triệu Hội Quán) nằm đối diện bến Ninh Kiều, được xây dựng từ năm 1894 đến 1896 bởi cộng đồng người Hoa gốc Quảng Đông. Ngôi chùa được công nhận Di tích Lịch sử - Văn hóa cấp Quốc gia năm 1993, nổi bật với hệ mái ngói âm dương gắn phù điêu gốm nhiều màu, hàng trăm vòng nhang trầm khổng lồ treo lơ lửng và nghệ thuật chạm khắc gỗ sơn son thếp vàng lộng lẫy.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_chua_ong_ninh_kieu.webp" alt="Chùa Ông Quảng Triệu Hội Quán cổ kính bên bến Ninh Kiều Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di Tích Quốc Gia 1993</span>
+                                <span class="tag">Kiến Trúc Người Hoa</span>
+                            </div>
+                            <h3 class="dest-card-title">6. Chùa Ông (Quảng Triệu Hội Quán)</h3>
+                            <p class="dest-card-desc">Cổ tự hơn 130 năm tuổi với nghệ thuật gốm phù điêu tinh xảo, những vòng nhang trầm khói tỏa nghi ngút nguyện cầu bình an.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Nhà Cổ Bình Thủy (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Tọa lạc tại số 144 Bùi Hữu Nghĩa (quận Bình Thủy), ngôi nhà cổ 5 gian 2 mái do ông Dương Chấn Kỷ khởi công xây dựng năm 1870. Đây là kiệt tác kiến trúc Đông - Tây kết hợp hoàn hảo bậc nhất Nam Bộ: bên ngoài mang dáng dấp biệt thự cổ điển Pháp với cầu thang vòng cung và hoa văn thạch cao La Mã, bên trong là không gian thuần Việt với hệ thống bao lam, liễn đối chạm khắc gỗ chạm xà cừ kỳ công và nền gạch bông hoa văn Pháp cổ điển. Nơi đây từng là bối cảnh chính của bộ phim điện ảnh kinh điển 'Người Tình' (L'Amant).">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/cantho_nha_co_binh_thuy_kien_truc.webp', 'Kiến trúc Đông Tây Nhà cổ Bình Thủy 1870', 'Nhà Cổ Bình Thủy (Họ Dương) — Kiệt Tác Kiến Trúc Đông - Tây 1870. Cận cảnh mặt tiền kiến trúc Pháp cổ điển kết hợp bao lam gỗ chạm xà cừ thuần Việt.')">📸 Kiến trúc Đông - Tây 1870</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/cantho_nha_co_binh_thuy.webp', 'Toàn cảnh Nhà cổ Bình Thủy Cần Thơ', 'Toàn cảnh Nhà cổ Bình Thủy với vườn lan quý và sân gạch cổ kính trăm năm.')">📸 Vườn lan & Sân gạch cổ</button>
+                        </div>
+                        <div class="dest-card-img">
+                            <img src="images/cantho_nha_co_binh_thuy_kien_truc.webp" alt="Kiến trúc Đông Tây Nhà cổ Bình Thủy họ Dương Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Di Tích Kiến Trúc Quốc Gia</span>
+                                <span class="tag">Gia Tộc Họ Dương 1870</span>
+                                <span class="tag">Bối Cảnh Phim Người Tình</span>
+                            </div>
+                            <h3 class="dest-card-title">7. Nhà Cổ Bình Thủy — Tuyệt Tác Kiến Trúc Pháp - Việt Trăm Năm</h3>
+                            <p class="dest-card-desc">Kiệt tác biệt phủ cổ điển của gia tộc họ Dương xây dựng từ năm 1870, nơi giao thoa tuyệt mỹ giữa phong cách Baroque châu Âu và hồn cốt chạm khắc gỗ xà cừ Nam Bộ.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Miệt Vườn Sinh Thái Phong Điền (single-col) -->
+                    <div class="dest-card single-col" data-legend="Phong Điền được ví như 'thủ phủ trái cây' của miền Tây với hơn 8.500 hecta vườn cây ăn trái sum sê bạt ngàn. Du khách có thể chèo xuồng ba lá len lỏi dưới bóng mát râm ran của những vườn dâu Hạ Châu mọng nước, vú sữa Lò Rèn, sầu riêng chín bùi và nhãn xuồng cơm vàng, tự tay hái quả chín ngọt ngào thưởng thức tại chỗ.">
+                        <div class="dest-card-img">
+                            <img src="images/cantho_miet_vuon_phong_dien.webp" alt="Miệt vườn trái cây sum sê trĩu quả Phong Điền Cần Thơ" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Vựa Trái Cây Miền Tây</span>
                                 <span class="tag">Dâu Hạ Châu</span>
                             </div>
-                            <h3 class="dest-card-title">5. Miệt Vườn Sinh Thái Phong Điền</h3>
-                            <p class="dest-card-desc">Không gian sinh thái miệt vườn trù phú, tự tay trẩy chôm chôm, sầu riêng chín cây và thư thái chèo xuồng dưới tán lá xanh mát.</p>
+                            <h3 class="dest-card-title">8. Miệt Vườn Sinh Thái Phong Điền</h3>
+                            <p class="dest-card-desc">Thế giới cây trái trĩu cành bốn mùa ngọt ngào, trải nghiệm chèo xuồng dưới tán cây râm mát và tự tay hái quả chín ngọt lịm.</p>
                         </div>
                     </div>
 
-                    <!-- 6. Cồn Sơn & Trải nghiệm cá lóc bay -->
-                    <div class="dest-card double-col" data-legend="Cồn Sơn là cồn đất phù sa nổi giữa lòng sông Hậu thuộc phường Bùi Hữu Nghĩa, quận Bình Thủy. Nơi đây là mô hình du lịch cộng đồng kiểu mẫu gắn liền với nếp sống thuần hậu của bà con miệt vườn. Đến Cồn Sơn, du khách được chiêm ngưỡng màn biểu diễn độc nhất vô nhị 'Cá lóc bay' khi hàng trăm con cá lóc phóng vút lên khỏi mặt nước đớp mồi, tham quan làng bè cá bè sông Hậu, tự tay làm bánh dân gian truyền thống (bánh lá mít, bánh kẹp cuốn) và thưởng thức trái cây tại vườn.">
+                    <!-- 9. Chợ Đêm Tây Đô & Phố Đi Bộ (single-col) -->
+                    <div class="dest-card single-col" data-legend="Chợ đêm Tây Đô nằm trong khu hội chợ triển lãm quốc tế Cần Thơ gần sông Hậu, là trung tâm mua sắm và ẩm thực đêm sầm uất bậc nhất thủ phủ miền Tây. Chợ quy tụ hàng trăm gian hàng bày bán đồ thủ công mỹ nghệ, quà lưu niệm đặc sắc cùng vô vàn món ăn vặt đường phố hấp dẫn như bánh cống, bánh xèo giòn rụm, chè bưởi và hải sản nướng thơm lừng.">
                         <div class="dest-card-img">
-                            <img src="images/cantho_con_son_ca_loc_bay.webp" alt="Cồn Sơn cá lóc bay Cần Thơ" loading="lazy">
+                            <img src="images/cantho_cho_dem_tay_do.webp" alt="Chợ đêm Tây Đô Cần Thơ nhộn nhịp ẩm thực và mua sắm về đêm" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Độc lạ miền Tây</span>
-                                <span class="tag">Cộng đồng Cồn Sơn</span>
-                            </div>
-                            <h3 class="dest-card-title">6. Cồn Sơn & Trải Nghiệm "Cá Lóc Bay"</h3>
-                            <p class="dest-card-desc">Điểm du lịch cộng đồng trứ danh giữa sông Hậu với màn xiếc cá lóc bay kỳ thú, vườn ổi xanh mát và lớp học làm bánh truyền thống.</p>
-                        </div>
-                    </div>
-
-                    <!-- 7. Chùa Munir Ansay Khmer -->
-                    <div class="dest-card single-col" data-legend="Chùa Munir Ansay (tọa lạc tại số 36 Đại lộ Hòa Bình, quận Ninh Kiều) là ngôi chùa Khmer lớn và lộng lẫy nhất tại trung tâm TP. Cần Thơ, được khởi công xây dựng từ năm 1948. Chùa mang đậm kiến trúc Phật giáo Nam tông Khmer với cổng tháp Tam bảo rực rỡ sắc vàng kim, những pho tượng nữ thần chim Kinnara, rắn thần Naga nhiều đầu bảo hộ Phật pháp và các bức phù điêu chạm khắc tinh xảo miêu tả cuộc đời Đức Phật Thích Ca.">
-                        <div class="dest-card-img">
-                            <img src="images/cantho_chua_khmer_munir_ansay.webp" alt="Chùa Munir Ansay Khmer Cần Thơ" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Văn hóa Khmer</span>
-                                <span class="tag">Màu vàng kim</span>
-                            </div>
-                            <h3 class="dest-card-title">7. Chùa Khmer Munir Ansay</h3>
-                            <p class="dest-card-desc">Ngôi chùa Angkor thu nhỏ rực rỡ sắc vàng kim ngay giữa lòng đô thị, điểm giao thoa văn hóa tâm linh độc đáo.</p>
-                        </div>
-                    </div>
-
-                    <!-- 8. Chùa Ông (Quảng Triệu Hội Quán) -->
-                    <div class="dest-card single-col" data-legend="Chùa Ông (Quảng Triệu Hội Quán) tọa lạc tại số 32 Hai Bà Trưng, bến Ninh Kiều, được Bộ Văn hóa - Thông tin xếp hạng Di tích kiến trúc nghệ thuật quốc gia theo Quyết định 759/QĐ-BT ngày 21/6/1993. Khởi dựng năm 1894 bởi bà con bang Quảng Đông định cư tại Cần Thơ, chùa thờ Quan Thánh Đế Quân (Quan Công) biểu trưng cho lòng trung nghĩa. Ngôi chùa giữ nguyên vẹn bố cục chữ Quốc (國) với sân thiên tỉnh đón ánh sáng tự nhiên, mái ngói âm dương trang trí tượng gốm màu tráng men sinh động và hàng trăm vòng nhang trầm cuộn tròn bảng lảng khói thiêng.">
-                        <div class="dest-card-img">
-                            <img src="images/cantho_chua_ong_ninh_kieu.webp" alt="Chùa Ông Ninh Kiều Cần Thơ" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Di tích Quốc gia 1893</span>
-                                <span class="tag">Nhang trầm huyền ảo</span>
-                            </div>
-                            <h3 class="dest-card-title">8. Chùa Ông (Quảng Triệu Hội Quán)</h3>
-                            <p class="dest-card-desc">Di tích kiến trúc nghệ thuật cổ kính của cộng đồng người Hoa với nghệ thuật gốm phù điêu tuyệt xảo và khói hương vòng tôn nghiêm.</p>
-                        </div>
-                    </div>
-
-                    <!-- 9. Chợ đêm Tây Đô -->
-                    <div class="dest-card single-col" data-legend="Chợ đêm Tây Đô (thuộc khuôn viên Hội chợ Triển lãm Quốc tế Cần Thơ) và phố đi bộ chợ đêm Ninh Kiều là trung tâm vui chơi, giải trí và ẩm thực đường phố sôi động nhất miền Tây khi thành phố lên đèn. Hàng trăm gian hàng bày bán thổ cẩm, đồ thủ công mỹ nghệ, quà lưu niệm miền sông nước cùng thiên đường ẩm thực đường phố với các món bánh tráng nướng, bún mắm, ốc nướng tiêu và sinh tố hoa quả nhiệt đới tươi mát.">
-                        <div class="dest-card-img">
-                            <img src="images/cantho_cho_dem_tay_do.webp" alt="Chợ đêm Tây Đô Cần Thơ" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Phố đêm sông nước</span>
-                                <span class="tag">Ẩm thực đường phố</span>
+                                <span class="tag">Ẩm Thực Đường Phố</span>
+                                <span class="tag">Mua Sắm Về Đêm</span>
                             </div>
                             <h3 class="dest-card-title">9. Chợ Đêm Tây Đô & Phố Đi Bộ</h3>
-                            <p class="dest-card-desc">Thiên đường ẩm thực đêm rực rỡ sắc màu, thưởng thức quà vặt miền sông nước và ngắm nhìn nhịp sống Tây Đô lung linh.</p>
+                            <p class="dest-card-desc">Thiên đường ẩm thực đường phố và mua sắm náo nhiệt về đêm, thưởng thức bánh cống giòn rụm và hòa mình vào nhịp sống trẻ Tây Đô.</p>
                         </div>
                     </div>
 
-                                    <!-- 10. Lò hủ tiếu truyền thống -->
-                    <div class="dest-card single-col" data-legend="Lò hủ tiếu truyền thống (Lò Chín Của, Sáu Hoài ven rạch Rau Răm) là nét văn hóa ẩm thực làng nghề thủ công trăm năm của người dân Cần Thơ. Du khách được tận mắt chứng kiến quy trình tráng bánh tráng gạo, phơi bánh trên vỉ tre ngoài nắng sớm và cắt sợi mì hủ tiếu nhiều màu sắc tự nhiên (lá cẩm tím, lá dứa xanh, gấc đỏ). Đặc biệt, trải nghiệm món pizza hủ tiếu chiên giòn rụm tại chỗ là điểm nhấn khó quên.">
+                    <!-- 10. Lò Hủ Tiếu Truyền Thống Cần Thơ (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Các lò hủ tiếu truyền thống tại phường An Bình (quận Ninh Kiều) như lò Sáu Hoài, Quê Tôi có lịch sử hàng chục năm lưu giữ nghề làm sợi hủ tiếu thủ công Nam Bộ. Nét độc đáo là quy trình tráng bánh bằng bột gạo sa tế trên bếp lò trấu nghi ngút khói, sau đó phơi trên các phên tre ngoài nắng tạo nên những vỉ bánh hủ tiếu bảy sắc rực rỡ từ lá cẩm tím, lá dứa xanh, gấc đỏ tự nhiên. Đặc sản 'pizza hủ tiếu' chiên giòn rụm ăn cùng trứng ốp la và thịt khìa là món ngon không thể bỏ lỡ.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/cantho_lo_hu_tieu_trang_banh.webp', 'Lò tráng bánh hủ tiếu thủ công Cần Thơ', 'Lò Hủ Tiếu Truyền Thống Cần Thơ — Bếp lò trấu đỏ lửa tráng sợi hủ tiếu thủ công và giàn phơi phên tre tự nhiên.')">📸 Lò tráng bánh thủ công</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/cantho_lo_hu_tieu_truyen_thong.webp', 'Giàn phơi hủ tiếu bảy sắc cầu vồng Cần Thơ', 'Giàn phơi hủ tiếu đa sắc tự nhiên (lá cẩm, lá dứa, gấc) rực rỡ dưới nắng ấm sông Mekong.')">📸 Giàn phơi bảy sắc</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/cantho_lo_hu_tieu_truyen_thong.webp" alt="Lò hủ tiếu truyền thống Cần Thơ" loading="lazy">
+                            <img src="images/cantho_lo_hu_tieu_trang_banh.webp" alt="Lò tráng bánh hủ tiếu thủ công truyền thống Cần Thơ" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Làng nghề truyền thống</span>
-                                <span class="tag">Sợi mì ngũ sắc</span>
+                                <span class="tag tag-hot">🔥 Di Sản Làng Nghề Miệt Vườn</span>
+                                <span class="tag">Tráng Bánh Thủ Công Bếp Trấu</span>
+                                <span class="tag">Hủ Tiếu Bảy Sắc & Pizza Hủ Tiếu</span>
                             </div>
-                            <h3 class="dest-card-title">10. Lò Hủ Tiếu Truyền Thống Cần Thơ</h3>
-                            <p class="dest-card-desc">Làng nghề thủ công độc đáo với giàn phơi hủ tiếu rực rỡ sắc màu, tự tay thử làm sợi hủ tiếu và thưởng thức pizza hủ tiếu giòn tan.</p>
+                            <h3 class="dest-card-title">10. Lò Hủ Tiếu Truyền Thống Cần Thơ — Tinh Hoa Sợi Bột Đa Sắc</h3>
+                            <p class="dest-card-desc">Làng nghề ẩm thực độc đáo gìn giữ quy trình tráng bánh trên bếp lò trấu đượm than, phơi sợi hủ tiếu bảy sắc cầu vồng từ lá cẩm, lá dứa, gấc và thưởng thức món pizza hủ tiếu giòn tan nức tiếng.</p>
                         </div>
                     </div>
 
@@ -1246,6 +1308,28 @@
                 closeLightbox();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (legendText) {
+                card.setAttribute('data-legend', legendText);
+            }
+        }
+
     </script>
 </body>
 </html>
