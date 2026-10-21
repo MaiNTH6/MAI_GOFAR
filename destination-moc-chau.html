@@ -699,6 +699,56 @@
             .lightbox-content { max-height: 42vh; }
             .lightbox-caption-wrap { padding: 1.2rem; }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -870,7 +920,7 @@
 
                 <div class="checkin-grid">
 
-                    <!-- 1. Đồi chè Trái Tim -->
+                    <!-- 1. Đồi chè Trái Tim (double-col) -->
                     <div class="dest-card double-col" data-legend="Đồi chè trái tim tại tiểu khu Cờ Đỏ (xã Tân Lập) là biểu tượng nhận diện du lịch Mộc Châu. Nông trường chè Mộc Châu được thành lập từ năm 1958 bởi các chiến sĩ Trung đoàn 280 (Sư đoàn 335) sau chiến dịch Điện Biên Phủ lên khai hoang xây dựng kinh tế Tây Bắc. Hình khối trái tim tuyệt mỹ thực chất là kết quả của kỹ thuật canh tác tạo luống chè đồng mức kỳ công nhằm chống xói mòn rửa trôi đất dốc, kết hợp bàn tay tài hoa của những người công nhân nông trường qua nhiều thế hệ.">
                         <div class="dest-card-img">
                             <img src="images/mocchau_doi_che_trai_tim.webp" alt="Đồi chè trái tim Mộc Châu" loading="lazy">
@@ -886,7 +936,7 @@
                         </div>
                     </div>
 
-                    <!-- 2. Thung lũng mận Nà Ka -->
+                    <!-- 2. Thung lũng mận Nà Ka (single-col) -->
                     <div class="dest-card single-col" data-legend="Trải rộng trên diện tích hơn 100 hecta tại tiểu khu Pa Khen, thung lũng Nà Ka được mệnh danh là thung lũng mận đẹp nhất xứ Mộc Châu. Cứ mỗi độ cuối đông đầu xuân (tháng 12 đến tháng 2), cả thung lũng đồng loạt bung nở hàng vạn gốc mận cổ thụ, phủ lên núi đồi một tấm thảm trắng tinh khôi ngút tầm mắt. Đến tháng 5 - 6, nơi đây lại tưng bừng Ngày hội hái mận truyền thống khi cành nhánh trĩu nặng quả mận hậu chín đỏ phủ phấn trắng.">
                         <div class="dest-card-img">
                             <img src="images/mocchau_na_ka_hoa_man.webp" alt="Thung lũng mận Nà Ka Mộc Châu" loading="lazy">
@@ -902,40 +952,41 @@
                         </div>
                     </div>
 
-                    <!-- 3. Rừng thông Bản Áng -->
-                    <div class="dest-card single-col" data-legend="Tọa lạc tại xã Đông Sang, rừng thông Bản Áng rộng hơn 43ha soi bóng xuống mặt hồ tự nhiên phẳng lặng 5ha, được mệnh danh là 'Đà Lạt thu nhỏ của vùng Tây Bắc'. Nơi đây là địa bàn cư trú lâu đời của đồng bào người Thái trắng với những nếp nhà sàn truyền thống, nghề dệt thổ cẩm tinh tế và văn hóa xòe Thái đậm đà bản sắc. Không gian rừng thông bạt ngàn mát mẻ quanh năm là tọa độ lý tưởng để cắm trại, đạp xe và tận hưởng không khí nghỉ dưỡng bình yên.">
-                        <div class="dest-card-img">
-                            <img src="images/mocchau_rung_thong_ban_ang.webp" alt="Rừng thông Bản Áng Mộc Châu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag">Đà Lạt thu nhỏ</span>
-                                <span class="tag">Bản Áng</span>
-                            </div>
-                            <h3 class="dest-card-title">3. Rừng thông Bản Áng</h3>
-                            <p class="dest-card-desc">Hồ nước trong veo soi bóng hàng ngàn gốc thông mã vĩ xanh rì, điểm cắm trại và dạo chơi thư thái tuyệt đẹp.</p>
-                        </div>
-                    </div>
-
-                    <!-- 4. Thác Dải Yếm -->
-                    <div class="dest-card single-col" data-legend="Thác Dải Yếm (còn gọi là thác Nàng hay thác Bản Vặt) tọa lạc tại bản Vặt, xã Mường Sang. Dòng suối Vặt bắt nguồn từ hai khe nước Bó Co Lắm và Bo Tá Cháu đổ qua vách núi đá vôi tạo thành dòng thác cao hơn 100m chia làm hai phần: thác trên 9 tầng và thác dưới 5 tầng kỳ vĩ. Tương truyền thác gắn với tích xưa về nàng thiếu nữ Thái dũng cảm thả dải yếm thêu thổ cẩm của mình để cứu chàng trai thoát khỏi dòng lũ dữ mùa giông bão, hóa thành dải lụa nước trắng xóa tượng trưng cho tình yêu thủy chung son sắt.">
+                    <!-- 3. Thác Dải Yếm & Cầu Kính Tình Yêu (single-col) -->
+                    <div class="dest-card single-col" data-legend="Thác Dải Yếm (còn gọi là thác Nàng hay thác Bản Vặt, xã Mường Sang) bắt nguồn từ hợp lưu của hai con suối Bó Co Lắm và Bo Tát, đổ từ vách đá cao hơn 100 mét qua 9 tầng thác mềm mại như dải yếm lụa của người con gái Thái trong huyền tích thủy chung cứu chàng trai khỏi dòng lũ dữ. Bên cạnh là cây cầu kính Tình Yêu dài 80m với công nghệ kính 5D hiện đại, tạo nên điểm nhấn trải nghiệm độc đáo giữa thiên nhiên đại ngàn.">
                         <div class="dest-card-img">
                             <img src="images/mocchau_thac_dai_yem.webp" alt="Thác Dải Yếm Mộc Châu" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Dải lụa thảo nguyên</span>
-                                <span class="tag">Bản Vặt</span>
+                                <span class="tag">Thác 9 tầng</span>
+                                <span class="tag">Mường Sang</span>
                             </div>
-                            <h3 class="dest-card-title">4. Thác Dải Yếm & Cầu Kính Tình Yêu</h3>
-                            <p class="dest-card-desc">Dòng thác 9 tầng nước đổ trắng xóa mềm mại như dải yếm thiếu nữ vắt qua núi đá giữa rừng nguyên sinh xanh thẳm.</p>
+                            <h3 class="dest-card-title">3. Thác Dải Yếm & Cầu Kính Tình Yêu</h3>
+                            <p class="dest-card-desc">Dải lụa trắng 9 tầng thác mềm mại tuôn trào bên vách đá rêu phong, gắn liền với huyền tích tình yêu thủy chung son sắt.</p>
                         </div>
                     </div>
 
-                    <!-- 5. Cầu kính Bạch Long -->
-                    <div class="dest-card single-col" data-legend="Nằm trong quần thể khu du lịch Mộc Châu Island (xã Mường Sang), cầu kính Bạch Long được Tổ chức Kỷ lục Guinness thế giới chính thức công nhận là 'Cầu kính đi bộ dài nhất thế giới' vào ngày 28/5/2022 với tổng chiều dài 632m. Cầu gồm nhịp cầu treo dài 290m bắc qua hẻm núi sâu 150m và phần đường kính đi bộ men theo vách đá dựng đứng dài 342m. Mặt kính sử dụng 3 lớp kính cường lực Saint-Gobain của Pháp siêu chịu lực, mở ra tầm nhìn thót tim nhưng ngoạn mục xuống đại ngàn.">
+                    <!-- 4. Đỉnh Pha Luông — Ký Ức Tây Tiến (double-col) -->
+                    <div class="dest-card double-col" data-legend="Nằm ở độ cao gần 2.000m trên dãy biên giới Việt - Lào (xã Chiềng Sơn), đỉnh Pha Luông được ví như 'nóc nhà của cao nguyên Mộc Châu', đi vào thi ca bất hủ qua bài thơ Tây Tiến của nhà thơ Quang Dũng ('Dốc lên khúc khuỷu dốc thăm thẳm / Heo hút cồn mây súng ngửi trời / Ngàn thước lên cao ngàn thước xuống / Nhà ai Pha Luông mưa xa khơi'). Đỉnh núi là một khối đá sa thạch khổng lồ xếp lớp phẳng lỳ vươn ra giữa không trung, bên dưới là vực sâu hun hút và thảm rừng nguyên sinh nhiệt đới ngút ngàn.">
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_pha_luong.webp" alt="Đỉnh Pha Luông nóc nhà Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Nóc nhà Mộc Châu</span>
+                                <span class="tag">Độ cao: ~2.000 m</span>
+                                <span class="tag">Ký ức Tây Tiến</span>
+                            </div>
+                            <h3 class="dest-card-title">4. Đỉnh Pha Luông — Ký Ức Tây Tiến & Vách Đá Săn Mây</h3>
+                            <p class="dest-card-desc">Mỏm đá sống ảo vươn mình giữa biển mây trời biên cương hùng vĩ, nơi từng in dấu chân người lính Tây Tiến kiêu hùng trong trang thơ lịch sử.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Cầu kính Bạch Long 632m (single-col) -->
+                    <div class="dest-card single-col" data-legend="Khánh thành năm 2022 tại xã Mường Sang, cầu kính Bạch Long được Tổ chức Kỷ lục Guinness Thế giới chính thức công nhận là cây cầu kính đi bộ dài nhất thế giới với tổng chiều dài 632m (phần bắc qua thung lũng 290m, phần cầu men theo vách đá cheo leo dài 342m). Cầu sử dụng kính siêu cường lực Saint Gobain của Pháp gồm 3 lớp dày 40mm, cho phép du khách ngắm nhìn vực sâu 150m dưới chân và toàn cảnh thung lũng xanh mướt phía dưới.">
                         <div class="dest-card-img">
                             <img src="images/mocchau_cau_kinh_bach_long.webp" alt="Cầu kính Bạch Long Mộc Châu" loading="lazy">
                         </div>
@@ -943,33 +994,17 @@
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
                                 <span class="tag tag-hot">Kỷ lục Guinness</span>
-                                <span class="tag">Mộc Châu Island</span>
+                                <span class="tag">Dài 632 m</span>
                             </div>
-                            <h3 class="dest-card-title">5. Cầu kính Bạch Long (632m)</h3>
-                            <p class="dest-card-desc">Cầu kính đi bộ dài nhất thế giới 632m uốn lượn ngoạn mục qua vách đá và thung lũng sâu hun hút đầy thử thách.</p>
+                            <h3 class="dest-card-title">5. Cầu Kính Bạch Long (632m)</h3>
+                            <p class="dest-card-desc">Cây cầu kính đi bộ dài nhất thế giới uốn lượn ôm vách núi đá dựng đứng, thử thách lòng can đảm giữa khoảng không bao la.</p>
                         </div>
                     </div>
 
-                    <!-- 6. Đỉnh Pha Luông -->
-                    <div class="dest-card double-col" data-legend="Tọa lạc tại xã Chiềng Sơn trên độ cao 2.000m sát ranh giới tự nhiên Việt - Lào, đỉnh Pha Luông được ví là 'Nóc nhà của cao nguyên Mộc Châu'. Vùng đất này từng in đậm dấu chân hành quân kiên cường của đoàn quân Tây Tiến trong kháng chiến chống Pháp, được bất tử hóa trong áng thơ kiệt xuất của nhà thơ Quang Dũng năm 1948: 'Dốc lên khúc khuỷu dốc thăm thẳm / Heo hút cồn mây súng ngửi trời / Ngàn thước lên cao ngàn thước xuống / Nhà ai Pha Luông mưa xa khơi'. Mỏm đá sống ảo vươn mình ra biển mây bao la là biểu tượng chinh phục của tuổi trẻ.">
+                    <!-- 6. Thác Nàng Tiên Chiềng Khoa (single-col) -->
+                    <div class="dest-card single-col" data-legend="Cách trung tâm thị trấn Mộc Châu khoảng 25km về phía Đông Bắc (xã Chiềng Khoa, huyện Vân Hồ), thác Nàng Tiên gồm 3 tầng thác hoang sơ tuyệt mỹ được bao bọc bởi thảm thực vật rừng rậm rạp. Nước thác đổ xuống các hồ nước tự nhiên mang màu xanh ngọc bích phẳng lặng như ngọc bích, gắn liền với truyền tích dân gian Thái về hai người con gái Nàng Bẳng và Nàng Mương có công khai khẩn đất mường.">
                         <div class="dest-card-img">
-                            <img src="images/mocchau_pha_luong.webp" alt="Đỉnh Pha Luông Mộc Châu" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">⛰️ Nóc nhà Mộc Châu</span>
-                                <span class="tag">Ký ức Tây Tiến</span>
-                            </div>
-                            <h3 class="dest-card-title">6. Đỉnh Pha Luông (Ký Ức Tây Tiến)</h3>
-                            <p class="dest-card-desc">Mỏm đá sống ảo kiêu hùng vươn mình ra biển mây cuồn cuộn trên độ cao 2.000m, nơi gắn liền trang sử hào hùng của đoàn binh Tây Tiến.</p>
-                        </div>
-                    </div>
-
-                    <!-- 7. Thác Nàng Tiên Chiềng Khoa -->
-                    <div class="dest-card single-col" data-legend="Ẩn mình giữa cánh rừng nguyên sinh tại bản Nà Chá, xã Chiềng Khoa, thác Nàng Tiên là danh thắng hoang sơ gồm 3 tầng thác đổ xuống hồ nước màu xanh ngọc bích kỳ ảo. Theo tư liệu văn hóa dân gian địa phương và di tích cấp tỉnh Sơn La, dòng thác gắn liền với hai nàng tiên Khăm Khe và Khăm Kiêu (dân gian tôn kính gọi là Nàng Bẳng và Nàng Mương). Hai nàng có công cùng cha khai hoang lập bản dựng mường, hướng dẫn bà con đắp phai dẫn nước tưới tiêu ruộng đồng, trồng lúa nước, dệt thổ cẩm, múa xòe và gìn giữ nếp sống bản mường. Để ghi nhớ công ơn, nhân dân lập đền thờ Nàng Bẳng - Nàng Mương (được xếp hạng Di tích lịch sử - văn hóa cấp tỉnh Sơn La năm 2017) và tôn vinh dòng thác là thác Nàng Tiên.">
-                        <div class="dest-card-img">
-                            <img src="images/mocchau_thac_nang_tien.webp" alt="Thác Nàng Tiên Chiềng Khoa Mộc Châu" loading="lazy">
+                            <img src="images/mocchau_thac_nang_tien.webp" alt="Thác Nàng Tiên Chiềng Khoa Vân Hồ" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
@@ -977,44 +1012,49 @@
                                 <span class="tag">Tuyệt tình cốc</span>
                                 <span class="tag">Chiềng Khoa</span>
                             </div>
-                            <h3 class="dest-card-title">7. Thác Nàng Tiên (Chiềng Khoa)</h3>
+                            <h3 class="dest-card-title">6. Thác Nàng Tiên (Chiềng Khoa)</h3>
                             <p class="dest-card-desc">Thác nước 3 tầng hoang sơ giữa rừng đại ngàn với hồ nước ngọc bích kỳ ảo gắn liền đền thờ Nàng Bẳng - Nàng Mương.</p>
                         </div>
                     </div>
 
-                    <!-- 8. Thung lũng & Đỉnh Mu Náu -->
-                    <div class="dest-card single-col" data-legend="Nằm ở độ cao trên 1.500m ngay phía sau thị trấn Mộc Châu, đỉnh Mu Náu được xem là 'nóc nhà thứ hai' và là thủ phủ của những cây mận cổ thụ rêu phong hàng chục năm tuổi. Đường lên Mu Náu hiểm trở với những con dốc ngược thử thách tay lái xe máy địa hình, nhưng phần thưởng là bức tranh thiên nhiên tuyệt mỹ: biển mây bồng bềnh cuồn cuộn dưới chân vào sáng sớm và bạt ngàn sắc hoa mận trắng muốt hoang sơ thuần khiết không vướng bụi trần.">
+                    <!-- 7. Bản Áng & Nghề Dệt Thổ Cẩm Người Thái Trắng (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Bản Áng (xã Đông Sang) là không gian văn hóa lâu đời của đồng bào người Thái trắng, nổi bật với quần thể nhà sàn gỗ cổ truyền ẩn hiện bên hồ nước tự nhiên rộng 5ha và rừng thông già râm mát. Nơi đây gìn giữ nguyên vẹn nghề dệt thổ cẩm truyền thống; các thiếu nữ Thái bên khung cửi dệt nên những dải khăn piêu, đệm bông gạo hoa văn hình hoa ban, chim muông rực rỡ, cùng những điệu múa xòe và chén rượu cần nồng ấm trong các dịp lễ hội Kin Pang Then.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/mocchau_ban_ang_nha_san_det_tho_cam.webp', 'Nhà sàn gỗ và dệt thổ cẩm Bản Áng', 'Nếp nhà sàn gỗ cổ người Thái trắng bên hồ nước trong vắt và khung cửi dệt thổ cẩm hoa văn hoa ban truyền thống tại Bản Áng.')">📸 Nhà sàn & Dệt thổ cẩm</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/mocchau_rung_thong_ban_ang.webp', 'Rừng thông và hồ nước Bản Áng', 'Toàn cảnh hồ nước tự nhiên soi bóng rặng thông già cổ thụ bạt ngàn tại khu du lịch Bản Áng (Đông Sang).')">📸 Rừng thông & Hồ Bản Áng</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/mocchau_dinh_mu_nau_may_ngan.webp" alt="Thung lũng mận và đỉnh Mu Náu Mộc Châu" loading="lazy">
+                            <img src="images/mocchau_ban_ang_nha_san_det_tho_cam.webp" alt="Nhà sàn gỗ và dệt thổ cẩm người Thái Bản Áng Mộc Châu" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">☁️ Săn mây 1.500m</span>
-                                <span class="tag">Mận cổ thụ</span>
+                                <span class="tag tag-hot">🔥 Di Sản Làng Bản Thái Trắng</span>
+                                <span class="tag">Nhà Sàn Gỗ Cổ Truyền</span>
+                                <span class="tag">Nghề Dệt Thổ Cẩm & Khăn Piêu</span>
                             </div>
-                            <h3 class="dest-card-title">8. Thung lũng & Đỉnh Mu Náu</h3>
-                            <p class="dest-card-desc">Rừng mận cổ thụ rêu phong sừng sững trên đỉnh núi 1.500m, nơi bạn ngắm trọn biển mây tràn qua thung lũng thị trấn.</p>
+                            <h3 class="dest-card-title">7. Bản Áng & Làng Nghề Dệt Thổ Cẩm — Hồn Xưa Người Thái Trắng</h3>
+                            <p class="dest-card-desc">Bản làng cổ tích thanh bình bên hồ nước soi bóng rừng thông, nơi lưu giữ nếp nhà sàn gỗ truyền thống, tiếng thoi đưa dệt thổ cẩm, điệu xòe Thái nồng ấm và lễ hội Kin Pang Then độc đáo.</p>
                         </div>
                     </div>
 
-                    <!-- 9. Bản Pa Phách -->
-                    <div class="dest-card single-col" data-legend="Nằm cheo leo trên sườn núi đá vôi ở độ cao hơn 1.000m, bản Pa Phách được du khách ví von là 'thủ phủ hoa cải trắng' của xứ Mộc Châu. Bản là nơi sinh sống của đồng bào người H'Mông và người Thái với những hàng rào đá xếp chồng tự nhiên, mái nhà gỗ pơ mu ám khói bếp và bạt ngàn những vạt hoa cải trắng muốt nở rộ từ sườn đồi xuống thung lũng vào mỗi dịp tháng 11 - 12, tạo nên bức tranh đời sống rẻo cao mộc mạc và thanh khiết.">
+                    <!-- 8. Thung lũng & Đỉnh Mu Náu (single-col) -->
+                    <div class="dest-card single-col" data-legend="Nằm ở độ cao trên 1.500m ngay phía sau thị trấn Mộc Châu, đỉnh Mu Náu được xem là 'nóc nhà thứ hai' và là thủ phủ của những rừng mơ má đào cổ thụ hàng chục năm tuổi. Toàn bộ sườn núi là những khối đá vôi rêu phong xen kẽ các thung lũng hoa mơ trắng muốt vào tháng 1. Về đêm, đứng từ đỉnh Mu Náu có thể ngắm trọn ánh đèn lung linh của thị trấn Mộc Châu, sáng sớm là thiên đường săn biển mây vần vũ bao trọn thung lũng.">
                         <div class="dest-card-img">
-                            <img src="images/mocchau_pa_phach.webp" alt="Bản Pa Phách hoa cải trắng Mộc Châu" loading="lazy">
+                            <img src="images/mocchau_dinh_mu_nau_may_ngan.webp" alt="Đỉnh Mu Náu mây ngàn Mộc Châu" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Mùa hoa cải trắng</span>
-                                <span class="tag">Bản H'Mông</span>
+                                <span class="tag">Độ cao: 1.500 m</span>
+                                <span class="tag">Rừng mơ cổ thụ</span>
                             </div>
-                            <h3 class="dest-card-title">9. Bản Pa Phách & Lóng Luông</h3>
-                            <p class="dest-card-desc">Thiên đường hoa cải trắng bạt ngàn trải dài khắp lối đi vào bản người H'Mông mộc mạc dưới chân núi đá kỳ vĩ.</p>
+                            <h3 class="dest-card-title">8. Thung Lũng & Đỉnh Mu Náu</h3>
+                            <p class="dest-card-desc">Khu rừng mơ cổ thụ rêu phong bạt ngàn trên núi cao, điểm cắm trại săn mây đón hoàng hôn lãng mạn bậc nhất phố núi.</p>
                         </div>
                     </div>
 
-                    <!-- 10. Trang trại Bò sữa Mộc Châu -->
+                    <!-- 9. Đồng Cỏ & Trang Trại Bò Sữa (single-col) -->
                     <div class="dest-card single-col" data-legend="Trang trại bò sữa Mộc Châu và các đồng cỏ xanh bát ngát là biểu tượng kinh tế nông nghiệp tự hào của cao nguyên hơn 65 năm qua. Khởi nguồn từ đàn bò sữa giống ôn đới đầu tiên do các cựu chiến binh Sư đoàn 335 tiếp nhận năm 1958, đến nay Mộc Châu sở hữu đàn bò sữa thuần chủng hàng vạn con khỏe mạnh được nuôi dưỡng trong môi trường khí hậu mát lành, sản sinh nguồn sữa tươi tinh khiết ngon hàng đầu Việt Nam. Du khách có thể trải nghiệm cho bò ăn cỏ, tự tay vắt sữa bò và thưởng thức sữa nóng tại chỗ.">
                         <div class="dest-card-img">
                             <img src="images/mocchau_dong_co_bo_sua.webp" alt="Đồng cỏ và đàn bò sữa Mộc Châu" loading="lazy">
@@ -1025,8 +1065,29 @@
                                 <span class="tag">Di sản nông trường</span>
                                 <span class="tag">Hơn 65 năm</span>
                             </div>
-                            <h3 class="dest-card-title">10. Đồng Cỏ & Trang Trại Bò Sữa</h3>
+                            <h3 class="dest-card-title">9. Đồng Cỏ & Trang Trại Bò Sữa</h3>
                             <p class="dest-card-desc">Thảo nguyên cỏ xanh mướt ngút tầm mắt với đàn bò sữa Hà Lan thong dong gặm cỏ trong ánh bình minh trong trẻo.</p>
+                        </div>
+                    </div>
+
+                    <!-- 10. Bản Tà Số & Bản Pa Phách — Trầm Tích Bản Làng Người Mông (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Nằm cheo leo trên các sườn núi đá vôi ở độ cao hơn 1.000m, bản Tà Số (xã Chiềng Hắc) và bản Pa Phách (xã Đông Sang) là những bản làng người Mông nguyên sơ và trầm mặc bậc nhất cao nguyên Mộc Châu. Nơi đây gìn giữ trọn vẹn những nếp nhà gỗ mái ván pơ-mu ám khói bếp, bờ rào đá xếp tay mộc mạc, cùng nghệ thuật dệt lanh thêu sáp ong cổ truyền. Mỗi dịp xuân về, cả bản làng chìm trong sắc trắng tinh khôi của hoa mận cổ thụ và bạt ngàn hoa cải trắng muốt nở rộ khắp các thung lũng đá xám.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/mocchau_ban_ta_so_nha_go_hoa_man.webp', 'Bản Tà Số mái nhà gỗ mùa hoa mận trắng', 'Bản Tà Số (Chiềng Hắc) nguyên sơ với những nếp nhà gỗ truyền thống lợp mái ván pơ-mu, bờ rào đá và hoa mận cổ thụ nở bung trắng muốt ban mai.')">📸 Bản Tà Số mùa hoa mận</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/mocchau_pa_phach.webp', 'Bản Pa Phách hoa cải trắng Mộc Châu', 'Thiên đường hoa cải trắng bạt ngàn nở rộ khắp lối vào bản người H'Mông Pa Phách dưới chân núi đá kỳ vĩ.')">📸 Bản Pa Phách hoa cải trắng</button>
+                        </div>
+                        <div class="dest-card-img">
+                            <img src="images/mocchau_ban_ta_so_nha_go_hoa_man.webp" alt="Bản Tà Số mái nhà gỗ hoa mận trắng Mộc Châu" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag tag-hot">🔥 Di Sản Bản Làng Người Mông</span>
+                                <span class="tag">Nhà Gỗ Mái Pơ-mu & Bờ Rào Đá</span>
+                                <span class="tag">Mùa Hoa Mận & Hoa Cải Trắng</span>
+                            </div>
+                            <h3 class="dest-card-title">10. Bản Tà Số & Bản Pa Phách — Trầm Tích Đời Sống Người H'Mông Rẻo Cao</h3>
+                            <p class="dest-card-desc">Thiên đường cổ tích nguyên sơ nép mình giữa thung lũng đá vôi, nơi bảo tồn nguyên vẹn nếp nhà gỗ cổ lợp ván pơ-mu, hàng rào đá xếp tay mộc mạc, nghề dệt lanh truyền thống và mùa hoa mận, hoa cải trắng nở rộ ngút ngàn.</p>
                         </div>
                     </div>
 
@@ -1262,6 +1323,28 @@
                 closeLightbox();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (legendText) {
+                card.setAttribute('data-legend', legendText);
+            }
+        }
+
     </script>
 </body>
 </html>

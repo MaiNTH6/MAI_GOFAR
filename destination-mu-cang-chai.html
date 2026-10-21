@@ -672,6 +672,56 @@
                 font-size: 1.8rem;
             }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -958,19 +1008,24 @@
                             </div>
                         </div>
 
-                        <!-- Spot 7: Bản Lìm Mông & Lìm Thái -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/mucangchai_lim_mong.webp', '7. Bản Lìm Mông & Lìm Thái — Bản Làng Thanh Bình Dưới Chân Đèo Khau Phạ', 'Nằm ẩn mình dưới thung lũng Cao Phạ bên dòng suối mát lành. Bản Lìm Thái của người Thái với những nếp nhà sàn mái ngói rêu phong hiền hòa, còn bản Lìm Mông nằm chót vót trên sườn núi đá là nơi tận cùng của cung đường phượt đầy mê hoặc.')">
+                        <!-- Spot 7: Bản Lìm Mông & Lìm Thái (Featured Di Sản) -->
+                        <div class="dest-card featured has-gallery" onclick="openLightbox('images/mucangchai_ban_lim_mong_duoi_chan_deo.webp', 'Bản Lìm Mông & Lìm Thái — Bức Tranh Làng Bản Thanh Bình Dưới Chân Đèo Khau Phạ', 'Bản Lìm Mông và Lìm Thái nằm yên bình dưới thung lũng Cao Phạ bên dòng suối Nậm Có trong vắt. Khung cảnh thơ mộng với những nếp nhà sàn gỗ cổ của người Thái và nhà ván gỗ người H\'Mông ẩn hiện giữa các nấc ruộng bậc thang, khói lam chiều bảng lảng dưới chân đèo hùng vĩ.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/mucangchai_ban_lim_mong_duoi_chan_deo.webp', 'Bản Lìm Mông suối Nậm Có dưới chân đèo Khau Phạ', 'Bản Lìm Mông & Lìm Thái — Bức Tranh Làng Bản Thanh Bình Dưới Chân Đèo Khau Phạ', 'Bản Lìm Mông và Lìm Thái nằm yên bình dưới thung lũng Cao Phạ bên dòng suối Nậm Có trong vắt. Khung cảnh thơ mộng với những nếp nhà sàn gỗ cổ của người Thái và nhà ván gỗ người H\'Mông ẩn hiện giữa các nấc ruộng bậc thang, khói lam chiều bảng lảng dưới chân đèo hùng vĩ.')">📸 Bản Lìm Mông & Suối Nậm Có</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/mucangchai_lim_mong.webp', 'Nếp nhà sàn và thung lũng Cao Phạ Lìm Mông', 'Bản Làng Lìm Mông — Thung Lũng Cao Phạ', 'Bức tranh làng quê thanh bình mộc mạc bên suối róc rách dưới chân vách đá Khau Phạ kỳ vĩ.')">📸 Nếp nhà sàn Cao Phạ</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/mucangchai_lim_mong.webp" alt="Bản Lìm Mông Lìm Thái thung lũng Cao Phạ" loading="lazy">
+                                <img src="images/mucangchai_ban_lim_mong_duoi_chan_deo.webp" alt="Bản Lìm Mông suối Nậm Có dưới chân đèo Khau Phạ Mù Cang Chải" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Bản Làng Cổ Truyền</span>
-                                    <span class="tag">Thung Lũng Cao Phạ</span>
+                                    <span class="tag tag-hot">🔥 Di Sản Bản Làng Tây Bắc</span>
+                                    <span class="tag">Bản Lìm Mông & Lìm Thái</span>
+                                    <span class="tag">Chân Đèo Khau Phạ</span>
                                 </div>
-                                <h3 class="dest-card-title">7. Bản Lìm Mông & Lìm Thái</h3>
-                                <p class="dest-card-desc">Bức tranh làng quê thanh bình mộc mạc bên suối róc rách dưới chân vách đá sừng sững của đèo Khau Phạ.</p>
+                                <h3 class="dest-card-title">7. Bản Lìm Mông & Lìm Thái — Bình Yên Dưới Chân Sừng Trời</h3>
+                                <p class="dest-card-desc">Bản làng cổ tích thơ mộng nép mình bên dòng suối Nậm Có trong vắt, nơi hòa quyện nếp nhà sàn gỗ trăm năm người Thái và nếp nhà ván pơ-mu mộc mạc của người H'Mông giữa thung lũng vàng.</p>
                             </div>
                         </div>
 
@@ -1006,19 +1061,24 @@
                             </div>
                         </div>
 
-                        <!-- Spot 10: Bản làng H'Mông La Pán Tẩn -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/mucangchai_ban_la_pan_tan.webp', '10. Bản Làng H'Mông La Pán Tẩn — Nếp Sống Thuần Khiết Giữa Trùng Điệp Ruộng Bậc Thang', 'Bản làng thuần khiết của người H'Mông nằm chót vót trên đỉnh núi. Những nếp nhà gỗ pơ mu đơn sơ với bắp ngô vàng óng phơi hiên nhà, các bà các chị cần mẫn dệt vải lanh nhuộm chàm, lưu giữ nguyên vẹn phong tục tập quán truyền thống hàng trăm năm.')">
+                        <!-- Spot 10: Bản Làng H'Mông La Pán Tẩn & Nghề Chế Tác Khèn Mông (Featured Di Sản) -->
+                        <div class="dest-card featured has-gallery" onclick="openLightbox('images/mucangchai_nghe_che_tac_khen_mong.webp', 'Nghề Chế Tác Khèn Mông Mù Cang Chải — Di Sản Văn Hóa Phi Vật Thể Quốc Gia', 'Nghệ nhân H\'Mông tại Mù Cang Chải đẽo gọt gỗ pơ-mu và 6 ống trúc rừng, tôi luyện lam đồng tạo nên những cây khèn vang vọng khắp núi rừng Tây Bắc. Cây khèn là linh hồn tâm linh thiêng liêng, người bạn tri kỷ nâng bước trong mọi hội xuân và nghi lễ truyền thống.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/mucangchai_nghe_che_tac_khen_mong.webp', 'Nghề chế tác Khèn Mông Mù Cang Chải', 'Nghề Chế Tác Khèn Mông Mù Cang Chải — Di Sản Văn Hóa Phi Vật Thể Quốc Gia', 'Nghệ nhân H\'Mông tại Mù Cang Chải đẽo gọt gỗ pơ-mu và 6 ống trúc rừng, tôi luyện lam đồng tạo nên những cây khèn vang vọng khắp núi rừng Tây Bắc. Cây khèn là linh hồn tâm linh thiêng liêng, người bạn tri kỷ nâng bước trong mọi hội xuân và nghi lễ truyền thống.')">📸 Nghề chế tác Khèn Mông</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/mucangchai_ban_la_pan_tan.webp', 'Bản làng H\'Mông La Pán Tẩn mùa vàng', 'Bản Làng H\'Mông La Pán Tẩn — Nếp Sống Thuần Khiết Giữa Mây Trời', 'Bản làng người H\'Mông thanh bình với những nếp nhà gỗ pơ-mu đơn sơ, bắp ngô vàng óng phơi hiên nhà và các cô gái miệt mài dệt vải lanh nhuộm chàm cổ truyền.')">📸 Bản H'Mông mùa vàng</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/mucangchai_ban_la_pan_tan.webp" alt="Bản làng H'Mông La Pán Tẩn thanh bình trên đỉnh núi" loading="lazy">
+                                <img src="images/mucangchai_nghe_che_tac_khen_mong.webp" alt="Nghề chế tác Khèn Mông di sản quốc gia Mù Cang Chải" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Văn Hóa Bản Địa</span>
-                                    <span class="tag">Bản Làng Người Mông</span>
+                                    <span class="tag tag-hot">🔥 Di Sản Phi Vật Thể Quốc Gia</span>
+                                    <span class="tag">Nghệ Thuật Khèn Mông</span>
+                                    <span class="tag">La Pán Tẩn</span>
                                 </div>
-                                <h3 class="dest-card-title">10. Bản Làng H'Mông La Pán Tẩn</h3>
-                                <p class="dest-card-desc">Không gian sống mộc mạc thanh bình trên lưng chừng trời, nơi cất giữ hồn cốt văn hóa dệt lanh khèn Mông.</p>
+                                <h3 class="dest-card-title">10. Bản Làng H'Mông La Pán Tẩn & Nghề Chế Tác Khèn Mông</h3>
+                                <p class="dest-card-desc">Không gian sống mộc mạc thanh bình trên lưng chừng trời, cái nôi lưu giữ nghệ thuật chế tác Khèn Mông độc nhất vô nhị — Di sản văn hóa phi vật thể Quốc gia cùng nếp nhà gỗ pơ-mu cổ truyền.</p>
                             </div>
                         </div>
                     </div>
@@ -1312,6 +1372,28 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, title, caption) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            card.onclick = function() {
+                openLightbox(imgSrc, title, caption);
+            };
+        }
+
     </script>
 </body>
 </html>
