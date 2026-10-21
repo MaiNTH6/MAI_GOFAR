@@ -66,6 +66,7 @@ Brief cho Agent C: [keywords cho ảnh AI]
 - ✅ Tác giả: **Sửu nhi**
 - ✅ Có số liệu địa lý chính xác (khoảng cách, thời gian di chuyển, vị trí)
 - ✅ Tính chính xác lịch sử/địa lý cao: Nội dung lịch sử, điển tích, nguồn gốc danh thắng PHẢI dựa trên các tài liệu chính thống, uy tín (Sử ký, khảo cổ học, cổng thông tin du lịch tỉnh).
+- ✅ **Ưu tiên nét đẹp cổ truyền & bản sắc di sản:** Luôn chủ động tìm tòi, khai thác và thêm vào các bài viết những nét đẹp cổ kính, nguyên sơ: bản làng cổ người dân tộc thiểu số, nếp nhà cổ truyền (nhà trình tường đất nện, nhà sàn, nhà rường...), bờ rào đá, làng nghề thủ công truyền thống lâu đời (chạm bạc, dệt thổ cẩm, gốm sứ...), tôn vinh giá trị văn hóa trường tồn tránh thương mại hóa xô bồ.
 - ❌ KHÔNG quảng cáo, KHÔNG thiên vị, KHÔNG dùng giọng văn PR/marketing sáo rỗng
 - ❌ CẤM tự ý bịa đặt, suy diễn, hoặc hư cấu các chi tiết lịch sử và điển tích.
 - ❌ Hạn chế đưa giá vé/chi phí dễ biến động vào bài viết (chuyển sang hướng dẫn mua vé tĩnh tại quầy để giảm bảo trì).

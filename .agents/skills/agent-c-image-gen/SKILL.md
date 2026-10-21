@@ -77,6 +77,16 @@ vibrant reflections, lively atmosphere,
 bright cheerful saturated colors, professional travel photography
 ```
 
+### Bản Làng Cổ & Di Sản Dân Tộc (Ancient Village & Ethnic Heritage)
+```
+[Tên bản làng / di sản] Vietnam ancient ethnic heritage village,
+authentic traditional architecture (rammed-earth earthen walls / wooden stilt houses / mossy yin-yang tiled roofs / dry-stone fences),
+blooming wild mountain flowers (pink peach blossoms, white plum blossoms, golden mustard flowers) around rustic courtyards,
+grand natural landscape backdrop, warm golden morning sunlight,
+vibrant saturated colors, sharp crystal clear professional National Geographic travel photography,
+poetic tranquil cultural atmosphere, 16:9 ratio
+```
+
 ### Thành phố
 ```
 [Địa danh] Vietnam modern cityscape on bright clear day,
@@ -89,6 +99,7 @@ professional travel photography, awe-inspiring
 - [ ] Đủ sáng? (KHÔNG tối/mờ)
 - [ ] Màu vivid, saturated?
 - [ ] Nét rõ, không blur?
-- [ ] Đúng điểm đến?
+- [ ] Đúng điểm đến và đúng bản sắc cổ truyền?
+- [ ] Bắt buộc có hình ảnh đi kèm mọi bài viết/nội dung mới (hiển thị trực quan cho người dùng)?
 - [ ] File copy vào `images/`?
-- [ ] Tên file: `[ten-diem-den].png` (lowercase, no diacritics)
+- [ ] Tên file: `[ten-diem-den].png` hoặc `.webp` (lowercase, no diacritics)
