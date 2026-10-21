@@ -673,6 +673,56 @@
             .hero { height: 45vh; }
             .article-main { padding: 1.5rem; }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -877,7 +927,7 @@
                             </div>
                         </div>
 
-                        <!-- Spot 2: Sông Nho Quế & Hẻm Tu Sản -->
+                        <!-- Spot 2: Sông Nho Quế & Hẻm Tu Sản (Single Col) -->
                         <div class="dest-card single-col" onclick="openLightbox('images/hagiang_nho_que.webp', 'Sông Nho Quế & Hẻm Tu Sản — Hẻm Vực Sâu Nhất Đông Nam Á', 'Hẻm vực karst sâu tới gần 1.000m với vách đá dựng đứng kỳ vĩ hai bên, ôm trọn dòng nước xanh trong vắt quanh năm phẳng lặng như dải lụa ngọc bích.')">
                             <div class="dest-card-img">
                                 <img src="images/hagiang_nho_que.webp" alt="Sông Nho Quế Hẻm Tu Sản Hà Giang" loading="lazy">
@@ -893,7 +943,7 @@
                             </div>
                         </div>
 
-                        <!-- Spot 3: Cột cờ Quốc gia Lũng Cú -->
+                        <!-- Spot 3: Cột cờ Quốc gia Lũng Cú (Single Col) -->
                         <div class="dest-card single-col" onclick="openLightbox('images/hagiang_lung_cu.webp', 'Cột Cờ Quốc Gia Lũng Cú — Điểm Cực Bắc Thiêng Liêng', 'Tọa lạc trên đỉnh núi Rồng (Long Sơn) cao 1.470m so với mực nước biển, lá cờ đỏ sao vàng rộng 54m² bay kiêu hãnh giữa gió ngàn khẳng định chủ quyền biên cương Tổ quốc.')">
                             <div class="dest-card-img">
                                 <img src="images/hagiang_lung_cu.webp" alt="Cột cờ Lũng Cú Hà Giang" loading="lazy">
@@ -901,67 +951,50 @@
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">Cực Bắc Thiêng Liêng</span>
-                                    <span class="tag">Cờ 54m² Dân Tộc</span>
+                                    <span class="tag tag-hot">Cực Bắc Tổ Quốc</span>
+                                    <span class="tag">Núi Rồng 1.470m</span>
                                 </div>
                                 <h3 class="dest-card-title">3. Cột Cờ Quốc Gia Lũng Cú</h3>
-                                <p class="dest-card-desc">Cột mốc chủ quyền thiêng liêng nơi đỉnh cực Bắc đất nước, nơi mỗi người con đất Việt đều mơ ước một lần được chào cờ.</p>
+                                <p class="dest-card-desc">Biểu tượng thiêng liêng của chủ quyền biên cương đất nước, nơi mỗi người con đất Việt đều khát khao một lần được chạm tay vào.</p>
                             </div>
                         </div>
 
                         <!-- Spot 4: Dinh Thự Họ Vương (Double Col) -->
-                        <div class="dest-card double-col" onclick="openLightbox('images/hagiang_vuong_mansion.webp', 'Dinh Thự Họ Vương (Dinh Vua Mèo) — Pháo Đài Đá Cổ Sà Phìn', 'Di tích kiến trúc nghệ thuật quốc gia xây dựng năm 1898 với kinh phí hơn 15 vạn đồng bạc trắng Đông Dương. Sự giao thoa độc đáo giữa kiến trúc người Mông, người Hoa và Pháp cổ giữa rặng sa mộc ngút ngàn.')">
+                        <div class="dest-card double-col" onclick="openLightbox('images/hagiang_vuong_mansion.webp', 'Dinh Thự Họ Vương — Kiệt Tác Kiến Trúc Dinh Vua Mèo', 'Tọa lạc giữa thung lũng Sà Phìn, dinh thự xây dựng ròng rã suốt 8 năm tiêu tốn 15 vạn đồng bạc trắng Đông Dương. Kiến trúc kết hợp độc đáo giữa ba nền văn hóa H'Mông, Pháp và Trung Hoa với những chi tiết chạm khắc đá hình quả thuốc phiện tinh xảo.')">
                             <div class="dest-card-img">
-                                <img src="images/hagiang_vuong_mansion.webp" alt="Dinh họ Vương Vua Mèo Hà Giang" loading="lazy">
+                                <img src="images/hagiang_vuong_mansion.webp" alt="Dinh thự họ Vương Sà Phìn Hà Giang" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
                                     <span class="tag tag-hot">Di Tích Quốc Gia</span>
-                                    <span class="tag">Vua Mèo Vương Chính Đức</span>
+                                    <span class="tag">Kiến Trúc Độc Bản</span>
                                 </div>
                                 <h3 class="dest-card-title">4. Dinh Thự Họ Vương — Trầm Tích Vua Mèo Sà Phìn</h3>
-                                <p class="dest-card-desc">Tòa pháo đài bằng đá xanh, gỗ sa mộc và mái ngói âm dương tinh xảo, ẩn chứa bao thăng trầm lịch sử vùng đất thuốc phiện một thời.</p>
+                                <p class="dest-card-desc">Quần thể pháo đài - tư gia uy nghiêm của Vương Chính Đức giữa thung lũng đá xám, minh chứng cho một thời kỳ lịch sử đặc biệt trên cao nguyên đá.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 5: Nhà của Pao -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_pao_house.webp', 'Làng Lũng Cẩm & Nhà Của Pao — Thung Lũng Sủng Là Cổ Kính', 'Ngôi nhà trình tường gần 100 năm tuổi của gia tộc người Mông giàu có, bối cảnh chính của bộ phim điện ảnh đoạt giải Cánh Diều Vàng Chuyện của Pao.')">
+                        <!-- Spot 5: Dốc Thẩm Mã (Single Col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_doc_tham_ma.webp', 'Dốc Thẩm Mã — Khúc Quanh Chín Đoạn Thử Ngựa Huyền Thoại', 'Con dốc 9 khúc quanh tay áo tuyệt mỹ vượt núi đá vôi uốn lượn nối thị trấn Yên Minh và Phố Cáo, xưa kia là nơi đồng bào thử sức ngựa thồ vượt dốc dẻo dai.')">
                             <div class="dest-card-img">
-                                <img src="images/hagiang_pao_house.webp" alt="Nhà của Pao Làng Lũng Cẩm Sủng Là" loading="lazy">
+                                <img src="images/hagiang_doc_tham_ma.webp" alt="Dốc Thẩm Mã Hà Giang" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Bối Cảnh Điện Ảnh</span>
-                                    <span class="tag">Nhà Trình Tường</span>
+                                    <span class="tag">9 Khúc Cua Uốn Lượn</span>
+                                    <span class="tag">Cửa Ngõ Đồng Văn</span>
                                 </div>
-                                <h3 class="dest-card-title">5. Nhà Của Pao — Bản Lũng Cẩm</h3>
-                                <p class="dest-card-desc">Nét mộc mạc nguyên sơ với tường đất vàng ấm áp, cổng gỗ bạc màu thời gian và giàn hoa tam giác mạch rực rỡ ngoài sân.</p>
+                                <h3 class="dest-card-title">5. Dốc Thẩm Mã — Khúc Quanh Ngoạn Mục</h3>
+                                <p class="dest-card-desc">Cung đèo 9 khúc uốn lượn tuyệt mỹ tựa dải lụa mềm vắt qua sườn núi đá vôi, biểu tượng thử thách tay lái phượt thủ.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 6: Bản Làng Cổ Lao Xa -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_lang_co_lao_xa.webp', '6. Bản Làng Cổ Lao Xa — Nét Đẹp Nguyên Sơ Giữa Lòng Cao Nguyên Đá Hà Giang', 'Nằm ẩn mình sau những vách núi đá vôi tai mèo sừng sững tại xã Sủng Là (huyện Đồng Văn), Lao Xa là bản làng cổ người Mông nguyên sơ và trầm mặc bậc nhất cao nguyên đá. Bản làng nổi tiếng với những nếp nhà trình tường đất nện màu vàng ấm lợp ngói máng âm dương rêu phong trăm năm, bao bọc bởi những bờ rào đá xếp tay tỉ mỉ không vôi vữa. Đây còn là nơi lưu giữ nghề đúc và chạm khắc bạc thủ công truyền thống của dòng họ Mua – Di sản văn hóa phi vật thể Quốc gia. Mỗi độ xuân về, Lao Xa bừng sáng với sắc hồng hoa đào phai, sắc trắng hoa mận hoa lê và những vạt cải vàng rực rỡ bên vách đá xám.')">
+                        <!-- Spot 6: Núi Đôi Quản Bạ & Cổng Trời (Single Col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_quan_ba.webp', 'Núi Đôi Quản Bạ & Cổng Trời — Kiệt Tác Của Tạo Hóa', 'Đôi gò bồng đảo tròn trịa đầy đặn nổi bật giữa thung lũng Tam Sơn xanh mướt, gắn với truyền thuyết cảm động về tình mẫu tử thiêng liêng của nàng tiên Hoa Đào.')">
                             <div class="dest-card-img">
-                                <img src="images/hagiang_lang_co_lao_xa.webp" alt="Bản làng cổ Lao Xa giữa cao nguyên đá Hà Giang" loading="lazy">
-                            </div>
-                            <div class="dest-card-overlay"></div>
-                            <div class="dest-card-content">
-                                <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 Di Sản Văn Hóa Quốc Gia</span>
-                                    <span class="tag">Nhà Trình Tường Cổ</span>
-                                    <span class="tag">Chạm Bạc Dòng Họ Mua</span>
-                                </div>
-                                <h3 class="dest-card-title">6. Bản Làng Cổ Lao Xa — Giữa Lòng Cao Nguyên Đá</h3>
-                                <p class="dest-card-desc">Bản làng người Mông nguyên sơ trầm mặc với những nếp nhà trình tường rêu phong, bờ rào đá trăm năm và tinh hoa nghề chạm bạc gia truyền.</p>
-                            </div>
-                        </div>
-
-                        <!-- Spot 7: Cổng trời Quản Bạ & Núi Đôi Cô Tiên -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_quan_ba.webp', 'Cổng Trời Quản Bạ & Núi Đôi Cô Tiên — Bầu Vú Nàng Tiên Giữa Mây', 'Cửa ngõ đầu tiên bước vào Cao nguyên đá Đồng Văn ở độ cao 1.500m, nơi chiêm ngưỡng hai quả núi hình bầu ngực căng tròn tuyệt mỹ của nàng tiên.')">
-                            <div class="dest-card-img">
-                                <img src="images/hagiang_quan_ba.webp" alt="Núi Đôi Quản Bạ Cổng Trời Hà Giang" loading="lazy">
+                                <img src="images/hagiang_quan_ba.webp" alt="Núi Đôi Quản Bạ Hà Giang" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
@@ -969,100 +1002,85 @@
                                     <span class="tag">Cửa Ngõ Cao Nguyên</span>
                                     <span class="tag">Núi Đôi Cô Tiên</span>
                                 </div>
-                                <h3 class="dest-card-title">7. Núi Đôi Quản Bạ — Cổng Trời</h3>
-                                <p class="dest-card-desc">Kiệt tác thiên nhiên ban tặng cho thung lũng Tam Sơn, mây trắng bồng bềnh ôm ấp đôi gò bồng đào huyền thoại.</p>
+                                <h3 class="dest-card-title">6. Núi Đôi Quản Bạ — Cổng Trời</h3>
+                                <p class="dest-card-desc">Kiệt tác thiên nhiên ban tặng cho thung lũng Tam Sơn, điểm dừng chân đầu tiên khi vượt qua con đèo Cổng Trời mờ sương.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 8: Ruộng bậc thang Hoàng Su Phì -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_hoang_su_phi.webp', 'Ruộng Bậc Thang Hoàng Su Phì — Di Tích Quốc Gia Đặc Biệt', 'Công trình điêu khắc trên sườn núi đá vĩ đại nhất của đồng bào các dân tộc vùng cao, tầng tầng lớp lớp uốn lượn chạm mây trời.')">
+                        <!-- Spot 7: Bản Làng Cổ Lao Xa & Thung Lũng Sủng Là (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/hagiang_lang_co_lao_xa.webp', 'Bản Làng Cổ Lao Xa — Nét Đẹp Nguyên Sơ Giữa Lòng Cao Nguyên Đá Hà Giang', 'Bản làng người Mông nguyên sơ tại xã Sủng Là (Đồng Văn) với những nếp nhà trình tường đất nện màu vàng ấm, mái ngói âm dương phủ rêu phong, bao bọc bởi hàng rào đá xếp tay mộc mạc và hoa đào phai nở rực rỡ dưới ánh nắng sớm mai.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/hagiang_lang_co_lao_xa.webp', 'Bản Làng Cổ Lao Xa Hà Giang', 'Bản Làng Cổ Lao Xa — Nét Đẹp Nguyên Sơ Giữa Lòng Cao Nguyên Đá Hà Giang', 'Bản làng người Mông nguyên sơ tại xã Sủng Là (Đồng Văn) với những nếp nhà trình tường đất nện màu vàng ấm, mái ngói âm dương phủ rêu phong, bao bọc bởi hàng rào đá xếp tay mộc mạc và hoa đào phai nở rực rỡ dưới ánh nắng sớm mai.')">📸 Bản Cổ Lao Xa Mùa Hoa</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/hagiang_pao_house.webp', 'Nhà của Pao Lũng Cẩm Sủng Là', 'Nhà Của Pao — Bản Lũng Cẩm, Thung Lũng Hoa Sủng Là', 'Ngôi nhà trình tường đất nện cổ kính của người H'Mông với cổng gỗ mộc mạc, mái ngói âm dương rêu phong trăm năm và hàng rào đá xám xếp tay bao quanh, nơi từng làm bối cảnh chính cho bộ phim kinh điển 'Chuyện của Pao'.')">📸 Nhà Của Pao Lũng Cẩm</button>
+                            </div>
+                            <div class="dest-card-img">
+                                <img src="images/hagiang_lang_co_lao_xa.webp" alt="Bản Làng Cổ Lao Xa Sủng Là Hà Giang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Di Sản Văn Hóa Bản Địa</span>
+                                    <span class="tag">Nhà Trình Tường & Bờ Rào Đá</span>
+                                    <span class="tag">Nghề Chạm Khắc Bạc Dòng Họ Mua</span>
+                                </div>
+                                <h3 class="dest-card-title">7. Bản Làng Cổ Lao Xa & Thung Lũng Sủng Là — Trầm Tích Đất & Bờ Rào Đá</h3>
+                                <p class="dest-card-desc">Bản làng cổ tích nguyên sơ nép mình bên vách đá tai mèo với những nếp nhà trình tường đất nện vàng ươm, bờ rào đá xếp tay kỳ công, làng nghề chạm bạc gia truyền dòng họ Mua và mùa hoa đào phai nở rộ rực rỡ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Spot 8: Ruộng bậc thang Hoàng Su Phì (Single Col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_hoang_su_phi.webp', 'Ruộng Bậc Thang Hoàng Su Phì — Di Tích Quốc Gia Kỳ Vĩ', 'Trải dài trên địa bàn 6 xã với hàng ngàn tầng ruộng bậc thang chênh vênh bám theo sườn núi Tây Côn Lĩnh, kiệt tác canh tác nông nghiệp của đồng bào Dao Đỏ, Nùng và La Chí qua nhiều thế kỷ.')">
                             <div class="dest-card-img">
                                 <img src="images/hagiang_hoang_su_phi.webp" alt="Ruộng bậc thang Hoàng Su Phì Hà Giang" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">Di Tích QG Đặc Biệt</span>
-                                    <span class="tag">Kỳ Quan Điêu Khắc</span>
+                                    <span class="tag tag-hot">Di Tích Quốc Gia</span>
+                                    <span class="tag">Mùa Vàng Tây Bắc</span>
                                 </div>
                                 <h3 class="dest-card-title">8. Ruộng Bậc Thang Hoàng Su Phì</h3>
-                                <p class="dest-card-desc">Tuyệt tác ruộng bậc thang dốc đứng ngoạn mục bậc nhất thế giới, biến chuyển diệu kỳ giữa mùa nước đổ và mùa lúa chín vàng.</p>
+                                <p class="dest-card-desc">Những nấc thang vươn tới trời mây uốn lượn kỳ vĩ, đẹp ngỡ ngàng trong mùa nước đổ và rực rỡ vàng óng mùa lúa chín.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 9: Phố cổ Đồng Văn -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_pho_co_dong_van.webp', 'Phố Cổ Đồng Văn — Trầm Tích Kiến Trúc Trăm Năm', 'Khu phố cổ hình thành từ đầu thế kỷ XX với gần 40 nếp nhà đất hai tầng cổ kính lợp ngói âm dương, lung linh ánh đèn lồng đỏ khi đêm về.')">
+                        <!-- Spot 9: Phố cổ Đồng Văn (Single Col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_pho_co_dong_van.webp', 'Phố Cổ Đồng Văn — Trầm Tích Kiến Trúc Trăm Năm', 'Khu phố cổ hình thành từ đầu thế kỷ XX với gần 40 nếp nhà đất hai tầng cổ kính lợp ngói âm dương, lung linh ánh đèn lồng đỏ về đêm và chợ phiên sáng chủ nhật rực rỡ sắc màu.')">
                             <div class="dest-card-img">
                                 <img src="images/hagiang_pho_co_dong_van.webp" alt="Phố cổ Đồng Văn Hà Giang" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Phố Cổ Trăm Năm</span>
-                                    <span class="tag">Chợ Phiên Vùng Cao</span>
+                                    <span class="tag">Kiến Trúc Đầu TK XX</span>
+                                    <span class="tag">Chợ Phiên Cuối Tuần</span>
                                 </div>
                                 <h3 class="dest-card-title">9. Phố Cổ Đồng Văn — Hồn Xưa Cao Nguyên</h3>
-                                <p class="dest-card-desc">Không gian sinh hoạt văn hóa giao thương sầm uất với chợ phiên rực rỡ sắc áo thổ cẩm và quán cà phê phố cổ trầm mặc.</p>
+                                <p class="dest-card-desc">Trái tim giao thương sầm uất với những nếp nhà trình tường cổ kính lợp ngói âm dương rêu phong, nơi lưu giữ nhịp sống bình dị trăm năm.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 10: Dốc Thẩm Mã -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/hagiang_doc_tham_ma.webp', 'Dốc Thẩm Mã — Con Dốc Chín Khúc Quanh Thử Ngựa', 'Con dốc đèo ngoằn ngoèo với 9 khúc cua tay áo uốn lượn ngoạn mục, xưa kia là nơi đồng bào thử sức ngựa thồ vượt dốc đá cao nguyên.')">
+                        <!-- Spot 10: Cao Nguyên Đá Đồng Văn UNESCO (Featured double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/hagiang_dong_van_karst.webp', 'Cao Nguyên Đá Đồng Văn — Công Viên Địa Chất Toàn Cầu UNESCO', 'Trải rộng qua 4 huyện núi cao Quản Bạ, Yên Minh, Đồng Văn, Mèo Vạc ở độ cao trung bình 1.400 - 1.600m, nơi bảo tồn các di sản địa chất cổ sinh niên đại từ 400 đến 600 triệu năm và trầm tích văn hóa của 17 dân tộc anh em.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/hagiang_dong_van_karst.webp', 'Cao nguyên đá Đồng Văn UNESCO Hà Giang', 'Cao Nguyên Đá Đồng Văn — Công Viên Địa Chất Toàn Cầu UNESCO', 'Rừng đá tai mèo xám xịt nhấp nhô trải rộng bạt ngàn qua 4 huyện biên viễn, công viên địa chất toàn cầu đầu tiên của Việt Nam.')">📸 Đá tai mèo kỳ vĩ</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/hagiang_clouds.webp', 'Biển mây vần vũ trên đỉnh cao nguyên đá Hà Giang', 'Săn Biển Mây Cao Nguyên Đá Đồng Văn', 'Biển mây trắng cuộn trào qua những đỉnh núi đá vôi sừng sững trong ánh bình minh vàng rực rỡ.')">📸 Biển mây cao nguyên</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/hagiang_doc_tham_ma.webp" alt="Dốc Thẩm Mã Hà Giang" loading="lazy">
+                                <img src="images/hagiang_dong_van_karst.webp" alt="Cao nguyên đá Đồng Văn UNESCO Hà Giang" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">9 Khúc Cua Tay Áo</span>
-                                    <span class="tag">Con Dốc Thử Ngựa</span>
+                                    <span class="tag tag-hot">🔥 Công Viên Địa Chất UNESCO</span>
+                                    <span class="tag">Trầm Tích 600 Triệu Năm</span>
+                                    <span class="tag">17 Dân Tộc Bản Địa</span>
                                 </div>
-                                <h3 class="dest-card-title">10. Dốc Thẩm Mã — Khúc Quanh Ngoạn Mục</h3>
-                                <p class="dest-card-desc">Điểm check-in kinh điển trên cung đường Hạnh Phúc, nơi ngắm nhìn trọn vẹn những khúc cua uốn lượn mềm mại như dải lụa qua núi đá.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- KHÁM PHÁ ĐẶC BIỆT: BẢN LÀNG CỔ LAO XA GIỮA LÒNG CAO NGUYÊN ĐÁ HÀ GIANG -->
-                    <div class="legend-box" style="margin-top: 2.2rem; background: rgba(251, 191, 36, 0.05); border-left: 4px solid var(--accent); padding: 1.8rem; border-radius: var(--radius-sm);">
-                        <h4 style="color: var(--accent); font-size: 1.25rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
-                            <span>🏘️</span> Bản Làng Cổ Lao Xa — Trầm Tích Đất Nện & Tinh Hoa Bạc Trắng Giữa Cao Nguyên Đá
-                        </h4>
-                        <p style="line-height: 1.8; color: var(--text-sec); margin-bottom: 1rem; font-size: 0.95rem;">
-                            Rời khỏi quốc lộ 4C nhộn nhịp, men theo con đường bê tông nhỏ quanh co chừng 2km vượt dốc đá xám, du khách sẽ bước vào <strong>bản Lao Xa (xã Sủng Là, huyện Đồng Văn)</strong> — một thế giới hoàn toàn tĩnh lặng, cổ kính như thời gian ngừng đọng giữa lòng Công viên Địa chất Toàn cầu UNESCO. Không gian bản làng nép mình bên sườn núi đá vôi tai mèo sừng sững, mở ra bức tranh sống động về nếp sống nguyên bản của đồng bào người H'Mông.
-                        </p>
-
-                        <!-- Ảnh chuyên đề Bản làng cổ Lao Xa -->
-                        <div style="margin: 1.4rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); position: relative; cursor: pointer; aspect-ratio: 16/9; max-height: 480px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onclick="openLightbox('images/hagiang_lang_co_lao_xa.webp', 'Bản Làng Cổ Lao Xa — Nét Đẹp Nguyên Sơ Giữa Lòng Cao Nguyên Đá Hà Giang', 'Bản làng người Mông nguyên sơ tại xã Sủng Là (Đồng Văn) với những nếp nhà trình tường đất nện màu vàng ấm, mái ngói âm dương phủ rêu phong, bao bọc bởi hàng rào đá xếp tay mộc mạc và hoa đào phai nở rực rỡ dưới ánh nắng sớm mai.')">
-                            <img src="images/hagiang_lang_co_lao_xa.webp" alt="Bản làng cổ Lao Xa giữa lòng cao nguyên đá Hà Giang" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
-                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent 10%, rgba(15, 23, 42, 0.95) 100%); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
-                                <span style="color: #fff; font-size: 0.92rem; font-weight: 500;">📸 Toàn cảnh Bản làng cổ Lao Xa (Xã Sủng Là, Đồng Văn) mùa hoa nở bên bờ rào đá</span>
-                                <span style="font-size: 0.78rem; background: var(--accent); color: #fff; padding: 0.25rem 0.7rem; border-radius: 4px; font-weight: 600;">🔍 Bấm xem ảnh lớn</span>
+                                <h3 class="dest-card-title">10. Cao Nguyên Đá Đồng Văn — Công Viên Địa Chất Toàn Cầu UNESCO</h3>
+                                <p class="dest-card-desc">Vương quốc đá xám kỳ vĩ trải dài qua 4 huyện biên cương phía Bắc, nơi đá nở hoa, nơi trầm tích lịch sử hàng trăm triệu năm giao hòa cùng bản sắc văn hóa thiêng liêng của đồng bào các dân tộc vùng cao.</p>
                             </div>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin: 1.2rem 0;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: var(--radius-sm);">
-                                <h5 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;">🏡 Kiến Trúc Nhà Trình Tường & Bờ Rào Đá Cổ</h5>
-                                <p style="font-size: 0.88rem; color: var(--text-sec); line-height: 1.6; margin: 0;">
-                                    Lao Xa quy tụ những nếp nhà trình tường đất nện 3 gian 2 chái quy mô bề thế bậc nhất vùng cao nguyên, tiêu biểu như cụm nhà cổ của gia đình cụ Mua Sính Sỉ, Mua Sính Dùa với tuổi đời gần thế kỷ. Tường đất nện dày dặn ấm vào mùa đông giá buốt, mát dịu ngày hè, lợp ngói âm dương phủ lớp rêu phong xanh thẫm. Bao quanh mỗi nếp nhà là hàng rào đá được nhặt từng viên đá tai mèo gồ ghề ngoài sườn núi xếp tay kỳ công khít khao, không cần bất kỳ vôi vữa nào mà vững chãi trăm năm trước sương gió biên thùy.
-                                </p>
-                            </div>
-
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: var(--radius-sm);">
-                                <h5 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;">💍 Làng Nghề Chạm Khắc Bạc Gia Truyền Dòng Họ Mua</h5>
-                                <p style="font-size: 0.88rem; color: var(--text-sec); line-height: 1.6; margin: 0;">
-                                    Lao Xa là cái nôi danh tiếng nhất về <strong>nghề chạm khắc bạc thủ công của người Mông</strong> trên Cao nguyên đá Đồng Văn — Di sản văn hóa phi vật thể Quốc gia. Những nghệ nhân tài hoa họ Mua nung chảy những đồng bạc hoa xòe nguyên chất bên lò than hồng, tỉ mỉ đục chạm từng đường nét hoa văn mặt trời, hoa cải, hình học tạo nên những chiếc kiềng cổ nhiều tầng, vòng tay, xà tích tinh xảo. Trang sức bạc không chỉ tôn vinh nét duyên dáng của phụ nữ Mông mà còn là báu vật tâm linh hộ thân, xua đuổi tà khí.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: var(--radius-sm); margin-top: 1rem;">
-                            <h5 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;">🌸 Sắc Xuân Thần Tiên & Mẹo Trải Nghiệm Bản Địa</h5>
-                            <p style="font-size: 0.88rem; color: var(--text-sec); line-height: 1.6; margin: 0;">
-                                <strong>Thời điểm lý tưởng nhất:</strong> Mùa xuân từ tháng 1 đến tháng 3 (dịp trước và sau Tết Nguyên Đán). Lao Xa như hóa thành bức tranh thủy mặc khi những gốc đào phai rêu phong, hoa mận, hoa lê cổ thụ đồng loạt bung nở rực rỡ, rủ bóng xuống bờ rào đá xám; phía thung lũng là những vạt hoa cải vàng óng ả. Khi ghé thăm, du khách lưu ý đi khẽ, chào hỏi thân thiện, xin phép trước khi chụp ảnh người già và trẻ nhỏ, không xả rác và có thể ghé thăm trực tiếp xưởng chạm bạc gia đình để mua những món quà lưu niệm bằng bạc nguyên chất độc đáo ủng hộ kinh tế đồng bào.
-                            </p>
-                        </div>
                     </div>
                 </section>
 
@@ -1389,6 +1407,28 @@
                 closeLightboxDirect();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, title, caption) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            card.onclick = function() {
+                openLightbox(imgSrc, title, caption);
+            };
+        }
+
     </script>
 </body>
 </html>

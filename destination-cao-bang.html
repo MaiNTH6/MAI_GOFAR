@@ -684,6 +684,56 @@
             .lightbox-content { max-height: 42vh; }
             .lightbox-caption-wrap { padding: 1.2rem; }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -953,19 +1003,24 @@
                         </div>
                     </div>
 
-                    <!-- 7. Làng rèn Phúc Sen -->
-                    <div class="dest-card single-col" data-legend="Tọa lạc dưới chân núi đá vôi xã Phúc Sen, đây là làng nghề rèn dao thủ công truyền thống hơn 1.000 năm tuổi của đồng bào dân tộc Nùng An, được Bộ VHTTDL công nhận là Di sản văn hóa phi vật thể Quốc gia. Nghệ nhân rèn Phúc Sen không dùng bất kỳ nhiệt kế nào mà rèn sắt bằng mắt nhìn màu thép và cảm nhận than củi gỗ nghiến, sử dụng nguyên liệu là nhíp xe ô tô tải phế liệu đã qua tôi luyện chịu lực cao để tạo nên những sản phẩm dao, rựa, liềm bén ngọt, bền bỉ nức tiếng cả nước.">
+                    <!-- 7. Làng rèn Phúc Sen (Featured Di Sản) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Tọa lạc dưới chân núi đá vôi xã Phúc Sen, đây là làng nghề rèn dao thủ công truyền thống hơn 200 năm tuổi của đồng bào dân tộc Nùng An, được Bộ VHTTDL công nhận là Di sản văn hóa phi vật thể Quốc gia. Không dùng máy móc, các nghệ nhân Phúc Sen đo nhiệt độ bằng mắt nhìn màu lửa than và cảm nhận than củi gỗ nghiến, dùng bễ thụt tay thủ công tôi luyện nhíp ô tô tạo nên những con dao, nông cụ bén ngọt, siêu bền nức tiếng cả nước.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/caobang_lang_ren_phuc_sen_truyen_thong.webp', 'Lò than rực lửa hồng làng rèn Phúc Sen', 'Lò than rực lửa hồng ấm áp tại xưởng rèn thủ công Phúc Sen của người Nùng An — Di sản văn hóa phi vật thể Quốc gia.')">📸 Lò rèn đỏ lửa</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/caobang_lang_ren_phuc_sen.webp', 'Cổng làng rèn thủ công Phúc Sen', 'Cổng làng và không gian làng nghề rèn dao truyền thống Phúc Sen (huyện Quảng Hòa, Cao Bằng).')">📸 Cổng làng nghề</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/caobang_lang_ren_phuc_sen.webp" alt="Làng rèn Phúc Sen Cao Bằng" loading="lazy">
+                            <img src="images/caobang_lang_ren_phuc_sen_truyen_thong.webp" alt="Lò than rực lửa hồng làng rèn Phúc Sen Cao Bằng" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Di sản Quốc gia</span>
+                                <span class="tag tag-hot">🔥 Di Sản Văn Hóa Quốc Gia</span>
+                                <span class="tag">Nghề Rèn Thủ Công Nùng An</span>
                                 <span class="tag">Quảng Hòa</span>
                             </div>
-                            <h3 class="dest-card-title">Làng rèn thủ công Phúc Sen</h3>
-                            <p class="dest-card-desc">Làng nghề rèn dao thủ công nghìn năm tuổi của người Nùng An từ nhíp xe ô tô siêu bền bén ngọt.</p>
+                            <h3 class="dest-card-title">7. Làng Rèn Dao Thủ Công Phúc Sen — Tinh Hoa Rèn Thép Nghìn Năm</h3>
+                            <p class="dest-card-desc">Làng nghề độc nhất vô nhị của người Nùng An; nghệ nhân đo lửa bằng mắt, nghe tiếng búa gõ đe, tôi luyện thép nhíp tạo nên những lưỡi dao sắc ngọt bền bỉ nức danh non nước Cao Bằng.</p>
                         </div>
                     </div>
 
@@ -1002,66 +1057,26 @@
                         </div>
                     </div>
 
-                    <!-- 10. Làng đá cổ Khuổi Ky -->
-                    <div class="dest-card single-col" data-legend="Nằm nép mình bên dòng suối Khuổi Ky thanh bình trên đường từ động Ngườm Ngao tới thác Bản Giốc (xã Đàm Thủy, huyện Trùng Khánh), làng đá cổ Khuổi Ky có lịch sử hơn 400 năm từ thời nhà Mạc lập thành trì ở Cao Bằng. Toàn bộ 14 nếp nhà sàn truyền thống của người Tày nơi đây đều được dựng bằng đá suối tự nhiên xếp chồng kỳ công, mát mẻ mùa hè và ấm áp mùa đông, tạo nên không gian văn hóa bản địa nguyên sơ độc nhất vô nhị.">
+                    <!-- 10. Làng đá cổ Khuổi Ky (Featured Di Sản) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Nằm nép mình bên dòng suối Khuổi Ky thanh bình cách thác Bản Giốc 3km (xã Đàm Thủy, huyện Trùng Khánh), làng đá cổ Khuổi Ky có lịch sử hơn 400 năm từ thời nhà Mạc. Toàn bộ 14 nếp nhà sàn truyền thống của người Tày nơi đây đều được dựng hoàn toàn bằng đá tảng tự nhiên xếp tay kỳ công không vôi vữa. Người Tày có tín ngưỡng thờ Thần Đá thiêng liêng (Thẳm Ké), tạo nên không gian văn hóa bản địa nguyên sơ, trầm mặc độc nhất vô nhị.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/caobang_lang_da_co_khuoi_ky_tho_mong.webp', 'Nhà sàn đá cổ 400 năm Khuổi Ky', 'Cận cảnh nếp nhà sàn đá tự nhiên 400 năm tuổi rêu phong, bờ rào đá và suối trong vắt làng Khuổi Ky.')">📸 Nhà sàn đá 400 năm</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/caobang_lang_da_co_khuoi_ky.webp', 'Toàn cảnh Làng đá cổ Khuổi Ky', 'Toàn cảnh thung lũng làng đá cổ Khuổi Ky bên bờ suối Đàm Thủy dưới rặng núi đá vôi kỳ vĩ.')">📸 Toàn cảnh bản làng</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/caobang_lang_da_co_khuoi_ky.webp" alt="Làng đá cổ Khuổi Ky Trùng Khánh Cao Bằng" loading="lazy">
+                            <img src="images/caobang_lang_da_co_khuoi_ky_tho_mong.webp" alt="Nhà sàn đá cổ 400 năm Khuổi Ky Cao Bằng" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Di sản 400 năm</span>
+                                <span class="tag tag-hot">🔥 Di Tích Kiến Trúc Đá 400 Năm</span>
+                                <span class="tag">Nhà Sàn Đá Người Tày</span>
                                 <span class="tag">Trùng Khánh</span>
                             </div>
-                            <h3 class="dest-card-title">10. Làng Đá Cổ Khuổi Ky (Trùng Khánh)</h3>
-                            <p class="dest-card-desc">Những nếp nhà sàn bằng đá cổ kính hơn 400 năm tuổi của đồng bào Tày nép mình bên con suối trong xanh mát rượi.</p>
+                            <h3 class="dest-card-title">10. Làng Đá Cổ Khuổi Ky — Trầm Tích Nhà Sàn Đá 400 Năm Tuổi</h3>
+                            <p class="dest-card-desc">Quần thể 14 nếp nhà sàn bằng đá tự nhiên xếp tay kỳ công từ thời nhà Mạc thế kỷ XVI, gắn với tục thờ Thần Đá thiêng liêng và nét đẹp nguyên sơ bên dòng suối hiền hòa.</p>
                         </div>
-                    </div>
-
-                    <!-- KHÁM PHÁ ĐẶC BIỆT: BẢN LÀNG CỔ & LÀNG NGHỀ DI SẢN CAO BẰNG -->
-                    <div class="legend-box" style="margin-top: 2.2rem; background: rgba(251, 191, 36, 0.05); border-left: 4px solid var(--accent); padding: 1.8rem; border-radius: var(--radius-sm);">
-                        <h4 style="color: var(--accent); font-size: 1.25rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
-                            <span>🏘️</span> Làng Đá Cổ Khuổi Ky & Làng Rèn Trăm Năm Phúc Sen — Trầm Tích Di Sản Non Nước Cao Bằng
-                        </h4>
-                        <p style="line-height: 1.8; color: var(--text-sec); margin-bottom: 1rem; font-size: 0.95rem;">
-                            Nằm trong lòng Công viên Địa chất Toàn cầu UNESCO Non Nước Cao Bằng, ngoài những thác ghềnh hùng vĩ, Cao Bằng còn ẩn chứa những báu vật văn hóa vô giá: <strong>ngôi làng đá cổ hơn 400 năm tuổi Khuổi Ky</strong> và <strong>làng nghề rèn thủ công truyền thống Phúc Sen</strong> — những nơi gìn giữ vẹn nguyên triết lý sống hòa hợp cùng đá và ngọn lửa lao động kiên cường của đồng bào các dân tộc Tày, Nùng.
-                        </p>
-
-                        <!-- Ảnh 1: Làng đá cổ Khuổi Ky -->
-                        <div style="margin: 1.4rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); position: relative; cursor: pointer; aspect-ratio: 16/9; max-height: 480px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onclick="openLightbox('images/caobang_lang_da_co_khuoi_ky_tho_mong.webp', 'Làng Đá Cổ Khuổi Ky — Trầm Tích Nhà Sàn Đá 400 Năm Tuổi Người Tày', 'Cận cảnh nếp nhà sàn bằng đá tự nhiên rêu phong, bờ rào đá, cối đá và dòng suối trong vắt uốn quanh làng đá cổ Khuổi Ky dưới bóng núi đá vôi Trùng Khánh.')">
-                            <img src="images/caobang_lang_da_co_khuoi_ky_tho_mong.webp" alt="Làng đá cổ Khuổi Ky Trùng Khánh Cao Bằng" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
-                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent 10%, rgba(15, 23, 42, 0.95) 100%); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
-                                <span style="color: #fff; font-size: 0.92rem; font-weight: 500;">📸 Làng đá cổ Khuổi Ky (Trùng Khánh) — Quần thể nhà sàn đá tự nhiên 400 năm tuổi bên dòng suối hiền hòa</span>
-                                <span style="font-size: 0.78rem; background: var(--accent); color: #fff; padding: 0.25rem 0.7rem; border-radius: 4px; font-weight: 600;">🔍 Bấm xem ảnh lớn</span>
-                            </div>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin: 1.2rem 0;">
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: var(--radius-sm);">
-                                <h5 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;">🏡 Tục Thờ Thần Đá & Kiến Trúc Nhà Sàn Đá Khuổi Ky</h5>
-                                <p style="font-size: 0.88rem; color: var(--text-sec); line-height: 1.6; margin: 0;">
-                                    Tọa lạc tại xã Đàm Thủy, cách thác Bản Giốc chỉ 3km, làng Khuổi Ky có 14 nếp nhà sàn cổ bằng đá tảng tự nhiên xây dựng từ thời nhà Mạc (thế kỷ XVI). Người Tày nơi đây có tín ngưỡng thờ Thần Đá thiêng liêng ("Thẳm Ké"). Đá che chở con người khỏi giông bão thú dữ, đá tạo nên tường nhà, bậc thang, bờ rào, cối xay, máng nước... mang lại vẻ đẹp cổ kính, trầm mặc trường tồn qua hàng trăm năm.
-                                </p>
-                            </div>
-
-                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: var(--radius-sm);">
-                                <h5 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;">🔥 Làng Nghề Rèn Dao Thủ Công Phúc Sen — Di Sản Quốc Gia</h5>
-                                <p style="font-size: 0.88rem; color: var(--text-sec); line-height: 1.6; margin: 0;">
-                                    Làng rèn Phúc Sen (huyện Quảng Hòa) là làng nghề độc nhất vô nhị của người Nùng An được công nhận là Di sản văn hóa phi vật thể Quốc gia. Không dùng máy móc, các nghệ nhân tôi luyện thép bằng mắt nhìn màu lửa than và tai nghe tiếng búa gõ, dùng bễ thụt tay thủ công tạo nên những lưỡi dao, rìu, nông cụ sắc bén, bền bỉ vang danh khắp cả nước.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Ảnh 2: Xưởng rèn thủ công Phúc Sen -->
-                        <div style="margin: 1.4rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); position: relative; cursor: pointer; aspect-ratio: 16/9; max-height: 480px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onclick="openLightbox('images/caobang_lang_ren_phuc_sen_truyen_thong.webp', 'Làng Rèn Phúc Sen — Tinh Hoa Rèn Thép Thủ Công Người Nùng An', 'Không gian lò rèn truyền thống rực lửa hồng ấm áp tại xã Phúc Sen, nơi những người thợ rèn Nùng An tài hoa tôi luyện những lưỡi dao thủ công sắc ngọt bền bỉ.')">
-                            <img src="images/caobang_lang_ren_phuc_sen_truyen_thong.webp" alt="Làng rèn thủ công truyền thống Phúc Sen Cao Bằng" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
-                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent 10%, rgba(15, 23, 42, 0.95) 100%); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
-                                <span style="color: #fff; font-size: 0.92rem; font-weight: 500;">📸 Lò than rực lửa hồng & tinh hoa nghề rèn dao thủ công truyền thống Phúc Sen của người Nùng An</span>
-                                <span style="font-size: 0.78rem; background: var(--accent); color: #fff; padding: 0.25rem 0.7rem; border-radius: 4px; font-weight: 600;">🔍 Bấm xem ảnh lớn</span>
-                            </div>
-                        </div>
-                    </div>
-</div>
+                    </div></div>
 
                 <!-- 6. DI CHUYỂN -->
                 <h2 id="di-chuyen"><span class="icon">🚗</span> 6. Cẩm Nang Di Chuyển & Cung Đường QL3 Từ Hà Nội (~280km)</h2>
@@ -1292,6 +1307,28 @@
                 closeLightbox();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (legendText) {
+                card.setAttribute('data-legend', legendText);
+            }
+        }
+
     </script>
 </body>
 </html>
