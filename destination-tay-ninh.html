@@ -749,6 +749,56 @@
             margin: 0;
         }
 
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -917,155 +967,167 @@
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Kỷ lục Guinness Châu Á</span>
+                                <span class="tag tag-hot">🔥 Kỷ Lục Guinness Châu Á</span>
                                 <span class="tag">Đỉnh 986m</span>
+                                <span class="tag">Nóc Nhà Nam Bộ</span>
                             </div>
                             <h3 class="dest-card-title">1. Đỉnh Núi Bà Đen & Tượng Phật Bà Tây Bổ Đà Sơn</h3>
-                            <p class="dest-card-desc">Nóc nhà Nam Bộ cao 986m với pho đại tượng Phật Bà bằng đồng cao 72m đứng uy nghi giữa biển mây bồng bềnh và muôn hoa rực rỡ.</p>
+                            <p class="dest-card-desc">Nóc nhà Nam Bộ cao 986m với pho đại tượng Phật Bà bằng đồng cao 72m đứng uy nghi giữa biển mây bồng bềnh và muôn hoa rực rỡ quanh năm.</p>
                         </div>
                     </div>
 
                     <!-- 2. Quần thể Chùa Bà Đen (single-col) -->
                     <div class="dest-card single-col" data-legend="Quần thể chùa Bà (Linh Sơn Tiên Thạch Tự) tọa lạc ở độ cao 350m lưng chừng núi Bà Đen, khởi dựng từ thế kỷ XVIII với lịch sử hơn 300 năm linh ứng. Chùa nép mình bên những vách đá hoa cương sừng sững, gồm chùa Thượng, chùa Hạ, chùa Trung và động Ba Cô. Nơi đây là trung tâm tín ngưỡng thờ Linh Sơn Thánh Mẫu, thu hút hàng triệu khách hành hương mỗi dịp Tết đến xuân về chiêm bái cầu quốc thái dân an.">
                         <div class="dest-card-img">
-                            <img src="images/tayninh_chua_ba_den_linh_son_tien_thach.webp" alt="Chùa Bà Đen Linh Sơn Tiên Thạch Tự Tây Ninh" loading="lazy">
+                            <img src="images/tayninh_chua_ba_den_linh_son_tien_thach.webp" alt="Chùa Bà Đen Linh Sơn Tiên Thạch Tự cổ kính" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Cổ tự 300 năm</span>
-                                <span class="tag">Linh Sơn Tiên Thạch</span>
+                                <span class="tag tag-hot">Linh Thiêng 300 Năm</span>
+                                <span class="tag">Linh Sơn Thánh Mẫu</span>
                             </div>
                             <h3 class="dest-card-title">2. Quần Thể Chùa Bà Đen (Linh Sơn Tiên Thạch)</h3>
-                            <p class="dest-card-desc">Ngôi cổ tự thâm nghiêm hơn 300 năm nép mình bên vách đá hoa cương, trung tâm thờ phụng Linh Sơn Thánh Mẫu linh thiêng.</p>
+                            <p class="dest-card-desc">Cổ tự hơn 300 năm linh thiêng nép mình bên vách đá hoa cương, điểm tựa tâm linh vững chãi của người dân Nam Bộ.</p>
                         </div>
                     </div>
 
-                    <!-- 3. Đại tượng Phật Di Lặc sa thạch (single-col) -->
-                    <div class="dest-card single-col" data-legend="Khánh thành đầu năm 2024 ở độ cao 900m trên đỉnh núi Bà Đen, Đại tượng Phật Di Lặc bằng đá sa thạch có chiều cao 36m, bề rộng lớn nhất 45m. Bức tượng được ghép nối kỳ công từ 6.688 viên đá sa thạch tự nhiên khai thác tại chỗ, tạo nên nụ cười hoan hỷ an lạc hướng về phía hồ Dầu Tiếng. Phía sau tượng là thác nước nhân tạo cao 35m chảy tràn qua các tầng đá bậc thang kết hợp hệ thống nhạc nước hiện đại bậc nhất Việt Nam.">
+                    <!-- 3. Đại Tượng Phật Di Lặc Sa Thạch (single-col) -->
+                    <div class="dest-card single-col" data-legend="Khánh thành đầu năm 2024 tại độ cao hơn 900m trên đỉnh núi Bà Đen, Đại tượng Phật Di Lặc bằng đá sa thạch có chiều cao 36m, rộng 45m, được ghép từ 6.688 viên đá sa thạch tự nhiên theo mô hình ruộng bậc thang độc đáo. Pho tượng uy nghiêm với nụ cười hỷ xả nhìn xuống thác nước nhân tạo cao 35m chảy tràn qua các tầng bậc đá, tạo nên quần thể cảnh quan tâm linh kỳ vĩ bậc nhất thế giới.">
                         <div class="dest-card-img">
-                            <img src="images/tayninh_dai_tuong_phat_di_lac_sa_thach.webp" alt="Tượng Phật Di Lặc bằng đá sa thạch Tây Ninh" loading="lazy">
+                            <img src="images/tayninh_dai_tuong_phat_di_lac_sa_thach.webp" alt="Đại tượng Phật Di Lặc bằng đá sa thạch đỉnh núi Bà Đen" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">6.688 viên đá</span>
-                                <span class="tag">Khánh thành 2024</span>
+                                <span class="tag">6.688 Viên Đá Sa Thạch</span>
+                                <span class="tag">Cao 36m</span>
                             </div>
                             <h3 class="dest-card-title">3. Đại Tượng Phật Di Lặc Sa Thạch</h3>
-                            <p class="dest-card-desc">Pho tượng Phật Di Lặc bằng đá sa thạch lớn hàng đầu thế giới với nụ cười hoan hỷ bên thác nước vô cực kỳ vĩ.</p>
+                            <p class="dest-card-desc">Pho tượng Phật Di Lặc bằng đá sa thạch kỳ vĩ bậc nhất thế giới, nụ cười an lạc cứu rỗi nhân sinh bên thác nước tuôn chảy róc rách.</p>
                         </div>
                     </div>
 
-                    <!-- 4. Tòa Thánh Tây Ninh (single-col) -->
-                    <div class="dest-card single-col" data-legend="Tòa Thánh Tây Ninh (Đền Thánh Cao Đài) tại thị xã Hòa Thành, khởi dựng năm 1931 hoàn thành năm 1955. Là thánh địa trung ương của đạo Cao Đài — tôn giáo nội sinh lớn thứ ba Việt Nam. Kiến trúc độc nhất vô nhị hòa quyện giữa tháp chuông nhà thờ Công giáo, mái cong chùa chiền Á Đông và vòm tròn Hồi giáo, biểu tượng Thiên Nhãn rạng ngời tinh thần Vạn giáo quy nguyên.">
+                    <!-- 4. Hồ Dầu Tiếng & Đảo Nhím Hoang Sơ (double-col) -->
+                    <div class="dest-card double-col" data-legend="Hồ Dầu Tiếng khởi công xây dựng năm 1981 với diện tích mặt nước lên tới 270 km², dung tích hơn 1,5 tỷ m³ nước, là công trình thủy lợi hồ nhân tạo lớn nhất Đông Nam Á. Trải dài trên địa phận 3 tỉnh Tây Ninh, Bình Dương và Bình Phước, hồ sở hữu không gian khoáng đạt mênh mông như biển cả với các hòn đảo hoang sơ như Đảo Nhím, đảo Đồng Bò, bãi đá trứng tự nhiên — thiên đường cắm trại, chèo SUP ngắm bình minh và hoàng hôn buông xuống mặt nước phẳng lặng.">
                         <div class="dest-card-img">
-                            <img src="images/tayninh_toa_thanh_tay_ninh_cao_dai.webp" alt="Tòa Thánh Tây Ninh Đền Thánh Cao Đài" loading="lazy">
+                            <img src="images/tayninh_ho_dau_tieng_dao_nhim.webp" alt="Hồ Dầu Tiếng và Đảo Nhím Tây Ninh biển hồ mênh mông" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Thánh địa Cao Đài</span>
-                                <span class="tag">Thiên Nhãn</span>
+                                <span class="tag tag-hot">🔥 Hồ Nhân Tạo Lớn Nhất ĐNA</span>
+                                <span class="tag">270 km² Mặt Nước</span>
+                                <span class="tag">Cắm Trại & Chèo SUP</span>
                             </div>
-                            <h3 class="dest-card-title">4. Tòa Thánh Tây Ninh (Đền Thánh Cao Đài)</h3>
-                            <p class="dest-card-desc">Kiệt tác kiến trúc tôn giáo độc nhất vô nhị biểu trưng tinh thần vạn giáo quy nguyên với sắc màu rực rỡ và nghi lễ tôn nghiêm.</p>
+                            <h3 class="dest-card-title">4. Hồ Dầu Tiếng & Đảo Nhím Hoang Sơ</h3>
+                            <p class="dest-card-desc">'Biển hồ' nhân tạo lớn nhất Đông Nam Á với mặt nước mênh mông phẳng lặng như gương, điểm cắm trại ngắm hoàng hôn và chèo SUP lý tưởng bậc nhất phương Nam.</p>
                         </div>
                     </div>
 
-                    <!-- 5. Hồ Dầu Tiếng & Đảo Nhím (double-col) -->
-                    <div class="dest-card double-col" data-legend="Hồ Dầu Tiếng là hồ nước nhân tạo lớn nhất Việt Nam và Đông Nam Á với diện tích mặt nước 270 km², dung tích trữ nước hơn 1,58 tỷ m³. Trải dài giữa Tây Ninh, Bình Dương và Bình Phước, hồ sở hữu khung cảnh hoang sơ tuyệt mỹ với Đảo Nhím xanh ngát, mặt nước ngọc bích phẳng lặng soi bóng ngọn núi Bà Đen hùng vĩ ở phía chân trời, là thiên đường cắm trại ngắm hoàng hôn đỉnh cao.">
+                    <!-- 5. Vườn Quốc Gia Lò Gò — Xa Mát (single-col) -->
+                    <div class="dest-card single-col" data-legend="Vườn Quốc gia Lò Gò — Xa Mát thuộc huyện Tân Biên với diện tích hơn 30.000 ha, được công nhận là Vườn Di sản ASEAN năm 2019. Đây là khu rừng chuyển tiếp độc nhất vô nhị giữa rừng rụng lá nhiệt đới Tây Nguyên và rừng ngập phèn châu thổ sông Cửu Long, nơi sinh sống của sếu đầu đỏ, gà lôi hông tía cùng hàng trăm loài chim nước và thực vật dược liệu quý hiếm.">
                         <div class="dest-card-img">
-                            <img src="images/tayninh_ho_dau_tieng_dao_nhim.webp" alt="Hồ Dầu Tiếng và Đảo Nhím Tây Ninh" loading="lazy">
-                        </div>
-                        <div class="dest-card-overlay"></div>
-                        <div class="dest-card-content">
-                            <div class="dest-card-tags">
-                                <span class="tag tag-hot">Hồ nhân tạo lớn nhất ĐNA</span>
-                                <span class="tag">Cắm trại hoàng hôn</span>
-                            </div>
-                            <h3 class="dest-card-title">5. Hồ Dầu Tiếng & Đảo Nhím Hoang Sơ</h3>
-                            <p class="dest-card-desc">Biển hồ nước ngọt mênh mông 270km² với những cù lao xanh mướt, điểm hẹn cắm trại ngắm hoàng hôn buông xuống núi Bà Đen kỳ vĩ.</p>
-                        </div>
-                    </div>
-
-                    <!-- 6. Vườn Quốc Gia Lò Gò - Xa Mát (single-col) -->
-                    <div class="dest-card single-col" data-legend="Vườn Quốc gia Lò Gò - Xa Mát (huyện Tân Biên) được Hội đồng Vườn Di sản ASEAN công nhận là Vườn Di sản ASEAN (ASEAN Heritage Park) năm 2019. Với diện tích hơn 30.000 ha, nơi đây bảo tồn hệ sinh thái rừng rụng lá họ Dầu (rừng khộp) chuyển tiếp độc đáo giữa Tây Nguyên và đồng bằng sông Cửu Long, nơi trú ngụ của loài sếu đầu đỏ quý hiếm và thảm thực vật ngập nước nguyên sơ.">
-                        <div class="dest-card-img">
-                            <img src="images/tayninh_vuon_quoc_gia_lo_go_xa_mat.webp" alt="Vườn Quốc gia Lò Gò Xa Mát Tây Ninh" loading="lazy">
+                            <img src="images/tayninh_vuon_quoc_gia_lo_go_xa_mat.webp" alt="Vườn Quốc gia Lò Gò Xa Mát Tây Ninh Vườn Di sản ASEAN" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
                                 <span class="tag">Vườn Di Sản ASEAN</span>
-                                <span class="tag">Sếu đầu đỏ</span>
+                                <span class="tag">30.000 ha</span>
                             </div>
-                            <h3 class="dest-card-title">6. Vườn Quốc Gia Lò Gò — Xa Mát</h3>
-                            <p class="dest-card-desc">Vườn Di sản ASEAN với sinh cảnh rừng ngập nước, bến thuyền sông Vàm Cỏ Đông êm đềm và hệ động thực vật quý hiếm.</p>
+                            <h3 class="dest-card-title">5. Vườn Quốc Gia Lò Gò — Xa Mát</h3>
+                            <p class="dest-card-desc">Khu dự trữ sinh quyển chuyển tiếp độc đáo giữa rừng ngập phèn và rừng khô hạn, xứ sở bình yên của muông thú và sếu đầu đỏ.</p>
                         </div>
                     </div>
 
-                    <!-- 7. Căn Cứ Trung Ương Cục Miền Nam (single-col) -->
-                    <div class="dest-card single-col" data-legend="Căn cứ Trung ương Cục miền Nam (Chiến khu R, huyện Tân Biên) được xếp hạng Di tích quốc gia đặc biệt theo Quyết định 548/QĐ-TTg ngày 10/5/2012 của Thủ tướng Chính phủ. Đây là cơ quan đầu não chỉ đạo cách mạng miền Nam thời kỳ kháng chiến chống Mỹ (1961 - 1975). Di tích bảo tồn nguyên vẹn các căn hầm chữ A, nhà làm việc lợp lá trung quân không bén lửa của các đồng chí Nguyễn Văn Linh, Võ Văn Kiệt.">
+                    <!-- 6. Căn Cứ Trung Ương Cục Miền Nam (single-col) -->
+                    <div class="dest-card single-col" data-legend="Di tích Quốc gia đặc biệt Căn cứ Trung ương Cục miền Nam (Chiến khu R) tại xã Tân Lập (huyện Tân Biên) là cơ quan đầu não chỉ đạo cách mạng miền Nam từ năm 1961 đến 1975. Dưới tán rừng già nguyên sinh rợp bóng mát là hệ thống nhà làm việc mái lợp lá trung quân không bén lửa, hầm chữ A kiên cố, bếp Hoàng Cầm giấu khói và các con đường mòn hào hùng một thời khói lửa.">
                         <div class="dest-card-img">
-                            <img src="images/tayninh_can_cu_trung_uong_cuc_mien_nam.webp" alt="Căn cứ Trung ương Cục miền Nam Chiến khu R" loading="lazy">
+                            <img src="images/tayninh_can_cu_trung_uong_cuc_mien_nam.webp" alt="Di tích Căn cứ Trung ương Cục Miền Nam Chiến khu R Tây Ninh" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Di tích Quốc gia Đặc biệt</span>
-                                <span class="tag">Lá trung quân</span>
+                                <span class="tag">Di Tích Quốc Gia Đặc Biệt</span>
+                                <span class="tag">Chiến Khu R</span>
                             </div>
-                            <h3 class="dest-card-title">7. Căn Cứ Trung Ương Cục Miền Nam (Chiến Khu R)</h3>
-                            <p class="dest-card-desc">Thủ đô kháng chiến miền Nam trong lòng rừng già, nơi chứng kiến những quyết sách lịch sử dưới mái lá trung quân bất tử.</p>
+                            <h3 class="dest-card-title">6. Căn Cứ Trung Ương Cục Miền Nam</h3>
+                            <p class="dest-card-desc">Thủ đô kháng chiến giữa đại ngàn Chiến khu R, nơi ghi dấu những quyết sách lịch sử dưới mái nhà lợp lá trung quân bất tử.</p>
                         </div>
                     </div>
 
-                    <!-- 8. Tháp Cổ Chót Mạt (single-col) -->
-                    <div class="dest-card single-col" data-legend="Tháp cổ Chót Mạt (xã Tân Phong, huyện Tân Biên) được Bộ Văn hóa - Thông tin xếp hạng Di tích kiến trúc nghệ thuật quốc gia theo Quyết định 983-QĐ/VH ngày 04/8/1993. Được xây dựng từ thế kỷ VIII thời kỳ văn hóa Óc Eo (Vương quốc Phù Nam cổ), ngọn tháp cao hơn 10m bằng gạch nung kết dính bằng nhựa thực vật cổ xưa, mang những đường nét hoa văn phù điêu chạm khắc huyền bí của nền văn minh cổ đại.">
+                    <!-- 7. Làng Nghề Bánh Tráng Phơi Sương Trảng Bàng (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Làng nghề bánh tráng phơi sương Trảng Bàng có bề dày lịch sử hơn 100 năm, được Bộ Văn hóa, Thể thao và Du lịch ghi danh là Di sản văn hóa phi vật thể quốc gia theo Quyết định số 261/QĐ-BVHTTDL ngày 30/1/2015. Nghề làm bánh tráng phơi sương đòi hỏi công phu tuyệt đỉnh: gạo nàng Thơm ngon được xay mịn pha chút muối hột, tráng hai lớp mỏng tang trên nồi hơi nước rồi phơi nắng cho se mặt, sau đó nướng phồng trên lò than vỏ đậu phộng và đem phơi hứng những giọt sương đêm thanh khiết từ 2h00 đến 4h00 sáng. Bánh tráng mềm dẻo, cuốn cùng thịt luộc bắp heo và đĩa rau rừng hơn 10 loại hái từ bờ sông Vàm Cỏ Đông, chấm mắm nêm chua cay tạo nên phong vị ẩm thực trứ danh miền Đông Nam Bộ.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/tayninh_lang_nghe_banh_trang_phoi_suong.webp', 'Giàn phơi bánh tráng phơi sương Trảng Bàng Tây Ninh', 'Làng Nghề Bánh Tráng Phơi Sương Trảng Bàng — Di sản văn hóa phi vật thể Quốc gia. Giàn phơi phên tre mộc mạc và lò tráng bánh thủ công truyền thống rực lửa trấu.')">📸 Giàn phơi sương & Lò thủ công</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/tayninh_mon_banh_trang_phoi_suong_cuon_thit_luoc.webp', 'Món bánh tráng phơi sương cuốn thịt luộc rau rừng Trảng Bàng', 'Mâm bánh tráng phơi sương dẻo dai cuốn thịt bắp heo luộc và hơn 10 loại rau rừng sông Vàm Cỏ Đông.')">📸 Mâm bánh tráng cuốn rau rừng</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/tayninh_thap_co_chot_mat.webp" alt="Tháp cổ Chót Mạt Tây Ninh" loading="lazy">
+                            <img src="images/tayninh_lang_nghe_banh_trang_phoi_suong.webp" alt="Làng nghề bánh tráng phơi sương Trảng Bàng Tây Ninh Di sản quốc gia" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Văn hóa Óc Eo thế kỷ VIII</span>
-                                <span class="tag">Di tích Quốc gia</span>
+                                <span class="tag tag-hot">🔥 Di Sản Phi Vật Thể Quốc Gia</span>
+                                <span class="tag">Nghề Cổ Trăm Năm</span>
+                                <span class="tag">Hứng Sương Đêm 3h Sáng</span>
+                            </div>
+                            <h3 class="dest-card-title">7. Làng Nghề Bánh Tráng Phơi Sương Trảng Bàng — Tinh Hoa Hứng Sương Đêm</h3>
+                            <p class="dest-card-desc">Làng nghề truyền thống trăm năm gìn giữ kỹ nghệ tráng bánh hai lớp và phơi hứng sương đêm độc nhất vô nhị đất phương Nam, tạo nên món cuốn trứ danh ăn kèm rau rừng Vàm Cỏ.</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Tháp Cổ Chót Mạt — Di Tích Óc Eo Thế Kỷ VIII (single-col) -->
+                    <div class="dest-card single-col" data-legend="Tháp cổ Chót Mạt tại ấp Xóm Mới (xã Tân Phong, huyện Tân Biên) được xây dựng từ thế kỷ VIII, là một trong 3 ngọn tháp cổ thuộc nền văn hóa Óc Eo còn nguyên vẹn nhất miền Nam Việt Nam (được xếp hạng Di tích Lịch sử - Văn hóa cấp Quốc gia năm 1993). Tháp cao khoảng 10m được xây hoàn toàn bằng gạch thẻ nung đỏ kết dính bằng chất keo thực vật bí truyền không lộ mạch vữa, đỉnh tháp vút nhọn theo hình ngọn lửa thần Shiva huyền bí.">
+                        <div class="dest-card-img">
+                            <img src="images/tayninh_thap_co_chot_mat.webp" alt="Tháp cổ Chót Mạt di tích văn hóa Óc Eo thế kỷ VIII Tây Ninh" loading="lazy">
+                        </div>
+                        <div class="dest-card-overlay"></div>
+                        <div class="dest-card-content">
+                            <div class="dest-card-tags">
+                                <span class="tag">Di Tích Quốc Gia 1993</span>
+                                <span class="tag">Văn Hóa Óc Eo Thế Kỷ VIII</span>
                             </div>
                             <h3 class="dest-card-title">8. Tháp Cổ Chót Mạt — Di Tích Óc Eo</h3>
-                            <p class="dest-card-desc">Ngọn tháp gạch cổ hơn 1.200 năm tuổi của vương quốc Phù Nam xưa, dấu ấn khảo cổ học vô giá giữa đồng bằng phương Nam.</p>
+                            <p class="dest-card-desc">Ngọn tháp gạch nung ngàn năm tuổi trầm mặc giữa cánh đồng biên giới, minh chứng rực rỡ cho nền văn minh phù hoa Óc Eo cổ xưa.</p>
                         </div>
                     </div>
 
-                    <!-- 9. Thung Lũng Ma Thiên Lãnh (double-col) -->
-                    <div class="dest-card double-col" data-legend="Thung lũng Ma Thiên Lãnh nằm tiếp giáp giữa ba ngọn núi: núi Bà Đen, núi Heo và núi Phụng. Nơi đây được ví như 'Tử Cấm Thành thu nhỏ' của Tây Ninh với hẻm vực đá hoa cương dựng đứng sâu hun hút, suối vàng róc rách chảy qua những tảng đá khổng lồ rêu phong và cánh rừng nguyên sinh bạt ngàn mây phủ, điểm trekking mạo hiểm kỳ bí bậc nhất miền Nam.">
+                    <!-- 9. Thung Lũng Ma Thiên Lãnh Kỳ Bí (single-col) -->
+                    <div class="dest-card single-col" data-legend="Nằm lọt thỏm giữa tam giác 3 ngọn núi: núi Bà Đen, núi Heo và núi Phụng thuộc quần thể núi Bà Đen, thung lũng Ma Thiên Lãnh được mệnh danh là 'Đà Lạt của miền Đông'. Nơi đây sở hữu cảnh sắc hoang sơ với những con suối vàng róc rách len qua vách đá hoa cương khổng lồ, rừng cây um tùm nguyên sinh và hồ đá Ma Thiên Lãnh trong vắt phản chiếu nền trời biếc.">
                         <div class="dest-card-img">
-                            <img src="images/tayninh_ma_thien_lanh_thung_lung.webp" alt="Thung lũng Ma Thiên Lãnh Tây Ninh" loading="lazy">
+                            <img src="images/tayninh_ma_thien_lanh_thung_lung.webp" alt="Thung lũng Ma Thiên Lãnh hoang sơ kỳ vĩ Tây Ninh" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Hẻm vực kỳ bí</span>
-                                <span class="tag">Trekking mạo hiểm</span>
+                                <span class="tag">Tuyệt Tình Cốc Đông Nam Bộ</span>
+                                <span class="tag">Hồ Đá Trong Vắt</span>
                             </div>
                             <h3 class="dest-card-title">9. Thung Lũng Ma Thiên Lãnh Kỳ Bí</h3>
-                            <p class="dest-card-desc">Cung đường trekking vượt suối luồn rừng giữa ba đỉnh núi đá sừng sững, đắm mình trong thiên nhiên hoang sơ và suối đá trong veo.</p>
+                            <p class="dest-card-desc">Thung lũng heo hút kỳ bí ẩn mình giữa ba ngọn núi đá hoa cương, nơi suối ngọc reo ca bên hồ đá nước xanh màu ngọc bích.</p>
                         </div>
                     </div>
 
-                    <!-- 10. Rừng Di Tích Lịch Sử Chàng Riệc (single-col) -->
-                    <div class="dest-card single-col" data-legend="Rừng lịch sử Chàng Riệc nằm sát biên giới Việt Nam - Campuchia tại huyện Tân Biên. Khu rừng nguyên sinh bạt ngàn với những cây cổ thụ sao đen, dầu rái hàng trăm năm tuổi cao vút, tỏa bóng râm mát chở che cho hệ thống căn cứ của Ban An ninh Trung ương Cục miền Nam và Mặt trận Dân tộc Giải phóng miền Nam Việt Nam.">
+                    <!-- 10. Tòa Thánh Tây Ninh (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Khởi công xây dựng năm 1931 và khánh thành năm 1955, Tòa Thánh Tây Ninh (Đền Thánh Cao Đài) tại thị xã Hòa Thành là thánh địa trung ương của đạo Cao Đài — một tôn giáo nội sinh độc đáo của Việt Nam. Đây là một kiệt tác kiến trúc tôn giáo dung hòa hoàn hảo giữa nghệ thuật Á Đông và kiến trúc Gothic phương Tây: bên ngoài nổi bật với hai lầu chuông trống cao 27m vươn thẳng lên trời xanh và tháp Nghinh Phong hình vòm hoa sen; bên trong là một không gian nội điện nguy nga lộng lẫy dài 135m với hai hàng cột rồng uốn lượn sơn ngọc bích rực rỡ nâng đỡ vòm trần vẽ bầu trời ngàn sao xanh thẳm, dẫn lối trang nghiêm hướng về Cửu Trùng Đài và quả Càn Khôn tỏa sáng biểu tượng Thiên Nhãn (Mắt Trời).">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/tayninh_toa_thanh_noi_o_kien_truc.webp', 'Nội ô kiến trúc cột rồng vòm trời sao Tòa Thánh Tây Ninh', 'Tòa Thánh Tây Ninh — Tuyệt tác kiến trúc Đạo Cao Đài độc nhất vô nhị. Cận cảnh nội ô với hàng cột rồng uốn lượn sơn ngọc bích, trần vòm trời sao ngàn cánh và biểu tượng Thiên Nhãn tỏa sáng.')">📸 Nội ô vòm trời sao & Cột rồng</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/tayninh_toa_thanh_tay_ninh_cao_dai.webp', 'Toàn cảnh ngoại thất Tòa Thánh Tây Ninh Đền Thánh Cao Đài', 'Toàn cảnh ngoại thất Tòa Thánh Tây Ninh với hai lầu chuông trống và tháp Nghinh Phong rực rỡ sắc màu.')">📸 Ngoại thất Đền Thánh rực rỡ</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/tayninh_rung_chang_riec.webp" alt="Rừng di tích lịch sử Chàng Riệc Tây Ninh" loading="lazy">
+                            <img src="images/tayninh_toa_thanh_noi_o_kien_truc.webp" alt="Nội ô kiến trúc cột rồng vòm sao Tòa Thánh Cao Đài Tây Ninh" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Rừng nguyên sinh</span>
-                                <span class="tag">Biên giới Việt - Cam</span>
+                                <span class="tag tag-hot">🔥 Thánh Địa Cao Đài Thế Giới</span>
+                                <span class="tag">Kiến Trúc Độc Bản 1931</span>
+                                <span class="tag">Thiên Nhãn & Cột Rồng</span>
                             </div>
-                            <h3 class="dest-card-title">10. Rừng Di Tích Lịch Sử Chàng Riệc</h3>
-                            <p class="dest-card-desc">Không gian xanh mát của rừng nguyên sinh vùng biên ải với những tán cổ thụ trăm tuổi chở che dấu tích lịch sử oai hùng.</p>
+                            <h3 class="dest-card-title">10. Tòa Thánh Tây Ninh — Tuyệt Tác Kiến Trúc Tôn Giáo Độc Bản</h3>
+                            <p class="dest-card-desc">Thánh địa vĩ đại của đạo Cao Đài kết tinh tinh hoa kiến trúc Đông - Tây, choáng ngợp với nội điện cột rồng sơn ngọc bích nâng đỡ vòm trời ngàn sao lung linh huyền ảo.</p>
                         </div>
                     </div>
 
@@ -1281,6 +1343,7 @@
         document.querySelectorAll('.dest-card, .culinary-card, .season-card').forEach(card => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function(e) {
+                if (e.target.closest('.photo-btn')) return;
                 e.preventDefault();
                 const img = this.querySelector('img');
                 const titleEl = this.querySelector('.dest-card-title, .culinary-title, .season-title');
@@ -1304,6 +1367,28 @@
                 closeLightbox();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (legendText) {
+                card.setAttribute('data-legend', legendText);
+            }
+        }
+
     </script>
 </body>
 </html>

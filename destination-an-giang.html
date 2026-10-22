@@ -810,6 +810,71 @@
                 padding: 1.25rem 1.5rem;
             }
         }
+    
+        /* Symmetrical Grid & Multi-photo support for An Giang spots */
+        .spots-grid .double-col {
+            grid-column: span 2;
+        }
+        .spots-grid .double-col .spot-card-img {
+            height: 380px;
+        }
+        @media (max-width: 768px) {
+            .spots-grid .double-col {
+                grid-column: span 1;
+            }
+            .spots-grid .double-col .spot-card-img {
+                height: 240px;
+            }
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1014,132 +1079,140 @@
 
                 <div class="spots-grid">
 
-                    <!-- Spot 1: Rừng tràm Trà Sư -->
-                    <div class="spot-card" data-legend="Rừng tràm Trà Sư thuộc thị xã Tịnh Biên có diện tích 845 ha, là khu rừng ngập nước ngọt tiêu biểu của vùng Tây sông Hậu. Mùa nước nổi, cả khu rừng biến thành thảm nhung xanh ngọc bích của hàng tỷ cánh bèo cám li ti. Nơi đây là vương quốc của hơn 70 loài chim nước quý hiếm như giang sen, điên điển cùng hệ sinh thái thủy sinh trù phú bậc nhất đồng bằng.">
+                    <!-- Spot 1: Rừng tràm Trà Sư (double-col) -->
+                    <div class="spot-card double-col" data-legend="Rừng tràm Trà Sư thuộc thị xã Tịnh Biên có diện tích 845 ha, là khu rừng ngập nước ngọt tiêu biểu của vùng Tây sông Hậu. Mùa nước nổi, cả khu rừng biến thành thảm nhung xanh ngọc bích của hàng tỷ cánh bèo cám li ti. Nơi đây là vương quốc của hơn 70 loài chim nước quý hiếm như giang sen, điên điển cùng hệ sinh thái thủy sinh trù phú bậc nhất đồng bằng sông Cửu Long.">
                         <div class="spot-card-img">
-                            <img src="images/angiang_rung_tram_tra_su.webp" alt="Rừng tràm Trà Sư mùa nước nổi bèo xanh">
-                            <span class="spot-card-tag">Sinh thái · Biểu tượng</span>
+                            <img src="images/angiang_rung_tram_tra_su.webp" alt="Rừng tràm Trà Sư An Giang mùa nước nổi thảm bèo xanh biếc" loading="lazy">
+                            <span class="spot-card-tag">🔥 Sinh Thái Biểu Tượng · Tịnh Biên</span>
                         </div>
                         <div class="spot-card-body">
                             <h3 class="spot-card-title">1. Rừng Tràm Trà Sư (Tịnh Biên)</h3>
-                            <p class="spot-card-desc">Thả mình trên chiếc xuồng ba lá lướt nhẹ rẽ lối giữa thảm bèo cám xanh ngọc bích ngút ngàn, dưới vòm tràm cổ thụ rợp bóng và tiếng chim rừng ríu rít chuyền cành.</p>
+                            <p class="spot-card-desc">Thả mình trên chiếc xuồng ba lá lướt nhẹ rẽ lối giữa thảm bèo cám xanh ngọc bích ngút ngàn, dưới vòm tràm cổ thụ rợp bóng mát và tiếng chim rừng ríu rít chuyền cành.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 2: Miếu Bà Chúa Xứ Núi Sam -->
-                    <div class="spot-card" data-legend="Miếu Bà Chúa Xứ Núi Sam tọa lạc tại chân núi Sam, thành phố Châu Đốc. Tượng Bà bằng đá sa thạch có niên đại từ thế kỷ VI theo nghệ thuật điêu khắc Óc Eo cổ xưa. Lễ hội Vía Bà Chúa Xứ (22 đến 27 tháng 4 Âm lịch) được Bộ Văn hóa, Thể thao và Du lịch công nhận là Di sản văn hóa phi vật thể quốc gia, là trung tâm tín ngưỡng tâm linh linh thiêng thu hút hàng triệu lượt khách hành hương mỗi năm.">
+                    <!-- Spot 2: Miếu Bà Chúa Xứ Núi Sam (single-col) -->
+                    <div class="spot-card single-col" data-legend="Miếu Bà Chúa Xứ Núi Sam tọa lạc tại chân núi Sam, thành phố Châu Đốc. Tượng Bà bằng đá sa thạch có niên đại từ thế kỷ VI theo nghệ thuật điêu khắc Óc Eo cổ xưa. Lễ hội Vía Bà Chúa Xứ (22 đến 27 tháng 4 Âm lịch) được Bộ Văn hóa, Thể thao và Du lịch công nhận là Di sản văn hóa phi vật thể quốc gia, là trung tâm tín ngưỡng tâm linh linh thiêng thu hút hàng triệu lượt khách hành hương mỗi năm.">
                         <div class="spot-card-img">
-                            <img src="images/angiang_mieu_ba_chua_xu_nui_sam.webp" alt="Miếu Bà Chúa Xứ Núi Sam Châu Đốc">
-                            <span class="spot-card-tag">Tâm linh · Di sản QG</span>
+                            <img src="images/angiang_mieu_ba_chua_xu_nui_sam.webp" alt="Miếu Bà Chúa Xứ Núi Sam Châu Đốc linh thiêng" loading="lazy">
+                            <span class="spot-card-tag">Di Sản Quốc Gia · Châu Đốc</span>
                         </div>
                         <div class="spot-card-body">
                             <h3 class="spot-card-title">2. Miếu Bà Chúa Xứ Núi Sam (Châu Đốc)</h3>
-                            <p class="spot-card-desc">Trung tâm hành hương tâm linh linh thiêng bậc nhất Nam Bộ với kiến trúc tháp mái ngói tam cấp màu xanh ngọc bích, khói hương nghi ngút và lễ hội Vía Bà nghìn năm truyền đời.</p>
+                            <p class="spot-card-desc">Điểm tựa tâm linh bậc nhất Nam Bộ, nơi hội tụ đức tin ngàn đời với pho tượng sa thạch Óc Eo cổ nghìn năm linh hiển.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 3: Cánh đồng thốt nốt Tri Tôn -->
-                    <div class="spot-card" data-legend="Cây thốt nốt (tiếng Khmer là Th'nôt) là biểu tượng thiêng liêng gắn bó máu thịt với đời sống đồng bào Khmer An Giang qua nhiều thế kỷ. Thốt nốt cao vút từ 20 đến 30 mét, có tuổi thọ lên tới hàng trăm năm. Tại huyện Tri Tôn và Tịnh Biên, những hàng thốt nốt đơn độc hoặc kết thành hình trái tim giữa cánh đồng ngập nước tạo nên khung cảnh hoàng hôn huyền thoại độc nhất vô nhị.">
+                    <!-- Spot 3: Núi Cấm — Thiên Cấm Sơn (single-col) -->
+                    <div class="spot-card single-col" data-legend="Núi Cấm (Thiên Cấm Sơn) cao 705m so với mực nước biển, là đỉnh cao nhất trong dãy Thất Sơn huyền bí thuộc thị xã Tịnh Biên. Nơi đây sở hữu khí hậu mát mẻ quanh năm tựa Đà Lạt, với hồ Thủy Liêm thơ mộng, chùa Vạn Linh tháp chuông chín tầng và pho tượng Phật Di Lặc khổng lồ cao 33,6m ngự trị uy nghiêm trên đỉnh non cao.">
                         <div class="spot-card-img">
-                            <img src="images/angiang_canh_dong_thot_not_tri_ton.webp" alt="Cánh đồng thốt nốt Tri Tôn An Giang lúc hoàng hôn">
-                            <span class="spot-card-tag">Phong cảnh · Đặc trưng</span>
+                            <img src="images/angiang_nui_cam_chua_van_linh.webp" alt="Chùa Vạn Linh và hồ Thủy Liêm trên đỉnh Núi Cấm Thiên Cấm Sơn" loading="lazy">
+                            <span class="spot-card-tag">Nóc Nhà Thất Sơn · 705m</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">3. Cánh Đồng Thốt Nốt Tri Tôn & Tịnh Biên</h3>
-                            <p class="spot-card-desc">Bóng những rặng thốt nốt cao vút in bóng xuống mặt nước lung linh lúc ráng chiều hoàng hôn, tạo nên bức tranh đồng quê miền viễn Tây vừa thơ mộng vừa khoáng đạt.</p>
+                            <h3 class="spot-card-title">3. Núi Cấm — Thiên Cấm Sơn (Tịnh Biên)</h3>
+                            <p class="spot-card-desc">Nóc nhà Thất Sơn hùng vĩ bảng lảng sương mù, chiêm bái đại tượng Phật Di Lặc an lạc bên mặt hồ Thủy Liêm xanh ngắt.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 4: Chùa Hang (Phước Điền Tự) -->
-                    <div class="spot-card" data-legend="Chùa Hang (Phước Điền Tự) nằm trên triền dốc núi Sam ở độ cao hàng trăm mét, được xếp hạng Di tích Lịch sử - Văn hóa cấp Quốc gia năm 1980. Ngôi chùa gắn liền với huyền tích bà Thợ (Lê Thị Thơ) quy y tu hành trong hang sâu và thuần hóa được đôi mãng xà khổng lồ (rắn thanh xà, bạch xà) biết nghe kinh Phật và bảo vệ cổ tự.">
+                    <!-- Spot 4: Chùa Hang — Phước Điền Tự (double-col) -->
+                    <div class="spot-card double-col" data-legend="Chùa Hang (Phước Điền Tự) tọa lạc trên triền dốc núi Sam (TP. Châu Đốc), khởi dựng từ giữa thế kỷ XIX gắn liền với huyền tích đôi bạch xà - thanh xà quy y nghe kinh Phật bên bà Thợ tu hành. Quần thể chùa xây dựng bám vào vách đá hoa cương với nhiều tầng bậc tam cấp rêu phong, hoa viên rực rỡ và các hang đá thâm nghiêm, mở ra tầm nhìn bao quát toàn cảnh ruộng đồng Châu Đốc ngút ngàn chân trời.">
                         <div class="spot-card-img">
-                            <img src="images/angiang_chua_hang_phuoc_dien_tu.webp" alt="Chùa Hang Phước Điền Tự sườn núi Sam">
-                            <span class="spot-card-tag">Kiến trúc · Di tích QG</span>
+                            <img src="images/angiang_chua_hang_phuoc_dien_tu.webp" alt="Chùa Hang Phước Điền Tự vách đá núi Sam Châu Đốc" loading="lazy">
+                            <span class="spot-card-tag">🔥 Di Tích Quốc Gia · Cổ Tự Núi Sam</span>
                         </div>
                         <div class="spot-card-body">
                             <h3 class="spot-card-title">4. Chùa Hang — Phước Điền Tự (Núi Sam)</h3>
-                            <p class="spot-card-desc">Ngôi chùa cheo leo trên vách đá với hệ thống mái vòm đỏ trầm, những bậc đá rêu phong uốn lượn và ban công nhìn bao quát toàn bộ cánh đồng lúa giáp biên cương bao la.</p>
+                            <p class="spot-card-desc">Cổ tự cheo leo tựa lưng vào vách đá núi Sam linh thiêng, gắn liền truyền tích rắn thần nghe kinh và tầm nhìn ngoạn mục ôm trọn đồng bằng biên viễn.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 5: Làng nổi Châu Đốc & Làng Chăm -->
-                    <div class="spot-card" data-legend="Làng bè nổi Châu Đốc kéo dài hàng cây số trên ngã ba sông Hậu, là cái nôi nuôi cá basa và cá tra xuất khẩu lớn bậc nhất thế giới. Ngay bên kia sông là Làng Chăm Đa Phước và Châu Phong với những nếp nhà sàn gỗ cổ kính, thánh đường Hồi giáo Mubarak có mái vòm tráng lệ và nghề dệt thổ cẩm Chăm tinh xảo.">
+                    <!-- Spot 5: Hồ Tà Pạ & Chùa Tà Pạ (single-col) -->
+                    <div class="spot-card single-col" data-legend="Nằm trên đồi Tà Pạ thuộc huyện Tri Tôn, chùa Tà Pạ (Chùa Núi / Chùa Chưn-Num) mang đậm phong cách kiến trúc Phật giáo Nam tông Khmer với các mái nhọn vút cao, phù điêu đắp nổi thần rắn Naga và chim thần Garuda tinh xảo. Bên dưới chùa là hồ Tà Pạ — 'tuyệt tình cốc' An Giang với màu nước xanh ngọc bích đổi màu kỳ ảo theo ánh nắng, được tạo thành từ vết tích khai thác đá hoa cương xưa kia.">
                         <div class="spot-card-img">
-                            <img src="images/angiang_lang_noi_chau_doc_lang_cham.webp" alt="Làng bè nổi Châu Đốc và Làng Chăm Đa Phước">
-                            <span class="spot-card-tag">Văn hóa · Sông nước</span>
+                            <img src="images/angiang_ho_ta_pa_tri_ton.webp" alt="Hồ Tà Pạ tuyệt tình cốc và Chùa Tà Pạ Khmer trên đồi Tri Tôn" loading="lazy">
+                            <span class="spot-card-tag">Chùa Khmer Núi · Tri Tôn</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">5. Làng Nổi Châu Đốc & Làng Chăm Đa Phước</h3>
-                            <p class="spot-card-desc">Khám phá nét văn hóa độc đáo của những ngôi nhà nổi trên bè cá dọc ngã ba sông Hậu và ghé thăm thánh đường Hồi giáo Mubarak ngập tràn sắc trắng thanh khiết của người Chăm.</p>
+                            <h3 class="spot-card-title">5. Hồ Tà Pạ & Chùa Tà Pạ (Tri Tôn)</h3>
+                            <p class="spot-card-desc">Ngôi chùa Khmer thanh tịnh uy nghiêm ngự trên đồi cao, nhìn xuống hồ nước xanh ngọc bích tựa chốn bồng lai nơi biên cương.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 6: Núi Cấm (Thiên Cấm Sơn) -->
-                    <div class="spot-card" data-legend="Núi Cấm (Thiên Cấm Sơn) có độ cao 705m so với mực nước biển, là đỉnh núi cao nhất dãy Thất Sơn và toàn vùng Tây Nam Bộ, được mệnh danh là 'Đà Lạt của miền Tây' với khí hậu mát mẻ quanh năm. Trên đỉnh núi tọa lạc Tượng Phật Di Lặc cao 33,6m – kỷ lục Tượng Phật Di Lặc trên đỉnh núi lớn nhất châu Á, soi bóng bên hồ Thủy Liêm huyền ảo.">
+                    <!-- Spot 6: Lăng Thoại Ngọc Hầu & Kênh Vĩnh Tế (single-col) -->
+                    <div class="spot-card single-col" data-legend="Sơn Lăng (Lăng Thoại Ngọc Hầu) nằm dưới chân núi Sam, được công nhận Di tích Lịch sử cấp Quốc gia năm 1997. Nơi đây an nghỉ vị danh thần Thoại Ngọc Hầu (Nguyễn Văn Thoại) cùng hai người phu nhân — vị công thần đã có công khai hoang lập ấp và chỉ huy đào con kênh Vĩnh Tế huyền thoại (1819 - 1824) dài gần 100km phục vụ quốc phòng và dẫn thủy nhập điền cho toàn xứ Nam Bộ.">
                         <div class="spot-card-img">
-                            <img src="images/angiang_nui_cam_chua_van_linh.webp" alt="Núi Cấm Thiên Cấm Sơn chùa Vạn Linh">
-                            <span class="spot-card-tag">Nóc nhà miền Tây · Kỷ lục</span>
+                            <img src="images/angiang_lang_thoai_ngoc_hau_kenh_vinh_te.webp" alt="Sơn Lăng Thoại Ngọc Hầu và dòng kênh Vĩnh Tế lịch sử" loading="lazy">
+                            <span class="spot-card-tag">Di Tích Quốc Gia 1997 · Châu Đốc</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">6. Núi Cấm — Thiên Cấm Sơn (Tịnh Biên)</h3>
-                            <p class="spot-card-desc">Chinh phục đỉnh núi cao 705m mây mù bảng lảng giữa hồ Thủy Liêm phẳng lặng, chiêm bái Tượng Phật Di Lặc kỷ lục châu Á nở nụ cười từ bi hỷ xả giữa đại ngàn Thất Sơn.</p>
+                            <h3 class="spot-card-title">6. Lăng Thoại Ngọc Hầu & Kênh Vĩnh Tế</h3>
+                            <p class="spot-card-desc">Kính cẩn tri ân vị đại thần khai hoang mở cõi và chiêm ngưỡng công trình kênh đào Vĩnh Tế thủ công vĩ đại nhất lịch sử dân tộc.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 7: Chợ nổi Long Xuyên -->
-                    <div class="spot-card" data-legend="Chợ nổi Long Xuyên họp từ mờ sáng trên khúc sông Hậu gần phà Ô Môi, thành phố Long Xuyên. Khác với các chợ nổi thương mại hóa khác, nơi đây vẫn giữ vẹn nguyên tính cách hào sảng, chất phác nguyên bản của người miền Tây. Mỗi chiếc thuyền ghe cắm một cây sào tre gọi là 'cây bẹo' treo lủng lẳng món hàng mình bán để khách từ xa nhìn thấy.">
+                    <!-- Spot 7: Làng Chăm Châu Phong & Đa Phước (Featured Di Sản double-col) -->
+                    <div class="spot-card double-col has-gallery" data-legend="Cộng đồng người Chăm Islam tại xã Châu Phong (thị xã Tân Châu) và Đa Phước (huyện An Phú) lưu giữ không gian văn hóa bản địa nguyên vẹn hàng trăm năm bên dòng sông Tiền và Châu Giang. Nổi bật là những nếp nhà sàn gỗ cổ truyền cao ráo với hoa văn chạm khắc tinh xảo, phụ nữ Chăm bên khung cửi cổ dệt sà rông, xà rông thổ cẩm rực rỡ và những chiếc khăn Mat'ra thêu chỉ tơ cầu kỳ. Cùng với những ngôi thánh đường Hồi giáo uy nghiêm như Mubarak, Jamiul Azhar với mái vòm củ hành trắng muốt vút cao, nơi đây mang đến trải nghiệm văn hóa dân tộc sâu sắc và thanh bình bậc nhất phương Nam.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/angiang_lang_cham_chau_phong_det_tho_cam.webp', 'Khung cửi dệt thổ cẩm truyền thống làng Chăm Châu Phong An Giang', 'Làng Chăm Châu Phong (Tân Châu) — Nhà sàn gỗ trăm năm và khung cửi cổ dệt sà rông, thổ cẩm Mat\'ra tinh tế của người Chăm Islam bên sông Tiền.')">📸 Nhà sàn cổ & Khung cửi dệt</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/angiang_lang_noi_chau_doc_lang_cham.webp', 'Làng nổi Châu Đốc và làng Chăm ven sông hiền hòa An Giang', 'Bức tranh làng nổi nuôi cá bè Châu Đốc và những mái nhà sàn Chăm yên bình soi bóng nước dòng Châu Giang.')">📸 Làng nổi cá bè & Dòng Châu Giang</button>
+                        </div>
                         <div class="spot-card-img">
-                            <img src="images/angiang_cho_noi_long_xuyen.webp" alt="Chợ nổi Long Xuyên trên sông Hậu An Giang">
-                            <span class="spot-card-tag">Văn hóa chợ · Sông nước</span>
+                            <img src="images/angiang_lang_cham_chau_phong_det_tho_cam.webp" alt="Khung cửi dệt thổ cẩm truyền thống làng Chăm Châu Phong An Giang" loading="lazy">
+                            <span class="spot-card-tag">🔥 Di Sản Bản Làng Cổ · Nghề Dệt Thổ Cẩm Trăm Năm</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">7. Chợ Nổi Long Xuyên (TP. Long Xuyên)</h3>
-                            <p class="spot-card-desc">Thưởng thức một tô bún cá nóng hổi hay ly cà phê sữa đá bồng bềnh trên ghe xuồng lúc bình minh, hòa mình vào nét sinh hoạt mộc mạc nguyên sơ của người thương hồ.</p>
+                            <h3 class="spot-card-title">7. Làng Chăm Châu Phong & Đa Phước — Di Sản Dệt Thổ Cẩm Trăm Năm</h3>
+                            <p class="spot-card-desc">Bản làng di sản độc đáo bên sông Tiền với những nếp nhà sàn gỗ cổ kính, khung cửi dệt sà rông thổ cẩm rực rỡ và tháp thánh đường Hồi giáo Mubarak uy nghiêm in bóng mây trời.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 8: Hồ Tà Pạ & Cánh đồng Tà Pạ -->
-                    <div class="spot-card" data-legend="Hồ Tà Pạ nằm trên đồi Tà Pạ thuộc xã Núi Tô, huyện Tri Tôn, được mệnh danh là 'Tuyệt tình cốc của miền Tây'. Hồ hình thành từ dấu tích khai thác đá cũ sâu hun hút, đáy hồ lắng đọng khoáng chất tạo nên màu nước xanh ngọc bích biến đổi theo từng vạt nắng. Cạnh đó là ngôi chùa Khmer Tà Pạ bằng gỗ quý độc đáo uy nghi giữa đồi cao.">
+                    <!-- Spot 8: Chợ Nổi Long Xuyên (single-col) -->
+                    <div class="spot-card single-col" data-legend="Chợ nổi Long Xuyên nằm trên đoạn sông Hậu cách trung tâm thành phố Long Xuyên khoảng 2km. Khác với sự thương mại hóa của nhiều chợ nổi khác, chợ nổi Long Xuyên vẫn giữ trọn nét sinh hoạt mộc mạc nguyên sơ của người miền Tây. Hàng trăm ghe thuyền tụ họp từ 5h sáng buôn bán các loại rau củ miệt vườn như khoai lang, dưa hấu, bí đỏ với 'cây bẹo' mộc mạc chào khách.">
                         <div class="spot-card-img">
-                            <img src="images/angiang_ho_ta_pa_tri_ton.webp" alt="Hồ Tà Pạ Tri Tôn nước xanh ngọc bích">
-                            <span class="spot-card-tag">Kỳ quan · Hồ đá</span>
+                            <img src="images/angiang_cho_noi_long_xuyen.webp" alt="Chợ nổi Long Xuyên An Giang sông nước hữu tình" loading="lazy">
+                            <span class="spot-card-tag">Văn Hóa Sông Nước · Long Xuyên</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">8. Hồ Tà Pạ & Chùa Tà Pạ (Tri Tôn)</h3>
-                            <p class="spot-card-desc">Chiêm ngưỡng làn nước hồ xanh ngắt như ngọc bích lọt thỏm giữa những vách đá dựng đứng, phóng tầm mắt ngắm trọn vẹn cánh đồng Tà Pạ rực rỡ bên ngôi chùa Khmer cổ kính.</p>
+                            <h3 class="spot-card-title">8. Chợ Nổi Long Xuyên (TP. Long Xuyên)</h3>
+                            <p class="spot-card-desc">Ghe xuồng tấp nập giao thương rau củ nông sản ban mai, gìn giữ nhịp sống sông nước miền Tây nguyên bản không pha tạp.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 9: Lăng Thoại Ngọc Hầu & Kênh Vĩnh Tế -->
-                    <div class="spot-card" data-legend="Lăng Thoại Ngọc Hầu (Sơn Lăng) nằm đối diện Miếu Bà Chúa Xứ Núi Sam, là nơi yên nghỉ của danh tướng Nguyễn Văn Thoại (1761–1829) cùng hai phu nhân. Ông là công thần kiệt xuất triều Nguyễn có công chỉ huy đào kênh Vĩnh Tế dài gần 100km (1819–1824) – công trình thủy nông quân sự vĩ đại nhất lịch sử Nam Bộ bảo vệ bờ cõi Tổ quốc.">
+                    <!-- Spot 9: Di Tích Khảo Cổ Óc Eo — Ba Thê (single-col) -->
+                    <div class="spot-card single-col" data-legend="Khu di tích khảo cổ Óc Eo – Ba Thê thuộc thị trấn Óc Eo (huyện Thoại Sơn) được xếp hạng Di tích Quốc gia đặc biệt năm 2012. Nơi đây là trung tâm đô thị cảng thị sầm uất bậc nhất của Vương quốc Phù Nam cổ đại từ thế kỷ I đến thế kỷ VII sau Công nguyên, nơi phát lộ hàng ngàn hiện vật bằng vàng, tượng Phật sa thạch, đồ gốm và tiền cổ giao thương với Ấn Độ, La Mã và Ba Tư cổ đại.">
                         <div class="spot-card-img">
-                            <img src="images/angiang_lang_thoai_ngoc_hau_kenh_vinh_te.webp" alt="Lăng Thoại Ngọc Hầu và dòng kênh Vĩnh Tế">
-                            <span class="spot-card-tag">Lịch sử · Di tích QG</span>
+                            <img src="images/angiang_di_tich_oc_eo_ba_the.webp" alt="Di tích khảo cổ học Óc Eo Ba Thê Vương quốc Phù Nam cổ đại" loading="lazy">
+                            <span class="spot-card-tag">Di Tích Quốc Gia Đặc Biệt · Thoại Sơn</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">9. Lăng Thoại Ngọc Hầu & Kênh Vĩnh Tế</h3>
-                            <p class="spot-card-desc">Tưởng nhớ vị danh tướng có công mở cõi khai hoang và khắc phục thiên nhiên khắc nghiệt, xây dựng nên con kênh biên giới huyết mạch trường tồn hơn 2 thế kỷ.</p>
+                            <h3 class="spot-card-title">9. Di Tích Khảo Cổ Óc Eo – Ba Thê (Phù Nam)</h3>
+                            <p class="spot-card-desc">Đô thị cảng cổ phồn hoa bậc nhất Đông Nam Á cổ đại, nơi lưu giữ trầm tích ngàn năm của đế chế Phù Nam rực rỡ.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 10: Di tích Óc Eo - Ba Thê -->
-                    <div class="spot-card" data-legend="Khu di tích khảo cổ Óc Eo – Ba Thê thuộc huyện Thoại Sơn được Thủ tướng Chính phủ xếp hạng Di tích quốc gia đặc biệt năm 2012. Đây là đô thị cảng biển quốc tế sầm uất cổ xưa của Vương quốc Phù Nam từ thế kỷ I đến thế kỷ VII sau Công nguyên, lưu giữ vô số cổ vật bằng vàng, gốm và tượng đá minh chứng nền văn minh cổ rực rỡ.">
+                    <!-- Spot 10: Cánh Đồng Thốt Nốt & Làng Nghề Đường Thốt Nốt Tri Tôn (Featured Di Sản double-col) -->
+                    <div class="spot-card double-col has-gallery" data-legend="Vùng Bảy Núi (Tri Tôn và Tịnh Biên) là 'thủ phủ thốt nốt' độc nhất vô nhị của Việt Nam với hàng chục ngàn cây thốt nốt cổ thụ cao vút xòe tán tròn trên đồng lúa vàng. Nghề nấu đường thốt nốt thủ công truyền thống của đồng bào Khmer nơi đây là di sản văn hóa ẩm thực trân quý: đàn ông Khmer thoăn thoắt trèo cây lấy nước mật hoa thốt nốt trong lành vào ống tre sáng sớm, phụ nữ ở nhà nhóm bếp lò trấu đỏ lửa cô đặc mật trong chảo gang to suốt nhiều giờ để tạo nên những mẻ đường thốt nốt vàng ươm, thơm ngọt thanh tao và gói cẩn thận trong từng lớp lá thốt nốt mộc mạc.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/angiang_lang_nghe_duong_thot_not_tri_ton.webp', 'Lò nấu đường thốt nốt thủ công truyền thống người Khmer Tri Tôn An Giang', 'Lò nấu đường thốt nốt thủ công của đồng bào Khmer vùng Bảy Núi. Chảo gang lớn đỏ lửa trấu sôi mật vàng óng ả và những bánh đường thẻ thơm nồng gói lá thốt nốt.')">📸 Lò nấu đường thốt nốt thủ công</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/angiang_canh_dong_thot_not_tri_ton.webp', 'Cánh đồng thốt nốt huyền thoại Tri Tôn Tịnh Biên An Giang', 'Những rặng thốt nốt cổ thụ trăm năm in bóng sừng sững trên biển lúa vàng rực rỡ vùng Bảy Núi An Giang.')">📸 Rặng thốt nốt đồng lúa vàng</button>
+                        </div>
                         <div class="spot-card-img">
-                            <img src="images/angiang_di_tich_oc_eo_ba_the.webp" alt="Khu di tích khảo cổ Óc Eo Ba Thê An Giang">
-                            <span class="spot-card-tag">Khảo cổ · Di tích QG Đặc biệt</span>
+                            <img src="images/angiang_lang_nghe_duong_thot_not_tri_ton.webp" alt="Lò nấu đường thốt nốt thủ công truyền thống người Khmer Tri Tôn An Giang" loading="lazy">
+                            <span class="spot-card-tag">🔥 Di Sản Làng Nghề Miệt Vườn · Thủ Phủ Thốt Nốt Bảy Núi</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">10. Di Tích Khảo Cổ Óc Eo – Ba Thê (Thoại Sơn)</h3>
-                            <p class="spot-card-desc">Ngược dòng thời gian tìm về dấu xưa của Vương quốc cổ Phù Nam — một trung tâm giao thương hàng hải sầm uất từng kết nối thế giới phương Đông và La Mã cổ đại.</p>
+                            <h3 class="spot-card-title">10. Cánh Đồng Thốt Nốt & Làng Nghề Nấu Đường Thủ Công Tri Tôn</h3>
+                            <p class="spot-card-desc">Bức tranh kỳ vĩ của hàng vạn cây thốt nốt cổ thụ sừng sững giữa ráng chiều Tây Nam, trải nghiệm nhịp sống làng nghề nấu đường mật ngọt thanh tao đượm tình đồng bào Khmer Bảy Núi.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
@@ -1356,7 +1429,8 @@
             const modalClose = document.getElementById('lightboxClose');
 
             clickableCards.forEach(card => {
-                card.addEventListener('click', () => {
+                card.addEventListener('click', (e) => {
+                    if (e.target.closest('.photo-btn')) return;
                     const img = card.querySelector('img');
                     if (!img) return;
 
@@ -1421,6 +1495,28 @@
                 });
             });
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.spot-card');
+            if (!card) return;
+            const img = card.querySelector('.spot-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (legendText) {
+                card.setAttribute('data-legend', legendText);
+            }
+        }
+
     </script>
 </body>
 </html>
