@@ -672,6 +672,70 @@
                 font-size: 1.8rem;
             }
         }
+    
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+        .dest-card.has-gallery {
+            position: relative;
+        }
+        .dest-card-title, .dest-card-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .dest-card.double-col, .dest-card.featured {
+                grid-column: span 1;
+                aspect-ratio: 16/10;
+            }
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -862,165 +926,179 @@
                     <p>Khám phá 10 kỳ quan hang động và danh lam thắng cảnh làm rạng danh non sông Việt Nam trên bản đồ địa lý thế giới:</p>
 
                     <div class="dest-grid">
-                        <!-- Spot 1: Hang Sơn Đoòng (Featured) -->
-                        <div class="dest-card featured" onclick="openLightbox('images/quangbinh_hang_son_doong.webp', '1. Hang Sơn Đoòng — Hang Động Tự Nhiên Lớn Nhất Thế Giới', 'Được phát hiện năm 2009 bởi đoàn thám hiểm BCRA và Hồ Khanh, hang Sơn Đoòng dài gần 9km, thể tích ước tính 38.5 triệu m³. Hang sở hữu thạch nhũ khổng lồ cao tới 80m, hố sụt khổng lồ mở ra khu rừng nguyên sinh Vườn Edam xanh tốt ngay trong lòng đất và bức tường Vạn Lý Trường Thành Việt Nam cao 90m.')">
+
+                        <!-- 1. Hang Sơn Đoòng (double-col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/quangbinh_hang_son_doong.webp', '1. Hang Sơn Đoòng — Hang Động Tự Nhiên Lớn Nhất Thế Giới', 'Được phát hiện năm 2009 bởi đoàn thám hiểm BCRA và Hồ Khanh, hang Sơn Đoòng dài gần 9km, thể tích 38,5 triệu m³, có rừng nguyên sinh, thời tiết riêng và chứa trọn tòa nhà 40 tầng.')">
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_hang_son_doong.webp" alt="Hang Sơn Đoòng kỳ quan thiên nhiên lớn nhất thế giới" loading="lazy">
+                                <img src="images/quangbinh_hang_son_doong.webp" alt="Hang Sơn Đoòng Quảng Bình kỳ quan thiên nhiên thế giới" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 Kỷ Lục Thế Giới</span>
-                                    <span class="tag">Lớn Nhất Hành Tinh</span>
+                                    <span class="tag tag-hot">🔥 Kỳ Quan Thế Giới</span>
+                                    <span class="tag">Di Sản UNESCO</span>
+                                    <span class="tag">Vườn Địa Đàng Trong Lòng Đất</span>
                                 </div>
                                 <h3 class="dest-card-title">1. Hang Sơn Đoòng — Kỳ Quan Vĩ Đại Nhất Trái Đất</h3>
-                                <p class="dest-card-desc">Kỳ quan ngầm vĩ đại nhất hành tinh với khu rừng nguyên sinh và con sông ngầm riêng biệt ẩn sâu trong lòng đất.</p>
+                                <p class="dest-card-desc">Hang động tự nhiên lớn nhất hành tinh với hệ sinh thái rừng nguyên sinh, sông ngầm cuồn cuộn và trần hang cao chọc trời chứa trọn tòa nhà 40 tầng.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 2: Động Phong Nha -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_dong_phong_nha.webp', '2. Động Phong Nha — Kỳ Quan Đệ Nhất Động Nước Của Việt Nam', 'Nổi tiếng với 7 tiêu chí kỷ lục thế giới do hiệp hội hang động hoàng gia Anh bình chọn: hang nước dài nhất, cửa hang cao và rộng nhất, bãi cát và bãi đá ngầm đẹp nhất, hồ nước ngầm đẹp nhất, hang khô rộng đẹp nhất, thạch nhũ tráng lệ và sông ngầm dài nhất thế giới.')">
+                        <!-- 2. Động Phong Nha (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_dong_phong_nha.webp', '2. Động Phong Nha — Kỳ Quan Đệ Nhất Động Nước', 'Dài 7.729m với 14 hang ngầm liên hoàn và sông ngầm ngọc bích, Phong Nha được mệnh danh là Đệ nhất động nước với 7 kỷ lục thế giới.')">
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_dong_phong_nha.webp" alt="Động Phong Nha sông ngầm thạch nhũ kỳ ảo" loading="lazy">
+                                <img src="images/quangbinh_dong_phong_nha.webp" alt="Động Phong Nha thuyền nan lướt sông ngầm ngọc bích" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 Đệ Nhất Động Nước</span>
-                                    <span class="tag">7 Kỷ Lục Hang Động</span>
+                                    <span class="tag">Kỳ Quan Đệ Nhất Động Nước</span>
+                                    <span class="tag">Thuyền Nan Sông Son</span>
                                 </div>
                                 <h3 class="dest-card-title">2. Động Phong Nha</h3>
-                                <p class="dest-card-desc">Du thuyền trên dòng sông Son êm ả luồn vào lòng núi chiêm ngưỡng 7 kỷ lục thạch nhũ kỳ vĩ.</p>
+                                <p class="dest-card-desc">Thả thuyền nan lướt nhẹ trên dòng sông ngầm biếc xanh, ngắm những tháp nhũ đá kỳ ảo óng ánh ngàn năm.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 3: Động Thiên Đường -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_dong_thien_duong.webp', '3. Động Thiên Đường — Hoàng Cung Trong Lòng Đất Dài Nhất Châu Á', 'Được mệnh danh là hoàng cung ngầm tráng lệ bậc nhất với chiều dài khảo sát lên tới 31.4km. Hệ thống cầu gỗ dài 1km dẫn lối du khách đi giữa rừng măng đá, nhũ đá tầng tầng lớp lớp tinh khiết lấp lánh như cung điện dát ngọc của thiên cung.')">
+                        <!-- 3. Động Thiên Đường (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_dong_thien_duong.webp', '3. Động Thiên Đường — Hoàng Cung Trong Lòng Đất', 'Hang động khô dài nhất châu Á (31,4km), cấu trúc tráng lệ với hệ thống thạch nhũ tựa hoàng cung lộng lẫy và cầu gỗ 1km kỷ lục.')">
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_dong_thien_duong.webp" alt="Động Thiên Đường hoàng cung trong lòng đất Quảng Bình" loading="lazy">
+                                <img src="images/quangbinh_dong_thien_duong.webp" alt="Động Thiên Đường hoàng cung thạch nhũ tráng lệ Quảng Bình" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
+                                    <span class="tag tag-hot">Động Khô Dài Nhất Châu Á</span>
                                     <span class="tag">Hoàng Cung Lòng Đất</span>
-                                    <span class="tag">Dài 31.4km</span>
                                 </div>
                                 <h3 class="dest-card-title">3. Động Thiên Đường</h3>
-                                <p class="dest-card-desc">Cung điện ngầm tráng lệ dài nhất châu Á với muôn vàn kiệt tác nhũ đá rực rỡ tựa chốn bồng lai.</p>
+                                <p class="dest-card-desc">Hoàng cung lộng lẫy trong lòng núi đá vôi với hệ thống nhũ đá pha lê tráng lệ và lối đi cầu gỗ dài nhất châu Á.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 4: Suối Nước Moọc -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_suoi_nuoc_mooc.webp', '4. Suối Nước Moọc — Thiên Đường Giải Nhiệt Xanh Màu Ngọc Bích', 'Nằm ẩn mình dưới tán rừng nguyên sinh rậm rạp của Vườn quốc gia. Dòng nước suối phun trào từ lòng đất mát lạnh 20°C quanh năm, chảy qua những ghềnh đá rêu phong phủ đầy hoa dại, là điểm chèo kayak và tắm suối tuyệt vời nhất mùa hè.')">
+                        <!-- 4. Suối Nước Moọc & Sông Chày - Hang Tối (double-col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/quangbinh_suoi_nuoc_mooc.webp', '4. Suối Nước Moọc & Sông Chày — Viên Ngọc Bích Đại Ngàn', 'Dòng suối trong vắt phun trào từ lòng núi đá vôi với nhiệt độ 20°C quanh năm, bao quanh bởi rừng nguyên sinh cổ thụ và cầu tre thơ mộng.')">
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_suoi_nuoc_mooc.webp" alt="Suối Nước Moọc xanh ngọc bích tuyệt mỹ" loading="lazy">
+                                <img src="images/quangbinh_suoi_nuoc_mooc.webp" alt="Suối Nước Moọc viên ngọc bích giữa rừng nguyên sinh Phong Nha" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Suối Ngọc Bích</span>
-                                    <span class="tag">Mát Lạnh 20°C</span>
+                                    <span class="tag tag-hot">🔥 Nước Xanh Ngọc Bích 20°C</span>
+                                    <span class="tag">Rừng Nguyên Sinh Phong Nha</span>
+                                    <span class="tag">Chèo Kayak & Đu Zipline</span>
                                 </div>
-                                <h3 class="dest-card-title">4. Suối Nước Moọc</h3>
-                                <p class="dest-card-desc">Tuyệt tác thiên nhiên phun trào từ lòng đất, thiên đường sinh thái mát lạnh giữa rừng nguyên sinh.</p>
+                                <h3 class="dest-card-title">4. Suối Nước Moọc & Sông Chày - Hang Tối — Viên Ngọc Bích Đại Ngàn</h3>
+                                <p class="dest-card-desc">Làn nước trong vắt màu ngọc bích phun trào kỳ bí từ lòng núi đá vôi, thiên đường chèo kayak, tắm bùn khoáng hang tối và đi dạo trên cầu tre giữa rừng rậm nguyên sinh.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 5: Sông Chày - Hang Tối -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_song_chay_hang_toi.webp', '5. Sông Chày & Hang Tối — Đu Dây Zipline & Trải Nghiệm Tắm Bùn Khoáng Tự Nhiên', 'Điểm đến phiêu lưu mạo hiểm hàng đầu tại Phong Nha. Trải nghiệm tuyến đu dây zipline dài 400m vượt qua dòng sông Chày xanh biếc, chèo thuyền kayak và thám hiểm Hang Tối với hồ bùn khoáng tự nhiên ấm mịn độc nhất vô nhị.')">
+                        <!-- 5. Hang Tám Cô & Đường 20 Quyết Thắng (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_hang_tam_co.webp', '5. Hang Tám Cô & Cung Đường 20 Quyết Thắng', 'Di tích lịch sử quốc gia đặc biệt ghi dấu sự hy sinh anh dũng của 8 nữ thanh niên xung phong năm 1972 trên tọa độ lửa Trường Sơn.')">
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_song_chay_hang_toi.webp" alt="Sông Chày Hang Tối tắm bùn zipline mạo hiểm" loading="lazy">
+                                <img src="images/quangbinh_hang_tam_co.webp" alt="Di tích Hang Tám Cô đường 20 Quyết Thắng lịch sử anh hùng" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Zipline 400m</span>
-                                    <span class="tag">Tắm Bùn Hang Động</span>
+                                    <span class="tag">Di Tích Quốc Gia Đặc Biệt</span>
+                                    <span class="tag">Cung Đường 20</span>
                                 </div>
-                                <h3 class="dest-card-title">5. Sông Chày - Hang Tối</h3>
-                                <p class="dest-card-desc">Thử thách mạo hiểm đu dây zipline vượt sông và thư giãn ngâm mình trong bùn khoáng tự nhiên quý giá.</p>
+                                <h3 class="dest-card-title">5. Hang Tám Cô & Đường 20</h3>
+                                <p class="dest-card-desc">Bản hùng ca bất tử trên tuyến lửa Trường Sơn, nơi nghi ngút khói trầm tưởng niệm những người con anh dũng vì độc lập non sông.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 6: Hang Tám Cô & Đền Tưởng Niệm (Featured) -->
-                        <div class="dest-card featured" onclick="openLightbox('images/quangbinh_hang_tam_co.webp', '6. Hang Tám Cô & Đền Tưởng Niệm Đường 20 Quyết Thắng — Bản Hùng Ca Bất Tử', 'Tọa lạc trên cung đường 20 Quyết Thắng lịch sử, đây là nơi ghi dấu sự hy sinh anh dũng đến hơi thở cuối cùng của 8 nữ liệt sĩ thanh niên xung phong quê Hoằng Hóa (Thanh Hóa) vào tháng 11/1972 khi bị bom Mỹ đánh sập tảng đá nghìn tấn bịt kín cửa hang. Di tích Quốc gia Đặc biệt linh thiêng nơi du khách dâng hương tri ân thế hệ cha anh.')">
+                        <!-- 6. Vũng Chùa - Đảo Yến (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_vung_chua_dao_yen.webp', '6. Vũng Chùa - Đảo Yến — Nơi Yên Nghỉ Của Đại Tướng', 'Vùng biển bình yên dưới chân Đèo Ngang nhìn ra Đảo Yến xanh biếc, nơi an nghỉ vĩnh hằng của Đại tướng Võ Nguyên Giáp.')">
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_hang_tam_co.webp" alt="Hang Tám Cô di tích lịch sử quốc gia đặc biệt đường 20 Quyết Thắng" loading="lazy">
-                            </div>
-                            <div class="dest-card-overlay"></div>
-                            <div class="dest-card-content">
-                                <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 Di Tích QG Đặc Biệt</span>
-                                    <span class="tag">Đường 20 Quyết Thắng</span>
-                                </div>
-                                <h3 class="dest-card-title">6. Hang Tám Cô & Cung Đường 20 Quyết Thắng — Dấu Ấn Anh Hùng</h3>
-                                <p class="dest-card-desc">Bản hùng ca bi tráng của 8 cô gái thanh niên xung phong kiên cường giữ vững mạch máu giao thông thời kỳ kháng chiến.</p>
-                            </div>
-                        </div>
-
-                        <!-- Spot 7: Vũng Chùa - Đảo Yến -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_vung_chua_dao_yen.webp', '7. Vũng Chùa - Đảo Yến — Nơi An Nghỉ Ngàn Thu Của Đại Tướng Võ Nguyên Giáp', 'Nằm dưới chân dãy Hoành Sơn nhìn ra biển Đông tĩnh lặng, nơi Đại tướng Tổng Tư lệnh Võ Nguyên Giáp lựa chọn làm nơi an giấc ngàn thu. Địa thế phong thủy tuyệt mỹ tựa núi ngắm biển, nơi muôn triệu người con đất Việt luôn hướng về với lòng kính yêu vô hạn.')">
-                            <div class="dest-card-img">
-                                <img src="images/quangbinh_vung_chua_dao_yen.webp" alt="Vũng Chùa Đảo Yến nơi an nghỉ Đại tướng Võ Nguyên Giáp" loading="lazy">
+                                <img src="images/quangbinh_vung_chua_dao_yen.webp" alt="Vũng Chùa Đảo Yến nơi an nghỉ của Đại tướng Võ Nguyên Giáp" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
                                     <span class="tag">Đại Tướng Võ Nguyên Giáp</span>
-                                    <span class="tag">Cõi Thiêng Non Nước</span>
+                                    <span class="tag">Vịnh Biển Hùng Vĩ</span>
                                 </div>
-                                <h3 class="dest-card-title">7. Vũng Chùa - Đảo Yến</h3>
-                                <p class="dest-card-desc">Nơi an nghỉ vĩnh hằng của Người anh cả Quân đội nhân dân Việt Nam giữa non xanh nước biếc biển trời quê hương.</p>
+                                <h3 class="dest-card-title">6. Vũng Chùa - Đảo Yến</h3>
+                                <p class="dest-card-desc">Vịnh biển phong thủy đắc địa tựa lưng vào dãy Hoành Sơn, chốn thiêng thanh bình ngát hương thông tưởng nhớ vị tướng huyền thoại.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 8: Bãi biển Nhật Lệ & Đồi cát Quang Phú -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_bien_nhat_le_doi_cat.webp', '8. Biển Nhật Lệ & Đồi Cát Quang Phú — Bãi Biển Thơ Mộng & Trượt Cát Trắng', 'Bãi biển Nhật Lệ cát trắng mịn thoai thoải nằm ngay trung tâm thành phố Đồng Hới, nước biển trong xanh êm đềm. Liền kề đó là đồi cát Quang Phú nhấp nhô như sa mạc thu nhỏ với những cồn cát vàng đổi màu theo từng khoảnh khắc trong ngày.')">
+                        <!-- 7. Làng Biển Cổ Cảnh Dương (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/quangbinh_lang_co_canh_duong_da_san_ho.webp', '7. Làng Biển Cổ Cảnh Dương — Bờ Rào Đá San Hô 400 Năm', 'Làng biển cổ Cảnh Dương (huyện Quảng Trạch) — Một trong bát danh hương của Quảng Bình khởi lập từ năm 1643 thời chúa Nguyễn. Những con ngõ nhỏ lát đá cổ kính với bờ tường xây hoàn toàn bằng đá san hô biển rêu phong độc nhất vô nhị và đền thờ Ngư Linh Miếu lưu giữ hai bộ xương cá voi khổng lồ lớn nhất Việt Nam.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/quangbinh_lang_co_canh_duong_da_san_ho.webp', 'Làng biển cổ Cảnh Dương bờ rào đá san hô rêu phong', 'Làng biển cổ Cảnh Dương (huyện Quảng Trạch) — Một trong bát danh hương của Quảng Bình khởi lập từ năm 1643 thời chúa Nguyễn. Những con ngõ nhỏ lát đá cổ kính với bờ tường xây hoàn toàn bằng đá san hô biển rêu phong độc nhất vô nhị và đền thờ Ngư Linh Miếu lưu giữ hai bộ xương cá voi khổng lồ lớn nhất Việt Nam.', '7. Làng Biển Cổ Cảnh Dương — Bờ Rào Đá San Hô 400 Năm', 'Bản làng di sản ven biển khởi lập từ năm 1643 với những ngõ đá san hô rêu phong độc bản, đền thờ cá voi Ngư Linh Miếu và nét sinh hoạt chài lưới mộc mạc nguyên sơ.')">📸 Ngõ cổ đá san hô Cảnh Dương</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/quangbinh_mua_thu_hoang_hon_nhat_le.webp', 'Hoàng hôn biển Quảng Bình thơ mộng Cảnh Dương', 'Hoàng hôn rực rỡ buông xuống bãi biển cát trắng mênh mông và những chiếc thuyền nan trở về sau chuyến ra khơi đầy ắp cá tôm.', '7. Làng Bích Họa Đại Dương & Bờ Biển Cảnh Dương', 'Không gian bích họa 3D sống động tái hiện huyền thoại biển cả, hòa cùng tiếng sóng vỗ rì rào và nắng vàng ấm áp trên bãi cát trắng phau.')">📸 Bờ biển & Tranh bích họa 3D</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_bien_nhat_le_doi_cat.webp" alt="Biển Nhật Lệ và đồi cát Quang Phú Quảng Bình" loading="lazy">
+                                <img src="images/quangbinh_lang_co_canh_duong_da_san_ho.webp" alt="Làng biển cổ Cảnh Dương ngõ đá san hô bích họa Quảng Bình" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Biển Thơ Mộng</span>
-                                    <span class="tag">Trượt Cát Sa Mạc</span>
+                                    <span class="tag tag-hot">🔥 Di Sản Làng Biển 1643</span>
+                                    <span class="tag">Bát Danh Hương Quảng Bình</span>
+                                    <span class="tag">Tường Đá San Hô & Bích Họa 3D</span>
                                 </div>
-                                <h3 class="dest-card-title">8. Biển Nhật Lệ & Đồi Cát Quang Phú</h3>
-                                <p class="dest-card-desc">Dải bờ biển ngọc ngà thơ mộng kết hợp đồi cát trắng trải dài bất tận nhìn ra vịnh biển xanh mát.</p>
+                                <h3 class="dest-card-title">7. Làng Biển Cổ Cảnh Dương — Bờ Rào Đá San Hô 400 Năm</h3>
+                                <p class="dest-card-desc">Bản làng di sản ven biển khởi lập từ năm 1643 với những ngõ đá san hô rêu phong độc bản, đền thờ cá voi Ngư Linh Miếu và nét sinh hoạt chài lưới mộc mạc nguyên sơ.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 9: Quảng Bình Quan & Lũy Thầy -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_quang_binh_quan.webp', '9. Quảng Bình Quan & Lũy Thầy — Cổng Thành Lịch Sử Thời Trịnh Nguyễn', 'Cổng thành cổ kiên cố được quân sư Đào Duy Từ cho xây đắp vào năm 1639 dưới thời chúa Nguyễn Phúc Nguyên để chốt giữ đường thiên lý Bắc Nam. Trải qua bao cuộc chiến tranh khốc liệt, cửa quan vẫn đứng uy nghi giữa lòng thành phố Đồng Hới như chứng nhân lịch sử 400 năm.')">
+                        <!-- 8. Biển Nhật Lệ & Đồi Cát Quang Phú (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_bien_nhat_le_doi_cat.webp', '8. Biển Nhật Lệ & Đồi Cát Trắng Quang Phú', 'Bãi biển thơ mộng ngay cửa sông Nhật Lệ với bờ cát trắng mịn thoai thoải, cạnh bên là sa mạc cát Quang Phú tuyệt đẹp để trượt cát và ngắm hoàng hôn.')">
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_quang_binh_quan.webp" alt="Quảng Bình Quan cổng thành cổ kính Đồng Hới" loading="lazy">
+                                <img src="images/quangbinh_bien_nhat_le_doi_cat.webp" alt="Biển Nhật Lệ và đồi cát trắng Quang Phú Đồng Hới" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Di Tích Lịch Sử</span>
-                                    <span class="tag">Lũy Thầy 1639</span>
+                                    <span class="tag">Bãi Biển Đẹp Nhất TP Đồng Hới</span>
+                                    <span class="tag">Đồi Cát Quang Phú</span>
                                 </div>
-                                <h3 class="dest-card-title">9. Quảng Bình Quan</h3>
-                                <p class="dest-card-desc">Cổng thành cổ kính sừng sững giữa phố biển, biểu tượng kiên cường của vùng đất địa đầu tuyến lửa.</p>
+                                <h3 class="dest-card-title">8. Biển Nhật Lệ & Đồi Cát</h3>
+                                <p class="dest-card-desc">Bờ cát trắng mịn trải dài bên sóng biếc hiền hòa, trải nghiệm trượt cát phiêu lưu giữa sa mạc cát vàng rực rỡ.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 10: Đèo Ngang & Hoành Sơn Quan -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_deo_ngang_hoanh_son_quan.webp', '10. Đèo Ngang & Cổng Trời Hoành Sơn Quan — Thắng Cảnh Thơ Ca Bất Hủ', 'Con đèo hiểm trở nổi tiếng trong thi ca nối liền Quảng Bình và Hà Tĩnh. Trên đỉnh đèo ở độ cao 250m là cổng ải Hoành Sơn Quan xây bằng đá hoa cương từ thời vua Minh Mạng năm 1833, nơi thu trọn vào tầm mắt muôn trùng núi non trùng điệp và biển khơi xanh ngắt.')">
+                        <!-- 9. Quảng Bình Quan & Lũy Thầy (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/quangbinh_quang_binh_quan.webp', '9. Quảng Bình Quan & Lũy Thầy 1631', 'Thành lũy quân sự cổ kính xây dựng năm 1631 thời chúa Nguyễn do Đào Duy Từ chỉ huy, chốt chặn huyết mạch Đàng Trong thời Trịnh - Nguyễn phân tranh.')">
                             <div class="dest-card-img">
-                                <img src="images/quangbinh_deo_ngang_hoanh_son_quan.webp" alt="Đèo Ngang Hoành Sơn Quan cổng trời lịch sử" loading="lazy">
+                                <img src="images/quangbinh_quang_binh_quan.webp" alt="Di tích lịch sử Quảng Bình Quan lũy Thầy Đào Duy Từ" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Thắng Cảnh Thi Ca</span>
-                                    <span class="tag">Cổng Trời 1833</span>
+                                    <span class="tag">Di Tích Lịch Sử 1631</span>
+                                    <span class="tag">Lũy Thầy Đào Duy Từ</span>
                                 </div>
-                                <h3 class="dest-card-title">10. Đèo Ngang & Hoành Sơn Quan</h3>
-                                <p class="dest-card-desc">Cổng ải đá cổ kính trên đỉnh đèo lộng gió, nơi lắng đọng những vần thơ bất hủ đi cùng năm tháng.</p>
+                                <h3 class="dest-card-title">9. Quảng Bình Quan & Lũy Thầy</h3>
+                                <p class="dest-card-desc">Cổng ải thành cổ uy nghiêm giữa trung tâm Đồng Hới, chứng tích hào hùng cho nghệ thuật quân sự phòng thủ bậc thầy thế kỷ XVII.</p>
                             </div>
                         </div>
+
+                        <!-- 10. Đèo Ngang & Làng Nón Lá Ba Đồn (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/quangbinh_lang_non_la_ba_don.webp', '10. Làng Nghề Nón Lá Ba Đồn — Tinh Hoa Kè Trắng Sông Gianh', 'Làng nghề nón lá Ba Đồn (thị xã Ba Đồn, Quảng Bình) — Làng nghề truyền thống nức tiếng miền Trung bên bờ bắc sông Gianh. Những vành nón lá kè trắng muốt, đường kim mũi chỉ tỉ mỉ phơi đều tăm tắp dưới nắng vàng, biểu tượng mộc mạc dịu dàng của người phụ nữ Quảng Bình kiên cường.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/quangbinh_lang_non_la_ba_don.webp', 'Làng nghề nón lá Ba Đồn bên dòng sông Gianh Quảng Bình', 'Làng nghề nón lá Ba Đồn (thị xã Ba Đồn, Quảng Bình) — Làng nghề truyền thống nức tiếng miền Trung bên bờ bắc sông Gianh. Những vành nón lá kè trắng muốt, đường kim mũi chỉ tỉ mỉ phơi đều tăm tắp dưới nắng vàng, biểu tượng mộc mạc dịu dàng của người phụ nữ Quảng Bình kiên cường.', '10. Làng Nghề Nón Lá Ba Đồn — Tinh Hoa Kè Trắng Sông Gianh', 'Làng nghề thủ công hàng trăm năm tuổi bên dòng sông Gianh, nơi bàn tay khéo léo của người thợ chằm nón tạo nên những vành nón lá kè trắng muốt thanh tao.')">📸 Làng nón lá Ba Đồn truyền thống</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/quangbinh_deo_ngang_hoanh_son_quan.webp', 'Cửa ải Hoành Sơn Quan đỉnh Đèo Ngang Quảng Bình', 'Hoành Sơn Quan trên đỉnh Đèo Ngang — Cổng thành đá cổ kính xây dựng năm 1833 thời vua Minh Mạng tại độ cao 256m chia ranh giới tự nhiên giữa Quảng Bình và Hà Tĩnh. Nơi đây từng là cửa ải chiến lược huyết mạch Đàng Trong - Đàng Ngoài thời Trịnh - Nguyễn phân tranh.', '10. Đèo Ngang & Cửa Ải Cổ Hoành Sơn Quan 1833', 'Cổng thành đá rêu phong xây dựng thời vua Minh Mạng sừng sững trên đỉnh Đèo Ngang lộng gió, nơi thi sĩ Bà Huyện Thanh Quan đề bút vần thơ bất hủ.')">📸 Cửa ải Hoành Sơn Quan Đèo Ngang</button>
+                            </div>
+                            <div class="dest-card-img">
+                                <img src="images/quangbinh_lang_non_la_ba_don.webp" alt="Làng nghề nón lá Ba Đồn bên sông Gianh và Hoành Sơn Quan Đèo Ngang" loading="lazy">
+                            </div>
+                            <div class="dest-card-overlay"></div>
+                            <div class="dest-card-content">
+                                <div class="dest-card-tags">
+                                    <span class="tag tag-hot">🔥 Di Sản Làng Nghề Sông Gianh</span>
+                                    <span class="tag">Nón Kè Trắng Ba Đồn</span>
+                                    <span class="tag">Hoành Sơn Quan 1833</span>
+                                </div>
+                                <h3 class="dest-card-title">10. Đèo Ngang, Hoành Sơn Quan & Làng Nón Lá Ba Đồn — Hồn Xưa Sông Gianh</h3>
+                                <p class="dest-card-desc">Lắng đọng hoài niệm cổ kính nơi cửa ải Hoành Sơn Quan trên đỉnh đèo lộng gió, cảm nhận nét đẹp bình dị của làng nghề nón lá kè trắng muốt trăm năm soi bóng dòng sông Gianh huyền thoại.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
@@ -1314,6 +1392,42 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            const titleEl = card.querySelector('.dest-card-title');
+            const descEl = card.querySelector('.dest-card-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            card.onclick = function() {
+                openLightbox(imgSrc, cardTitle || imgAlt, legendText || cardDesc);
+            };
+        }
+
     </script>
 </body>
 </html>
