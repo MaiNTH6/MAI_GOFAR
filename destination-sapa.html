@@ -41,17 +41,30 @@
         }
     }
     
-        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
             if (window.event) window.event.stopPropagation();
-            const card = btn.closest('.dest-card');
+            const card = btn.closest('.dest-card, .spot-card');
             if (!card) return;
-            const img = card.querySelector('.dest-card-img img');
+            const img = card.querySelector('.dest-card-img img, .spot-card-img img');
+            const titleEl = card.querySelector('.dest-card-title, .spot-card-title');
+            const descEl = card.querySelector('.dest-card-desc, .spot-card-desc');
+            
             if (img) {
-                img.style.opacity = '0.4';
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
                 setTimeout(() => {
                     img.src = imgSrc;
                     img.alt = imgAlt;
                     img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
                 }, 150);
             }
             const btns = card.querySelectorAll('.photo-btn');
@@ -750,6 +763,9 @@
         .photo-btn:hover {
             color: #fff;
             background: rgba(255, 255, 255, 0.18);
+        }
+        .dest-card-title, .dest-card-desc {
+            transition: opacity 0.2s ease;
         }
         .photo-btn.active {
             background: var(--accent);
@@ -1462,17 +1478,30 @@
             }
         });
     
-        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
             if (window.event) window.event.stopPropagation();
-            const card = btn.closest('.dest-card');
+            const card = btn.closest('.dest-card, .spot-card');
             if (!card) return;
-            const img = card.querySelector('.dest-card-img img');
+            const img = card.querySelector('.dest-card-img img, .spot-card-img img');
+            const titleEl = card.querySelector('.dest-card-title, .spot-card-title');
+            const descEl = card.querySelector('.dest-card-desc, .spot-card-desc');
+            
             if (img) {
-                img.style.opacity = '0.4';
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
                 setTimeout(() => {
                     img.src = imgSrc;
                     img.alt = imgAlt;
                     img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
                 }, 150);
             }
             const btns = card.querySelectorAll('.photo-btn');

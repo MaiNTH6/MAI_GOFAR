@@ -857,6 +857,9 @@
             color: #fff;
             background: rgba(255, 255, 255, 0.18);
         }
+        .spot-card-title, .spot-card-desc {
+            transition: opacity 0.2s ease;
+        }
         .photo-btn.active {
             background: var(--accent);
             color: #fff;
@@ -1160,8 +1163,8 @@
                     <!-- Spot 7: Làng Chăm Châu Phong & Đa Phước (Featured Di Sản double-col) -->
                     <div class="spot-card double-col has-gallery" data-legend="Cộng đồng người Chăm Islam tại xã Châu Phong (thị xã Tân Châu) và Đa Phước (huyện An Phú) lưu giữ không gian văn hóa bản địa nguyên vẹn hàng trăm năm bên dòng sông Tiền và Châu Giang. Nổi bật là những nếp nhà sàn gỗ cổ truyền cao ráo với hoa văn chạm khắc tinh xảo, phụ nữ Chăm bên khung cửi cổ dệt sà rông, xà rông thổ cẩm rực rỡ và những chiếc khăn Mat'ra thêu chỉ tơ cầu kỳ. Cùng với những ngôi thánh đường Hồi giáo uy nghiêm như Mubarak, Jamiul Azhar với mái vòm củ hành trắng muốt vút cao, nơi đây mang đến trải nghiệm văn hóa dân tộc sâu sắc và thanh bình bậc nhất phương Nam.">
                         <div class="card-photo-nav">
-                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/angiang_lang_cham_chau_phong_det_tho_cam.webp', 'Khung cửi dệt thổ cẩm truyền thống làng Chăm Châu Phong An Giang', 'Làng Chăm Châu Phong (Tân Châu) — Nhà sàn gỗ trăm năm và khung cửi cổ dệt sà rông, thổ cẩm Mat\'ra tinh tế của người Chăm Islam bên sông Tiền.')">📸 Nhà sàn cổ & Khung cửi dệt</button>
-                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/angiang_lang_noi_chau_doc_lang_cham.webp', 'Làng nổi Châu Đốc và làng Chăm ven sông hiền hòa An Giang', 'Bức tranh làng nổi nuôi cá bè Châu Đốc và những mái nhà sàn Chăm yên bình soi bóng nước dòng Châu Giang.')">📸 Làng nổi cá bè & Dòng Châu Giang</button>
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/angiang_lang_cham_chau_phong_det_tho_cam.webp', 'Khung cửi dệt thổ cẩm truyền thống làng Chăm Châu Phong An Giang', 'Làng Chăm Châu Phong (Tân Châu) — Nhà sàn gỗ trăm năm và khung cửi cổ dệt sà rông, thổ cẩm Mat\'ra tinh tế của người Chăm Islam bên sông Tiền.', '7. Làng Chăm Châu Phong — Di Sản Dệt Thổ Cẩm Trăm Năm', 'Bản làng di sản độc đáo bên sông Tiền với những nếp nhà sàn gỗ cổ kính, khung cửi dệt sà rông thổ cẩm rực rỡ và khăn Mat\'ra thêu tơ tinh xảo.')">📸 Nhà sàn cổ & Khung cửi dệt</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/angiang_lang_noi_chau_doc_lang_cham.webp', 'Làng nổi Châu Đốc và làng Chăm ven sông hiền hòa An Giang', 'Bức tranh làng nổi nuôi cá bè Châu Đốc và những mái nhà sàn Chăm yên bình soi bóng nước dòng Châu Giang.', '7. Làng Nổi Nuôi Cá Bè Châu Đốc & Sông Nước Châu Giang', 'Bức tranh làng nổi nuôi cá bè trù phú trên dòng Châu Giang hiền hòa, nét văn hóa sông nước trứ danh vùng ngã ba sông Châu Đốc.')">📸 Làng nổi cá bè & Dòng Châu Giang</button>
                         </div>
                         <div class="spot-card-img">
                             <img src="images/angiang_lang_cham_chau_phong_det_tho_cam.webp" alt="Khung cửi dệt thổ cẩm truyền thống làng Chăm Châu Phong An Giang" loading="lazy">
@@ -1203,8 +1206,8 @@
                     <!-- Spot 10: Cánh Đồng Thốt Nốt & Làng Nghề Đường Thốt Nốt Tri Tôn (Featured Di Sản double-col) -->
                     <div class="spot-card double-col has-gallery" data-legend="Vùng Bảy Núi (Tri Tôn và Tịnh Biên) là 'thủ phủ thốt nốt' độc nhất vô nhị của Việt Nam với hàng chục ngàn cây thốt nốt cổ thụ cao vút xòe tán tròn trên đồng lúa vàng. Nghề nấu đường thốt nốt thủ công truyền thống của đồng bào Khmer nơi đây là di sản văn hóa ẩm thực trân quý: đàn ông Khmer thoăn thoắt trèo cây lấy nước mật hoa thốt nốt trong lành vào ống tre sáng sớm, phụ nữ ở nhà nhóm bếp lò trấu đỏ lửa cô đặc mật trong chảo gang to suốt nhiều giờ để tạo nên những mẻ đường thốt nốt vàng ươm, thơm ngọt thanh tao và gói cẩn thận trong từng lớp lá thốt nốt mộc mạc.">
                         <div class="card-photo-nav">
-                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/angiang_lang_nghe_duong_thot_not_tri_ton.webp', 'Lò nấu đường thốt nốt thủ công truyền thống người Khmer Tri Tôn An Giang', 'Lò nấu đường thốt nốt thủ công của đồng bào Khmer vùng Bảy Núi. Chảo gang lớn đỏ lửa trấu sôi mật vàng óng ả và những bánh đường thẻ thơm nồng gói lá thốt nốt.')">📸 Lò nấu đường thốt nốt thủ công</button>
-                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/angiang_canh_dong_thot_not_tri_ton.webp', 'Cánh đồng thốt nốt huyền thoại Tri Tôn Tịnh Biên An Giang', 'Những rặng thốt nốt cổ thụ trăm năm in bóng sừng sững trên biển lúa vàng rực rỡ vùng Bảy Núi An Giang.')">📸 Rặng thốt nốt đồng lúa vàng</button>
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/angiang_lang_nghe_duong_thot_not_tri_ton.webp', 'Lò nấu đường thốt nốt thủ công truyền thống người Khmer Tri Tôn An Giang', 'Lò nấu đường thốt nốt thủ công của đồng bào Khmer vùng Bảy Núi. Chảo gang lớn đỏ lửa trấu sôi mật vàng óng ả và những bánh đường thẻ thơm nồng gói lá thốt nốt.', '10. Làng Nghề Nấu Đường Thốt Nốt Thủ Công Tri Tôn', 'Nghề thủ công truyền thống của đồng bào Khmer vùng Bảy Núi, chảo gang đỏ lửa trấu cô đặc mật hoa thốt nốt vàng óng ánh thơm ngát.')">📸 Lò nấu đường thốt nốt thủ công</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/angiang_canh_dong_thot_not_tri_ton.webp', 'Cánh đồng thốt nốt huyền thoại Tri Tôn Tịnh Biên An Giang', 'Những rặng thốt nốt cổ thụ trăm năm in bóng sừng sững trên biển lúa vàng rực rỡ vùng Bảy Núi An Giang.', '10. Cánh Đồng Thốt Nốt Huyền Thoại Vùng Bảy Núi Thất Sơn', 'Bức tranh kỳ vĩ của hàng vạn cây thốt nốt cổ thụ trăm năm sừng sững giữa ráng chiều Tây Nam trên biển lúa vàng rực rỡ Tịnh Biên - Tri Tôn.')">📸 Rặng thốt nốt đồng lúa vàng</button>
                         </div>
                         <div class="spot-card-img">
                             <img src="images/angiang_lang_nghe_duong_thot_not_tri_ton.webp" alt="Lò nấu đường thốt nốt thủ công truyền thống người Khmer Tri Tôn An Giang" loading="lazy">
@@ -1496,17 +1499,30 @@
             });
         });
     
-        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
             if (window.event) window.event.stopPropagation();
-            const card = btn.closest('.spot-card');
+            const card = btn.closest('.dest-card, .spot-card');
             if (!card) return;
-            const img = card.querySelector('.spot-card-img img');
+            const img = card.querySelector('.dest-card-img img, .spot-card-img img');
+            const titleEl = card.querySelector('.dest-card-title, .spot-card-title');
+            const descEl = card.querySelector('.dest-card-desc, .spot-card-desc');
+            
             if (img) {
-                img.style.opacity = '0.4';
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
                 setTimeout(() => {
                     img.src = imgSrc;
                     img.alt = imgAlt;
                     img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
                 }, 150);
             }
             const btns = card.querySelectorAll('.photo-btn');

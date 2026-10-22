@@ -781,6 +781,9 @@
             color: #fff;
             background: rgba(255, 255, 255, 0.18);
         }
+        .dest-card-title, .dest-card-desc {
+            transition: opacity 0.2s ease;
+        }
         .photo-btn.active {
             background: var(--accent);
             color: #fff;
@@ -1060,8 +1063,8 @@
                     <!-- 7. Làng Nghề Bánh Tráng Phơi Sương Trảng Bàng (Featured Di Sản double-col) -->
                     <div class="dest-card double-col has-gallery" data-legend="Làng nghề bánh tráng phơi sương Trảng Bàng có bề dày lịch sử hơn 100 năm, được Bộ Văn hóa, Thể thao và Du lịch ghi danh là Di sản văn hóa phi vật thể quốc gia theo Quyết định số 261/QĐ-BVHTTDL ngày 30/1/2015. Nghề làm bánh tráng phơi sương đòi hỏi công phu tuyệt đỉnh: gạo nàng Thơm ngon được xay mịn pha chút muối hột, tráng hai lớp mỏng tang trên nồi hơi nước rồi phơi nắng cho se mặt, sau đó nướng phồng trên lò than vỏ đậu phộng và đem phơi hứng những giọt sương đêm thanh khiết từ 2h00 đến 4h00 sáng. Bánh tráng mềm dẻo, cuốn cùng thịt luộc bắp heo và đĩa rau rừng hơn 10 loại hái từ bờ sông Vàm Cỏ Đông, chấm mắm nêm chua cay tạo nên phong vị ẩm thực trứ danh miền Đông Nam Bộ.">
                         <div class="card-photo-nav">
-                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/tayninh_lang_nghe_banh_trang_phoi_suong.webp', 'Giàn phơi bánh tráng phơi sương Trảng Bàng Tây Ninh', 'Làng Nghề Bánh Tráng Phơi Sương Trảng Bàng — Di sản văn hóa phi vật thể Quốc gia. Giàn phơi phên tre mộc mạc và lò tráng bánh thủ công truyền thống rực lửa trấu.')">📸 Giàn phơi sương & Lò thủ công</button>
-                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/tayninh_mon_banh_trang_phoi_suong_cuon_thit_luoc.webp', 'Món bánh tráng phơi sương cuốn thịt luộc rau rừng Trảng Bàng', 'Mâm bánh tráng phơi sương dẻo dai cuốn thịt bắp heo luộc và hơn 10 loại rau rừng sông Vàm Cỏ Đông.')">📸 Mâm bánh tráng cuốn rau rừng</button>
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/tayninh_lang_nghe_banh_trang_phoi_suong.webp', 'Giàn phơi bánh tráng phơi sương Trảng Bàng Tây Ninh', 'Làng Nghề Bánh Tráng Phơi Sương Trảng Bàng — Di sản văn hóa phi vật thể Quốc gia. Giàn phơi phên tre mộc mạc và lò tráng bánh thủ công truyền thống rực lửa trấu.', '7. Làng Nghề Bánh Tráng Phơi Sương Trảng Bàng — Tinh Hoa Hứng Sương Đêm', 'Làng nghề truyền thống trăm năm gìn giữ kỹ nghệ tráng bánh hai lớp và phơi hứng sương đêm độc nhất vô nhị đất phương Nam, tạo nên món cuốn trứ danh ăn kèm rau rừng Vàm Cỏ.')">📸 Giàn phơi sương & Lò thủ công</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/tayninh_mon_banh_trang_phoi_suong_cuon_thit_luoc.webp', 'Món bánh tráng phơi sương cuốn thịt luộc rau rừng Trảng Bàng', 'Mâm bánh tráng phơi sương dẻo dai cuốn thịt bắp heo luộc và hơn 10 loại rau rừng sông Vàm Cỏ Đông.', '7. Thưởng Thức Bánh Tráng Phơi Sương Cuốn Thịt Luộc Rau Rừng', 'Mâm bánh tráng phơi sương dẻo dai cuốn thịt bắp heo luộc và hơn 10 loại rau rừng sông Vàm Cỏ Đông, chấm mắm nêm đậm đà phương Nam.')">📸 Mâm bánh tráng cuốn rau rừng</button>
                         </div>
                         <div class="dest-card-img">
                             <img src="images/tayninh_lang_nghe_banh_trang_phoi_suong.webp" alt="Làng nghề bánh tráng phơi sương Trảng Bàng Tây Ninh Di sản quốc gia" loading="lazy">
@@ -1113,8 +1116,8 @@
                     <!-- 10. Tòa Thánh Tây Ninh (Featured Di Sản double-col) -->
                     <div class="dest-card double-col has-gallery" data-legend="Khởi công xây dựng năm 1931 và khánh thành năm 1955, Tòa Thánh Tây Ninh (Đền Thánh Cao Đài) tại thị xã Hòa Thành là thánh địa trung ương của đạo Cao Đài — một tôn giáo nội sinh độc đáo của Việt Nam. Đây là một kiệt tác kiến trúc tôn giáo dung hòa hoàn hảo giữa nghệ thuật Á Đông và kiến trúc Gothic phương Tây: bên ngoài nổi bật với hai lầu chuông trống cao 27m vươn thẳng lên trời xanh và tháp Nghinh Phong hình vòm hoa sen; bên trong là một không gian nội điện nguy nga lộng lẫy dài 135m với hai hàng cột rồng uốn lượn sơn ngọc bích rực rỡ nâng đỡ vòm trần vẽ bầu trời ngàn sao xanh thẳm, dẫn lối trang nghiêm hướng về Cửu Trùng Đài và quả Càn Khôn tỏa sáng biểu tượng Thiên Nhãn (Mắt Trời).">
                         <div class="card-photo-nav">
-                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/tayninh_toa_thanh_noi_o_kien_truc.webp', 'Nội ô kiến trúc cột rồng vòm trời sao Tòa Thánh Tây Ninh', 'Tòa Thánh Tây Ninh — Tuyệt tác kiến trúc Đạo Cao Đài độc nhất vô nhị. Cận cảnh nội ô với hàng cột rồng uốn lượn sơn ngọc bích, trần vòm trời sao ngàn cánh và biểu tượng Thiên Nhãn tỏa sáng.')">📸 Nội ô vòm trời sao & Cột rồng</button>
-                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/tayninh_toa_thanh_tay_ninh_cao_dai.webp', 'Toàn cảnh ngoại thất Tòa Thánh Tây Ninh Đền Thánh Cao Đài', 'Toàn cảnh ngoại thất Tòa Thánh Tây Ninh với hai lầu chuông trống và tháp Nghinh Phong rực rỡ sắc màu.')">📸 Ngoại thất Đền Thánh rực rỡ</button>
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/tayninh_toa_thanh_noi_o_kien_truc.webp', 'Nội ô kiến trúc cột rồng vòm trời sao Tòa Thánh Tây Ninh', 'Tòa Thánh Tây Ninh — Tuyệt tác kiến trúc Đạo Cao Đài độc nhất vô nhị. Cận cảnh nội ô với hàng cột rồng uốn lượn sơn ngọc bích, trần vòm trời sao ngàn cánh và biểu tượng Thiên Nhãn tỏa sáng.', '10. Nội Ô Tòa Thánh Tây Ninh — Tuyệt Tác Cột Rồng Vòm Sao', 'Không gian nội điện nguy nga lộng lẫy với hai hàng cột rồng uốn lượn sơn ngọc bích nâng đỡ vòm trần bầu trời ngàn sao và biểu tượng Thiên Nhãn tỏa sáng.')">📸 Nội ô vòm trời sao & Cột rồng</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/tayninh_toa_thanh_tay_ninh_cao_dai.webp', 'Toàn cảnh ngoại thất Tòa Thánh Tây Ninh Đền Thánh Cao Đài', 'Toàn cảnh ngoại thất Tòa Thánh Tây Ninh với hai lầu chuông trống và tháp Nghinh Phong rực rỡ sắc màu.', '10. Toàn Cảnh Tòa Thánh Tây Ninh — Thánh Địa Cao Đài Độc Bản', 'Thánh địa vĩ đại của đạo Cao Đài kết tinh tinh hoa kiến trúc Đông - Tây với hai lầu chuông trống và tháp Nghinh Phong rực rỡ sắc màu.')">📸 Ngoại thất Đền Thánh rực rỡ</button>
                         </div>
                         <div class="dest-card-img">
                             <img src="images/tayninh_toa_thanh_noi_o_kien_truc.webp" alt="Nội ô kiến trúc cột rồng vòm sao Tòa Thánh Cao Đài Tây Ninh" loading="lazy">
@@ -1368,17 +1371,30 @@
             }
         });
     
-        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
             if (window.event) window.event.stopPropagation();
-            const card = btn.closest('.dest-card');
+            const card = btn.closest('.dest-card, .spot-card');
             if (!card) return;
-            const img = card.querySelector('.dest-card-img img');
+            const img = card.querySelector('.dest-card-img img, .spot-card-img img');
+            const titleEl = card.querySelector('.dest-card-title, .spot-card-title');
+            const descEl = card.querySelector('.dest-card-desc, .spot-card-desc');
+            
             if (img) {
-                img.style.opacity = '0.4';
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
                 setTimeout(() => {
                     img.src = imgSrc;
                     img.alt = imgAlt;
                     img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
                 }, 150);
             }
             const btns = card.querySelectorAll('.photo-btn');
