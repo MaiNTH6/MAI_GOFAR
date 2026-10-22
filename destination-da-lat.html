@@ -659,6 +659,56 @@
             .seasons-grid, .checkin-grid, .culinary-grid { grid-template-columns: 1fr; }
             .dest-card.single-col, .dest-card.double-col { grid-column: span 1; aspect-ratio: 16/9; }
         }
+    
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -826,167 +876,179 @@
                 <p>Khám phá trọn vẹn những tọa độ danh lam thắng cảnh và di tích kiến trúc quốc gia đã định hình nên linh hồn của Đà Lạt:</p>
 
                 <div class="checkin-grid">
-                    <!-- 1. LANGBIANG (DOUBLE) -->
-                    <div class="dest-card double-col" data-legend="Đỉnh núi đôi Langbiang huyền thoại — nóc nhà cao nguyên Lâm Viên sừng sững giữa trời xanh">
+
+                    <!-- 1. Đỉnh Núi Thiêng Langbiang (double-col) -->
+                    <div class="dest-card double-col" data-legend="Đỉnh núi đôi Langbiang (núi Ông cao 2.167m, núi Bà cao 2.124m) tại huyện Lạc Dương được mệnh danh là 'Nóc nhà Đà Lạt'. Nơi đây gắn liền với thiên tình sử bi tráng giữa chàng K'Lang và nàng H'Biang của đồng bào K'Ho và Lạch bản địa. Từ đỉnh Ra-đa (1.929m), du khách có thể phóng tầm mắt bao quát toàn cảnh Suối Vàng, Suối Bạc uốn lượn như dải lụa và toàn cảnh thành phố sương mù chìm trong biển mây bồng bềnh.">
                         <div class="dest-card-img">
-                            <img src="images/dalat_langbiang.webp" alt="Đỉnh Langbiang nóc nhà cao nguyên Lâm Viên Đà Lạt">
+                            <img src="images/dalat_langbiang.webp" alt="Đỉnh núi đôi Langbiang huyền thoại nóc nhà Đà Lạt sừng sững giữa trời mây" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Nóc nhà Lâm Viên</span>
-                                <span class="tag">Cao 2.167m</span>
-                                <span class="tag">Khu DTSQ Thế giới</span>
+                                <span class="tag tag-hot">🔥 Nóc Nhà Đà Lạt · 2.167m</span>
+                                <span class="tag">Huyền Thoại Chàng K'Lang</span>
+                                <span class="tag">Ngắm Toàn Cảnh Suối Vàng</span>
                             </div>
-                            <h3 class="dest-card-title">1. Đỉnh Núi Thiêng Langbiang</h3>
-                            <p class="dest-card-desc">Sừng sững ở độ cao 2.167m, đỉnh Langbiang là biểu tượng kiêu hãnh của tình yêu son sắt giữa chàng K'Lang và nàng H'Biang. Ngồi trên xe jeep chuyên dụng vượt dốc thông vi vút lên đỉnh Ra-đa (1.929m), thu trọn vào tầm mắt toàn cảnh hồ Đan Kia lấp lánh và phố núi mờ ảo trong biển mây.</p>
+                            <h3 class="dest-card-title">1. Đỉnh Núi Thiêng Langbiang — Nóc Nhà Lâm Viên</h3>
+                            <p class="dest-card-desc">Đỉnh non thiêng hùng vĩ gắn liền huyền thoại tình yêu bất tử của đồng bào K'Ho, mở ra tầm nhìn bao trọn biển mây bồng bềnh và dòng Suối Vàng lấp lánh.</p>
                         </div>
                     </div>
 
-                    <!-- 2. HỒ XUÂN HƯƠNG (SINGLE) -->
-                    <div class="dest-card single-col" data-legend="Hồ Xuân Hương — trái tim thơ mộng của Đà Lạt với mặt nước phẳng lặng soi bóng rặng thông cổ thụ">
+                    <!-- 2. Thắng Cảnh Hồ Xuân Hương (single-col) -->
+                    <div class="dest-card single-col" data-legend="Hồ Xuân Hương nằm ở độ cao 1.475m ngay tại trung tâm Đà Lạt, có diện tích mặt nước khoảng 32 ha với chu vi gần 5km hình trăng lưỡi liềm. Được công nhận là Di tích Thắng cảnh Quốc gia năm 1988, hồ là linh hồn thơ mộng của thành phố sương mù, soi bóng những rặng mai anh đào rực hồng mỗi độ xuân về và những đồi thông reo vi vút trong ánh hoàng hôn tím biếc.">
                         <div class="dest-card-img">
-                            <img src="images/dalat_xuan_huong.webp" alt="Hồ Xuân Hương trái tim thơ mộng giữa trung tâm thành phố Đà Lạt">
+                            <img src="images/dalat_xuan_huong.webp" alt="Thắng cảnh Hồ Xuân Hương thơ mộng giữa lòng thành phố Đà Lạt" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Di tích Quốc gia</span>
-                                <span class="tag">Trái tim phố núi</span>
+                                <span class="tag tag-hot">Di Tích Thắng Cảnh Quốc Gia</span>
+                                <span class="tag">Trái Tim Phố Núi</span>
                             </div>
                             <h3 class="dest-card-title">2. Thắng Cảnh Hồ Xuân Hương</h3>
-                            <p class="dest-card-desc">Hồ nước nhân tạo hình trăng lưỡi liềm uốn quanh trung tâm thành phố, được xếp hạng Di tích danh thắng quốc gia năm 1988. Đi dạo bộ quanh hồ sáng sớm hoặc đạp vịt hoàng hôn là trải nghiệm lãng mạn không thể bỏ lỡ.</p>
+                            <p class="dest-card-desc">Viên ngọc bích êm đềm giữa lòng phố núi, nơi dạo bước ngắm rặng thông reo soi bóng nước và hoa mai anh đào nở rộ.</p>
                         </div>
                     </div>
 
-                    <!-- 3. ĐỒI CHÈ CẦU ĐẤT (SINGLE) -->
-                    <div class="dest-card single-col" data-legend="Đồi chè Cầu Đất trăm năm tuổi — biển chè xanh ngát ngút ngàn và thiên đường săn mây lý tưởng">
+                    <!-- 3. Đồi Chè Cầu Đất Farm (single-col) -->
+                    <div class="dest-card single-col" data-legend="Thành lập từ năm 1927 bởi người Pháp với tên gọi ban đầu Cầu Đất Farm, đồi chè Cầu Đất (xã Xuân Trường) ở độ cao 1.650m là đồi chè cổ xưa và có quy mô lớn nhất Tây Nguyên. Những luống chè xanh mướt uốn lượn tầng tầng lớp lớp ôm trọn triền đồi đất đỏ bazan, hòa cùng tua-bin quạt gió khổng lồ quay chậm rãi giữa biển mây bồng bềnh ban mai.">
                         <div class="dest-card-img">
-                            <img src="images/dalat_cau_dat.webp" alt="Đồi chè Cầu Đất ngút ngàn với tua bin gió và biển mây sáng sớm">
+                            <img src="images/dalat_cau_dat.webp" alt="Đồi chè Cầu Đất Farm 1927 xanh ngút ngàn và quạt gió Đà Lạt" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Trăm năm lịch sử</span>
-                                <span class="tag">Tọa độ săn mây</span>
+                                <span class="tag">Đồi Chè Cổ 1927</span>
+                                <span class="tag">Thiên Đường Săn Mây</span>
                             </div>
                             <h3 class="dest-card-title">3. Đồi Chè Cầu Đất Farm</h3>
-                            <p class="dest-card-desc">Thành lập từ năm 1927, đây là vùng đồi chè cổ thụ rộng gần 230 ha trên độ cao 1.650m. Điểm hẹn săn mây ngoạn mục bên những cánh quạt gió khổng lồ quay chậm giữa biển sương trắng xóa.</p>
+                            <p class="dest-card-desc">Vạt đồi chè trăm năm xanh mướt ngút ngàn, điểm săn mây đón bình minh tuyệt mỹ bên cánh quạt gió khổng lồ.</p>
                         </div>
                     </div>
 
-                    <!-- 4. GA XE LỬA ĐÀ LẠT (DOUBLE) -->
-                    <div class="dest-card double-col" data-legend="Ga xe lửa Đà Lạt — kiệt tác kiến trúc Art Deco kết hợp mái nhà rông Tây Nguyên độc nhất vô nhị">
+                    <!-- 4. Ga Xe Lửa Cổ Đà Lạt (double-col) -->
+                    <div class="dest-card double-col" data-legend="Xây dựng từ năm 1932 đến 1938 do hai kiến trúc sư người Pháp Moncet và Reveron thiết kế, Ga Đà Lạt là nhà ga xe lửa cổ kính và đẹp nhất Đông Dương. Kiến trúc độc đáo mô phỏng 3 chóp nhọn của đỉnh núi thiêng Langbiang kết hợp mái vòm phương Tây cổ điển. Nơi đây từng vận hành tuyến đường sắt răng cưa huyền thoại Tháp Chàm - Đà Lạt độc nhất vô nhị vượt đèo Ngoạn Mục. Hiện nay ga vẫn vận hành chuyến tàu hơi nước cổ đưa du khách tham quan Trại Mát và cổ tự Linh Phước.">
                         <div class="dest-card-img">
-                            <img src="images/dalat_railway.webp" alt="Ga xe lửa Đà Lạt di tích kiến trúc quốc gia độc đáo với đầu tàu hơi nước cổ">
+                            <img src="images/dalat_railway.webp" alt="Ga xe lửa cổ Đà Lạt kiến trúc ba chóp Langbiang cổ kính Đông Dương" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Di tích Quốc gia</span>
-                                <span class="tag">Đường sắt răng cưa</span>
-                                <span class="tag">Art Deco 1938</span>
+                                <span class="tag tag-hot">🔥 Di Tích Kiến Trúc Quốc Gia 2001</span>
+                                <span class="tag">Nhà Ga Cổ Đẹp Nhất Đông Dương</span>
+                                <span class="tag">Tuyến Răng Cưa 1932</span>
                             </div>
-                            <h3 class="dest-card-title">4. Ga Xe Lửa Cổ Đà Lạt</h3>
-                            <p class="dest-card-desc">Nhà ga xe lửa đẹp và cổ kính nhất Đông Dương, khánh thành năm 1938 với hình tượng ba chóp mái cách điệu theo ba đỉnh Langbiang hùng vĩ. Nơi đây từng vận hành tuyến đường sắt răng cưa Tháp Chàm độc nhất thế giới vượt đèo Ngoạn Mục.</p>
+                            <h3 class="dest-card-title">4. Ga Xe Lửa Cổ Đà Lạt & Cung Đường Răng Cưa Huyền Thoại</h3>
+                            <p class="dest-card-desc">Kiệt tác kiến trúc Đông Dương mô phỏng ba chóp núi Langbiang kỳ vĩ, nơi lưu giữ đầu tàu hơi nước cổ kính và tiếng còi tàu âm vang ký ức thế kỷ.</p>
                         </div>
                     </div>
 
-                    <!-- 5. THÁC DATANLA (SINGLE) -->
-                    <div class="dest-card single-col" data-legend="Thác Datanla — dòng thác hùng vĩ tung bọt trắng xóa cùng máng trượt New Alpine Coaster dài nhất ĐNA">
+                    <!-- 5. Quần Thể Thác Datanla (single-col) -->
+                    <div class="dest-card single-col" data-legend="Thác Datanla nằm cách trung tâm Đà Lạt khoảng 5km trên đèo Prenn, bắt nguồn từ dòng suối Datanla đổ qua 7 tầng đá hoa cương dựng đứng. Tên gọi Datanla bắt nguồn từ tiếng K'Ho 'Đạ-Tam-N'nha' nghĩa là 'dưới lá có nước'. Nơi đây nổi tiếng với hệ thống máng trượt xuyên rừng thông dài nhất Đông Nam Á (2.400m) và các hoạt động thể thao mạo hiểm vượt thác canyoning ngoạn mục.">
                         <div class="dest-card-img">
-                            <img src="images/dalat_datanla.webp" alt="Thác Datanla hùng vĩ tung bọt trắng xóa giữa rừng thông nguyên sinh">
+                            <img src="images/dalat_datanla.webp" alt="Quần thể thác Datanla đèo Prenn và máng trượt xuyên rừng thông" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Di tích Quốc gia</span>
-                                <span class="tag">Máng trượt dài nhất ĐNA</span>
+                                <span class="tag">Máng Trượt 2.400m Dài Nhất ĐNA</span>
+                                <span class="tag">Đèo Prenn</span>
                             </div>
                             <h3 class="dest-card-title">5. Quần Thể Thác Datanla</h3>
-                            <p class="dest-card-desc">Dòng thác 7 tầng nước đổ trắng xóa lọt thỏm giữa hẻm sâu rừng nguyên sinh đèo Prenn. Trải nghiệm cảm giác phấn khích tột đỉnh với hệ thống máng trượt uốn lượn xuyên rừng thông dài tới 2.400m.</p>
+                            <p class="dest-card-desc">Dòng thác tung bọt trắng xóa giữa rừng nguyên sinh, trải nghiệm máng trượt uốn lượn xuyên rừng thông đầy phấn khích.</p>
                         </div>
                     </div>
 
-                    <!-- 6. THIỀN VIỆN TRÚC LÂM (SINGLE) -->
-                    <div class="dest-card single-col" data-legend="Thiền viện Trúc Lâm Đà Lạt — chốn bồng lai thanh tịnh tọa lạc trên đồi Phụng Hoàng ngát hương thông">
+                    <!-- 6. Thiền Viện Trúc Lâm & Hồ Tuyền Lâm (single-col) -->
+                    <div class="dest-card single-col" data-legend="Tọa lạc trên đỉnh núi Phụng Hoàng soi bóng xuống hồ Tuyền Lâm trong xanh, Thiền viện Trúc Lâm Đà Lạt khởi dựng năm 1993 là một trong ba thiền viện lớn nhất Việt Nam thuộc dòng Trúc Lâm Yên Tử. Bao quanh thiền viện là rừng thông ba lá bạt ngàn, vườn hoa cây cảnh quý hiếm và không gian thiền môn thanh tịnh thoát tục giữa mây ngàn cao nguyên.">
                         <div class="dest-card-img">
-                            <img src="images/dalat_truc_lam.webp" alt="Thiền viện Trúc Lâm Đà Lạt thanh tịnh soi bóng bên hồ Tuyền Lâm">
+                            <img src="images/dalat_truc_lam.webp" alt="Thiền viện Trúc Lâm Đà Lạt thanh tịnh trên núi Phụng Hoàng bên hồ Tuyền Lâm" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Thiền phái Trúc Lâm</span>
-                                <span class="tag">Đồi Phụng Hoàng</span>
+                                <span class="tag">Thiền Phái Trúc Lâm Yên Tử</span>
+                                <span class="tag">Hồ Tuyền Lâm</span>
                             </div>
-                            <h3 class="dest-card-title">6. Thiền Viện Trúc Lâm</h3>
-                            <p class="dest-card-desc">Ngôi đại tòng lâm thiền viện lớn nhất miền Nam thuộc dòng Thiền Trúc Lâm Yên Tử. Cụm kiến trúc thuần Việt bằng gỗ quý hài hòa tuyệt đối với rừng thông cổ thụ và vườn hoa quý ngát hương.</p>
+                            <h3 class="dest-card-title">6. Thiền Viện Trúc Lâm & Hồ Tuyền Lâm</h3>
+                            <p class="dest-card-desc">Chốn thiền môn thanh tịnh ngự trên đỉnh Phụng Hoàng, tiếng chuông chùa ngân nga trầm bổng soi bóng mặt hồ ngọc bích.</p>
                         </div>
                     </div>
 
-                    <!-- 7. HỒ TUYỀN LÂM (DOUBLE) -->
-                    <div class="dest-card double-col" data-legend="Khu du lịch quốc gia Hồ Tuyền Lâm — mặt nước ngọc bích phẳng lặng bao bọc bởi đảo thông xanh">
+                    <!-- 7. Bản Làng Cổ Darahoa — Di Sản K'Ho Dưới Chân Langbiang (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Bản làng cổ Darahoa (thường gọi là Làng Gà) thuộc xã Hiệp An (huyện Đức Trọng) và vùng chân núi Langbiang (Lạc Dương) là nơi định cư lâu đời của đồng bào người K'Ho (Cơ Ho) bản địa. Nổi bật giữa bản làng là bức tượng gà trống chín cựa bằng xi măng khổng lồ gắn liền huyền tích thách cưới thiêng liêng. Du khách đến đây được hòa mình vào nhịp sống mộc mạc nguyên sơ: những nếp nhà sàn gỗ cổ kính bảng lảng khói lam chiều, tiếng kèn bầu k'lút réo rắt và đôi bàn tay khéo léo của phụ nữ K'Ho bên khung cửi cổ truyền dệt nên những tấm sà rông, xà rông thổ cẩm rực rỡ hoa văn mắt chim, hoa chuối rừng mang đậm linh hồn đại ngàn.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/dalat_lang_co_darahoa_det_tho_cam_kho.webp', 'Bản làng cổ Darahoa nghề dệt thổ cẩm người K\'Ho Đà Lạt', 'Bản Làng Cổ Darahoa (Làng Gà, Lạc Dương) — Bản làng cổ tích của đồng bào K\'Ho dưới chân Langbiang. Khung cửi gỗ cổ truyền dệt sà rông thổ cẩm rực rỡ và những nếp nhà gỗ mộc mạc nép dưới rừng thông ba lá bảng lảng sương mai.')">📸 Bản làng cổ K'Ho & Khung dệt thổ cẩm</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/dalat_langbiang.webp', 'Đỉnh núi đôi Langbiang nóc nhà cao nguyên Lâm Viên sương khói', 'Đỉnh núi đôi Langbiang huyền thoại — nóc nhà cao nguyên Lâm Viên sừng sững giữa biển mây và đại ngàn Tây Nguyên.')">📸 Đỉnh non thiêng Langbiang</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/dalat_tuyen_lam.webp" alt="Hồ Tuyền Lâm khu du lịch quốc gia đầu tiên với mặt nước tĩnh lặng và rừng thông ngút ngàn">
+                            <img src="images/dalat_lang_co_darahoa_det_tho_cam_kho.webp" alt="Bản làng cổ Darahoa nghề dệt thổ cẩm người K'Ho Đà Lạt" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">KDL Quốc gia đầu tiên</span>
-                                <span class="tag">Di tích Thắng cảnh</span>
+                                <span class="tag tag-hot">🔥 Di Sản Bản Làng Cổ · Văn Hóa K'Ho</span>
+                                <span class="tag">Nghề Dệt Thổ Cẩm Cổ Truyền</span>
+                                <span class="tag">Nhà Sàn Gỗ Chân Langbiang</span>
                             </div>
-                            <h3 class="dest-card-title">7. Hồ Tuyền Lâm Mộng Mơ</h3>
-                            <p class="dest-card-desc">Được công nhận là Khu du lịch quốc gia đầu tiên của Việt Nam theo Quyết định 204/QĐ-TTg, hồ rộng hơn 350 ha với nhiều ốc đảo xanh ngắt nhấp nhô. Nơi lý tưởng để chèo thuyền kayak, cắm trại dã ngoại và ngắm rừng phong đổi màu lá.</p>
+                            <h3 class="dest-card-title">7. Bản Làng Cổ Darahoa — Di Sản Dệt Thổ Cẩm K'Ho Dưới Chân Langbiang</h3>
+                            <p class="dest-card-desc">Bản làng cổ tích của đồng bào K'Ho nép mình dưới rặng thông ngút ngàn, gìn giữ nếp nhà gỗ mộc mạc, tượng gà chín cựa huyền tích và khung cửi dệt thổ cẩm rực rỡ sắc màu Tây Nguyên.</p>
                         </div>
                     </div>
 
-                    <!-- 8. DINH III BẢO ĐẠI (SINGLE) -->
-                    <div class="dest-card single-col" data-legend="Dinh III Bảo Đại — biệt điện mùa hè lịch sử lưu giữ hiện vật quý của vị Hoàng đế cuối cùng triều Nguyễn">
+                    <!-- 8. Nhà Thờ Domaine De Marie & Cổ Tự Linh Phước (single-col) -->
+                    <div class="dest-card single-col" data-legend="Nhà thờ Domaine de Marie (Nhà thờ Mai Anh) xây dựng từ năm 1940 đến 1944 trên đồi Mai Anh theo phong cách kiến trúc Pháp thế kỷ XVII cách tân, nổi bật với hệ mái dốc hình tam giác tựa mái nhà rông Tây Nguyên và màu sơn hồng đào ấm áp. Cùng với chùa Linh Phước (Chùa Ve Chai) khảm từ hàng triệu mảnh sành sứ ve chai tinh xảo với rồng dài 49m, đây là hai biểu tượng tôn giáo kiến trúc độc bản của Đà Lạt.">
                         <div class="dest-card-img">
-                            <img src="images/dalat_dinh_bao_dai_dinh_3.webp" alt="Dinh III Bảo Đại biệt điện mùa hè kiến trúc Pháp cổ kính giữa rừng thông Đà Lạt">
+                            <img src="images/dalat_nha_tho_domaine_con_ga.webp" alt="Nhà thờ Domaine de Marie và Chùa Ve Chai Linh Phước Đà Lạt" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Di tích Lịch sử</span>
-                                <span class="tag">Biệt điện Hoàng gia</span>
+                                <span class="tag">Kiến Trúc Pháp & Nhà Rông</span>
+                                <span class="tag">Chùa Ve Chai 1949</span>
                             </div>
-                            <h3 class="dest-card-title">8. Dinh III Bảo Đại</h3>
-                            <p class="dest-card-desc">Biệt điện mùa hè của vua Bảo Đại và Hoàng hậu Nam Phương, xây dựng từ năm 1933 trên đồi thông râm mát. Nơi bảo tồn nguyên vẹn 25 phòng nghỉ sang trọng, phòng thiết triều và hiện vật hoàng gia quý giá.</p>
+                            <h3 class="dest-card-title">8. Nhà Thờ Domaine De Marie & Chùa Ve Chai</h3>
+                            <p class="dest-card-desc">Sắc hồng ngọt ngào của ngôi thánh đường cổ kính giao thoa kiến trúc phương Tây và nhà rông bản địa giữa ngàn hoa khoe sắc.</p>
                         </div>
                     </div>
 
-                    <!-- 9. NHÀ THỜ DOMAINE DE MARIE (SINGLE) -->
-                    <div class="dest-card single-col" data-legend="Nhà thờ Domaine de Marie — sắc hồng đất nung đặc trưng giao thoa giữa phong cách Normandy và mái nhà rông">
+                    <!-- 9. Chợ Đêm Đà Lạt & Bậc Thang Cổ Hồng Kông (single-col) -->
+                    <div class="dest-card single-col" data-legend="Chợ đêm Đà Lạt (Chợ Âm Phủ xưa) nằm ngay trung tâm thành phố, là thiên đường ẩm thực đường phố nhộn nhịp nhất về đêm. Du khách có thể thưởng thức bánh tráng nướng giòn rụm 'pizza Đà Lạt', sữa đậu nành nóng hổi, khoai bắp nướng thơm lừng trong cái lạnh 15°C và check-in góc lan can bậc thang cổ kính view toàn cảnh chợ đêm mang đậm phong vị điện ảnh.">
                         <div class="dest-card-img">
-                            <img src="images/dalat_nha_tho_domaine_con_ga.webp" alt="Nhà thờ Domaine de Marie tường hồng đất nung rực rỡ bên vườn hoa trạng nguyên">
+                            <img src="images/dalat_night_market.webp" alt="Chợ đêm Đà Lạt Chợ Âm Phủ tấp nập ẩm thực đường phố và bậc thang cổ" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Kiến trúc Pháp - Tây Nguyên</span>
-                                <span class="tag">Màu hồng đất nung</span>
+                                <span class="tag">Thiên Đường Ẩm Thực Đêm</span>
+                                <span class="tag">Bậc Thang View Điện Ảnh</span>
                             </div>
-                            <h3 class="dest-card-title">9. Nhà Thờ Domaine De Marie</h3>
-                            <p class="dest-card-desc">Tọa lạc trên đồi Mai Anh, ngôi giáo đường nổi bật với màu sơn hồng đất nung ấm áp, hệ mái dốc lấy cảm hứng từ nhà rông Tây Nguyên và không gian ngập tràn hoa trạng nguyên, cẩm tú cầu.</p>
+                            <h3 class="dest-card-title">9. Chợ Đêm Đà Lạt & Cầu Thang Cổ</h3>
+                            <p class="dest-card-desc">Hòa mình vào nhịp sống đêm rộn rã, nhâm nhi ly sữa đậu nành nóng hổi và bánh tráng nướng giòn tan giữa tiết trời se lạnh phố núi.</p>
                         </div>
                     </div>
 
-                    <!-- 10. CHỢ ĐÊM ĐÀ LẠT (DOUBLE) -->
-                    <div class="dest-card double-col" data-legend="Chợ đêm Đà Lạt (Chợ Âm Phủ) — nhịp sống ẩm thực và văn hóa phố núi sôi động rực rỡ ánh đèn">
+                    <!-- 10. Quần Thể Biệt Thự Cổ Cadasa & Dinh Bảo Đại (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Đà Lạt được mệnh danh là 'bảo tàng kiến trúc Pháp ngoài trời' với hơn 1.500 biệt thự cổ kính xây dựng từ những năm 1920 - 1940. Quần thể Cadasa Resort trên đường Trần Hưng Đạo gồm 16 biệt thự Pháp cổ theo phong cách vùng Normandie và miền Bắc nước Pháp, xây hoàn toàn bằng đá bazan chẻ và gỗ thông đỏ, mái ngói dốc rêu phong nép mình dưới rặng thông già trăm tuổi. Kết hợp cùng Dinh III Bảo Đại (Biệt điện Mùa Hè) mang đậm phong cách Art Deco thanh lịch của vị hoàng đế cuối cùng triều Nguyễn, nơi đây lưu giữ trọn vẹn hồn cốt lãng mạn và trầm tích văn hóa lịch sử của xứ sở sương mù.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/dalat_biet_thu_phap_co_cadasa.webp', 'Quần thể biệt thự Pháp cổ Cadasa rêu phong đường Trần Hưng Đạo Đà Lạt', 'Quần Thể Biệt Thự Cổ Cadasa (Đường Trần Hưng Đạo) — Dãy biệt thự Pháp cổ đầu thế kỷ XX với mái ngói rêu phong, tường đá bazan và giàn tú cầu nở rộ nép mình trầm mặc dưới tán thông già trăm tuổi.')">📸 Biệt thự Pháp cổ Cadasa rêu phong</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/dalat_dinh_bao_dai_dinh_3.webp', 'Dinh III Bảo Đại biệt điện mùa hè tao nhã giữa rừng thông', 'Dinh III Bảo Đại (Biệt điện Mùa Hè) — Kiệt tác kiến trúc Art Deco thanh lịch của vị hoàng đế cuối cùng triều Nguyễn giữa rừng thông Ái Ân thanh bình.')">📸 Dinh III Bảo Đại tao nhã</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/dalat_night_market.webp" alt="Chợ đêm Đà Lạt tấp nập người qua lại cùng làn khói thơm lừng của các gánh hàng rong">
+                            <img src="images/dalat_biet_thu_phap_co_cadasa.webp" alt="Quần thể biệt thự Pháp cổ Cadasa rêu phong đường Trần Hưng Đạo Đà Lạt" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">Chợ Âm Phủ</span>
-                                <span class="tag">Thiên đường ăn vặt</span>
+                                <span class="tag tag-hot">🔥 Di Sản Kiến Trúc Pháp Thế Kỷ XX</span>
+                                <span class="tag">Dãy Biệt Thự Cadasa 1920</span>
+                                <span class="tag">Dinh Biệt Điện Bảo Đại</span>
                             </div>
-                            <h3 class="dest-card-title">10. Chợ Đêm Đà Lạt & Bậc Thang Cổ</h3>
-                            <p class="dest-card-desc">Khi hoàng hôn buông xuống, khu vực chân chợ Đà Lạt bừng sáng với hàng trăm gian hàng ẩm thực nóng hổi bốc khói nghi ngút. Thưởng thức khoai lang nướng, bánh tráng nướng và nhâm nhi ly sữa đậu nành nóng giữa cái lạnh 15°C.</p>
+                            <h3 class="dest-card-title">10. Quần Thể Biệt Thự Cổ Cadasa & Dinh Bảo Đại — Trầm Tích Kiến Trúc Pháp</h3>
+                            <p class="dest-card-desc">Bảo tàng kiến trúc sống động giữa ngàn thông với những dinh thự Norman cổ điển, tường đá bazan rêu phong phủ hoa tú cầu và dấu ấn vương triều nhà Nguyễn trầm mặc.</p>
                         </div>
                     </div>
+
                 </div>
 
                 <!-- 6. CẨM NANG DI CHUYỂN -->
@@ -1251,6 +1313,7 @@
         document.querySelectorAll('.dest-card, .culinary-card, .season-card').forEach(card => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function(e) {
+                if (e.target.closest('.photo-btn')) return;
                 e.preventDefault();
                 const img = this.querySelector('img');
                 const titleEl = this.querySelector('.dest-card-title, .culinary-title, .season-title');
@@ -1274,6 +1337,28 @@
                 closeLightbox();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            if (img) {
+                img.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (legendText) {
+                card.setAttribute('data-legend', legendText);
+            }
+        }
+
     </script>
 </body>
 </html>
