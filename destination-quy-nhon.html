@@ -648,6 +648,62 @@
             .lightbox-content { max-height: 42vh; }
             .lightbox-caption-wrap { padding: 1.2rem; }
         }
+    
+        .dest-card.has-gallery {
+            position: relative;
+        }
+        .dest-card-title, .dest-card-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -821,167 +877,179 @@
 
                 <div class="checkin-grid">
 
-                    <!-- 1. Bãi biển Kỳ Co -->
-                    <div class="dest-card double-col" data-legend="Kỳ Co là bãi biển hoang sơ nằm ẩn mình sau dãy núi đá hoa cương bán đảo Phương Mai thuộc xã Nhơn Lý, TP. Quy Nhơn. Bãi tắm có hình lưỡi liềm uốn cong mềm mại với dải cát trắng mịn màng và làn nước biển trong vắt hai màu lam ngọc bích nhìn thấu đáy cát. Nơi đây từng là ngư trường đánh bắt truyền thống của ngư dân Nhơn Lý qua hàng trăm năm, nay được mệnh danh là 'Maldives của Việt Nam' với vẻ đẹp trác tuyệt chưa từng bị phá vỡ.">
+                    <!-- 1. Bãi biển Kỳ Co (double-col) -->
+                    <div class="dest-card double-col" data-legend="Kỳ Co là bãi biển hoang sơ nằm ẩn mình sau dãy núi đá hoa cương bán đảo Phương Mai thuộc xã Nhơn Lý, TP. Quy Nhơn. Bãi tắm có hình lưỡi liềm uốn cong mềm mại với dải cát trắng mịn màng và làn nước biển trong vắt nhìn thấy tận đáy, được chia thành hai màu xanh ngọc bích và xanh lam đậm rực rỡ, xứng danh là 'Maldives của Việt Nam'.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_ky_co.webp" alt="Bãi biển Kỳ Co Quy Nhơn" loading="lazy">
+                            <img src="images/quynhon_ky_co.webp" alt="Bãi biển Kỳ Co Quy Nhơn làn nước xanh ngọc bích hai màu" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">🔥 Maldives Việt Nam</span>
+                                <span class="tag tag-hot">🔥 Thiên Đường Biển Đảo</span>
+                                <span class="tag">Nước 2 Màu Xanh Ngọc</span>
                                 <span class="tag">Nhơn Lý</span>
                             </div>
-                            <h3 class="dest-card-title">Bãi Biển Kỳ Co (Vịnh Nước Ngọc Bích)</h3>
-                            <p class="dest-card-desc">Bãi cát trắng mịn màng uốn lượn dưới chân vách đá dựng đứng, làn nước biển hai màu lam ngọc trong thấu đáy cát.</p>
+                            <h3 class="dest-card-title">1. Bãi Biển Kỳ Co — Thiên Đường Maldives Xứ Nẫu</h3>
+                            <p class="dest-card-desc">Bãi biển hình trăng khuyết nép mình bên vách đá hoa cương sừng sững, mê hoặc lòng người với làn nước hai màu xanh ngọc bích trong thấu đáy cát trắng.</p>
                         </div>
                     </div>
 
-                    <!-- 2. Eo Gió -->
-                    <div class="dest-card single-col" data-legend="Nằm tại xã bán đảo Nhơn Lý cách trung tâm Quy Nhơn khoảng 20km, Eo Gió là eo biển hình cánh cung lộng gió được bao bọc bởi hai dãy núi đá hoa cương kỳ vĩ. Con đường đi bộ lát đá men theo sườn núi với hàng rào sơn trắng đỏ uốn lượn ngoạn mục giữa biển trời bao la. Dưới chân vách đá là bờ biển đá đẻ nhẵn bóng cùng những con sóng bạc đầu xô bờ tung bọt trắng xóa, tạo nên khung cảnh đón bình minh rực rỡ nhất dải đất miền Trung.">
+                    <!-- 2. Eo Gió Nhơn Lý (single-col) -->
+                    <div class="dest-card single-col" data-legend="Eo Gió thuộc thôn Bắc Phước, xã Nhơn Lý, là một eo biển hình cánh cung được ôm trọn bởi hai dải núi đá hiểm trở vươn ra biển Đông. Nổi bật với con đường đi bộ ven biển uốn lượn có hàng rào sơn trắng đỏ tuyệt đẹp men theo vách núi đá kỳ vĩ, nơi quanh năm đón những luồng gió biển lồng lộng và những đợt sóng bạc đầu gầm vang vỗ vào vách đá.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_eo_gio.webp" alt="Eo Gió Nhơn Lý Quy Nhơn" loading="lazy">
+                            <img src="images/quynhon_eo_gio.webp" alt="Con đường đi bộ ven biển Eo Gió Nhơn Lý Quy Nhơn hùng vĩ" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">🌅 Đón Bình Minh Đẹp Nhất</span>
-                                <span class="tag">Nhơn Lý</span>
+                                <span class="tag tag-hot">Cung Đường Ven Biển</span>
+                                <span class="tag">Đón Bình Minh Đẹp Nhất</span>
                             </div>
-                            <h3 class="dest-card-title">Eo Gió Nhơn Lý</h3>
-                            <p class="dest-card-desc">Cung đường ven vách đá kỳ vĩ ôm trọn eo biển hút gió lồng lộng, nơi ngắm bình minh trên biển Đông ngoạn mục nhất.</p>
+                            <h3 class="dest-card-title">2. Eo Gió Nhơn Lý</h3>
+                            <p class="dest-card-desc">Cung đường tản bộ ven sườn núi ngoạn mục bậc nhất miền Trung, nơi lắng nghe tiếng gió biển rì rào và ngắm bình minh rực rỡ.</p>
                         </div>
                     </div>
 
-                    <!-- 3. Đảo Hòn Khô -->
-                    <div class="dest-card single-col" data-legend="Thuộc thôn Hải Đông, xã Nhơn Hải, đảo Hòn Khô đúng như tên gọi của mình: hoang sơ, khô cằn và không hề có cây cổ thụ râm mát, nhưng lại sở hữu bãi tắm trong veo và rạn san hô lộ thiên tuyệt mỹ. Điểm độc đáo nhất tại Hòn Khô là con đường cát ngầm xuyên biển dài hàng trăm mét hiện rõ mồn một khi thủy triều rút xuống, cùng cây cầu gỗ mộc mạc dựng men theo vách đá sát mép sóng biển xanh ngắt.">
+                    <!-- 3. Đảo Cù Lao Xanh & Hải Đăng 1890 (single-col) -->
+                    <div class="dest-card single-col" data-legend="Cù Lao Xanh (đảo Vân Phi) thuộc xã đảo Nhơn Châu, nằm cách đất liền Quy Nhơn khoảng 24km. Đảo sở hữu vẻ đẹp nguyên sơ với biển xanh trong vắt, bãi đá ngầm kỳ vĩ và ngọn Hải đăng Cù Lao Xanh xây dựng từ năm 1890 thời Pháp cao 119m so với mực nước biển — một trong những ngọn hải đăng cổ xưa và bề thế nhất Việt Nam.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_hon_kho.webp" alt="Đảo Hòn Khô Quy Nhơn" loading="lazy">
+                            <img src="images/quynhon_cu_lao_xanh.webp" alt="Đảo Cù Lao Xanh và ngọn hải đăng cổ 1890 Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Đường xuyên biển</span>
-                                <span class="tag">Nhơn Hải</span>
+                                <span class="tag">Hải Đăng Cổ 1890</span>
+                                <span class="tag">Xã Đảo Nhơn Châu</span>
                             </div>
-                            <h3 class="dest-card-title">Đảo Hòn Khô (Nhơn Hải)</h3>
-                            <p class="dest-card-desc">Con đường cát ngầm lộ thiên giữa đại dương khi thủy triều rút và rạn san hô sặc sỡ bơi lội ngay mép nước.</p>
+                            <h3 class="dest-card-title">3. Đảo Cù Lao Xanh & Hải Đăng 1890</h3>
+                            <p class="dest-card-desc">Viên ngọc bích giữa trùng khơi với ngọn hải đăng trăm năm cổ kính đứng gác biển trời Đông Bắc tổ quốc.</p>
                         </div>
                     </div>
 
-                    <!-- 4. Đảo ngọc Cù Lao Xanh -->
-                    <div class="dest-card double-col" data-legend="Cù Lao Xanh (xã đảo Nhơn Châu) cách TP. Quy Nhơn khoảng 24km về phía Đông Nam, được ví như 'Hòn ngọc Biển Đông' với màu xanh ngắt ngút ngàn của rừng cây hòa vào màu xanh ngọc bích của biển khơi. Đỉnh cao nhất của đảo sừng sững ngọn Hải đăng Cù Lao Xanh được người Pháp xây dựng năm 1890 cao 119m so với mực nước biển, kết hợp tinh tế giữa phong cách kiến trúc gothic phương Tây và nét thâm nghiêm phương Đông, là ngọn hải đăng cổ bậc nhất vùng duyên hải miền Trung.">
+                    <!-- 4. Ghềnh Ráng Tiên Sa & Mộ Hàn Mặc Tử (double-col) -->
+                    <div class="dest-card double-col" data-legend="Ghềnh Ráng Tiên Sa cách trung tâm thành phố 3km về phía nam, là thắng cảnh quốc gia kết hợp hài hòa giữa biển biếc và vách đá hoa cương xếp chồng kỳ thú. Nơi đây có Bãi tắm Hoàng Hậu (Bãi Đá Trứng) với hàng vạn viên đá tròn nhẵn như quả trứng khổng lồ từng dành riêng cho Nam Phương Hoàng Hậu ngự tắm, cùng đồi Thi Nhân nơi an nghỉ thanh bình của nhà thơ tài hoa bạc mệnh Hàn Mặc Tử ngát hương thông reo.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_cu_lao_xanh.webp" alt="Đảo Cù Lao Xanh Hải Đăng Cổ Quy Nhơn" loading="lazy">
+                            <img src="images/quynhon_ghenh_rang.webp" alt="Thắng cảnh Ghềnh Ráng Tiên Sa và Bãi Đá Trứng Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">💎 Hòn Ngọc Biển Đông</span>
-                                <span class="tag">Nhơn Châu</span>
+                                <span class="tag tag-hot">🔥 Di Tích Thắng Cảnh Quốc Gia</span>
+                                <span class="tag">Bãi Tắm Hoàng Hậu</span>
+                                <span class="tag">Đồi Thi Nhân Hàn Mặc Tử</span>
                             </div>
-                            <h3 class="dest-card-title">Đảo Cù Lao Xanh & Ngọn Hải Đăng Cổ 1890</h3>
-                            <p class="dest-card-desc">Thiên đường biển đảo hoang sơ tuyệt đối, ngọn hải đăng đá cổ kính hơn 130 năm tuổi sừng sững canh giữ chủ quyền biển đảo.</p>
+                            <h3 class="dest-card-title">4. Ghềnh Ráng Tiên Sa — Bãi Trứng & Đồi Thi Nhân</h3>
+                            <p class="dest-card-desc">Thắng cảnh thi ca hữu tình với bãi đá trứng tự nhiên dành riêng cho Hoàng hậu Nam Phương và chốn an nghỉ ngát hương thông của thi sĩ Hàn Mặc Tử.</p>
                         </div>
                     </div>
 
-                    <!-- 5. Ghềnh Ráng Tiên Sa -->
-                    <div class="dest-card single-col" data-legend="Nằm cách trung tâm thành phố chỉ 3km về phía Nam, Ghềnh Ráng là quần thể danh thắng kỳ thú với bãi đá uốn lượn theo bờ biển xanh trong. Nơi đây nổi tiếng với Bãi tắm Hoàng Hậu ngập tràn những viên đá cuội tròn xoe như trứng chim khổng lồ xếp lớp tự nhiên, Đồi Thi Nhân rợp bóng thông reo và ngôi mộ thanh tịnh của thi sĩ tài hoa Hàn Mặc Tử. Quần thể được Bộ Văn hóa - Thông tin xếp hạng Di tích Danh lam thắng cảnh cấp Quốc gia năm 1991.">
+                    <!-- 5. Đồi Cát Phương Mai (single-col) -->
+                    <div class="dest-card single-col" data-legend="Đồi cát Phương Mai nằm trên bán đảo Phương Mai ngay cạnh cầu vượt biển Thị Nại. Đây là một trong những đồi cát rộng lớn và hoang sơ nhất duyên hải miền Trung với độ cao từ 20 đến 100m so với mực nước biển. Các vân cát liên tục biến hóa ngoạn mục theo từng cơn gió biển, là thiên đường trải nghiệm trượt cát và ngắm hoàng hôn đỏ ối buông xuống đầm Thị Nại.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_ghenh_rang.webp" alt="Ghềnh Ráng Tiên Sa Bãi Đá Trứng Quy Nhơn" loading="lazy">
+                            <img src="images/quynhon_phuong_mai.webp" alt="Đồi cát Phương Mai vân cát vàng óng ả Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Bãi Đá Trứng</span>
-                                <span class="tag">Ghềnh Ráng</span>
+                                <span class="tag">Sa Mạc Cát Bán Đảo</span>
+                                <span class="tag">Trượt Cát & Cầu Thị Nại</span>
                             </div>
-                            <h3 class="dest-card-title">Ghềnh Ráng Tiên Sa & Mộ Hàn Mặc Tử</h3>
-                            <p class="dest-card-desc">Bãi tắm Hoàng Hậu với muôn triệu viên đá cuội nhẵn bóng và đồi thi nhân nơi an nghỉ của thi sĩ Hàn Mặc Tử.</p>
+                            <h3 class="dest-card-title">5. Đồi Cát Phương Mai</h3>
+                            <p class="dest-card-desc">Tiểu sa mạc cát vàng rực rỡ với những đường vân uốn lượn kỳ ảo theo gió, điểm trượt cát phiêu lưu và ngắm hoàng hôn buông lãng đãng.</p>
                         </div>
                     </div>
 
-                    <!-- 6. Tháp Đôi Chăm Pa -->
-                    <div class="dest-card single-col" data-legend="Tọa lạc ngay trên đường Trần Hưng Đạo trong lòng phường Đống Đa, Tháp Đôi (còn gọi là Tháp Hưng Thạnh) gồm hai ngọn tháp gạch nung cổ xây dựng từ cuối thế kỷ XII: tháp lớn cao 20m và tháp nhỏ cao 18m. Đây là công trình kiến trúc nghệ thuật độc đáo bậc nhất của vương quốc Chăm Pa cổ, mang đậm phong cách kiến trúc Chăm Pa kết hợp Khmer Angkor với các tượng phù điêu vũ nữ Apsara và chim thần Garuda xòe cánh uy nghi trên góc mái. Được xếp hạng Di tích Kiến trúc Nghệ thuật Quốc gia năm 1980.">
+                    <!-- 6. Bảo Tàng Quang Trung & Đền Tây Sơn Tam Kiệt (single-col) -->
+                    <div class="dest-card single-col" data-legend="Bảo tàng Quang Trung tại thị trấn Phú Phong (huyện Tây Sơn) là Di tích Quốc gia đặc biệt tôn vinh phong trào khởi nghĩa Tây Sơn và người anh hùng áo vải cờ đào Quang Trung - Nguyễn Huệ. Khuôn viên lưu giữ cây me cổ thụ hơn 300 năm tuổi và giếng nước đá ong nguyên bản của gia đình ba anh em Tây Sơn, cùng các màn biểu diễn võ thuật cổ truyền Bình Định và nhạc võ trống trận Tây Sơn hào hùng.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_thap_doi.webp" alt="Tháp Đôi Chăm Pa Hưng Thạnh Quy Nhơn" loading="lazy">
+                            <img src="images/quynhon_bao_tang_quang_trung.webp" alt="Bảo tàng Quang Trung và Đền Tây Sơn Tam Kiệt Bình Định" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Di tích Quốc gia 1980</span>
-                                <span class="tag">Nội ô Quy Nhơn</span>
+                                <span class="tag">Di Tích Quốc Gia Đặc Biệt</span>
+                                <span class="tag">Hào Khí Tây Sơn</span>
                             </div>
-                            <h3 class="dest-card-title">Tháp Đôi Chăm Pa (Tháp Hưng Thạnh)</h3>
-                            <p class="dest-card-desc">Kiệt tác kiến trúc gạch nung thế kỷ XII giao thoa phong cách Chăm Pa và Angkor huyền bí sừng sững giữa phố thị.</p>
+                            <h3 class="dest-card-title">6. Bảo Tàng Quang Trung (Tây Sơn)</h3>
+                            <p class="dest-card-desc">Cội nguồn hào khí đất võ Tây Sơn, chiêm bái cây me cổ thụ 300 năm và hòa mình vào tiếng trống trận hào hùng vang dội non sông.</p>
                         </div>
                     </div>
 
-                    <!-- 7. Đồi cát Phương Mai -->
-                    <div class="dest-card single-col" data-legend="Nằm liền kề bãi biển Nhơn Lý trên bán đảo Phương Mai, đồi cát Phương Mai sở hữu những đụn cát vàng óng ả nhấp nhô ở độ cao từ 20m đến 100m so với mực nước biển. Nhờ những ngọn gió biển thổi miệt mài ngày đêm, vân cát trên bề mặt đồi cát liên tục thay đổi hình thù kỳ thú sau mỗi cơn gió thoảng. Đây là địa điểm lý tưởng để trải nghiệm trượt cát tốc độ cao và ghi lại những bức ảnh kỷ niệm tựa như lạc giữa sa mạc hoang sơ.">
+                    <!-- 7. Làng Chài Cổ Nhơn Hải (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Làng chài cổ Nhơn Hải (thành phố Quy Nhơn) — Bản làng đánh cá lâu đời nép mình bên vịnh biển êm đềm với những mái ngói rêu phong, bờ rào đá biển mộc mạc. Điểm kỳ thú độc nhất vô nhị là đoạn tường thành đá cổ Chămpa ngập sâu dưới lòng biển, chỉ hiện rõ khi thủy triều rút xuống trong làn nước ngọc bích phẳng lặng như gương.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/quynhon_lang_chai_co_nhon_hai.webp', 'Làng chài cổ Nhơn Hải bờ rào đá rêu xanh Quy Nhơn', 'Làng chài cổ Nhơn Hải (thành phố Quy Nhơn) — Bản làng đánh cá lâu đời nép mình bên vịnh biển êm đềm với những mái ngói rêu phong, bờ rào đá biển mộc mạc. Điểm kỳ thú độc nhất vô nhị là đoạn tường thành đá cổ Chămpa ngập sâu dưới lòng biển, chỉ hiện rõ khi thủy triều rút xuống trong làn nước ngọc bích phẳng lặng như gương.', '7. Làng Chài Cổ Nhơn Hải — Bờ Rào Rêu Xanh & Tường Thành Cổ', 'Làng chài trăm năm nép mình dưới triền núi đá, nơi lưu giữ bờ thành đá Chămpa cổ kỳ bí phát lộ dưới biển xanh và nhịp sống chèo thúng nan mộc mạc nguyên sơ.')">📸 Làng chài cổ Nhơn Hải rêu xanh</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/quynhon_hon_kho.webp', 'Đảo Hòn Khô Nhơn Hải và cầu gỗ ven biển', 'Đảo Hòn Khô (Nhơn Hải) — Hòn đảo đá nguyên sơ không một bóng cây lớn nhưng quyến rũ bởi làn nước trong vắt nhìn thấu đáy san hô, con đường cát trắng lộ ra giữa biển khi triều rút và cây cầu gỗ ven vách đá tuyệt mỹ.', '7. Đảo Hòn Khô & Cung Đường Gỗ Băng Biển', 'Hòn đảo hoang sơ với những dãy đá hoa cương dựng đứng, rạn san hô đa sắc và cây cầu gỗ mộc mạc uốn lượn ven vách đá đón sóng trùng khơi.')">📸 Đảo Hòn Khô & Cầu gỗ biển</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/quynhon_phuong_mai.webp" alt="Đồi cát Phương Mai Quy Nhơn" loading="lazy">
+                            <img src="images/quynhon_lang_chai_co_nhon_hai.webp" alt="Làng chài cổ Nhơn Hải bờ kè đá rêu xanh và thuyền thúng Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Tiểu sa mạc</span>
-                                <span class="tag">Bán đảo Phương Mai</span>
+                                <span class="tag tag-hot">🔥 Bản Làng Chài Cổ Trăm Năm</span>
+                                <span class="tag">Bờ Thành Cổ Chămpa Chìm Dưới Biển</span>
+                                <span class="tag">Thuyền Thúng & Hòn Khô</span>
                             </div>
-                            <h3 class="dest-card-title">Đồi Cát Phương Mai</h3>
-                            <p class="dest-card-desc">Những triền cát vàng óng ả uốn lượn theo chiều gió biển, nơi trải nghiệm trượt cát cảm giác mạnh độc đáo.</p>
+                            <h3 class="dest-card-title">7. Làng Chài Cổ Nhơn Hải — Bờ Rào Rêu Xanh & Tường Thành Cổ</h3>
+                            <p class="dest-card-desc">Làng chài trăm năm nép mình dưới triền núi đá, nơi lưu giữ bờ thành đá Chămpa cổ kỳ bí phát lộ dưới biển xanh và nhịp sống chèo thúng nan mộc mạc nguyên sơ.</p>
                         </div>
                     </div>
 
-                    <!-- 8. Quần thể Tháp Bánh Ít -->
-                    <div class="dest-card single-col" data-legend="Tọa lạc trên đồi cao thuộc xã Phước Hiệp (huyện Tuy Phước, giáp ranh Quy Nhơn), Tháp Bánh Ít (còn gọi là Tháp Bạc) gồm 4 ngọn tháp cổ xây dựng vào cuối thế kỷ XI - đầu thế kỷ XII. Nhìn từ xa, tháp chính có hình dáng nhọn chóp tựa chiếc bánh ít lá gai truyền thống của xứ Nẫu. Quần thể này là tuyệt phẩm kiến trúc gạch Chăm Pa lộng lẫy, được nhóm tác giả người Anh đưa vào cuốn sách danh tiếng '1.001 công trình kiến trúc phải đến trong đời'. Được xếp hạng Di tích Quốc gia năm 1982.">
+                    <!-- 8. Tháp Đôi Chăm Pa (single-col) -->
+                    <div class="dest-card single-col" data-legend="Tháp Đôi (Tháp Hưng Thạnh) tọa lạc ngay trên đường Trần Hưng Đạo thuộc phường Đống Đa, TP. Quy Nhơn, được xây dựng từ cuối thế kỷ XII. Đây là cụm tháp đôi Chămpa độc đáo gồm tháp Bắc cao 20m và tháp Nam cao 18m. Kiến trúc tháp chịu ảnh hưởng sâu sắc của nghệ thuật điêu khắc Angkor Khmer thời kỳ Jayavarman VII, với các phù điêu chim thần Garuda dang rộng cánh và tượng vũ nữ Apsara mềm mại uyển chuyển.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_banh_it.webp" alt="Quần thể Tháp Bánh Ít Quy Nhơn" loading="lazy">
+                            <img src="images/quynhon_thap_doi.webp" alt="Tháp Đôi Chăm Pa Hưng Thạnh kiến trúc gạch nung Quy Nhơn" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">1.001 Kiến Trúc Thế Giới</span>
-                                <span class="tag">Tuy Phước</span>
+                                <span class="tag">Di Tích Quốc Gia 1980</span>
+                                <span class="tag">Nghệ Thuật Angkor & Chăm</span>
                             </div>
-                            <h3 class="dest-card-title">Quần Thể Tháp Bánh Ít (Tháp Bạc)</h3>
-                            <p class="dest-card-desc">Cụm 4 tháp Chăm Pa nghìn năm tuổi tọa lạc trên đồi cao lộng gió, tuyệt tác kiến trúc lọt top thế giới.</p>
+                            <h3 class="dest-card-title">8. Tháp Đôi Chăm Pa (Tháp Hưng Thạnh)</h3>
+                            <p class="dest-card-desc">Tuyệt tác tháp đôi gạch nung nghìn năm tuổi giữa lòng đô thị, giao thoa tráng lệ giữa văn hóa Chămpa và nghệ thuật Angkor Khmer.</p>
                         </div>
                     </div>
 
-                
-                    <!-- 9. Bảo tàng Quang Trung & Điện thờ Tây Sơn Tam Kiệt -->
-                    <div class="dest-card single-col" data-legend="Bảo tàng Quang Trung tọa lạc tại làng Kiên Mỹ, thị trấn Phú Phong, huyện Tây Sơn — cái nôi của phong trào khởi nghĩa nông dân Tây Sơn cuối thế kỷ XVIII. Nơi đây lưu giữ hàng ngàn hiện vật vô giá của vương triều Tây Sơn hào hùng, cùng Đền thờ Tây Sơn Tam Kiệt trang nghiêm, giếng nước cổ bằng đá ong trong vắt và cây me cổ thụ hơn 300 năm tuổi rợp bóng mát tương truyền do thân sinh ba anh em Tây Sơn trồng, minh chứng cho ý chí quật cường của vị anh hùng dân tộc Quang Trung - Nguyễn Huệ.">
+                    <!-- 9. Chùa Thiên Hưng (single-col) -->
+                    <div class="dest-card single-col" data-legend="Chùa Thiên Hưng tọa lạc tại phường Nhơn Hưng (thị xã An Nhơn) bên bờ sông Kôn, được ví như 'Phượng Hoàng Cổ Trấn' thu nhỏ của Bình Định. Ngôi chùa mang đậm phong cách kiến trúc phương Đông thanh nhã với hồ sen ngát hương, những cây cầu gỗ uốn cong, vườn cây cảnh tạo hình bonsai kỳ công và tháp chuông Thiên Ứng 12 tầng vươn cao uy nghiêm giữa mây trời thanh tịnh.">
                         <div class="dest-card-img">
-                            <img src="images/quynhon_bao_tang_quang_trung.webp" alt="Bảo tàng Quang Trung và Điện thờ Tây Sơn Tam Kiệt Bình Định" loading="lazy">
+                            <img src="images/quynhon_chua_thien_hung.webp" alt="Chùa Thiên Hưng An Nhơn Phượng Hoàng Cổ Trấn Bình Định" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag tag-hot">⚔️ Hào khí Tây Sơn</span>
-                                <span class="tag">Tây Sơn</span>
+                                <span class="tag">Cổ Tự Thanh Tịnh</span>
+                                <span class="tag">Tháp Thiên Ứng 12 Tầng</span>
                             </div>
-                            <h3 class="dest-card-title">9. Bảo Tàng Quang Trung (Tây Sơn)</h3>
-                            <p class="dest-card-desc">Cội nguồn phong trào khởi nghĩa Tây Sơn, nơi chiêm bái Điện thờ Tam Kiệt và cây me, giếng nước cổ hơn 300 năm lịch sử.</p>
+                            <h3 class="dest-card-title">9. Chùa Thiên Hưng (An Nhơn)</h3>
+                            <p class="dest-card-desc">Kiệt tác kiến trúc Phật giáo thanh tịnh giữa hồ sen thơm ngát, tháp chuông 12 tầng uy nghiêm vút cao giữa đất võ Bình Định.</p>
                         </div>
                     </div>
 
-                    <!-- 10. Chùa Thiên Hưng -->
-                    <div class="dest-card single-col" data-legend="Tọa lạc tại phường Nhơn Hưng, thị xã An Nhơn, Chùa Thiên Hưng được mệnh danh là một trong những ngôi chùa đẹp nhất miền Trung. Kiến trúc chùa là sự kết hợp tinh tế giữa phong cách Á Đông cổ kính và vẻ đẹp thiền tịnh thanh tao: tháp chuông Thiên Ứng cao 12 tầng vươn giữa trời xanh, hồ sen nở rộ, cầu gỗ cong sơn đỏ soi bóng mặt nước tĩnh lặng và những gốc bonsai được tạo tác kỳ công, nơi lưu giữ Ngọc Xá Lợi Phật Thích Ca linh thiêng.">
+                    <!-- 10. Quần Thể Tháp Bánh Ít (Featured Di Sản double-col) -->
+                    <div class="dest-card double-col has-gallery" data-legend="Quần thể Tháp Bánh Ít (Tháp Bạc, huyện Tuy Phước) — Di tích Kiến trúc Nghệ thuật Quốc gia khởi dựng từ cuối thế kỷ XI thời kỳ Chămpa phồn thịnh. Bốn ngọn tháp xây bằng gạch nung đỏ rực rỡ với nghệ thuật đắp nổi hoa văn Kala, chạm khắc tinh xảo vươn thẳng lên nền trời xanh giữa đồi cây râm mát.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/quynhon_thap_banh_it_kien_truc_cham.webp', 'Cận cảnh kiến trúc gạch nung Tháp Bánh Ít thế kỷ XI', 'Quần thể Tháp Bánh Ít (Tháp Bạc, huyện Tuy Phước) — Di tích Kiến trúc Nghệ thuật Quốc gia khởi dựng từ cuối thế kỷ XI thời kỳ Chămpa phồn thịnh. Bốn ngọn tháp xây bằng gạch nung đỏ rực rỡ với nghệ thuật đắp nổi hoa văn Kala, chạm khắc tinh xảo vươn thẳng lên nền trời xanh giữa đồi cây râm mát.', '10. Quần Thể Tháp Bánh Ít — Kiệt Tác Kiến Trúc Chăm Thế Kỷ XI', 'Quần thể 4 ngọn tháp gạch Chămpa nghìn năm tuổi sừng sững trên đỉnh đồi cao lộng gió, công trình duy nhất của Việt Nam lọt vào cuốn sách 1.001 công trình kiến trúc phải đến trong đời.')">📸 Tháp Bánh Ít kiệt tác kiến trúc Chăm</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/quynhon_banh_it.webp', 'Toàn cảnh đồi tháp Bánh Ít Tuy Phước Bình Định', 'Toàn cảnh đồi Tháp Bánh Ít — Nơi giao hòa tuyệt mỹ giữa trầm tích lịch sử vương triều Chămpa cổ kính và khung cảnh thiên nhiên đồng quê thanh bình trải dài bên dòng sông Kôn huyền thoại.', '10. Toàn Cảnh Đồi Tháp Bánh Ít & Đồng Lúa Tuy Phước', 'Tầm nhìn ngoạn mục từ đỉnh đồi tháp cổ phóng tầm mắt ôm trọn đồng lúa xanh ngát, dòng sông Kôn hiền hòa và cánh đồng bao la xứ Nẫu.')">📸 Toàn cảnh đồi tháp Bánh Ít</button>
+                        </div>
                         <div class="dest-card-img">
-                            <img src="images/quynhon_chua_thien_hung.webp" alt="Chùa Thiên Hưng An Nhơn Bình Định" loading="lazy">
+                            <img src="images/quynhon_thap_banh_it_kien_truc_cham.webp" alt="Quần thể Tháp Bánh Ít Tháp Bạc Tuy Phước Bình Định di tích quốc gia" loading="lazy">
                         </div>
                         <div class="dest-card-overlay"></div>
                         <div class="dest-card-content">
                             <div class="dest-card-tags">
-                                <span class="tag">Thiền tự thanh tịnh</span>
-                                <span class="tag">An Nhơn</span>
+                                <span class="tag tag-hot">🔥 Di Tích Kiến Trúc Nghệ Thuật Quốc Gia</span>
+                                <span class="tag">Thế Kỷ XI</span>
+                                <span class="tag">Top 1.001 Công Trình Kiến Trúc Thế Giới</span>
                             </div>
-                            <h3 class="dest-card-title">10. Chùa Thiên Hưng (An Nhơn)</h3>
-                            <p class="dest-card-desc">Kiệt tác kiến trúc Phật giáo thanh tịnh giữa hồ sen thơm ngát, tháp chuông 12 tầng uy nghiêm giữa trời Nam.</p>
+                            <h3 class="dest-card-title">10. Quần Thể Tháp Bánh Ít — Kiệt Tác Kiến Trúc Chăm Thế Kỷ XI</h3>
+                            <p class="dest-card-desc">Quần thể 4 ngọn tháp gạch Chămpa nghìn năm tuổi sừng sững trên đỉnh đồi cao lộng gió, công trình duy nhất của Việt Nam lọt vào cuốn sách '1.001 công trình kiến trúc phải đến trong đời'.</p>
                         </div>
                     </div>
-</div>
+
+                </div>
 
                 <!-- 6. DI CHUYỂN -->
                 <h2 id="di-chuyen"><span class="icon">🚗</span> 6. Cẩm Nang Di Chuyển & Kết Nối Giao Thông Quy Nhơn</h2>
@@ -1195,6 +1263,7 @@
         document.querySelectorAll('.dest-card, .culinary-card, .season-card').forEach(card => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function(e) {
+                if (e.target.closest('.photo-btn')) return;
                 e.preventDefault();
                 const img = this.querySelector('img');
                 const titleEl = this.querySelector('.dest-card-title, .culinary-title, .season-title');
@@ -1218,6 +1287,41 @@
                 closeLightbox();
             }
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card, .spot-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img, .spot-card-img img');
+            const titleEl = card.querySelector('.dest-card-title, .spot-card-title');
+            const descEl = card.querySelector('.dest-card-desc, .spot-card-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (legendText) {
+                card.setAttribute('data-legend', legendText);
+            }
+        }
+
     </script>
 </body>
 </html>
