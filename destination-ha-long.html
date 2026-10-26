@@ -672,6 +672,70 @@
                 font-size: 1.8rem;
             }
         }
+    
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+        .dest-card.has-gallery {
+            position: relative;
+        }
+        .dest-card-title, .dest-card-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .dest-card.double-col, .dest-card.featured {
+                grid-column: span 1;
+                aspect-ratio: 16/10;
+            }
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -863,165 +927,179 @@
                     <p>Khám phá 10 danh thắng ngoại hạng định danh vẻ đẹp độc nhất vô nhị của quần thể Di sản Thiên nhiên Thế giới Vịnh Hạ Long:</p>
 
                     <div class="dest-grid">
-                        <!-- Spot 1: Hòn Trống Mái (Featured) -->
-                        <div class="dest-card featured" onclick="openLightbox('images/halong_trong_mai.webp', '1. Hòn Trống Mái (Hòn Gà Chọi) — Biểu Tượng Vĩnh Hằng Của Du Lịch Việt Nam', 'Nằm ở phía tây nam vịnh Hạ Long, đôi hòn đảo đá vôi cao hơn 12m có hình dáng tựa như một chú gà trống và một chú gà mái khổng lồ đang âu yếm hướng mỏ vào nhau giữa mênh mông sóng nước. Trải qua triệu năm sóng vỗ, chân đá bị bào mòn thanh mảnh nhưng khối đá nghìn tấn vẫn đứng vững chãi, trở thành biểu tượng logo chính thức của du lịch Việt Nam.')">
+
+                        <!-- 1. Hòn Trống Mái (double-col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/halong_trong_mai.webp', '1. Hòn Trống Mái (Hòn Gà Chọi) — Biểu Tượng Vĩnh Hằng Của Du Lịch Việt Nam', 'Nằm ở phía tây nam vịnh Hạ Long, đôi hòn đảo đá vôi cao hơn 12m có hình dáng tựa đôi gà trống mái chụm đầu âu yếm bên nhau giữa trùng khơi, trường tồn hàng triệu năm qua sóng gió biển Đông.')">
                             <div class="dest-card-img">
-                                <img src="images/halong_trong_mai.webp" alt="Hòn Trống Mái biểu tượng du lịch vịnh Hạ Long" loading="lazy">
+                                <img src="images/halong_trong_mai.webp" alt="Hòn Trống Mái Hòn Gà Chọi biểu tượng vịnh Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 Biểu Tượng Quốc Gia</span>
-                                    <span class="tag">Kiệt Tác Địa Chất</span>
+                                    <span class="tag tag-hot">🔥 Biểu Tượng Vĩnh Hằng</span>
+                                    <span class="tag">Di Sản Thế Giới</span>
+                                    <span class="tag">Đôi Chim Biển Hóa Thạch</span>
                                 </div>
                                 <h3 class="dest-card-title">1. Hòn Trống Mái (Hòn Gà Chọi) — Biểu Tượng Vĩnh Hằng Của Vịnh Biển</h3>
-                                <p class="dest-card-desc">Đôi chim gà khổng lồ sừng sững nghìn năm giữa sóng nước trong xanh, kiệt tác điêu khắc của thiên nhiên được in dấu trên biểu trưng du lịch quốc gia.</p>
+                                <p class="dest-card-desc">Kiệt tác điêu khắc thiên nhiên kỳ vĩ giữa làn nước ngọc bích, biểu tượng trường tồn của tình yêu son sắt và du lịch Việt Nam vươn tầm thế giới.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 2: Đảo Ti Tốp -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/halong_titop.webp', '2. Đảo Ti Tốp — Bãi Tắm Vầng Trăng Khuyết & Đỉnh Vọng Cảnh 360 Độ', 'Hòn đảo mang tên nhà du hành vũ trụ Liên Xô Gherman Titov sau chuyến thăm cùng Chủ tịch Hồ Chí Minh năm 1962. Đảo sở hữu bãi tắm cát trắng mịn hình vầng trăng khuyết ôm lấy chân núi. Leo hơn 400 bậc đá lên chòi vọng cảnh trên đỉnh núi, du khách sẽ thu trọn vào tầm mắt toàn cảnh 360 độ vịnh Hạ Long đẹp đến nghẹt thở.')">
+                        <!-- 2. Đảo Ti Tốp (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_titop.webp', '2. Đảo Ti Tốp — Đỉnh Ngắm Toàn Cảnh Vịnh 360 Độ', 'Được Bác Hồ đặt tên theo nhà du hành vũ trụ Gherman Titov năm 1962, hòn đảo có bãi tắm hình vầng trăng khuyết cát trắng mịn và đỉnh núi cao 400 bậc đá ngắm trọn vẹn vịnh kỳ quan.')">
                             <div class="dest-card-img">
-                                <img src="images/halong_titop.webp" alt="Đảo Ti Tốp vịnh Hạ Long bãi tắm vầng trăng khuyết" loading="lazy">
+                                <img src="images/halong_titop.webp" alt="Đảo Ti Tốp bãi tắm hình trăng khuyết và đỉnh ngắm toàn cảnh Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Góc Nhìn 360°</span>
+                                    <span class="tag tag-hot">View 360 Độ Đẹp Nhất</span>
                                     <span class="tag">Bãi Tắm Vầng Trăng</span>
                                 </div>
                                 <h3 class="dest-card-title">2. Đảo Ti Tốp</h3>
-                                <p class="dest-card-desc">Chinh phục 400 bậc đá ngắm nhìn toàn cảnh vịnh từ trên cao và hòa mình vào làn nước biển trong xanh bờ cát mịn.</p>
+                                <p class="dest-card-desc">Chinh phục 400 bậc đá thu trọn toàn cảnh nghìn đảo đá vôi bồng bềnh giữa sóng nước và tắm biển tại bãi cát hình trăng khuyết.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 3: Hang Sửng Sốt -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/halong_sung_sot.webp', '3. Hang Sửng Sốt — Thánh Đường Địa Chất Bậc Nhất Đảo Bồ Hòn', 'Đúng như tên gọi người Pháp đặt Grotte des Surprises, hang động rộng hơn 10.000m² nằm trên đảo Bồ Hòn khiến bất kỳ ai bước vào cũng phải sửng sốt kinh ngạc. Hai ngăn hang thênh thang như nhà hát opera khổng lồ với trần vòm cao hơn 30m, nhũ đá muôn hình kết tụ thành hình tượng rồng, ngựa Thánh Gióng, cây đa và những ngọn thác đá lấp lánh như dát kim cương.')">
+                        <!-- 3. Hang Sửng Sốt (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_sung_sot.webp', '3. Hang Sửng Sốt — Kỳ Quan Của Mọi Kỳ Quan', 'Nằm trên đảo Bồ Hòn ở độ cao 25m, hang rộng hơn 10.000m² với hai ngăn lớn tráng lệ, được người Pháp mệnh danh là Grotte des Surprises vì vẻ đẹp thạch nhũ kỳ ảo khôn xiết.')">
                             <div class="dest-card-img">
-                                <img src="images/halong_sung_sot.webp" alt="Hang Sửng Sốt thạch nhũ kỳ vĩ đảo Bồ Hòn" loading="lazy">
+                                <img src="images/halong_sung_sot.webp" alt="Hang Sửng Sốt vòm thạch nhũ kỳ quan tráng lệ vịnh Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 Hang Rộng Nhất</span>
-                                    <span class="tag">Di Sản Địa Mạo</span>
+                                    <span class="tag">Top 10 Hang Đẹp Nhất Thế Giới</span>
+                                    <span class="tag">Đảo Bồ Hòn</span>
                                 </div>
                                 <h3 class="dest-card-title">3. Hang Sửng Sốt</h3>
-                                <p class="dest-card-desc">Cung điện ngầm tráng lệ rộng hơn 10.000m² với muôn vàn nhũ đá kỳ ảo như nhà hát opera tự nhiên khổng lồ.</p>
+                                <p class="dest-card-desc">Vòm hang thạch nhũ khổng lồ lung linh huyền ảo tựa nhà hát opera thiên nhiên tráng lệ giữa lòng đảo đá Bồ Hòn.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 4: Động Đầu Gỗ -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/halong_dau_go.webp', '4. Động Đầu Gỗ — Cổ Kính Huyền Bí & Dấu Tích Chiến Công Bạch Đằng 1288', 'Nằm trên dãy đảo Đầu Gỗ, hang động cổ kính này rêu phong cổ tích với 3 gian vòm hoang sơ. Vua Khải Định từng ngự lãm năm 1918 và cho khắc bia ca ngợi cảnh đẹp. Đây là nơi ghi dấu trang sử vàng cất giấu cọc gỗ lim của Trần Hưng Đạo trước trận đánh tan quân Nguyên Mông năm 1288.')">
+                        <!-- 4. Động Đầu Gỗ & Hang Luồn (double-col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/halong_dau_go.webp', '4. Động Đầu Gỗ — Trầm Tích Chiến Thắng Bạch Đằng Giang 1288', 'Nằm ở độ cao 27m trên dãy đảo Đầu Gỗ, hang rộng khoảng 5.000m² gắn liền huyền tích giấu cọc gỗ lim của Trần Hưng Đạo trong trận đại thắng quân Nguyên Mông năm 1288.')">
                             <div class="dest-card-img">
-                                <img src="images/halong_dau_go.webp" alt="Động Đầu Gỗ cổ kính dấu ấn lịch sử hào hùng" loading="lazy">
+                                <img src="images/halong_dau_go.webp" alt="Động Đầu Gỗ trầm tích lịch sử chiến thắng Bạch Đằng Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Di Tích Lịch Sử</span>
-                                    <span class="tag">Bạch Đằng 1288</span>
+                                    <span class="tag tag-hot">🔥 Di Tích Lịch Sử 1288</span>
+                                    <span class="tag">Đại Thắng Bạch Đằng</span>
+                                    <span class="tag">Hang Động Trầm Mặc Cổ Kính</span>
                                 </div>
-                                <h3 class="dest-card-title">4. Động Đầu Gỗ</h3>
-                                <p class="dest-card-desc">Hang động trầm tích cổ kính gắn liền huyền tích giấu cọc lim phục vụ trận thủy chiến lịch sử Bạch Đằng Giang.</p>
+                                <h3 class="dest-card-title">4. Động Đầu Gỗ — Trầm Tích Lịch Sử Chiến Thắng Bạch Đằng Giang</h3>
+                                <p class="dest-card-desc">Cổ động thâm nghiêm gắn liền huyền tích cọc gỗ lim của Hưng Đạo Đại Vương, nơi lưu giữ tấm bia đá ngợi ca của vua Khải Định khắc năm 1918.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 5: Hang Luồn -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/halong_hang_luon.webp', '5. Hang Luồn — Cổng Vòm Nước Tự Nhiên & Thiên Đường Chèo Kayak', 'Là một đường hầm nước tự nhiên hình cánh cung dài 60m, trần hang chỉ cao 2.5 - 4m trên mặt nước tùy thủy triều. Luồn qua vòm hang bằng thuyền nan hoặc kayak, du khách bước vào một thung lũng nước kín gió phẳng lặng như gương, bao bọc bởi vách đá dựng đứng với bầy khỉ vàng hoang dã chuyền cành ríu rít.')">
+                        <!-- 5. Hòn Đỉnh Hương (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_dinh_huong.webp', '5. Hòn Đỉnh Hương — Lư Hương Khổng Lồ Của Đất Trời Vịnh Biển', 'Tảng đá nguyên khối bề thế hình chiếc lư hương thiêng liêng đứng sừng sững giữa biển khơi, được vinh dự in trên mặt sau tờ tiền 200.000 VNĐ của Việt Nam.')">
                             <div class="dest-card-img">
-                                <img src="images/halong_hang_luon.webp" alt="Hang Luồn cổng vòm chèo kayak vịnh Hạ Long" loading="lazy">
+                                <img src="images/halong_dinh_huong.webp" alt="Hòn Đỉnh Hương tảng đá hình lư hương in trên tiền 200k vịnh Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Chèo Kayak</span>
-                                    <span class="tag">Thung Lũng Nước Kín</span>
+                                    <span class="tag">Hình In Tiền 200.000 VNĐ</span>
+                                    <span class="tag">Lư Hương Đất Trời</span>
                                 </div>
-                                <h3 class="dest-card-title">5. Hang Luồn</h3>
-                                <p class="dest-card-desc">Vòm hầm đá tự nhiên mở lối vào hồ nước ngọc bích biệt lập, nơi sinh sống của bầy khỉ hoang dã thân thiện.</p>
+                                <h3 class="dest-card-title">5. Hòn Đỉnh Hương</h3>
+                                <p class="dest-card-desc">Phiến đá thiêng hình chiếc lư hương sừng sững dâng lên đất trời, biểu tượng tri ân thiên nhiên in trên tờ tiền quốc gia.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 6: Hòn Đỉnh Hương (Featured) -->
-                        <div class="dest-card featured" onclick="openLightbox('images/halong_dinh_huong.webp', '6. Hòn Đỉnh Hương — Biểu Tượng Lư Hương Thiêng In Trên Tờ Tiền 200.000 VNĐ', 'Hòn đảo đá hình lư hương khổng lồ đứng uy nghiêm trên bốn phiến đá mảnh mai giữa luồng nước Đầu Gỗ. Tựa như một đỉnh trầm hương thiêng liêng dâng lên đất trời và biển cả, Hòn Đỉnh Hương là hình ảnh danh giá được Ngân hàng Nhà nước Việt Nam lựa chọn in trang trọng trên mặt sau tờ tiền polyme mệnh giá 200.000 đồng.')">
+                        <!-- 6. Vịnh Lan Hạ (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_lan_ha.webp', '6. Vịnh Lan Hạ — Thiên Đường Nước Ngọc Hoang Sơ', 'Nằm ở phía nam vịnh Hạ Long giáp quần đảo Cát Bà với hơn 400 hòn đảo lớn nhỏ và 139 bãi cát vàng hoang sơ, thiên đường chèo kayak yên bình.')">
                             <div class="dest-card-img">
-                                <img src="images/halong_dinh_huong.webp" alt="Hòn Đỉnh Hương in trên tờ tiền 200000 VNĐ" loading="lazy">
+                                <img src="images/halong_lan_ha.webp" alt="Vịnh Lan Hạ nước xanh ngọc bích và bãi cát hoang sơ" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 In Trên Tiền 200.000đ</span>
-                                    <span class="tag">Tâm Linh Biển Cả</span>
+                                    <span class="tag">Top Vịnh Đẹp Nhất Thế Giới</span>
+                                    <span class="tag">139 Bãi Cát Tự Nhiên</span>
                                 </div>
-                                <h3 class="dest-card-title">6. Hòn Đỉnh Hương — Lư Hương Khổng Lồ Của Đất Trời Vịnh Biển</h3>
-                                <p class="dest-card-desc">Biểu tượng tâm linh thiêng liêng tạ ơn biển trời, dấu ấn văn hóa bất hủ xuất hiện trên tờ tiền quốc gia Việt Nam.</p>
+                                <h3 class="dest-card-title">6. Vịnh Lan Hạ</h3>
+                                <p class="dest-card-desc">Bức tranh thủy mặc thanh bình với hàng trăm bãi cát vàng nguyên sơ nép dưới chân vách đá, thiên đường chèo thuyền kayak tĩnh lặng.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 7: Làng chài Cửa Vạn -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/halong_cua_van.webp', '7. Làng Chài Cửa Vạn — Ngôi Làng Nổi Cổ Xưa Đẹp Nhất Thế Giới', 'Từng được chuyên trang du lịch quốc tế vinh danh trong top những ngôi làng cổ tích đẹp nhất hành tinh. Những nếp nhà bè gỗ nổi sơn màu rực rỡ nép mình dưới chân vách núi đá vôi sừng sững, nơi lưu giữ tập quán sinh hoạt, chèo thuyền nan, hát giao duyên và văn hóa ngư dân vịnh biển truyền thống hàng trăm năm.')">
+                        <!-- 7. Làng Chài Cổ Cửa Vạn (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/halong_lang_chai_co_cua_van_nha_be.webp', '7. Làng Chài Cổ Cửa Vạn — Di Sản Làng Nổi Đẹp Nhất Thế Giới', 'Làng chài cổ Cửa Vạn (Vịnh Hạ Long) — Từng được vinh danh trong top 16 ngôi làng cổ tích đẹp nhất thế giới. Những nếp nhà bè gỗ mộc mạc neo đậu bình yên trong vụng kín sóng yên biển lặng, nơi các thế hệ ngư dân gắn bó máu thịt với biển khơi, cất giữ làn điệu hát đúm và nếp sinh hoạt chài lưới thuần khiết nguyên sơ.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/halong_lang_chai_co_cua_van_nha_be.webp', 'Làng chài cổ Cửa Vạn nhà bè nổi giữa lòng núi đá Hạ Long', 'Làng chài cổ Cửa Vạn (Vịnh Hạ Long) — Từng được vinh danh trong top 16 ngôi làng cổ tích đẹp nhất thế giới. Những nếp nhà bè gỗ mộc mạc neo đậu bình yên trong vụng kín sóng yên biển lặng, nơi các thế hệ ngư dân gắn bó máu thịt với biển khơi, cất giữ làn điệu hát đúm và nếp sinh hoạt chài lưới thuần khiết nguyên sơ.', '7. Làng Chài Cổ Cửa Vạn — Di Sản Làng Nổi Đẹp Nhất Thế Giới', 'Ngôi làng chài nổi cổ tích nép mình trong lòng núi đá vôi sừng sững, gìn giữ nếp nhà bè mộc mạc, lớp học nổi trên biển và điệu hát đúm giao duyên ngàn đời của ngư dân vịnh Bắc Bộ.')">📸 Làng chài nổi Cửa Vạn cổ kính</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/halong_cua_van.webp', 'Vụng biển làng chài Cửa Vạn phẳng lặng như gương', 'Vụng biển làng chài Cửa Vạn — Vùng nước kín gió được bao bọc bởi hàng trăm đảo đá vôi khổng lồ, nơi du khách được ngư dân chèo thuyền nan đưa qua những rặng núi đá, lắng nghe tiếng mái chèo khua nước và ngắm nhìn sinh hoạt làng chài nổi thanh bình.', '7. Làng Chài Cửa Vạn & Vụng Biển Vạn Năm Sóng Lặng', 'Trải nghiệm chèo thuyền nan mộc mạc giữa vụng biển xanh màu ngọc bích phẳng lặng như gương, hòa mình vào không gian bình yên tuyệt đối giữa lòng di sản thế giới.')">📸 Thuyền nan lướt vụng biển Cửa Vạn</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/halong_cua_van.webp" alt="Làng chài Cửa Vạn nhà nổi cổ truyền vịnh Hạ Long" loading="lazy">
+                                <img src="images/halong_lang_chai_co_cua_van_nha_be.webp" alt="Làng chài cổ Cửa Vạn nhà bè nổi trên biển vịnh Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Di Sản Sống</span>
-                                    <span class="tag">Văn Hóa Làng Chài</span>
+                                    <span class="tag tag-hot">🔥 Top 16 Ngôi Làng Đẹp Nhất Thế Giới</span>
+                                    <span class="tag">Di Sản Làng Nổi Ngàn Năm</span>
+                                    <span class="tag">Điệu Hát Đúm Biển Khơi</span>
                                 </div>
-                                <h3 class="dest-card-title">7. Làng Chài Cửa Vạn</h3>
-                                <p class="dest-card-desc">Bức tranh thanh bình của những nếp nhà bè nổi nép mình bên chân núi đá, lưu giữ hồn cốt văn hóa người vạn chài cổ.</p>
+                                <h3 class="dest-card-title">7. Làng Chài Cổ Cửa Vạn — Di Sản Làng Nổi Đẹp Nhất Thế Giới</h3>
+                                <p class="dest-card-desc">Ngôi làng chài nổi cổ tích nép mình trong lòng núi đá vôi sừng sững, gìn giữ nếp nhà bè mộc mạc, lớp học nổi trên biển và điệu hát đúm giao duyên ngàn đời của ngư dân vịnh Bắc Bộ.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 8: Vịnh Lan Hạ -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/halong_lan_ha.webp', '8. Vịnh Lan Hạ — Thiên Đường Đảo Ngọc Liền Kề Quần Đảo Cát Bà', 'Nằm ở phía nam vịnh Hạ Long, Vịnh Lan Hạ có hơn 400 hòn đảo phủ đầy thảm thực vật xanh mướt và 139 bãi cát trắng mịn hoang sơ. Sau quyết định mở rộng di sản UNESCO liên tỉnh năm 2023, Lan Hạ - Cát Bà kết nối trọn vẹn thành chuỗi hành trình du thuyền nghỉ dưỡng thượng lưu.')">
+                        <!-- 8. Hang Luồn (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_hang_luon.webp', '8. Hang Luồn — Cổng Vòm Xuyên Thủy Đầm Phá Kín', 'Hang xuyên thủy dài 60m hình vòm cung bán nguyệt mở ra đầm phá nước ngọc bích khép kín tĩnh lặng, nơi sinh sống của bầy khỉ vàng tinh nghịch đu cành trên vách đá.')">
                             <div class="dest-card-img">
-                                <img src="images/halong_lan_ha.webp" alt="Vịnh Lan Hạ nước biển trong xanh đảo Cát Bà" loading="lazy">
+                                <img src="images/halong_hang_luon.webp" alt="Hang Luồn vòm xuyên thủy đầm phá xanh ngọc bích Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">UNESCO 2023</span>
-                                    <span class="tag">139 Bãi Cát Trắng</span>
+                                    <span class="tag">Cổng Vòm Xuyên Thủy</span>
+                                    <span class="tag">Đầm Phá Khỉ Vàng</span>
                                 </div>
-                                <h3 class="dest-card-title">8. Vịnh Lan Hạ</h3>
-                                <p class="dest-card-desc">Vịnh biển hoang sơ tuyệt mỹ với hàng trăm bãi tắm mini nước trong như pha lê tiếp giáp quần thể Cát Bà.</p>
+                                <h3 class="dest-card-title">8. Hang Luồn</h3>
+                                <p class="dest-card-desc">Lướt thuyền nan qua vòm hang đá chạm nước mở ra đầm phá ngọc bích tĩnh mịch, ngắm bầy khỉ vàng chuyền cành bên vách dựng đứng.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 9: Vịnh Bái Tử Long -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/halong_vinh_bai_tu_long.webp', '9. Vịnh Bái Tử Long — Vùng Vịnh Nguyên Sơ & Vườn Quốc Gia Biển Kỳ Vĩ', 'Nằm về phía đông bắc vịnh Hạ Long, Bái Tử Long là vùng vịnh rộng lớn mang vẻ đẹp hoang sơ tĩnh lặng tuyệt đối. Sở hữu Vườn quốc gia Bái Tử Long (Vườn di sản ASEAN) với hệ sinh thái rừng ngập mặn, rạn san hô nguyên sinh, đây là điểm đến mơ ước của những hải trình du thuyền thám hiểm cao cấp.')">
+                        <!-- 9. Bãi Cháy & Cầu Bãi Cháy (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/halong_bai_chay_ha_long.webp', '9. Bãi Cháy & Cầu Bãi Cháy — Nhịp Sống Phố Biển', 'Bờ biển cát trắng nhân tạo dài 4km ôm trọn vịnh Cửa Lục, kết hợp cùng cầu dây văng Bãi Cháy lung linh ánh đèn LED rực rỡ khi thành phố biển về đêm.')">
                             <div class="dest-card-img">
-                                <img src="images/halong_vinh_bai_tu_long.webp" alt="Vịnh Bái Tử Long hoang sơ kỳ vĩ" loading="lazy">
+                                <img src="images/halong_bai_chay_ha_long.webp" alt="Bãi Cháy và cầu Bãi Cháy lung linh về đêm thành phố Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Vườn Di Sản ASEAN</span>
-                                    <span class="tag">Hoang Sơ Tĩnh Lặng</span>
+                                    <span class="tag">Phố Biển Sôi Động</span>
+                                    <span class="tag">Cầu Dây Văng Bãi Cháy</span>
                                 </div>
-                                <h3 class="dest-card-title">9. Vịnh Bái Tử Long</h3>
-                                <p class="dest-card-desc">Không gian hoang sơ không tì vết, nơi đàn Rồng Con quần tụ chở che non nước miền viễn Đông Bắc.</p>
+                                <h3 class="dest-card-title">9. Bãi Cháy & Cầu Bãi Cháy</h3>
+                                <p class="dest-card-desc">Trái tim giải trí và nghỉ dưỡng sôi động ven bờ với bãi biển cát trắng miên man và cầu dây văng tráng lệ lung linh khi phố lên đèn.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 10: Bãi Cháy & Cầu Bãi Cháy -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/halong_bai_chay_ha_long.webp', '10. Bãi Cháy & Cầu Bãi Cháy — Đô Thị Du Lịch Biển Năng Động & Sun World Hạ Long', 'Khu trung tâm du lịch sầm uất bậc nhất thành phố Hạ Long với bãi tắm nhân tạo cát trắng trải dài 4km, cầu Bãi Cháy dây văng một mặt phẳng kỷ lục bắc qua eo biển Cửa Lục, tổ hợp vui chơi giải trí quốc tế Sun World Ha Long Complex và tuyến cáp treo Nữ Hoàng đạt 2 kỷ lục Guinness thế giới.')">
+                        <!-- 10. Thuyền Buồm Cánh Dơi & Bái Tử Long (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/halong_thuyen_buom_canh_doi_truyen_thong.webp', '10. Thuyền Buồm Cánh Dơi — Hồn Xưa Hải Hành Vịnh Hạ Long', 'Thuyền buồm ba vách cánh dơi vịnh Hạ Long — Di sản hàng hải truyền thống độc đáo của Việt Nam. Cánh buồm màu nâu cánh gián nhuộm củ nâu tự nhiên xòe rộng như cánh dơi đón gió, lướt đi êm ả trên mặt nước ngọc bích phẳng lặng, tạo nên bức tranh thủy mặc trầm mặc say đắm lòng người.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/halong_thuyen_buom_canh_doi_truyen_thong.webp', 'Thuyền buồm ba vách cánh dơi truyền thống lướt sóng vịnh Hạ Long', 'Thuyền buồm ba vách cánh dơi vịnh Hạ Long — Di sản hàng hải truyền thống độc đáo của Việt Nam. Cánh buồm màu nâu cánh gián nhuộm củ nâu tự nhiên xòe rộng như cánh dơi đón gió, lướt đi êm ả trên mặt nước ngọc bích phẳng lặng, tạo nên bức tranh thủy mặc trầm mặc say đắm lòng người.', '10. Thuyền Buồm Cánh Dơi — Hồn Xưa Hải Hành Vịnh Hạ Long', 'Biểu tượng lịch sử ngàn đời của ngư dân duyên hải Bắc Bộ với những cánh buồm nâu hình cánh dơi căng gió no tròn lướt nhẹ giữa hàng ngàn đảo đá vôi kỳ vĩ.')">📸 Thuyền buồm cánh dơi vịnh Hạ Long</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/halong_vinh_bai_tu_long.webp', 'Toàn cảnh vịnh Bái Tử Long hoang sơ kỳ vĩ', 'Vịnh Bái Tử Long — Vùng biển đảo nguyên sơ phía đông bắc Hạ Long gắn với truyền tích Rồng Con đáp xuống. Nơi đây sở hữu hàng trăm bãi cát tự nhiên trắng phau và hệ sinh thái rừng ngập mặn biển đảo hoang sơ tuyệt mỹ.', '10. Toàn Cảnh Vịnh Bái Tử Long — Vẻ Đẹp Nguyên Sơ Đảo Đá', 'Quần thể hàng trăm hòn đảo đá vôi hoang sơ kỳ vĩ tiếp giáp vịnh Hạ Long, nơi in đậm huyền tích Rồng Con hạ phàm chở che bờ cõi non sông.')">📸 Vịnh Bái Tử Long hoang sơ</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/halong_bai_chay_ha_long.webp" alt="Bãi Cháy và Cầu Bãi Cháy rực rỡ ánh đèn về đêm" loading="lazy">
+                                <img src="images/halong_thuyen_buom_canh_doi_truyen_thong.webp" alt="Thuyền buồm cánh dơi truyền thống lướt sóng hoàng hôn vịnh Hạ Long" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Đô Thị Biển Hiện Đại</span>
-                                    <span class="tag">Cáp Treo Kỷ Lục</span>
+                                    <span class="tag tag-hot">🔥 Di Sản Hàng Hải Truyền Thống</span>
+                                    <span class="tag">Buồm Nâu Cánh Dơi Ba Vách</span>
+                                    <span class="tag">Vịnh Bái Tử Long</span>
                                 </div>
-                                <h3 class="dest-card-title">10. Bãi Cháy & Cầu Bãi Cháy</h3>
-                                <p class="dest-card-desc">Trái tim giải trí và nghỉ dưỡng sôi động ven bờ với bãi biển cát trắng miên man và cầu dây văng tráng lệ.</p>
+                                <h3 class="dest-card-title">10. Thuyền Buồm Cánh Dơi Truyền Thống & Vịnh Bái Tử Long — Hồn Xưa Vịnh Hạ Long</h3>
+                                <p class="dest-card-desc">Lắng đọng vẻ đẹp hoài niệm của cánh buồm nâu cánh dơi no gió rẽ sóng giữa muôn trùng đảo đá, hòa quyện huyền tích Rồng Mẹ Rồng Con che chở ngàn năm bờ cõi non sông.</p>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -1330,6 +1408,42 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            const titleEl = card.querySelector('.dest-card-title');
+            const descEl = card.querySelector('.dest-card-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            card.onclick = function() {
+                openLightbox(imgSrc, cardTitle || imgAlt, legendText || cardDesc);
+            };
+        }
+
     </script>
 </body>
 </html>
