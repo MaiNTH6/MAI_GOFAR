@@ -672,6 +672,70 @@
                 font-size: 1.8rem;
             }
         }
+    
+        .dest-card.double-col {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+        .dest-card.has-gallery {
+            position: relative;
+        }
+        .dest-card-title, .dest-card-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .dest-card.double-col, .dest-card.featured {
+                grid-column: span 1;
+                aspect-ratio: 16/10;
+            }
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -861,167 +925,179 @@
                     <p>Khám phá 10 địa danh biểu tượng định danh linh hồn lịch sử và vẻ đẹp thiên nhiên ngoạn mục của Côn Đảo:</p>
 
                     <div class="dest-grid">
-                        <!-- Spot 1: Nghĩa trang Hàng Dương (Featured) -->
-                        <div class="dest-card featured" onclick="openLightbox('images/condao_nghia_trang_hang_duong_tuong_niem.webp', '1. Nghĩa Trang Hàng Dương — Biểu Tượng Khí Phách Anh Hùng Dân Tộc', 'Quần thể nghĩa trang linh thiêng rộng 190.000m² tại Côn Đảo, nơi yên nghỉ của hàng vạn chiến sĩ cách mạng và đồng bào yêu nước qua nhiều thế hệ lao tù. Nghĩa trang gồm 4 khu A, B, C, D với gần 2.000 ngôi mộ, trong đó phần lớn là mộ khuyết danh. Nổi bật giữa trung tâm là Tượng đài Tổ quốc ghi công và 9 cột đá biểu tượng vươn cao kiêu hãnh giữa bóng dương xanh rì rào ngàn năm, nơi mỗi tấc đất đều thấm đẫm máu xương và tinh thần bất khuất của dân tộc Việt Nam.')">
+
+                        <!-- 1. Nghĩa Trang Hàng Dương (double-col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/condao_nghia_trang_hang_duong_tuong_niem.webp', '1. Nghĩa Trang Hàng Dương — Cõi Thiêng Bất Tử Giữa Ngàn Dương Xanh', 'Nghĩa trang lịch sử lớn nhất Côn Đảo rộng 19 ha với gần 2.000 ngôi mộ của các chiến sĩ cách mạng kiên trung qua nhiều thế hệ, nơi bạt ngàn bóng dương xanh rì rào bên tượng đài Tổ quốc ghi công thiêng liêng.')">
                             <div class="dest-card-img">
-                                <img src="images/condao_nghia_trang_hang_duong_tuong_niem.webp" alt="Nghĩa trang Hàng Dương linh thiêng Côn Đảo di tích quốc gia đặc biệt" loading="lazy">
+                                <img src="images/condao_nghia_trang_hang_duong_tuong_niem.webp" alt="Nghĩa trang Hàng Dương đài tưởng niệm thiêng liêng Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
                                     <span class="tag tag-hot">🔥 Di Tích Quốc Gia Đặc Biệt</span>
-                                    <span class="tag">Đài Tưởng Niệm 9 Cột Đá</span>
-                                    <span class="tag">Khu A - B - C - D</span>
+                                    <span class="tag">Gần 2.000 Ngôi Mộ</span>
+                                    <span class="tag">Cõi Thiêng Bất Tử</span>
                                 </div>
                                 <h3 class="dest-card-title">1. Nghĩa Trang Hàng Dương — Cõi Thiêng Bất Tử Giữa Ngàn Dương Xanh</h3>
-                                <p class="dest-card-desc">Nơi an nghỉ của gần 2.000 liệt sĩ kiên trung và các bậc tiền bối cách mạng Lê Hồng Phong, Nguyễn An Ninh dưới bóng dương ngàn năm.</p>
+                                <p class="dest-card-desc">Cõi thiêng bất tử của dân tộc, nơi an nghỉ của hàng ngàn anh hùng liệt sĩ kiên trung dưới bóng dương xanh rì rào gió biển ngày đêm.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 2: Mộ Nữ Anh Hùng Võ Thị Sáu (Cô Sáu) (Featured) -->
-                        <div class="dest-card featured" onclick="openLightbox('images/condao_mo_co_sau.webp', '2. Mộ Nữ Anh Hùng Liệt Sĩ Võ Thị Sáu (Cô Sáu) — Cõi Thiêng Bất Tử Đất Đảo', 'Nằm tại Khu B2 Nghĩa trang Hàng Dương, phần mộ của người con gái Đất Đỏ kiên cường ngã xuống trước họng súng quân thù năm 19 tuổi là biểu tượng bất tử của khí phách anh hùng cách mạng. Nơi đây luôn ngập tràn sắc hoa cúc trắng tinh khôi, nón lá, gương lược và khói hương thơm ngát suốt ngày đêm. Nghi thức viếng mộ Cô Sáu lúc nửa đêm trong không gian trang nghiêm, thanh tịnh đã trở thành một trải nghiệm tâm linh sâu lắng, linh thiêng bậc nhất trong lòng mỗi người con đất Việt khi về với Côn Đảo.')">
+                        <!-- 2. Mộ Nữ Anh Hùng Võ Thị Sáu (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/condao_mo_co_sau.webp', '2. Mộ Nữ Anh Hùng Võ Thị Sáu — Biểu Tượng Bất Tử Đất Đảo', 'Khu B Nghĩa trang Hàng Dương, nơi an nghỉ của người con gái Đất Đỏ kiên cường ngã xuống ở tuổi 19. Nghi thức viếng mộ lúc nửa đêm là nét sinh hoạt tâm linh thiêng liêng thu hút hàng triệu đồng bào mỗi năm.')">
                             <div class="dest-card-img">
-                                <img src="images/condao_mo_co_sau.webp" alt="Mộ Anh hùng Liệt sĩ Võ Thị Sáu Cô Sáu Nghĩa trang Hàng Dương Côn Đảo" loading="lazy">
+                                <img src="images/condao_mo_co_sau.webp" alt="Mộ Anh hùng Liệt sĩ Võ Thị Sáu nghĩa trang Hàng Dương Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 Điểm Hẹn Tâm Linh Linh Thiêng Nhất</span>
-                                    <span class="tag">Khu B2 Hàng Dương</span>
-                                    <span class="tag">Viếng Mộ Nửa Đêm</span>
+                                    <span class="tag tag-hot">Viếng Đêm Thiêng Liêng</span>
+                                    <span class="tag">Khu B Hàng Dương</span>
                                 </div>
-                                <h3 class="dest-card-title">2. Mộ Nữ Anh Hùng Võ Thị Sáu — Cõi Thiêng Đất Đảo & Biểu Tượng Bất Tử</h3>
-                                <p class="dest-card-desc">Phần mộ linh thiêng ngập tràn hoa cúc trắng tại Khu B2 Hàng Dương, nơi triệu trái tim người Việt hướng về với lòng thành kính tri ân sâu sắc.</p>
+                                <h3 class="dest-card-title">2. Mộ Anh Hùng Võ Thị Sáu</h3>
+                                <p class="dest-card-desc">Biểu tượng bất tử của lòng quả cảm, nơi đồng bào muôn phương kính cẩn thắp nén tâm nhang lúc nửa đêm huyền diệu.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 3: Hệ thống Nhà tù Côn Đảo & Chuồng Cọp -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/condao_chuong_cop_phap.webp', '3. Nhà Tù Côn Đảo & Hệ Thống Chuồng Cọp — Di Tích Quốc Gia Đặc Biệt', 'Được xếp hạng Di tích Quốc gia Đặc biệt theo QĐ 548/QĐ-TTg của Thủ tướng Chính phủ. Quần thể gồm Trại Phú Hải, Phú Tường, Phú Bình với hệ thống biệt giam Chuồng cọp Pháp (120 phòng giam có song sắt trần ngục) và Chuồng cọp Mỹ (384 buồng giam tắm nắng dã man). Chứng tích sống động tố cáo tội ác thực dân đồng thời tôn vinh khí tiết ngút trời của các chiến sĩ cách mạng.')">
+                        <!-- 3. Hệ Thống Nhà Tù Côn Đảo & Chuồng Cọp (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/condao_chuong_cop_phap.webp', '3. Hệ Thống Nhà Tù Côn Đảo — Địa Ngục Trần Gian & Trường Học Cách Mạng', 'Di tích quốc gia đặc biệt với Trại Phú Hải, Chuồng Cọp Pháp, Chuồng Cọp Mỹ và khu biệt giam khét tiếng, minh chứng cho ý chí kiên cường bất khuất của các chiến sĩ cộng sản.')">
                             <div class="dest-card-img">
-                                <img src="images/condao_chuong_cop_phap.webp" alt="Hệ thống Chuồng cọp Nhà tù Côn Đảo di tích quốc gia đặc biệt" loading="lazy">
+                                <img src="images/condao_chuong_cop_phap.webp" alt="Chuồng Cọp Pháp và hệ thống nhà tù di tích Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag tag-hot">🔥 Di Tích Quốc Gia Đặc Biệt</span>
-                                    <span class="tag">Chuồng Cọp Pháp - Mỹ</span>
+                                    <span class="tag">Chuồng Cọp Pháp & Mỹ</span>
+                                    <span class="tag">Trường Học Cách Mạng</span>
                                 </div>
-                                <h3 class="dest-card-title">3. Hệ Thống Nhà Tù Côn Đảo & Chuồng Cọp</h3>
-                                <p class="dest-card-desc">113 năm "địa ngục trần gian" hóa biểu tượng ý chí bất khuất kiên trung của dân tộc Việt Nam trước mọi gông xiềng quân thù.</p>
+                                <h3 class="dest-card-title">3. Nhà Tù Côn Đảo & Chuồng Cọp</h3>
+                                <p class="dest-card-desc">Bản cáo trạng lịch sử hào hùng, nơi ngục tù biến thành trường học rèn giũa ý chí kiên trung bất khuất của dân tộc.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 4: Bãi Đầm Trầu -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/condao_bai_dam_trau.webp', '4. Bãi Đầm Trầu — Bãi Biển Vầng Trăng & Khoảnh Khắc Máy Bay Hạ Cánh', 'Được mệnh danh là bãi tắm đẹp nhất Côn Đảo với bãi cát vàng mịn màng hình cánh cung thoai thoải ôm trọn làn nước biển xanh ngọc bích, bao bọc bởi vách đá râm mát và rừng cây nguyên sinh. Nằm ngay sát đường băng sân bay Cỏ Ống, đây là điểm check-in độc nhất vô nhị ngắm máy bay ATR-72 / Embraer gầm vang hạ cánh ngay sát đỉnh đầu.')">
+                        <!-- 4. Bãi Đầm Trầu & Hòn Cau (double-col) -->
+                        <div class="dest-card double-col" onclick="openLightbox('images/condao_bai_dam_trau.webp', '4. Bãi Đầm Trầu — Thiên Đường Bãi Biển Đẹp Nhất Côn Đảo', 'Bãi biển hình cánh cung cát vàng óng ả nép mình dưới rặng rừng nguyên sinh và vách đá hoa cương, nổi tiếng với trải nghiệm độc nhất vô nhị ngắm máy bay hạ cánh sát mặt biển.')">
                             <div class="dest-card-img">
-                                <img src="images/condao_bai_dam_trau.webp" alt="Bãi Đầm Trầu cát vàng biển ngọc Côn Đảo" loading="lazy">
+                                <img src="images/condao_bai_dam_trau.webp" alt="Bãi Đầm Trầu bãi biển đẹp nhất Côn Đảo máy bay hạ cánh" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Bãi Biển Đẹp Nhất</span>
-                                    <span class="tag">Ngắm Máy Bay Hạ Cánh</span>
+                                    <span class="tag tag-hot">🔥 Bãi Tắm Đẹp Nhất Côn Đảo</span>
+                                    <span class="tag">Check-in Máy Bay Hạ Cánh</span>
+                                    <span class="tag">Cát Vàng Nước Biếc</span>
                                 </div>
-                                <h3 class="dest-card-title">4. Bãi Đầm Trầu</h3>
-                                <p class="dest-card-desc">Bãi biển cánh cung thơ mộng với trải nghiệm máy bay lướt sát đầu độc đáo duy nhất tại Việt Nam.</p>
+                                <h3 class="dest-card-title">4. Bãi Đầm Trầu & Hòn Cau — Thiên Đường Biển Cát Vàng Côn Đảo</h3>
+                                <p class="dest-card-desc">Bãi biển hình cánh cung tuyệt mỹ với dải cát vàng óng ả, nước trong thấu đáy và trải nghiệm check-in máy bay hạ cánh sát đầu độc nhất vô nhị Việt Nam.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 5: Hòn Bảy Cạnh -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/condao_hon_bay_canh_rua_bien.webp', '5. Hòn Bảy Cạnh — Vương Quốc Rùa Biển & Sinh Thái Rừng Ngập Mặn Đảo', 'Hòn đảo lớn thứ hai trong quần thể Côn Đảo, được bao phủ bởi rừng nguyên sinh nhiệt đới và hệ sinh thái rừng ngập mặn trên nền đất cát độc đáo. Đây là bãi đẻ trứng lớn nhất của rùa biển (vích) tại Việt Nam, nơi bảo tồn hàng ngàn tổ rùa mỗi năm dưới sự chăm sóc tận tụy của lực lượng kiểm lâm, kết hợp vùng rạn san hô trù phú lặn ngắm tuyệt đẹp.')">
+                        <!-- 5. Hòn Bảy Cạnh & Rùa Biển (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/condao_hon_bay_canh_rua_bien.webp', '5. Hòn Bảy Cạnh — Bãi Đẻ Rùa Biển Lớn Nhất Việt Nam', 'Nằm ở phía đông Côn Sơn, là khu bảo tồn thiên nhiên biển quan trọng nhất Vườn quốc gia Côn Đảo, nơi hàng ngàn cá thể rùa biển (vích) lên bãi đẻ trứng mỗi mùa sinh sản.')">
                             <div class="dest-card-img">
-                                <img src="images/condao_hon_bay_canh_rua_bien.webp" alt="Hòn Bảy Cạnh rùa biển sinh sản Côn Đảo" loading="lazy">
+                                <img src="images/condao_hon_bay_canh_rua_bien.webp" alt="Hòn Bảy Cạnh khu bảo tồn rùa biển đẻ trứng Vườn quốc gia Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Vườn Quốc Gia Côn Đảo</span>
-                                    <span class="tag">Bảo Tồn Rùa Biển</span>
+                                    <span class="tag">Bảo Tồn Rùa Biển Số 1</span>
+                                    <span class="tag">Thả Rùa Con Về Biển</span>
                                 </div>
                                 <h3 class="dest-card-title">5. Hòn Bảy Cạnh & Rùa Biển</h3>
-                                <p class="dest-card-desc">Thiên đường bảo tồn rùa biển lớn nhất Việt Nam với bãi cát hoang sơ và rạn san hô nguyên vẹn.</p>
+                                <p class="dest-card-desc">Trải nghiệm thiêng liêng ngắm rùa mẹ đẻ trứng trong đêm và tận tay thả rùa con chập chững tìm đường về đại dương bao la.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 6: Cầu Tàu 914 -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/condao_cau_tau_914.webp', '6. Cầu Tàu 914 — Di Tích Khắc Sâu Xương Máu Người Tù Yêu Nước', 'Nằm ngay trung tâm thị trấn Côn Sơn trước Dinh Chúa Đảo, cây cầu tàu lịch sử dài hơn 300m được xây dựng hoàn toàn bằng đá tảng do tù nhân khổ sai khiêng vác từ núi cao xuống biển. Con số 914 là số lượng chiến sĩ ước tính đã ngã xuống vì kiệt sức, đá đè và đòn roi tàn khốc trong quá trình xây dựng cầu tàu này.')">
+                        <!-- 6. Chùa Núi Một & Miếu Bà Phi Yến (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/condao_chua_nui_mot_van_son_tu.webp', '6. Chùa Núi Một (Vân Sơn Tự) & Miếu Bà Phi Yến', 'Vân Sơn Tự tựa lưng vào núi Một nhìn ra vịnh Côn Sơn xanh ngắt, kết hợp cùng An Sơn Miếu thờ Bà Phi Yến — thứ phi vua Gia Long gắn với câu ca dao lưu truyền nghìn đời.')">
                             <div class="dest-card-img">
-                                <img src="images/condao_cau_tau_914.webp" alt="Cầu tàu 914 di tích lịch sử Côn Đảo" loading="lazy">
+                                <img src="images/condao_chua_nui_mot_van_son_tu.webp" alt="Chùa Núi Một Vân Sơn Tự ngắm toàn cảnh thị trấn Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Chứng Tích Lịch Sử</span>
-                                    <span class="tag">Dấu Ấn Bi Tráng</span>
+                                    <span class="tag">Ngôi Chùa Duy Nhất Côn Đảo</span>
+                                    <span class="tag">Miếu Bà Phi Yến</span>
                                 </div>
-                                <h3 class="dest-card-title">6. Cầu Tàu 914</h3>
-                                <p class="dest-card-desc">Chứng tích lịch sử khắc sâu bằng máu và nước mắt của 914 tù nhân khổ sai thời kỳ thực dân.</p>
+                                <h3 class="dest-card-title">6. Chùa Núi Một & Miếu Bà</h3>
+                                <p class="dest-card-desc">Cổ tự uy nghiêm trên đỉnh non cao soi bóng vịnh biển, lắng nghe câu ca dao cảm động về tấm lòng trung trinh của Bà Phi Yến.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 7: Bãi Nhát & Đỉnh Tình Yêu -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/condao_bai_nhat_dinh_tinh_yeu.webp', '7. Bãi Nhát & Đỉnh Tình Yêu — Kỳ Quan Bãi Cát Thủy Triều & Hoàng Hôn Lãng Mạn', 'Bãi Nhát là bãi biển đặc biệt chỉ lộ ra dải cát trắng mịn màng khi thủy triều rút xuống. Phía xa xa là ngọn núi Đỉnh Tình Yêu có hình dáng đôi tình nhân đang ôm lấy nhau giữa biển trời bao la. Đây là điểm ngắm hoàng hôn buông xuống ngoạn mục nhất trên toàn đảo.')">
+                        <!-- 7. Cầu Tàu 914 & Rặng Bàng Cổ Thụ (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/condao_rang_bang_co_thu_ton_duc_thang.webp', '7. Rặng Bàng Cổ Thụ Di Sản Trăm Năm — Chứng Nhân Lịch Sử Đất Đảo', 'Rặng cây bàng cổ thụ di sản Côn Đảo — Được công nhận là Cây Di sản Việt Nam. Những gốc bàng cổ thụ xù xì, bạnh vè khổng lồ chạy dọc bờ biển đường Tôn Đức Thắng, từng là nơi che chở cho các chiến sĩ cách mạng và lưu giữ linh hồn thiêng liêng của vùng đất ngục tù xưa.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/condao_rang_bang_co_thu_ton_duc_thang.webp', 'Rặng bàng cổ thụ di sản Tôn Đức Thắng Côn Đảo', 'Rặng cây bàng cổ thụ di sản Côn Đảo — Được công nhận là Cây Di sản Việt Nam. Những gốc bàng cổ thụ xù xì, bạnh vè khổng lồ chạy dọc bờ biển đường Tôn Đức Thắng, từng là nơi che chở cho các chiến sĩ cách mạng và lưu giữ linh hồn thiêng liêng của vùng đất ngục tù xưa.', '7. Rặng Bàng Cổ Thụ Di Sản Trăm Năm — Chứng Nhân Lịch Sử Đất Đảo', 'Hơn 50 cây bàng cổ thụ di sản trăm năm tuổi với gốc rễ bạnh vè sừng sững xòe tán rợp bóng mát trên đường Tôn Đức Thắng, chứng nhân trầm mặc qua bao thăng trầm khói lửa Côn Đảo.')">📸 Rặng bàng cổ thụ di sản ven biển</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/condao_cau_tau_914.webp', 'Cầu Tàu 914 lịch sử đón bình minh vịnh Côn Sơn', 'Cầu Tàu 914 Côn Đảo — Khởi công xây dựng từ năm 1873, con số 914 là ước tính số tù nhân đã ngã xuống trong quá trình khổ sai mang vác những tảng đá khổng lồ đắp nên cầu tàu. Ngày nay, cầu tàu là di tích lịch sử quốc gia đặc biệt và là điểm ngắm bình minh tuyệt mỹ nhất Côn Đảo.', '7. Cầu Tàu Lịch Sử 914 — Bản Anh Hùng Ca Đất Đảo', 'Di tích lịch sử thiêng liêng nơi từng phiến đá nặng hàng tấn được xây bằng xương máu của hơn 914 chiến sĩ cách mạng, nay là chốn đón bình minh thanh bình rực rỡ trên vịnh Côn Sơn.')">📸 Cầu Tàu 914 lịch sử</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/condao_bai_nhat_dinh_tinh_yeu.webp" alt="Bãi Nhát Đỉnh Tình Yêu Côn Đảo" loading="lazy">
+                                <img src="images/condao_rang_bang_co_thu_ton_duc_thang.webp" alt="Rặng bàng cổ thụ di sản trăm năm đường Tôn Đức Thắng ven biển Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Bãi Cát Thủy Triều</span>
-                                    <span class="tag">Hoàng Hôn Tuyệt Đẹp</span>
+                                    <span class="tag tag-hot">🔥 Cây Di Sản Việt Nam</span>
+                                    <span class="tag">Cầu Tàu Lịch Sử 914</span>
+                                    <span class="tag">Đường Ven Biển Tôn Đức Thắng</span>
                                 </div>
-                                <h3 class="dest-card-title">7. Bãi Nhát & Đỉnh Tình Yêu</h3>
-                                <p class="dest-card-desc">Dải cát ngọc chỉ xuất hiện khi triều rút, nơi chiêm ngưỡng hoàng hôn dát vàng lãng mạn ngút ngàn.</p>
+                                <h3 class="dest-card-title">7. Cầu Tàu Lịch Sử 914 & Rặng Bàng Cổ Thụ Trăm Năm — Trầm Tích Đất Đảo</h3>
+                                <p class="dest-card-desc">Hơn 50 cây bàng cổ thụ di sản trăm năm tuổi với gốc rễ bạnh vè sừng sững xòe tán rợp bóng mát trên đường Tôn Đức Thắng, chứng nhân trầm mặc qua bao thăng trầm khói lửa Côn Đảo.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 8: Chùa Núi Một (Vân Sơn Tự) -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/condao_chua_nui_mot_van_son_tu.webp', '8. Chùa Núi Một (Vân Sơn Tự) — Ngôi Chùa Tọa Sơn Hướng Hải Độc Nhất', 'Tọa lạc trên sườn Núi Một do người tù xây dựng năm 1964 và được trùng tu tôn nghiêm. Chùa có kiến trúc Phật giáo truyền thống với tượng Bồ Tát Quan Âm ngự trên đài sen cao hướng ra biển Đông. Từ sân chùa nhìn xuống, toàn cảnh vịnh Côn Sơn, hồ sen An Hải và thị trấn cổ thu trọn vào tầm mắt.')">
+                        <!-- 8. Bãi Nhát & Đỉnh Tình Yêu (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/condao_bai_nhat_dinh_tinh_yeu.webp', '8. Bãi Nhát & Đỉnh Tình Yêu — Hoàng Hôn Tuyệt Mỹ Côn Đảo', 'Bãi cát thoai thoải chỉ xuất hiện vài giờ khi thủy triều rút xuống, nằm đối diện ngọn núi Đỉnh Tình Yêu hình đôi lứa ôm nhau, điểm ngắm hoàng hôn lãng mạn nhất.')">
                             <div class="dest-card-img">
-                                <img src="images/condao_chua_nui_mot_van_son_tu.webp" alt="Chùa Núi Một Vân Sơn Tự Côn Đảo tọa sơn hướng hải" loading="lazy">
+                                <img src="images/condao_bai_nhat_dinh_tinh_yeu.webp" alt="Bãi Nhát và Đỉnh Tình Yêu hoàng hôn tím biếc Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Cổ Tự Tọa Sơn Hướng Hải</span>
-                                    <span class="tag">Toàn Cảnh Côn Sơn</span>
+                                    <span class="tag">Bãi Biển Thủy Triều</span>
+                                    <span class="tag">Hoàng Hôn Đỉnh Tình Yêu</span>
                                 </div>
-                                <h3 class="dest-card-title">8. Chùa Núi Một (Vân Sơn Tự)</h3>
-                                <p class="dest-card-desc">Danh lam cổ tự duy nhất trên đảo, nơi lắng nghe tiếng chuông chùa thanh tịnh ngắm trọn vịnh Côn Sơn.</p>
+                                <h3 class="dest-card-title">8. Bãi Nhát & Đỉnh Tình Yêu</h3>
+                                <p class="dest-card-desc">Bãi cát mịn màng thoắt ẩn thoắt hiện theo thủy triều, chốn chiêm ngưỡng hoàng hôn nhuộm tím ngọn núi đôi thiêng liêng.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 9: Miếu Bà Phi Yến (An Sơn Miếu) -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/condao_mieu_ba_phi_yen.webp', '9. Miếu Bà Phi Yến (An Sơn Miếu) — Nơi Thờ Nữ Nhân Tiết Hạnh Đất Đảo', 'Ngôi miếu cổ kính rợp bóng cây cổ thụ được lập từ năm 1785 để thờ Thứ phi Lê Thị Răm (Bà Phi Yến). Miếu Bà là điểm tựa văn hóa tâm linh lâu đời của cư dân Côn Đảo, nơi tổ chức lễ hội truyền thống ngày 18 tháng 10 Âm lịch hàng năm thu hút đông đảo phật tử và du khách về chiêm bái.')">
+                        <!-- 9. Mũi Chim Chim & Cung Đường Côn Sơn (single-col) -->
+                        <div class="dest-card single-col" onclick="openLightbox('images/condao_mui_chim_chim_hoang_hon.webp', '9. Mũi Chim Chim & Cung Đường Ven Biển Côn Sơn', 'Mỏm đá hoa cương nhô dài ra biển có hình dáng tựa mỏ chim đại bàng, điểm đón bình minh và ngắm biển trời lộng gió trên cung đường đèo Côn Sơn ngoạn mục.')">
                             <div class="dest-card-img">
-                                <img src="images/condao_mieu_ba_phi_yen.webp" alt="Miếu Bà Phi Yến An Sơn Miếu Côn Đảo" loading="lazy">
+                                <img src="images/condao_mui_chim_chim_hoang_hon.webp" alt="Mũi Chim Chim mỏm đá vươn ra biển đón bình minh Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Tâm Linh Cổ Kính</span>
-                                    <span class="tag">Lễ Hội Truyền Thống</span>
+                                    <span class="tag">Mỏm Đá Mỏ Đại Bàng</span>
+                                    <span class="tag">Đón Bình Minh Sớm</span>
                                 </div>
-                                <h3 class="dest-card-title">9. Miếu Bà Phi Yến (An Sơn Miếu)</h3>
-                                <p class="dest-card-desc">Ngôi miếu thanh tịnh gắn liền số phận bi tráng của vị thứ phi kiên trinh tấm lòng vì dân vì nước.</p>
+                                <h3 class="dest-card-title">9. Mũi Chim Chim & Cung Đường Đèo</h3>
+                                <p class="dest-card-desc">Mỏm đá kỳ thú vươn mình đón gió trùng khơi, điểm thưởng ngoạn bình minh rực rỡ và cung đường đèo ven biển đẹp mê hồn.</p>
                             </div>
                         </div>
 
-                        <!-- Spot 10: Mũi Chim Chim & Cung Đường Côn Sơn -->
-                        <div class="dest-card single-col" onclick="openLightbox('images/condao_mui_chim_chim_hoang_hon.webp', '10. Mũi Chim Chim — Mỏm Đá Hùng Vĩ Nhô Ra Biển Khơi & Cung Đường Ven Biển Cỏ Ống', 'Mỏm đá kỳ vĩ có hình dáng tựa đầu một chú chim khổng lồ đang sải cánh vươn ra biển Đông. Nằm trên cung đường ven biển tuyệt đẹp nối sân bay Cỏ Ống về thị trấn Côn Sơn, đây là nơi sóng vỗ ầm ầm vào chân vách đá dựng đứng, mang lại góc máy ngoạn mục không thể bỏ lỡ.')">
+                        <!-- 10. Làng Nghề Làm Mứt Hạt Bàng & Cảng Bến Đầm (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery" onclick="openLightbox('images/condao_lang_nghe_mut_hat_bang_rang_muoi.webp', '10. Làng Nghề Làm Mứt Hạt Bàng — Đặc Sản Di Sản Độc Nhất Vô Nhị', 'Mứt hạt bàng Côn Đảo — Món quà đặc sản độc đáo gắn liền với lịch sử đảo ngọc. Từng hạt bàng được người dân địa phương nhặt dưới những tán bàng cổ thụ, dùng dao chẻ tỉ mỉ từng quả rồi rang trên chảo gang với muối hoặc đường gừng, tạo nên hương vị béo ngậy, bùi bùi và giòn tan khó quên.')">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/condao_lang_nghe_mut_hat_bang_rang_muoi.webp', 'Nghề làm mứt hạt bàng rang muối thủ công Côn Đảo', 'Mứt hạt bàng Côn Đảo — Món quà đặc sản độc đáo gắn liền với lịch sử đảo ngọc. Từng hạt bàng được người dân địa phương nhặt dưới những tán bàng cổ thụ, dùng dao chẻ tỉ mỉ từng quả rồi rang trên chảo gang với muối hoặc đường gừng, tạo nên hương vị béo ngậy, bùi bùi và giòn tan khó quên.', '10. Làng Nghề Làm Mứt Hạt Bàng — Đặc Sản Di Sản Độc Nhất Vô Nhị', 'Nghề thủ công truyền thống nhặt quả bàng rụng, phơi khô rồi chẻ hạt rang muối, rang gừng đường thủ công thơm bùi giòn rụm, mang đậm phong vị mặn mà của biển đảo quê hương.')">📸 Nghề làm mứt hạt bàng rang muối</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/condao_am_thuc_hat_bang_hai_san.webp', 'Cảng cá Bến Đầm vịnh Côn Sơn tấp nập thuyền bè', 'Vịnh Bến Đầm và Cảng cá Côn Đảo — Vụng biển sâu kín gió được bao bọc bởi các hòn đảo nhỏ, là trung tâm hậu cần nghề cá nhộn nhịp bậc nhất Côn Đảo với các nhà bè nuôi hải sản và tàu thuyền đánh bắt xa bờ cập bến mỗi ban mai.', '10. Cảng Cá Bến Đầm & Vựa Hải Sản Tươi Sống Côn Đảo', 'Cửa ngõ giao thương tấp nập thuyền bè của ngư dân biển đảo, nơi neo đậu tàu cá tránh bão và thưởng thức hải sản tươi ngon nhất Côn Sơn.')">📸 Bến Đầm nhộn nhịp tàu cá</button>
+                            </div>
                             <div class="dest-card-img">
-                                <img src="images/condao_mui_chim_chim_hoang_hon.webp" alt="Mũi Chim Chim mỏm đá kỳ vĩ vươn ra biển Côn Đảo" loading="lazy">
+                                <img src="images/condao_lang_nghe_mut_hat_bang_rang_muoi.webp" alt="Nghề làm mứt hạt bàng rang muối truyền thống đặc sản Côn Đảo" loading="lazy">
                             </div>
                             <div class="dest-card-overlay"></div>
                             <div class="dest-card-content">
                                 <div class="dest-card-tags">
-                                    <span class="tag">Mỏm Đá Hùng Vĩ</span>
-                                    <span class="tag">Cung Đường Biển Đẹp</span>
+                                    <span class="tag tag-hot">🔥 Di Sản Ẩm Thực Biển Đảo</span>
+                                    <span class="tag">Mứt Hạt Bàng Rang Muối & Gừng</span>
+                                    <span class="tag">Cảng Cá Bến Đầm</span>
                                 </div>
-                                <h3 class="dest-card-title">10. Mũi Chim Chim & Cung Đường Côn Sơn</h3>
-                                <p class="dest-card-desc">Kiệt tác điêu khắc của sóng và đá granit, điểm dừng chân lý tưởng trên cung đường biển ngoạn mục.</p>
+                                <h3 class="dest-card-title">10. Làng Nghề Làm Mứt Hạt Bàng & Cảng Cá Bến Đầm — Tinh Hoa Bản Địa Côn Đảo</h3>
+                                <p class="dest-card-desc">Nghề thủ công truyền thống nhặt quả bàng rụng, phơi khô rồi chẻ hạt rang muối, rang gừng đường thủ công thơm bùi giòn rụm, mang đậm phong vị mặn mà của biển đảo quê hương.</p>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -1324,6 +1400,42 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const img = card.querySelector('.dest-card-img img');
+            const titleEl = card.querySelector('.dest-card-title');
+            const descEl = card.querySelector('.dest-card-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            card.onclick = function() {
+                openLightbox(imgSrc, cardTitle || imgAlt, legendText || cardDesc);
+            };
+        }
+
     </script>
 </body>
 </html>
