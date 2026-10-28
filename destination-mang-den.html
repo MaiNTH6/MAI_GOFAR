@@ -549,6 +549,79 @@
             margin-top: 0.8rem;
             font-style: italic;
         }
+    
+        .landmarks-grid .double-col {
+            grid-column: span 2;
+        }
+        .landmarks-grid .single-col {
+            grid-column: span 1;
+        }
+        .landmarks-grid .double-col .dest-img-wrap {
+            aspect-ratio: 21/9;
+        }
+        @media (max-width: 768px) {
+            .landmarks-grid .double-col {
+                grid-column: span 1;
+            }
+            .landmarks-grid .double-col .dest-img-wrap {
+                aspect-ratio: 16/9;
+            }
+        }
+        .dest-card.has-gallery {
+            position: relative;
+        }
+        .dest-title, .dest-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.85);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -743,44 +816,46 @@
                     </p>
 
                     <div class="landmarks-grid">
-                        <!-- 1. THÁC PA SỸ -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_thac_pa_sy.webp', 'Khu Du Lịch Sinh Thái Thác Pa Sỹ', 'Dòng thác bạc cao 45m tuôn trào trắng xóa giữa rừng nguyên sinh bạt ngàn, dòng nước gom từ 3 con suối lớn trong lành.')">
-                                <img src="images/mangden_thac_pa_sy.webp" alt="Thác Pa Sỹ Măng Đen" loading="lazy">
+
+                        <!-- 1. THÁC PA SỸ (double-col) -->
+                        <div class="dest-card double-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_thac_pa_sy.webp', '1. Khu Du Lịch Sinh Thái Thác Pa Sỹ', 'Dòng thác bạc cao 45m tuôn trào trắng xóa giữa rừng nguyên sinh bạt ngàn, dòng nước gom từ 3 con suối lớn trong lành.')">
+                                <img src="images/mangden_thac_pa_sy.webp" alt="Thác Pa Sỹ Măng Đen hùng vĩ giữa rừng nguyên sinh" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">1. Thác Pa Sỹ (Hùng Quan Rừng Già)</h3>
-                                <p class="dest-desc">Ngọn thác đẹp nhất Măng Đen nằm ở độ cao 1.500m, hình thành từ 3 con suối lớn hội tụ. Dòng thác đổ trắng xóa như dải lụa mềm vắt qua thảm thực vật rêu phong, xung quanh là vườn tượng gỗ dân gian Tây Nguyên mộc mạc.</p>
+                                <h3 class="dest-title">1. Khu Du Lịch Sinh Thái Thác Pa Sỹ — Hùng Quan Rừng Già Giữa Thung Lũng Rêu Phong</h3>
+                                <p class="dest-desc">Ngọn thác đẹp và nổi tiếng nhất Măng Đen nằm ở độ cao 1.500m, hình thành từ 3 con suối lớn hội tụ. Dòng thác đổ trắng xóa như dải lụa mềm vắt qua thảm thực vật rêu phong, xung quanh là khu vườn tượng gỗ dân gian Tây Nguyên mộc mạc.</p>
                                 <div class="dest-meta">
                                     <span>📍 Xã Măng Cành, Kon Plông</span>
-                                    <span>🌊 Dòng thác cao 45m</span>
+                                    <span>🌊 Dòng thác cao 45m hùng vĩ</span>
+                                    <span>🗿 Vườn tượng gỗ dân gian</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 2. HỒ ĐĂK KE -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_ho_dak_ke_hoa_anh_dao.webp', 'Hồ Đăk Ke (Hồ Toong Rơ Pông)', 'Mặt hồ phẳng lặng rộng 3ha ôm lấy bóng thông xanh ngát và những rặng mai anh đào rực rỡ mỗi độ xuân về.')">
-                                <img src="images/mangden_ho_dak_ke_hoa_anh_dao.webp" alt="Hồ Đăk Ke Măng Đen" loading="lazy">
+                        <!-- 2. HỒ ĐĂK KE (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_ho_dak_ke_hoa_anh_dao.webp', '2. Hồ Đăk Ke (Hồ Toong Rơ Pông)', 'Mặt hồ phẳng lặng rộng 3ha ôm lấy bóng thông xanh ngát và những rặng mai anh đào rực rỡ mỗi độ xuân về.')">
+                                <img src="images/mangden_ho_dak_ke_hoa_anh_dao.webp" alt="Hồ Đăk Ke Măng Đen hoa anh đào" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">2. Hồ Đăk Ke (Hồ Toong Rơ Pông)</h3>
-                                <p class="dest-desc">Nằm trong cụm huyền tích "Bảy hồ", hồ Đăk Ke thơ mộng với mặt nước phẳng lặng như gương soi bóng rặng thông cổ thụ. Nơi đây là điểm dạo bộ, đạp vịt ngắm hoa mai anh đào và check-in các cây cầu gỗ lãng mạn.</p>
+                                <p class="dest-desc">Nằm trong cụm huyền tích "Bảy hồ", hồ Đăk Ke thơ mộng phẳng lặng như gương soi bóng rặng thông cổ thụ và hoa mai anh đào hồng thắm mùa xuân.</p>
                                 <div class="dest-meta">
                                     <span>📍 Trung tâm TT Măng Đen</span>
-                                    <span>🌸 Mùa hoa anh đào tháng 1 - 2</span>
+                                    <span>🌸 Hoa anh đào tháng 1 - 2</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 3. TƯỢNG ĐỨC MẸ MĂNG ĐEN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_tuong_duc_me_giua_rung.webp', 'Tượng Đức Mẹ Măng Đen Giữa Rừng Già', 'Điểm hành hương tâm linh linh thiêng kỳ bí, tượng Đức Mẹ cụt tay mang trang phục thiếu nữ Tây Nguyên.')">
-                                <img src="images/mangden_tuong_duc_me_giua_rung.webp" alt="Tượng Đức Mẹ Măng Đen" loading="lazy">
+                        <!-- 3. TƯỢNG ĐỨC MẸ MĂNG ĐEN (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_tuong_duc_me_giua_rung.webp', '3. Tượng Đức Mẹ Măng Đen Giữa Rừng Già', 'Điểm hành hương tâm linh linh thiêng kỳ bí, tượng Đức Mẹ cụt tay mang trang phục thiếu nữ Tây Nguyên.')">
+                                <img src="images/mangden_tuong_duc_me_giua_rung.webp" alt="Tượng Đức Mẹ Măng Đen giữa rừng già" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">3. Tượng Đức Mẹ Măng Đen Linh Thiêng</h3>
-                                <p class="dest-desc">Điểm hành hương nổi tiếng cả nước tọa lạc giữa tán rừng nguyên sinh tĩnh mịch. Bức tượng Đức Mẹ Sầu Bi với đôi bàn tay bị gãy trong chiến tranh mang lại cảm giác bình an, chở che và nhiều câu chuyện nhiệm mầu.</p>
+                                <p class="dest-desc">Điểm hành hương nổi tiếng cả nước tọa lạc giữa tán rừng nguyên sinh tĩnh mịch, mang lại cảm giác bình an, chở che và nhiều câu chuyện nhiệm mầu.</p>
                                 <div class="dest-meta">
                                     <span>📍 Đồi Đức Mẹ, QL24</span>
                                     <span>🙏 Trung tâm hành hương quốc gia</span>
@@ -788,44 +863,30 @@
                             </div>
                         </div>
 
-                        <!-- 4. LÀNG KON PRING -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_nha_rong_kon_bring.webp', 'Làng Du Lịch Cộng Đồng Kon Pring', 'Ngôi làng cổ người Mơ Nâm với mái Nhà Rông sừng sững vươn cao giữa thung lũng thông xanh, nơi lưu giữ cồng chiêng di sản.')">
-                                <img src="images/mangden_nha_rong_kon_bring.webp" alt="Làng du lịch Kon Pring Măng Đen" loading="lazy">
+                        <!-- 4. RỪNG THÔNG MĂNG ĐEN (double-col) -->
+                        <div class="dest-card double-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_rung_thong_duong_suong.webp', '4. Rừng Thông Đại Ngàn Măng Đen & Đồi Cỏ Sim Tím', 'Những cây thông ba lá thẳng tắp vươn lên nền trời, con đường nhựa uốn lượn trong làn sương sớm bảng lảng mộng mơ.')">
+                                <img src="images/mangden_rung_thong_duong_suong.webp" alt="Rừng thông Măng Đen sương sớm" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">4. Làng Du Lịch Cộng Đồng Kon Pring</h3>
-                                <p class="dest-desc">Làng văn hóa truyền thống của đồng bào Mơ Nâm (nhánh dân tộc Ba Na). Du khách được chiêm ngưỡng mái Nhà Rông cao vút, trải nghiệm đan lát, dệt thổ cẩm và thưởng thức đêm hội cồng chiêng múa xoang rộn rã.</p>
-                                <div class="dest-meta">
-                                    <span>📍 Ven Quốc lộ 24</span>
-                                    <span>🥁 Văn hóa cồng chiêng UNESCO</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 5. RỪNG THÔNG MĂNG ĐEN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_rung_thong_duong_suong.webp', 'Rừng Thông Đại Ngàn Măng Đen', 'Những cây thông ba lá thẳng tắp vươn lên nền trời, con đường nhựa uốn lượn trong làn sương sớm bảng lảng mộng mơ.')">
-                                <img src="images/mangden_rung_thong_duong_suong.webp" alt="Rừng thông Măng Đen" loading="lazy">
-                            </div>
-                            <div class="dest-body">
-                                <h3 class="dest-title">5. Rừng Thông Măng Đen & Đồi Cỏ Sim</h3>
-                                <p class="dest-desc">Rừng thông bạt ngàn hàng chục năm tuổi với thân thẳng tắp vươn lên nền trời trong xanh. Con đường xuyên rừng thông buổi sáng sớm giăng mắc sương mù như đưa lữ khách lạc bước vào miền cổ tích Bắc Âu.</p>
+                                <h3 class="dest-title">4. Rừng Thông Đại Ngàn Măng Đen & Đồi Cỏ Hoa Sim Tím</h3>
+                                <p class="dest-desc">Rừng thông bạt ngàn hàng chục năm tuổi với thân cây thẳng tắp vươn lên nền trời xanh ngắt. Con đường xuyên rừng thông buổi sớm giăng mắc sương mù như đưa lữ khách lạc bước vào miền cổ tích Bắc Âu, ngập tràn sắc hoa sim tím biếc mùa hè.</p>
                                 <div class="dest-meta">
                                     <span>📍 Thị trấn Măng Đen</span>
                                     <span>🌲 Check-in sương sớm & cắm trại</span>
+                                    <span>💜 Đồi hoa sim tím tháng 6 - 8</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 6. ĐÈO MĂNG ĐEN QL24 -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_deo_mang_den_ql24.webp', 'Cung Đèo Măng Đen Tuyệt Đẹp Trên Quốc Lộ 24', 'Cung đèo quanh co uốn khúc giữa sườn núi dốc đứng, mây mù bảng lảng và thung lũng đại ngàn hùng vĩ bên dưới.')">
+                        <!-- 5. ĐÈO MĂNG ĐEN QL24 (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_deo_mang_den_ql24.webp', '5. Cung Đèo Măng Đen Tuyệt Đẹp (Quốc Lộ 24)', 'Cung đèo quanh co uốn khúc giữa sườn núi dốc đứng, mây mù bảng lảng và thung lũng đại ngàn hùng vĩ bên dưới.')">
                                 <img src="images/mangden_deo_mang_den_ql24.webp" alt="Đèo Măng Đen Quốc lộ 24" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">6. Cung Đèo Măng Đen (Quốc Lộ 24)</h3>
-                                <p class="dest-desc">Cung đèo dài 12km uốn lượn vượt núi đưa du khách từ độ cao vài trăm mét lên bình nguyên 1.200m. Một bên là vách đá dựng đứng rợp bóng thông, một bên là vực sâu mây cuộn trào ngoạn mục.</p>
+                                <h3 class="dest-title">5. Cung Đèo Măng Đen (Quốc Lộ 24)</h3>
+                                <p class="dest-desc">Cung đèo dài 12km uốn lượn vượt non cao đưa du khách lên bình nguyên 1.200m, một bên là vách đá rợp bóng thông, một bên là vực sâu mây cuộn ngoạn mục.</p>
                                 <div class="dest-meta">
                                     <span>📍 Tuyến Kon Tum - Măng Đen</span>
                                     <span>🏍️ Cung phượt săn mây lý tưởng</span>
@@ -833,44 +894,14 @@
                             </div>
                         </div>
 
-                        <!-- 7. VƯỜN DÂU CÔNG NGHỆ CAO -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_vuon_dau_tay_cong_nghe_cao.webp', 'Vườn Dâu Tây Nông Nghiệp Công Nghệ Cao', 'Những luống dâu tây giống Nhật quả đỏ mọng trĩu cành trồng theo phương pháp hữu cơ trong nhà kính hiện đại.')">
-                                <img src="images/mangden_vuon_dau_tay_cong_nghe_cao.webp" alt="Vườn dâu tây Măng Đen" loading="lazy">
+                        <!-- 6. THÁC LÔ BA (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_thac_lo_ba.webp', '6. Thác Lô Ba Hoang Sơ Kỳ Vĩ', 'Dòng thác hoang dã tuôn chảy qua những tầng đá bazan cổ xưa giữa rừng rậm nguyên sinh nguyên vẹn.')">
+                                <img src="images/mangden_thac_lo_ba.webp" alt="Thác Lô Ba Măng Đen hoang sơ" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">7. Nông Trại Công Nghệ Cao & Vườn Dâu Tây</h3>
-                                <p class="dest-desc">Măng Đen là thủ phủ nông nghiệp sạch của Kon Tum với các mô hình trồng dâu tây giống Nhật/Hàn, cà chua bi cherry, hoa phong lan và cam sành hữu cơ. Du khách được tự tay hái quả và thưởng thức tại vườn.</p>
-                                <div class="dest-meta">
-                                    <span>📍 Khu nông nghiệp công nghệ cao</span>
-                                    <span>🍓 Trải nghiệm hái dâu hữu cơ</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 8. CHÙA KHÁNH LÂM -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_chua_khanh_lam.webp', 'Chùa Khánh Lâm Uy Nghiêm Trên Đỉnh Đồi Rừng Già', 'Ngôi cổ tự thanh tịnh nép mình giữa đại ngàn thông reo ở độ cao 1.200m, với bậc thang đá dẫn lên tháp chuông uy nghiêm.')">
-                                <img src="images/mangden_chua_khanh_lam.webp" alt="Chùa Khánh Lâm Măng Đen" loading="lazy">
-                            </div>
-                            <div class="dest-body">
-                                <h3 class="dest-title">8. Chùa Khánh Lâm (Cõi Thiền Giữa Rừng Già)</h3>
-                                <p class="dest-desc">Tọa lạc uy nghiêm trên ngọn đồi nguyên sinh rộng 10ha ở độ cao 1.200m. Du khách vượt qua hơn 200 bậc đá rợp bóng cây để lên chiêm bái chánh điện tráng lệ, tượng Quan Âm Bồ Tát và ngắm nhìn toàn cảnh Măng Đen.</p>
-                                <div class="dest-meta">
-                                    <span>📍 Đồi nguyên sinh Măng Đen</span>
-                                    <span>🪷 Cảnh quan tâm linh thanh tịnh</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 9. THÁC LÔ BA -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_thac_lo_ba.webp', 'Thác Lô Ba Hoang Sơ Kỳ Vĩ', 'Dòng thác hoang dã tuôn chảy qua những tầng đá bazan cổ xưa giữa rừng rậm nguyên sinh nguyên vẹn.')">
-                                <img src="images/mangden_thac_lo_ba.webp" alt="Thác Lô Ba Măng Đen" loading="lazy">
-                            </div>
-                            <div class="dest-body">
-                                <h3 class="dest-title">9. Thác Lô Ba (Tuyệt Tác Hoang Dã)</h3>
-                                <p class="dest-desc">Ẩn mình sâu trong cánh rừng nguyên sinh rậm rạp, thác Lô Ba giữ nguyên vẻ đẹp hoang sơ chưa bị khai phá thương mại. Dòng nước mát lạnh đổ qua ghềnh đá bazan tung bọt trắng xóa, điểm đến yêu thích của phượt thủ trekking.</p>
+                                <h3 class="dest-title">6. Thác Lô Ba (Tuyệt Tác Hoang Dã)</h3>
+                                <p class="dest-desc">Ẩn mình sâu trong cánh rừng nguyên sinh rậm rạp, thác Lô Ba giữ trọn vẻ đẹp hoang sơ chưa bị thương mại hóa, dòng nước lạnh đổ qua ghềnh đá bazan tung bọt trắng xóa.</p>
                                 <div class="dest-meta">
                                     <span>📍 Rừng nguyên sinh Măng Đen</span>
                                     <span>🥾 Điểm trekking hoang sơ</span>
@@ -878,20 +909,76 @@
                             </div>
                         </div>
 
-                        <!-- 10. HỒ ĐAM BRI BẢY HỒ -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_ho_dam_bri_bay_ho.webp', 'Hồ Đam Bri & Quần Thể Bảy Hồ Ba Thác', 'Mặt hồ ngọc bích phẳng lặng được bao bọc bởi rừng thông nguyên sinh, cây cầu gỗ mộc mạc soi bóng nước trong veo.')">
-                                <img src="images/mangden_ho_dam_bri_bay_ho.webp" alt="Hồ Đam Bri Măng Đen" loading="lazy">
+                        <!-- 7. LÀNG CỔ KON PRING (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/mangden_lang_co_kon_pring_nha_rong_mo_nam.webp', 'Làng văn hóa cổ Kon Pring mái Nhà Rông khổng lồ vút cao và nhà sàn gỗ người Mơ Nâm', 'Làng văn hóa du lịch cộng đồng Kon Pring (xã Đăk Long, huyện Kon Plông) — Ngôi làng cổ thuần khiết của đồng bào Mơ Nâm (nhánh dân tộc Ba Na) nép mình giữa thung lũng thông xanh. Điểm nhấn là mái Nhà Rông truyền thống khổng lồ bằng gỗ tự nhiên vút cao kiêu hãnh giữa sân làng, bao quanh là các nếp nhà sàn gỗ cổ tích, rặng hoa dã quỳ vàng rực rỡ và tiếng suối reo êm đềm.', '7. Làng Du Lịch Cộng Đồng Kon Pring — Mái Nhà Rông Sừng Sững Giữa Thung Lũng Mây Ngàn', 'Ngôi làng cổ nguyên sơ của đồng bào Mơ Nâm nép mình giữa thung lũng thông reo, nổi bật với kiến trúc Nhà Rông khổng lồ bằng gỗ tự nhiên, những nếp nhà sàn cổ tích và vườn hoa dã quỳ vàng rực.')">📸 Làng cổ Kon Pring & Nhà Rông vút cao</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/mangden_nha_rong_kon_bring.webp', 'Không gian sinh hoạt nhà sàn và vườn tượng gỗ tại làng Kon Pring', 'Không gian sinh thái làng Kon Pring — Nơi du khách được trải nghiệm nhịp sống chậm rãi của đồng bào Tây Nguyên, tìm hiểu nghề đan gùi, dệt thổ cẩm sợi tự nhiên và thưởng thức những vò rượu cần đượm men lá thảo mộc truyền thống.', '7. Không Gian Văn Hóa Bản Làng Kon Pring Mộc Mạc', 'Nơi du khách được hòa mình vào nhịp sống thanh bình của người Mơ Nâm, trải nghiệm nghề đan lát mây tre, dệt thổ cẩm và thưởng thức tiếng khèn, điệu múa xoang rộn rã bên ánh lửa hồng.')">📸 Không gian nhà sàn mộc mạc</button>
+                            </div>
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_lang_co_kon_pring_nha_rong_mo_nam.webp', '7. Làng Du Lịch Cộng Đồng Kon Pring — Mái Nhà Rông Sừng Sững Giữa Thung Lũng Mây Ngàn', 'Làng văn hóa du lịch cộng đồng Kon Pring (xã Đăk Long, huyện Kon Plông) — Ngôi làng cổ thuần khiết của đồng bào Mơ Nâm (nhánh dân tộc Ba Na) nép mình giữa thung lũng thông xanh. Điểm nhấn là mái Nhà Rông truyền thống khổng lồ bằng gỗ tự nhiên vút cao kiêu hãnh giữa sân làng, bao quanh là các nếp nhà sàn gỗ cổ tích, rặng hoa dã quỳ vàng rực rỡ và tiếng suối reo êm đềm.')">
+                                <img src="images/mangden_lang_co_kon_pring_nha_rong_mo_nam.webp" alt="Làng văn hóa Kon Pring nhà rông Ba Na Măng Đen Kon Tum" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">10. Hồ Đam Bri & Quần Thể Bảy Hồ</h3>
-                                <p class="dest-desc">Hồ nước tự nhiên rộng lớn bậc nhất trong cụm di sản Bảy hồ, được bao quanh bởi rặng thông già thẳng tắp. Không gian tĩnh lặng, mặt nước trong xanh phẳng lặng là nơi lý tưởng để cắm trại, câu cá thư giãn và chèo SUP.</p>
+                                <h3 class="dest-title">7. Làng Du Lịch Cộng Đồng Kon Pring — Mái Nhà Rông Sừng Sững Giữa Thung Lũng Mây Ngàn</h3>
+                                <p class="dest-desc">Ngôi làng cổ nguyên sơ của đồng bào Mơ Nâm nép mình giữa thung lũng thông reo, nổi bật với kiến trúc Nhà Rông khổng lồ bằng gỗ tự nhiên, những nếp nhà sàn cổ tích và vườn hoa dã quỳ vàng rực.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Khu vực hồ sinh thái</span>
-                                    <span>🛶 Chèo SUP & Cắm trại dã ngoại</span>
+                                    <span>🔥 Di Sản Làng Cổ Ba Na / Mơ Nâm</span>
+                                    <span>🏛️ Kiến Trúc Nhà Rông Khổng Lồ</span>
+                                    <span>🌼 Rặng Dã Quỳ & Nhà Sàn Gỗ</span>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 8. CHÙA KHÁNH LÂM (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_chua_khanh_lam.webp', '8. Chùa Khánh Lâm Uy Nghiêm Trên Đỉnh Đồi Rừng Già', 'Ngôi cổ tự thanh tịnh nép mình giữa đại ngàn thông reo ở độ cao 1.200m, với bậc thang đá dẫn lên tháp chuông uy nghiêm.')">
+                                <img src="images/mangden_chua_khanh_lam.webp" alt="Chùa Khánh Lâm Măng Đen" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">8. Chùa Khánh Lâm (Cõi Thiền Rừng Già)</h3>
+                                <p class="dest-desc">Tọa lạc uy nghiêm trên ngọn đồi nguyên sinh rộng 10ha ở độ cao 1.200m, vượt hơn 200 bậc đá rợp bóng cây để chiêm bái chánh điện tráng lệ và ngắm toàn cảnh thung lũng.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Đồi nguyên sinh 1.200m</span>
+                                    <span>🪷 Cảnh quan thiền môn thanh tịnh</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 9. HỒ ĐAM BRI (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_ho_dam_bri_bay_ho.webp', '9. Hồ Đam Bri & Quần Thể Bảy Hồ Ba Thác', 'Mặt hồ ngọc bích phẳng lặng được bao bọc bởi rừng thông nguyên sinh, cây cầu gỗ mộc mạc soi bóng nước trong veo.')">
+                                <img src="images/mangden_ho_dam_bri_bay_ho.webp" alt="Hồ Đam Bri Măng Đen" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">9. Hồ Đam Bri & Quần Thể Bảy Hồ</h3>
+                                <p class="dest-desc">Hồ nước tự nhiên rộng lớn bậc nhất trong cụm di tích Bảy hồ, được bao quanh bởi rặng thông già thẳng tắp, địa điểm lý tưởng để chèo SUP và câu cá thư thái.</p>
+                                <div class="dest-meta">
+                                    <span>📍 Khu vực hồ sinh thái</span>
+                                    <span>🛶 Chèo SUP & Cắm trại</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10. KHÔNG GIAN CỒNG CHIÊNG & RUỘNG BẬC THANG (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/mangden_khong_gian_van_hoa_cong_chieng.webp', 'Không gian văn hóa cồng chiêng Tây Nguyên UNESCO trên hiên nhà rông và ché rượu cần Măng Đen', 'Không gian văn hóa Cồng chiêng Tây Nguyên tại Măng Đen — Kiệt tác truyền khẩu và Di sản văn hóa phi vật thể của nhân loại được UNESCO công nhận. Bên hiên nhà rông cổ và bếp than hồng rực rỡ, thanh âm trầm hùng của cồng chiêng vang vọng khắp núi rừng, hòa cùng hương thơm ngây ngất của ché rượu cần và điệu múa xoang say đắm lòng người.', '10. Không Gian Văn Hóa Cồng Chiêng Tây Nguyên — Kiệt Tác Di Sản Phi Vật Thể Nhân Loại', 'Di sản văn hóa phi vật thể đại diện của nhân loại được UNESCO vinh danh. Tiếng cồng chiêng ngân vang bên hiên nhà rông cổ, ché rượu cần vít cong và ngọn lửa bập bùng thắp sáng sử thi đại ngàn Trường Sơn.')">📸 Cồng chiêng Tây Nguyên UNESCO</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/mangden_ruong_bac_thang_kon_tu_rang.webp', 'Ruộng bậc thang Kon Tu Rằng mùa lúa chín vàng thung lũng Măng Đen', 'Thung lũng ruộng bậc thang Kon Tu Rằng — Kỳ quan nông nghiệp vùng cao của đồng bào các dân tộc bản địa Măng Đen. Những dải ruộng uốn lượn mềm mại như sóng vàng óng ả vỗ vào chân núi, minh chứng cho sự cần cù và hòa hợp tuyệt vời giữa con người với núi non đại ngàn Tây Nguyên.', '10. Ruộng Bậc Thang Kon Tu Rằng — Kỳ Quan Canh Tác Đại Ngàn Măng Đen', 'Những dải ruộng bậc thang tầng tầng lớp lớp uốn lượn men theo thung lũng suối Đăk Bla, minh chứng cho sự cần cù và hòa hợp tuyệt mỹ giữa con người với thiên nhiên non cao Tây Nguyên.')">📸 Ruộng bậc thang Kon Tu Rằng</button>
+                            </div>
+                            <div class="dest-img-wrap" onclick="openLightbox('images/mangden_khong_gian_van_hoa_cong_chieng.webp', '10. Không Gian Văn Hóa Cồng Chiêng Tây Nguyên — Kiệt Tác Di Sản Phi Vật Thể Nhân Loại', 'Không gian văn hóa Cồng chiêng Tây Nguyên tại Măng Đen — Kiệt tác truyền khẩu và Di sản văn hóa phi vật thể của nhân loại được UNESCO công nhận. Bên hiên nhà rông cổ và bếp than hồng rực rỡ, thanh âm trầm hùng của cồng chiêng vang vọng khắp núi rừng, hòa cùng hương thơm ngây ngất của ché rượu cần và điệu múa xoang say đắm lòng người.')">
+                                <img src="images/mangden_khong_gian_van_hoa_cong_chieng.webp" alt="Không gian văn hóa cồng chiêng Tây Nguyên Măng Đen UNESCO" loading="lazy">
+                            </div>
+                            <div class="dest-body">
+                                <h3 class="dest-title">10. Không Gian Văn Hóa Cồng Chiêng Tây Nguyên — Kiệt Tác Di Sản Phi Vật Thể Nhân Loại</h3>
+                                <p class="dest-desc">Di sản văn hóa phi vật thể đại diện của nhân loại được UNESCO vinh danh. Tiếng cồng chiêng ngân vang bên hiên nhà rông cổ, ché rượu cần vít cong và ngọn lửa bập bùng thắp sáng sử thi đại ngàn Trường Sơn.</p>
+                                <div class="dest-meta">
+                                    <span>🔥 Di Sản UNESCO Nhân Loại</span>
+                                    <span>🥁 Cồng Chiêng Đồng Cổ & Rượu Cần</span>
+                                    <span>🌾 Ruộng Bậc Thang Kon Tu Rằng</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
@@ -1194,6 +1281,45 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const imgWrap = card.querySelector('.dest-img-wrap');
+            const img = card.querySelector('.dest-img-wrap img');
+            const titleEl = card.querySelector('.dest-title');
+            const descEl = card.querySelector('.dest-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            if (imgWrap) {
+                imgWrap.onclick = function() {
+                    openLightbox(imgSrc, cardTitle || imgAlt, legendText || cardDesc);
+                };
+            }
+        }
+
     </script>
 </body>
 </html>
