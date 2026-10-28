@@ -549,6 +549,79 @@
             margin-top: 0.8rem;
             font-style: italic;
         }
+    
+        .landmarks-grid .double-col {
+            grid-column: span 2;
+        }
+        .landmarks-grid .single-col {
+            grid-column: span 1;
+        }
+        .landmarks-grid .double-col .dest-img-wrap {
+            aspect-ratio: 21/9;
+        }
+        @media (max-width: 768px) {
+            .landmarks-grid .double-col {
+                grid-column: span 1;
+            }
+            .landmarks-grid .double-col .dest-img-wrap {
+                aspect-ratio: 16/9;
+            }
+        }
+        .dest-card.has-gallery {
+            position: relative;
+        }
+        .dest-title, .dest-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.85);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -746,155 +819,169 @@
                     </p>
 
                     <div class="landmarks-grid">
-                        <!-- 1. BÀ NÀ HILLS & CẦU VÀNG -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_ba_na_hills.webp', 'Bà Nà Hills & Cầu Vàng (Golden Bridge)', 'Kiệt tác kiến trúc Cầu Vàng được nâng đỡ bởi đôi bàn tay đá khổng lồ rêu phong vươn ra từ sườn núi Chúa ở độ cao 1.487m.')">
-                                <img src="images/danang_ba_na_hills.webp" alt="Bà Nà Hills Cầu Vàng" loading="lazy">
+
+                        <!-- 1. BÀ NÀ HILLS & CẦU VÀNG (double-col) -->
+                        <div class="dest-card double-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_ba_na_hills.webp', '1. Sun World Ba Na Hills & Cầu Vàng', 'Kiệt tác kiến trúc Cầu Vàng được nâng đỡ bởi đôi bàn tay đá khổng lồ rêu phong vươn ra từ sườn núi Chúa ở độ cao 1.487m.')">
+                                <img src="images/danang_ba_na_hills.webp" alt="Bà Nà Hills Cầu Vàng bàn tay khổng lồ Đà Nẵng" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">1. Sun World Ba Na Hills & Cầu Vàng</h3>
+                                <h3 class="dest-title">1. Sun World Ba Na Hills & Cầu Vàng Bàn Tay Khổng Lồ</h3>
                                 <p class="dest-desc">Tọa lạc trên đỉnh núi Chúa ở độ cao gần 1.500m với khí hậu 4 mùa trong 1 ngày. Cầu Vàng nổi tiếng toàn cầu như một dải lụa vàng lơ lửng giữa lưng chừng trời, cùng Làng Pháp cổ kính và hầm rượu Debay trăm năm.</p>
                                 <div class="dest-meta">
                                     <span>📍 Xã Hòa Phú, Hòa Vang</span>
                                     <span>🚠 Cáp treo đạt kỷ lục thế giới</span>
+                                    <span>🔥 Top 1 Biểu tượng toàn cầu</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 2. BÁN ĐẢO SƠN TRÀ -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_son_tra.webp', 'Bán đảo Sơn Trà — Lá Phổi Xanh Đà Nẵng', 'Khu bảo tồn thiên nhiên Sơn Trà với thảm thực vật nhiệt đới đa dạng, ngôi nhà của loài vọoc chà vá chân nâu quý hiếm.')">
-                                <img src="images/danang_son_tra.webp" alt="Bán đảo Sơn Trà Đà Nẵng" loading="lazy">
+                        <!-- 2. BÁN ĐẢO SƠN TRÀ & ĐỈNH BÀN CỜ (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_son_tra.webp', '2. Bán Đảo Sơn Trà & Đỉnh Bàn Cờ', 'Lá phổi xanh nguyên sinh che chở thành phố, nơi sinh sống của loài Voọc chà vá chân nâu quý hiếm và đỉnh Bàn Cờ huyền thoại.')">
+                                <img src="images/danang_son_tra.webp" alt="Bán đảo Sơn Trà và Đỉnh Bàn Cờ" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">2. Bán Đảo Sơn Trà & Đỉnh Bàn Cờ</h3>
-                                <p class="dest-desc">"Lá phổi xanh" ôm trọn thành phố, nổi tiếng với cung đường uốn lượn ven biển, trạm Rada Mắt thần Đông Dương, cây đa ngàn năm tuổi và cơ hội tận mắt chiêm ngưỡng loài Vọoc chà vá chân nâu đặc hữu.</p>
+                                <p class="dest-desc">Khu bảo tồn thiên nhiên kỳ vĩ nhô ra biển Đông, nơi gặp gỡ giữa tiên ông đánh cờ trên đỉnh mây và vương quốc của loài Voọc chà vá chân nâu - 'nữ hoàng linh trưởng'.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Quận Sơn Trà</span>
-                                    <span>🐒 Bảo tồn Vọoc chà vá chân nâu</span>
+                                    <span>🐒 Nữ hoàng linh trưởng</span>
+                                    <span>☁️ Đỉnh cao 700m</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 3. NGŨ HÀNH SƠN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_ngu_hanh_son.webp', 'Di tích Quốc gia Đặc biệt Danh thắng Ngũ Hành Sơn', 'Quần thể 5 ngọn núi đá vôi cẩm thạch huyền bí với các hang động thạch nhũ lung linh và những ngôi cổ tự nghìn năm.')">
-                                <img src="images/danang_ngu_hanh_son.webp" alt="Ngũ Hành Sơn Đà Nẵng" loading="lazy">
+                        <!-- 3. BÃI BIỂN MỸ KHE (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_my_khe.webp', '3. Bãi Biển Mỹ Khe (Top Hành Tinh)', 'Được tạp chí Forbes bình chọn là 1 trong 6 bãi biển quyến rũ nhất hành tinh với cát trắng mịn thoai thoải và làn nước ấm áp quanh năm.')">
+                                <img src="images/danang_my_khe.webp" alt="Bãi biển Mỹ Khe cát trắng mịn" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">3. Danh Thắng Ngũ Hành Sơn (Di Tích QG Đặc Biệt)</h3>
-                                <p class="dest-desc">Quần thể 5 ngọn núi Kim, Mộc, Thủy, Hỏa, Thổ với hệ thống hang động Huyền Không, Hoa Nghiêm, Âm Phủ kỳ ảo cùng hai ngôi cổ tự Tam Thai và Linh Ứng trầm mặc theo Quyết định 1820/QĐ-TTg.</p>
+                                <h3 class="dest-title">3. Bãi Biển Mỹ Khe (Top Hành Tinh)</h3>
+                                <p class="dest-desc">Bờ cát trắng mịn thoai thoải trải dài gần 10km, sóng êm ả và nước ấm quanh năm, thiên đường lướt sóng, dù lượn và tắm biển chuẩn quốc tế.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Phường Hòa Hải, Ngũ Hành Sơn</span>
-                                    <span>🏛️ Di tích Quốc gia Đặc biệt</span>
+                                    <span>🏖️ Forbes vinh danh</span>
+                                    <span>🏄 Thể thao biển sôi động</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 4. BÃI BIỂN MỸ KHÊ -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_my_khe.webp', 'Bãi biển Mỹ Khe — Top Bãi Biển Quyến Rũ Nhất Hành Tinh', 'Dải cát trắng thoai thoải trải dài ôm lấy làn nước biển xanh trong ngắt, sóng êm hiền hòa quanh năm.')">
-                                <img src="images/danang_my_khe.webp" alt="Bãi biển Mỹ Khe Đà Nẵng" loading="lazy">
+                        <!-- 4. CẦU RỒNG & CẦU SÔNG HÀN (double-col) -->
+                        <div class="dest-card double-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_cau_rong.webp', '4. Cầu Rồng Phun Lửa & Cầu Sông Hàn Quay', 'Cầu Rồng đúc thép hình rồng thời Lý dài 666m vươn ra biển Đông, biểu diễn phun lửa và nước ngoạn mục vào 21h thứ Bảy, Chủ nhật.')">
+                                <img src="images/danang_cau_rong.webp" alt="Cầu Rồng phun lửa rực rỡ sông Hàn Đà Nẵng" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">4. Bãi Biển Mỹ Khe (Top Hành Tinh)</h3>
-                                <p class="dest-desc">Bãi biển biểu tượng dài gần 10km với độ dốc thoai thoải, nước ấm quanh năm, an toàn bơi lội với đội ngũ cứu hộ thường trực chuyên nghiệp và các hoạt động cano lướt sóng, dù lượn sôi động.</p>
+                                <h3 class="dest-title">4. Cầu Rồng Phun Lửa, Nước & Cầu Sông Hàn Quay — Kỳ Tích Đô Thị Sông Hàn</h3>
+                                <p class="dest-desc">Bộ đôi cây cầu biểu tượng cho sức trẻ và lòng đồng thuận của người dân Đà Nẵng. Chiêm ngưỡng Rồng vàng phun lửa, nước sống động và ngắm nhịp cầu sông Hàn quay 90 độ lung linh huyền ảo trong đêm.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Đường Võ Nguyên Giáp</span>
-                                    <span>🏖️ Tạp chí Forbes bình chọn</span>
+                                    <span>🐉 Phun lửa/nước: 21h cuối tuần</span>
+                                    <span>🌉 Cầu quay duy nhất Việt Nam</span>
+                                    <span>✨ Trung tâm phố đêm</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 5. CẦU RỒNG -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_cau_rong.webp', 'Cầu Rồng Phun Lửa & Phun Nước Biểu Tượng', 'Cây cầu thép mô phỏng hình dáng rồng thời Lý vươn mình ra biển lớn, điểm hẹn ngắm phun lửa phun nước mỗi dịp cuối tuần.')">
-                                <img src="images/danang_cau_rong.webp" alt="Cầu Rồng Đà Nẵng phun lửa" loading="lazy">
+                        <!-- 5. ĐÈO HẢI VÂN & HẢI VÂN QUAN (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_deo_hai_van_thien_ha_de_nhat_hung_quan.webp', '5. Đèo Hải Vân & Hải Vân Quan', 'Được vua Lê Thánh Tông ban tặng danh hiệu Thiên hạ đệ nhất hùng quan, cung đèo uốn lượn 21km ôm trọn bờ biển ngoạn mục.')">
+                                <img src="images/danang_deo_hai_van_thien_ha_de_nhat_hung_quan.webp" alt="Đèo Hải Vân Hải Vân Quan thiên hạ đệ nhất hùng quan" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">5. Cầu Rồng Phun Lửa Biểu Tượng</h3>
-                                <p class="dest-desc">Kiến trúc cầu độc nhất vô nhị dài 666m mô phỏng con rồng thời Lý đang bay lượn trên sông Hàn. Cứ đúng 21h00 thứ Bảy, Chủ Nhật và các ngày lễ lớn, đầu rồng sẽ phun những luồng lửa và nước ấn tượng.</p>
+                                <h3 class="dest-title">5. Đèo Hải Vân & Hải Vân Quan</h3>
+                                <p class="dest-desc">Cung đèo hiểm trở và ngoạn mục bậc nhất thế giới, nơi cửa ải cổ kính 1826 đứng sừng sững giữa ranh giới trời mây và biển biếc.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Bắt qua sông Hàn, TT Đà Nẵng</span>
-                                    <span>🔥 Phun lửa 21:00 cuối tuần</span>
+                                    <span>🏰 Di tích Quốc gia 1826</span>
+                                    <span>🏍️ Cung phượt huyền thoại</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 6. RẠN NAM Ô -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_nam_o.webp', 'Rạn Nam Ô — Rêu Xanh Cổ Tích & Làng Nghề Nước Mắm', 'Bãi đá rêu xanh mướt trải dài bờ biển Nam Ô, cái nôi của di sản phi vật thể quốc gia nước mắm cổ truyền.')">
-                                <img src="images/danang_nam_o.webp" alt="Rạn Nam Ô Đà Nẵng rêu xanh" loading="lazy">
+                        <!-- 6. CHÙA LINH ỨNG BÃI BỤT (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_chua_linh_ung_bai_but.webp', '6. Chùa Linh Ứng Bãi Bụt & Tượng Phật Bà 67m', 'Đại tượng Phật Bà Quán Thế Âm cao 67m tương đương tòa nhà 30 tầng ngự trên đài sen, mắt nhìn ra biển chở che ngư dân bình an.')">
+                                <img src="images/danang_chua_linh_ung_bai_but.webp" alt="Chùa Linh Ứng Bãi Bụt tượng Phật Bà 67m Sơn Trà" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">6. Rạn Nam Ô & Làng Nghề Nước Mắm Cổ Truyền</h3>
-                                <p class="dest-desc">Bãi rạn đá tự nhiên phủ kín rêu xanh mướt mắt vào mùa xuân, điểm check-in hoang sơ tuyệt đẹp kết hợp trải nghiệm làng nghề ủ chượp nước mắm cá cơm than (Di sản phi vật thể quốc gia theo QĐ 2619/QĐ-BVHTTDL).</p>
+                                <h3 class="dest-title">6. Chùa Linh Ứng Bãi Bụt & Tượng Phật 67m</h3>
+                                <p class="dest-desc">Chốn thiền môn thanh tịnh ngự trên triền bán đảo Sơn Trà, nơi pho đại tượng Phật Bà cao 67m đứng từ bi chở che cho vạn dặm sóng yên biển lặng.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Phường Hòa Hiệp Nam, Liên Chiểu</span>
-                                    <span>🌿 Mùa rêu tháng 2 - 3</span>
+                                    <span>🪷 Tượng Phật cao 67m</span>
+                                    <span>🌊 View trọn vịnh Đà Nẵng</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 7. CHÙA LINH ỨNG BÃI BỤT -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_chua_linh_ung_bai_but.webp', 'Chùa Linh Ứng Bãi Bụt & Tượng Phật Bà Quan Âm 67m', 'Ngôi chùa linh thiêng tựa lưng vào bán đảo Sơn Trà, nơi có tượng Quán Thế Âm Bồ Tát bằng đá trắng cao 67m sừng sững trông ra biển Đông.')">
-                                <img src="images/danang_chua_linh_ung_bai_but.webp" alt="Chùa Linh Ứng Bãi Bụt Sơn Trà" loading="lazy">
+                        <!-- 7. LÀNG ĐÁ NON NƯỚC & NGŨ HÀNH SƠN (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/danang_lang_da_my_nghe_non_nuoc.webp', 'Làng đá mỹ nghệ Non Nước điêu khắc cẩm thạch 400 năm', 'Làng đá mỹ nghệ Non Nước (quận Ngũ Hành Sơn) — Di sản văn hóa phi vật thể Quốc gia với bề dày hơn 400 năm lịch sử. Nghệ nhân nơi đây sử dụng kỹ nghệ đục đẽo, chạm khắc thủ công tinh xảo trên đá cẩm thạch tự nhiên, tạo nên các pho tượng Phật uy nghiêm, linh thú và đồ mỹ nghệ tinh xảo nức tiếng trong và ngoài nước.', '7. Làng Đá Mỹ Nghệ Non Nước — Di Sản Phi Vật Thể Quốc Gia 400 Năm', 'Làng nghề điêu khắc đá cẩm thạch trứ danh dưới chân núi Ngũ Hành Sơn khởi lập từ thế kỷ XVII, nơi những bàn tay nghệ nhân thổi hồn vào từng khối đá cẩm thạch vô tri thành các tuyệt tác nghệ thuật uy nghiêm.')">📸 Làng đá Non Nước 400 năm</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/danang_ngu_hanh_son.webp', 'Danh thắng Ngũ Hành Sơn di tích quốc gia đặc biệt', 'Ngũ Hành Sơn (Non Nước) — Di tích quốc gia đặc biệt gồm 5 ngọn núi đá cẩm thạch huyền bí gắn liền truyền tích trứng rùa vàng thần Kim Quy. Nơi đây sở hữu hệ thống hang động thạch nhũ kỳ ảo với động Huyền Không ngập tràn ánh sáng thiên tạo và ngôi cổ tự Tam Thai khởi dựng từ thời chúa Nguyễn.', '7. Danh Thắng Ngũ Hành Sơn — Di Tích Quốc Gia Đặc Biệt', 'Quần thể 5 ngọn núi đá cẩm thạch kỳ vĩ Kim - Mộc - Thủy - Hỏa - Thổ vươn lên giữa cồn cát ven biển, quần tụ các hang động huyền ảo Huyền Không, Âm Phủ và chùa Tam Thai cổ tự.')">📸 Danh thắng Ngũ Hành Sơn kỳ vĩ</button>
+                            </div>
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_lang_da_my_nghe_non_nuoc.webp', '7. Làng Đá Mỹ Nghệ Non Nước — Di Sản Phi Vật Thể Quốc Gia 400 Năm', 'Làng đá mỹ nghệ Non Nước (quận Ngũ Hành Sơn) — Di sản văn hóa phi vật thể Quốc gia với bề dày hơn 400 năm lịch sử. Nghệ nhân nơi đây sử dụng kỹ nghệ đục đẽo, chạm khắc thủ công tinh xảo trên đá cẩm thạch tự nhiên, tạo nên các pho tượng Phật uy nghiêm, linh thú và đồ mỹ nghệ tinh xảo nức tiếng trong và ngoài nước.')">
+                                <img src="images/danang_lang_da_my_nghe_non_nuoc.webp" alt="Làng đá mỹ nghệ Non Nước điêu khắc cẩm thạch truyền thống Đà Nẵng" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">7. Chùa Linh Ứng Bãi Bụt & Tượng Phật Bà 67m</h3>
-                                <p class="dest-desc">Ngôi chùa lớn nhất trong "tam giác tâm linh" Linh Ứng Đà Nẵng. Điểm nhấn là pho tượng Phật Quán Thế Âm cao 67m (tương đương tòa nhà 30 tầng), một tay bắt ấn tam muội, một tay cầm bình nước cam lộ tưới an lành cho ngư dân.</p>
+                                <h3 class="dest-title">7. Làng Đá Mỹ Nghệ Non Nước — Di Sản Phi Vật Thể Quốc Gia 400 Năm</h3>
+                                <p class="dest-desc">Làng nghề điêu khắc đá cẩm thạch trứ danh dưới chân núi Ngũ Hành Sơn khởi lập từ thế kỷ XVII, nơi những bàn tay nghệ nhân thổi hồn vào từng khối đá cẩm thạch vô tri thành các tuyệt tác nghệ thuật uy nghiêm.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Bãi Bụt, bán đảo Sơn Trà</span>
-                                    <span>🙏 Tượng Phật đứng cao nhất VN</span>
+                                    <span>🔥 Di Sản Phi Vật Thể Quốc Gia</span>
+                                    <span>🗿 400 Năm Điêu Khắc Cẩm Thạch</span>
+                                    <span>⛰️ Dưới Chân Ngũ Hành Sơn</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 8. ĐÈO HẢI VÂN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_deo_hai_van_thien_ha_de_nhat_hung_quan.webp', 'Đèo Hải Vân — Thiên Hạ Đệ Nhất Hùng Quan', 'Cung đèo hiểm trở bậc nhất Việt Nam uốn lượn bên sườn núi đá dốc đứng sát mép biển Đông, cửa ngõ lịch sử nối liền Huế và Đà Nẵng.')">
-                                <img src="images/danang_deo_hai_van_thien_ha_de_nhat_hung_quan.webp" alt="Đèo Hải Vân thiên hạ đệ nhất hùng quan" loading="lazy">
+                        <!-- 8. RẠN NAM Ô & LÀNG NƯỚC MẮM CỔ TRUYỀN (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_nam_o.webp', '8. Rạn Nam Ô & Làng Nghề Nước Mắm Cổ Truyền', 'Rạn đá phủ rêu xanh ngắt vào mùa xuân kết hợp làng nghề làm nước mắm cá cơm than Nam Ô truyền thống hơn trăm năm tuổi.')">
+                                <img src="images/danang_nam_o.webp" alt="Rạn Nam Ô rêu xanh và làng nghề nước mắm" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">8. Đèo Hải Vân & Di Tích Hải Vân Quan</h3>
-                                <p class="dest-desc">Cung đường đèo dài 21km vắt qua dãy Bạch Mã từng được vua Lê Thánh Tông ban tặng danh hiệu <em>"Thiên hạ đệ nhất hùng quan"</em>. Di tích Hải Vân Quan trên đỉnh đèo vừa được trùng tu bài bản, mở ra tầm nhìn toàn cảnh vịnh Lăng Cô và Đà Nẵng.</p>
+                                <h3 class="dest-title">8. Rạn Nam Ô & Làng Mắm Cổ Truyền</h3>
+                                <p class="dest-desc">Bãi đá rêu xanh ma mị đón sóng biển đầu xuân, hòa cùng hương vị giọt nước mắm nhĩ cá cơm than trăm năm đượm tình làng chài cổ xứ Quảng.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Ranh giới Đà Nẵng - TT Huế</span>
-                                    <span>🏍️ Cung phượt mạo hiểm huyền thoại</span>
+                                    <span>🌿 Rêu xanh mùa xuân</span>
+                                    <span>🐟 Di sản văn hóa phi vật thể</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 9. CẦU SÔNG HÀN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_cau_song_han_quay.webp', 'Cầu Sông Hàn Quay 90 Độ', 'Cây cầu quay duy nhất tại Việt Nam do chính kỹ sư và nhân dân Đà Nẵng chung sức xây dựng, xoay trục mở đường cho tàu bè qua lại.')">
-                                <img src="images/danang_cau_song_han_quay.webp" alt="Cầu Sông Hàn quay 90 độ" loading="lazy">
+                        <!-- 9. CHỢ CỒN & CHỢ HÀN (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_cho_con_thien_duong_am_thuc.webp', '9. Chợ Cồn & Chợ Hàn — Thiên Đường Ẩm Thực', 'Trung tâm giao thương và ẩm thực sầm uất bậc nhất Đà Nẵng, nơi quy tụ hàng trăm món ngon đường phố từ bánh tráng cuốn thịt heo, mì Quảng đến các loại mắm đặc sản.')">
+                                <img src="images/danang_cho_con_thien_duong_am_thuc.webp" alt="Chợ Cồn ẩm thực đường phố Đà Nẵng" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">9. Cầu Sông Hàn — Cầu Quay Đầu Tiên Việt Nam</h3>
-                                <p class="dest-desc">Biểu tượng bất diệt cho ý chí và sức mạnh đồng lòng của người Đà Nẵng. Cầu quay 90 độ quanh trục giữa lòng sông từ 23h00 - 24h00 thứ Bảy và Chủ Nhật để phục vụ du khách và lưu thông tàu thuyền cảng Tiên Sa.</p>
+                                <h3 class="dest-title">9. Chợ Cồn & Chợ Hàn</h3>
+                                <p class="dest-desc">Thiên đường ẩm thực đường phố và chợ truyền thống sầm uất bậc nhất miền Trung, nơi nếm trọn hương vị mì Quảng, bánh bèo, chả bò và các món quà xứ Nẫu.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Nối quận Hải Châu & Sơn Trà</span>
-                                    <span>⚙️ Cầu quay 90° cuối tuần</span>
+                                    <span>🍜 Thiên đường ăn vặt</span>
+                                    <span>🛍️ Mua sắm đặc sản</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 10. CHỢ CỒN & CHỢ HÀN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_cho_con_thien_duong_am_thuc.webp', 'Chợ Cồn & Chợ Hàn — Thiên Đường Ẩm Thực Xứ Quảng', 'Khu ẩm thực náo nhiệt với hàng trăm quầy hàng ngập tràn hương vị đặc sản miền Trung từ ốc hút, bánh xèo đến chả bò.')">
-                                <img src="images/danang_cho_con_thien_duong_am_thuc.webp" alt="Khu ẩm thực Chợ Cồn Đà Nẵng" loading="lazy">
+                        <!-- 10. LÀNG CỔ TÚY LOAN & BÁNH TRÁNG TRUYỀN THỐNG (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/danang_lang_co_tuy_loan_dinh_lang.webp', 'Đình làng cổ Túy Loan 500 năm tuổi và phên phơi bánh tráng', 'Đình làng cổ Túy Loan (xã Hòa Phong, huyện Hòa Vang) — Di tích Lịch sử - Văn hóa cấp Quốc gia khởi dựng từ năm 1470 thời vua Lê Thánh Tông mở cõi phương Nam. Ngôi đình cổ 5 gian 2 chái rêu phong soi bóng dòng sông thơ mộng, lưu giữ 25 sắc phong triều Nguyễn và nghề làm bánh tráng, mì Quảng truyền thống lừng danh.', '10. Làng Cổ Túy Loan 500 Năm — Trầm Tích Đất Quảng Bên Dòng Sông Hàn', 'Ngôi làng cổ hơn nửa thiên niên kỷ bên dòng sông Túy Loan êm đềm, nơi lưu giữ đình làng cổ linh thiêng, cây đa bến nước sân đình và nghề tráng bánh tráng bếp trấu đượm khói thơm.')">📸 Đình làng cổ Túy Loan 500 năm</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/danang_cau_song_han_quay.webp', 'Cầu Sông Hàn quay 90 độ lung linh về đêm', 'Cầu quay Sông Hàn — Khánh thành năm 2000, cây cầu có trục quay 90 độ mở đường cho tàu thuyền lớn qua lại trong đêm tĩnh lặng. Cầu lung linh ánh đèn phản chiếu dòng sông Hàn thơ mộng là niềm tự hào và biểu tượng vươn mình của thành phố đáng sống.', '10. Cầu Sông Hàn — Cây Cầu Quay Độc Nhất Vô Nhị Việt Nam', 'Cây cầu quay đầu tiên do chính các kỹ sư và công nhân Việt Nam thiết kế thi công, biểu tượng cho sức sống mãnh liệt và lòng đồng thuận của người dân Đà Nẵng.')">📸 Cầu Sông Hàn quay về đêm</button>
+                            </div>
+                            <div class="dest-img-wrap" onclick="openLightbox('images/danang_lang_co_tuy_loan_dinh_lang.webp', '10. Làng Cổ Túy Loan 500 Năm — Trầm Tích Đất Quảng Bên Dòng Sông Hàn', 'Đình làng cổ Túy Loan (xã Hòa Phong, huyện Hòa Vang) — Di tích Lịch sử - Văn hóa cấp Quốc gia khởi dựng từ năm 1470 thời vua Lê Thánh Tông mở cõi phương Nam. Ngôi đình cổ 5 gian 2 chái rêu phong soi bóng dòng sông thơ mộng, lưu giữ 25 sắc phong triều Nguyễn và nghề làm bánh tráng, mì Quảng truyền thống lừng danh.')">
+                                <img src="images/danang_lang_co_tuy_loan_dinh_lang.webp" alt="Đình làng cổ Túy Loan 500 năm và phên bánh tráng Hòa Vang Đà Nẵng" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">10. Chợ Cồn & Chợ Hàn: Thiên Đường Ẩm Thực</h3>
-                                <p class="dest-desc">Khu chợ truyền thống sầm uất bậc nhất trung tâm thành phố. Chợ Cồn là "thánh địa ăn vặt" với đủ món đặc sản nóng hổi; còn Chợ Hàn là trung tâm mua sắm đặc sản mắm nêm, chả bò, hải sản khô làm quà uy tín.</p>
+                                <h3 class="dest-title">10. Làng Cổ Túy Loan 500 Năm — Trầm Tích Đất Quảng Bên Dòng Sông Hàn</h3>
+                                <p class="dest-desc">Ngôi làng cổ hơn nửa thiên niên kỷ bên dòng sông Túy Loan êm đềm, nơi lưu giữ đình làng cổ linh thiêng, cây đa bến nước sân đình và nghề tráng bánh tráng bếp trấu đượm khói thơm.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Đường Hùng Vương & Trần Phú</span>
-                                    <span>🛍️ Đặc sản mua sắm & Food tour</span>
+                                    <span>🔥 Di Tích Quốc Gia 1470</span>
+                                    <span>🌾 500 Năm Làng Cổ Túy Loan</span>
+                                    <span>🍘 Nghề Bánh Tráng Bếp Trấu</span>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -1213,6 +1300,45 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const imgWrap = card.querySelector('.dest-img-wrap');
+            const img = card.querySelector('.dest-img-wrap img');
+            const titleEl = card.querySelector('.dest-title');
+            const descEl = card.querySelector('.dest-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            if (imgWrap) {
+                imgWrap.onclick = function() {
+                    openLightbox(imgSrc, cardTitle || imgAlt, legendText || cardDesc);
+                };
+            }
+        }
+
     </script>
 </body>
 </html>
