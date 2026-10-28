@@ -549,6 +549,79 @@
             margin-top: 0.8rem;
             font-style: italic;
         }
+    
+        .landmarks-grid .double-col {
+            grid-column: span 2;
+        }
+        .landmarks-grid .single-col {
+            grid-column: span 1;
+        }
+        .landmarks-grid .double-col .dest-img-wrap {
+            aspect-ratio: 21/9;
+        }
+        @media (max-width: 768px) {
+            .landmarks-grid .double-col {
+                grid-column: span 1;
+            }
+            .landmarks-grid .double-col .dest-img-wrap {
+                aspect-ratio: 16/9;
+            }
+        }
+        .dest-card.has-gallery {
+            position: relative;
+        }
+        .dest-title, .dest-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.85);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -743,155 +816,169 @@
                     </p>
 
                     <div class="landmarks-grid">
-                        <!-- 1. SỐNG LƯNG KHỦNG LONG -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dinosaur_backbone.webp', 'Sống Lưng Khủng Long Háng Đồng', 'Con đường mòn sống núi hẹp cheo leo giữa hai vực thẳm sâu hun hút ngập tràn biển mây trắng xóa bồng bềnh.')">
-                                <img src="images/taxua_dinosaur_backbone.webp" alt="Sống lưng khủng long Háng Đồng" loading="lazy">
+
+                        <!-- 1. SỐNG LƯNG KHỦNG LONG HÁNG ĐỒNG (double-col) -->
+                        <div class="dest-card double-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dinosaur_backbone.webp', '1. Sống Lưng Khủng Long Háng Đồng & Đại Dương Mây Trắng', 'Con đường mòn sống núi hẹp cheo leo dài hơn 1,5km giữa hai vực thẳm sâu hun hút ngập tràn biển mây trắng xóa bồng bềnh.')">
+                                <img src="images/taxua_dinosaur_backbone.webp" alt="Sống lưng khủng long Háng Đồng Tà Xùa săn mây" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">1. Sống Lưng Khủng Long Háng Đồng</h3>
-                                <p class="dest-desc">Điểm săn mây huyền thoại dài hơn 1,5km nằm chênh vênh giữa hai thung lũng sâu ngập tràn biển mây. Cảm giác đi bộ dọc con đường mòn nhỏ hẹp như đang bước đi trên lưng rồng bay giữa ngàn mây trời.</p>
+                                <h3 class="dest-title">1. Sống Lưng Khủng Long Háng Đồng & Đại Dương Mây Trắng Kỳ Vĩ</h3>
+                                <p class="dest-desc">Tọa độ săn mây huyền thoại bậc nhất Tây Bắc dài hơn 1,5km nằm chênh vênh giữa hai thung lũng sâu ngập tràn biển mây. Cảm giác đi bộ dọc sống núi mây cuồn cuộn tựa như sải bước trên lưng rồng khổng lồ bay giữa cõi thực và hư.</p>
                                 <div class="dest-meta">
                                     <span>📍 Bản Háng Đồng, Bắc Yên</span>
-                                    <span>🐉 Tọa độ săn mây số 1 VN</span>
+                                    <span>🐉 Săn mây số 1 Tây Bắc</span>
+                                    <span>☁️ Cao 1.600m</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 2. MỎM CÁ HEO -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dolphin_rock.webp', 'Mỏm Đá Cá Heo Tà Xùa', 'Phiến đá tự nhiên vươn dài ra không trung tựa như chú cá heo đang tung mình bơi lội giữa đại dương mây trắng.')">
+                        <!-- 2. MỎM ĐÁ CÁ HEO (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dolphin_rock.webp', '2. Mỏm Đá Cá Heo Tà Xùa', 'Phiến đá tự nhiên vươn dài ra không trung tựa như chú cá heo đang tung mình bơi lội giữa đại dương mây trắng.')">
                                 <img src="images/taxua_dolphin_rock.webp" alt="Mỏm cá heo Tà Xùa" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">2. Mỏm Đá Cá Heo (Dolphin Rock)</h3>
-                                <p class="dest-desc">Tạo tác kỳ diệu của tự nhiên với phiến đá bazan nhô hẳn ra ngoài mép vực thẳm như chiếc đầu cá heo đang ngoi lên khỏi biển mây. Điểm chụp ảnh mạo hiểm thu hút đông đảo du khách check-in.</p>
+                                <p class="dest-desc">Tạo tác kỳ diệu của tự nhiên với phiến đá bazan nhô hẳn ra ngoài mép vực thẳm như chiếc đầu cá heo đang ngoi lên khỏi biển mây bạt ngàn.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Cung đường Tà Xùa - Xím Vàng</span>
+                                    <span>📍 Đường Tà Xùa - Xím Vàng</span>
                                     <span>🐬 Điểm check-in mạo hiểm</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 3. CÂY CÔ ĐƠN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_lonely_tree.webp', 'Cây Cô Đơn Tà Xùa Bên Suối Sập', 'Cây táo mèo cổ thụ đứng sừng sững đơn độc trên mỏm đồi nhìn xuống dòng suối Sập và thung lũng mây sâu thẳm.')">
-                                <img src="images/taxua_lonely_tree.webp" alt="Cây cô đơn Tà Xùa" loading="lazy">
+                        <!-- 3. CÂY CÔ ĐƠN (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_lonely_tree.webp', '3. Cây Cô Đơn Tà Xùa Bên Suối Sập', 'Cây táo mèo cổ thụ đứng sừng sững đơn độc trên mỏm đồi nhìn xuống dòng suối Sập và thung lũng mây sâu thẳm.')">
+                                <img src="images/taxua_lonely_tree.webp" alt="Cây cô đơn Tà Xùa suối Sập" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">3. Cây Cô Đơn Tà Xùa (Suối Sập)</h3>
-                                <p class="dest-desc">Cây táo mèo đứng trơ trọi kiên cường trên mỏm núi cao nhìn xuống vực suối Sập. Hình ảnh cành cây vươn ra khoảng không bao la trong ráng chiều hoàng hôn mang vẻ đẹp cô liêu, thơ mộng đến nao lòng.</p>
+                                <p class="dest-desc">Cây táo mèo đứng kiên cường trên mỏm núi cao nhìn xuống vực suối Sập trong ráng chiều hoàng hôn, mang vẻ đẹp cô liêu thơ mộng đến nao lòng.</p>
                                 <div class="dest-meta">
                                     <span>📍 Hướng đi xã Háng Đồng</span>
-                                    <span>🌳 Góc check-in hoàng hôn triệu view</span>
+                                    <span>🌳 Hoàng hôn triệu view</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 4. ĐỈNH GIÓ -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dinh_gio.webp', 'Đỉnh Gió Tà Xùa — Tọa Độ Ngắm Hoàng Hôn', 'Đỉnh đồi lộng gió nơi ngắm trọn vẹn cảnh mặt trời lặn nhuộm vàng rực cả biển mây và thung lũng bản làng.')">
-                                <img src="images/taxua_dinh_gio.webp" alt="Đỉnh Gió Tà Xùa" loading="lazy">
+                        <!-- 4. ĐỈNH GIÓ & HOÀNG HÔN (double-col) -->
+                        <div class="dest-card double-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_dinh_gio.webp', '4. Đỉnh Gió Tà Xùa — Tọa Độ Ngắm Hoàng Hôn Đại Ngàn', 'Đỉnh đồi lộng gió nơi ngắm trọn vẹn cảnh mặt trời lặn nhuộm vàng rực cả biển mây và thung lũng bản làng.')">
+                                <img src="images/taxua_dinh_gio.webp" alt="Đỉnh Gió Tà Xùa hoàng hôn biển mây" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">4. Đỉnh Gió & Hoàng Hôn Nhuộm Đỏ</h3>
-                                <p class="dest-desc">Tọa độ lý tưởng nhất để đón những cơn gió đại ngàn lồng lộng và chiêm ngưỡng khoảnh khắc hoàng hôn buông xuống. Biển mây chuyển sắc từ vàng cam sang tím thẫm đẹp như tranh sơn dầu kỳ ảo.</p>
+                                <h3 class="dest-title">4. Đỉnh Gió & Hoàng Hôn Nhuộm Đỏ Biển Mây Ngàn</h3>
+                                <p class="dest-desc">Tọa độ lý tưởng nhất để đón những cơn gió đại ngàn lồng lộng và chiêm ngưỡng khoảnh khắc hoàng hôn buông xuống. Biển mây chuyển sắc từ vàng cam rực rỡ sang tím thẫm kỳ ảo, ôm trọn các triền núi trập trùng.</p>
                                 <div class="dest-meta">
                                     <span>📍 Trung tâm Tà Xùa</span>
                                     <span>🌅 Hoàng hôn lãng mạn bậc nhất</span>
+                                    <span>☕ Quán cafe ngắm mây 360 độ</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 5. THẢO NGUYÊN TÀ XÙA -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_meadow.webp', 'Thảo Nguyên Xanh Mướt Tà Xùa', 'Đồi cỏ mênh mông xanh ngắt trải dài như thảo nguyên Thụy Sĩ, điểm cắm trại ngắm sao trời và bình minh.')">
-                                <img src="images/taxua_meadow.webp" alt="Thảo nguyên Tà Xùa" loading="lazy">
+                        <!-- 5. THẢO NGUYÊN TÀ XÙA (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_meadow.webp', '5. Thảo Nguyên Xanh Mướt Tà Xùa', 'Đồi cỏ mênh mông xanh ngắt trải dài như thảo nguyên Thụy Sĩ, điểm cắm trại ngắm sao trời và bình minh.')">
+                                <img src="images/taxua_meadow.webp" alt="Thảo nguyên xanh Tà Xùa" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">5. Thảo Nguyên Tà Xùa Mênh Mông</h3>
-                                <p class="dest-desc">Đồi cỏ thoai thoải xanh mướt trải dài tít tắp gợi nhớ khung cảnh thảo nguyên châu Âu. Nơi đây là điểm cắm trại lý tưởng ngoài trời, ngắm bầu trời sao đêm lung linh và đón ánh bình minh đầu tiên rọi chiếu.</p>
+                                <p class="dest-desc">Đồi cỏ thoai thoải xanh mướt trải dài tít tắp tựa khung cảnh thảo nguyên châu Âu, nơi lý tưởng để cắm trại qua đêm và đón bình minh tinh khôi.</p>
                                 <div class="dest-meta">
                                     <span>📍 Đồi thảo nguyên Tà Xùa</span>
-                                    <span>⛺ Cắm trại dã ngoại & ngắm sao</span>
+                                    <span>⛺ Cắm trại & ngắm dải ngân hà</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 6. MỎM ĐẦU RÙA -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_turtle_rock.webp', 'Mỏm Đá Đầu Rùa Tà Xùa', 'Khối đá tự nhiên hình đầu rùa khổng lồ nhô ra vực sâu ở độ cao hơn 2.000m, bao quanh là thung lũng mây trôi.')">
-                                <img src="images/taxua_turtle_rock.webp" alt="Mỏm đầu rùa Tà Xùa" loading="lazy">
+                        <!-- 6. MỎM ĐẦU RÙA (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_turtle_rock.webp', '6. Mỏm Đá Đầu Rùa Tà Xùa', 'Khối đá tự nhiên hình đầu rùa khổng lồ nhô ra vực sâu ở độ cao hơn 2.000m, bao quanh là thung lũng mây trôi.')">
+                                <img src="images/taxua_turtle_rock.webp" alt="Mỏm đá đầu rùa Tà Xùa" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">6. Mỏm Đá Đầu Rùa Kỳ Vĩ</h3>
-                                <p class="dest-desc">Tảng đá tự nhiên kỳ dị nhô hẳn ra ngoài sườn núi hiểm trở mang hình dáng đầu một chú rùa khổng lồ ngước nhìn trời xanh. Đứng tại mỏm đá có thể phóng tầm mắt ngắm trọn biển mây bạt ngàn dưới chân.</p>
+                                <p class="dest-desc">Tảng đá tự nhiên kỳ vĩ nhô hẳn ra ngoài vách núi hiểm trở mang hình dáng đầu một chú rùa cổ khổng lồ ngước nhìn trời xanh giữa biển mây.</p>
                                 <div class="dest-meta">
                                     <span>📍 Vách đá Tà Xùa</span>
-                                    <span>🐢 Thạch quan kỳ bí</span>
+                                    <span>🐢 Thạch quan kỳ bí 2.000m</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 7. BẢN HÁNG ĐỒNG -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_hang_dong_village.webp', 'Bản Làng Háng Đồng Trong Sương Mù', 'Những nếp nhà gỗ pơ mu của đồng bào H'Mông nép mình bên sườn đồi trong màn sương khói lam chiều bình yên.')">
-                                <img src="images/taxua_hang_dong_village.webp" alt="Bản Háng Đồng Tà Xùa" loading="lazy">
+                        <!-- 7. BẢN LÀNG CỔ HÁNG ĐỒNG (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/taxua_ban_co_hang_dong_nha_go_po_mu.webp', 'Bản làng cổ Háng Đồng nhà gỗ pơ mu rêu phong và bờ rào đá tai mèo', 'Bản làng cổ Háng Đồng (xã Háng Đồng, huyện Bắc Yên) — Nơi sinh sống ngàn đời của 100% đồng bào dân tộc H'Mông dưới chân Sống lưng khủng long. Những nếp nhà gỗ pơ mu rêu phong nhuốm màu thời gian, bờ rào đá tai mèo mộc mạc xếp tay khéo léo, cành đào phai nở rộ trước hiên nhà bên biển mây đại ngàn bồng bềnh.', '7. Bản Làng Cổ Háng Đồng — Di Sản Văn Hóa & Kiến Trúc Nhà Gỗ Pơ Mu Cổ Kính', 'Bản làng nguyên sơ của đồng bào H'Mông nép mình bên sườn núi mây phủ, nổi bật với kiến trúc nhà gỗ pơ mu rêu phong, bờ rào đá tai mèo kỳ công và sắc hoa đào phai dịu dàng mùa xuân.')">📸 Bản làng cổ & Nhà pơ mu rêu phong</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/taxua_hang_dong_village.webp', 'Toàn cảnh thung lũng bản Háng Đồng trong sương mù khói lam chiều', 'Bản Háng Đồng nép mình trong thung lũng sương giăng, nơi những vệt khói lam chiều bảng lảng quyện vào biển mây trắng muốt, bắp ngô vàng óng phơi trước hiên nhà gỗ và tiếng khèn Mông ngân vang gọi bạn tình.', '7. Thung Lũng Bản Làng Háng Đồng Trong Sương Mù & Khói Lam Chiều', 'Bức họa sơn cước thanh bình với khói lam chiều bảng lảng quyện vào sương mù vùng cao, nơi du khách đắm chìm vào nhịp sống chậm rãi và lòng hiếu khách chân thành.')">📸 Thung lũng sương khói Háng Đồng</button>
+                            </div>
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_ban_co_hang_dong_nha_go_po_mu.webp', '7. Bản Làng Cổ Háng Đồng — Di Sản Văn Hóa & Kiến Trúc Nhà Gỗ Pơ Mu Cổ Kính', 'Bản làng cổ Háng Đồng (xã Háng Đồng, huyện Bắc Yên) — Nơi sinh sống ngàn đời của 100% đồng bào dân tộc H'Mông dưới chân Sống lưng khủng long. Những nếp nhà gỗ pơ mu rêu phong nhuốm màu thời gian, bờ rào đá tai mèo mộc mạc xếp tay khéo léo, cành đào phai nở rộ trước hiên nhà bên biển mây đại ngàn bồng bềnh.')">
+                                <img src="images/taxua_ban_co_hang_dong_nha_go_po_mu.webp" alt="Bản làng cổ Háng Đồng nhà gỗ pơ mu rêu phong Tà Xùa Sơn La" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">7. Bản Làng Háng Đồng Mộc Mạc</h3>
-                                <p class="dest-desc">Bản làng nguyên sơ của 100% đồng bào người H'Mông sinh sống bên chân Sống lưng khủng long. Những nếp nhà gỗ pơ mu cổ kính, bắp ngô vàng phơi trước hiên và khói bếp bảng lảng tạo nên bức tranh vùng cao yên ả.</p>
+                                <h3 class="dest-title">7. Bản Làng Cổ Háng Đồng — Di Sản Văn Hóa & Kiến Trúc Nhà Gỗ Pơ Mu Cổ Kính</h3>
+                                <p class="dest-desc">Bản làng nguyên sơ của đồng bào H'Mông nép mình bên sườn núi mây phủ, nổi bật với kiến trúc nhà gỗ pơ mu rêu phong, bờ rào đá tai mèo kỳ công và sắc hoa đào phai dịu dàng mùa xuân.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Xã Háng Đồng, Bắc Yên</span>
-                                    <span>🏡 Văn hóa bản địa H'Mông</span>
+                                    <span>🔥 Di Sản Bản Làng H'Mông Cổ</span>
+                                    <span>🪵 Kiến Trúc Nhà Gỗ Pơ Mu</span>
+                                    <span>🌸 Bờ Rào Đá & Hoa Đào Phai</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 8. RUỘNG BẬC THANG XÍM VÀNG -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_ruong_bac_thang_xim_vang.webp', 'Ruộng Bậc Thang Xím Vàng Kỳ Vĩ', 'Những dải ruộng bậc thang tầng tầng lớp lớp uốn lượn men theo sườn núi dốc đứng, kiệt tác canh tác của người Mông.')">
+                        <!-- 8. RUỘNG BẬC THANG XÍM VÀNG (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_ruong_bac_thang_xim_vang.webp', '8. Ruộng Bậc Thang Xím Vàng Kỳ Vĩ', 'Những dải ruộng bậc thang tầng tầng lớp lớp uốn lượn men theo sườn núi dốc đứng, kiệt tác canh tác của người Mông.')">
                                 <img src="images/taxua_ruong_bac_thang_xim_vang.webp" alt="Ruộng bậc thang Xím Vàng" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">8. Ruộng Bậc Thang Xím Vàng</h3>
-                                <p class="dest-desc">Được ví như "Mù Cang Chải của Sơn La", thung lũng ruộng bậc thang Xím Vàng có độ dốc lớn nhất Tây Bắc. Những đường cong uốn lượn tầng tầng lớp lớp ôm trọn sườn núi tạo nên kiệt tác điêu khắc trên đất kỳ vĩ.</p>
+                                <p class="dest-desc">Kiệt tác canh tác dốc đứng bậc nhất Tây Bắc của đồng bào H'Mông, những nấc thang vàng óng uốn lượn ôm trọn sườn non vào mùa lúa chín tháng 9 - 10.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Xã Xím Vàng, cách Tà Xùa 14km</span>
-                                    <span>🌾 Mùa lúa chín tháng 9 - 10</span>
+                                    <span>📍 Xã Xím Vàng</span>
+                                    <span>🌾 Mùa vàng rực rỡ tháng 9-10</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 9. RỪNG RÊU CỔ TÍCH -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_rung_nguyen_sinh_reu_phong.webp', 'Rừng Nguyên Sinh Rêu Phong Cổ Tích Tà Xùa', 'Khu rừng rêu ma mị ở độ cao 2.600m với những thân cây cổ thụ phủ kín thảm rêu xanh mướt và phong lan rừng.')">
+                        <!-- 9. RỪNG RÊU CỔ TÍCH (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_rung_nguyen_sinh_reu_phong.webp', '9. Rừng Nguyên Sinh Rêu Phong Cổ Tích Tà Xùa', 'Khu rừng rêu ma mị ở độ cao 2.600m với những thân cây cổ thụ phủ kín thảm rêu xanh mướt và phong lan rừng.')">
                                 <img src="images/taxua_rung_nguyen_sinh_reu_phong.webp" alt="Rừng rêu cổ tích Tà Xùa" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">9. Rừng Nguyên Sinh Rêu Phong Cổ Tích</h3>
-                                <p class="dest-desc">Khu rừng rêu ma mị huyền ảo nằm ở độ cao từ 2.400m - 2.800m trên đường trekking đỉnh Tà Xùa. Toàn bộ thân cây cổ thụ, cành nhánh và mặt đất đều được bao phủ bởi lớp rêu nhung xanh mướt như bước vào xứ sở thần tiên.</p>
+                                <h3 class="dest-title">9. Rừng Nguyên Sinh Rêu Phong</h3>
+                                <p class="dest-desc">Khu rừng nguyên sinh kỳ ảo ở độ cao 2.600m trên đỉnh Tà Xùa, nơi toàn bộ thân cây đại thụ được bao bọc bởi lớp rêu nhung xanh biếc ma mị như cổ tích.</p>
                                 <div class="dest-meta">
                                     <span>📍 Đỉnh Tà Xùa 2.865m</span>
-                                    <span>🧙 Rừng rêu ma mị độc nhất vô nhị</span>
+                                    <span>🧙 Rừng rêu ma mị Tây Bắc</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 10. RỪNG CHÈ SHAN TUYẾT CỔ THỤ -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_che_co_thu_shan_tuyet.webp', 'Rừng Chè Shan Tuyết Cổ Thụ Hàng Trăm Năm Tuổi', 'Những gốc chè Shan Tuyết cổ thụ hàng trăm năm tuổi thân xù xì bám đầy rêu mốc trên đỉnh núi cao bốn mùa mây phủ.')">
-                                <img src="images/taxua_che_co_thu_shan_tuyet.webp" alt="Chè Shan Tuyết cổ thụ Tà Xùa" loading="lazy">
+                        <!-- 10. RỪNG CHÈ SHAN TUYẾT & NGHỀ SAO CHÈ BẢN BẸ (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/taxua_nghe_sao_che_shan_tuyet_ban_be.webp', 'Nghề sao chè Shan Tuyết cổ thụ thủ công trên chảo gang đỏ lửa tại Bản Bẹ', 'Nghề sao chè Shan Tuyết thủ công truyền thống Bản Bẹ (xã Tà Xùa) — Từng búp chè ngậm sương mù trên đỉnh núi cao được đồng bào H'Mông hái bằng tay và sao trực tiếp trên chảo gang đượm lửa củi. Quá trình vò chè, sấy khô công phu giữ nguyên lớp lông tơ tuyết trắng bạc và hương thơm cốm non thanh khiết, tạo nên đặc sản danh trà quý hiếm bậc nhất Việt Nam.', '10. Nghề Sao Chè Shan Tuyết Cổ Thụ Thủ Công Bản Bẹ — Tinh Hoa Danh Trà Vùng Cao', 'Nghề sao chè cổ truyền trên chảo gang bếp củi của người H'Mông bản Bẹ, nơi từng búp chè tuyết trắng ngậm sương đại ngàn được đánh hương tỉ mỉ thành thức trà vàng óng đượm hậu ngọt sâu.')">📸 Nghề sao chè thủ công chảo gang</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/taxua_che_co_thu_shan_tuyet.webp', 'Quần thể Cây Di sản Chè Shan Tuyết cổ thụ 200 - 300 năm tuổi', 'Quần thể chè Shan Tuyết cổ thụ Bản Bẹ — Hơn 200 cây chè hàng trăm năm tuổi thân xù xì bám đầy rêu mốc và địa y ở độ cao trên 1.500m đã được Hội Bảo vệ Thiên nhiên và Môi trường Việt Nam công nhận là Cây Di sản Việt Nam năm 2019, biểu tượng trường tồn của núi rừng Tà Xùa.', '10. Quần Thể Cây Di Sản Chè Shan Tuyết Cổ Thụ 300 Năm Tuổi', 'Rừng chè cổ thụ hàng trăm năm tuổi ngự trên đỉnh non ngàn mây phủ, thân cây xù xì rêu mốc chắt chiu tinh túy đất trời để tạo nên thương hiệu chè Shan Tuyết nức tiếng.')">📸 Cây Di sản chè Shan Tuyết 300 năm</button>
+                            </div>
+                            <div class="dest-img-wrap" onclick="openLightbox('images/taxua_nghe_sao_che_shan_tuyet_ban_be.webp', '10. Nghề Sao Chè Shan Tuyết Cổ Thụ Thủ Công Bản Bẹ — Tinh Hoa Danh Trà Vùng Cao', 'Nghề sao chè Shan Tuyết thủ công truyền thống Bản Bẹ (xã Tà Xùa) — Từng búp chè ngậm sương mù trên đỉnh núi cao được đồng bào H'Mông hái bằng tay và sao trực tiếp trên chảo gang đượm lửa củi. Quá trình vò chè, sấy khô công phu giữ nguyên lớp lông tơ tuyết trắng bạc và hương thơm cốm non thanh khiết, tạo nên đặc sản danh trà quý hiếm bậc nhất Việt Nam.')">
+                                <img src="images/taxua_nghe_sao_che_shan_tuyet_ban_be.webp" alt="Nghề sao chè Shan Tuyết cổ thụ thủ công chảo gang Bản Bẹ Tà Xùa" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">10. Rừng Chè Shan Tuyết Cổ Thụ (Cây Di Sản)</h3>
-                                <p class="dest-desc">Quần thể hàng trăm cây chè Shan Tuyết cổ thụ 200 - 300 năm tuổi tại bản Bẹ đã được công nhận là Cây Di sản Việt Nam. Búp chè ngậm sương mù tinh khiết cho ra loại trà nước vàng óng, vị ngọt hậu thanh tao quý giá.</p>
+                                <h3 class="dest-title">10. Nghề Sao Chè Shan Tuyết Cổ Thụ Thủ Công Bản Bẹ — Tinh Hoa Danh Trà Vùng Cao</h3>
+                                <p class="dest-desc">Nghề sao chè cổ truyền trên chảo gang bếp củi của người H'Mông bản Bẹ, nơi từng búp chè tuyết trắng ngậm sương đại ngàn được đánh hương tỉ mỉ thành thức trà vàng óng đượm hậu ngọt sâu.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Bản Bẹ, xã Tà Xùa</span>
-                                    <span>🍵 Cây Di sản Việt Nam</span>
+                                    <span>🔥 Cây Di Sản Việt Nam</span>
+                                    <span>🍵 Chè Shan Tuyết Búp Bạc</span>
+                                    <span>🔥 Sao Thủ Công Chảo Gang</span>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -1182,6 +1269,45 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const imgWrap = card.querySelector('.dest-img-wrap');
+            const img = card.querySelector('.dest-img-wrap img');
+            const titleEl = card.querySelector('.dest-title');
+            const descEl = card.querySelector('.dest-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            if (imgWrap) {
+                imgWrap.onclick = function() {
+                    openLightbox(imgSrc, cardTitle || imgAlt, legendText || cardDesc);
+                };
+            }
+        }
+
     </script>
 </body>
 </html>
