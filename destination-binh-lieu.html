@@ -549,6 +549,79 @@
             margin-top: 0.8rem;
             font-style: italic;
         }
+    
+        .landmarks-grid .double-col {
+            grid-column: span 2;
+        }
+        .landmarks-grid .single-col {
+            grid-column: span 1;
+        }
+        .landmarks-grid .double-col .dest-img-wrap {
+            aspect-ratio: 21/9;
+        }
+        @media (max-width: 768px) {
+            .landmarks-grid .double-col {
+                grid-column: span 1;
+            }
+            .landmarks-grid .double-col .dest-img-wrap {
+                aspect-ratio: 16/9;
+            }
+        }
+        .dest-card.has-gallery {
+            position: relative;
+        }
+        .dest-title, .dest-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(15, 23, 42, 0.85);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -746,44 +819,46 @@
                     </p>
 
                     <div class="landmarks-grid">
-                        <!-- 1. SỐNG LƯNG KHỦNG LONG 1305 -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_song_lung_khung_long_1305.webp', 'Sống Lưng Khủng Long & Cột Mốc 1305', 'Cung đường bậc thang bê tông dài gần 2km uốn lượn ngoạn mục trên sống núi hẹp dẫn lên cột mốc biên giới 1305 cao nhất Quảng Ninh.')">
-                                <img src="images/binhlieu_song_lung_khung_long_1305.webp" alt="Sống lưng khủng long mốc 1305" loading="lazy">
+
+                        <!-- 1. SỐNG LƯNG KHỦNG LONG 1305 (double-col) -->
+                        <div class="dest-card double-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_song_lung_khung_long_1305.webp', '1. Sống Lưng Khủng Long & Cột Mốc 1305', 'Cung đường bậc thang bê tông dài gần 2km uốn lượn ngoạn mục trên sống núi hẹp dẫn lên cột mốc biên giới 1305 cao nhất Quảng Ninh.')">
+                                <img src="images/binhlieu_song_lung_khung_long_1305.webp" alt="Sống lưng khủng long mốc 1305 Bình Liêu" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">1. Sống Lưng Khủng Long & Cột Mốc 1305</h3>
-                                <p class="dest-desc">Biểu tượng du lịch số 1 Bình Liêu với cung đường bậc thang bê tông kiên cố men theo sống núi hiểm trở. Chinh phục hơn 2.000 bậc thang giữa bạt ngàn cỏ lau để chạm tay vào cột mốc 1305 thiêng liêng ở độ cao gần 1.000m.</p>
+                                <h3 class="dest-title">1. Sống Lưng Khủng Long & Cột Mốc 1305 — Vạn Lý Trường Thành Biên Cương</h3>
+                                <p class="dest-desc">Biểu tượng du lịch số 1 Bình Liêu với cung đường bậc thang bê tông kiên cố men theo sống núi hiểm trở. Chinh phục hơn 2.000 bậc thang giữa bạt ngàn cỏ lau trắng muốt để chạm tay vào cột mốc 1305 thiêng liêng ở độ cao gần 1.000m.</p>
                                 <div class="dest-meta">
                                     <span>📍 Xã Hoành Mô, Bình Liêu</span>
                                     <span>🛡️ Cột mốc biên cương thiêng liêng</span>
+                                    <span>🌾 Thiên đường cỏ lau mùa thu</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 2. CỘT MỐC 1300 -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1300_co_lau.webp', 'Cột Mốc Biên Giới 1300 Rợp Bóng Cỏ Lau', 'Cột mốc chủ quyền nằm trên đỉnh đồi thoai thoải bao bọc bởi đồi cỏ lau trắng muốt tuyệt đẹp bên đường tuần tra.')">
-                                <img src="images/binhlieu_moc_1300_co_lau.webp" alt="Cột mốc 1300 Bình Liêu" loading="lazy">
+                        <!-- 2. CỘT MỐC 1300 (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1300_co_lau.webp', '2. Cột Mốc Biên Giới 1300 (Đồi Cỏ Lau Trắng)', 'Cột mốc chủ quyền nằm trên đỉnh đồi thoai thoải bao bọc bởi đồi cỏ lau trắng muốt tuyệt đẹp bên đường tuần tra.')">
+                                <img src="images/binhlieu_moc_1300_co_lau.webp" alt="Cột mốc 1300 Bình Liêu cỏ lau" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">2. Cột Mốc Biên Giới 1300 (Đồi Cỏ Lau)</h3>
-                                <p class="dest-desc">Nằm cách đường tuần tra biên giới chỉ khoảng 100 bậc tam cấp dễ đi. Cột mốc tọa lạc trên đỉnh đồi thoáng đãng với thảm cỏ lau trắng muốt vây quanh, điểm chụp ảnh lưu niệm chủ quyền không thể bỏ lỡ.</p>
+                                <p class="dest-desc">Nằm cách đường tuần tra biên giới chỉ khoảng 100 bậc tam cấp dễ đi, tọa lạc trên đỉnh đồi thoáng đãng với thảm cỏ lau trắng muốt bồng bềnh vây quanh.</p>
                                 <div class="dest-meta">
                                     <span>📍 Tuyến đường tuần tra biên giới</span>
-                                    <span>🌾 Điểm check-in cỏ lau thơ mộng</span>
+                                    <span>🌾 Đồi cỏ lau thơ mộng</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 3. CỘT MỐC 1302 -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1302_thao_nguyen.webp', 'Cột Mốc Biên Giới 1302 Thảo Nguyên Xanh', 'Cột mốc nằm giữa thảo nguyên xanh ngát uốn lượn, tầm nhìn bao quát toàn bộ vùng biên cương hùng vĩ.')">
-                                <img src="images/binhlieu_moc_1302_thao_nguyen.webp" alt="Cột mốc 1302 Bình Liêu" loading="lazy">
+                        <!-- 3. CỘT MỐC 1302 (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1302_thao_nguyen.webp', '3. Cột Mốc Biên Giới 1302 Thảo Nguyên Xanh', 'Cột mốc nằm giữa thảo nguyên xanh ngát uốn lượn, tầm nhìn bao quát toàn bộ vùng biên cương hùng vĩ.')">
+                                <img src="images/binhlieu_moc_1302_thao_nguyen.webp" alt="Cột mốc 1302 Bình Liêu thảo nguyên" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">3. Cột Mốc Biên Giới 1302 (Thảo Nguyên)</h3>
-                                <p class="dest-desc">Tọa lạc trên đỉnh đồi có thảo nguyên cỏ xanh bao la tiếp giáp mốc 1300. Cung đường uốn lượn mềm mại như dải lụa vắt qua triền núi nhìn sang các bản làng biên giới hai nước Việt - Trung.</p>
+                                <p class="dest-desc">Tọa lạc trên đỉnh đồi thảo nguyên xanh bao la tiếp giáp mốc 1300, cung đường uốn lượn mềm mại như dải lụa vắt qua triền núi non biên cương.</p>
                                 <div class="dest-meta">
                                     <span>📍 Cung đường tuần tra biên giới</span>
                                     <span>⛰️ Toàn cảnh biên cương hùng vĩ</span>
@@ -791,110 +866,122 @@
                             </div>
                         </div>
 
-                        <!-- 4. CỘT MỐC 1327 -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1327_thanh_long.webp', 'Cột Mốc Biên Giới 1327 Đỉnh Thanh Lân', 'Cột mốc nằm trên đỉnh núi Thanh Lân mờ ảo trong mây mù, nơi có cây đa cổ thụ và tầm nhìn bao la bát ngát.')">
-                                <img src="images/binhlieu_moc_1327_thanh_long.webp" alt="Cột mốc 1327 Bình Liêu" loading="lazy">
+                        <!-- 4. CỘT MỐC 1327 (double-col) -->
+                        <div class="dest-card double-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_moc_1327_thanh_long.webp', '4. Cột Mốc 1327 Đỉnh Núi Thanh Lân — Mốc Thiên Đình Mây Phủ', 'Cột mốc nằm trên đỉnh núi Thanh Lân mờ ảo trong mây mù, nơi có cây đa cổ thụ và tầm nhìn bao la bát ngát.')">
+                                <img src="images/binhlieu_moc_1327_thanh_long.webp" alt="Cột mốc 1327 đỉnh Thanh Lân Bình Liêu" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">4. Cột Mốc 1327 (Đỉnh Núi Thanh Lân)</h3>
-                                <p class="dest-desc">Được mệnh danh là "mốc thiên đình" nằm trên đỉnh núi Thanh Lân quanh năm mây mù bao phủ thuộc xã Đồng Văn. Nơi đây có cây đa cổ thụ sừng sững bên mốc đá hoa cương uy nghiêm giữa lộng gió biên cương.</p>
+                                <h3 class="dest-title">4. Cột Mốc 1327 Đỉnh Núi Thanh Lân — Mốc Thiên Đình Giữa Ngàn Mây</h3>
+                                <p class="dest-desc">Được mệnh danh là "mốc thiên đình" ngự trên đỉnh núi Thanh Lân quanh năm mây mù bao phủ thuộc xã Đồng Văn. Nơi đây có cây đa cổ thụ ngàn năm sừng sững bên cột mốc hoa cương uy nghiêm giữa lộng gió biên cương Đông Bắc.</p>
                                 <div class="dest-meta">
                                     <span>📍 Xã Đồng Văn, Bình Liêu</span>
                                     <span>☁️ Mốc thiên đình săn mây</span>
+                                    <span>🌳 Cây đa cổ thụ biên cương</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 5. THÁC KHE VẰN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_thac_khe_van.webp', 'Thác Khe Vằn Ba Tầng Kỳ Vĩ', 'Ngọn thác ba tầng nước đổ trắng xóa từ vách đá bazan cao gần 100m giữa rừng già nguyên sinh Húc Động.')">
-                                <img src="images/binhlieu_thac_khe_van.webp" alt="Thác Khe Vằn Bình Liêu" loading="lazy">
+                        <!-- 5. THÁC KHE VẰN (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_thac_khe_van.webp', '5. Thác Khe Vằn Ba Tầng (Kỳ Quan Nước)', 'Ngọn thác ba tầng nước đổ trắng xóa từ vách đá bazan cao gần 100m giữa rừng già nguyên sinh Húc Động.')">
+                                <img src="images/binhlieu_thac_khe_van.webp" alt="Thác Khe Vằn ba tầng Bình Liêu" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">5. Thác Khe Vằn Ba Tầng (Kỳ Quan Nước)</h3>
-                                <p class="dest-desc">Thác nước tự nhiên ba tầng tuyệt đẹp bắt nguồn từ dãy núi Thông Châu. Nước đổ từ độ cao 100m qua các bậc đá bazan cổ tạo thành những bể bơi tự nhiên trong vắt giữa rừng già nguyên sinh.</p>
+                                <p class="dest-desc">Thác nước tự nhiên ba tầng tuyệt mỹ bắt nguồn từ dãy núi Thông Châu, dòng nước đổ từ độ cao 100m qua các bậc đá bazan cổ tạo thành các hồ tắm tự nhiên trong vắt.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Xã Húc Động, Bình Liêu</span>
-                                    <span>🌊 Dòng thác ba tầng cao 100m</span>
+                                    <span>📍 Xã Húc Động</span>
+                                    <span>🌊 Dòng thác 3 tầng cao 100m</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 6. BẢN SÔNG MOÓC -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_ban_song_mooc_hoa_so.webp', 'Bản Sông Moóc & Lễ Hội Hoa Sở', 'Ngôi bản cổ người Dao Thanh Phán rợp bóng hoa sở trắng muốt, nếp nhà trình tường rêu phong bên sườn núi Phiêng Hiển.')">
-                                <img src="images/binhlieu_ban_song_mooc_hoa_so.webp" alt="Bản Sông Moóc Bình Liêu" loading="lazy">
+                        <!-- 6. ĐỈNH CAO XIÊM (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_dinh_cao_xiem_tuong_da.webp', '6. Đỉnh Cao Xiêm & Bức Tường Đá Cổ', 'Nóc nhà Bình Liêu ở độ cao 1.429m với bức tường đá bazan cổ bí ẩn trải dài dọc sống núi giữa ngàn mây.')">
+                                <img src="images/binhlieu_dinh_cao_xiem_tuong_da.webp" alt="Đỉnh Cao Xiêm Bình Liêu tường đá cổ" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">6. Bản Sông Moóc & Lễ Hội Hoa Sở</h3>
-                                <p class="dest-desc">Bản làng nguyên sơ của đồng bào Dao Thanh Phán nằm ở độ cao hơn 1.000m trên sườn núi Phiêng Hiển. Nơi đây là trung tâm tổ chức Lễ hội Hoa Sở tháng 12 với những rừng cây hoa sở trắng muốt bạt ngàn.</p>
+                                <h3 class="dest-title">6. Đỉnh Cao Xiêm (Nóc Nhà 1.429m)</h3>
+                                <p class="dest-desc">Đỉnh núi cao nhất Bình Liêu nổi tiếng với bức tường đá cổ bí ẩn dài hàng km do người xưa xếp thủ công để phân chia ranh giới và chăn thả gia súc.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Xã Đồng Văn, Bình Liêu</span>
-                                    <span>🌸 Thủ phủ hoa sở & văn hóa Dao</span>
+                                    <span>📍 Xã Lục Hồn</span>
+                                    <span>🏔️ Bức tường đá cổ bí ẩn</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 7. ĐỈNH CAO XIÊM -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_dinh_cao_xiem_tuong_da.webp', 'Đỉnh Cao Xiêm & Bức Tường Đá Cổ', 'Nóc nhà Bình Liêu ở độ cao 1.429m với bức tường đá bazan cổ bí ẩn trải dài dọc sống núi giữa ngàn mây.')">
-                                <img src="images/binhlieu_dinh_cao_xiem_tuong_da.webp" alt="Đỉnh Cao Xiêm Bình Liêu" loading="lazy">
+                        <!-- 7. BẢN LÀNG CỔ SÔNG MOÓC (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/binhlieu_ban_co_song_mooc_nha_trinh_tuong.webp', 'Bản làng cổ Sông Moóc nhà trình tường đất nện rêu phong và bờ rào đá cuội người Dao Thanh Phán', 'Bản làng cổ Sông Moóc (xã Đồng Văn, huyện Bình Liêu) — Ngôi bản cổ thuần chất của 100% đồng bào người Dao Thanh Phán tọa lạc ở độ cao hơn 1.000m trên sườn núi Phiêng Hiển. Những nếp nhà trình tường bằng đất nện màu vàng đất ấm, mái ngói âm dương rêu phong cổ kính, bờ rào đá cuội mộc mạc và những thửa ruộng bậc thang uốn lượn giữa làn mây trắng bồng bềnh.', '7. Bản Làng Cổ Sông Moóc — Trầm Tích Người Dao Thanh Phán & Nhà Trình Tường Đất Nện', 'Bản làng cổ lưng chừng núi mây ngàn của người Dao Thanh Phán, nơi lưu giữ nguyên vẹn kiến trúc nhà trình tường đất nện, bờ rào đá cuội mộc mạc, vườn quế hồi ngát hương và nhịp sống bình dị thanh tao.')">📸 Bản cổ Sông Moóc & Nhà trình tường</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/binhlieu_ban_song_mooc_hoa_so.webp', 'Thung lũng hoa sở Bản Sông Moóc nở rộ trắng muốt trong sương sớm', 'Thung lũng hoa sở Bản Sông Moóc — Trung tâm tổ chức Lễ hội Hoa Sở Bình Liêu vào tháng 12 hằng năm. Cả thung lũng bừng sáng bởi sắc hoa sở trắng muốt tinh khôi hòa cùng sắc áo thêu thổ cẩm rực rỡ và nụ cười đôn hậu của đồng bào vùng biên cương.', '7. Thung Lũng Rừng Hoa Sở Bản Sông Moóc Trắng Muốt', 'Cái nôi tổ chức Lễ hội Hoa Sở tháng 12 hằng năm, nơi những cánh rừng hoa sở bung nở trắng muốt tinh khôi ôm trọn bản làng người Dao giữa sương mây bồng bềnh.')">📸 Thung lũng hoa sở Bản Sông Moóc</button>
+                            </div>
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_ban_co_song_mooc_nha_trinh_tuong.webp', '7. Bản Làng Cổ Sông Moóc — Trầm Tích Người Dao Thanh Phán & Nhà Trình Tường Đất Nện', 'Bản làng cổ Sông Moóc (xã Đồng Văn, huyện Bình Liêu) — Ngôi bản cổ thuần chất của 100% đồng bào người Dao Thanh Phán tọa lạc ở độ cao hơn 1.000m trên sườn núi Phiêng Hiển. Những nếp nhà trình tường bằng đất nện màu vàng đất ấm, mái ngói âm dương rêu phong cổ kính, bờ rào đá cuội mộc mạc và những thửa ruộng bậc thang uốn lượn giữa làn mây trắng bồng bềnh.')">
+                                <img src="images/binhlieu_ban_co_song_mooc_nha_trinh_tuong.webp" alt="Bản làng cổ Sông Moóc nhà trình tường đất nện ngói âm dương Bình Liêu" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">7. Đỉnh Cao Xiêm (Nóc Nhà Bình Liêu 1.429m)</h3>
-                                <p class="dest-desc">Đỉnh núi cao nhất Bình Liêu nổi tiếng với bức tường đá cổ bí ẩn dài hàng km do người xưa xếp thủ công để phân chia ranh giới chăn thả gia súc. Cung đường trekking lý tưởng mở ra tầm nhìn toàn cảnh vịnh Bái Tử Long.</p>
+                                <h3 class="dest-title">7. Bản Làng Cổ Sông Moóc — Trầm Tích Người Dao Thanh Phán & Nhà Trình Tường Đất Nện</h3>
+                                <p class="dest-desc">Bản làng cổ lưng chừng núi mây ngàn của người Dao Thanh Phán, nơi lưu giữ nguyên vẹn kiến trúc nhà trình tường đất nện, bờ rào đá cuội mộc mạc, vườn quế hồi ngát hương và nhịp sống bình dị thanh tao.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Xã Lục Hồn, Bình Liêu</span>
-                                    <span>🏔️ Trekking nóc nhà 1.429m</span>
+                                    <span>🔥 Di Sản Bản Làng Dao Cổ</span>
+                                    <span>🏡 Nhà Trình Tường Ngói Âm Dương</span>
+                                    <span>🌸 Bờ Rào Đá & Rừng Hoa Sở</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 8. ĐỈNH CAO LY SĂN MÂY -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_dinh_cao_ly_san_may.webp', 'Đỉnh Cao Ly — Tọa Độ Săn Mây & Cắm Trại', 'Đồng cỏ thảo nguyên bao la trên độ cao 1.000m nơi ngắm trọn biển mây bồng bềnh cuộn trào đón bình minh.')">
-                                <img src="images/binhlieu_dinh_cao_ly_san_may.webp" alt="Đỉnh Cao Ly Bình Liêu" loading="lazy">
+                        <!-- 8. ĐỈNH CAO LY SĂN MÂY (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_dinh_cao_ly_san_may.webp', '8. Đỉnh Cao Ly — Tọa Độ Săn Mây & Cắm Trại', 'Đồng cỏ thảo nguyên bao la trên độ cao 1.000m nơi ngắm trọn biển mây bồng bềnh cuộn trào đón bình minh.')">
+                                <img src="images/binhlieu_dinh_cao_ly_san_may.webp" alt="Đỉnh Cao Ly Bình Liêu thảo nguyên mây" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">8. Đỉnh Cao Ly & Thảo Nguyên Săn Mây</h3>
-                                <p class="dest-desc">Dãy núi cao hơn 1.000m với thảo nguyên cỏ rộng lớn hơn 40ha chăn thả bò dê tự do. Nơi đây là điểm cắm trại qua đêm đón bình minh và ngắm biển mây cuồn cuộn tràn qua các thung lũng đẹp nhất Bình Liêu.</p>
+                                <p class="dest-desc">Dãy núi cao hơn 1.000m với thảo nguyên cỏ rộng hơn 40ha chăn thả bò dê tự do, điểm cắm trại đón bình minh và biển mây cuồn cuộn tràn qua các thung lũng.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Xã Húc Động, Bình Liêu</span>
-                                    <span>⛺ Cắm trại dã ngoại & biển mây</span>
+                                    <span>📍 Xã Húc Động</span>
+                                    <span>⛺ Cắm trại & biển mây 40ha</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 9. RUỘNG BẬC THANG LỤC HỒN -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_ruong_bac_thang_luc_hon.webp', 'Ruộng Bậc Thang Lục Hồn Mùa Lúa Chín', 'Những tầng ruộng bậc thang vàng ươm dưới chân núi Cao Xiêm, con suối nhỏ uốn lượn qua bản làng người Tày.')">
-                                <img src="images/binhlieu_ruong_bac_thang_luc_hon.webp" alt="Ruộng bậc thang Lục Hồn" loading="lazy">
+                        <!-- 9. RUỘNG BẬC THANG LỤC HỒN (single-col) -->
+                        <div class="dest-card single-col">
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_ruong_bac_thang_luc_hon.webp', '9. Ruộng Bậc Thang Lục Hồn Mùa Lúa Chín', 'Những tầng ruộng bậc thang vàng ươm dưới chân núi Cao Xiêm, con suối nhỏ uốn lượn qua bản làng người Tày.')">
+                                <img src="images/binhlieu_ruong_bac_thang_luc_hon.webp" alt="Ruộng bậc thang Lục Hồn Bình Liêu" loading="lazy">
                             </div>
                             <div class="dest-body">
                                 <h3 class="dest-title">9. Ruộng Bậc Thang Lục Hồn & Khe O</h3>
-                                <p class="dest-desc">Thung lũng ruộng bậc thang quy mô bậc nhất huyện Bình Liêu dưới chân núi Cao Xiêm. Những dải ruộng vàng ươm uốn lượn mềm mại hòa cùng những ngôi nhà gỗ truyền thống của người Tày và người Dao.</p>
+                                <p class="dest-desc">Thung lũng ruộng bậc thang quy mô bậc nhất huyện dưới chân núi Cao Xiêm, những dải ruộng vàng ươm uốn lượn mềm mại hòa cùng nếp nhà người Tày, Dao.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Xã Lục Hồn, Bình Liêu</span>
-                                    <span>🌾 Mùa lúa chín tháng 10 - 11</span>
+                                    <span>📍 Xã Lục Hồn</span>
+                                    <span>🌾 Mùa lúa chín tháng 10-11</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 10. ĐÌNH LỤC NÀ -->
-                        <div class="dest-card">
-                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_dinh_luc_na_le_hoi.webp', 'Đình Lục Nà — Di Tích Lịch Sử Văn Hóa Biên Cương', 'Ngôi đình cổ kính thờ Thành hoàng Hoàng Cần, cái nôi văn hóa tâm linh của đồng bào các dân tộc Bình Liêu.')">
-                                <img src="images/binhlieu_dinh_luc_na_le_hoi.webp" alt="Đình Lục Nà Bình Liêu" loading="lazy">
+                        <!-- 10. LÀNG NGHỀ MIẾN DONG & ĐÌNH CỔ LỤC NÀ (Featured Di Sản double-col) -->
+                        <div class="dest-card double-col has-gallery">
+                            <div class="card-photo-nav">
+                                <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/binhlieu_lang_nghe_mien_dong_truyen_thong.webp', 'Làng nghề làm miến dong truyền thống phơi phên tre óng ả dưới nắng vàng Bình Liêu', 'Làng nghề làm miến dong truyền thống Bình Liêu — Sản phẩm OCOP 5 sao nức tiếng Quảng Ninh. Đồng bào địa phương sử dụng 100% tinh bột dong riềng đỏ canh tác trên sườn đồi, tráng bánh thủ công và phơi khô tự nhiên trên giàn phên tre đẫm nắng gió biên thùy, tạo nên sợi miến xanh xám trong suốt, giòn dai đậm đà không hóa chất.', '10. Làng Nghề Miến Dong Truyền Thống Bình Liêu — Tinh Hoa Nông Sản Xứ Biên Cương', 'Nghề làm miến dong thủ công từ củ dong riềng đỏ bản địa, trải qua công đoạn lọc bột, tráng bánh và phơi trên giàn tre đẫm nắng gió biên thùy tạo nên sợi miến xanh xám dẻo dai nức tiếng.')">📸 Làng nghề miến dong truyền thống</button>
+                                <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/binhlieu_dinh_luc_na_le_hoi.webp', 'Đình Lục Nà di tích lịch sử văn hóa lễ hội đầu xuân Bình Liêu', 'Đình Lục Nà (xã Lục Hồn) — Di tích Lịch sử - Văn hóa cấp Tỉnh khởi lập từ thời Hậu Lê, ngôi đình cổ kính duy nhất của huyện Bình Liêu thờ Thành hoàng Hoàng Cần có công đánh đuổi giặc phương Bắc bảo vệ bờ cõi. Nơi đây là trung tâm lễ hội xuân rộn rã các trò chơi dân gian ném còn, đẩy gậy, hát then đàn tính.', '10. Đình Cổ Lục Nà — Di Tích Lịch Sử Văn Hóa Biên Cương Khởi Lập Thời Hậu Lê', 'Ngôi đình cổ linh thiêng thờ Thành hoàng Hoàng Cần người anh hùng đánh giặc giữ yên bờ cõi, trung tâm sinh hoạt tâm linh và lễ hội truyền thống lớn nhất của đồng bào các dân tộc Bình Liêu.')">📸 Đình cổ Lục Nà & Lễ hội biên cương</button>
+                            </div>
+                            <div class="dest-img-wrap" onclick="openLightbox('images/binhlieu_lang_nghe_mien_dong_truyen_thong.webp', '10. Làng Nghề Miến Dong Truyền Thống Bình Liêu — Tinh Hoa Nông Sản Xứ Biên Cương', 'Làng nghề làm miến dong truyền thống Bình Liêu — Sản phẩm OCOP 5 sao nức tiếng Quảng Ninh. Đồng bào địa phương sử dụng 100% tinh bột dong riềng đỏ canh tác trên sườn đồi, tráng bánh thủ công và phơi khô tự nhiên trên giàn phên tre đẫm nắng gió biên thùy, tạo nên sợi miến xanh xám trong suốt, giòn dai đậm đà không hóa chất.')">
+                                <img src="images/binhlieu_lang_nghe_mien_dong_truyen_thong.webp" alt="Làng nghề miến dong truyền thống Bình Liêu phơi phên tre" loading="lazy">
                             </div>
                             <div class="dest-body">
-                                <h3 class="dest-title">10. Đình Lục Nà (Di Tích Lịch Sử Văn Hóa)</h3>
-                                <p class="dest-desc">Ngôi đình duy nhất tại huyện Bình Liêu thờ Thành hoàng Hoàng Cần có công đánh giặc giữ nước. Nơi tổ chức Lễ hội Đình Lục Nà vào ngày 16 tháng Giêng âm lịch với các trò chơi dân gian ném còn, đẩy gậy, kéo co sôi nổi.</p>
+                                <h3 class="dest-title">10. Làng Nghề Miến Dong Truyền Thống Bình Liêu — Tinh Hoa Nông Sản Xứ Biên Cương</h3>
+                                <p class="dest-desc">Nghề làm miến dong thủ công từ củ dong riềng đỏ bản địa, trải qua công đoạn lọc bột, tráng bánh và phơi trên giàn tre đẫm nắng gió biên thùy tạo nên sợi miến xanh xám dẻo dai nức tiếng.</p>
                                 <div class="dest-meta">
-                                    <span>📍 Bản Bản Cáu, xã Lục Hồn</span>
-                                    <span>🏛️ Di tích lịch sử cấp tỉnh</span>
+                                    <span>🔥 Di Sản Làng Nghề Thủ Công</span>
+                                    <span>🍜 Miến Dong Riềng Đỏ OCOP</span>
+                                    <span>🏛️ Di Tích Đình Cổ Lục Nà</span>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -1184,6 +1271,45 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.dest-card');
+            if (!card) return;
+            const imgWrap = card.querySelector('.dest-img-wrap');
+            const img = card.querySelector('.dest-img-wrap img');
+            const titleEl = card.querySelector('.dest-title');
+            const descEl = card.querySelector('.dest-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            if (imgWrap) {
+                imgWrap.onclick = function() {
+                    openLightbox(imgSrc, cardTitle || imgAlt, legendText || cardDesc);
+                };
+            }
+        }
+
     </script>
 </body>
 </html>
