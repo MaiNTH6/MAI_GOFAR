@@ -803,6 +803,79 @@
                 padding: 1.25rem 1.5rem;
             }
         }
+    
+        .spots-grid .double-col {
+            grid-column: span 2;
+        }
+        .spots-grid .single-col {
+            grid-column: span 1;
+        }
+        .spots-grid .double-col .spot-card-img {
+            height: 380px;
+        }
+        @media (max-width: 768px) {
+            .spots-grid .double-col {
+                grid-column: span 1;
+            }
+            .spots-grid .double-col .spot-card-img {
+                height: 230px;
+            }
+        }
+        .spot-card.has-gallery {
+            position: relative;
+        }
+        .spot-card-title, .spot-card-desc {
+            transition: opacity 0.2s ease;
+        }
+        /* Multi-photo card switcher */
+        .card-photo-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            display: flex;
+            gap: 0.35rem;
+            background: rgba(7, 23, 38, 0.88);
+            padding: 0.3rem 0.55rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .photo-btn {
+            font-size: 0.74rem;
+            color: rgba(255, 255, 255, 0.85);
+            background: transparent;
+            border: none;
+            padding: 0.22rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            font-weight: 500;
+        }
+        .photo-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .photo-btn.active {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+            .card-photo-nav {
+                top: 0.6rem;
+                right: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .photo-btn {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.45rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1004,133 +1077,141 @@
 
                 <div class="spots-grid">
 
-                    <!-- Spot 1: Bãi Sao -->
-                    <div class="spot-card" data-legend="Bãi Sao nằm ở phía Đông Nam đảo Phú Quốc, thuộc phường An Thới. Bãi biển dài hơn 7km hình cánh cung mềm mại, nổi tiếng khắp thế giới nhờ bãi cát trắng mịn như kem tuyết và làn nước biển trong xanh màu ngọc bích. Tên gọi Bãi Sao xuất phát từ câu chuyện xưa: mỗi khi hoàng hôn buông xuống, hàng ngàn chú sao biển lại dạt vào bờ phủ trắng xóa dưới ánh trăng.">
+                    <!-- Spot 1: Bãi Sao (double-col) -->
+                    <div class="spot-card double-col" data-legend="Bãi Sao nằm ở phía Đông Nam đảo Phú Quốc, thuộc phường An Thới. Bãi biển dài hơn 7km hình cánh cung mềm mại, nổi tiếng khắp thế giới nhờ bãi cát trắng mịn như kem tuyết và làn nước biển trong xanh màu ngọc bích. Tên gọi Bãi Sao xuất phát từ câu chuyện xưa: mỗi khi hoàng hôn buông xuống, hàng ngàn chú sao biển lại dạt vào bờ phủ trắng xóa dưới ánh trăng.">
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_bai_sao.webp" alt="Bãi Sao Phú Quốc bãi cát trắng mịn hàng dừa nghiêng">
+                            <img src="images/phuquoc_bai_sao.webp" alt="Bãi Sao Phú Quốc bãi cát trắng mịn hàng dừa nghiêng" loading="lazy">
                             <span class="spot-card-tag">Bãi biển · Top Thế giới</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">1. Bãi Sao (Phường An Thới)</h3>
-                            <p class="spot-card-desc">Bãi biển biểu tượng số 1 với bãi cát trắng muốt như phấn, hàng dừa nghiêng bóng thơ mộng và làn nước ấm áp phẳng lặng như gương soi.</p>
+                            <h3 class="spot-card-title">1. Bãi Sao (Phường An Thới) — Dải Lụa Cát Trắng Như Kem Tuyết</h3>
+                            <p class="spot-card-desc">Bãi biển biểu tượng số 1 với bãi cát trắng muốt như phấn thoai thoải vươn dài, hàng dừa nghiêng bóng thơ mộng và làn nước ấm áp phẳng lặng như gương soi quanh năm.</p>
                             <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
                         </div>
                     </div>
 
-                    <!-- Spot 2: Cáp treo Hòn Thơm -->
-                    <div class="spot-card" data-legend="Tuyến cáp treo 3 dây vượt biển Hòn Thơm nối thị trấn An Thới qua các đảo Hòn Dừa, Hòn Rỏi tới Hòn Thơm có tổng chiều dài 7.899,9 mét, được Tổ chức Kỷ lục Guinness trao chứng nhận Cáp treo ba dây vượt biển dài nhất thế giới. Từ cabin trên độ cao hàng trăm mét, du khách thu trọn vẹn vào tầm mắt bức tranh hàng trăm tàu thuyền đánh cá rực rỡ trên vịnh An Thới.">
+                    <!-- Spot 2: Cáp treo Hòn Thơm (single-col) -->
+                    <div class="spot-card single-col" data-legend="Tuyến cáp treo 3 dây vượt biển Hòn Thơm nối thị trấn An Thới qua các đảo Hòn Dừa, Hòn Rỏi tới Hòn Thơm có tổng chiều dài 7.899,9 mét, được Tổ chức Kỷ lục Guinness trao chứng nhận Cáp treo ba dây vượt biển dài nhất thế giới. Từ cabin trên độ cao hàng trăm mét, du khách thu trọn vẹn vào tầm mắt bức tranh hàng trăm tàu thuyền đánh cá rực rỡ trên vịnh An Thới.">
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_cap_treo_hon_thom.webp" alt="Cáp treo Hòn Thơm vượt biển kỷ lục Guinness Phú Quốc">
-                            <span class="spot-card-tag">Kỷ lục Thế giới · Trải nghiệm</span>
+                            <img src="images/phuquoc_cap_treo_hon_thom.webp" alt="Cáp treo Hòn Thơm vượt biển dài nhất thế giới" loading="lazy">
+                            <span class="spot-card-tag">Kỷ lục Guinness</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">2. Cáp Treo Hòn Thơm (Quần đảo An Thới)</h3>
-                            <p class="spot-card-desc">Bay giữa tầng không ngắm trọn vẹn đại dương xanh thẳm, các hòn đảo hoang sơ và bến cảng ngập tràn sắc màu thuyền bè nhộn nhịp.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <h3 class="spot-card-title">2. Cáp Treo Hòn Thơm</h3>
+                            <p class="spot-card-desc">Tuyến cáp treo vượt biển 7.899,9m dài nhất thế giới ngắm trọn quần đảo An Thới xanh ngắt từ trên cao.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & thông số</div>
                         </div>
                     </div>
 
-                    <!-- Spot 3: Bãi Khem & Mũi Ông Đội -->
-                    <div class="spot-card" data-legend="Mũi Ông Đội nằm ở mũi cực Nam Phú Quốc là địa danh địa lý độc nhất vô nhị: một dải đất thon dài vươn ra biển nơi du khách có thể ngắm cả bình minh lẫn hoàng hôn tại cùng một vị trí. Cạnh đó là Bãi Khem (Bãi Kem) thoai thoải hình cánh quạt, từng được mạng lưới du lịch hàng đầu Flight Network xếp hạng top 50 bãi biển đẹp nhất hành tinh năm 2018.">
+                    <!-- Spot 3: Bãi Khem & Mũi Ông Đội (single-col) -->
+                    <div class="spot-card single-col" data-legend="Mũi Ông Đội là dải đất độc đáo duy nhất tại Phú Quốc nhô ra giữa hai bờ biển, nơi du khách có thể ngắm cả bình minh lẫn hoàng hôn tại cùng một vị trí. Nơi đây còn lưu giữ di tích Giếng Tiên — mạch nước ngọt kỳ diệu phun lên từ khe đá sát mép nước mặn gắn liền sự tích vua Gia Long bôn tẩu.">
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_bai_kem_mui_ong_doi.webp" alt="Bãi Khem và Mũi Ông Đội ngắm bình minh và hoàng hôn Phú Quốc">
-                            <span class="spot-card-tag">Địa danh độc nhất · Nghỉ dưỡng</span>
+                            <img src="images/phuquoc_bai_kem_mui_ong_doi.webp" alt="Bãi Khem cát trắng mịn và Mũi Ông Đội Phú Quốc" loading="lazy">
+                            <span class="spot-card-tag">Top 50 Bãi biển đẹp nhất</span>
                         </div>
                         <div class="spot-card-body">
                             <h3 class="spot-card-title">3. Bãi Khem & Mũi Ông Đội</h3>
-                            <p class="spot-card-desc">Thiên đường nghỉ dưỡng biệt lập với bờ biển hình trăng khuyết, rạn san hô nguyên sơ và địa thế ngắm trọn hai khoảnh khắc bình minh - hoàng hôn trên cùng một tọa độ.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <p class="spot-card-desc">Bãi biển hình cánh cung tĩnh lặng với cát trắng hình quạt và dải Mũi Ông Đội ngắm trọn cả bình minh lẫn hoàng hôn.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem truyền thuyết Giếng Tiên</div>
                         </div>
                     </div>
 
-                    <!-- Spot 4: Làng chài Rạch Vẹm -->
-                    <div class="spot-card" data-legend="Rạch Vẹm nằm ở Bắc đảo cách trung tâm Dương Đông khoảng 25km. Làng chài vẫn giữ vẹn nguyên nét hoang sơ với những cây cầu gỗ mộc mạc bắc ra các nhà bè nổi giữa biển. Vào mùa khô (tháng 12 đến tháng 4), làn nước nông trong vắt là nơi trú ngụ của hàng đàn sao biển đỏ rực (Protoreaster nodosus) bò trên cát trắng tạo nên cảnh sắc thần tiên.">
+                    <!-- Spot 4: Làng Chài Rạch Vẹm (double-col) -->
+                    <div class="spot-card double-col" data-legend="Rạch Vẹm nằm ở phía Bắc đảo, được mệnh danh là 'Vương quốc sao biển' của Việt Nam. Cứ vào mùa khô (từ tháng 11 đến tháng 4), hàng ngàn chú sao biển đỏ tươi xuất hiện dày đặc ven bờ nước trong vắt phẳng lặng, tạo nên khung cảnh cổ tích có một không hai. Cùng với những cây cầu gỗ mộc mạc bắc ra nhà bè, Rạch Vẹm mang vẻ đẹp nguyên sơ mộc mạc hiếm có.">
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_rach_vem_sao_bien.webp" alt="Làng chài Rạch Vẹm vương quốc sao biển đỏ Phú Quốc">
-                            <span class="spot-card-tag">Vương quốc sao biển · Hoang sơ</span>
+                            <img src="images/phuquoc_rach_vem_sao_bien.webp" alt="Làng chài Rạch Vẹm sao biển đỏ Phú Quốc" loading="lazy">
+                            <span class="spot-card-tag">Vương quốc sao biển</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">4. Làng Chài Rạch Vẹm (Vương Quốc Sao Biển)</h3>
-                            <p class="spot-card-desc">Dạo bước trên những cây cầu gỗ mộc vươn ra biển, chiêm ngưỡng thế giới sao biển đỏ lấp lánh dưới làn nước trong vắt như pha lê.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <h3 class="spot-card-title">4. Làng Chài Rạch Vẹm — Vương Quốc Sao Biển Đỏ & Bờ Cát Hoang Sơ Bắc Đảo</h3>
+                            <p class="spot-card-desc">Bản làng chài hoang sơ nơi hàng ngàn chú sao biển đỏ tự nhiên quần tụ bên bờ cát thoai thoải và những cây cầu gỗ mộc mạc vươn dài ra làn nước biển trong vắt nhìn thấu tận đáy cát.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem mùa sao biển & quy tắc bảo tồn</div>
                         </div>
                     </div>
 
-                    <!-- Spot 5: Sunset Sanato & Bãi Trường -->
-                    <div class="spot-card" data-legend="Bãi Trường (Long Beach) trải dài gần 20km dọc bờ Tây đảo, là bờ biển ngắm hoàng hôn rực rỡ nhất Việt Nam. Sunset Sanato Beach Club tọa lạc tại đây nổi tiếng với các công trình nghệ thuật sắp đặt siêu thực của kiến trúc sư Nikita Marshunok: đàn voi chân dài sải bước giữa biển, cổng trời đôi mặt người rẽ đôi ráng chiều hoàng hôn.">
+                    <!-- Spot 5: Sunset Sanato & Bãi Trường (single-col) -->
+                    <div class="spot-card single-col" data-legend="Bãi Trường là bãi biển dài nhất Phú Quốc với hơn 20km bờ cát vàng trải dài thoai thoải. Sunset Sanato Beach Club tọa lạc tại đây nổi tiếng là nơi ngắm hoàng hôn rực rỡ nhất đảo Ngọc với các công trình nghệ thuật sắp đặt độc đáo như voi chân dài siêu thực, đàn sứa bay và cánh cổng trời bí ẩn giữa sóng nước.">
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_sunset_sanato_bai_truong.webp" alt="Hoàng hôn Sunset Sanato Bãi Trường Phú Quốc">
-                            <span class="spot-card-tag">Check-in hoàng hôn · Nghệ thuật</span>
+                            <img src="images/phuquoc_sunset_sanato_bai_truong.webp" alt="Hoàng hôn Sunset Sanato Bãi Trường Phú Quốc tượng voi" loading="lazy">
+                            <span class="spot-card-tag">Tọa độ Hoàng Hôn</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">5. Sunset Sanato & Bãi Trường (Dương Tơ)</h3>
-                            <p class="spot-card-desc">Thánh địa săn hoàng hôn triệu view với các tác phẩm điêu khắc đàn voi chân dài, cánh cổng trời huyền thoại in bóng giữa vòm trời cam rực rỡ.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <h3 class="spot-card-title">5. Sunset Sanato & Bãi Trường</h3>
+                            <p class="spot-card-desc">Tọa độ ngắm hoàng hôn ngũ sắc ngoạn mục nhất Phú Quốc với các tác phẩm nghệ thuật voi bay siêu thực giữa biển khơi.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & thời khắc vàng</div>
                         </div>
                     </div>
 
-                    <!-- Spot 6: Làng chài cổ Hàm Ninh -->
-                    <div class="spot-card" data-legend="Làng chài Hàm Ninh nép mình dưới chân dãy núi Hàm Ninh cao hàng trăm mét, là một trong những làng chài cổ xưa nhất xứ đảo hình thành từ thế kỷ XIX. Làng nổi tiếng với cầu cảng nối dài ra biển khơi cạn, nghề lặn bắt hải sâm (đồn đột), ngọc trai và đặc sản ghẹ Hàm Ninh thịt chắc, ngọt thơm trứ danh cả nước.">
+                    <!-- Spot 6: Dinh Cậu & Dinh Bà (single-col) -->
+                    <div class="spot-card single-col" data-legend="Dinh Cậu tọa lạc trên mỏm đá tự nhiên kỳ dị vươn ra biển tại cửa sông Dương Đông, khởi dựng từ thế kỷ XVII. Nơi đây thờ Thần Sông Long Vương và hai cậu (Tài, Quý), ngọn hải đăng tâm linh chở che cho những chuyến tàu vượt sóng gió trùng khơi bình an trở về.">
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_lang_chai_ham_ninh.webp" alt="Làng chài cổ Hàm Ninh Phú Quốc đón bình minh">
-                            <span class="spot-card-tag">Làng chài cổ · Đặc sản ghẹ</span>
+                            <img src="images/phuquoc_dinh_cau_hoang_hon.webp" alt="Dinh Cậu Phú Quốc hoàng hôn trên mỏm đá cổ" loading="lazy">
+                            <span class="spot-card-tag">Tâm linh thế kỷ XVII</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">6. Làng Chài Cổ Hàm Ninh</h3>
-                            <p class="spot-card-desc">Ngắm bình minh đầu tiên trên đảo tại cầu cảng dài tít tắp, hòa vào nhịp sống mộc mạc của ngư dân và thưởng thức ghẹ Hàm Ninh tươi rói luộc tại chỗ.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <h3 class="spot-card-title">6. Dinh Cậu & Dinh Bà</h3>
+                            <p class="spot-card-desc">Ngôi miếu cổ linh thiêng ngự trên ghềnh đá rêu phong cheo leo sóng vỗ, ngọn hải đăng tâm linh chở che ngư phủ bao đời.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem truyền thuyết sóng biển</div>
                         </div>
                     </div>
 
-                    <!-- Spot 7: Vườn quốc gia Phú Quốc & Suối Tranh -->
-                    <div class="spot-card" data-legend="Vườn Quốc gia Phú Quốc chiếm hơn 50% diện tích đảo với hơn 31.400 ha rừng nguyên sinh, được UNESCO công nhận là vùng lõi Khu Dự trữ Sinh quyển Thế giới năm 2006. Nổi bật giữa tán rừng đại ngàn là Suối Tranh dài 15km bắt nguồn từ các khe nước nhỏ trên dãy Hàm Ninh, len lỏi qua ghềnh đá rêu phong tạo thành thác nước mát lành.">
+                    <!-- Spot 7: Làng Chài Cổ Hàm Ninh (Featured Di Sản double-col) -->
+                    <div class="spot-card double-col has-gallery" data-legend="Làng chài Hàm Ninh hình thành từ thế kỷ XIX khi những lưu dân đầu tiên đến khai hoang lập ấp dưới chân núi Hàm Ninh. Cây cầu gỗ mộc mạc vươn dài hàng trăm mét ra biển là tọa độ ngắm bình minh trên biển đẹp nhất Phú Quốc. Nơi đây lưu giữ nguyên vẹn nếp sống ngư dân chân chất cùng nghề lặn bắt ngọc trai và câu ghẹ truyền thống.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/phuquoc_lang_chai_co_ham_ninh_cau_go.webp', 'Cầu gỗ làng chài cổ Hàm Ninh đón bình minh rực rỡ trên biển Phú Quốc', 'Làng chài Hàm Ninh hình thành từ thế kỷ XIX khi những lưu dân đầu tiên đến khai hoang lập ấp dưới chân núi Hàm Ninh. Cây cầu gỗ mộc mạc vươn dài hàng trăm mét ra biển là tọa độ ngắm bình minh trên biển đẹp nhất Phú Quốc. Nơi đây lưu giữ nguyên vẹn nếp sống ngư dân chân chất cùng nghề lặn bắt ngọc trai và câu ghẹ truyền thống.', '7. Làng Chài Cổ Hàm Ninh — Cầu Gỗ Đón Bình Minh & Trầm Tích Ngư Phủ Trăm Năm', 'Ngôi làng chài cổ xưa nhất đảo ngọc nằm nép mình dưới chân dãy núi Hàm Ninh. Cầu gỗ rêu phong vươn dài ra biển trong sớm mai rực rỡ, những nếp nhà bè mộc mạc và ghe thuyền câu mực vẽ nên bức tranh bình yên đậm đà hồn biển đảo.')">📸 Cầu gỗ đón bình minh rực rỡ</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/phuquoc_lang_chai_ham_ninh.webp', 'Làng chài Hàm Ninh và nhịp sống ngư dân biển đảo Phú Quốc', 'Làng chài Hàm Ninh nổi tiếng với nghề đánh bắt ghẹ lưới. Ghẹ Hàm Ninh tuy không quá to nhưng thịt chắc nịch, ngọt thơm đậm đà, hấp bia hoặc chấm muối tiêu chanh trở thành món ẩm thực trứ danh của xứ đảo.', '7. Làng Chài Hàm Ninh — Thủ Phủ Ghẹ Tươi & Nhịp Sống Biển Đảo', 'Nơi du khách thưởng thức đặc sản ghẹ Hàm Ninh chắc thịt ngọt lịm vừa kéo lưới từ biển lên, cùng dạo bước trên cầu cảng dài ngắm vầng mặt trời đỏ rực nhô lên từ chân trời biển Đông.')">📸 Thủ phủ ghẹ tươi & Cầu cảng</button>
+                        </div>
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_vuon_quoc_gia_suoi_tranh.webp" alt="Suối Tranh rừng nguyên sinh Vườn Quốc gia Phú Quốc">
-                            <span class="spot-card-tag">Sinh thái · UNESCO</span>
+                            <img src="images/phuquoc_lang_chai_co_ham_ninh_cau_go.webp" alt="Làng chài cổ Hàm Ninh cầu gỗ đón bình minh Phú Quốc" loading="lazy">
+                            <span class="spot-card-tag">Làng chài cổ thế kỷ XIX</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">7. Vườn Quốc Gia Phú Quốc & Suối Tranh</h3>
-                            <p class="spot-card-desc">Trekking dưới tán rừng nguyên sinh xanh mướt ngút ngàn, đắm mình trong làn nước suối mát lạnh và lắng nghe tiếng chim rừng ríu rít chuyền cành.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <h3 class="spot-card-title">7. Làng Chài Cổ Hàm Ninh — Cầu Gỗ Đón Bình Minh & Trầm Tích Ngư Phủ Trăm Năm</h3>
+                            <p class="spot-card-desc">Ngôi làng chài cổ xưa nhất đảo ngọc nằm nép mình dưới chân dãy núi Hàm Ninh. Cầu gỗ rêu phong vươn dài ra biển trong sớm mai rực rỡ, những nếp nhà bè mộc mạc và ghe thuyền câu mực vẽ nên bức tranh bình yên đậm đà hồn biển đảo.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & lịch sử làng chài</div>
                         </div>
                     </div>
 
-                    <!-- Spot 8: Dinh Cậu & Dinh Bà Thủy Long -->
-                    <div class="spot-card" data-legend="Dinh Cậu tọa lạc trên mỏm đá tự nhiên có hình thù kỳ thú vươn mình ra cửa biển sông Dương Đông từ thế kỷ XVII. Ngôi miếu cổ kính rêu phong dưới gốc cây sộp cổ thụ đại thụ, thờ Long Vương Thánh Mẫu và hai Cậu (Cậu Tài, Cậu Quý) – vị thần bảo hộ ngư dân vượt qua phong ba bão táp mỗi chuyến xuất hành khơi xa.">
+                    <!-- Spot 8: Vườn Quốc Gia & Suối Tranh (single-col) -->
+                    <div class="spot-card single-col" data-legend="Vườn Quốc gia Phú Quốc chiếm hơn một nửa diện tích đảo (trên 31.000 ha), được UNESCO công nhận là Khu Dự trữ Sinh quyển Thế giới năm 2006. Khu rừng nhiệt đới nguyên sinh sở hữu hàng ngàn loài động thực vật quý hiếm, cùng dòng Suối Tranh thơ mộng chảy qua các ghềnh đá hoa cương trắng xóa giữa tán rừng già.">
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_dinh_cau_hoang_hon.webp" alt="Dinh Cậu Phú Quốc trên mỏm đá lúc hoàng hôn">
-                            <span class="spot-card-tag">Tâm linh · Biểu tượng đảo</span>
+                            <img src="images/phuquoc_vuon_quoc_gia_suoi_tranh.webp" alt="Suối Tranh và Vườn Quốc Gia Phú Quốc rừng nguyên sinh" loading="lazy">
+                            <span class="spot-card-tag">UNESCO Sinh quyển</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">8. Dinh Cậu & Dinh Bà (Dương Đông)</h3>
-                            <p class="spot-card-desc">Biểu tượng tâm linh linh thiêng trên mỏm đá sóng vỗ ngàn năm, nơi ngắm ráng chiều hoàng hôn rực rỡ và cầu bình an, thuận buồm xuôi gió.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <h3 class="spot-card-title">8. Vườn Quốc Gia & Suối Tranh</h3>
+                            <p class="spot-card-desc">Lá phổi xanh nguyên sinh của đảo ngọc với hơn 31.000 ha rừng già nhiệt đới, dòng thác suối Tranh trong vắt len lỏi qua ghềnh đá hoa cương.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem hệ sinh thái nguyên sinh</div>
                         </div>
                     </div>
 
-                    <!-- Spot 9: Di tích Trại giam Tù binh Phú Quốc -->
-                    <div class="spot-card" data-legend="Trại giam Tù binh Chiến tranh Phú Quốc (Nhà tù Cây Dừa) được Thủ tướng Chính phủ xếp hạng Di tích quốc gia đặc biệt năm 2014 theo Quyết định số 2408/QĐ-TTg. Trong chiến tranh, nơi đây giam giữ hơn 40.000 chiến sĩ cách mạng với các hình phạt tàn khốc như chuồng cọp kẽm gai, đóng đinh, chôn sống... minh chứng cho ý chí kiên trung bất khuất của dân tộc.">
+                    <!-- Spot 9: Nhà Tù Phú Quốc (single-col) -->
+                    <div class="spot-card single-col" data-legend="Trại giam Tù binh Chiến tranh Phú Quốc (Nhà lao Cây Dừa) là Di tích Lịch sử Quốc gia Đặc biệt. Nơi đây từng giam giữ hơn 40.000 chiến sĩ cách mạng với các hình thức tra tấn khốc liệt như chuồng cọp kẽm gai Catso, đục răng, đóng đinh... nhưng tinh thần quả cảm, kiên trung của các chiến sĩ vẫn sáng mãi.">
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_nha_tu_phu_quoc.webp" alt="Di tích quốc gia đặc biệt Nhà tù Phú Quốc">
-                            <span class="spot-card-tag">Lịch sử · Di tích QG Đặc biệt</span>
+                            <img src="images/phuquoc_nha_tu_phu_quoc.webp" alt="Di tích Lịch sử Nhà tù Phú Quốc chuồng cọp kẽm gai" loading="lazy">
+                            <span class="spot-card-tag">Di tích Quốc gia Đặc biệt</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">9. Di Tích Lịch Sử Nhà Tù Phú Quốc</h3>
-                            <p class="spot-card-desc">Nơi ghi dấu bản anh hùng ca bất tử của các chiến sĩ cách mạng kiên cường, địa chỉ đỏ giáo dục truyền thống yêu nước sâu sắc cho các thế hệ.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <h3 class="spot-card-title">9. Di Tích Nhà Tù Phú Quốc</h3>
+                            <p class="spot-card-desc">Địa chỉ đỏ lịch sử thiêng liêng minh chứng cho ý chí kiên cường, bất khuất của các chiến sĩ cách mạng kiên trung vì độc lập dân tộc.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để xem tư liệu lịch sử hào hùng</div>
                         </div>
                     </div>
 
-                    <!-- Spot 10: Nhà thùng Nước mắm & Vườn Tiêu -->
-                    <div class="spot-card" data-legend="Nghề làm nước mắm truyền thống Phú Quốc được Bộ Văn hóa, Thể thao và Du lịch ghi danh là Di sản văn hóa phi vật thể quốc gia năm 2021 và là sản phẩm đầu tiên của Việt Nam được EU bảo hộ chỉ dẫn địa lý. Những thùng gỗ bời lời khổng lồ ủ cá cơm than tươi ròng rã 12–15 tháng cho ra giọt nước mắm nhĩ màu cánh gián đậm đà 40–43 độ đạm tự nhiên.">
+                    <!-- Spot 10: Nhà Thùng Nước Mắm & Vườn Tiêu (Featured Di Sản double-col) -->
+                    <div class="spot-card double-col has-gallery" data-legend="Nghề chế biến Nước mắm truyền thống Phú Quốc được Bộ Văn hóa, Thể thao và Du lịch ghi danh là Di sản văn hóa phi vật thể Quốc gia năm 2021. Cá cơm than tươi đánh bắt từ vùng biển Kiên Giang được ủ chượp theo tỉ lệ vàng 3 cá 1 muối trong những thùng gỗ bời lời, vẹm, dền suốt 12 đến 15 tháng để cho ra giọt nước mắm nhĩ màu cánh gián hổ phách thượng hạng 40-43 độ đạm.">
+                        <div class="card-photo-nav">
+                            <button type="button" class="photo-btn active" onclick="switchCardPhoto(this, 'images/phuquoc_nha_thung_nuoc_mam_truyen_thong.webp', 'Nhà thùng ủ nước mắm truyền thống Phú Quốc thùng gỗ bời lời khổng lồ di sản quốc gia', 'Nghề chế biến Nước mắm truyền thống Phú Quốc được Bộ Văn hóa, Thể thao và Du lịch ghi danh là Di sản văn hóa phi vật thể Quốc gia năm 2021. Cá cơm than tươi đánh bắt từ vùng biển Kiên Giang được ủ chượp theo tỉ lệ vàng 3 cá 1 muối trong những thùng gỗ bời lời, vẹm, dền suốt 12 đến 15 tháng để cho ra giọt nước mắm nhĩ màu cánh gián hổ phách thượng hạng 40-43 độ đạm.', '10. Nhà Thùng Nước Mắm Truyền Thống — Di Sản Văn Hóa Phi Vật Thể Quốc Gia', 'Nghề làm nước mắm truyền thống trăm năm nổi tiếng toàn cầu, sử dụng cá cơm than tươi ủ chượp trong thùng gỗ bời lời khổng lồ niềng dây song mây, chiết xuất ra từng giọt mắm nhĩ màu cánh gián hổ phách đậm đà 40-43 độ đạm.')">📸 Nhà thùng nước mắm truyền thống</button>
+                            <button type="button" class="photo-btn" onclick="switchCardPhoto(this, 'images/phuquoc_nha_thung_nuoc_mam_vuon_tieu.webp', 'Vườn tiêu Suối Đá xanh mướt đặc sản đảo Ngọc Phú Quốc', 'Hồ tiêu Phú Quốc nổi tiếng với vị cay nồng đậm đà và hạt mẩy chắc. Những khu vườn tiêu Suối Đá, Khu Tượng thẳng tắp như mê cung xanh, nơi du khách được tìm hiểu kỹ thuật canh tác truyền thống và mua sắm tiêu chín, tiêu sọ, muối hồng tiêu thượng hạng.', '10. Vườn Tiêu Suối Đá — Vương Quốc Hồ Tiêu Đảo Ngọc', 'Những nọc tiêu thẳng tắp xanh mướt trĩu hạt tiêu chín đỏ thơm cay nồng nàn đặc trưng của đất đỏ Phú Quốc, thức quà trứ danh kết hợp cùng muối tiêu dưỡng sinh và nước mắm cổ truyền.')">📸 Vườn tiêu Suối Đá xanh ngát</button>
+                        </div>
                         <div class="spot-card-img">
-                            <img src="images/phuquoc_nha_thung_nuoc_mam_vuon_tieu.webp" alt="Nhà thùng nước mắm truyền thống và vườn tiêu Phú Quốc">
-                            <span class="spot-card-tag">Di sản Quốc gia · Làng nghề</span>
+                            <img src="images/phuquoc_nha_thung_nuoc_mam_truyen_thong.webp" alt="Nhà thùng nước mắm truyền thống thùng gỗ bời lời Phú Quốc" loading="lazy">
+                            <span class="spot-card-tag">Di sản Quốc gia & OCOP 5 sao</span>
                         </div>
                         <div class="spot-card-body">
-                            <h3 class="spot-card-title">10. Nhà Thùng Nước Mắm & Vườn Tiêu Suối Đá</h3>
-                            <p class="spot-card-desc">Mục sở thị quy trình ủ chượp nước mắm nhĩ trứ danh 200 năm tuổi và dạo bước giữa những luống hồ tiêu trĩu hạt cay nồng nức tiếng.</p>
-                            <div class="spot-card-hint">✨ Nhấp chuột để xem ảnh lớn & truyền thuyết</div>
+                            <h3 class="spot-card-title">10. Nhà Thùng Nước Mắm Truyền Thống — Di Sản Văn Hóa Phi Vật Thể Quốc Gia</h3>
+                            <p class="spot-card-desc">Nghề làm nước mắm truyền thống trăm năm nổi tiếng toàn cầu, sử dụng cá cơm than tươi ủ chượp trong thùng gỗ bời lời khổng lồ niềng dây song mây, chiết xuất ra từng giọt mắm nhĩ màu cánh gián hổ phách đậm đà 40-43 độ đạm.</p>
+                            <div class="spot-card-hint">✨ Nhấp chuột để tìm hiểu quy trình ủ chượp 12 tháng</div>
                         </div>
                     </div>
 
@@ -1429,6 +1510,41 @@
                 });
             });
         });
+    
+        function switchCardPhoto(btn, imgSrc, imgAlt, legendText, cardTitle, cardDesc) {
+            if (window.event) window.event.stopPropagation();
+            const card = btn.closest('.spot-card');
+            if (!card) return;
+            const img = card.querySelector('.spot-card-img img');
+            const titleEl = card.querySelector('.spot-card-title');
+            const descEl = card.querySelector('.spot-card-desc');
+            
+            if (img) {
+                img.style.opacity = '0.3';
+                if (titleEl && cardTitle) titleEl.style.opacity = '0.4';
+                if (descEl && cardDesc) descEl.style.opacity = '0.4';
+                setTimeout(() => {
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.opacity = '1';
+                    if (titleEl && cardTitle) {
+                        titleEl.textContent = cardTitle;
+                        titleEl.style.opacity = '1';
+                    }
+                    if (descEl && cardDesc) {
+                        descEl.textContent = cardDesc;
+                        descEl.style.opacity = '1';
+                    }
+                    if (legendText) {
+                        card.setAttribute('data-legend', legendText);
+                    }
+                }, 150);
+            }
+            const btns = card.querySelectorAll('.photo-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
     </script>
 </body>
 </html>
