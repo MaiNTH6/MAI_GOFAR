@@ -214,7 +214,20 @@ const GOFAR_DATA = {
             size: 'normal',
             modalId: null
         },
-        {
+                {
+            id: 'dest-thung-ui',
+            title: 'Thung Ui',
+            category: 'heritage',
+            tags: ['👑 Đàn Kính Thiên 968', 'Cố Đô'],
+            desc: 'Thung lũng karst 270ha khép kín, Đàn Tế Trời Đinh Tiên Hoàng năm 968 lập quốc Đại Cồ Việt & Hồ Ngọc Bích bồng lai.',
+            img: 'images/thungui_hero_toan_canh.webp',
+            rating: 4.9,
+            stars: '★★★★★',
+            reviews: 120,
+            size: 'normal',
+            modalId: 'thung-ui'
+        },
+{
             id: 'dest-ninh-binh',
             title: 'Ninh Bình',
             category: 'heritage',
