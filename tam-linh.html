@@ -1260,6 +1260,508 @@
             .nav-inner { padding: 0 1rem; }
             .nav-link span { display: none; }
         }
+    
+        /* ======================================================== */
+        /* CHÁNH ĐIỆN ẢO & ĐI CHÙA ONLINE EMBEDDED STYLES           */
+        /* ======================================================== */
+        .virtual-altar-stage {
+            position: relative;
+            background: radial-gradient(circle at 50% 25%, #15344f 0%, #0d1e2e 70%, #08111a 100%);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem 1.5rem;
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .altar-backdrop {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.18;
+            filter: blur(5px);
+            transition: background-image 0.8s ease, opacity 0.8s ease;
+            pointer-events: none;
+        }
+
+        .altar-temple-bar {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.8rem;
+        }
+        .altar-temple-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .altar-temple-btn:hover {
+            border-color: rgba(251, 191, 36, 0.5);
+            color: #fff;
+        }
+        .altar-temple-btn.active {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(245, 158, 11, 0.2));
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            font-weight: 600;
+            box-shadow: 0 0 12px rgba(251, 191, 36, 0.25);
+        }
+
+        .buddha-statue-wrap {
+            position: relative;
+            z-index: 5;
+            width: 240px;
+            height: 240px;
+            margin: 0 auto 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s ease;
+        }
+        .buddha-halo-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.35) 0%, rgba(245, 158, 11, 0.12) 45%, transparent 70%);
+            animation: haloBreathe 5s infinite alternate ease-in-out;
+            pointer-events: none;
+            z-index: 1;
+        }
+        @keyframes haloBreathe {
+            0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+        .buddha-statue-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 3px solid rgba(251, 191, 36, 0.7);
+            box-shadow: 0 0 35px rgba(251, 191, 36, 0.45);
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .altar-title {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--accent-gold);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            margin-bottom: 0.2rem;
+            position: relative;
+            z-index: 5;
+        }
+        .altar-mantra {
+            font-family: var(--font-accent);
+            font-size: 1.3rem;
+            color: var(--accent-lotus);
+            letter-spacing: 0.05em;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 5;
+        }
+
+        .merit-counter-ribbon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            background: rgba(13, 30, 46, 0.85);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: var(--radius-full);
+            padding: 0.4rem 1.4rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .merit-counter-item {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .merit-counter-item strong {
+            color: var(--accent-gold);
+            font-family: var(--font-main);
+            font-size: 1.05rem;
+        }
+
+        /* PHYSICAL ALTAR TABLE */
+        .physical-altar-table {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            max-width: 780px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(180deg, rgba(28, 15, 8, 0.96) 0%, rgba(15, 8, 4, 0.98) 100%);
+            border-top: 3px solid #d97706;
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6), inset 0 2px 10px rgba(251, 191, 36, 0.15);
+            gap: 1rem;
+        }
+
+        .altar-candle-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s ease;
+        }
+        .altar-candle-unit:hover { transform: scale(1.05); }
+        .candle-flame {
+            width: 14px;
+            height: 24px;
+            background: radial-gradient(ellipse at bottom, #fff 0%, #fbbf24 45%, #ef4444 85%);
+            border-radius: 50% 50% 20% 20% / 70% 70% 30% 30%;
+            box-shadow: 0 0 20px #fbbf24, 0 0 35px #f59e0b;
+            animation: flameFlicker 2s infinite alternate ease-in-out;
+            margin-bottom: 2px;
+        }
+        @keyframes flameFlicker {
+            0% { transform: scale(0.95) rotate(-1deg); opacity: 0.9; }
+            50% { transform: scale(1.05) rotate(1.5deg); opacity: 1; }
+            100% { transform: scale(1.0) rotate(-1deg); opacity: 0.95; }
+        }
+        .candle-wax-body {
+            width: 18px;
+            height: 48px;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            border-radius: 3px;
+        }
+        .candle-brass-base {
+            width: 38px;
+            height: 14px;
+            background: linear-gradient(90deg, #b45309, #d97706, #92400e);
+            border-radius: 4px;
+            margin-top: 2px;
+        }
+        .candle-label {
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            margin-top: 4px;
+        }
+
+        .altar-censer-unit {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .altar-smoke-canvas {
+            position: absolute;
+            bottom: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .altar-sticks-cluster {
+            position: relative;
+            width: 60px;
+            height: 70px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-bottom: -4px;
+            z-index: 4;
+        }
+        .altar-stick {
+            position: relative;
+            width: 3px;
+            background: linear-gradient(to top, #78350f 0%, #b45309 85%, #dc2626 95%);
+            border-radius: 2px;
+            transition: height 0.5s ease;
+        }
+        .altar-stick-1 { height: 60px; transform: rotate(-8deg); margin-right: 4px; }
+        .altar-stick-2 { height: 68px; transform: rotate(0deg); }
+        .altar-stick-3 { height: 60px; transform: rotate(8deg); margin-left: 4px; }
+        .altar-stick-glow {
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 8px #f59e0b, 0 0 14px #ef4444;
+            animation: tipGlow 1.5s infinite alternate ease-in-out;
+        }
+        @keyframes tipGlow {
+            0% { transform: translateX(-50%) scale(0.8); opacity: 0.8; }
+            100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+        }
+
+        .altar-censer-pot {
+            width: 85px;
+            height: 48px;
+            background: radial-gradient(circle at 50% 30%, #d97706 0%, #78350f 70%, #451a03 100%);
+            border-radius: 6px 6px 30px 30px;
+            border: 2px solid #b45309;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6), inset 0 3px 6px rgba(251, 191, 36, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 6;
+            color: #fbbf24;
+            font-size: 1rem;
+        }
+
+        .altar-offering-dish {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .altar-offering-dish:hover { transform: scale(1.05); }
+        .offering-icon-large { font-size: 2.2rem; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5)); }
+        .offering-icon-label { font-size: 0.72rem; color: var(--accent-gold); margin-top: 3px; }
+
+        .altar-action-bar {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .btn-altar-action {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.1) 100%);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 0.55rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-altar-action:hover {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.35);
+        }
+
+        /* FLYING BLESSINGS & RIPPLE */
+        .blessing-fly-text {
+            position: fixed;
+            color: #fbbf24;
+            font-family: var(--font-accent);
+            font-weight: 700;
+            font-size: 1.4rem;
+            pointer-events: none;
+            z-index: 9999;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 12px rgba(251, 191, 36, 0.6);
+            animation: flyBlessing 1.8s forwards ease-out;
+        }
+        @keyframes flyBlessing {
+            0% { opacity: 0; transform: translateY(0) scale(0.7); }
+            20% { opacity: 1; transform: translateY(-20px) scale(1.1); }
+            80% { opacity: 0.9; transform: translateY(-70px) scale(1.0); }
+            100% { opacity: 0; transform: translateY(-110px) scale(0.9); }
+        }
+
+        .bell-ripple-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(251, 191, 36, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: soundRippleRing 2.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+            z-index: 10;
+        }
+        @keyframes soundRippleRing {
+            0% { width: 30px; height: 30px; opacity: 1; }
+            100% { width: 450px; height: 450px; opacity: 0; border-width: 0.5px; }
+        }
+
+        /* BPM SELECTOR BUTTONS */
+        .bpm-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-bpm {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-bpm.active {
+            background: var(--accent-gold);
+            color: #000;
+            font-weight: 700;
+            border-color: var(--accent-gold);
+        }
+
+        /* TIMER PRESETS & PROGRESS */
+        .timer-presets-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .btn-timer-preset {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.9rem;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-timer-preset.active {
+            background: var(--accent-gold);
+            color: #000;
+            font-weight: 700;
+            border-color: var(--accent-gold);
+        }
+
+        /* SOUNDSCAPE MIXER STYLES */
+        .soundscape-mixer-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+        .mixer-track {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 0.9rem 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-align: left;
+        }
+        .track-icon {
+            font-size: 1.6rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .track-title { font-weight: 600; color: #fff; font-size: 0.92rem; }
+        .track-sub { font-size: 0.76rem; color: var(--text-muted); }
+        .track-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .track-slider {
+            width: 100px;
+            accent-color: var(--accent-gold);
+        }
+        .btn-track-toggle {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-track-toggle.active {
+            background: var(--accent-teal);
+            color: #000;
+            font-weight: 700;
+            border-color: var(--accent-teal);
+        }
+
+        /* 108 MALA BEADS STYLES */
+        .mala-container-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .mala-ring {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 3px dashed rgba(251, 191, 36, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.3s cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+        .mala-ring-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .mala-num {
+            font-family: var(--font-main);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
     </style>
 </head>
 <body>
@@ -1277,7 +1779,7 @@
                     <span>Trang Chủ</span>
                 </a>
                 <a href="#goc-an-nhien" class="nav-link active">
-                    <span>🪷 Góc An Nhiên</span>
+                    <span>🪷 Đi Chùa Online & Góc An Nhiên</span>
                 </a>
                 <a href="#van-khan" class="nav-link">
                     <span>📜 Văn Khấn</span>
@@ -1306,7 +1808,7 @@
                 Trút bỏ những ồn ào vội vã của đời thường để hòa mình vào vẻ đẹp trầm mặc nghìn năm của non sông đất Việt. Lắng nghe tiếng mõ nhịp nhàng, tiếng chuông đại hồng chung ngân vang, thắp nén tâm hương và gửi gắm tâm nguyện bình an đến người thân yêu.
             </p>
             <div class="hero-nav-pills">
-                <a href="#goc-an-nhien" class="hero-pill">🧘 Trải Nghiệm Chánh Niệm</a>
+                <a href="#goc-an-nhien" class="hero-pill">🪷 Đi Chùa Online & Chánh Niệm</a>
                 <a href="#van-khan" class="hero-pill">📜 Cẩm Nang Văn Khấn Chuẩn</a>
                 <a href="#danh-lam-co-tu" class="hero-pill">🏯 Khám Phá Cổ Tự 3 Miền</a>
                 <a href="#nghi-thuc" class="hero-pill">🏮 Quy Chuẩn Đi Chùa</a>
@@ -1315,42 +1817,171 @@
     </header>
 
     <!-- ================================================= -->
-    <!-- PHẦN 1: GÓC AN NHIÊN (TƯƠNG TÁC TÂM LINH THƯ GIÃN) -->
+    <!-- PHẦN 1: ĐI CHÙA ONLINE & GÓC AN NHIÊN CHÁNH NIỆM -->
     <!-- ================================================= -->
     <section class="zen-sanctuary" id="goc-an-nhien">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">🧘 CHÁNH NIỆM & TĨNH TÂM</span>
-                <h2 class="section-title">Góc An Nhiên — Không Gian Thư Giãn Tâm Hồn</h2>
+                <span class="section-tag">🪷 ĐI CHÙA ONLINE & CHÁNH NIỆM TẠI GIA</span>
+                <h2 class="section-title">Không Gian Chánh Điện Ảo & Góc An Nhiên</h2>
                 <p class="section-subtitle">
-                    Một điểm chạm tĩnh lặng giữa không gian số, giúp bạn buông bỏ âu lo, nuôi dưỡng lòng trắc ẩn và cảm nhận nguồn năng lượng an lành từ bên trong.
+                    Chiêm bái các ngôi đại tự linh thiêng của đất Việt, đảnh lễ Tam Bảo, dâng nén tâm hương và trải nghiệm các pháp cụ tu tập chánh niệm giúp thân tâm buông thư, nuôi dưỡng phúc lành.
                 </p>
-                <div style="margin-top: 1.2rem; background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 50px; display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.45rem 1.2rem; font-size: 0.88rem; color: var(--accent-gold);">
+                <div style="margin-top: 1rem; background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 50px; display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.45rem 1.2rem; font-size: 0.88rem; color: var(--accent-gold);">
                     <span>💡 <strong>Điểm chùa mẫu:</strong> Bạn có thể xem lộ trình hành lễ tuần tự từng ban, cách thắp hương & văn khấn chi tiết tại trang riêng của từng ngôi chùa — ví dụ: <a href="destination-bai-dinh.html" style="color: #fff; text-decoration: underline; font-weight: 700;">Chùa Bái Đính</a></span>
                 </div>
             </div>
 
-            <div class="sanctuary-box">
-                <!-- TABS -->
-                <div class="zen-tabs">
-                    <button class="zen-tab-btn active" onclick="switchZenTab('tab-mo')">
-                        <span>🐟</span> Gõ Mõ Chánh Niệm
+            <!-- KHỐI 1: CHÁNH ĐIỆN ẢO TÔN NGHIÊM (VIRTUAL SANCTUARY) -->
+            <div class="virtual-altar-stage" id="virtualAltarStage">
+                <!-- NỀN DANH LAM CỔ TỰ MỜ ẢO -->
+                <div class="altar-backdrop" id="altarBackdrop" style="background-image: url('images/bai_dinh_buddha_1783494499108.webp');"></div>
+
+                <!-- BỘ CHỌN ĐỔI BỐI CẢNH 5 CỔ TỰ -->
+                <div class="altar-temple-bar">
+                    <span style="font-size: 0.8rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; margin-right: 0.2rem;">
+                        ⛩️ Viếng Cổ Tự:
+                    </span>
+                    <button class="altar-temple-btn active" onclick="switchTempleView('baidinh', this)">
+                        🪷 Chùa Bái Đính (Ninh Bình)
                     </button>
-                    <button class="zen-tab-btn" onclick="switchZenTab('tab-huong')">
-                        <span>🕯️</span> Thắp Nén Tâm Hương
+                    <button class="altar-temple-btn" onclick="switchTempleView('thienmu', this)">
+                        🔔 Chùa Thiên Mụ (Huế)
                     </button>
-                    <button class="zen-tab-btn" onclick="switchZenTab('tab-chuong')">
-                        <span>🔔</span> Gõ Đại Hồng Chung
+                    <button class="altar-temple-btn" onclick="switchTempleView('linhung', this)">
+                        🌊 Chùa Linh Ứng (Đà Nẵng)
                     </button>
-                    <button class="zen-tab-btn" onclick="switchZenTab('tab-tree')">
-                        <span>🌳</span> Cây Ước Nguyện Cội Bồ Đề
+                    <button class="altar-temple-btn" onclick="switchTempleView('truclam', this)">
+                        🌲 Trúc Lâm (Đà Lạt)
                     </button>
-                    <button class="zen-tab-btn" onclick="switchZenTab('tab-que')">
-                        <span>📜</span> Thẻ Quẻ An Nhiên
+                    <button class="altar-temple-btn" onclick="switchTempleView('bichdong', this)">
+                        ⛰️ Chùa Bích Động (Ninh Bình)
                     </button>
                 </div>
 
-                <!-- 1. GÕ MÕ -->
+                <!-- TƯỢNG PHẬT & HÀO QUANG -->
+                <div class="buddha-statue-wrap" id="buddhaStatueWrap">
+                    <div class="buddha-halo-pulse"></div>
+                    <img src="images/bai_dinh_buddha_1783494499108.webp" alt="Đức Phật Thích Ca Mâu Ni" class="buddha-statue-img" id="altarBuddhaImg">
+                </div>
+                <h3 class="altar-title" id="altarTempleTitle">Chánh Điện Đức Phật Thích Ca Mâu Ni</h3>
+                <div class="altar-mantra" id="altarTempleMantra">"Nam Mô Bản Sư Thích Ca Mâu Ni Phật"</div>
+
+                <!-- THỐNG KÊ CÔNG ĐỨC TU TẬP TRỰC TIẾP -->
+                <div class="merit-counter-ribbon">
+                    <div class="merit-counter-item">
+                        <span>🐟 Gõ Mõ:</span>
+                        <strong id="liveMoCount">0</strong>
+                    </div>
+                    <div class="merit-counter-item">
+                        <span>🙏 Đảnh Lễ:</span>
+                        <strong id="liveBowCount">0</strong>
+                    </div>
+                    <div class="merit-counter-item">
+                        <span>📿 Niệm Hạt:</span>
+                        <strong id="liveMalaCount">0</strong>
+                    </div>
+                    <div class="merit-counter-item">
+                        <span>✨ Công Đức:</span>
+                        <strong id="liveMeritCount">0</strong>
+                    </div>
+                </div>
+
+                <!-- BÀN THỜ TAM BẢO (PHYSICAL ALTAR TABLE) -->
+                <div class="physical-altar-table">
+                    <!-- CHÂN NẾN TẢ (TRÍ TUỆ) -->
+                    <div class="altar-candle-unit" onclick="igniteAltarCandle(this)" title="Chạm để thắp sáng ngọn nến trí tuệ">
+                        <div class="candle-flame"></div>
+                        <div class="candle-wax-body"></div>
+                        <div class="candle-brass-base"></div>
+                        <div class="candle-label">Trí Tuệ</div>
+                    </div>
+
+                    <!-- DÂNG HOA SEN TƯƠI -->
+                    <div class="altar-offering-dish" onclick="makeFlowerOffering()" title="Chạm để dâng hoa sen thanh tịnh">
+                        <div class="offering-icon-large">🪷</div>
+                        <div class="offering-icon-label">Hoa Sen Tươi</div>
+                    </div>
+
+                    <!-- BÁT HƯƠNG ĐỒNG VỚI KHÓI CANVAS & NHANG TÀN DẦN -->
+                    <div class="altar-censer-unit" onclick="switchZenTab('tab-huong')" title="Chạm để chuyển sang thắp hương & tĩnh tọa">
+                        <canvas id="altarSmokeCanvas" class="altar-smoke-canvas" width="200" height="200"></canvas>
+                        <div class="altar-sticks-cluster" id="altarSticksCluster">
+                            <div class="altar-stick altar-stick-1" id="altarStick1"><div class="altar-stick-glow"></div></div>
+                            <div class="altar-stick altar-stick-2" id="altarStick2"><div class="altar-stick-glow"></div></div>
+                            <div class="altar-stick altar-stick-3" id="altarStick3"><div class="altar-stick-glow"></div></div>
+                        </div>
+                        <div class="altar-censer-pot">
+                            <span>卍</span>
+                        </div>
+                    </div>
+
+                    <!-- DÂNG MÂM NGŨ QUẢ -->
+                    <div class="altar-offering-dish" onclick="makeFruitOffering()" title="Chạm để dâng mâm quả phúc lành">
+                        <div class="offering-icon-large">🍇</div>
+                        <div class="offering-icon-label">Mâm Ngũ QuẢ</div>
+                    </div>
+
+                    <!-- CHÂN NẾN HỮU (TỪ BI) -->
+                    <div class="altar-candle-unit" onclick="igniteAltarCandle(this)" title="Chạm để thắp sáng ngọn nến từ bi">
+                        <div class="candle-flame"></div>
+                        <div class="candle-wax-body"></div>
+                        <div class="candle-brass-base"></div>
+                        <div class="candle-label">Từ Bi</div>
+                    </div>
+                </div>
+
+                <!-- THANH TÁC VỤ LỄ BÁI NHANH -->
+                <div class="altar-action-bar">
+                    <button class="btn-altar-action" onclick="performAltarBow()">
+                        <span>🙏</span> Đảnh Lễ Tam Bảo (+1 Lạy)
+                    </button>
+                    <button class="btn-altar-action" onclick="switchZenTab('tab-mo')">
+                        <span>🐟</span> Gõ Mõ Mộc Ngư
+                    </button>
+                    <button class="btn-altar-action" onclick="switchZenTab('tab-huong')">
+                        <span>🕯️</span> Thắp Hương Tĩnh Tọa
+                    </button>
+                    <button class="btn-altar-action" onclick="switchZenTab('tab-chuong')">
+                        <span>🔔</span> Thỉnh Chuông Solfeggio
+                    </button>
+                    <button class="btn-altar-action" onclick="switchZenTab('tab-mala')">
+                        <span>📿</span> Tràng Hạt 108
+                    </button>
+                    <button class="btn-altar-action" onclick="switchZenTab('tab-sound')">
+                        <span>🌧️</span> Âm Thanh Không Gian
+                    </button>
+                </div>
+            </div>
+
+            <!-- KHỐI 2: 7 PHÁP CỤ TU TẬP CHÁNH NIỆM (TABS TIỆN ÍCH) -->
+            <div class="sanctuary-box">
+                <!-- TABS HEADER -->
+                <div class="zen-tabs">
+                    <button class="zen-tab-btn active" id="tabBtn-mo" onclick="switchZenTab('tab-mo')">
+                        <span>🐟</span> Mộc Ngư (Gõ Mõ)
+                    </button>
+                    <button class="zen-tab-btn" id="tabBtn-huong" onclick="switchZenTab('tab-huong')">
+                        <span>🕯️</span> Thắp Hương & Tĩnh Tọa
+                    </button>
+                    <button class="zen-tab-btn" id="tabBtn-chuong" onclick="switchZenTab('tab-chuong')">
+                        <span>🔔</span> Chuông Solfeggio
+                    </button>
+                    <button class="zen-tab-btn" id="tabBtn-tree" onclick="switchZenTab('tab-tree')">
+                        <span>🌳</span> Cây Nguyện Ước
+                    </button>
+                    <button class="zen-tab-btn" id="tabBtn-que" onclick="switchZenTab('tab-que')">
+                        <span>📜</span> Thẻ Quẻ Chánh Niệm
+                    </button>
+                    <button class="zen-tab-btn" id="tabBtn-mala" onclick="switchZenTab('tab-mala')">
+                        <span>📿</span> Tràng Hạt 108
+                    </button>
+                    <button class="zen-tab-btn" id="tabBtn-sound" onclick="switchZenTab('tab-sound')">
+                        <span>🌧️</span> Âm Thanh Không Gian
+                    </button>
+                </div>
+
+                <!-- 1. GÕ MÕ (MỘC NGƯ SỐ) -->
                 <div class="zen-pane active" id="tab-mo">
                     <div class="mo-container">
                         <div class="mo-counter">
@@ -1360,7 +1991,7 @@
                             "Thở vào tâm tĩnh lặng, thở ra miệng mỉm cười."
                         </div>
 
-                        <div class="mo-visual" id="moVisual" onclick="strikeMo()">
+                        <div class="mo-visual" id="moVisual" onclick="strikeMoInteractive(event)">
                             <div class="mo-ripple"></div>
                             <!-- SVG Chiếc Mõ Gỗ Cổ Truyền chạm khắc cá hóa long -->
                             <svg class="mo-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1385,68 +2016,87 @@
                             </svg>
                         </div>
 
-                        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
-                            💡 Chạm trực tiếp vào chiếc mõ để phát ra tiếng vang mộc mạc và nuôi dưỡng sự chú tâm.
+                        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.2rem;">
+                            💡 Chạm trực tiếp vào chiếc mõ để phát ra tiếng vang mộc mạc và tích lũy công đức phúc lành.
                         </p>
 
-                        <div class="mo-controls">
-                            <button class="btn-zen" onclick="strikeMo()">
-                                <span>🔨</span> Gõ Mõ (+1 Bình An)
-                            </button>
-                            <button class="btn-zen-secondary" id="btnAutoMo" onclick="toggleAutoMo()">
-                                <span>⏱️</span> Tự Động Theo Nhịp Thở (3s)
-                            </button>
+                        <!-- AUTO LOOP BPM SELECTOR (60 / 80 / 108 BPM) -->
+                        <div class="bpm-row">
+                            <span style="font-size: 0.82rem; color: var(--text-secondary); margin-right: 0.4rem;">Chế độ tự động gõ:</span>
+                            <button class="btn-bpm active" id="bpmBtnOff" onclick="setMoLoopBpm(0, this)">Dừng</button>
+                            <button class="btn-bpm" id="bpmBtn60" onclick="setMoLoopBpm(60, this)">60 BPM (Tĩnh tâm)</button>
+                            <button class="btn-bpm" id="bpmBtn80" onclick="setMoLoopBpm(80, this)">80 BPM (Điều hòa)</button>
+                            <button class="btn-bpm" id="bpmBtn108" onclick="setMoLoopBpm(108, this)">108 BPM (Niệm Phật)</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. THẮP HƯƠNG -->
+                <!-- 2. THẮP HƯƠNG ẢO & TĨNH TỌA -->
                 <div class="zen-pane" id="tab-huong">
                     <div class="huong-container">
                         <div class="huong-status" id="huongStatus">
                             "Chắp tay búp sen, dâng một nén tâm hương thành kính..."
                         </div>
                         <div class="huong-timer" id="huongTimerDisplay">
-                            03:00
+                            05:00
+                        </div>
+
+                        <!-- PROGRESS BAR & PRESETS -->
+                        <div style="width: 100%; max-width: 320px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; margin: 0 auto 1.2rem; overflow: hidden;">
+                            <div id="huongProgressFill" style="width: 100%; height: 100%; background: linear-gradient(90deg, #fbbf24, #ef4444); border-radius: 999px; transition: width 1s linear;"></div>
+                        </div>
+
+                        <div class="timer-presets-row">
+                            <button class="btn-timer-preset" onclick="selectIncensePreset(3, this)">3 Phút</button>
+                            <button class="btn-timer-preset active" onclick="selectIncensePreset(5, this)">5 Phút</button>
+                            <button class="btn-timer-preset" onclick="selectIncensePreset(10, this)">10 Phút</button>
+                            <button class="btn-timer-preset" onclick="selectIncensePreset(15, this)">15 Phút</button>
                         </div>
 
                         <div class="burner-stage">
-                            <canvas class="smoke-canvas" id="smokeCanvas"></canvas>
+                            <canvas class="smoke-canvas" id="tabSmokeCanvas" width="200" height="200"></canvas>
                             <div class="incense-sticks">
-                                <div class="stick" id="stick1"></div>
-                                <div class="stick" id="stick2"></div>
-                                <div class="stick" id="stick3"></div>
+                                <div class="stick" id="tabStick1" style="height: 70px;"></div>
+                                <div class="stick" id="tabStick2" style="height: 80px;"></div>
+                                <div class="stick" id="tabStick3" style="height: 70px;"></div>
                             </div>
                             <div class="burner-base">
                                 <span>🪷</span>
                             </div>
                         </div>
 
-                        <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 500px; margin: 0 auto 1.5rem; line-height: 1.6;">
-                            Hương thơm của trầm hương kết nối đất trời. Hãy chọn thời gian tĩnh tâm và hít thở nhẹ nhàng theo làn khói thanh khiết.
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.6;">
+                            Hương thơm của trầm hương kết nối đất trời. Thân nhang sẽ tàn ngắn dần theo thời gian tĩnh tâm. Khi hết giờ, chuông Solfeggio 174Hz sẽ tự động vang lên để xả thiền an lạc.
                         </p>
 
                         <div class="mo-controls">
-                            <button class="btn-zen" id="btnLightIncense" onclick="lightIncense(180)">
-                                <span>🔥</span> Dâng Nén Tâm Hương (3 Phút)
+                            <button class="btn-zen" id="btnStartIncenseTimer" onclick="toggleIncenseTimer()">
+                                <span>▶️</span> Bắt Đầu Tĩnh Tọa
                             </button>
-                            <button class="btn-zen-secondary" onclick="lightIncense(60)">
-                                <span>⏳</span> 1 Phút Nhanh
-                            </button>
-                            <button class="btn-zen-secondary" onclick="lightIncense(300)">
-                                <span>⌛</span> 5 Phút Sâu
+                            <button class="btn-zen-secondary" onclick="resetIncenseTimer()">
+                                <span>🔄</span> Đặt Lại
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. GÕ CHUÔNG -->
+                <!-- 3. GÕ ĐẠI HỒNG CHUNG & CHUÔNG SOLFEGGIO 174HZ -->
                 <div class="zen-pane" id="tab-chuong">
-                    <div class="chuong-container">
-                        <div class="chuong-visual" id="chuongVisual" onclick="ringTempleBell()">
-                            <div class="bell-waves"></div>
-                            <!-- SVG Quả Chuông Đại Hồng Chung Cổ Kính -->
-                            <svg class="bell-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="chuong-container" style="position: relative;">
+                        <!-- MODE SWITCHER -->
+                        <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                            <button class="btn-bpm active" id="btnBellMode174" onclick="setBellModeType('solfeggio', this)">
+                                ✨ Chuông Tây Tạng (Solfeggio 174Hz)
+                            </button>
+                            <button class="btn-bpm" id="btnBellModeTemple" onclick="setBellModeType('temple', this)">
+                                ⛩️ Đại Hồng Chung Cổ Tự (36 Tấn)
+                            </button>
+                        </div>
+
+                        <div class="chuong-visual" id="chuongVisual" onclick="ringTempleBellWithWaves(event)">
+                            <div class="chuong-wave"></div>
+                            <!-- SVG Quả Chuông Đồng Bái Đính 36 Tấn Cổ Kính -->
+                            <svg class="chuong-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <!-- Quai chuông đôi rồng bồ lao -->
                                 <path d="M80 35C80 20 120 20 120 35C130 35 135 45 125 55L75 55C65 45 70 35 80 35Z" fill="#d97706" stroke="#fbbf24" stroke-width="2"/>
                                 <!-- Thân chuông tam cấp -->
@@ -1469,7 +2119,7 @@
                             </svg>
                         </div>
 
-                        <div class="chuong-verse">
+                        <div class="chuong-verse" id="bellVerseText">
                             "Nghe chuông phiền não tan mây khói,<br>
                             Ý lặng thân an miệng mỉm cười.<br>
                             Hơi thở nương về theo tiếng chuông,<br>
@@ -1477,8 +2127,8 @@
                         </div>
 
                         <div class="mo-controls">
-                            <button class="btn-zen" onclick="ringTempleBell()">
-                                <span>🔔</span> Thỉnh Đại Hồng Chung (Âm Vang 6 Giây)
+                            <button class="btn-zen" onclick="ringTempleBellWithWaves(event)">
+                                <span>🔔</span> Thỉnh Chuông Ngay (Sóng Âm Gợn Tỏa)
                             </button>
                         </div>
                     </div>
@@ -1496,107 +2146,156 @@
 
                         <div class="tree-form-box">
                             <h3>🎋 Gửi Gắm Tâm Nguyện Lên Cội Bồ Đề</h3>
-                            <p>Treo một dải lụa cát tường mang theo lời cầu an cho cha mẹ, gia đình và ước vọng thiện lành.</p>
+                            <p>Treo một dải lụa đỏ cát tường mang theo lời cầu an cho cha mẹ, gia đình và ước vọng thiện lành.</p>
 
-                            <form id="wishForm" onsubmit="submitWish(event)">
-                                <div class="form-group">
-                                    <label>Tên hoặc Pháp Danh của bạn (tùy chọn):</label>
-                                    <input type="text" id="wishAuthor" class="form-input" placeholder="Ví dụ: Diệu Tâm, An Nhiên, Người Lữ Khách...">
-                                </div>
-                                <div class="form-group">
-                                    <label>Chọn sắc màu dải lụa cầu an:</label>
-                                    <select id="wishColor" class="form-select">
-                                        <option value="red">🔴 Dải lụa đỏ — Cầu Bình An & May Mắn Gia Đạo</option>
-                                        <option value="gold">🟡 Dải lụa vàng — Cầu Trí Tuệ, Học Hành & Công Danh</option>
-                                        <option value="green">🟢 Dải lụa xanh — Cầu Sức Khỏe & Thọ Mạng Cha Mẹ</option>
-                                        <option value="purple">🟣 Dải lụa tím — Cầu Duyên Lành & Thân Tâm Thanh Tịnh</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Lời nguyện ước thành tâm:</label>
-                                    <textarea id="wishContent" class="form-textarea" required placeholder="Ghi lại lời ước nguyện từ sâu thẳm trái tim bạn..."></textarea>
-                                </div>
-                                <button type="submit" class="btn-zen" style="width: 100%;">
-                                    <span>🎋</span> Treo Dải Lụa Lên Cây Bồ Đề
-                                </button>
-                            </form>
-
-                            <div class="recent-wishes">
-                                <div class="recent-wishes-title">✨ Dải lụa nguyện ước vừa lưu lại:</div>
-                                <div class="wish-items-list" id="wishItemsList">
-                                    <!-- Dynamic list of recent wishes -->
-                                </div>
+                            <div class="form-group" style="margin-bottom: 0.8rem;">
+                                <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Pháp danh hoặc Họ tên:</label>
+                                <input type="text" id="wishAuthorInput" class="input-text" placeholder="Ví dụ: Diệu Tâm, Phúc Hạnh, An Nhiên...">
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 5. THẺ QUẺ AN NHIÊN -->
-                <div class="zen-pane" id="tab-que">
-                    <div class="que-container">
-                        <div class="tube-visual" id="tubeVisual" onclick="drawFortune()">
-                            <!-- SVG Ống Quẻ Tre Trúc Cổ -->
-                            <svg class="tube-svg" viewBox="0 0 160 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Các que quẻ thò lên -->
-                                <rect x="50" y="30" width="8" height="60" rx="3" fill="#fde68a" stroke="#b45309" stroke-width="1.5"/>
-                                <rect x="65" y="15" width="8" height="75" rx="3" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
-                                <rect x="80" y="25" width="8" height="65" rx="3" fill="#fde68a" stroke="#b45309" stroke-width="1.5"/>
-                                <rect x="95" y="35" width="8" height="55" rx="3" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
-                                <!-- Ống đựng bằng tre có đai đồng -->
-                                <path d="M40 70 L120 70 L115 220 L45 220 Z" fill="url(#bambooGrad)" stroke="#78350f" stroke-width="3"/>
-                                <rect x="38" y="75" width="84" height="10" fill="#d97706" rx="2"/>
-                                <rect x="42" y="145" width="76" height="8" fill="#d97706" rx="2"/>
-                                <rect x="44" y="210" width="72" height="10" fill="#d97706" rx="2"/>
-                                <circle cx="80" cy="115" r="14" fill="#451a03" stroke="#fbbf24" stroke-width="2"/>
-                                <text x="80" y="121" fill="#fbbf24" font-size="14" font-family="'Space Grotesk', sans-serif" font-weight="bold" text-anchor="middle">Thiền</text>
-                                <defs>
-                                    <linearGradient id="bambooGrad" x1="40" y1="70" x2="120" y2="220" gradientUnits="userSpaceOnUse">
-                                        <stop offset="0%" stop-color="#b45309"/>
-                                        <stop offset="50%" stop-color="#78350f"/>
-                                        <stop offset="100%" stop-color="#451a03"/>
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                            Nhấp vào ống quẻ để gieo một lời pháp an nhiên, hướng thiện và giải tỏa phiền não cho ngày hôm nay.
-                        </p>
-
-                        <button class="btn-zen" id="btnDrawFortune" onclick="drawFortune()">
-                            <span>🎋</span> Lắc Ống Quẻ & Rút Thẻ An Nhiên
-                        </button>
-
-                        <!-- Thẻ Quẻ Kết Quả -->
-                        <div class="fortune-result-card" id="fortuneResultCard">
-                            <span class="fortune-tag" id="fortuneType">QUẺ THƯỢNG CÁT</span>
-                            <h3 class="fortune-title" id="fortuneTitle">Tùy Duyên Tự Tại</h3>
-                            <div class="fortune-poem" id="fortunePoem">
-                                "Nước chảy hoa trôi vạn dặm dài,
-                                Tùy duyên thuận cảnh dạ thảnh thơi.
-                                Trời xanh tự khắc an bài lối,
-                                Tâm tịnh đường thông vạn dặm ngời."
+                            <div class="form-group" style="margin-bottom: 0.8rem;">
+                                <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Lời tâm sự, ước nguyện:</label>
+                                <textarea id="wishContentInput" class="textarea-wish" placeholder="Cầu cho cha mẹ dồi dào sức khỏe, gia đình an khang thịnh vượng, tâm hồn tĩnh lặng giữa bộn bề..."></textarea>
                             </div>
-                            <div class="fortune-meaning" id="fortuneMeaning">
-                                Vạn sự trên đời hợp tan đều có nhân duyên. Đừng quá cưỡng cầu điều chưa đến, cũng đừng luyến tiếc điều đã qua. Khi tâm an yên chấp nhận hiện tại, mọi nút thắt sẽ tự khắc được hóa giải một cách êm đẹp nhất.
-                            </div>
-                            <div class="fortune-advice" id="fortuneAdvice">
-                                💡 Lời khuyên chánh niệm: Hôm nay hãy thả lỏng tâm trí, mỉm cười trước mọi hoàn cảnh và tin tưởng vào hành trình của chính mình.
-                            </div>
-                            <button class="btn-zen-secondary" onclick="drawFortune()">
-                                <span>🔄</span> Rút Quẻ Khác
+
+                            <button class="btn-zen" style="width: 100%; justify-content: center;" onclick="hangWishRibbon()">
+                                <span>🎗️</span> Treo Dải Lụa Đỏ Lên Cội Bồ Đề
                             </button>
                         </div>
                     </div>
                 </div>
+
+                <!-- 5. THẺ QUẺ CHÁNH NIỆM -->
+                <div class="zen-pane" id="tab-que">
+                    <div class="que-container">
+                        <div class="que-cylinder-wrap">
+                            <div class="que-cylinder" id="queCylinder" onclick="shakeFortuneCylinder()">
+                                <div class="que-bamboo-bundle">
+                                    <div class="bamboo-stick-item"></div>
+                                    <div class="bamboo-stick-item tall"></div>
+                                    <div class="bamboo-stick-item"></div>
+                                    <div class="bamboo-stick-item tall"></div>
+                                    <div class="bamboo-stick-item"></div>
+                                </div>
+                                <div class="cylinder-body">
+                                    <span class="cylinder-text">QUẺ CHÁNH NIỆM</span>
+                                </div>
+                            </div>
+                            <button class="btn-zen" onclick="shakeFortuneCylinder()">
+                                <span>🎋</span> Lắc Ống Quẻ Rút Thẻ
+                            </button>
+                        </div>
+
+                        <!-- Thẻ Quẻ Kết Quả -->
+                        <div class="fortune-card" id="fortuneCard" style="display: none;">
+                            <div class="card-badge" id="fortuneType">QUẺ THƯỢNG CÁT</div>
+                            <h3 class="card-title" id="fortuneTitle">Thẻ Số 01: Hoa Khai Phú Quý</h3>
+                            <div class="card-poem" id="fortunePoem">
+Đất màu ươm sẵn hạt mầm xanh,
+Mưa thuận gió hòa hoa trĩu cành.
+Nhân thiện quả lành muôn phúc tụ,
+Tâm an đời rạng tựa trăng thanh.
+                            </div>
+                            <div class="card-meaning">
+                                <strong>Ý nghĩa nhân sinh:</strong>
+                                <p id="fortuneMeaning">Gieo nhân lành ắt gặt quả ngọt. Những vất vả, khó nhọc bạn từng trải qua đang chuyển hóa thành nguồn năng lượng thanh sạch và phúc duyên bền vững.</p>
+                            </div>
+                            <div class="card-advice">
+                                <strong>Lời khuyên chánh niệm hôm nay:</strong>
+                                <p id="fortuneAdvice">Hãy mở rộng lòng từ bi, bớt đi một chút chấp niệm, nở một nụ cười ấm áp với người đối diện. Mọi chuyện rồi sẽ hanh thông tốt đẹp.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. LẦN TRÀNG HẠT 108 HẠT BỒ ĐỀ -->
+                <div class="zen-pane" id="tab-mala">
+                    <div class="mala-container-box">
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.8rem;">
+                            Chạm vào chuỗi hạt gỗ Bồ Đề để lần từng hạt, mỗi hạt niệm thầm một danh hiệu Phật để tâm tĩnh lặng.
+                        </p>
+                        <div class="mala-ring" id="malaRing" onclick="advanceMalaBead()">
+                            <div class="mala-ring-center">
+                                <div class="mala-num" id="malaBeadDisplay">0 / 108</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Hạt Bồ Đề</div>
+                                <div style="font-size: 0.85rem; color: var(--accent-lotus); margin-top: 0.3rem;">
+                                    Vòng số: <strong id="malaRoundsDisplay">0</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-size: 1.15rem; color: var(--accent-gold); font-family: var(--font-accent); margin-bottom: 1rem;">
+                            "Nam Mô A Di Đà Phật"
+                        </div>
+                        <button class="btn-zen" onclick="advanceMalaBead()">
+                            <span>👆</span> Lần 1 Hạt Bồ Đề (+1 Niệm)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 7. ÂM THANH KHÔNG GIAN (SPATIAL SOUNDSCAPE) -->
+                <div class="zen-pane" id="tab-sound">
+                    <div style="text-align: center; max-width: 580px; margin: 0 auto 1.5rem;">
+                        <h3 style="font-family: var(--font-serif); color: var(--accent-gold); font-size: 1.35rem; margin-bottom: 0.4rem;">
+                            🌧️ Bộ Hòa Âm Không Gian Thiền Môn
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem;">
+                            Tích hợp 100% Web Audio API procedural generation: Tiếng mưa rơi trên mái ngói, suối ngàn róc rách và dải âm thiền Om 136.1Hz thư thái (không cần tải tệp mp3 ngoài).
+                        </p>
+                    </div>
+
+                    <div class="soundscape-mixer-box">
+                        <!-- TRACK 1: MƯA RÀO -->
+                        <div class="mixer-track">
+                            <div class="track-info">
+                                <div class="track-icon">🌧️</div>
+                                <div>
+                                    <div class="track-title">Tiếng Mưa Rào Mái Ngói</div>
+                                    <div class="track-sub">Mưa rơi êm dịu trên mái ngói chùa cổ</div>
+                                </div>
+                            </div>
+                            <div class="track-actions">
+                                <input type="range" class="track-slider" id="rainMixVol" min="0" max="1" step="0.05" value="0.5" oninput="changeRainVol(this.value)">
+                                <button class="btn-track-toggle" id="btnMixRain" onclick="toggleRainSoundTrack()">Bật</button>
+                            </div>
+                        </div>
+
+                        <!-- TRACK 2: SUỐI CHẢY -->
+                        <div class="mixer-track">
+                            <div class="track-info">
+                                <div class="track-icon">🌊</div>
+                                <div>
+                                    <div class="track-title">Tiếng Suối Róc Rách</div>
+                                    <div class="track-sub">Dòng suối nguồn trong vắt chảy qua khe đá rừng thiền</div>
+                                </div>
+                            </div>
+                            <div class="track-actions">
+                                <input type="range" class="track-slider" id="streamMixVol" min="0" max="1" step="0.05" value="0.5" oninput="changeStreamVol(this.value)">
+                                <button class="btn-track-toggle" id="btnMixStream" onclick="toggleStreamSoundTrack()">Bật</button>
+                            </div>
+                        </div>
+
+                        <!-- TRACK 3: DẢI ÂM THIỀN OM 136.1HZ -->
+                        <div class="mixer-track">
+                            <div class="track-info">
+                                <div class="track-icon">🧘</div>
+                                <div>
+                                    <div class="track-title">Dải Âm Thiền Om (136.1Hz)</div>
+                            <div class="track-sub">Tần số rung động Trái Đất kích hoạt định tâm sâu</div>
+                                </div>
+                            </div>
+                            <div class="track-actions">
+                                <input type="range" class="track-slider" id="omMixVol" min="0" max="1" step="0.05" value="0.4" oninput="changeOmVol(this.value)">
+                                <button class="btn-track-toggle" id="btnMixOm" onclick="toggleOmSoundTrack()">Bật</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ================================================= -->
-    <!-- PHẦN 2: CẨM NANG VĂN KHẤN CỔ TRUYỀN CHUẨN MỰC -->
-    <!-- ================================================= -->
-    <section class="prayers-section" id="van-khan">
+<section class="prayers-section" id="van-khan">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">📜 NGHI LỄ PHONG TỤC VIỆT</span>
@@ -2330,7 +3029,65 @@ Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
     <!-- JAVASCRIPT LOGIC -->
     <script>
         // ==========================================
-        // WEB AUDIO API SYNTHESIZERS (NO EXTERNAL AUDIO FILES)
+        // STATE MANAGEMENT & LOCALSTORAGE
+        // ==========================================
+        let state = {
+            moCount: parseInt(localStorage.getItem('gofar_mo_count') || '0'),
+            bowCount: parseInt(localStorage.getItem('gofar_bow_count') || '0'),
+            malaCount: parseInt(localStorage.getItem('gofar_mala_count') || '0'),
+            meritCount: parseInt(localStorage.getItem('gofar_merit_count') || '0'),
+            malaBead: 0,
+            malaRounds: 0,
+            autoMoInterval: null,
+            bellMode: 'solfeggio',
+            currentTemple: 'baidinh',
+            incenseTimer: null,
+            incenseDuration: 300,
+            incenseRemaining: 300
+        };
+
+        function updateAllCounters() {
+            // Live stats in Virtual Altar ribbon
+            const liveMo = document.getElementById('liveMoCount');
+            if (liveMo) liveMo.textContent = state.moCount;
+            const liveBow = document.getElementById('liveBowCount');
+            if (liveBow) liveBow.textContent = state.bowCount;
+            const liveMala = document.getElementById('liveMalaCount');
+            if (liveMala) liveMala.textContent = state.malaCount;
+            const liveMerit = document.getElementById('liveMeritCount');
+            if (liveMerit) liveMerit.textContent = state.meritCount;
+
+            // Tab Mo counter
+            const moCountElem = document.getElementById('moCount');
+            if (moCountElem) moCountElem.textContent = state.moCount;
+
+            // Tab Mala counter
+            const malaBeadDisplay = document.getElementById('malaBeadDisplay');
+            if (malaBeadDisplay) malaBeadDisplay.textContent = `${state.malaBead} / 108`;
+            const malaRoundsDisplay = document.getElementById('malaRoundsDisplay');
+            if (malaRoundsDisplay) malaRoundsDisplay.textContent = state.malaRounds;
+        }
+
+        function saveAllCounters() {
+            localStorage.setItem('gofar_mo_count', state.moCount);
+            localStorage.setItem('gofar_bow_count', state.bowCount);
+            localStorage.setItem('gofar_mala_count', state.malaCount);
+            localStorage.setItem('gofar_merit_count', state.meritCount);
+        }
+
+        function showToast(msg, icon = '✨') {
+            const toast = document.getElementById('zenToast');
+            if (!toast) return;
+            const tIcon = document.getElementById('toastIcon');
+            const tMsg = document.getElementById('toastMsg');
+            if (tIcon) tIcon.textContent = icon;
+            if (tMsg) tMsg.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 2800);
+        }
+
+        // ==========================================
+        // WEB AUDIO API ENGINE
         // ==========================================
         let audioCtx = null;
         function getAudioContext() {
@@ -2344,33 +3101,28 @@ Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
             return audioCtx;
         }
 
-        // 1. TIẾNG GÕ MÕ (WOODEN FISH CLICKER)
+        // 1. TIẾNG GÕ MÕ GỖ MỘC NGƯ
         function playMoSound() {
             try {
                 const ctx = getAudioContext();
                 const now = ctx.currentTime;
 
-                // Sharp wooden strike attack
                 const osc1 = ctx.createOscillator();
                 const gain1 = ctx.createGain();
                 osc1.type = 'triangle';
                 osc1.frequency.setValueAtTime(780, now);
                 osc1.frequency.exponentialRampToValueAtTime(320, now + 0.07);
-
                 gain1.gain.setValueAtTime(0.85, now);
                 gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
 
-                // Body hollow resonance
                 const osc2 = ctx.createOscillator();
                 const gain2 = ctx.createGain();
                 osc2.type = 'sine';
                 osc2.frequency.setValueAtTime(420, now);
                 osc2.frequency.exponentialRampToValueAtTime(360, now + 0.16);
-
                 gain2.gain.setValueAtTime(0.65, now);
                 gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
 
-                // Wood filter
                 const filter = ctx.createBiquadFilter();
                 filter.type = 'lowpass';
                 filter.frequency.setValueAtTime(1500, now);
@@ -2385,571 +3137,844 @@ Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
                 osc2.start(now);
                 osc1.stop(now + 0.15);
                 osc2.stop(now + 0.2);
-            } catch (e) {
-                console.log('Audio init on user gesture');
-            }
+            } catch (e) {}
         }
 
-        // 2. TIẾNG GÕ CHUÔNG ĐẠI HỒNG CHUNG (TEMPLE BELL HARMONICS)
+        // 2. CHUÔNG TÂY TẠNG SOLFEGGIO 174HZ
+        function playSolfeggio174() {
+            try {
+                const ctx = getAudioContext();
+                const now = ctx.currentTime;
+                const freqs = [174, 348, 522, 696];
+                const gains = [0.75, 0.4, 0.25, 0.12];
+
+                freqs.forEach((f, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(f + (Math.random() * 0.4 - 0.2), now);
+                    gain.gain.setValueAtTime(gains[idx], now);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + 7.5);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(now);
+                    osc.stop(now + 7.6);
+                });
+            } catch (e) {}
+        }
+
+        // 3. ĐẠI HỒNG CHUNG CỔ TỰ 36 TẤN
         function playBellSound() {
             try {
                 const ctx = getAudioContext();
                 const now = ctx.currentTime;
-
-                // Harmonics series of temple bronze bell
                 const partials = [
-                    { f: 216, g: 0.75, d: 6.0 },  // Fundamental strike
-                    { f: 432, g: 0.45, d: 5.2 },  // Octave
-                    { f: 540, g: 0.32, d: 4.2 },  // Third
-                    { f: 648, g: 0.24, d: 3.5 },  // Fifth
-                    { f: 864, g: 0.18, d: 2.8 },  // High chime
-                    { f: 108, g: 0.35, d: 6.5 }   // Sub hum
+                    { f: 216, g: 0.75, d: 6.5 },
+                    { f: 432, g: 0.45, d: 5.5 },
+                    { f: 540, g: 0.32, d: 4.5 },
+                    { f: 648, g: 0.24, d: 3.8 },
+                    { f: 108, g: 0.4, d: 7.0 }
                 ];
-
                 const masterGain = ctx.createGain();
-                masterGain.gain.setValueAtTime(0.8, now);
-                masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 6.5);
+                masterGain.gain.setValueAtTime(0.85, now);
+                masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 7.0);
                 masterGain.connect(ctx.destination);
 
                 partials.forEach(p => {
                     const osc = ctx.createOscillator();
                     const gain = ctx.createGain();
                     osc.type = 'sine';
-                    // Subtle detuning for bronze beating shimmer
                     osc.frequency.setValueAtTime(p.f + (Math.random() * 2 - 1), now);
-
                     gain.gain.setValueAtTime(p.g, now);
                     gain.gain.exponentialRampToValueAtTime(0.0001, now + p.d);
-
                     osc.connect(gain);
                     gain.connect(masterGain);
-
                     osc.start(now);
                     osc.stop(now + p.d + 0.1);
                 });
-            } catch (e) {
-                console.log('Bell sound error:', e);
-            }
-        }
-
-        // 3. AMBIENT ZEN SOUNDSCAPE (SUỐI NGÀN & CHUÔNG GIÓ)
-        let ambientRunning = false;
-        let ambientNodes = [];
-        let ambientTimer = null;
-
-        function toggleAmbientSound() {
-            const btn = document.getElementById('btnAmbientSound');
-            const icon = document.getElementById('ambientIcon');
-            const text = document.getElementById('ambientText');
-
-            if (ambientRunning) {
-                stopAmbientSound();
-                btn.classList.remove('playing');
-                icon.textContent = '🎵';
-                text.textContent = 'Âm Thanh Thiền';
-                showToast('Đã dừng âm thanh thiền');
-            } else {
-                startAmbientSound();
-                btn.classList.add('playing');
-                icon.textContent = '⏸️';
-                text.textContent = 'Đang Phát Thiền';
-                showToast('Đang phát tiếng suối ngàn & chuông gió chánh niệm');
-            }
-        }
-
-        function startAmbientSound() {
-            const ctx = getAudioContext();
-            ambientRunning = true;
-
-            // Generate peaceful filtered water stream sound
-            const bufferSize = ctx.sampleRate * 2;
-            const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-            const output = noiseBuffer.getChannelData(0);
-            for (let i = 0; i < bufferSize; i++) {
-                output[i] = Math.random() * 2 - 1;
-            }
-
-            const whiteNoise = ctx.createBufferSource();
-            whiteNoise.buffer = noiseBuffer;
-            whiteNoise.loop = true;
-
-            const bandpass = ctx.createBiquadFilter();
-            bandpass.type = 'bandpass';
-            bandpass.frequency.setValueAtTime(650, ctx.currentTime);
-            bandpass.Q.setValueAtTime(1.8, ctx.currentTime);
-
-            const streamGain = ctx.createGain();
-            streamGain.gain.setValueAtTime(0.08, ctx.currentTime);
-
-            whiteNoise.connect(bandpass);
-            bandpass.connect(streamGain);
-            streamGain.connect(ctx.destination);
-
-            whiteNoise.start();
-            ambientNodes.push(whiteNoise);
-
-            // Periodic wind chime notes (pentatonic scale)
-            const pentatonic = [523.25, 587.33, 659.25, 783.99, 880.0, 1046.5];
-            ambientTimer = setInterval(() => {
-                if (!ambientRunning) return;
-                const freq = pentatonic[Math.floor(Math.random() * pentatonic.length)];
-                playSingleChime(freq);
-            }, 3500);
-        }
-
-        function playSingleChime(freq) {
-            if (!ambientRunning) return;
-            const ctx = getAudioContext();
-            const now = ctx.currentTime;
-            const osc = ctx.createOscillator();
-            const gain = ctx.createGain();
-
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(freq, now);
-
-            gain.gain.setValueAtTime(0.06, now);
-            gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.0);
-
-            osc.connect(gain);
-            gain.connect(ctx.destination);
-
-            osc.start(now);
-            osc.stop(now + 3.2);
-        }
-
-        function stopAmbientSound() {
-            ambientRunning = false;
-            if (ambientTimer) clearInterval(ambientTimer);
-            ambientNodes.forEach(node => {
-                try { node.stop(); } catch(e){}
-            });
-            ambientNodes = [];
+            } catch (e) {}
         }
 
         // ==========================================
-        // GÓC AN NHIÊN: GÕ MÕ LOGIC
+        // FLYING BLESSINGS & RIPPLES
         // ==========================================
-        let moCount = parseInt(localStorage.getItem('gofar_mo_count') || '0', 10);
-        document.getElementById('moCount').textContent = moCount;
+        const blessingWords = [
+            "+1 Công Đức", "Tâm An Vạn Sự An", "Phước Lành Tăng Trưởng",
+            "Bình An Vô Lượng", "Bồ Đề Tâm Khởi", "Tiêu Trừ Phiền Não",
+            "Gia Đạo Hưng Long", "Vạn Sự Cát Tường", "Trí Tuệ Sáng Ngời"
+        ];
 
+        function createBlessingFlyText(x, y) {
+            const el = document.createElement('div');
+            el.className = 'blessing-fly-text';
+            const word = blessingWords[Math.floor(Math.random() * blessingWords.length)];
+            el.textContent = word;
+            el.style.left = (x - 60) + 'px';
+            el.style.top = (y - 30) + 'px';
+            document.body.appendChild(el);
+            setTimeout(() => { el.remove(); }, 1800);
+        }
+
+        function createRippleWave(x, y) {
+            const ring = document.createElement('div');
+            ring.className = 'bell-ripple-ring';
+            ring.style.left = x + 'px';
+            ring.style.top = y + 'px';
+            document.body.appendChild(ring);
+            setTimeout(() => { ring.remove(); }, 2200);
+        }
+
+        // ==========================================
+        // VIRTUAL ALTAR (CHÁNH ĐIỆN ẢO) LOGIC
+        // ==========================================
+        const templeViewData = {
+            baidinh: {
+                title: "Chánh Điện Đức Phật Thích Ca Mâu Ni",
+                mantra: '"Nam Mô Bản Sư Thích Ca Mâu Ni Phật"',
+                img: "images/bai_dinh_buddha_1783494499108.webp"
+            },
+            thienmu: {
+                title: "Chánh Điện Chùa Thiên Mụ — Đại Tự Cố Đô Huế",
+                mantra: '"Nam Mô A Di Đà Phật"',
+                img: "images/hue_chua_thien_mu.webp"
+            },
+            linhung: {
+                title: "Tượng Quán Thế Âm Bồ Tát — Chùa Linh Ứng Bãi Bụt",
+                mantra: '"Nam Mô Đại Bi Quán Thế Âm Bồ Tát"',
+                img: "images/danang_chua_linh_ung_bai_but.webp"
+            },
+            truclam: {
+                title: "Chánh Điện Thiền Viện Trúc Lâm — Phụng Hoàng Sơn Đà Lạt",
+                mantra: '"Phật Tại Tâm — Vạn Pháp Quy Nhất"',
+                img: "images/dalat_truc_lam.webp"
+            },
+            bichdong: {
+                title: "Chùa Bích Động — Nam Thiên Đệ Nhị Động Ninh Bình",
+                mantra: '"Nam Mô Tiêu Tai Diên Thọ Dược Sư Phật"',
+                img: "images/bich_dong_pagoda_1785483683589.webp"
+            }
+        };
+
+        function switchTempleView(key, btn) {
+            state.currentTemple = key;
+            document.querySelectorAll('.altar-temple-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const t = templeViewData[key];
+            if (t) {
+                document.getElementById('altarTempleTitle').textContent = t.title;
+                document.getElementById('altarTempleMantra').textContent = t.mantra;
+                document.getElementById('altarBuddhaImg').src = t.img;
+                document.getElementById('altarBackdrop').style.backgroundImage = `url('${t.img}')`;
+                showToast(`Đã chuyển sang viếng: ${t.title}`, '⛩️');
+            }
+        }
+
+        function performAltarBow() {
+            state.bowCount++;
+            state.meritCount += 3;
+            saveAllCounters();
+            updateAllCounters();
+
+            // Buddha statue bow animation
+            const wrap = document.getElementById('buddhaStatueWrap');
+            if (wrap) {
+                wrap.style.transform = 'scale(0.9) translateY(18px)';
+                setTimeout(() => { wrap.style.transform = 'scale(1) translateY(0)'; }, 400);
+            }
+
+            playBellSound();
+            createBlessingFlyText(window.innerWidth / 2, window.innerHeight * 0.4);
+            showToast(`Thành kính đảnh lễ Tam Bảo (Lần thứ ${state.bowCount})`, '🙏');
+        }
+
+        function igniteAltarCandle(elem) {
+            playSolfeggio174();
+            const flame = elem.querySelector('.candle-flame');
+            if (flame) {
+                flame.style.boxShadow = '0 0 35px #fbbf24, 0 0 65px #f59e0b';
+                setTimeout(() => {
+                    flame.style.boxShadow = '0 0 20px #fbbf24, 0 0 35px #f59e0b';
+                }, 800);
+            }
+            state.meritCount++;
+            saveAllCounters();
+            updateAllCounters();
+            showToast('Đã thắp sáng ngọn đèn hoa đăng trí tuệ', '🕯️');
+        }
+
+        function makeFlowerOffering() {
+            state.meritCount += 2;
+            saveAllCounters();
+            updateAllCounters();
+            createBlessingFlyText(window.innerWidth * 0.38, window.innerHeight * 0.6);
+            showToast('Đã dâng hoa sen thơm ngát thanh tịnh lên Đức Phật', '🪷');
+        }
+
+        function makeFruitOffering() {
+            state.meritCount += 2;
+            saveAllCounters();
+            updateAllCounters();
+            createBlessingFlyText(window.innerWidth * 0.62, window.innerHeight * 0.6);
+            showToast('Đã dâng mâm quả phúc lành lên Tam Bảo', '🍇');
+        }
+
+        // ==========================================
+        // TAB 1: MỘC NGƯ (GÕ MÕ SỐ)
+        // ==========================================
         const moQuotes = [
             "Thở vào tâm tĩnh lặng, thở ra miệng mỉm cười.",
-            "Mỗi tiếng gõ buông một niệm ưu phiền, tâm an vạn sự an.",
-            "An trú trong hiện tại, không vọng tưởng tương lai, không tiếc nuối quá khứ.",
-            "Tâm như nước tịnh, vạn sự tùy duyên.",
-            "Bình an đến từ bên trong, đừng tìm kiếm nơi bên ngoài.",
-            "Một念 buông xả, ngàn dặm thênh thang.",
-            "Biết đủ là giàu có, biết ơn là hạnh phúc.",
-            "Gieo hạt mầm từ bi, gặt mùa quả phúc lạc."
+            "Tâm an vạn sự an. Bình yên đến từ bên trong bạn.",
+            "Lắng nghe tiếng mõ trầm ấm, buông xả muộn phiền âu lo.",
+            "Quá khứ đã qua, tương lai chưa tới, an trú trong phút giây hiện tại.",
+            "Một nụ cười từ bi thắp sáng cả miền tâm tưởng."
         ];
 
-        function strikeMo() {
+        function strikeMoInteractive(e) {
             playMoSound();
-            moCount++;
-            document.getElementById('moCount').textContent = moCount;
-            localStorage.setItem('gofar_mo_count', moCount);
+            state.moCount++;
+            state.meritCount++;
+            saveAllCounters();
+            updateAllCounters();
 
+            // Mõ visual animation
             const visual = document.getElementById('moVisual');
-            visual.classList.remove('struck');
-            void visual.offsetWidth; // trigger reflow
-            visual.classList.add('struck');
-
-            // Change serene quote every 5 strikes
-            if (moCount % 5 === 0) {
-                const quoteElem = document.getElementById('moQuote');
-                quoteElem.style.opacity = '0';
-                setTimeout(() => {
-                    const randomQuote = moQuotes[Math.floor(Math.random() * moQuotes.length)];
-                    quoteElem.textContent = '"' + randomQuote + '"';
-                    quoteElem.style.opacity = '1';
-                }, 300);
+            if (visual) {
+                visual.classList.remove('strike');
+                void visual.offsetWidth;
+                visual.classList.add('strike');
             }
-        }
 
-        let autoMoInterval = null;
-        function toggleAutoMo() {
-            const btn = document.getElementById('btnAutoMo');
-            if (autoMoInterval) {
-                clearInterval(autoMoInterval);
-                autoMoInterval = null;
-                btn.style.background = '';
-                btn.innerHTML = '<span>⏱️</span> Tự Động Theo Nhịp Thở (3s)';
-                showToast('Đã dừng tự động gõ mõ');
+            const quoteElem = document.getElementById('moQuote');
+            if (quoteElem) {
+                quoteElem.textContent = '"' + moQuotes[Math.floor(Math.random() * moQuotes.length)] + '"';
+            }
+
+            const x = e ? e.clientX : window.innerWidth / 2;
+            const y = e ? e.clientY : window.innerHeight * 0.45;
+            createBlessingFlyText(x, y);
+        }
+        function strikeMo() { strikeMoInteractive(null); }
+
+        function setMoLoopBpm(bpm, btn) {
+            document.querySelectorAll('.btn-bpm').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            if (state.autoMoInterval) {
+                clearInterval(state.autoMoInterval);
+                state.autoMoInterval = null;
+            }
+
+            if (bpm > 0) {
+                const intervalMs = (60 / bpm) * 1000;
+                state.autoMoInterval = setInterval(() => {
+                    playMoSound();
+                    state.moCount++;
+                    state.meritCount++;
+                    saveAllCounters();
+                    updateAllCounters();
+                    createBlessingFlyText(window.innerWidth / 2, window.innerHeight * 0.45);
+                }, intervalMs);
+                showToast(`Đang tự động gõ mõ nhịp ${bpm} BPM`, '🐟');
             } else {
-                strikeMo();
-                autoMoInterval = setInterval(strikeMo, 3000);
-                btn.style.background = 'var(--accent-gold)';
-                btn.style.color = '#0D1F2D';
-                btn.innerHTML = '<span>⏸️</span> Đang Gõ Tự Động (Dừng)';
-                showToast('Đang gõ mõ tự động theo nhịp thở 3 giây');
+                showToast('Đã dừng tự động gõ mõ');
             }
         }
+        function toggleAutoMo() { setMoLoopBpm(60, document.getElementById('bpmBtn60')); }
 
         // ==========================================
-        // GÓC AN NHIÊN: THẮP HƯƠNG LOGIC & SMOKE CANVAS
+        // TAB 2: THẮP HƯƠNG ẢO & TĨNH TỌA
         // ==========================================
-        let incenseTimer = null;
-        let incenseRemaining = 0;
-        let smokeAnimId = null;
-        let smokeParticles = [];
+        function selectIncensePreset(mins, btn) {
+            document.querySelectorAll('.btn-timer-preset').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
 
-        function initSmokeCanvas() {
-            const canvas = document.getElementById('smokeCanvas');
-            canvas.width = canvas.parentElement.offsetWidth;
-            canvas.height = 220;
+            state.incenseDuration = mins * 60;
+            state.incenseRemaining = mins * 60;
+            updateIncenseDisplay();
+            updateStickBurnHeight(1.0);
         }
 
-        class SmokeParticle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.vx = (Math.random() - 0.5) * 0.8;
-                this.vy = -1.2 - Math.random() * 1.0;
-                this.radius = 4 + Math.random() * 4;
-                this.alpha = 0.45;
-                this.life = 0;
-                this.maxLife = 90 + Math.random() * 40;
-            }
-            update() {
-                this.x += this.vx + Math.sin(this.life * 0.05) * 0.6;
-                this.y += this.vy;
-                this.radius += 0.25;
-                this.life++;
-                this.alpha = Math.max(0, 0.45 * (1 - this.life / this.maxLife));
-            }
-            draw(ctx) {
-                ctx.save();
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(235, 235, 245, ${this.alpha})`;
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.3)';
-                ctx.shadowBlur = 8;
-                ctx.fill();
-                ctx.restore();
+        function updateIncenseDisplay() {
+            const m = Math.floor(state.incenseRemaining / 60);
+            const s = state.incenseRemaining % 60;
+            const str = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            const timerElem = document.getElementById('huongTimerDisplay');
+            if (timerElem) timerElem.textContent = str;
+
+            const fill = document.getElementById('huongProgressFill');
+            if (fill) {
+                const pct = (state.incenseRemaining / state.incenseDuration) * 100;
+                fill.style.width = pct + '%';
             }
         }
 
-        function animateSmoke() {
-            const canvas = document.getElementById('smokeCanvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        function updateStickBurnHeight(ratio) {
+            // Shrink altar sticks
+            const a1 = Math.max(15, 60 * ratio);
+            const a2 = Math.max(18, 68 * ratio);
+            const a3 = Math.max(15, 60 * ratio);
+            const as1 = document.getElementById('altarStick1');
+            const as2 = document.getElementById('altarStick2');
+            const as3 = document.getElementById('altarStick3');
+            if (as1) as1.style.height = a1 + 'px';
+            if (as2) as2.style.height = a2 + 'px';
+            if (as3) as3.style.height = a3 + 'px';
 
-            // Emit particles from the 3 incense stick tips
-            if (incenseRemaining > 0) {
-                const centerX = canvas.width / 2;
-                const tips = [centerX - 22, centerX, centerX + 22];
-                tips.forEach(x => {
-                    if (Math.random() < 0.65) {
-                        smokeParticles.push(new SmokeParticle(x, 150));
+            // Shrink tab sticks
+            const ts1 = document.getElementById('tabStick1');
+            const ts2 = document.getElementById('tabStick2');
+            const ts3 = document.getElementById('tabStick3');
+            if (ts1) ts1.style.height = (a1 + 10) + 'px';
+            if (ts2) ts2.style.height = (a2 + 12) + 'px';
+            if (ts3) ts3.style.height = (a3 + 10) + 'px';
+        }
+
+        function toggleIncenseTimer() {
+            const btn = document.getElementById('btnStartIncenseTimer');
+            if (state.incenseTimer) {
+                clearInterval(state.incenseTimer);
+                state.incenseTimer = null;
+                if (btn) btn.innerHTML = '<span>▶️</span> Tiếp Tục Tĩnh Tọa';
+                showToast('Đã tạm dừng tĩnh tọa');
+            } else {
+                if (btn) btn.innerHTML = '<span>⏸️</span> Tạm Dừng';
+                showToast('Bắt đầu tĩnh tọa chánh niệm. Thân tâm buông thư...', '🕯️');
+                state.incenseTimer = setInterval(() => {
+                    if (state.incenseRemaining > 0) {
+                        state.incenseRemaining--;
+                        updateIncenseDisplay();
+                        updateStickBurnHeight(state.incenseRemaining / state.incenseDuration);
+                    } else {
+                        clearInterval(state.incenseTimer);
+                        state.incenseTimer = null;
+                        if (btn) btn.innerHTML = '<span>▶️</span> Bắt Đầu Tĩnh Tọa';
+                        playSolfeggio174();
+                        createRippleWave(window.innerWidth / 2, window.innerHeight / 2);
+                        showToast('Thời khóa tĩnh tọa hoàn tất. Thân tâm an lạc!', '🔔');
                     }
-                });
-            }
-
-            for (let i = smokeParticles.length - 1; i >= 0; i--) {
-                const p = smokeParticles[i];
-                p.update();
-                p.draw(ctx);
-                if (p.life >= p.maxLife || p.alpha <= 0) {
-                    smokeParticles.splice(i, 1);
-                }
-            }
-
-            if (smokeParticles.length > 0 || incenseRemaining > 0) {
-                smokeAnimId = requestAnimationFrame(animateSmoke);
+                }, 1000);
             }
         }
 
-        function lightIncense(seconds) {
-            playBellSound();
-            if (incenseTimer) clearInterval(incenseTimer);
-            incenseRemaining = seconds;
-
-            document.getElementById('stick1').classList.add('lit');
-            document.getElementById('stick2').classList.add('lit');
-            document.getElementById('stick3').classList.add('lit');
-            document.getElementById('huongStatus').textContent = '"Một nén tâm hương thắp sáng, nguyện cầu quốc thái dân an, gia đạo thuận hòa."';
-
-            updateTimerDisplay();
-            initSmokeCanvas();
-            if (!smokeAnimId) animateSmoke();
-
-            incenseTimer = setInterval(() => {
-                incenseRemaining--;
-                updateTimerDisplay();
-                if (incenseRemaining <= 0) {
-                    clearInterval(incenseTimer);
-                    incenseTimer = null;
-                    document.getElementById('stick1').classList.remove('lit');
-                    document.getElementById('stick2').classList.remove('lit');
-                    document.getElementById('stick3').classList.remove('lit');
-                    document.getElementById('huongStatus').textContent = '"Tâm hương đã trọn, chúc quý bạn thân tâm luôn an lạc và hoan hỷ."';
-                    playBellSound();
-                    showToast('Đã hoàn thành thời gian tĩnh tâm dâng hương');
-                }
-            }, 1000);
-
-            showToast('Đã thắp 3 nén tâm hương thành kính');
-        }
-
-        function updateTimerDisplay() {
-            const m = Math.floor(incenseRemaining / 60);
-            const s = incenseRemaining % 60;
-            document.getElementById('huongTimerDisplay').textContent =
-                `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        function resetIncenseTimer() {
+            if (state.incenseTimer) {
+                clearInterval(state.incenseTimer);
+                state.incenseTimer = null;
+            }
+            const btn = document.getElementById('btnStartIncenseTimer');
+            if (btn) btn.innerHTML = '<span>▶️</span> Bắt Đầu Tĩnh Tọa';
+            state.incenseRemaining = state.incenseDuration;
+            updateIncenseDisplay();
+            updateStickBurnHeight(1.0);
+            showToast('Đã đặt lại thời gian tĩnh tâm');
         }
 
         // ==========================================
-        // GÓC AN NHIÊN: GÕ CHUÔNG LOGIC
+        // TAB 3: GÕ CHUÔNG & SOLFEGGIO 174HZ
         // ==========================================
-        function ringTempleBell() {
-            playBellSound();
+        function setBellModeType(mode, btn) {
+            state.bellMode = mode;
+            const b1 = document.getElementById('btnBellMode174');
+            const b2 = document.getElementById('btnBellModeTemple');
+            if (b1) b1.classList.remove('active');
+            if (b2) b2.classList.remove('active');
+            if (btn) btn.classList.add('active');
+
+            const verse = document.getElementById('bellVerseText');
+            if (mode === 'solfeggio') {
+                if (verse) verse.innerHTML = 'Tần số Solfeggio 174Hz được khoa học công nhận giúp xoa dịu hệ thần kinh,<br>giải tỏa căng thẳng tự nhiên và mang lại cảm giác bình an sâu sắc.';
+                showToast('Đã chuyển sang Chuông Tây Tạng Solfeggio 174Hz', '✨');
+            } else {
+                if (verse) verse.innerHTML = '"Nghe chuông phiền não tan mây khói,<br>Ý lặng thân an miệng mỉm cười.<br>Hơi thở nương về theo tiếng chuông,<br>Vườn tâm hoa tuệ nở thảnh thơi."';
+                showToast('Đã chuyển sang Đại Hồng Chung Cổ Tự 36 Tấn', '⛩️');
+            }
+        }
+
+        function ringTempleBellWithWaves(e) {
             const visual = document.getElementById('chuongVisual');
-            visual.classList.remove('chiming');
-            void visual.offsetWidth;
-            visual.classList.add('chiming');
-            showToast('Đại hồng chung ngân vang — Phiền não tiêu tan');
+            if (visual) {
+                visual.classList.remove('strike');
+                void visual.offsetWidth;
+                visual.classList.add('strike');
+            }
+
+            if (state.bellMode === 'solfeggio') {
+                playSolfeggio174();
+                showToast('Ngân vang chuông Tây Tạng Solfeggio 174Hz', '✨');
+            } else {
+                playBellSound();
+                showToast('Thỉnh Đại Hồng Chung Cổ Tự', '⛩️');
+            }
+
+            const x = e ? e.clientX : window.innerWidth / 2;
+            const y = e ? e.clientY : window.innerHeight * 0.45;
+            createRippleWave(x, y);
+
+            state.meritCount += 3;
+            saveAllCounters();
+            updateAllCounters();
         }
+        function ringTempleBell() { ringTempleBellWithWaves(null); }
 
         // ==========================================
-        // GÓC AN NHIÊN: CÂY ƯỚC NGUYỆN LOGIC
+        // TAB 4: CÂY ƯỚC NGUYỆN CỘI BỒ ĐỀ
         // ==========================================
         let wishes = [];
-        const sampleWishes = [
-            { author: "Diệu Tâm", color: "red", text: "Cầu cho cha mẹ mạnh khỏe, trường thọ an vui bên con cháu.", time: "Vừa xong" },
-            { author: "Quang Minh", color: "gold", text: "Nguyện thi cử đỗ đạt, công việc hanh thông, luôn giữ tâm thiện lành.", time: "1 giờ trước" },
-            { author: "Bình An", color: "green", text: "Cầu cho gia đình thuận hòa, dịch bệnh tiêu tan, vạn sự cát lành.", time: "Hôm qua" }
+        const defaultSampleWishes = [
+            { author: "Phật tử Diệu Tâm", content: "Nguyện cầu cha mẹ sống lâu trăm tuổi, thân tâm an lạc, bệnh tật tiêu trừ." },
+            { author: "Phúc Hạnh", content: "Cầu mong gia đạo bình an, thuận hòa, con cháu hiếu thảo, vạn sự cát tường." },
+            { author: "Tuệ An", content: "Tâm an vạn sự an. Cầu mong vượt qua mọi biến động với sự sáng suốt và kiên cường." },
+            { author: "Minh Trí", content: "Nguyện quốc thái dân an, phong điều vũ thuận, chúng sinh muôn loài sống trong yêu thương." }
         ];
 
-        function loadWishes() {
-            const saved = localStorage.getItem('gofar_spiritual_wishes');
-            if (saved) {
-                try { wishes = JSON.parse(saved); } catch(e){ wishes = sampleWishes; }
-            } else {
-                wishes = sampleWishes;
+        function loadAndRenderWishes() {
+            try {
+                const saved = localStorage.getItem('gofar_bodhi_wishes');
+                wishes = saved ? JSON.parse(saved) : defaultSampleWishes;
+            } catch(e) {
+                wishes = defaultSampleWishes;
             }
-            renderWishes();
-        }
 
-        function renderWishes() {
-            const ribbonsLayer = document.getElementById('ribbonsLayer');
-            const listElem = document.getElementById('wishItemsList');
-            ribbonsLayer.innerHTML = '';
-            listElem.innerHTML = '';
+            const layer = document.getElementById('ribbonsLayer');
+            if (!layer) return;
+            layer.innerHTML = '';
 
-            wishes.forEach((w, idx) => {
-                // Ribbon on tree
+            wishes.slice(0, 15).forEach((w, idx) => {
                 const ribbon = document.createElement('div');
-                ribbon.className = `wish-ribbon ${w.color}`;
-                // Random position on branches
-                const top = 18 + (idx % 6) * 12 + (Math.random() * 8);
-                const left = 15 + (idx % 5) * 16 + (Math.random() * 6);
-                ribbon.style.top = `${top}%`;
-                ribbon.style.left = `${left}%`;
-                ribbon.style.animationDelay = `${(idx * 0.4) % 2}s`;
-                ribbon.textContent = `${w.author}: ${w.text}`;
-                ribbon.title = `${w.author}: ${w.text}`;
-                ribbonsLayer.appendChild(ribbon);
-
-                // Wish in list
-                const item = document.createElement('div');
-                item.className = 'wish-item';
-                item.innerHTML = `<strong>${w.author || 'Lữ khách'}:</strong> ${w.text} <span>(${w.time || 'Gần đây'})</span>`;
-                listElem.appendChild(item);
+                ribbon.className = 'wish-ribbon';
+                ribbon.title = `${w.author}: ${w.content}`;
+                const top = 18 + (idx % 6) * 12 + (Math.random() * 6);
+                const left = 12 + (idx % 5) * 16 + (Math.random() * 8);
+                ribbon.style.top = top + '%';
+                ribbon.style.left = left + '%';
+                ribbon.innerHTML = `<span class="ribbon-text">${w.content}</span>`;
+                ribbon.onclick = () => { showToast(`"${w.content}" — ${w.author}`, '🎗️'); };
+                layer.appendChild(ribbon);
             });
         }
 
-        function submitWish(e) {
-            e.preventDefault();
-            const author = document.getElementById('wishAuthor').value.trim() || 'Người Lữ Khách';
-            const color = document.getElementById('wishColor').value;
-            const content = document.getElementById('wishContent').value.trim();
+        function hangWishRibbon() {
+            const authorInput = document.getElementById('wishAuthorInput');
+            const contentInput = document.getElementById('wishContentInput');
+            const author = (authorInput ? authorInput.value.trim() : '') || 'Phật tử ẩn danh';
+            const content = contentInput ? contentInput.value.trim() : '';
 
-            if (!content) return;
+            if (!content) {
+                showToast('Vui lòng nhập lời ước nguyện của bạn', '⚠️');
+                return;
+            }
 
-            playBellSound();
-            const newWish = { author, color, text: content, time: 'Vừa xong' };
+            const newWish = { author, content };
             wishes.unshift(newWish);
-            if (wishes.length > 20) wishes.pop();
+            localStorage.setItem('gofar_bodhi_wishes', JSON.stringify(wishes));
 
-            localStorage.setItem('gofar_spiritual_wishes', JSON.stringify(wishes));
-            renderWishes();
+            if (contentInput) contentInput.value = '';
+            loadAndRenderWishes();
 
-            document.getElementById('wishContent').value = '';
-            showToast('Dải lụa ước nguyện đã được treo trang trọng lên cội Bồ Đề');
+            state.meritCount += 5;
+            saveAllCounters();
+            updateAllCounters();
+            showToast('Đã treo dải lụa đỏ cầu an lên Cội Bồ Đề linh thiêng', '🎗️');
         }
+        function submitWish() { hangWishRibbon(); }
 
         // ==========================================
-        // GÓC AN NHIÊN: THẺ QUẺ AN NHIÊN LOGIC
+        // TAB 5: THẺ QUẺ CHÁNH NIỆM
         // ==========================================
         const fortuneDeck = [
             {
-                type: "QUẺ THƯỢNG CÁT",
-                title: "Tùy Duyên Tự Tại",
-                poem: "Nước chảy hoa trôi vạn dặm dài,\nTùy duyên thuận cảnh dạ thảnh thơi.\nTrời xanh tự khắc an bài lối,\nTâm tịnh đường thông vạn dặm ngời.",
-                meaning: "Vạn sự trên đời hợp tan đều có nhân duyên. Đừng quá cưỡng cầu điều chưa đến, cũng đừng luyến tiếc điều đã qua. Khi tâm an yên chấp nhận hiện tại, mọi nút thắt sẽ tự khắc được hóa giải một cách êm đẹp nhất.",
-                advice: "💡 Lời khuyên chánh niệm: Hôm nay hãy thả lỏng tâm trí, mỉm cười trước mọi hoàn cảnh và tin tưởng vào hành trình của chính mình."
+                type: "Quẻ Thượng Cát • Đệ Nhất",
+                title: "Thẻ Số 01: Hoa Khai Phú Quý",
+                poem: "Đất màu ươm sẵn hạt mầm xanh,
+Mưa thuận gió hòa hoa trĩu cành.
+Nhân thiện quả lành muôn phúc tụ,
+Tâm an đời rạng tựa trăng thanh.",
+                meaning: "Gieo nhân lành ắt gặt quả ngọt. Những vất vả, khó nhọc bạn từng trải qua đang chuyển hóa thành nguồn năng lượng thanh sạch và phúc duyên bền vững.",
+                advice: "Hãy mở rộng lòng từ bi, bớt đi một chút chấp niệm, nở một nụ cười ấm áp với người đối diện. Mọi chuyện rồi sẽ hanh thông tốt đẹp."
             },
             {
-                type: "QUẺ AN LẠC",
-                title: "Tâm Như Nước Tịnh",
-                poem: "Hồ sâu phẳng lặng bóng trăng in,\nGió thoảng qua rèm chẳng dính phiền.\nThân ở trần ai tâm thoát tục,\nBình an tự tại giữa cõi riêng.",
-                meaning: "Tâm người tựa như mặt nước hồ mùa thu. Khi sóng gió bên ngoài khuấy đảo, nếu giữ được sự tĩnh tại thì bùn lầy sẽ tự lắng xuống, chỉ còn lại sự trong vắt soi thấu mười phương.",
-                advice: "💡 Lời khuyên chánh niệm: Dành 5 phút hít thở sâu, tránh tranh cãi không cần thiết và giữ cho mình một khoảng lặng dịu êm."
+                type: "Quẻ Đại Cát • Đệ Nhị",
+                title: "Thẻ Số 02: Bất Động Tựa Sơn",
+                poem: "Núi đứng uy nghiêm ngắm bão giông,
+Gió gào mưa tuyết dạ không lay.
+Thân tâm giữ vững niềm tin sáng,
+Qua cơn nguy biến lại thong dong.",
+                meaning: "Nội lực vững chãi giúp bạn đứng vững trước mọi thị phi, biến động bên ngoài. Hãy tin vào sự bình thản sâu kín bên trong mình.",
+                advice: "Đừng vội vàng đưa ra quyết định khi cảm xúc đang xáo động. Thở sâu 3 hơi, uống một ngụm trà ấm và lắng nghe tiếng lòng."
             },
             {
-                type: "QUẺ TRÍ TUỆ",
-                title: "Hiếu Hạnh Vi Tiên",
-                poem: "Mẹ cha tựa núi vững ngàn thu,\nƠn nghĩa sinh thành biển rộng sâu.\nChữ hiếu vẹn tròn muôn phúc kết,\nGia đình hòa thuận rạng mai sau.",
-                meaning: "Trăm điều thiện thì chữ Hiếu đứng đầu. Phụng dưỡng và tôn kính cha mẹ chính là tạo dựng mảnh đất phước đức màu mỡ nhất cho cuộc đời bạn.",
-                advice: "💡 Lời khuyên chánh niệm: Hãy gọi điện hỏi thăm cha mẹ, nấu một bữa cơm ấm cúng hoặc gửi một lời cảm ơn chân thành đến đấng sinh thành."
+                type: "Quẻ Cát Hanh • Đệ Tam",
+                title: "Thẻ Số 03: Nước Chảy Về Nguồn",
+                poem: "Suối biếc quanh co lượn vách non,
+Đá ghềnh ngăn lối dạ sắt son.
+Kiên trì xuôi chảy ra biển lớn,
+Thành tựu viên dung vẹn tấc lòng.",
+                meaning: "Sự mềm dẻo và bền bỉ như dòng nước sẽ hóa giải mọi chướng ngại. Đi đường vòng đôi khi lại đến đích an toàn hơn đường thẳng.",
+                advice: "Học hạnh của nước: nuôi dưỡng vạn vật mà không tranh giành, biết luồn lách qua khe hẹp để hướng ra đại dương tự do."
             },
             {
-                type: "QUẺ ĐẠI CÁT",
-                title: "Gieo Hạt Mầm Lành",
-                poem: "Đất màu ươm sẵn hạt mầm xanh,\nMưa thuận gió hòa hoa trĩu cành.\nNhân thiện quả lành muôn phúc báo,\nĐường đời thênh thang rạng hiển vinh.",
-                meaning: "Bạn đang gieo những hạt giống tốt đẹp về lòng nhân ái, sự nỗ lực và kiên trì. Quả ngọt của sự bình an và thành tựu đang từng bước đơm hoa kết trái.",
-                advice: "💡 Lời khuyên chánh niệm: Hãy làm một việc tốt nho nhỏ hôm nay: giúp đỡ ai đó, nhường nhịn một lời nói, hoặc khích lệ một người đang âu lo."
+                type: "Quẻ Thượng Thượng • Đệ Tứ",
+                title: "Thẻ Số 04: Ánh Dương Xua Mù",
+                poem: "Sương sớm giăng mờ đỉnh non cao,
+Nắng ấm bừng lên rực rỡ chào.
+U ám tan biến mừng xuân mới,
+Đường quang lối sáng dạ thanh tao.",
+                meaning: "Những băn khoăn, mông muội sẽ được trí tuệ và sự tỉnh thức soi rọi rõ ràng. Cơ hội tốt lành đang rộng mở đón bạn.",
+                advice: "Tập trung vào hiện tại, buông bỏ tiếc nuối quá khứ và buông bớt lo lắng vị lai để trọn vẹn từng phút giây."
             },
             {
-                type: "QUẺ KHOAN DUNG",
-                title: "Buông Xả Phiền Não",
-                poem: "Nắm chặt trong tay nặng trĩu sầu,\nBuông tay thanh thản giữa ngàn dâu.\nMây trôi gió cuốn ngàn năm cũ,\nLòng nhẹ thênh thang nhẹ gót đầu.",
-                meaning: "Ôm giữ sự oán giận cũng giống như tự mình uống thuốc độc mà mong người khác tổn thương. Tha thứ cho người khác chính là món quà giải thoát lớn nhất cho chính tâm hồn bạn.",
-                advice: "💡 Lời khuyên chánh niệm: Hãy buông bỏ một sự ấm ức trong quá khứ, hít vào sự bao dung và thở ra nụ cười thảnh thơi."
-            },
-            {
-                type: "QUẺ KIÊN ĐỊNH",
-                title: "Vững Như Núi Đá",
-                poem: "Núi đứng uy nghiêm ngắm bão giông,\nGió gào mưa tuyết dạ không lay.\nThân tâm giữ vững niềm tin sáng,\nTrời quang mây tạnh rực rỡ ngày.",
-                meaning: "Thử thách hiện tại chỉ là bài học để rèn giũa ý chí và bản lĩnh của bạn. Giữ vững giá trị đạo đức và niềm tin trong sáng, bạn sẽ vượt qua mọi giông bão một cách kiên cường.",
-                advice: "💡 Lời khuyên chánh niệm: Đừng để lời phán xét bên ngoài làm lung lay mục đích chân chính của bạn. Vững bước đi tới."
-            },
-            {
-                type: "QUẺ TRI TÚC",
-                title: "Biết Đủ Thường Vui",
-                poem: "Nhìn lên chẳng bằng ai muôn lối,\nNhìn xuống còn bao cảnh nhọc nhằn.\nCơm ngày hai bữa lòng thanh thản,\nBiết đủ đời vui phúc ngập tràn.",
-                meaning: "Hạnh phúc không phải là có thật nhiều thứ, mà là biết trân trọng và hài lòng với những gì mình đang có trong từng giây phút hiện tại.",
-                advice: "💡 Lời khuyên chánh niệm: Hãy liệt kê 3 điều bạn cảm thấy biết ơn trong ngày hôm nay: một mái nhà ấm áp, một tách trà thơm, hay một người bạn chân thành."
-            },
-            {
-                type: "QUẺ KHẨU HÒA",
-                title: "Lời Nói Nở Hoa",
-                poem: "Một lời từ ái ấm ba đông,\nMột tiếng sân si lạnh buốt lòng.\nHọc cách lắng nghe cùng thấu hiểu,\nĐời người tươi sáng tựa vừng đông.",
-                meaning: "Ngôn từ có sức mạnh chữa lành hoặc xé rách trái tim. Sử dụng ái ngữ và lắng nghe sâu sắc sẽ giúp bạn kết nối được những mối quan hệ bền chặt và hóa giải mọi bất hòa.",
-                advice: "💡 Lời khuyên chánh niệm: Trước khi nói một lời nóng giận, hãy hít thở 3 nhịp và hỏi lại mình: Lời này có xây dựng và mang lại an vui không?"
-            },
-            {
-                type: "QUẺ NHẪN NẠI",
-                title: "Nhẫn Để Thành Tựu",
-                poem: "Nhẫn một chút gió yên sóng lặng,\nLùi một bước biển rộng trời cao.\nNhân duyên chín muồi thành hoa trái,\nNguyện lớn vươn xa tự thuở nào.",
-                meaning: "Mọi sự vật trên thế gian đều cần thời gian để phát triển. Sự nóng vội chỉ đem lại sai lầm. Nhẫn nhịn ở đây là kiên trì tỉnh thức, không phải hèn nhát.",
-                advice: "💡 Lời khuyên chánh niệm: Chậm lại một nhịp, quan sát kỹ lưỡng và cho đối phương cơ hội được sẻ chia."
-            },
-            {
-                type: "QUẺ TỰ TẠI",
-                title: "Hoa Nở Đúng Thời",
-                poem: "Xuân đến trăm hoa tự khắc khoe,\nHạ về rực rỡ rộn tiếng ve.\nThời cơ chưa tới đừng than vãn,\nNhân quả công bằng chớ nghĩ e.",
-                meaning: "Mỗi người có một đồng hồ thời gian riêng. Đừng so sánh sự khởi đầu của mình với đích đến của người khác. Khi bạn chuẩn bị đủ nội lực, thành công sẽ tự đến đúng lúc.",
-                advice: "💡 Lời khuyên chánh niệm: Tập trung hoàn thiện bản thân mỗi ngày, kiên nhẫn đợi hạt mầm bén rễ sâu trước khi đón nắng mai."
-            },
-            {
-                type: "QUẺ ĐẠI BI",
-                title: "Mở Rộng Lòng Từ",
-                poem: "Rộng mở vòng tay ôm thế nhân,\nCho đi không tính toán thiệt hơn.\nTình thương tưới mát miền khô hạn,\nPhúc đức vô biên tựa suối nguồn.",
-                meaning: "Sống là cho đi mà không mong cầu đền đáp. Khi bạn mở rộng lòng trắc ẩn với mọi người và muôn loài, vũ trụ sẽ bao bọc bạn bằng nguồn năng lượng bình an và may mắn nhất.",
-                advice: "💡 Lời khuyên chánh niệm: Hãy nở một nụ cười thân thiện với người qua đường, hoặc giúp đỡ một con vật nhỏ bé gặp khó khăn."
-            },
-            {
-                type: "QUẺ HOAN HỶ",
-                title: "Tâm Hồn Tươi Sáng",
-                poem: "Nụ cười rạng rỡ đuổi phong ba,\nHoan hỷ trong tâm rộn tiếng ca.\nĐón nhận an nhiên từng khoảnh khắc,\nĐời đẹp lung linh vạn sắc hoa.",
-                meaning: "Thái độ sống quyết định chất lượng cuộc đời. Giữ một nụ cười trên môi và tinh thần lạc quan, mọi nghịch cảnh sẽ chỉ là hòn sỏi nhỏ dưới chân người leo núi.",
-                advice: "💡 Lời khuyên chánh niệm: Hãy bắt đầu ngày mới bằng việc mỉm cười trước gương và tự nhủ: Hôm nay là một ngày tuyệt vời và an lành."
+                type: "Quẻ Trung Bình • Đệ Ngũ",
+                title: "Thẻ Số 05: Tĩnh Lặng Dưỡng Tâm",
+                poem: "Cây cối thu tàn đợi gió xuân,
+Ẩn mình nuôi dưỡng cội rễ thân.
+Chờ khi nắng ấm hoa đua nở,
+Chớ sốt ruột chi uổng tấc thần.",
+                meaning: "Đây là thời điểm để quay vào bên trong tu dưỡng nội tâm, bồi dưỡng kiến thức và sức khỏe thay vì lao ra ngoài vội vã.",
+                advice: "Đọc sách hay, tĩnh tọa mỗi ngày 10 phút, ăn uống thanh đạm và giữ gìn giấc ngủ ngon."
             }
         ];
 
-        function drawFortune() {
+        function shakeFortuneCylinder() {
+            const cylinder = document.getElementById('queCylinder');
+            if (cylinder) {
+                cylinder.classList.remove('shake');
+                void cylinder.offsetWidth;
+                cylinder.classList.add('shake');
+            }
             playMoSound();
-            const tube = document.getElementById('tubeVisual');
-            const card = document.getElementById('fortuneResultCard');
-            const btn = document.getElementById('btnDrawFortune');
-
-            tube.classList.add('shaking');
-            card.style.display = 'none';
-            btn.disabled = true;
 
             setTimeout(() => {
-                tube.classList.remove('shaking');
-                playBellSound();
-
                 const randomFortune = fortuneDeck[Math.floor(Math.random() * fortuneDeck.length)];
-                document.getElementById('fortuneType').textContent = randomFortune.type;
-                document.getElementById('fortuneTitle').textContent = randomFortune.title;
-                document.getElementById('fortunePoem').textContent = randomFortune.poem.replace(/\n/g, '
-');
-                document.getElementById('fortuneMeaning').textContent = randomFortune.meaning;
-                document.getElementById('fortuneAdvice').textContent = randomFortune.advice;
+                const fType = document.getElementById('fortuneType');
+                const fTitle = document.getElementById('fortuneTitle');
+                const fPoem = document.getElementById('fortunePoem');
+                const fMeaning = document.getElementById('fortuneMeaning');
+                const fAdvice = document.getElementById('fortuneAdvice');
+                const fCard = document.getElementById('fortuneCard');
 
-                card.style.display = 'block';
-                btn.disabled = false;
-                showToast('Đã rút được thẻ quẻ: ' + randomFortune.title);
-            }, 800);
+                if (fType) fType.textContent = randomFortune.type;
+                if (fTitle) fTitle.textContent = randomFortune.title;
+                if (fPoem) fPoem.textContent = randomFortune.poem;
+                if (fMeaning) fMeaning.textContent = randomFortune.meaning;
+                if (fAdvice) fAdvice.textContent = randomFortune.advice;
+
+                if (fCard) {
+                    fCard.style.display = 'block';
+                    fCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+                showToast(`Đã rút được thẻ quẻ: ${randomFortune.title}`, '🎋');
+            }, 650);
+        }
+        function drawFortune() { shakeFortuneCylinder(); }
+
+        // ==========================================
+        // TAB 6: LẦN TRÀNG HẠT 108 HẠT BỒ ĐỀ
+        // ==========================================
+        function advanceMalaBead() {
+            state.malaBead++;
+            state.malaCount++;
+            state.meritCount++;
+
+            if (state.malaBead > 108) {
+                state.malaBead = 1;
+                state.malaRounds++;
+                showToast(`Đã hoàn tất vòng 108 hạt thứ ${state.malaRounds}!`, '📿');
+                playSolfeggio174();
+            } else {
+                playMoSound();
+            }
+
+            const ring = document.getElementById('malaRing');
+            if (ring) {
+                ring.style.transform = `rotate(${state.malaBead * 3.33}deg)`;
+            }
+
+            saveAllCounters();
+            updateAllCounters();
         }
 
         // ==========================================
-        // TABS SWITCHING LOGIC
+        // TAB 7: ÂM THANH KHÔNG GIAN (SPATIAL SOUNDSCAPE)
+        // ==========================================
+        let rainNode = null, rainGain = null;
+        let streamNode = null, streamGain = null;
+        let omOscs = [], omGain = null;
+
+        function toggleRainSoundTrack() {
+            const btn = document.getElementById('btnMixRain');
+            if (rainNode) {
+                rainNode.stop();
+                rainNode.disconnect();
+                rainNode = null;
+                if (btn) { btn.classList.remove('active'); btn.textContent = 'Bật'; }
+                showToast('Đã tắt tiếng mưa rào');
+            } else {
+                const ctx = getAudioContext();
+                const bufferSize = 2 * ctx.sampleRate;
+                const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+                const output = noiseBuffer.getChannelData(0);
+                let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+                for (let i = 0; i < bufferSize; i++) {
+                    const white = Math.random() * 2 - 1;
+                    b0 = 0.99886 * b0 + white * 0.0555179;
+                    b1 = 0.99332 * b1 + white * 0.0750759;
+                    b2 = 0.96900 * b2 + white * 0.1538520;
+                    b3 = 0.86650 * b3 + white * 0.3104856;
+                    b4 = 0.55000 * b4 + white * 0.5329522;
+                    b5 = -0.7616 * b5 - white * 0.0168980;
+                    output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.07;
+                    b6 = white * 0.115926;
+                }
+                const whiteNoise = ctx.createBufferSource();
+                whiteNoise.buffer = noiseBuffer;
+                whiteNoise.loop = true;
+
+                const filter = ctx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.value = 1200;
+
+                rainGain = ctx.createGain();
+                const slider = document.getElementById('rainMixVol');
+                rainGain.gain.value = slider ? parseFloat(slider.value) : 0.5;
+
+                whiteNoise.connect(filter);
+                filter.connect(rainGain);
+                rainGain.connect(ctx.destination);
+                whiteNoise.start(0);
+
+                rainNode = whiteNoise;
+                if (btn) { btn.classList.add('active'); btn.textContent = 'Tắt'; }
+                showToast('Đang phát tiếng mưa rào mái ngói', '🌧️');
+            }
+        }
+        function changeRainVol(val) { if (rainGain) rainGain.gain.value = parseFloat(val); }
+
+        function toggleStreamSoundTrack() {
+            const btn = document.getElementById('btnMixStream');
+            if (streamNode) {
+                streamNode.stop();
+                streamNode.disconnect();
+                streamNode = null;
+                if (btn) { btn.classList.remove('active'); btn.textContent = 'Bật'; }
+                showToast('Đã tắt tiếng suối chảy');
+            } else {
+                const ctx = getAudioContext();
+                const bufferSize = 2 * ctx.sampleRate;
+                const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+                const data = buffer.getChannelData(0);
+                let lastOut = 0.0;
+                for (let i = 0; i < bufferSize; i++) {
+                    const white = Math.random() * 2 - 1;
+                    data[i] = (lastOut + (0.02 * white)) / 1.02;
+                    lastOut = data[i];
+                    data[i] *= 2.8;
+                }
+                const source = ctx.createBufferSource();
+                source.buffer = buffer;
+                source.loop = true;
+
+                const filter = ctx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.value = 650;
+                filter.Q.value = 1.2;
+
+                streamGain = ctx.createGain();
+                const slider = document.getElementById('streamMixVol');
+                streamGain.gain.value = slider ? parseFloat(slider.value) : 0.5;
+
+                source.connect(filter);
+                filter.connect(streamGain);
+                streamGain.connect(ctx.destination);
+                source.start(0);
+
+                streamNode = source;
+                if (btn) { btn.classList.add('active'); btn.textContent = 'Tắt'; }
+                showToast('Đang phát tiếng suối róc rách', '🌊');
+            }
+        }
+        function changeStreamVol(val) { if (streamGain) streamGain.gain.value = parseFloat(val); }
+
+        function toggleOmSoundTrack() {
+            const btn = document.getElementById('btnMixOm');
+            if (omOscs.length > 0) {
+                omOscs.forEach(o => { o.stop(); o.disconnect(); });
+                omOscs = [];
+                if (btn) { btn.classList.remove('active'); btn.textContent = 'Bật'; }
+                showToast('Đã tắt dải âm thiền Om');
+            } else {
+                const ctx = getAudioContext();
+                const now = ctx.currentTime;
+                omGain = ctx.createGain();
+                const slider = document.getElementById('omMixVol');
+                omGain.gain.value = slider ? parseFloat(slider.value) : 0.4;
+                omGain.connect(ctx.destination);
+
+                const harmonics = [136.1, 140.1, 272.2, 408.3];
+                omOscs = harmonics.map((h, i) => {
+                    const osc = ctx.createOscillator();
+                    const g = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.value = h;
+                    g.gain.value = (1 / (i + 1)) * 0.35;
+                    osc.connect(g);
+                    g.connect(omGain);
+                    osc.start(now);
+                    return osc;
+                });
+
+                if (btn) { btn.classList.add('active'); btn.textContent = 'Tắt'; }
+                showToast('Đang phát dải âm thiền Om 136.1Hz', '🧘');
+            }
+        }
+        function changeOmVol(val) { if (omGain) omGain.gain.value = parseFloat(val); }
+
+        // Top navigation ambient button (quick toggle stream)
+        let ambientRunning = false;
+        function toggleAmbientSound() {
+            ambientRunning = !ambientRunning;
+            const btn = document.getElementById('btnAmbientSound');
+            const icon = document.getElementById('ambientIcon');
+            const text = document.getElementById('ambientText');
+            if (ambientRunning) {
+                toggleStreamSoundTrack();
+                if (btn) btn.classList.add('playing');
+                if (icon) icon.textContent = '⏸️';
+                if (text) text.textContent = 'Dừng Âm Thanh';
+            } else {
+                toggleStreamSoundTrack();
+                if (btn) btn.classList.remove('playing');
+                if (icon) icon.textContent = '🎵';
+                if (text) text.textContent = 'Âm Thanh Thiền';
+            }
+        }
+
+        // ==========================================
+        // TAB SWITCHING (ALL 7 TABS)
         // ==========================================
         function switchZenTab(tabId) {
             document.querySelectorAll('.zen-tab-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.zen-pane').forEach(p => p.classList.remove('active'));
 
-            const targetBtn = Array.from(document.querySelectorAll('.zen-tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
-            if (targetBtn) targetBtn.classList.add('active');
-
             const targetPane = document.getElementById(tabId);
             if (targetPane) targetPane.classList.add('active');
 
-            if (tabId === 'tab-tree') {
-                renderWishes();
-            }
-            if (tabId === 'tab-huong') {
-                initSmokeCanvas();
+            // Find matching button
+            const btnMap = {
+                'tab-mo': 'tabBtn-mo',
+                'tab-huong': 'tabBtn-huong',
+                'tab-chuong': 'tabBtn-chuong',
+                'tab-tree': 'tabBtn-tree',
+                'tab-que': 'tabBtn-que',
+                'tab-mala': 'tabBtn-mala',
+                'tab-sound': 'tabBtn-sound'
+            };
+            const btnId = btnMap[tabId];
+            if (btnId) {
+                const btn = document.getElementById(btnId);
+                if (btn) btn.classList.add('active');
             }
         }
 
         // ==========================================
-        // CẨM NANG VĂN KHẤN LOGIC
+        // CANVAS SMOKE PARTICLES (ALTAR & TAB)
         // ==========================================
-        function switchPrayer(index) {
-            document.querySelectorAll('.prayer-nav-btn').forEach((b, i) => {
-                b.classList.toggle('active', i === index);
-            });
-            document.querySelectorAll('.prayer-card').forEach((c, i) => {
-                c.classList.toggle('active', i === index);
-            });
+        let altarSmokeCtx = null, tabSmokeCtx = null;
+        let smokeParticles = [];
+
+        class SmokeParticle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = -0.7 - Math.random() * 0.6;
+                this.radius = 2 + Math.random() * 3;
+                this.life = 0;
+                this.maxLife = 90 + Math.random() * 35;
+                this.alpha = 0.55;
+            }
+            update() {
+                this.x += this.vx + Math.sin(this.life * 0.05) * 0.3;
+                this.y += this.vy;
+                this.life++;
+                this.radius += 0.07;
+                this.alpha = Math.max(0, 0.55 * (1 - (this.life / this.maxLife)));
+            }
+            draw(ctx) {
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(220, 225, 235, ${this.alpha})`;
+                ctx.fill();
+                ctx.restore();
+            }
         }
 
-        function copyPrayer(index) {
-            const textElem = document.getElementById('prayerText' + index);
+        function initSmokeEngines() {
+            const aC = document.getElementById('altarSmokeCanvas');
+            if (aC) altarSmokeCtx = aC.getContext('2d');
+            const tC = document.getElementById('tabSmokeCanvas');
+            if (tC) tabSmokeCtx = tC.getContext('2d');
+
+            function renderSmoke() {
+                if (altarSmokeCtx && aC) altarSmokeCtx.clearRect(0, 0, aC.width, aC.height);
+                if (tabSmokeCtx && tC) tabSmokeCtx.clearRect(0, 0, tC.width, tC.height);
+
+                if (Math.random() < 0.65) {
+                    const cx = 100 + (Math.random() * 24 - 12);
+                    smokeParticles.push(new SmokeParticle(cx, 180));
+                }
+
+                for (let i = smokeParticles.length - 1; i >= 0; i--) {
+                    const p = smokeParticles[i];
+                    p.update();
+                    if (altarSmokeCtx) p.draw(altarSmokeCtx);
+                    if (tabSmokeCtx) p.draw(tabSmokeCtx);
+                    if (p.life >= p.maxLife || p.alpha <= 0.01) {
+                        smokeParticles.splice(i, 1);
+                    }
+                }
+                requestAnimationFrame(renderSmoke);
+            }
+            renderSmoke();
+        }
+
+        // ==========================================
+        // PRAYERS & LIGHTBOX & TEMPLE FILTER (EXISTING)
+        // ==========================================
+        function switchPrayer(prayerId) {
+            document.querySelectorAll('.prayer-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.prayer-pane').forEach(p => p.classList.remove('active'));
+
+            const targetBtn = Array.from(document.querySelectorAll('.prayer-tab-btn')).find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes(prayerId));
+            if (targetBtn) targetBtn.classList.add('active');
+
+            const targetPane = document.getElementById(prayerId);
+            if (targetPane) targetPane.classList.add('active');
+        }
+
+        function copyPrayer(prayerId) {
+            const pane = document.getElementById(prayerId);
+            if (!pane) return;
+            const textElem = pane.querySelector('.prayer-text');
             if (!textElem) return;
-            navigator.clipboard.writeText(textElem.innerText).then(() => {
+
+            const textToCopy = textElem.innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
                 showToast('Đã sao chép toàn bộ bài văn khấn vào bộ nhớ tạm');
             }).catch(() => {
-                showToast('Không thể tự động sao chép, vui lòng bôi đen để copy');
+                showToast('Không thể sao chép tự động, vui lòng chọn và sao chép thủ công');
             });
         }
 
-        // ==========================================
-        // DANH LAM CỔ TỰ: FILTER LOGIC
-        // ==========================================
-        function filterTemples(region) {
-            document.querySelectorAll('.region-tab-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
+        function filterTemples(region, btn) {
+            document.querySelectorAll('.region-tab').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
 
             const cards = document.querySelectorAll('.temple-card');
             cards.forEach(card => {
-                if (region === 'all' || card.dataset.region === region) {
+                const cardRegion = card.getAttribute('data-region');
+                if (region === 'all' || cardRegion === region) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
@@ -2957,63 +3982,36 @@ Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
             });
         }
 
-        // ==========================================
-        // LIGHTBOX MODAL LOGIC
-        // ==========================================
         function openLightbox(src, title, caption) {
             const modal = document.getElementById('lightboxModal');
             const img = document.getElementById('lightboxImg');
             const titleElem = document.getElementById('lightboxTitle');
             const capElem = document.getElementById('lightboxCaption');
 
-            img.src = src;
-            titleElem.textContent = title;
-            capElem.textContent = caption;
-
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            if (modal && img) {
+                img.src = src;
+                if (titleElem) titleElem.textContent = title;
+                if (capElem) capElem.textContent = caption;
+                modal.classList.add('active');
+            }
         }
-
         function closeLightboxDirect() {
-            document.getElementById('lightboxModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            const modal = document.getElementById('lightboxModal');
+            if (modal) modal.classList.remove('active');
         }
-
         function closeLightbox(e) {
             if (e.target.id === 'lightboxModal') {
                 closeLightboxDirect();
             }
         }
 
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') closeLightboxDirect();
-        });
-
         // ==========================================
-        // TOAST LOGIC
+        // INITIALIZATION
         // ==========================================
-        let toastTimeout = null;
-        function showToast(msg) {
-            const toast = document.getElementById('zenToast');
-            document.getElementById('toastMsg').textContent = msg;
-            toast.classList.add('show');
-            if (toastTimeout) clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3200);
-        }
-
-        // Window resize canvas update
-        window.addEventListener('resize', () => {
-            if (document.getElementById('tab-huong').classList.contains('active')) {
-                initSmokeCanvas();
-            }
-        });
-
-        // Page load initialization
         document.addEventListener('DOMContentLoaded', () => {
-            loadWishes();
-            initSmokeCanvas();
+            updateAllCounters();
+            loadAndRenderWishes();
+            initSmokeEngines();
         });
     </script>
 </body>
