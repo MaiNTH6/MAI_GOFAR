@@ -228,19 +228,6 @@ const GOFAR_DATA = {
             modalId: 'thung-ui'
         },
         {
-            id: 'dest-dichua-online',
-            title: 'Đi Chùa Online — Chánh Điện Trực Tuyến',
-            category: 'heritage',
-            tags: ['🪷 Đi Chùa Online', 'Tu Tập Chánh Niệm'],
-            desc: 'Viếng Chánh Điện ảo các danh lam cổ tự, Mộc Ngư đếm công đức 60/80/108 BPM, thắp hương tĩnh tọa nhang tàn dần, chuông Solfeggio 174Hz & âm thanh không gian tiếng mưa/suối/Om.',
-            img: 'images/bai_dinh_buddha_1783494499108.webp',
-            rating: 5.0,
-            stars: '★★★★★',
-            reviews: 680,
-            size: 'normal',
-            modalId: null
-        },
-        {
             id: 'dest-tam-linh',
             title: 'Tâm Linh & Chùa Thiêng Việt Nam',
             category: 'heritage',
