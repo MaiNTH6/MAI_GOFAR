@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Bình Liêu', slug: 'binh-lieu', category: 'mountain', rating: '4.9', img: 'images/binhlieu_hero.webp', desc: 'Vạn lý trường thành Việt Nam & mùa cỏ lau trắng', region: 'Miền Bắc' },
         { name: 'Măng Đen (Kon Tum)', slug: 'mang-den', category: 'mountain', rating: '4.9', img: 'images/mangden_hero.webp', desc: 'Nàng thơ giữa đại ngàn & mùa hoa mai anh đào', region: 'Tây Nguyên' },
         { name: 'Côn Đảo (Bà Rịa - Vũng Tàu)', slug: 'con-dao', category: 'beach', rating: '4.9', img: 'images/condao_hero.webp', desc: 'Bản hùng ca bất diệt Hàng Dương & thiên đường biển biếc', region: 'Miền Nam' },
+        { name: 'Tâm Linh & Chùa Thiêng Việt Nam', slug: 'tam-linh', href: 'tam-linh.html', category: 'heritage', rating: '5.0', img: 'images/bai_dinh_ancient_temple_1785641271528.webp', desc: 'Gõ mõ thiền, dâng tâm hương, thỉnh đại hồng chung, cây ước nguyện & 18 cổ tự linh thiêng 3 miền', region: 'Toàn Quốc' },
         { name: 'Phú Quốc', slug: null, category: 'beach', rating: '4.5', img: 'images/phuquoc.webp', desc: 'Đảo ngọc phương Nam', region: 'Miền Nam' },
         { name: 'Nha Trang', slug: null, category: 'beach', rating: '4.4', img: 'images/phuquoc.webp', desc: 'Biển xanh, nắng vàng', region: 'Miền Trung' },
     ];
@@ -222,8 +223,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
             }
 
+            const targetHref = d.href || `destination-${d.slug}.html`;
             return `
-                <a class="search-result-item" href="destination-${d.slug}.html">${body}
+                <a class="search-result-item" href="${targetHref}">${body}
                 </a>`;
         }).join('');
     }

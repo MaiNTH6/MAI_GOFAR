@@ -227,6 +227,19 @@ const GOFAR_DATA = {
             size: 'normal',
             modalId: 'thung-ui'
         },
+        {
+            id: 'dest-tam-linh',
+            title: 'Tâm Linh & Chùa Thiêng Việt Nam',
+            category: 'heritage',
+            tags: ['🪷 Thiền Môn', 'Chánh Niệm'],
+            desc: 'Khám phá 18 ngôi chùa linh thiêng 3 miền, trải nghiệm gõ mõ thiền, dâng tâm hương, thỉnh đại hồng chung, cây ước nguyện cội bồ đề & cẩm nang văn khấn cổ truyền.',
+            img: 'images/bai_dinh_ancient_temple_1785641271528.webp',
+            rating: 5.0,
+            stars: '★★★★★',
+            reviews: 520,
+            size: 'normal',
+            modalId: null
+        },
 {
             id: 'dest-ninh-binh',
             title: 'Ninh Bình',

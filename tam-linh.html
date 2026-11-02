@@ -1,0 +1,3013 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tâm Linh Việt Nam — Danh Lam Cổ Tự & Không Gian Chánh Niệm An Nhiên | GO FAR</title>
+    <meta name="description" content="Chuyên trang Tâm Linh GO FAR: Khám phá các ngôi chùa linh thiêng cổ kính tại Việt Nam, trải nghiệm gõ mõ, thắp hương, thỉnh đại hồng chung, cây ước nguyện cội bồ đề, rút thẻ quẻ an nhiên và cẩm nang văn khấn cổ truyền chuẩn mực.">
+    <meta name="author" content="Sửu nhi — GO FAR">
+    <link rel="canonical" href="https://gofarvietnam.com/tam-linh.html">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #0D1F2D;
+            --bg-secondary: #132D42;
+            --bg-card: rgba(19, 45, 66, 0.9);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+
+            --accent-gold: #fbbf24;
+            --accent-warm: #f59e0b;
+            --accent-lotus: #f472b6;
+            --accent-green: #10B981;
+            --accent-teal: #2dd4bf;
+
+            --font-main: 'Space Grotesk', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-accent: 'Caveat', cursive;
+            --font-body: 'Inter', sans-serif;
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+            --border-subtle: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
+        .nav {
+            background: linear-gradient(135deg, #0D1F2D 0%, #15344d 50%, #0D1F2D 100%);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #fbbf24, #10B981, transparent) 1;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+        .nav-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+        .nav-logo img { height: 42px; }
+        .nav-logo span {
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #fff;
+            letter-spacing: 0.05em;
+        }
+        .nav-logo span em {
+            color: var(--accent-gold);
+            font-style: normal;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .nav-link {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold);
+        }
+        .btn-zen-ambient {
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: var(--accent-gold);
+            padding: 0.45rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-zen-ambient:hover, .btn-zen-ambient.playing {
+            background: var(--accent-gold);
+            color: #0D1F2D;
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+        }
+
+        /* HERO HEADER */
+        .hero {
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #08121a;
+        }
+        .hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4) contrast(1.15);
+            transform: scale(1.03);
+            animation: zoomSlow 25s infinite alternate ease-in-out;
+        }
+        @keyframes zoomSlow {
+            from { transform: scale(1.0); }
+            to { transform: scale(1.08); }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(13,31,45,0.4) 0%, rgba(13,31,45,0.92) 80%, var(--bg-primary) 100%);
+        }
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: var(--accent-gold);
+            padding: 0.35rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+        .hero h1 span.gold {
+            color: var(--accent-gold);
+            font-family: var(--font-main);
+            background: linear-gradient(135deg, #fbbf24 20%, #f59e0b 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-desc {
+            font-size: 1.12rem;
+            color: #e2e8f0;
+            max-width: 820px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .hero-nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        .hero-pill {
+            background: rgba(19, 45, 66, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 0.65rem 1.3rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(8px);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .hero-pill:hover {
+            background: var(--accent-gold);
+            color: #0D1F2D;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(251, 191, 36, 0.35);
+            border-color: var(--accent-gold);
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent-gold);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.3rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ================================================= */
+        /* PHẦN 1: GÓC AN NHIÊN (INTERACTIVE ZEN SANCTUARY) */
+        /* ================================================= */
+        .zen-sanctuary {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+            position: relative;
+        }
+        .sanctuary-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            backdrop-filter: blur(15px);
+        }
+
+        /* Sanctuary Tabs */
+        .zen-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.2rem;
+        }
+        .zen-tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            padding: 0.75rem 1.4rem;
+            border-radius: var(--radius-full);
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .zen-tab-btn:hover {
+            color: #fff;
+            background: rgba(251, 191, 36, 0.12);
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+        .zen-tab-btn.active {
+            background: var(--accent-gold);
+            color: #0D1F2D;
+            border-color: var(--accent-gold);
+            box-shadow: 0 4px 16px rgba(251, 191, 36, 0.35);
+        }
+
+        /* Tab Content Panes */
+        .zen-pane {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .zen-pane.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 1. GÕ MÕ */
+        .mo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .mo-visual {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            margin: 1.5rem auto;
+            cursor: pointer;
+            user-select: none;
+        }
+        .mo-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+            transition: transform 0.1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+        .mo-visual:active .mo-svg, .mo-visual.struck .mo-svg {
+            transform: scale(0.92) rotate(-2deg);
+        }
+        .mo-ripple {
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-gold);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .mo-visual.struck .mo-ripple {
+            animation: rippleOut 0.6s ease-out forwards;
+        }
+        @keyframes rippleOut {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+        .mo-counter {
+            font-family: var(--font-main);
+            font-size: 1.15rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        .mo-quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #f1f5f9;
+            min-height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+            margin-bottom: 1.5rem;
+            transition: opacity 0.3s;
+        }
+        .mo-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-zen {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            color: #0D1F2D;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            border-radius: var(--radius-full);
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 18px rgba(251, 191, 36, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-zen:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.45);
+        }
+        .btn-zen-secondary {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-zen-secondary:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* 2. THẮP HƯƠNG */
+        .huong-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .burner-stage {
+            position: relative;
+            width: 260px;
+            height: 280px;
+            margin: 1rem auto 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .smoke-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 220px;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .incense-sticks {
+            display: flex;
+            gap: 22px;
+            margin-bottom: -15px;
+            z-index: 3;
+        }
+        .stick {
+            width: 4px;
+            height: 120px;
+            background: #854d0e;
+            border-radius: 2px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .stick::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #713f12;
+            transition: all 0.3s;
+        }
+        .stick.lit::before {
+            background: #ff4500;
+            box-shadow: 0 0 10px #ff6b35, 0 0 20px #ff4500, 0 0 30px #f59e0b;
+            animation: pulseGlow 1.8s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            from { transform: scale(0.9); opacity: 0.8; }
+            to { transform: scale(1.2); opacity: 1; }
+        }
+        .burner-base {
+            width: 180px;
+            height: 90px;
+            background: linear-gradient(180deg, #78350f 0%, #451a03 100%);
+            border-radius: 12px 12px 24px 24px;
+            border: 2px solid #b45309;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fde68a;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+        .burner-base::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            width: 140px;
+            height: 8px;
+            background: #291003;
+            border-radius: 4px;
+        }
+        .huong-status {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+        .huong-timer {
+            font-family: var(--font-main);
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 3. GÕ CHUÔNG */
+        .chuong-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .chuong-visual {
+            position: relative;
+            width: 240px;
+            height: 260px;
+            margin: 1.5rem auto;
+            cursor: pointer;
+        }
+        .bell-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6));
+            transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+        .chuong-visual.chiming .bell-svg {
+            animation: bellRing 0.8s ease-in-out;
+        }
+        @keyframes bellRing {
+            0% { transform: rotate(0deg); }
+            20% { transform: rotate(4deg); }
+            40% { transform: rotate(-4deg); }
+            60% { transform: rotate(2deg); }
+            80% { transform: rotate(-1deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .bell-waves {
+            position: absolute;
+            inset: -30px;
+            border-radius: 50%;
+            border: 2px solid rgba(251, 191, 36, 0.8);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .chuong-visual.chiming .bell-waves {
+            animation: bellWaveOut 2s ease-out forwards;
+        }
+        @keyframes bellWaveOut {
+            0% { transform: scale(0.6); opacity: 1; border-width: 3px; }
+            100% { transform: scale(1.6); opacity: 0; border-width: 1px; }
+        }
+        .chuong-verse {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: #f1f5f9;
+            line-height: 1.9;
+            margin: 1.2rem 0 1.8rem;
+            font-style: italic;
+            border-left: 2px solid var(--accent-gold);
+            border-right: 2px solid var(--accent-gold);
+            padding: 0 1.5rem;
+        }
+
+        /* 4. CÂY ƯỚC NGUYỆN */
+        .tree-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .tree-visual-box {
+            position: relative;
+            background: rgba(13, 31, 45, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            height: 480px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tree-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+        .ribbons-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .wish-ribbon {
+            position: absolute;
+            padding: 0.35rem 0.8rem;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transform-origin: top center;
+            animation: ribbonSway 3s ease-in-out infinite alternate;
+            pointer-events: auto;
+            cursor: pointer;
+            max-width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .wish-ribbon.red { background: linear-gradient(135deg, #ef4444, #b91c1c); border-top: 3px solid #fecaca; }
+        .wish-ribbon.gold { background: linear-gradient(135deg, #f59e0b, #b45309); border-top: 3px solid #fef3c7; }
+        .wish-ribbon.green { background: linear-gradient(135deg, #10b981, #047857); border-top: 3px solid #a7f3d0; }
+        .wish-ribbon.purple { background: linear-gradient(135deg, #8b5cf6, #6d28d9); border-top: 3px solid #ede9fe; }
+
+        @keyframes ribbonSway {
+            from { transform: rotate(-5deg); }
+            to { transform: rotate(5deg); }
+        }
+        .tree-form-box {
+            background: rgba(13, 31, 45, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+        }
+        .tree-form-box h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .tree-form-box p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.25s;
+        }
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .form-textarea { resize: vertical; min-height: 90px; }
+        .recent-wishes {
+            margin-top: 1.8rem;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-top: 1.2rem;
+        }
+        .recent-wishes-title {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        .wish-items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            max-height: 180px;
+            overflow-y: auto;
+            padding-right: 0.4rem;
+        }
+        .wish-item {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-sm);
+            padding: 0.6rem 0.8rem;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--accent-gold);
+        }
+        .wish-item strong { color: #fff; }
+        .wish-item span { color: var(--text-muted); font-size: 0.75rem; margin-left: 0.5rem; }
+
+        /* 5. THẺ QUẺ AN NHIÊN */
+        .que-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .tube-visual {
+            position: relative;
+            width: 160px;
+            height: 240px;
+            margin: 1.5rem auto;
+            cursor: pointer;
+            user-select: none;
+        }
+        .tube-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+            transition: transform 0.1s;
+        }
+        .tube-visual.shaking {
+            animation: tubeShake 0.6s infinite ease-in-out;
+        }
+        @keyframes tubeShake {
+            0% { transform: rotate(0deg) translateY(0); }
+            25% { transform: rotate(-8deg) translateY(-8px); }
+            50% { transform: rotate(8deg) translateY(0); }
+            75% { transform: rotate(-5deg) translateY(-5px); }
+            100% { transform: rotate(0deg) translateY(0); }
+        }
+        .fortune-result-card {
+            display: none;
+            background: linear-gradient(135deg, rgba(26, 55, 77, 0.95), rgba(13, 31, 45, 0.95));
+            border: 2px solid var(--accent-gold);
+            border-radius: var(--radius-md);
+            padding: 2.2rem;
+            margin-top: 1.5rem;
+            max-width: 580px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+            text-align: center;
+            animation: scaleIn 0.4s ease;
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .fortune-tag {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+        .fortune-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .fortune-poem {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #fde68a;
+            white-space: pre-line;
+            margin-bottom: 1.2rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.25);
+            border-radius: var(--radius-sm);
+        }
+        .fortune-meaning {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        .fortune-advice {
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.1);
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--accent-green);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ================================================= */
+        /* PHẦN 2: CẨM NANG VĂN KHẤN CỔ TRUYỀN */
+        /* ================================================= */
+        .prayers-section {
+            padding: 5rem 0;
+            background: var(--bg-primary);
+        }
+        .prayers-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .prayers-sidebar {
+            position: sticky;
+            top: 5.5rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 1.2rem;
+        }
+        .prayer-nav-btn {
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-main);
+            font-size: 0.92rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.35rem;
+        }
+        .prayer-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+        .prayer-nav-btn.active {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--accent-gold);
+            font-weight: 600;
+            border-left: 3px solid var(--accent-gold);
+        }
+        .prayer-card {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeIn 0.3s ease;
+        }
+        .prayer-card.active {
+            display: block;
+        }
+        .prayer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .prayer-title-wrap h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+        .prayer-title-wrap p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+        .btn-copy-prayer {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .btn-copy-prayer:hover {
+            background: var(--accent-gold);
+            color: #0D1F2D;
+            border-color: var(--accent-gold);
+        }
+        .prayer-body {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            line-height: 2.0;
+            color: #e2e8f0;
+            white-space: pre-line;
+            background: rgba(13, 31, 45, 0.5);
+            padding: 1.8rem;
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--accent-gold);
+        }
+        .prayer-notes {
+            margin-top: 1.5rem;
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.4rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+        .prayer-notes strong { color: var(--accent-gold); }
+
+        /* ================================================= */
+        /* PHẦN 3: DANH LAM CỔ TỰ 3 MIỀN */
+        /* ================================================= */
+        .temples-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        .region-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .region-tab-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-secondary);
+            padding: 0.6rem 1.4rem;
+            border-radius: var(--radius-full);
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .region-tab-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .region-tab-btn.active {
+            background: var(--accent-gold);
+            color: #0D1F2D;
+            border-color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .temples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+        .temple-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .temple-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(251, 191, 36, 0.4);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+        }
+        .temple-img-wrap {
+            position: relative;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+        }
+        .temple-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+            filter: brightness(0.92) contrast(1.05);
+        }
+        .temple-card:hover .temple-img-wrap img {
+            transform: scale(1.08);
+            filter: brightness(1) contrast(1.1);
+        }
+        .temple-region-tag {
+            position: absolute;
+            top: 0.8rem;
+            left: 0.8rem;
+            background: rgba(13, 31, 45, 0.85);
+            color: var(--accent-gold);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            padding: 0.25rem 0.7rem;
+            border-radius: var(--radius-full);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            backdrop-filter: blur(6px);
+            z-index: 2;
+        }
+        .temple-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .temple-name {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+        }
+        .temple-location {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .temple-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+        .temple-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: auto;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .temple-pill {
+            font-size: 0.72rem;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+        }
+
+        /* ================================================= */
+        /* PHẦN 4: QUY CHUẨN ĐI CHÙA */
+        /* ================================================= */
+        .etiquette-section {
+            padding: 5rem 0;
+            background: var(--bg-primary);
+        }
+        .etiquette-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .etiquette-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+        .etiquette-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        .etiquette-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .etiquette-card h3 {
+            font-family: var(--font-main);
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .etiquette-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: #09151e;
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+        .footer-logo {
+            height: 38px;
+            margin-bottom: 1rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--accent-gold); }
+
+        /* LIGHTBOX */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(10px);
+            overflow-y: auto;
+        }
+        .lightbox-dialog {
+            position: relative;
+            max-width: 960px;
+            margin: 3.5rem auto;
+            padding: 0 1.5rem;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -2.5rem;
+            right: 1.5rem;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .lightbox-close:hover { color: var(--accent-gold); }
+        .lightbox-img-wrap {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .lightbox-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .lightbox-caption-wrap {
+            margin-top: 1.2rem;
+            text-align: center;
+        }
+        .lightbox-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+        .lightbox-caption {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            max-width: 780px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* TOAST */
+        .zen-toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(13, 31, 45, 0.95);
+            border: 1px solid var(--accent-gold);
+            color: #fff;
+            padding: 0.8rem 1.4rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .zen-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 2.6rem; }
+            .tree-container { grid-template-columns: 1fr; }
+            .tree-visual-box { height: 360px; }
+            .prayers-grid { grid-template-columns: 1fr; }
+            .prayers-sidebar { position: static; }
+            .temples-grid { grid-template-columns: repeat(2, 1fr); }
+            .etiquette-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 680px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-desc { font-size: 0.98rem; }
+            .sanctuary-box { padding: 1.5rem; }
+            .temples-grid { grid-template-columns: 1fr; }
+            .etiquette-grid { grid-template-columns: 1fr; }
+            .prayer-card { padding: 1.5rem; }
+            .nav-inner { padding: 0 1rem; }
+            .nav-link span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="GO FAR Logo">
+                <span>GO <em>FAR</em></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    <span>Trang Chủ</span>
+                </a>
+                <a href="#goc-an-nhien" class="nav-link active">
+                    <span>🪷 Góc An Nhiên</span>
+                </a>
+                <a href="#van-khan" class="nav-link">
+                    <span>📜 Văn Khấn</span>
+                </a>
+                <a href="#danh-lam-co-tu" class="nav-link">
+                    <span>🏯 Cổ Tự 3 Miền</span>
+                </a>
+                <button class="btn-zen-ambient" id="btnAmbientSound" onclick="toggleAmbientSound()">
+                    <span id="ambientIcon">🎵</span>
+                    <span id="ambientText">Âm Thanh Thiền</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <header class="hero">
+        <img class="hero-img" src="images/bai_dinh_ancient_temple_1785641271528.webp" alt="Chốn thiền môn thanh tịnh Bái Đính Ninh Bình">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span>🪷</span> KHÔNG GIAN TÂM LINH & CHÁNH NIỆM VIỆT NAM
+            </div>
+            <h1>Chốn Thiền Môn Cổ Kính & <span class="gold">Hành Trình An Nhiên</span></h1>
+            <p class="hero-desc">
+                Trút bỏ những ồn ào vội vã của đời thường để hòa mình vào vẻ đẹp trầm mặc nghìn năm của non sông đất Việt. Lắng nghe tiếng mõ nhịp nhàng, tiếng chuông đại hồng chung ngân vang, thắp nén tâm hương và gửi gắm tâm nguyện bình an đến người thân yêu.
+            </p>
+            <div class="hero-nav-pills">
+                <a href="#goc-an-nhien" class="hero-pill">🧘 Trải Nghiệm Chánh Niệm</a>
+                <a href="#van-khan" class="hero-pill">📜 Cẩm Nang Văn Khấn Chuẩn</a>
+                <a href="#danh-lam-co-tu" class="hero-pill">🏯 Khám Phá Cổ Tự 3 Miền</a>
+                <a href="#nghi-thuc" class="hero-pill">🏮 Quy Chuẩn Đi Chùa</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================================= -->
+    <!-- PHẦN 1: GÓC AN NHIÊN (TƯƠNG TÁC TÂM LINH THƯ GIÃN) -->
+    <!-- ================================================= -->
+    <section class="zen-sanctuary" id="goc-an-nhien">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🧘 CHÁNH NIỆM & TĨNH TÂM</span>
+                <h2 class="section-title">Góc An Nhiên — Không Gian Thư Giãn Tâm Hồn</h2>
+                <p class="section-subtitle">
+                    Một điểm chạm tĩnh lặng giữa không gian số, giúp bạn buông bỏ âu lo, nuôi dưỡng lòng trắc ẩn và cảm nhận nguồn năng lượng an lành từ bên trong.
+                </p>
+            </div>
+
+            <div class="sanctuary-box">
+                <!-- TABS -->
+                <div class="zen-tabs">
+                    <button class="zen-tab-btn active" onclick="switchZenTab('tab-mo')">
+                        <span>🐟</span> Gõ Mõ Chánh Niệm
+                    </button>
+                    <button class="zen-tab-btn" onclick="switchZenTab('tab-huong')">
+                        <span>🕯️</span> Thắp Nén Tâm Hương
+                    </button>
+                    <button class="zen-tab-btn" onclick="switchZenTab('tab-chuong')">
+                        <span>🔔</span> Gõ Đại Hồng Chung
+                    </button>
+                    <button class="zen-tab-btn" onclick="switchZenTab('tab-tree')">
+                        <span>🌳</span> Cây Ước Nguyện Cội Bồ Đề
+                    </button>
+                    <button class="zen-tab-btn" onclick="switchZenTab('tab-que')">
+                        <span>📜</span> Thẻ Quẻ An Nhiên
+                    </button>
+                </div>
+
+                <!-- 1. GÕ MÕ -->
+                <div class="zen-pane active" id="tab-mo">
+                    <div class="mo-container">
+                        <div class="mo-counter">
+                            Số lần gõ chánh niệm: <span id="moCount">0</span>
+                        </div>
+                        <div class="mo-quote" id="moQuote">
+                            "Thở vào tâm tĩnh lặng, thở ra miệng mỉm cười."
+                        </div>
+
+                        <div class="mo-visual" id="moVisual" onclick="strikeMo()">
+                            <div class="mo-ripple"></div>
+                            <!-- SVG Chiếc Mõ Gỗ Cổ Truyền chạm khắc cá hóa long -->
+                            <svg class="mo-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="105" r="75" fill="#78350f" stroke="#b45309" stroke-width="4"/>
+                                <path d="M45 105C45 65 75 40 100 40C125 40 155 65 155 105C155 145 125 165 100 165C75 165 45 145 45 105Z" fill="url(#moWoodGrad)" stroke="#d97706" stroke-width="3"/>
+                                <!-- Khe hở mõ cá -->
+                                <path d="M60 115C80 135 120 135 140 115C130 140 70 140 60 115Z" fill="#291003"/>
+                                <!-- Mắt mõ & vảy chạm khắc -->
+                                <circle cx="75" cy="85" r="7" fill="#fbbf24"/>
+                                <circle cx="75" cy="85" r="3.5" fill="#1e1b4b"/>
+                                <circle cx="125" cy="85" r="7" fill="#fbbf24"/>
+                                <circle cx="125" cy="85" r="3.5" fill="#1e1b4b"/>
+                                <path d="M90 65C100 60 100 60 110 65" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M85 80C100 75 100 75 115 80" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+                                <defs>
+                                    <radialGradient id="moWoodGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) rotate(90) scale(75)">
+                                        <stop offset="0%" stop-color="#b45309"/>
+                                        <stop offset="65%" stop-color="#78350f"/>
+                                        <stop offset="100%" stop-color="#451a03"/>
+                                    </radialGradient>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+                            💡 Chạm trực tiếp vào chiếc mõ để phát ra tiếng vang mộc mạc và nuôi dưỡng sự chú tâm.
+                        </p>
+
+                        <div class="mo-controls">
+                            <button class="btn-zen" onclick="strikeMo()">
+                                <span>🔨</span> Gõ Mõ (+1 Bình An)
+                            </button>
+                            <button class="btn-zen-secondary" id="btnAutoMo" onclick="toggleAutoMo()">
+                                <span>⏱️</span> Tự Động Theo Nhịp Thở (3s)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. THẮP HƯƠNG -->
+                <div class="zen-pane" id="tab-huong">
+                    <div class="huong-container">
+                        <div class="huong-status" id="huongStatus">
+                            "Chắp tay búp sen, dâng một nén tâm hương thành kính..."
+                        </div>
+                        <div class="huong-timer" id="huongTimerDisplay">
+                            03:00
+                        </div>
+
+                        <div class="burner-stage">
+                            <canvas class="smoke-canvas" id="smokeCanvas"></canvas>
+                            <div class="incense-sticks">
+                                <div class="stick" id="stick1"></div>
+                                <div class="stick" id="stick2"></div>
+                                <div class="stick" id="stick3"></div>
+                            </div>
+                            <div class="burner-base">
+                                <span>🪷</span>
+                            </div>
+                        </div>
+
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 500px; margin: 0 auto 1.5rem; line-height: 1.6;">
+                            Hương thơm của trầm hương kết nối đất trời. Hãy chọn thời gian tĩnh tâm và hít thở nhẹ nhàng theo làn khói thanh khiết.
+                        </p>
+
+                        <div class="mo-controls">
+                            <button class="btn-zen" id="btnLightIncense" onclick="lightIncense(180)">
+                                <span>🔥</span> Dâng Nén Tâm Hương (3 Phút)
+                            </button>
+                            <button class="btn-zen-secondary" onclick="lightIncense(60)">
+                                <span>⏳</span> 1 Phút Nhanh
+                            </button>
+                            <button class="btn-zen-secondary" onclick="lightIncense(300)">
+                                <span>⌛</span> 5 Phút Sâu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. GÕ CHUÔNG -->
+                <div class="zen-pane" id="tab-chuong">
+                    <div class="chuong-container">
+                        <div class="chuong-visual" id="chuongVisual" onclick="ringTempleBell()">
+                            <div class="bell-waves"></div>
+                            <!-- SVG Quả Chuông Đại Hồng Chung Cổ Kính -->
+                            <svg class="bell-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Quai chuông đôi rồng bồ lao -->
+                                <path d="M80 35C80 20 120 20 120 35C130 35 135 45 125 55L75 55C65 45 70 35 80 35Z" fill="#d97706" stroke="#fbbf24" stroke-width="2"/>
+                                <!-- Thân chuông tam cấp -->
+                                <path d="M70 55C70 55 55 120 40 185C35 205 60 215 100 215C140 215 165 205 160 185C145 120 130 55 130 55Z" fill="url(#bellBronzeGrad)" stroke="#fbbf24" stroke-width="3"/>
+                                <!-- Núm gõ chuông sen tròn -->
+                                <circle cx="100" cy="155" r="16" fill="#b45309" stroke="#fbbf24" stroke-width="2"/>
+                                <circle cx="100" cy="155" r="8" fill="#f59e0b"/>
+                                <!-- Vành miệng chuông hoa văn sóng nước -->
+                                <ellipse cx="100" cy="205" rx="60" ry="12" fill="#78350f" stroke="#fbbf24" stroke-width="2"/>
+                                <path d="M50 110 H150" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 2"/>
+                                <path d="M45 130 H155" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 2"/>
+                                <defs>
+                                    <linearGradient id="bellBronzeGrad" x1="40" y1="55" x2="160" y2="215" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#b45309"/>
+                                        <stop offset="35%" stop-color="#f59e0b"/>
+                                        <stop offset="70%" stop-color="#92400e"/>
+                                        <stop offset="100%" stop-color="#451a03"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <div class="chuong-verse">
+                            "Nghe chuông phiền não tan mây khói,<br>
+                            Ý lặng thân an miệng mỉm cười.<br>
+                            Hơi thở nương về theo tiếng chuông,<br>
+                            Vườn tâm hoa tuệ nở thảnh thơi."
+                        </div>
+
+                        <div class="mo-controls">
+                            <button class="btn-zen" onclick="ringTempleBell()">
+                                <span>🔔</span> Thỉnh Đại Hồng Chung (Âm Vang 6 Giây)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. CÂY ƯỚC NGUYỆN CỘI BỒ ĐỀ -->
+                <div class="zen-pane" id="tab-tree">
+                    <div class="tree-container">
+                        <div class="tree-visual-box">
+                            <img class="tree-bg" src="images/bai_dinh_ancient_temple_1785641271528.webp" alt="Cội Bồ Đề Cổ Thụ">
+                            <div class="ribbons-layer" id="ribbonsLayer">
+                                <!-- Dynamic ribbons will appear here -->
+                            </div>
+                        </div>
+
+                        <div class="tree-form-box">
+                            <h3>🎋 Gửi Gắm Tâm Nguyện Lên Cội Bồ Đề</h3>
+                            <p>Treo một dải lụa cát tường mang theo lời cầu an cho cha mẹ, gia đình và ước vọng thiện lành.</p>
+
+                            <form id="wishForm" onsubmit="submitWish(event)">
+                                <div class="form-group">
+                                    <label>Tên hoặc Pháp Danh của bạn (tùy chọn):</label>
+                                    <input type="text" id="wishAuthor" class="form-input" placeholder="Ví dụ: Diệu Tâm, An Nhiên, Người Lữ Khách...">
+                                </div>
+                                <div class="form-group">
+                                    <label>Chọn sắc màu dải lụa cầu an:</label>
+                                    <select id="wishColor" class="form-select">
+                                        <option value="red">🔴 Dải lụa đỏ — Cầu Bình An & May Mắn Gia Đạo</option>
+                                        <option value="gold">🟡 Dải lụa vàng — Cầu Trí Tuệ, Học Hành & Công Danh</option>
+                                        <option value="green">🟢 Dải lụa xanh — Cầu Sức Khỏe & Thọ Mạng Cha Mẹ</option>
+                                        <option value="purple">🟣 Dải lụa tím — Cầu Duyên Lành & Thân Tâm Thanh Tịnh</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Lời nguyện ước thành tâm:</label>
+                                    <textarea id="wishContent" class="form-textarea" required placeholder="Ghi lại lời ước nguyện từ sâu thẳm trái tim bạn..."></textarea>
+                                </div>
+                                <button type="submit" class="btn-zen" style="width: 100%;">
+                                    <span>🎋</span> Treo Dải Lụa Lên Cây Bồ Đề
+                                </button>
+                            </form>
+
+                            <div class="recent-wishes">
+                                <div class="recent-wishes-title">✨ Dải lụa nguyện ước vừa lưu lại:</div>
+                                <div class="wish-items-list" id="wishItemsList">
+                                    <!-- Dynamic list of recent wishes -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. THẺ QUẺ AN NHIÊN -->
+                <div class="zen-pane" id="tab-que">
+                    <div class="que-container">
+                        <div class="tube-visual" id="tubeVisual" onclick="drawFortune()">
+                            <!-- SVG Ống Quẻ Tre Trúc Cổ -->
+                            <svg class="tube-svg" viewBox="0 0 160 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Các que quẻ thò lên -->
+                                <rect x="50" y="30" width="8" height="60" rx="3" fill="#fde68a" stroke="#b45309" stroke-width="1.5"/>
+                                <rect x="65" y="15" width="8" height="75" rx="3" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
+                                <rect x="80" y="25" width="8" height="65" rx="3" fill="#fde68a" stroke="#b45309" stroke-width="1.5"/>
+                                <rect x="95" y="35" width="8" height="55" rx="3" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
+                                <!-- Ống đựng bằng tre có đai đồng -->
+                                <path d="M40 70 L120 70 L115 220 L45 220 Z" fill="url(#bambooGrad)" stroke="#78350f" stroke-width="3"/>
+                                <rect x="38" y="75" width="84" height="10" fill="#d97706" rx="2"/>
+                                <rect x="42" y="145" width="76" height="8" fill="#d97706" rx="2"/>
+                                <rect x="44" y="210" width="72" height="10" fill="#d97706" rx="2"/>
+                                <circle cx="80" cy="115" r="14" fill="#451a03" stroke="#fbbf24" stroke-width="2"/>
+                                <text x="80" y="121" fill="#fbbf24" font-size="14" font-family="'Space Grotesk', sans-serif" font-weight="bold" text-anchor="middle">Thiền</text>
+                                <defs>
+                                    <linearGradient id="bambooGrad" x1="40" y1="70" x2="120" y2="220" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#b45309"/>
+                                        <stop offset="50%" stop-color="#78350f"/>
+                                        <stop offset="100%" stop-color="#451a03"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                            Nhấp vào ống quẻ để gieo một lời pháp an nhiên, hướng thiện và giải tỏa phiền não cho ngày hôm nay.
+                        </p>
+
+                        <button class="btn-zen" id="btnDrawFortune" onclick="drawFortune()">
+                            <span>🎋</span> Lắc Ống Quẻ & Rút Thẻ An Nhiên
+                        </button>
+
+                        <!-- Thẻ Quẻ Kết Quả -->
+                        <div class="fortune-result-card" id="fortuneResultCard">
+                            <span class="fortune-tag" id="fortuneType">QUẺ THƯỢNG CÁT</span>
+                            <h3 class="fortune-title" id="fortuneTitle">Tùy Duyên Tự Tại</h3>
+                            <div class="fortune-poem" id="fortunePoem">
+                                "Nước chảy hoa trôi vạn dặm dài,
+                                Tùy duyên thuận cảnh dạ thảnh thơi.
+                                Trời xanh tự khắc an bài lối,
+                                Tâm tịnh đường thông vạn dặm ngời."
+                            </div>
+                            <div class="fortune-meaning" id="fortuneMeaning">
+                                Vạn sự trên đời hợp tan đều có nhân duyên. Đừng quá cưỡng cầu điều chưa đến, cũng đừng luyến tiếc điều đã qua. Khi tâm an yên chấp nhận hiện tại, mọi nút thắt sẽ tự khắc được hóa giải một cách êm đẹp nhất.
+                            </div>
+                            <div class="fortune-advice" id="fortuneAdvice">
+                                💡 Lời khuyên chánh niệm: Hôm nay hãy thả lỏng tâm trí, mỉm cười trước mọi hoàn cảnh và tin tưởng vào hành trình của chính mình.
+                            </div>
+                            <button class="btn-zen-secondary" onclick="drawFortune()">
+                                <span>🔄</span> Rút Quẻ Khác
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- PHẦN 2: CẨM NANG VĂN KHẤN CỔ TRUYỀN CHUẨN MỰC -->
+    <!-- ================================================= -->
+    <section class="prayers-section" id="van-khan">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📜 NGHI LỄ PHONG TỤC VIỆT</span>
+                <h2 class="section-title">Cẩm Nang Văn Khấn Cổ Truyền Đi Chùa Chuẩn Mực</h2>
+                <p class="section-subtitle">
+                    Tuyển tập 7 bài văn khấn chuẩn phong tục cổ truyền dân tộc, ngôn từ tôn nghiêm, giúp quý Phật tử và du khách thành tâm gửi gắm sở nguyện khi chiêm bái chốn thiền môn.
+                </p>
+            </div>
+
+            <div class="prayers-grid">
+                <!-- MENU BÀI KHẤN -->
+                <aside class="prayers-sidebar">
+                    <button class="prayer-nav-btn active" onclick="switchPrayer(0)">
+                        <span>🪷</span> 1. Văn Khấn Lễ Phật (Chính Điện)
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(1)">
+                        <span>🏛️</span> 2. Văn Khấn Ban Tam Bảo
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(2)">
+                        <span>⚔️</span> 3. Văn Khấn Ban Đức Ông
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(3)">
+                        <span>💧</span> 4. Văn Khấn Bồ Tát Quán Thế Âm
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(4)">
+                        <span>🏮</span> 5. Văn Khấn Địa Tạng Vương Bồ Tát
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(5)">
+                        <span>🌸</span> 6. Văn Khấn Đầu Năm, Rằm & Mùng 1
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(6)">
+                        <span>🍂</span> 7. Văn Khấn Tạ Lễ Cuối Năm
+                    </button>
+                </aside>
+
+                <!-- NỘI DUNG CHI TIẾT BÀI KHẤN -->
+                <main class="prayers-content">
+                    <!-- BÀI 1: LỄ PHẬT CHÍNH ĐIỆN -->
+                    <div class="prayer-card active" id="prayerCard0">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>1. Văn Khấn Lễ Phật Tại Chính Điện</h3>
+                                <p>Cầu an cho bản thân và gia quyến, sám hối tội lỗi và nguyện hướng thiện</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(0)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText0">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con lạy chín phương Trời, mười phương Chư Phật, Chư Phật mười phương.
+Hôm nay là ngày... tháng... năm...
+Tín chủ (chúng) con là: ...
+Ngụ tại: ...
+
+Cùng toàn thể gia quyến thành tâm kính lễ, sửa biện hương hoa phẩm vật, kim ngân đăng trà, dâng lên trước án Tam Bảo nơi thiền môn thanh tịnh.
+
+Chúng con kính cẩn cúi đầu đảnh lễ:
+- Đức Phật Thích Ca Mâu Ni giáo chủ cõi Ta Bà,
+- Đức Phật A Di Đà giáo chủ cõi Tây Phương Cực Lạc,
+- Đức Phật Dược Sư Lưu Ly Quang Vương,
+- Cùng chư vị Bồ Tát Quán Thế Âm, Đại Thế Chí, Văn Thù Sư Lợi, Phổ Hiền, chư vị Tôn giả, Hiền Thánh Tăng.
+
+Cúi xin chư Phật, chư Bồ Tát từ bi gia hộ chứng minh. Nguyện cầu gia quyến chúng con luôn được thân tâm an lạc, bệnh tật tiêu trừ, tai qua nạn khỏi, gia đạo thuận hòa, phúc lộc tăng trưởng, luôn hướng tâm về nẻo thiện.
+
+Chúng con người trần mắt thịt, nghiệp chướng sâu dày, nếu có điều chi lầm lỡ trong ý nghĩ, lời nói hay hành động, cúi xin mười phương Chư Phật từ bi hoan hỷ hỷ xả, chỉ đường soi lối cho chúng con đi trên con đường chánh đạo sáng ngời.
+
+Chúng con lễ bạc tâm thành, trước án kính lễ, cúi xin lượng cả từ bi chứng giám gia hộ độ trì.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Lưu ý nghi lễ:</strong> Khi khấn tại Chính Điện Tam Bảo, tuyệt đối chỉ dâng đồ chay thanh tịnh (hoa tươi, quả ngọt, oản phẩm, chè xôi). Không dâng đồ mặn hay tiền vàng mã.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 2: BAN TAM BẢO -->
+                    <div class="prayer-card" id="prayerCard1">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>2. Văn Khấn Ban Tam Bảo (Phật - Pháp - Tăng)</h3>
+                                <p>Cầu nương tựa Ba Ngôi Báu, vun bồi phước đức và trí tuệ</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(1)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText1">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con kính lạy Chư Phật mười phương, Chư đại Bồ Tát, Chư Hiền Thánh Tăng.
+Con quy y Phật, quy y Pháp, quy y Tăng — Ba ngôi Tam Bảo tôn quý nhất trên đời.
+
+Hôm nay ngày lành tháng tốt, tín chủ con là: ...
+Ngụ tại: ...
+Một lòng thành kính, chiêm bái thiền đường, dâng nén tâm hương cúng dường Tam Bảo.
+
+Kính nguyện Tam Bảo từ bi tiếp độ:
+Cho tâm con luôn sáng tỏ, trí tuệ mở mang, biết phân biệt phải trái thiện ác;
+Cho lòng con bớt tham lam, sân giận, si mê, biết yêu thương muôn loài;
+Cho gia đình con trên kính dưới nhường, trong ấm ngoài êm, mọi việc hanh thông tốt đẹp.
+
+Nguyện đem công đức cúng dường này hồi hướng cho khắp pháp giới chúng sinh đều được an lạc, tai ương tiêu trừ, phúc duyên trọn vẹn.
+
+Nam mô Bổn Sư Thích Ca Mâu Ni Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Ý nghĩa Tam Bảo:</strong> Phật bảo là đấng Giác ngộ, Pháp bảo là lời dạy chân lý nhiệm màu, Tăng bảo là đoàn thể thanh tịnh truyền trao chánh pháp.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 3: BAN ĐỨC ÔNG -->
+                    <div class="prayer-card" id="prayerCard2">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>3. Văn Khấn Ban Đức Ông (Đức Già Lam Chân Tể)</h3>
+                                <p>Vị Thần bảo hộ già lam, cầu công danh tài lộc, sự nghiệp hanh thông</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(2)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText2">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con lạy chín phương Trời, mười phương Chư Phật.
+Kính lạy Đức Già Lam Chân Tể, Đức Hộ Pháp Thiện Thần chư vị Tôn thần cai quản thiền môn.
+
+Hôm nay là ngày... tháng... năm...
+Tín chủ con là: ...
+Ngụ tại: ...
+
+Thành tâm sắm sửa hương hoa trà quả, kim ngân lễ vật thanh tịnh, kính cẩn dâng lên trước ban thờ Đức Ông.
+
+Cúi xin Đức Ông thương xót tín chủ, giáng lâm trước án, chứng giám lòng thành, thụ hưởng lễ vật. Phù hộ độ trì cho chúng con cùng toàn thể gia quyến:
+- Công việc hanh thông, buôn bán phát tài, sở cầu như ý, sở nguyện tòng tâm;
+- Kẻ dữ lánh xa, người lành gần gũi, quý nhân giúp đỡ, tiểu nhân lánh mặt;
+- Thân thể khỏe mạnh, gia đạo hưng long, trong ngoài êm ấm.
+
+Chúng con lễ bạc tâm thành, trước án kính lễ, cúi xin Đức Ông chứng giám độ trì.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Thứ tự đi lễ:</strong> Theo phong tục cổ truyền miền Bắc, khi vào chùa thường đến lễ ban Đức Ông trước (nhập gia vấn xuất) rồi mới vào lễ Chính Điện Tam Bảo.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 4: QUÁN THẾ ÂM BỒ TÁT -->
+                    <div class="prayer-card" id="prayerCard3">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>4. Văn Khấn Bồ Tát Quán Thế Âm</h3>
+                                <p>Cầu Mẹ Từ Bi che chở, xoa dịu khổ đau, cầu con cái, sức khỏe</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(3)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText3">Nam mô Đại Từ Đại Bi Tầm Thinh Cứu Khổ Cứu Nạn Linh Cảm Quán Thế Âm Bồ Tát! (3 lần, 3 lạy)
+
+Kính lạy Đức Mẹ Quán Thế Âm Bồ Tát từ bi lân mẫn, thương xót muôn loài như con đỏ.
+Hôm nay là ngày... tháng... năm...
+Con tên là: ... Ngụ tại: ...
+
+Thành tâm thắp nén tâm hương, kính dâng hoa tươi quả ngọt, một lòng hướng về Đức Từ Mẫu.
+
+Nguyện xin Đức Bồ Tát rưới giọt nước cành dương cam lộ thanh lương, dập tắt ngọn lửa phiền muộn, xoa dịu những nhọc nhằn âu lo nơi thân tâm con và gia quyến.
+
+Xin Bồ Tát chở che cho cha mẹ con được dồi dào sức khỏe, trường thọ an vui; cho con cháu học hành tiến tới, ngoan ngoãn thảo hiền; cho gia đình tai qua nạn khỏi, duyên lành hội tụ, tâm hồn hướng thiện, biết yêu thương sẻ chia.
+
+Con nguyện học theo hạnh lắng nghe và bao dung của Bồ Tát, giữ tâm bình thản trước mọi nghịch cảnh cuộc đời.
+
+Nam mô Quán Thế Âm Bồ Tát! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Lễ vật phù hợp:</strong> Hoa sen, hoa huệ trắng, quả tươi, nước trong thanh khiết. Tránh dâng hoa quả héo úa hay đồ vàng mã.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 5: ĐỊA TẠNG VƯƠNG BỒ TÁT -->
+                    <div class="prayer-card" id="prayerCard4">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>5. Văn Khấn Địa Tạng Vương Bồ Tát</h3>
+                                <p>Cầu siêu cửu huyền thất tổ, hóa giải nghiệp chướng, cầu bình an</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(4)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText4">Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát! (3 lần, 3 lạy)
+
+Kính lạy Đức Giáo Chủ cõi U Minh, Bồ Tát Địa Tạng đại bi đại nguyện, thệ nguyện cứu độ hết thảy chúng sinh khổ nạn chốn u đồ.
+
+Hôm nay là ngày... tháng... năm...
+Tín chủ con là: ...
+Ngụ tại: ...
+
+Thành tâm đốt nén tâm hương, sửa biện lễ mọn dâng lên trước toà sen Đức Bồ Tát Địa Tạng.
+
+Chúng con kính nguyện nương nhờ uy đức của Ngài, cầu xin cứu vớt hương linh Cửu Huyền Thất Tổ, ông bà cha mẹ nhiều đời nhiều kiếp, cùng chư vị anh linh, hương linh gia tiên quyến thuộc nội ngoại.
+
+Nguyện xin Bồ Tát phóng ánh hào quang xua tan tăm tối, dẫn lối cho các chân linh sớm tiêu trừ nghiệp chướng, nương nhờ phước lực Tam Bảo mà được vãng sinh về cảnh giới an vui cực lạc.
+
+Đồng thời phù hộ cho con cháu nơi trần thế luôn mạnh khỏe bình an, sống hiếu nghĩa vẹn toàn, làm nhiều điều lành tạo thêm phước đức.
+
+Nam mô Địa Tạng Vương Bồ Tát! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Ý nghĩa đại nguyện:</strong> "Địa ngục vị không, thệ bất thành Phật" — Lòng từ bi bao la không bỏ sót một ai, nhắc nhở con người về lòng hiếu thảo thiêng liêng.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 6: ĐẦU NĂM, RẰM & MÙNG 1 -->
+                    <div class="prayer-card" id="prayerCard5">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>6. Văn Khấn Đi Chùa Đầu Năm & Các Ngày Rằm, Mùng Một</h3>
+                                <p>Cầu quốc thái dân an, nghênh đón cát lành, vạn sự hanh thông</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(5)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText5">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con lạy chín phương Trời, mười phương Chư Phật.
+Kính lạy Chư Phật, Chư Bồ Tát, Chư Hiền Thánh Tăng, Hộ Pháp Thiện Thần.
+
+Nhân tiết đầu xuân năm mới (hoặc: ngày rằm / mùng một thanh tịnh), đất trời giao hòa, vạn vật đâm chồi nảy lộc.
+Tín chủ con là: ...
+Ngụ tại: ...
+
+Một lòng thành kính bước chân vào cửa Phật, dâng nén tâm hương, phẩm vật thanh khiết, cúi đầu tạ ơn đất trời Phật Thánh.
+
+Kính nguyện cầu:
+- Quốc thái dân an, mưa thuận gió hòa, mùa màng tươi tốt;
+- Gia đình con bốn mùa không hạn ách, tám tiết có điềm lành, thân thể kiện khang, tâm hồn thanh thản;
+- Công việc hanh thông, tài lộc dồi dào, tâm nguyện hướng thiện, duyên lành kết tụ.
+
+Cúi xin mười phương Chư Phật, Chư Bồ Tát từ bi gia hộ độ trì.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Phong tục đẹp:</strong> Đi chùa đầu năm hái một cành lộc nhỏ hoặc nhận lời chúc bình an, xin chữ đầu xuân để nuôi dưỡng tinh thần lạc quan, yêu đời.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 7: TẠ LỄ CUỐI NĂM -->
+                    <div class="prayer-card" id="prayerCard6">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>7. Văn Khấn Tạ Lễ Chùa Cuối Năm</h3>
+                                <p>Tạ ơn Phật Thánh che chở suốt một năm qua, đón chào năm mới bình an</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(6)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText6">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con lạy chín phương Trời, mười phương Chư Phật, Chư Phật mười phương.
+Kính lạy Chư Phật, Chư Bồ Tát, Hộ Pháp Tôn Thần.
+
+Hôm nay là những ngày cuối năm... tín chủ con là: ...
+Ngụ tại: ...
+
+Thành tâm sắm sửa hương đăng hoa quả, trở lại chốn thiền môn thanh tịnh để dâng lời tạ ơn:
+
+Tạ ơn mười phương Chư Phật, Chư vị Bồ Tát và Hộ Pháp Thiện Thần trong suốt một năm qua đã che chở, gia hộ cho gia quyến chúng con được bình an vô sự, vượt qua mọi sóng gió, khó khăn tai ách, gặp được nhiều điều may mắn tốt lành.
+
+Chúng con nhìn lại một năm đã qua, tự soi xét lỗi lầm và nguyện dốc lòng tu sửa, bước sang năm mới sống bao dung hơn, nhân hậu hơn, biết cống hiến cho đời nhiều hơn.
+
+Cúi xin Chư vị chứng giám lòng thành, tiếp tục chở che cho gia quyến chúng con bước sang năm mới an khang thịnh vượng, vạn sự cát tường.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Ý nghĩa tạ lễ:</strong> "Ăn quả nhớ kẻ trồng cây" — Lễ tạ cuối năm thể hiện truyền thống biết ơn sâu sắc, khép lại năm cũ với lòng thanh thản và đón chào tương lai.
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- PHẦN 3: DANH LAM CỔ TỰ 3 MIỀN (BẮC - TRUNG - NAM) -->
+    <!-- ================================================= -->
+    <section class="temples-section" id="danh-lam-co-tu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🏯 TRẦM TÍCH NON SÔNG</span>
+                <h2 class="section-title">Hành Trình Chiêm Bái Danh Lam Cổ Tự 3 Miền</h2>
+                <p class="section-subtitle">
+                    Khám phá vẻ đẹp kiến trúc rêu phong, trầm tích văn hóa nghìn năm và những dấu ấn tâm linh linh thiêng trải dài từ địa đầu cực Bắc đến mũi đất phương Nam.
+                </p>
+            </div>
+
+            <!-- REGION FILTER TABS -->
+            <div class="region-tabs">
+                <button class="region-tab-btn active" onclick="filterTemples('all')">📍 Tất Cả Cổ Tự (18)</button>
+                <button class="region-tab-btn" onclick="filterTemples('north')">🏔️ Miền Bắc (6)</button>
+                <button class="region-tab-btn" onclick="filterTemples('central')">🏛️ Miền Trung (5)</button>
+                <button class="region-tab-btn" onclick="filterTemples('south')">🌴 Miền Nam & Tây Nam Bộ (7)</button>
+            </div>
+
+            <!-- GRID CỔ TỰ -->
+            <div class="temples-grid" id="templesGrid">
+
+                <!-- 1. BÁI ĐÍNH (NINH BÌNH) -->
+                <div class="temple-card" data-region="north" onclick="openLightbox('images/bai_dinh_ancient_temple_1785641271528.webp', 'Quần Thể Chùa Bái Đính — Gia Viễn, Ninh Bình', 'Cổ tự nghìn năm trên núi Đính linh thiêng kết hợp cùng Tân tự hoành tráng sở hữu nhiều kỷ lục châu Á, nằm trọn trong Quần thể Di sản Kép Tràng An.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Bắc</span>
+                        <img src="images/bai_dinh_ancient_temple_1785641271528.webp" alt="Chùa Bái Đính Ninh Bình" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Quần Thể Chùa Bái Đính</h3>
+                        <div class="temple-location">📍 Gia Viễn, Ninh Bình • Di sản Kép UNESCO</div>
+                        <p class="temple-desc">Tổ đình Bái Đính Cổ Tự nghìn năm tọa lạc trong hang đá tĩnh mịch, nơi Thiền sư Nguyễn Minh Không tu tập hái thuốc cứu dân. Bên cạnh là Bái Đính Tân Tự nguy nga với Bảo tháp Xá lợi Phật cao 100m và hành lang 500 vị La Hán bằng đá xanh nguyên khối.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🏛️ Kỷ lục châu Á</span>
+                            <span class="temple-pill">✨ Giếng Ngọc cổ</span>
+                            <span class="temple-pill">🪷 500 La Hán</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. YÊN TỬ (QUẢNG NINH) -->
+                <div class="temple-card" data-region="north" onclick="openLightbox('images/thungui_hero_toan_canh.webp', 'Chùa Yên Tử & Chùa Đồng — Uông Bí, Quảng Ninh', 'Cái nôi Thiền phái Trúc Lâm Yên Tử do Phật hoàng Trần Nhân Tông sáng lập, ngôi chùa đồng độc nhất vô nhị ngự trên đỉnh non thiêng cao 1.068m.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Bắc</span>
+                        <img src="images/thungui_hero_toan_canh.webp" alt="Chùa Yên Tử Quảng Ninh" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Yên Tử & Chùa Đồng</h3>
+                        <div class="temple-location">📍 TP. Uông Bí, Quảng Ninh • Tổ Đình Trúc Lâm</div>
+                        <p class="temple-desc">Kinh đô Phật giáo thời Trần nơi Đức Vua Trần Nhân Tông rũ bỏ ngai vàng xuất gia tu hành. Điểm nhấn đỉnh cao là Chùa Đồng (Thiên Trúc Tự) đúc hoàn toàn bằng đồng nguyên khối trên đỉnh non thiêng bốn bề mây phủ vờn quanh.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">👑 Phật Hoàng Trần Nhân Tông</span>
+                            <span class="temple-pill">☁️ Đỉnh Phù Vân</span>
+                            <span class="temple-pill">🔔 Chùa Đồng</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. CHÙA HƯƠNG (HÀ NỘI) -->
+                <div class="temple-card" data-region="north" onclick="openLightbox('images/tam_coc_river_1783441927501.webp', 'Chùa Hương — Nam Thiên Đệ Nhất Động — Mỹ Đức, Hà Nội', 'Quần thể danh thắng suối Yến, chùa Thiên Trù và Động Hương Tích linh thiêng gắn liền tín ngưỡng Bồ Tát Quán Thế Âm giáng trần.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Bắc</span>
+                        <img src="images/tam_coc_river_1783441927501.webp" alt="Chùa Hương suối Yến Hà Nội" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Hương (Động Hương Tích)</h3>
+                        <div class="temple-location">📍 Huyện Mỹ Đức, Hà Nội • Lễ Hội Dài Nhất VN</div>
+                        <p class="temple-desc">Hành trình chèo thuyền nan trên suối Yến thanh bình dẫn vào Nam Thiên Đệ Nhất Động. Tương truyền đây là nơi Bồ Tát Quán Thế Âm đắc đạo cứu độ chúng sinh, thu hút hàng triệu lữ khách hành hương mỗi độ xuân về.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🛶 Thuyền nan Suối Yến</span>
+                            <span class="temple-pill">⛰️ Động Hương Tích</span>
+                            <span class="temple-pill">🌸 Lễ hội đầu xuân</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. CHÙA TRẤN QUỐC & MỘT CỘT (HÀ NỘI) -->
+                <div class="temple-card" data-region="north" onclick="openLightbox('images/bai_dinh_pagoda_1783443686667.webp', 'Chùa Trấn Quốc & Chùa Một Cột — Hà Nội', 'Ngôi chùa cổ nhất Thăng Long hơn 1.500 năm tuổi trấn ngự hồ Tây và biểu tượng đóa sen nghìn năm thời vua Lý Thái Tông.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Bắc</span>
+                        <img src="images/bai_dinh_pagoda_1783443686667.webp" alt="Chùa Trấn Quốc Hà Nội" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Trấn Quốc & Một Cột</h3>
+                        <div class="temple-location">📍 Ba Đình & Tây Hồ, Hà Nội • Cổ Tự 1500 Năm</div>
+                        <p class="temple-desc">Chùa Trấn Quốc được xây dựng từ thời Tiền Lý (năm 541) soi bóng mặt hồ Tây lộng gió với bảo tháp lục độ 11 tầng. Cách đó không xa là Chùa Một Cột (Diên Hựu Tự) kiến trúc độc bản như đóa sen tinh khiết vươn lên giữa hồ nước vuông.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">📜 Khởi dựng năm 541</span>
+                            <span class="temple-pill">🪷 Sen ngọc thời Lý</span>
+                            <span class="temple-pill">🌊 Trấn ngự Hồ Tây</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. CHÙA PHẬT TÍCH & CHÙA DÂU (BẮC NINH) -->
+                <div class="temple-card" data-region="north" onclick="openLightbox('images/bai_dinh_buddha_1783494499108.webp', 'Chùa Phật Tích & Chùa Dâu — Bắc Ninh', 'Khởi nguồn Phật giáo Việt Nam, lưu giữ pho tượng A Di Đà bằng đá xanh bảo vật quốc gia thời Lý và tín ngưỡng Tứ Pháp.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Bắc</span>
+                        <img src="images/bai_dinh_buddha_1783494499108.webp" alt="Chùa Phật Tích Bắc Ninh" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Phật Tích & Chùa Dâu</h3>
+                        <div class="temple-location">📍 Thuận Thành & Tiên Du, Bắc Ninh • Đất Phật Cổ</div>
+                        <p class="temple-desc">Chùa Dâu là ngôi chùa cổ nhất Việt Nam hình thành từ đầu Công nguyên, trung tâm thiền phái Tỳ Ni Đa Lưu Chi. Chùa Phật Tích ngự trên núi Lan Kha nổi tiếng với tượng Phật A Di Đà ngồi thiền bằng đá thế kỷ XI — bảo vật vô giá của nền mỹ thuật Đại Việt.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🏛️ Bảo vật Quốc gia</span>
+                            <span class="temple-pill">🌾 Tín ngưỡng Tứ Pháp</span>
+                            <span class="temple-pill">🗿 Tượng Phật thời Lý</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. CHÙA BẢN GIỐC (CAO BẰNG) -->
+                <div class="temple-card" data-region="north" onclick="openLightbox('images/caobang_chua_truc_lam_ban_gioc.webp', 'Chùa Phật Tích Trúc Lâm Bản Giốc — Trùng Khánh, Cao Bằng', 'Ngôi chùa thiền môn trấn giữ biên cương Đông Bắc, hướng nhìn toàn cảnh thác Bản Giốc hùng vĩ nhất Đông Nam Á.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Bắc</span>
+                        <img src="images/caobang_chua_truc_lam_ban_gioc.webp" alt="Chùa Trúc Lâm Bản Giốc Cao Bằng" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Trúc Lâm Bản Giốc</h3>
+                        <div class="temple-location">📍 Trùng Khánh, Cao Bằng • Cương Vực Thiêng Liêng</div>
+                        <p class="temple-desc">Ngôi chùa mang kiến trúc thuần Việt bằng gỗ lim và ngói âm dương rêu phong, tọa lạc trên núi Phia Nhằn. Tiếng chuông chùa ngân vang hòa cùng tiếng thác Bản Giốc gầm vang tạo nên bản trường ca thiêng liêng khẳng định chủ quyền biên ải.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🌊 View thác Bản Giốc</span>
+                            <span class="temple-pill">🌲 Gỗ lim cổ truyền</span>
+                            <span class="temple-pill">🚩 Cương vực Tổ quốc</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. CHÙA THIÊN MỤ (HUẾ) -->
+                <div class="temple-card" data-region="central" onclick="openLightbox('images/hue_chua_thien_mu.webp', 'Chùa Thiên Mụ (Linh Mụ Tự) — TP. Huế', 'Đệ nhất cổ tự xứ Huế bên dòng sông Hương thơ mộng, gắn liền chúa Nguyễn Hoàng khai phá Đàng Trong và Tháp Phước Duyên 7 tầng biểu tượng.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Trung</span>
+                        <img src="images/hue_chua_thien_mu.webp" alt="Chùa Thiên Mụ Huế" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Thiên Mụ (Linh Mụ Tự)</h3>
+                        <div class="temple-location">📍 Đồi Hà Khê, TP. Huế • Khởi Dựng Năm 1601</div>
+                        <p class="temple-desc">Được Chúa Tiên Nguyễn Hoàng đích thân cho khởi dựng năm 1601 sau lời tiên tri của bà tiên áo đỏ. Tháp Phước Duyên 7 tầng soi bóng dòng Hương giang êm ả cùng chuông đồng đúc năm 1710 ngân vang thấu lòng người xứ kinh kỳ.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">👑 Chúa Nguyễn Hoàng</span>
+                            <span class="temple-pill">🗼 Tháp Phước Duyên</span>
+                            <span class="temple-pill">🌊 Dòng Hương giang</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. CHÙA LINH ỨNG BÃI BỤT (ĐÀ NẴNG) -->
+                <div class="temple-card" data-region="central" onclick="openLightbox('images/danang_chua_linh_ung_bai_but.webp', 'Chùa Linh Ứng Bãi Bụt — Bán đảo Sơn Trà, Đà Nẵng', 'Ngôi chùa sở hữu tượng Bồ Tát Quán Thế Âm cao 67m nhìn ra Biển Đông, điểm tựa tâm linh vững chãi của ngư dân miền Trung.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Trung</span>
+                        <img src="images/danang_chua_linh_ung_bai_but.webp" alt="Chùa Linh Ứng Bãi Bụt Đà Nẵng" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Linh Ứng Bãi Bụt</h3>
+                        <div class="temple-location">📍 Bán đảo Sơn Trà, TP. Đà Nẵng • Tựa Sơn Hướng Hải</div>
+                        <p class="temple-desc">Tọa lạc tại vị trí đắc địa trên sườn núi Sơn Trà, nơi trời biển giao thoa. Tượng Phật Bà Quán Thế Âm cao 67m tay cầm bình cam lộ mắt nhìn ra biển cả bao la, chở che sóng gió cho những chuyến tàu vượt ngàn khơi xa.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🗽 Tượng Phật Bà 67m</span>
+                            <span class="temple-pill">🌊 Toàn cảnh biển Đà Nẵng</span>
+                            <span class="temple-pill">⛰️ Bán đảo Sơn Trà</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. CHÙA CẦU (HỘI AN) -->
+                <div class="temple-card" data-region="central" onclick="openLightbox('images/hoian_chua_cau.webp', 'Chùa Cầu (Lai Viễn Kiều) — Phố cổ Hội An, Quảng Nam', 'Biểu tượng di sản văn hóa thế giới UNESCO, cây cầu ngói gỗ độc nhất vô nhị thờ Bắc Đế Trấn Võ trừ phong ba thủy quái.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Trung</span>
+                        <img src="images/hoian_chua_cau.webp" alt="Chùa Cầu Hội An" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Cầu (Lai Viễn Kiều)</h3>
+                        <div class="temple-location">📍 Phố cổ Hội An, Quảng Nam • Biểu Tượng Di Sản</div>
+                        <p class="temple-desc">Xây dựng vào thế kỷ XVII bởi các thương nhân Nhật Bản, bắc qua con lạch nhỏ dẫn ra sông Hoài. Gian chùa nhỏ thờ Huyền Thiên Trấn Vũ — vị thần bảo hộ cư dân thương cảng tránh khỏi bão lũ và mang lại thái bình thịnh vượng.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🏮 Mái ngói âm dương</span>
+                            <span class="temple-pill">🌉 Cầu gỗ 400 năm</span>
+                            <span class="temple-pill">💴 Hình in trên tiền polymer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. THIỀN VIỆN HUYỀN KHÔNG SƠN THƯỢNG (HUẾ) -->
+                <div class="temple-card" data-region="central" onclick="openLightbox('images/hue_mua_thu_ngo_dong_thien_mu.webp', 'Thiền Viện Huyền Không Sơn Thượng — Hương Trà, Thừa Thiên Huế', 'Chốn thiền môn tĩnh mịch ẩn mình giữa rừng thông xanh ngát, không gian thư pháp và hồ súng thanh tịnh.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Trung</span>
+                        <img src="images/hue_mua_thu_ngo_dong_thien_mu.webp" alt="Huyền Không Sơn Thượng Huế" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Huyền Không Sơn Thượng</h3>
+                        <div class="temple-location">📍 Huyện Hương Trà, Thừa Thiên Huế • Nam Tông Theravada</div>
+                        <p class="temple-desc">Nằm lọt thỏm giữa rừng thông đại ngàn ở độ cao 300m so với mực nước biển. Không gian kiến trúc mộc mạc hòa quyện tuyệt đối cùng thiên nhiên với suối reo, hồ súng, hoa phong lan và những bức thư pháp thiền giàu triết lý sống.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🌲 Rừng thông đại ngàn</span>
+                            <span class="temple-pill">📜 Thư pháp Thiền</span>
+                            <span class="temple-pill">🍃 Thoát tục an yên</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. CHÙA THIÊN HƯNG (BÌNH ĐỊNH) -->
+                <div class="temple-card" data-region="central" onclick="openLightbox('images/quynhon_chua_thien_hung.webp', 'Chùa Thiên Hưng — Thị xã An Nhơn, Bình Định', 'Được ví như Phượng Hoàng Cổ Trấn giữa đất võ Bình Định, nơi lưu giữ Ngọc Xá Lợi Phật Thích Ca Mâu Ni thiêng liêng.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Trung</span>
+                        <img src="images/quynhon_chua_thien_hung.webp" alt="Chùa Thiên Hưng Bình Định" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Thiên Hưng</h3>
+                        <div class="temple-location">📍 TX. An Nhơn, Bình Định • Lưu Giữ Ngọc Xá Lợi</div>
+                        <p class="temple-desc">Ngôi chùa có cảnh quan hữu tình với hào nước sen, cầu gỗ uốn cong và Tháp Chuông 12 tầng vươn cao sừng sững. Đây là nơi tôn kính lưu giữ Ngọc Xá Lợi của Đức Phật do Giáo hội Phật giáo Myanmar trao tặng đất nước Việt Nam.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">✨ Ngọc Xá Lợi Phật</span>
+                            <span class="temple-pill">🏯 Tháp Chuông 12 tầng</span>
+                            <span class="temple-pill">🌾 Đất võ Bình Định</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. CHÙA BÀ ĐEN (TÂY NINH) -->
+                <div class="temple-card" data-region="south" onclick="openLightbox('images/tayninh_chua_ba_den_linh_son_tien_thach.webp', 'Chùa Bà Đen (Linh Sơn Tiên Thạch Tự) — Núi Bà Đen, Tây Ninh', 'Điểm tựa tâm linh lớn nhất Nam Bộ, gắn với truyền thuyết Linh Sơn Thánh Mẫu và tượng Phật Bà Tây Bổ Đà Sơn kỷ lục châu Á.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Nam</span>
+                        <img src="images/tayninh_chua_ba_den_linh_son_tien_thach.webp" alt="Chùa Bà Đen Tây Ninh" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Bà Đen (Linh Sơn Tiên Thạch)</h3>
+                        <div class="temple-location">📍 Núi Bà Đen, Tây Ninh • Nóc Nhà Nam Bộ 986m</div>
+                        <p class="temple-desc">Ngôi chùa cổ hơn 300 năm thờ Linh Sơn Thánh Mẫu trên lưng chừng núi mây. Trên đỉnh non cao 986m là tượng Phật Bà Tây Bổ Đà Sơn bằng đồng đúc tinh xảo cao 72m ngự giữa biển mây và vườn hoa rực rỡ quanh năm.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">☁️ Đỉnh núi 986m</span>
+                            <span class="temple-pill">🗽 Phật Bà Tây Bổ Đà Sơn</span>
+                            <span class="temple-pill">🌸 Lễ Hội Chùa Bà</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. MIẾU BÀ CHÚA XỨ & CHÙA HANG (AN GIANG) -->
+                <div class="temple-card" data-region="south" onclick="openLightbox('images/angiang_mieu_ba_chua_xu_nui_sam.webp', 'Miếu Bà Chúa Xứ Núi Sam & Chùa Hang — Châu Đốc, An Giang', 'Trung tâm hành hương tâm linh lớn nhất Đồng bằng sông Cửu Long, Di sản Văn hóa Phi vật thể Quốc gia.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Nam</span>
+                        <img src="images/angiang_mieu_ba_chua_xu_nui_sam.webp" alt="Miếu Bà Chúa Xứ Núi Sam An Giang" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Miếu Bà Chúa Xứ & Chùa Hang</h3>
+                        <div class="temple-location">📍 Núi Sam, TP. Châu Đốc, An Giang • Di Sản Quốc Gia</div>
+                        <p class="temple-desc">Pho tượng Bà bằng đá sa thạch đỉnh núi Sam có niên đại từ thế kỷ VI mang đậm phong cách văn hóa Óc Eo. Bên cạnh là Chùa Hang (Phước Điền Tự) cheo leo trên sườn đá rêu phong, nơi chim ca thanh bình nhìn ra cánh đồng biên giới bát ngát.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">👑 Bà Chúa Xứ Núi Sam</span>
+                            <span class="temple-pill">🗿 Văn hóa Óc Eo</span>
+                            <span class="temple-pill">🌾 Vùng đất Thất Sơn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. TRÚC LÂM PHƯƠNG NAM & CHÙA ÔNG (CẦN THƠ) -->
+                <div class="temple-card" data-region="south" onclick="openLightbox('images/cantho_thien_vien_truc_lam_phuong_nam.webp', 'Thiền Viện Trúc Lâm Phương Nam & Chùa Ông — Cần Thơ', 'Thiền viện lớn nhất miền Tây Nam Bộ với kiến trúc gỗ lim thời Lý - Trần và Chùa Ông rực rỡ sắc màu văn hóa Hoa kiều bến Ninh Kiều.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Nam</span>
+                        <img src="images/cantho_thien_vien_truc_lam_phuong_nam.webp" alt="Thiền Viện Trúc Lâm Phương Nam Cần Thơ" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Trúc Lâm Phương Nam & Chùa Ông</h3>
+                        <div class="temple-location">📍 Phong Điền & Ninh Kiều, Cần Thơ • Tây Đô Sông Nước</div>
+                        <p class="temple-desc">Thiền viện Trúc Lâm Phương Nam xây dựng từ hàng ngàn khối gỗ lim kiên cố, mái ngói cong vút soi bóng hồ sen tĩnh lặng. Tại trung tâm thành phố là Chùa Ông (Quảng Triệu Hội Quán) linh thiêng với nhang vòng cuộn khói nghi ngút quanh năm.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🌲 Gỗ lim thời Lý Trần</span>
+                            <span class="temple-pill">🏮 Nhang vòng Chùa Ông</span>
+                            <span class="temple-pill">🛶 Đất Tây Đô êm ả</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. CHÙA VĨNH TRÀNG (TIỀN GIANG) -->
+                <div class="temple-card" data-region="south" onclick="openLightbox('images/condao_chua_nui_mot_van_son_tu.webp', 'Chùa Vĩnh Tràng — TP. Mỹ Tho, Tiền Giang', 'Tuyệt tác kiến trúc cổ giao thoa Á - Âu độc nhất vô nhị miền Tây, lưu giữ 60 pho tượng gỗ quý và tượng Phật Di Lặc khổng lồ.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Nam</span>
+                        <img src="images/condao_chua_nui_mot_van_son_tu.webp" alt="Chùa Vĩnh Tràng Mỹ Tho Tiền Giang" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Vĩnh Tràng</h3>
+                        <div class="temple-location">📍 TP. Mỹ Tho, Tiền Giang • Giao Thoa Kiến Trúc Á - Âu</div>
+                        <p class="temple-desc">Ngôi chùa cổ xây dựng từ đầu thế kỷ XIX với sự hòa quyện tinh tế giữa phong cách Phục Hưng Pháp, hoa văn La Mã và kiến trúc chùa tháp truyền thống Việt Nam. Khuôn viên rợp bóng cổ thụ với đại tượng Phật Di Lặc tươi cười hoan hỷ.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🏛️ Giao thoa Á - Âu</span>
+                            <span class="temple-pill">😃 Phật Di Lặc hoan hỷ</span>
+                            <span class="temple-pill">🗿 60 pho tượng gỗ quý</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. CHÙA GIÁC LÂM (TP. HỒ CHÍ MINH) -->
+                <div class="temple-card" data-region="south" onclick="openLightbox('images/danang_cau_rong.webp', 'Chùa Giác Lâm (Cẩm Sơn Tự) — Quận Tân Bình, TP. Hồ Chí Minh', 'Ngôi cổ tự cổ nhất Sài Gòn hơn 300 năm tuổi, lưu giữ hơn 113 pho tượng cổ bằng gỗ mít thế kỷ XVIII.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Nam</span>
+                        <img src="images/danang_cau_rong.webp" alt="Chùa Giác Lâm TP. Hồ Chí Minh" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Giác Lâm (Cẩm Sơn Tự)</h3>
+                        <div class="temple-location">📍 Q. Tân Bình, TP. Hồ Chí Minh • Khởi Dựng Năm 1744</div>
+                        <p class="temple-desc">Được xây dựng từ thời chúa Nguyễn Phúc Khoát (năm 1744), là tổ đình của Thiền phái Lâm Tế tông tại đất Gia Định xưa. Ngôi chùa là một bảo tàng điêu khắc gỗ cổ vô giá với 98 cột gỗ lim thếp vàng cùng tháp Xá Lợi 7 tầng vươn cao.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">📜 Khởi dựng năm 1744</span>
+                            <span class="temple-pill">🗿 113 pho tượng cổ</span>
+                            <span class="temple-pill">🗼 Tháp Xá Lợi 7 tầng</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17. TRÚC LÂM PHỤNG HOÀNG (ĐÀ LẠT) -->
+                <div class="temple-card" data-region="south" onclick="openLightbox('images/dalat_mua_ha_phuong_tim_san_may.webp', 'Thiền Viện Trúc Lâm Phụng Hoàng — Đà Lạt, Lâm Đồng', 'Thiền viện thanh tịnh ngự trên núi Phụng Hoàng, soi bóng xuống hồ Tuyền Lâm mộng mơ giữa ngàn thông xanh mát.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Nam</span>
+                        <img src="images/dalat_mua_ha_phuong_tim_san_may.webp" alt="Thiền Viện Trúc Lâm Đà Lạt" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Trúc Lâm Phụng Hoàng (Đà Lạt)</h3>
+                        <div class="temple-location">📍 Núi Phụng Hoàng, Đà Lạt • Soi Bóng Hồ Tuyền Lâm</div>
+                        <p class="temple-desc">Một trong những thiền viện Trúc Lâm lớn nhất nước do Hòa thượng Thích Thanh Từ sáng lập. Tiết trời se lạnh của cao nguyên, vườn hoa cẩm tú cầu thơm ngát và tiếng chuông thiền hòa cùng tiếng gió reo qua rặng thông đại ngàn đưa lòng người về chốn an tịnh.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🌲 Rừng thông ngút ngàn</span>
+                            <span class="temple-pill">🌊 Hồ Tuyền Lâm mộng mơ</span>
+                            <span class="temple-pill">🚡 Cáp treo ngắm cảnh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 18. CHÙA NÚI MỘT (CÔN ĐẢO) -->
+                <div class="temple-card" data-region="south" onclick="openLightbox('images/condao_chua_nui_mot_van_son_tu.webp', 'Chùa Núi Một (Vân Sơn Tự) — Côn Đảo, Bà Rịa - Vũng Tàu', 'Ngôi chùa duy nhất ngự trên đỉnh non cao Côn Đảo, tựa lưng vào vách đá ngắm nhìn trọn vẹn vịnh Côn Sơn xanh ngắt.')">
+                    <div class="temple-img-wrap">
+                        <span class="temple-region-tag">Miền Nam</span>
+                        <img src="images/condao_chua_nui_mot_van_son_tu.webp" alt="Chùa Núi Một Côn Đảo" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name">Chùa Núi Một (Vân Sơn Tự)</h3>
+                        <div class="temple-location">📍 Huyện Côn Đảo, Bà Rịa - Vũng Tàu • Tựa Sơn Hướng Biển</div>
+                        <p class="temple-desc">Ngôi chùa có thế phong thủy tựa lưng vào núi Một, phóng tầm mắt bao quát toàn cảnh vịnh Côn Sơn, hồ An Hải và thị trấn Côn Đảo. Nơi đây là điểm tựa tâm linh cầu siêu cho hàng vạn anh hùng liệt sĩ đã hy sinh vì nền độc lập tự do của dân tộc.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🌊 View toàn cảnh biển Côn Đảo</span>
+                            <span class="temple-pill">🙏 Tưởng niệm anh linh</span>
+                            <span class="temple-pill">🪷 Hồ sen An Hải</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- PHẦN 4: VĂN HÓA & NÉT ĐẸP ĐI CHÙA PHONG TỤC VIỆT -->
+    <!-- ================================================= -->
+    <section class="etiquette-section" id="nghi-thuc">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🏮 PHONG TỤC CỔ TRUYỀN</span>
+                <h2 class="section-title">6 Nguyên Tắc Vàng Khi Chiêm Bái Chốn Thiền Môn</h2>
+                <p class="section-subtitle">
+                    Gìn giữ nét đẹp văn hóa tâm linh văn minh, thể hiện lòng tôn kính và bảo tồn trầm tích di sản của tiền nhân.
+                </p>
+            </div>
+
+            <div class="etiquette-grid">
+                <!-- 1. Y PHỤC -->
+                <div class="etiquette-card">
+                    <span class="etiquette-icon">👘</span>
+                    <h3>1. Y Phục Trang Nhã, Tôn Nghiêm</h3>
+                    <p>Khi đến chốn chùa chiền tôn nghiêm, nên mặc trang phục kín đáo, qua đầu gối, áo có tay lịch sự. Khuyến khích mặc pháp phục, áo lam hoặc áo dài cổ truyền. Tránh trang phục hở hang, sặc sỡ hoặc phản cảm làm mất đi sự thanh tịnh.</p>
+                </div>
+
+                <!-- 2. LỐI RA VÀO -->
+                <div class="etiquette-card">
+                    <span class="etiquette-icon">🚪</span>
+                    <h3>2. Quy Tắc Lối Đi Tam Quan</h3>
+                    <p>Khi bước qua cổng Tam Quan: Vào cửa Giả quan bên phải, ra cửa Không quan bên trái. Cửa Trung quan ở chính giữa chỉ dành riêng cho chư vị cao tăng đại đức và bậc nguyên thủ trong đại lễ. Tránh giẫm chân lên bậu cửa chùa.</p>
+                </div>
+
+                <!-- 3. SẮM LỄ CHAY -->
+                <div class="etiquette-card">
+                    <span class="etiquette-icon">🍎</span>
+                    <h3>3. Sắm Lễ Vật Thuần Khiết</h3>
+                    <p>Dâng lễ Phật tại Tam Bảo chỉ dùng hương, hoa tươi, quả ngọt, oản phẩm, chè xôi chay tịnh. Tuyệt đối không mang lễ mặn (thịt, cá) và tiền vàng mã vào đặt tại Chính Điện vì trái với giáo lý từ bi bất sát sinh của nhà Phật.</p>
+                </div>
+
+                <!-- 4. TIỀN CÔNG ĐỨC -->
+                <div class="etiquette-card">
+                    <span class="etiquette-icon">🪙</span>
+                    <h3>4. Đặt Tiền Công Đức Đúng Nơi</h3>
+                    <p>Tiền giọt dầu, công đức trùng tu chùa nên bỏ trực tiếp vào Hòm Công Đức hoặc bàn ghi phiếu biên nhận của nhà chùa. Tuyệt đối không rải tiền lẻ, không nhét tiền vào tay hay chân các pho tượng Phật làm mất đi vẻ tôn nghiêm.</p>
+                </div>
+
+                <!-- 5. ĐI ĐỨNG XƯNG HÔ -->
+                <div class="etiquette-card">
+                    <span class="etiquette-icon">🙏</span>
+                    <h3>5. Cung Cách Đi Đứng & Xưng Hô</h3>
+                    <p>Đi nhẹ, nói khẽ, không cười đùa lớn tiếng hay chạy nhảy trong khuôn viên chùa. Khi gặp quý sư thầy, chắp hai tay trước ngực theo thế búp sen cung kính xá chào: "A Di Đà Phật" hoặc "Bạch Thầy".</p>
+                </div>
+
+                <!-- 6. BẢO TỒN DI SẢN -->
+                <div class="etiquette-card">
+                    <span class="etiquette-icon">🌿</span>
+                    <h3>6. Giữ Gìn Di Sản & Môi Trường</h3>
+                    <p>Chỉ thắp 1 nén hương tại lư hương ngoài trời để tránh khói ngột và nguy cơ hỏa hoạn. Không sờ tay làm mòn các pho tượng cổ, bia đá hay cổ vật. Không xả rác, giữ cho không gian thiền môn luôn xanh - sạch - thanh tịnh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <img class="footer-logo" src="images/logo.png" alt="GO FAR Logo">
+            <div class="footer-links">
+                <a href="index.html">Trang Chủ</a>
+                <a href="#goc-an-nhien">Góc An Nhiên</a>
+                <a href="#van-khan">Cẩm Nang Văn Khấn</a>
+                <a href="#danh-lam-co-tu">Danh Lam Cổ Tự</a>
+                <a href="#nghi-thuc">Quy Chuẩn Đi Chùa</a>
+            </div>
+            <p>© 2026 <strong>GO FAR</strong> — Go Straight Ahead. Cẩm nang du lịch và bảo tồn di sản văn hóa Việt Nam.</p>
+            <p style="font-size: 0.8rem; margin-top: 0.4rem; color: var(--text-muted);">Biên tập nội dung: <strong>Sửu nhi</strong> • Ảnh: <strong>100% AI Travel Photography (GO FAR Studio)</strong></p>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightboxDirect()">&times;</span>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" src="" alt="Chi tiết hình ảnh cổ tự">
+            </div>
+            <div class="lightbox-caption-wrap">
+                <h3 id="lightboxTitle" class="lightbox-title"></h3>
+                <p id="lightboxCaption" class="lightbox-caption"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="zen-toast" id="zenToast">
+        <span id="toastIcon">✨</span>
+        <span id="toastMsg">Đã sao chép thành công</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // ==========================================
+        // WEB AUDIO API SYNTHESIZERS (NO EXTERNAL AUDIO FILES)
+        // ==========================================
+        let audioCtx = null;
+        function getAudioContext() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        // 1. TIẾNG GÕ MÕ (WOODEN FISH CLICKER)
+        function playMoSound() {
+            try {
+                const ctx = getAudioContext();
+                const now = ctx.currentTime;
+
+                // Sharp wooden strike attack
+                const osc1 = ctx.createOscillator();
+                const gain1 = ctx.createGain();
+                osc1.type = 'triangle';
+                osc1.frequency.setValueAtTime(780, now);
+                osc1.frequency.exponentialRampToValueAtTime(320, now + 0.07);
+
+                gain1.gain.setValueAtTime(0.85, now);
+                gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+
+                // Body hollow resonance
+                const osc2 = ctx.createOscillator();
+                const gain2 = ctx.createGain();
+                osc2.type = 'sine';
+                osc2.frequency.setValueAtTime(420, now);
+                osc2.frequency.exponentialRampToValueAtTime(360, now + 0.16);
+
+                gain2.gain.setValueAtTime(0.65, now);
+                gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+
+                // Wood filter
+                const filter = ctx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(1500, now);
+
+                osc1.connect(gain1);
+                osc2.connect(gain2);
+                gain1.connect(filter);
+                gain2.connect(filter);
+                filter.connect(ctx.destination);
+
+                osc1.start(now);
+                osc2.start(now);
+                osc1.stop(now + 0.15);
+                osc2.stop(now + 0.2);
+            } catch (e) {
+                console.log('Audio init on user gesture');
+            }
+        }
+
+        // 2. TIẾNG GÕ CHUÔNG ĐẠI HỒNG CHUNG (TEMPLE BELL HARMONICS)
+        function playBellSound() {
+            try {
+                const ctx = getAudioContext();
+                const now = ctx.currentTime;
+
+                // Harmonics series of temple bronze bell
+                const partials = [
+                    { f: 216, g: 0.75, d: 6.0 },  // Fundamental strike
+                    { f: 432, g: 0.45, d: 5.2 },  // Octave
+                    { f: 540, g: 0.32, d: 4.2 },  // Third
+                    { f: 648, g: 0.24, d: 3.5 },  // Fifth
+                    { f: 864, g: 0.18, d: 2.8 },  // High chime
+                    { f: 108, g: 0.35, d: 6.5 }   // Sub hum
+                ];
+
+                const masterGain = ctx.createGain();
+                masterGain.gain.setValueAtTime(0.8, now);
+                masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 6.5);
+                masterGain.connect(ctx.destination);
+
+                partials.forEach(p => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    // Subtle detuning for bronze beating shimmer
+                    osc.frequency.setValueAtTime(p.f + (Math.random() * 2 - 1), now);
+
+                    gain.gain.setValueAtTime(p.g, now);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + p.d);
+
+                    osc.connect(gain);
+                    gain.connect(masterGain);
+
+                    osc.start(now);
+                    osc.stop(now + p.d + 0.1);
+                });
+            } catch (e) {
+                console.log('Bell sound error:', e);
+            }
+        }
+
+        // 3. AMBIENT ZEN SOUNDSCAPE (SUỐI NGÀN & CHUÔNG GIÓ)
+        let ambientRunning = false;
+        let ambientNodes = [];
+        let ambientTimer = null;
+
+        function toggleAmbientSound() {
+            const btn = document.getElementById('btnAmbientSound');
+            const icon = document.getElementById('ambientIcon');
+            const text = document.getElementById('ambientText');
+
+            if (ambientRunning) {
+                stopAmbientSound();
+                btn.classList.remove('playing');
+                icon.textContent = '🎵';
+                text.textContent = 'Âm Thanh Thiền';
+                showToast('Đã dừng âm thanh thiền');
+            } else {
+                startAmbientSound();
+                btn.classList.add('playing');
+                icon.textContent = '⏸️';
+                text.textContent = 'Đang Phát Thiền';
+                showToast('Đang phát tiếng suối ngàn & chuông gió chánh niệm');
+            }
+        }
+
+        function startAmbientSound() {
+            const ctx = getAudioContext();
+            ambientRunning = true;
+
+            // Generate peaceful filtered water stream sound
+            const bufferSize = ctx.sampleRate * 2;
+            const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+            const output = noiseBuffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                output[i] = Math.random() * 2 - 1;
+            }
+
+            const whiteNoise = ctx.createBufferSource();
+            whiteNoise.buffer = noiseBuffer;
+            whiteNoise.loop = true;
+
+            const bandpass = ctx.createBiquadFilter();
+            bandpass.type = 'bandpass';
+            bandpass.frequency.setValueAtTime(650, ctx.currentTime);
+            bandpass.Q.setValueAtTime(1.8, ctx.currentTime);
+
+            const streamGain = ctx.createGain();
+            streamGain.gain.setValueAtTime(0.08, ctx.currentTime);
+
+            whiteNoise.connect(bandpass);
+            bandpass.connect(streamGain);
+            streamGain.connect(ctx.destination);
+
+            whiteNoise.start();
+            ambientNodes.push(whiteNoise);
+
+            // Periodic wind chime notes (pentatonic scale)
+            const pentatonic = [523.25, 587.33, 659.25, 783.99, 880.0, 1046.5];
+            ambientTimer = setInterval(() => {
+                if (!ambientRunning) return;
+                const freq = pentatonic[Math.floor(Math.random() * pentatonic.length)];
+                playSingleChime(freq);
+            }, 3500);
+        }
+
+        function playSingleChime(freq) {
+            if (!ambientRunning) return;
+            const ctx = getAudioContext();
+            const now = ctx.currentTime;
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now);
+
+            gain.gain.setValueAtTime(0.06, now);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.0);
+
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+
+            osc.start(now);
+            osc.stop(now + 3.2);
+        }
+
+        function stopAmbientSound() {
+            ambientRunning = false;
+            if (ambientTimer) clearInterval(ambientTimer);
+            ambientNodes.forEach(node => {
+                try { node.stop(); } catch(e){}
+            });
+            ambientNodes = [];
+        }
+
+        // ==========================================
+        // GÓC AN NHIÊN: GÕ MÕ LOGIC
+        // ==========================================
+        let moCount = parseInt(localStorage.getItem('gofar_mo_count') || '0', 10);
+        document.getElementById('moCount').textContent = moCount;
+
+        const moQuotes = [
+            "Thở vào tâm tĩnh lặng, thở ra miệng mỉm cười.",
+            "Mỗi tiếng gõ buông một niệm ưu phiền, tâm an vạn sự an.",
+            "An trú trong hiện tại, không vọng tưởng tương lai, không tiếc nuối quá khứ.",
+            "Tâm như nước tịnh, vạn sự tùy duyên.",
+            "Bình an đến từ bên trong, đừng tìm kiếm nơi bên ngoài.",
+            "Một念 buông xả, ngàn dặm thênh thang.",
+            "Biết đủ là giàu có, biết ơn là hạnh phúc.",
+            "Gieo hạt mầm từ bi, gặt mùa quả phúc lạc."
+        ];
+
+        function strikeMo() {
+            playMoSound();
+            moCount++;
+            document.getElementById('moCount').textContent = moCount;
+            localStorage.setItem('gofar_mo_count', moCount);
+
+            const visual = document.getElementById('moVisual');
+            visual.classList.remove('struck');
+            void visual.offsetWidth; // trigger reflow
+            visual.classList.add('struck');
+
+            // Change serene quote every 5 strikes
+            if (moCount % 5 === 0) {
+                const quoteElem = document.getElementById('moQuote');
+                quoteElem.style.opacity = '0';
+                setTimeout(() => {
+                    const randomQuote = moQuotes[Math.floor(Math.random() * moQuotes.length)];
+                    quoteElem.textContent = '"' + randomQuote + '"';
+                    quoteElem.style.opacity = '1';
+                }, 300);
+            }
+        }
+
+        let autoMoInterval = null;
+        function toggleAutoMo() {
+            const btn = document.getElementById('btnAutoMo');
+            if (autoMoInterval) {
+                clearInterval(autoMoInterval);
+                autoMoInterval = null;
+                btn.style.background = '';
+                btn.innerHTML = '<span>⏱️</span> Tự Động Theo Nhịp Thở (3s)';
+                showToast('Đã dừng tự động gõ mõ');
+            } else {
+                strikeMo();
+                autoMoInterval = setInterval(strikeMo, 3000);
+                btn.style.background = 'var(--accent-gold)';
+                btn.style.color = '#0D1F2D';
+                btn.innerHTML = '<span>⏸️</span> Đang Gõ Tự Động (Dừng)';
+                showToast('Đang gõ mõ tự động theo nhịp thở 3 giây');
+            }
+        }
+
+        // ==========================================
+        // GÓC AN NHIÊN: THẮP HƯƠNG LOGIC & SMOKE CANVAS
+        // ==========================================
+        let incenseTimer = null;
+        let incenseRemaining = 0;
+        let smokeAnimId = null;
+        let smokeParticles = [];
+
+        function initSmokeCanvas() {
+            const canvas = document.getElementById('smokeCanvas');
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = 220;
+        }
+
+        class SmokeParticle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = -1.2 - Math.random() * 1.0;
+                this.radius = 4 + Math.random() * 4;
+                this.alpha = 0.45;
+                this.life = 0;
+                this.maxLife = 90 + Math.random() * 40;
+            }
+            update() {
+                this.x += this.vx + Math.sin(this.life * 0.05) * 0.6;
+                this.y += this.vy;
+                this.radius += 0.25;
+                this.life++;
+                this.alpha = Math.max(0, 0.45 * (1 - this.life / this.maxLife));
+            }
+            draw(ctx) {
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(235, 235, 245, ${this.alpha})`;
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.3)';
+                ctx.shadowBlur = 8;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function animateSmoke() {
+            const canvas = document.getElementById('smokeCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Emit particles from the 3 incense stick tips
+            if (incenseRemaining > 0) {
+                const centerX = canvas.width / 2;
+                const tips = [centerX - 22, centerX, centerX + 22];
+                tips.forEach(x => {
+                    if (Math.random() < 0.65) {
+                        smokeParticles.push(new SmokeParticle(x, 150));
+                    }
+                });
+            }
+
+            for (let i = smokeParticles.length - 1; i >= 0; i--) {
+                const p = smokeParticles[i];
+                p.update();
+                p.draw(ctx);
+                if (p.life >= p.maxLife || p.alpha <= 0) {
+                    smokeParticles.splice(i, 1);
+                }
+            }
+
+            if (smokeParticles.length > 0 || incenseRemaining > 0) {
+                smokeAnimId = requestAnimationFrame(animateSmoke);
+            }
+        }
+
+        function lightIncense(seconds) {
+            playBellSound();
+            if (incenseTimer) clearInterval(incenseTimer);
+            incenseRemaining = seconds;
+
+            document.getElementById('stick1').classList.add('lit');
+            document.getElementById('stick2').classList.add('lit');
+            document.getElementById('stick3').classList.add('lit');
+            document.getElementById('huongStatus').textContent = '"Một nén tâm hương thắp sáng, nguyện cầu quốc thái dân an, gia đạo thuận hòa."';
+
+            updateTimerDisplay();
+            initSmokeCanvas();
+            if (!smokeAnimId) animateSmoke();
+
+            incenseTimer = setInterval(() => {
+                incenseRemaining--;
+                updateTimerDisplay();
+                if (incenseRemaining <= 0) {
+                    clearInterval(incenseTimer);
+                    incenseTimer = null;
+                    document.getElementById('stick1').classList.remove('lit');
+                    document.getElementById('stick2').classList.remove('lit');
+                    document.getElementById('stick3').classList.remove('lit');
+                    document.getElementById('huongStatus').textContent = '"Tâm hương đã trọn, chúc quý bạn thân tâm luôn an lạc và hoan hỷ."';
+                    playBellSound();
+                    showToast('Đã hoàn thành thời gian tĩnh tâm dâng hương');
+                }
+            }, 1000);
+
+            showToast('Đã thắp 3 nén tâm hương thành kính');
+        }
+
+        function updateTimerDisplay() {
+            const m = Math.floor(incenseRemaining / 60);
+            const s = incenseRemaining % 60;
+            document.getElementById('huongTimerDisplay').textContent =
+                `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        // ==========================================
+        // GÓC AN NHIÊN: GÕ CHUÔNG LOGIC
+        // ==========================================
+        function ringTempleBell() {
+            playBellSound();
+            const visual = document.getElementById('chuongVisual');
+            visual.classList.remove('chiming');
+            void visual.offsetWidth;
+            visual.classList.add('chiming');
+            showToast('Đại hồng chung ngân vang — Phiền não tiêu tan');
+        }
+
+        // ==========================================
+        // GÓC AN NHIÊN: CÂY ƯỚC NGUYỆN LOGIC
+        // ==========================================
+        let wishes = [];
+        const sampleWishes = [
+            { author: "Diệu Tâm", color: "red", text: "Cầu cho cha mẹ mạnh khỏe, trường thọ an vui bên con cháu.", time: "Vừa xong" },
+            { author: "Quang Minh", color: "gold", text: "Nguyện thi cử đỗ đạt, công việc hanh thông, luôn giữ tâm thiện lành.", time: "1 giờ trước" },
+            { author: "Bình An", color: "green", text: "Cầu cho gia đình thuận hòa, dịch bệnh tiêu tan, vạn sự cát lành.", time: "Hôm qua" }
+        ];
+
+        function loadWishes() {
+            const saved = localStorage.getItem('gofar_spiritual_wishes');
+            if (saved) {
+                try { wishes = JSON.parse(saved); } catch(e){ wishes = sampleWishes; }
+            } else {
+                wishes = sampleWishes;
+            }
+            renderWishes();
+        }
+
+        function renderWishes() {
+            const ribbonsLayer = document.getElementById('ribbonsLayer');
+            const listElem = document.getElementById('wishItemsList');
+            ribbonsLayer.innerHTML = '';
+            listElem.innerHTML = '';
+
+            wishes.forEach((w, idx) => {
+                // Ribbon on tree
+                const ribbon = document.createElement('div');
+                ribbon.className = `wish-ribbon ${w.color}`;
+                // Random position on branches
+                const top = 18 + (idx % 6) * 12 + (Math.random() * 8);
+                const left = 15 + (idx % 5) * 16 + (Math.random() * 6);
+                ribbon.style.top = `${top}%`;
+                ribbon.style.left = `${left}%`;
+                ribbon.style.animationDelay = `${(idx * 0.4) % 2}s`;
+                ribbon.textContent = `${w.author}: ${w.text}`;
+                ribbon.title = `${w.author}: ${w.text}`;
+                ribbonsLayer.appendChild(ribbon);
+
+                // Wish in list
+                const item = document.createElement('div');
+                item.className = 'wish-item';
+                item.innerHTML = `<strong>${w.author || 'Lữ khách'}:</strong> ${w.text} <span>(${w.time || 'Gần đây'})</span>`;
+                listElem.appendChild(item);
+            });
+        }
+
+        function submitWish(e) {
+            e.preventDefault();
+            const author = document.getElementById('wishAuthor').value.trim() || 'Người Lữ Khách';
+            const color = document.getElementById('wishColor').value;
+            const content = document.getElementById('wishContent').value.trim();
+
+            if (!content) return;
+
+            playBellSound();
+            const newWish = { author, color, text: content, time: 'Vừa xong' };
+            wishes.unshift(newWish);
+            if (wishes.length > 20) wishes.pop();
+
+            localStorage.setItem('gofar_spiritual_wishes', JSON.stringify(wishes));
+            renderWishes();
+
+            document.getElementById('wishContent').value = '';
+            showToast('Dải lụa ước nguyện đã được treo trang trọng lên cội Bồ Đề');
+        }
+
+        // ==========================================
+        // GÓC AN NHIÊN: THẺ QUẺ AN NHIÊN LOGIC
+        // ==========================================
+        const fortuneDeck = [
+            {
+                type: "QUẺ THƯỢNG CÁT",
+                title: "Tùy Duyên Tự Tại",
+                poem: "Nước chảy hoa trôi vạn dặm dài,\nTùy duyên thuận cảnh dạ thảnh thơi.\nTrời xanh tự khắc an bài lối,\nTâm tịnh đường thông vạn dặm ngời.",
+                meaning: "Vạn sự trên đời hợp tan đều có nhân duyên. Đừng quá cưỡng cầu điều chưa đến, cũng đừng luyến tiếc điều đã qua. Khi tâm an yên chấp nhận hiện tại, mọi nút thắt sẽ tự khắc được hóa giải một cách êm đẹp nhất.",
+                advice: "💡 Lời khuyên chánh niệm: Hôm nay hãy thả lỏng tâm trí, mỉm cười trước mọi hoàn cảnh và tin tưởng vào hành trình của chính mình."
+            },
+            {
+                type: "QUẺ AN LẠC",
+                title: "Tâm Như Nước Tịnh",
+                poem: "Hồ sâu phẳng lặng bóng trăng in,\nGió thoảng qua rèm chẳng dính phiền.\nThân ở trần ai tâm thoát tục,\nBình an tự tại giữa cõi riêng.",
+                meaning: "Tâm người tựa như mặt nước hồ mùa thu. Khi sóng gió bên ngoài khuấy đảo, nếu giữ được sự tĩnh tại thì bùn lầy sẽ tự lắng xuống, chỉ còn lại sự trong vắt soi thấu mười phương.",
+                advice: "💡 Lời khuyên chánh niệm: Dành 5 phút hít thở sâu, tránh tranh cãi không cần thiết và giữ cho mình một khoảng lặng dịu êm."
+            },
+            {
+                type: "QUẺ TRÍ TUỆ",
+                title: "Hiếu Hạnh Vi Tiên",
+                poem: "Mẹ cha tựa núi vững ngàn thu,\nƠn nghĩa sinh thành biển rộng sâu.\nChữ hiếu vẹn tròn muôn phúc kết,\nGia đình hòa thuận rạng mai sau.",
+                meaning: "Trăm điều thiện thì chữ Hiếu đứng đầu. Phụng dưỡng và tôn kính cha mẹ chính là tạo dựng mảnh đất phước đức màu mỡ nhất cho cuộc đời bạn.",
+                advice: "💡 Lời khuyên chánh niệm: Hãy gọi điện hỏi thăm cha mẹ, nấu một bữa cơm ấm cúng hoặc gửi một lời cảm ơn chân thành đến đấng sinh thành."
+            },
+            {
+                type: "QUẺ ĐẠI CÁT",
+                title: "Gieo Hạt Mầm Lành",
+                poem: "Đất màu ươm sẵn hạt mầm xanh,\nMưa thuận gió hòa hoa trĩu cành.\nNhân thiện quả lành muôn phúc báo,\nĐường đời thênh thang rạng hiển vinh.",
+                meaning: "Bạn đang gieo những hạt giống tốt đẹp về lòng nhân ái, sự nỗ lực và kiên trì. Quả ngọt của sự bình an và thành tựu đang từng bước đơm hoa kết trái.",
+                advice: "💡 Lời khuyên chánh niệm: Hãy làm một việc tốt nho nhỏ hôm nay: giúp đỡ ai đó, nhường nhịn một lời nói, hoặc khích lệ một người đang âu lo."
+            },
+            {
+                type: "QUẺ KHOAN DUNG",
+                title: "Buông Xả Phiền Não",
+                poem: "Nắm chặt trong tay nặng trĩu sầu,\nBuông tay thanh thản giữa ngàn dâu.\nMây trôi gió cuốn ngàn năm cũ,\nLòng nhẹ thênh thang nhẹ gót đầu.",
+                meaning: "Ôm giữ sự oán giận cũng giống như tự mình uống thuốc độc mà mong người khác tổn thương. Tha thứ cho người khác chính là món quà giải thoát lớn nhất cho chính tâm hồn bạn.",
+                advice: "💡 Lời khuyên chánh niệm: Hãy buông bỏ một sự ấm ức trong quá khứ, hít vào sự bao dung và thở ra nụ cười thảnh thơi."
+            },
+            {
+                type: "QUẺ KIÊN ĐỊNH",
+                title: "Vững Như Núi Đá",
+                poem: "Núi đứng uy nghiêm ngắm bão giông,\nGió gào mưa tuyết dạ không lay.\nThân tâm giữ vững niềm tin sáng,\nTrời quang mây tạnh rực rỡ ngày.",
+                meaning: "Thử thách hiện tại chỉ là bài học để rèn giũa ý chí và bản lĩnh của bạn. Giữ vững giá trị đạo đức và niềm tin trong sáng, bạn sẽ vượt qua mọi giông bão một cách kiên cường.",
+                advice: "💡 Lời khuyên chánh niệm: Đừng để lời phán xét bên ngoài làm lung lay mục đích chân chính của bạn. Vững bước đi tới."
+            },
+            {
+                type: "QUẺ TRI TÚC",
+                title: "Biết Đủ Thường Vui",
+                poem: "Nhìn lên chẳng bằng ai muôn lối,\nNhìn xuống còn bao cảnh nhọc nhằn.\nCơm ngày hai bữa lòng thanh thản,\nBiết đủ đời vui phúc ngập tràn.",
+                meaning: "Hạnh phúc không phải là có thật nhiều thứ, mà là biết trân trọng và hài lòng với những gì mình đang có trong từng giây phút hiện tại.",
+                advice: "💡 Lời khuyên chánh niệm: Hãy liệt kê 3 điều bạn cảm thấy biết ơn trong ngày hôm nay: một mái nhà ấm áp, một tách trà thơm, hay một người bạn chân thành."
+            },
+            {
+                type: "QUẺ KHẨU HÒA",
+                title: "Lời Nói Nở Hoa",
+                poem: "Một lời từ ái ấm ba đông,\nMột tiếng sân si lạnh buốt lòng.\nHọc cách lắng nghe cùng thấu hiểu,\nĐời người tươi sáng tựa vừng đông.",
+                meaning: "Ngôn từ có sức mạnh chữa lành hoặc xé rách trái tim. Sử dụng ái ngữ và lắng nghe sâu sắc sẽ giúp bạn kết nối được những mối quan hệ bền chặt và hóa giải mọi bất hòa.",
+                advice: "💡 Lời khuyên chánh niệm: Trước khi nói một lời nóng giận, hãy hít thở 3 nhịp và hỏi lại mình: Lời này có xây dựng và mang lại an vui không?"
+            },
+            {
+                type: "QUẺ NHẪN NẠI",
+                title: "Nhẫn Để Thành Tựu",
+                poem: "Nhẫn một chút gió yên sóng lặng,\nLùi một bước biển rộng trời cao.\nNhân duyên chín muồi thành hoa trái,\nNguyện lớn vươn xa tự thuở nào.",
+                meaning: "Mọi sự vật trên thế gian đều cần thời gian để phát triển. Sự nóng vội chỉ đem lại sai lầm. Nhẫn nhịn ở đây là kiên trì tỉnh thức, không phải hèn nhát.",
+                advice: "💡 Lời khuyên chánh niệm: Chậm lại một nhịp, quan sát kỹ lưỡng và cho đối phương cơ hội được sẻ chia."
+            },
+            {
+                type: "QUẺ TỰ TẠI",
+                title: "Hoa Nở Đúng Thời",
+                poem: "Xuân đến trăm hoa tự khắc khoe,\nHạ về rực rỡ rộn tiếng ve.\nThời cơ chưa tới đừng than vãn,\nNhân quả công bằng chớ nghĩ e.",
+                meaning: "Mỗi người có một đồng hồ thời gian riêng. Đừng so sánh sự khởi đầu của mình với đích đến của người khác. Khi bạn chuẩn bị đủ nội lực, thành công sẽ tự đến đúng lúc.",
+                advice: "💡 Lời khuyên chánh niệm: Tập trung hoàn thiện bản thân mỗi ngày, kiên nhẫn đợi hạt mầm bén rễ sâu trước khi đón nắng mai."
+            },
+            {
+                type: "QUẺ ĐẠI BI",
+                title: "Mở Rộng Lòng Từ",
+                poem: "Rộng mở vòng tay ôm thế nhân,\nCho đi không tính toán thiệt hơn.\nTình thương tưới mát miền khô hạn,\nPhúc đức vô biên tựa suối nguồn.",
+                meaning: "Sống là cho đi mà không mong cầu đền đáp. Khi bạn mở rộng lòng trắc ẩn với mọi người và muôn loài, vũ trụ sẽ bao bọc bạn bằng nguồn năng lượng bình an và may mắn nhất.",
+                advice: "💡 Lời khuyên chánh niệm: Hãy nở một nụ cười thân thiện với người qua đường, hoặc giúp đỡ một con vật nhỏ bé gặp khó khăn."
+            },
+            {
+                type: "QUẺ HOAN HỶ",
+                title: "Tâm Hồn Tươi Sáng",
+                poem: "Nụ cười rạng rỡ đuổi phong ba,\nHoan hỷ trong tâm rộn tiếng ca.\nĐón nhận an nhiên từng khoảnh khắc,\nĐời đẹp lung linh vạn sắc hoa.",
+                meaning: "Thái độ sống quyết định chất lượng cuộc đời. Giữ một nụ cười trên môi và tinh thần lạc quan, mọi nghịch cảnh sẽ chỉ là hòn sỏi nhỏ dưới chân người leo núi.",
+                advice: "💡 Lời khuyên chánh niệm: Hãy bắt đầu ngày mới bằng việc mỉm cười trước gương và tự nhủ: Hôm nay là một ngày tuyệt vời và an lành."
+            }
+        ];
+
+        function drawFortune() {
+            playMoSound();
+            const tube = document.getElementById('tubeVisual');
+            const card = document.getElementById('fortuneResultCard');
+            const btn = document.getElementById('btnDrawFortune');
+
+            tube.classList.add('shaking');
+            card.style.display = 'none';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                tube.classList.remove('shaking');
+                playBellSound();
+
+                const randomFortune = fortuneDeck[Math.floor(Math.random() * fortuneDeck.length)];
+                document.getElementById('fortuneType').textContent = randomFortune.type;
+                document.getElementById('fortuneTitle').textContent = randomFortune.title;
+                document.getElementById('fortunePoem').textContent = randomFortune.poem.replace(/\n/g, '
+');
+                document.getElementById('fortuneMeaning').textContent = randomFortune.meaning;
+                document.getElementById('fortuneAdvice').textContent = randomFortune.advice;
+
+                card.style.display = 'block';
+                btn.disabled = false;
+                showToast('Đã rút được thẻ quẻ: ' + randomFortune.title);
+            }, 800);
+        }
+
+        // ==========================================
+        // TABS SWITCHING LOGIC
+        // ==========================================
+        function switchZenTab(tabId) {
+            document.querySelectorAll('.zen-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.zen-pane').forEach(p => p.classList.remove('active'));
+
+            const targetBtn = Array.from(document.querySelectorAll('.zen-tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+            if (targetBtn) targetBtn.classList.add('active');
+
+            const targetPane = document.getElementById(tabId);
+            if (targetPane) targetPane.classList.add('active');
+
+            if (tabId === 'tab-tree') {
+                renderWishes();
+            }
+            if (tabId === 'tab-huong') {
+                initSmokeCanvas();
+            }
+        }
+
+        // ==========================================
+        // CẨM NANG VĂN KHẤN LOGIC
+        // ==========================================
+        function switchPrayer(index) {
+            document.querySelectorAll('.prayer-nav-btn').forEach((b, i) => {
+                b.classList.toggle('active', i === index);
+            });
+            document.querySelectorAll('.prayer-card').forEach((c, i) => {
+                c.classList.toggle('active', i === index);
+            });
+        }
+
+        function copyPrayer(index) {
+            const textElem = document.getElementById('prayerText' + index);
+            if (!textElem) return;
+            navigator.clipboard.writeText(textElem.innerText).then(() => {
+                showToast('Đã sao chép toàn bộ bài văn khấn vào bộ nhớ tạm');
+            }).catch(() => {
+                showToast('Không thể tự động sao chép, vui lòng bôi đen để copy');
+            });
+        }
+
+        // ==========================================
+        // DANH LAM CỔ TỰ: FILTER LOGIC
+        // ==========================================
+        function filterTemples(region) {
+            document.querySelectorAll('.region-tab-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.temple-card');
+            cards.forEach(card => {
+                if (region === 'all' || card.dataset.region === region) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // ==========================================
+        // LIGHTBOX MODAL LOGIC
+        // ==========================================
+        function openLightbox(src, title, caption) {
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImg');
+            const titleElem = document.getElementById('lightboxTitle');
+            const capElem = document.getElementById('lightboxCaption');
+
+            img.src = src;
+            titleElem.textContent = title;
+            capElem.textContent = caption;
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightboxDirect() {
+            document.getElementById('lightboxModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeLightbox(e) {
+            if (e.target.id === 'lightboxModal') {
+                closeLightboxDirect();
+            }
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightboxDirect();
+        });
+
+        // ==========================================
+        // TOAST LOGIC
+        // ==========================================
+        let toastTimeout = null;
+        function showToast(msg) {
+            const toast = document.getElementById('zenToast');
+            document.getElementById('toastMsg').textContent = msg;
+            toast.classList.add('show');
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3200);
+        }
+
+        // Window resize canvas update
+        window.addEventListener('resize', () => {
+            if (document.getElementById('tab-huong').classList.contains('active')) {
+                initSmokeCanvas();
+            }
+        });
+
+        // Page load initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            loadWishes();
+            initSmokeCanvas();
+        });
+    </script>
+</body>
+</html>
