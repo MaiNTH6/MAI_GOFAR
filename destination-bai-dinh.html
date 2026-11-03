@@ -1158,16 +1158,133 @@
             font-weight: 700;
             color: var(--accent-gold);
         }
+        
+        /* KHỐI MÔ PHỎNG HÀNH GIẢ CÚI LẠY & BÀI VĂN KHẤN */
+        .stage-prayer-body-grid {
+            display: grid;
+            grid-template-columns: 215px 1fr;
+            gap: 1.2rem;
+            align-items: stretch;
+            margin-top: 0.75rem;
+        }
+        @media (max-width: 768px) {
+            .stage-prayer-body-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .prayer-pilgrim-sim {
+            background: radial-gradient(circle at 50% 35%, rgba(251, 191, 36, 0.12) 0%, rgba(6, 18, 30, 0.85) 75%);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: var(--radius-sm);
+            padding: 0.8rem 0.6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+            min-height: 220px;
+            user-select: none;
+        }
+        .prayer-aura-glow {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+            top: 25px;
+            pointer-events: none;
+            animation: auraGlowPulse 4s ease-in-out infinite;
+        }
+        @keyframes auraGlowPulse {
+            0%, 100% { transform: scale(0.92); opacity: 0.45; }
+            50% { transform: scale(1.18); opacity: 0.85; }
+        }
+        .pilgrim-bow-svg {
+            width: 155px;
+            height: 175px;
+            display: block;
+            filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+        }
+        .prayer-upper-body {
+            transform-origin: 85px 150px;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Chu kỳ cúi lạy trang nghiêm khi đọc văn khấn */
+        .prayer-pilgrim-sim.is-bowing .prayer-upper-body {
+            animation: pilgrimKowtowCycle 4.8s ease-in-out infinite;
+        }
+        @keyframes pilgrimKowtowCycle {
+            0% { transform: rotate(0deg); }
+            15% { transform: rotate(0deg); }
+            35% { transform: rotate(40deg) translateY(6px); }
+            55% { transform: rotate(46deg) translateY(10px); }
+            75% { transform: rotate(44deg) translateY(8px); }
+            90% { transform: rotate(4deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .prayer-sim-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+            margin-top: 0.4rem;
+            width: 100%;
+        }
+        .prayer-sim-status {
+            font-size: 0.78rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .prayer-bow-badge {
+            font-size: 0.75rem;
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+        }
+        .btn-prayer-bow-act {
+            background: rgba(251, 191, 36, 0.12);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .btn-prayer-bow-act:hover {
+            background: var(--accent-gold);
+            color: #0b1926;
+        }
         .stage-prayer-text-box {
+            background: rgba(4, 12, 20, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.2rem;
             font-family: var(--font-body);
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             color: #e2e8f0;
-            line-height: 1.6;
-            max-height: 120px;
+            line-height: 1.8;
+            max-height: 240px;
             overflow-y: auto;
             white-space: pre-line;
-            padding-right: 0.5rem;
+            transition: all 0.3s ease;
         }
+        .stage-prayer-text-box.is-reading {
+            border-color: rgba(251, 191, 36, 0.6);
+            box-shadow: 0 0 18px rgba(251, 191, 36, 0.18);
+        }
+
 
         /* NAVIGATION BUTTONS BAR (PREV / NEXT) */
         .stage-nav-bar {
@@ -1773,7 +1890,7 @@
                             </div>
                         </div>
 
-                        <!-- TOÀN VĂN BÀI VĂN KHẤN TRỰC QUAN -->
+                        <!-- TOÀN VĂN BÀI VĂN KHẤN TRỰC QUAN & MÔ PHỎNG HÀNH GIẢ CÚI LẠY -->
                         <div class="stage-prayer-view">
                             <div class="stage-prayer-head">
                                 <div class="prayer-head-left">
@@ -1781,7 +1898,7 @@
                                 </div>
                                 <div class="prayer-head-actions">
                                     <!-- ICON ĐỌC VĂN KHẤN ONLINE CHUYÊN BIỆT -->
-                                    <button type="button" class="btn-read-prayer-online" id="btnReadPrayerOnline" onclick="toggleReadPrayerOnline()" title="Lắng nghe giọng đọc văn khấn cổ truyền kết hợp nhịp mõ thiền tĩnh tâm">
+                                    <button type="button" class="btn-read-prayer-online" id="btnReadPrayerOnline" onclick="toggleReadPrayerOnline()" title="Lắng nghe giọng đọc văn khấn cổ truyền kết hợp nhịp mõ thiền tĩnh tâm và mô phỏng cúi lạy">
                                         <span class="read-icon-pulse" id="readPrayerIcon">🔊</span>
                                         <span id="readPrayerText">Đọc Văn Khấn Online</span>
                                     </button>
@@ -1790,8 +1907,104 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="stage-prayer-text-box" id="stagePrayerTextBox">
-                                Đang tải bài khấn...
+
+                            <!-- KHUNG TƯƠNG TÁC: CỘT MÔ PHỎNG HÌNH NGƯỜI CÚI LẠY & CỘT NỘI DUNG VĂN KHẤN -->
+                            <div class="stage-prayer-body-grid">
+                                <!-- CỘT 1: HÌNH NGƯỜI MÔ PHỎNG CÚI LẠY THÀNH KÍNH (ÁO LAM PHẬT TỬ) -->
+                                <div class="prayer-pilgrim-sim" id="prayerPilgrimSim">
+                                    <div class="prayer-aura-glow"></div>
+                                    
+                                    <!-- SVG HÀNH GIẢ ÁO LAM QUỲ TRÊN BỒ ĐOÀN SEN, CHẮP TAY BÚP SEN & CÚI LẠY -->
+                                    <svg class="pilgrim-bow-svg" viewBox="0 0 170 190" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <radialGradient id="haloGlow" cx="50%" cy="50%" r="50%">
+                                                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.65"/>
+                                                <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+                                            </radialGradient>
+                                            <linearGradient id="robeAoLam" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#7a8c9e"/>
+                                                <stop offset="50%" stop-color="#556677"/>
+                                                <stop offset="100%" stop-color="#3d4b58"/>
+                                            </linearGradient>
+                                            <linearGradient id="lotusMatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#b45309"/>
+                                                <stop offset="100%" stop-color="#78350f"/>
+                                            </linearGradient>
+                                        </defs>
+
+                                        <!-- TỌA CỤ / BỒ ĐOÀN SEN ĐỆM QUỲ HÀNH LỄ -->
+                                        <ellipse cx="85" cy="174" rx="60" ry="13" fill="url(#lotusMatGrad)" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3 2"/>
+                                        <ellipse cx="85" cy="172" rx="52" ry="9" fill="#92400e" opacity="0.85"/>
+
+                                        <!-- THÂN DƯỚI: NẾP GẬP VẠT ÁO TRÀNG VÀ CHÂN QUỲ TRANG NGHIÊM -->
+                                        <path d="M 48 162 Q 85 176 122 162 Q 132 165 127 174 Q 85 180 43 174 Q 38 165 48 162 Z" fill="#334155"/>
+                                        <ellipse cx="85" cy="158" rx="46" ry="15" fill="url(#robeAoLam)"/>
+
+                                        <!-- THÂN TRÊN CHUYỂN ĐỘNG CÚI LẠY KÍNH CẨN (UPPER BODY) -->
+                                        <g class="prayer-upper-body" id="prayerUpperBody">
+                                            <!-- HÀO QUANG TRÍ TUỆ THANH TỊNH QUANH ĐẦU -->
+                                            <circle cx="85" cy="54" r="30" fill="url(#haloGlow)"/>
+
+                                            <!-- THÂN ÁO TRÀNG LAM TRANG NGHIÊM -->
+                                            <path d="M 61 152 C 58 115, 63 88, 72 79 C 76 75, 94 75, 98 79 C 107 88, 112 115, 109 152 Z" fill="url(#robeAoLam)" stroke="#475569" stroke-width="1"/>
+                                            
+                                            <!-- CỔ ÁO VẠT CHÉO CỔ TRUYỀN ÁO TRÀNG LAM -->
+                                            <path d="M 76 77 Q 85 91 94 105" stroke="#e2e8f0" stroke-width="1.8" fill="none" opacity="0.85"/>
+                                            <path d="M 94 77 Q 85 91 78 105" stroke="#cbd5e1" stroke-width="1.8" fill="none" opacity="0.85"/>
+
+                                            <!-- CỔ & KHUÔN MẶT TĨNH TÂM THÀNH KÍNH -->
+                                            <rect x="81" y="68" width="8" height="12" rx="4" fill="#fcd34d"/>
+                                            <ellipse cx="85" cy="54" rx="15" ry="18" fill="#fde68a"/>
+                                            <!-- MÁI TÓC BUỘC GỌN TRANG NGHIÊM -->
+                                            <path d="M 70 52 C 70 37, 100 37, 100 52 C 98 42, 72 42, 70 52 Z" fill="#1e293b"/>
+                                            <!-- ĐÔI MẮT NHẮM THÀNH TÂM NIỆM PHẬT -->
+                                            <path d="M 76 54 Q 80 57 84 54" stroke="#78350f" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                                            <path d="M 86 54 Q 90 57 94 54" stroke="#78350f" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                                            <!-- NỤ CƯỜI TỰ TẠI AN NHIÊN -->
+                                            <path d="M 82 64 Q 85 66 88 64" stroke="#b45309" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+                                            <!-- HAI CÁNH TAY ÁO LAM & ĐÔI BÀN TAY CHẮP BÚP SEN (HIỆP CHƯỞNG) -->
+                                            <path d="M 65 86 C 54 103, 58 126, 74 128 C 77 128, 79 117, 77 107 Z" fill="#64748b"/>
+                                            <path d="M 105 86 C 116 103, 112 126, 96 128 C 93 128, 91 117, 93 107 Z" fill="#64748b"/>
+                                            
+                                            <!-- BÀN TAY CHẮP HÌNH HOA SEN TRƯỚC NGỰC -->
+                                            <path d="M 81 120 C 79 111, 83 99, 85 96 C 87 99, 91 111, 89 120 Z" fill="#fcd34d" stroke="#b45309" stroke-width="0.8"/>
+                                            <line x1="85" y1="97" x2="85" y2="120" stroke="#b45309" stroke-width="1" opacity="0.6"/>
+                                            <circle cx="85" cy="96" r="3.5" fill="#fbbf24" opacity="0.85"/>
+                                        </g>
+
+                                        <!-- LƯ TRẦM HƯƠNG ĐỒNG BÊN CẠNH VỚI LÀN KHÓI TRẦM THƠM -->
+                                        <g transform="translate(138, 148)">
+                                            <ellipse cx="0" cy="18" rx="9" ry="4.5" fill="#78350f"/>
+                                            <path d="M -6 18 L -3 10 L 3 10 L 6 18 Z" fill="#b45309"/>
+                                            <!-- Nén hương đỏ đang cháy tỏa sáng -->
+                                            <line x1="0" y1="10" x2="0" y2="2" stroke="#ef4444" stroke-width="1.6"/>
+                                            <circle cx="0" cy="2" r="1.8" fill="#f59e0b"/>
+                                            <!-- Làn khói trầm nghi ngút bay lên -->
+                                            <path d="M 0 0 Q -5 -12 0 -24 T 0 -48" stroke="rgba(255,255,255,0.45)" stroke-width="1.3" fill="none" stroke-dasharray="4 2">
+                                                <animate attributeName="stroke-dashoffset" values="0;24" dur="2.2s" repeatCount="indefinite"/>
+                                            </path>
+                                        </g>
+                                    </svg>
+
+                                    <!-- TRẠNG THÁI & CHỈ SỐ LẠY -->
+                                    <div class="prayer-sim-meta">
+                                        <div class="prayer-sim-status" id="prayerSimStatus">
+                                            <span id="prayerSimIcon">🙏</span> <span id="prayerSimText">Tĩnh tâm niệm Phật</span>
+                                        </div>
+                                        <div class="prayer-bow-badge">
+                                            Đã lạy: <strong id="prayerBowCount" style="color: var(--accent-gold);">0</strong> lạy
+                                        </div>
+                                        <button type="button" class="btn-prayer-bow-act" onclick="triggerManualPrayerBow(event)" title="Cúi lạy thêm 1 lạy trước ban thờ">
+                                            <span>🙇</span> Cúi Lạy (+1)
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- CỘT 2: TOÀN VĂN BÀI VĂN KHẤN HIỂN THỊ TRANG NGHIÊM & TỰ CUỘN -->
+                                <div class="stage-prayer-text-box" id="stagePrayerTextBox">
+                                    Đang tải bài khấn...
+                                </div>
                             </div>
                         </div>
 
@@ -2656,11 +2869,33 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
 
     
 // ==========================================
-        // TEXT-TO-SPEECH & CHANTING ENGINE (ĐỌC VĂN KHẤN ONLINE)
+        // TEXT-TO-SPEECH, CHANTING & BOWING ENGINE (MÔ PHỎNG CÚI LẠY & ĐỌC VĂN KHẤN)
         // ==========================================
         let isReadingPrayer = false;
         let readingUtterance = null;
         let readingMoInterval = null;
+        let bowCounterInterval = null;
+        let totalPrayerBows = 0;
+
+        function triggerManualPrayerBow(event) {
+            if (event) event.stopPropagation();
+            const ub = document.getElementById('prayerUpperBody');
+            if (ub) {
+                ub.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                ub.style.transform = 'rotate(44deg) translateY(8px)';
+                setTimeout(() => {
+                    ub.style.transform = 'rotate(0deg)';
+                }, 1200);
+            }
+            totalPrayerBows++;
+            const countElem = document.getElementById('prayerBowCount');
+            if (countElem) countElem.textContent = totalPrayerBows;
+            
+            pilgrimStats.bows++;
+            pilgrimStats.merit += 1;
+            playMoStation();
+            createPilgrimFlyText(event ? event.clientX : window.innerWidth / 2, event ? event.clientY : window.innerHeight / 2, '+1 Lạy Thành Kính 🙏');
+        }
 
         function toggleReadPrayerOnline() {
             if (isReadingPrayer) {
@@ -2674,7 +2909,31 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             const data = BAI_DINH_STATIONS[curStationIdx];
             if (!data) return;
 
-            const cleanText = data.prayerText.replace(/\n/g, ' ');
+            isReadingPrayer = true;
+
+            // 1. Thỉnh tiếng chuông đồng khai đàn trang nghiêm
+            ringTempleBellStation();
+
+            // 2. Kích hoạt mô phỏng người cúi lạy thành kính
+            const simBox = document.getElementById('prayerPilgrimSim');
+            if (simBox) simBox.classList.add('is-bowing');
+
+            const statusElem = document.getElementById('prayerSimText');
+            if (statusElem) statusElem.textContent = 'Đang thành tâm cúi lạy & cầu nguyện...';
+
+            // Tự động tích lũy số lạy theo chu kỳ cúi gập người (mỗi 4.8s một lạy)
+            if (bowCounterInterval) clearInterval(bowCounterInterval);
+            bowCounterInterval = setInterval(() => {
+                if (isReadingPrayer) {
+                    totalPrayerBows++;
+                    const countElem = document.getElementById('prayerBowCount');
+                    if (countElem) countElem.textContent = totalPrayerBows;
+                    pilgrimStats.bows++;
+                    pilgrimStats.merit += 1;
+                }
+            }, 4800);
+
+            // 3. Cập nhật giao diện nút bấm
             const btnOnline = document.getElementById('btnReadPrayerOnline');
             const iconOnline = document.getElementById('readPrayerIcon');
             const textOnline = document.getElementById('readPrayerText');
@@ -2683,9 +2942,6 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             const textAct = document.getElementById('ritualReadActText');
             const prayerBox = document.getElementById('stagePrayerTextBox');
 
-            isReadingPrayer = true;
-
-            // Update UI buttons
             if (btnOnline) {
                 btnOnline.classList.add('reading');
                 if (iconOnline) iconOnline.textContent = '⏸️';
@@ -2700,23 +2956,26 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
                 prayerBox.classList.add('is-reading');
             }
 
-            // Start background gentle wooden fish rhythm (mõ nhịp nhàng mỗi 2.2s)
-            playMoStation();
-            if (readingMoInterval) clearInterval(readingMoInterval);
-            readingMoInterval = setInterval(() => {
-                if (isReadingPrayer) {
-                    playMoStation();
-                }
-            }, 2200);
+            // 4. Nhịp gõ mõ chánh niệm đều đặn (mỗi 2.8s gõ một tiếng)
+            setTimeout(() => {
+                playMoStation();
+                if (readingMoInterval) clearInterval(readingMoInterval);
+                readingMoInterval = setInterval(() => {
+                    if (isReadingPrayer) {
+                        playMoStation();
+                    }
+                }, 2800);
+            }, 700);
 
-            // Web Speech API
+            // 5. Web Speech API: Đọc chậm rãi, từ tốn, thiêng liêng
+            const cleanText = data.prayerText.split('\n').filter(Boolean).join(' — ');
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
 
                 readingUtterance = new SpeechSynthesisUtterance(cleanText);
                 readingUtterance.lang = 'vi-VN';
-                readingUtterance.rate = 0.85; // Reverent and measured pace
-                readingUtterance.pitch = 0.95;
+                readingUtterance.rate = 0.72; // Tốc độ đọc rất chậm rãi, thành kính, rõ ràng
+                readingUtterance.pitch = 0.90; // Âm sắc trầm ấm, sâu lắng
 
                 const voices = window.speechSynthesis.getVoices();
                 const viVoice = voices.find(v => v.lang && (v.lang.startsWith('vi') || v.lang.includes('VN')));
@@ -2733,10 +2992,15 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
                     stopReadingPrayer();
                 };
 
-                window.speechSynthesis.speak(readingUtterance);
-                showToast(`Đang đọc văn khấn: ${data.name}`, '🔊');
+                // Trì hoãn 900ms để tiếng chuông đồng lan tỏa rồi mới bắt đầu tụng đọc
+                setTimeout(() => {
+                    if (isReadingPrayer) {
+                        window.speechSynthesis.speak(readingUtterance);
+                        showToast(`Đang trì tụng văn khấn: ${data.name}`, '🙏');
+                    }
+                }, 900);
             } else {
-                showToast(`Trình duyệt không hỗ trợ đọc tự động. Mời bạn trì tụng theo nhịp mõ 🙏`, '📿');
+                showToast('Hệ thống đang mô phỏng cúi lạy và gõ mõ chánh niệm', 'ℹ️');
             }
         }
 
@@ -2750,6 +3014,25 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             if (readingMoInterval) {
                 clearInterval(readingMoInterval);
                 readingMoInterval = null;
+            }
+            if (bowCounterInterval) {
+                clearInterval(bowCounterInterval);
+                bowCounterInterval = null;
+            }
+
+            // Dừng chuyển động cúi lạy và trở về thế chắp tay an tĩnh
+            const simBox = document.getElementById('prayerPilgrimSim');
+            if (simBox) simBox.classList.remove('is-bowing');
+
+            const ub = document.getElementById('prayerUpperBody');
+            if (ub) {
+                ub.style.transition = 'transform 0.6s ease';
+                ub.style.transform = 'rotate(0deg)';
+            }
+
+            const statusElem = document.getElementById('prayerSimText');
+            if (statusElem) {
+                statusElem.textContent = isFinished ? 'Hoàn tất bài khấn & hồi hướng' : 'Tĩnh tâm niệm Phật';
             }
 
             const btnOnline = document.getElementById('btnReadPrayerOnline');
