@@ -1762,6 +1762,542 @@
             color: var(--accent-gold);
         }
 
+    
+        /* ======================================================== */
+        /* ZEN SEARCH & TEMPLE LOOKUP STYLES                        */
+        /* ======================================================== */
+        .zen-search-container {
+            max-width: 760px;
+            margin: 2.2rem auto 1.5rem;
+            position: relative;
+            z-index: 40;
+        }
+        .zen-search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(13, 31, 45, 0.88);
+            border: 1.5px solid rgba(251, 191, 36, 0.45);
+            border-radius: var(--radius-full);
+            padding: 0.6rem 1.4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 25px rgba(251, 191, 36, 0.15);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .zen-search-bar:focus-within {
+            border-color: var(--accent-gold);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 35px rgba(251, 191, 36, 0.35);
+            background: rgba(13, 31, 45, 0.98);
+        }
+        .zen-search-icon {
+            font-size: 1.25rem;
+            margin-right: 0.8rem;
+            color: var(--accent-gold);
+            filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5));
+        }
+        .zen-search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            letter-spacing: 0.2px;
+        }
+        .zen-search-input::placeholder {
+            color: rgba(203, 213, 225, 0.65);
+            font-size: 0.95rem;
+        }
+        .zen-search-clear {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--text-secondary);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            margin-left: 0.5rem;
+        }
+        .zen-search-clear:hover {
+            background: rgba(239, 68, 68, 0.3);
+            color: #fff;
+        }
+
+        /* QUICK SUGGESTION CHIPS */
+        .zen-quick-chips {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .quick-chip-label {
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-right: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .quick-chip {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            color: #e2e8f0;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease;
+        }
+        .quick-chip:hover {
+            background: rgba(251, 191, 36, 0.2);
+            border-color: var(--accent-gold);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+        }
+
+        /* DROPDOWN RESULTS */
+        .zen-search-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: rgba(10, 24, 37, 0.97);
+            border: 1.5px solid rgba(251, 191, 36, 0.35);
+            border-radius: var(--radius-md);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            max-height: 440px;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 0.6rem;
+            display: none;
+        }
+        .zen-dropdown-empty {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .zen-search-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            margin-bottom: 0.4rem;
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.2s ease;
+        }
+        .zen-search-item:hover {
+            background: rgba(251, 191, 36, 0.08);
+            border-color: rgba(251, 191, 36, 0.3);
+            transform: translateX(4px);
+        }
+        .zen-search-item-thumb {
+            width: 76px;
+            height: 52px;
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+        }
+        .zen-search-item-info {
+            flex: 1;
+            min-width: 0;
+            text-align: left;
+        }
+        .zen-search-item-name {
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .zen-search-item-loc {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .zen-search-item-desc {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .zen-search-item-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            flex-shrink: 0;
+        }
+        .btn-search-action {
+            padding: 0.38rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.76rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            border: none;
+        }
+        .btn-search-detail {
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: #0d1f2d;
+            box-shadow: 0 2px 8px rgba(251, 191, 36, 0.25);
+        }
+        .btn-search-detail:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+        .btn-search-virtual {
+            background: rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .btn-search-virtual:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: rgba(251, 191, 36, 0.1);
+        }
+
+        /* ======================================================== */
+        /* TEMPLE RITUALS & COMPACT HANDBOOK SECTION                */
+        /* ======================================================== */
+        .temple-rituals-section {
+            padding: 4.5rem 0;
+            background: linear-gradient(180deg, #091724 0%, #0d1f2d 50%, #0a1926 100%);
+            border-top: 1px solid rgba(251, 191, 36, 0.15);
+            border-bottom: 1px solid rgba(251, 191, 36, 0.15);
+        }
+        .rituals-showcase-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 992px) {
+            .rituals-showcase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .ritual-spotlight-card {
+            position: relative;
+            background: rgba(19, 45, 66, 0.7);
+            border: 1.5px solid rgba(251, 191, 36, 0.35);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(251, 191, 36, 0.05);
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .ritual-card-badge {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: #0d1f2d;
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 0.25rem 0.8rem;
+            border-radius: var(--radius-full);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .ritual-card-content {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        @media (max-width: 640px) {
+            .ritual-card-content {
+                flex-direction: column;
+            }
+        }
+        .ritual-card-thumb {
+            width: 220px;
+            height: 150px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        .ritual-card-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .ritual-spotlight-card:hover .ritual-card-thumb img {
+            transform: scale(1.05);
+        }
+        .ritual-card-info {
+            flex: 1;
+        }
+        .ritual-card-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+        .ritual-card-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+        .ritual-card-info p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+        }
+        .ritual-card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .btn-ritual-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: #0d1f2d;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(251, 191, 36, 0.3);
+            transition: all 0.25s ease;
+        }
+        .btn-ritual-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(251, 191, 36, 0.45);
+        }
+        .btn-ritual-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.6rem 1rem;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .btn-ritual-secondary:hover {
+            background: rgba(251, 191, 36, 0.15);
+            border-color: var(--accent-gold);
+            color: #fff;
+        }
+
+        /* QUICK HANDBOOK CARD */
+        .ritual-quick-handbook {
+            background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.12), rgba(19, 45, 66, 0.85));
+            border: 1.5px solid rgba(251, 191, 36, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.8rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            backdrop-filter: blur(12px);
+        }
+        .handbook-icon {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            filter: drop-shadow(0 4px 12px rgba(251, 191, 36, 0.4));
+        }
+        .ritual-quick-handbook h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .ritual-quick-handbook p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 1.5rem;
+            max-width: 420px;
+        }
+        .btn-open-handbook {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.25), rgba(245, 158, 11, 0.15));
+            border: 1.5px solid var(--accent-gold);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.75rem 1.6rem;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.2);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-open-handbook:hover {
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: #0d1f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(251, 191, 36, 0.4);
+        }
+
+        /* ======================================================== */
+        /* PRAYER MODAL POP-UP STYLES                               */
+        /* ======================================================== */
+        .prayer-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 11, 18, 0.88);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .prayer-modal-backdrop.active {
+            display: flex;
+            opacity: 1;
+        }
+        .prayer-modal-dialog {
+            background: #0d1f2d;
+            border: 1.5px solid rgba(251, 191, 36, 0.4);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 960px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(251, 191, 36, 0.15);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .prayer-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 1.8rem;
+            background: rgba(19, 45, 66, 0.9);
+            border-bottom: 1px solid rgba(251, 191, 36, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .prayer-modal-header h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .prayer-modal-close {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        .prayer-modal-close:hover {
+            background: rgba(239, 68, 68, 0.4);
+            color: #fff;
+            border-color: #ef4444;
+        }
+        .prayer-modal-body {
+            padding: 1.5rem 1.8rem;
+        }
+
+        /* REFINED COMPACT ZEN TRAY STYLES */
+        .zen-tray-wrapper {
+            margin-top: 1.5rem;
+            border-top: 1px dashed rgba(251, 191, 36, 0.25);
+            padding-top: 1.5rem;
+        }
+        .zen-tray-toggle-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+        .zen-tool-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-secondary);
+            padding: 0.45rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .zen-tool-btn:hover {
+            border-color: rgba(251, 191, 36, 0.4);
+            color: #fff;
+        }
+        .zen-tool-btn.active {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(245, 158, 11, 0.2));
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            font-weight: 600;
+            box-shadow: 0 0 14px rgba(251, 191, 36, 0.25);
+        }
+        .sanctuary-box-compact {
+            background: rgba(13, 31, 45, 0.6);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
     </style>
 </head>
 <body>
@@ -1807,6 +2343,26 @@
             <p class="hero-desc">
                 Trút bỏ những ồn ào vội vã của đời thường để hòa mình vào vẻ đẹp trầm mặc nghìn năm của non sông đất Việt. Lắng nghe tiếng mõ nhịp nhàng, tiếng chuông đại hồng chung ngân vang, thắp nén tâm hương và gửi gắm tâm nguyện bình an đến người thân yêu.
             </p>
+            <!-- SMART ZEN SEARCH BAR & QUICK CHIPS -->
+            <div class="zen-search-container">
+                <div class="zen-search-bar">
+                    <span class="zen-search-icon">🔍</span>
+                    <input type="text" id="templeSearchInput" class="zen-search-input" placeholder="Tìm kiếm ngôi chùa hoặc danh lam tâm linh (vd: Bái Đính, Thiên Mụ, Trúc Lâm, Yên Tử, Bà Đen...)" autocomplete="off">
+                    <button type="button" class="zen-search-clear" id="zenSearchClear" onclick="clearTempleSearch()" style="display:none;" title="Xóa">✕</button>
+                </div>
+                <div class="zen-quick-chips">
+                    <span class="quick-chip-label">⛩️ Tra cứu nhanh:</span>
+                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Bái Đính')">Chùa Bái Đính</button>
+                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Thiên Mụ')">Chùa Thiên Mụ</button>
+                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Linh Ứng')">Chùa Linh Ứng</button>
+                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Yên Tử')">Chùa Yên Tử</button>
+                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Bà Đen')">Chùa Bà Đen</button>
+                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Trúc Lâm')">Trúc Lâm Đà Lạt</button>
+                </div>
+                <!-- LIVE DROPDOWN RESULTS -->
+                <div class="zen-search-dropdown" id="zenSearchDropdown"></div>
+            </div>
+
             <div class="hero-nav-pills">
                 <a href="#goc-an-nhien" class="hero-pill">🪷 Đi Chùa Online & Chánh Niệm</a>
                 <a href="#van-khan" class="hero-pill">📜 Cẩm Nang Văn Khấn Chuẩn</a>
@@ -2295,285 +2851,63 @@ Tâm an đời rạng tựa trăng thanh.
         </div>
     </section>
 
-<section class="prayers-section" id="van-khan">
+
+    <!-- ================================================= -->
+    <!-- PHẦN 2: LỘ TRÌNH HÀNH LỄ & CẨM NANG VĂN KHẤN THEO CHÙA -->
+    <!-- ================================================= -->
+    <section class="temple-rituals-section" id="van-khan">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">📜 NGHI LỄ PHONG TỤC VIỆT</span>
-                <h2 class="section-title">Cẩm Nang Văn Khấn Cổ Truyền Đi Chùa Chuẩn Mực</h2>
+                <span class="section-tag">📜 VĂN KHẤN & LỘ TRÌNH HÀNH LỄ</span>
+                <h2 class="section-title">Lộ Trình Dâng Lễ & Văn Khấn Theo Từng Ngôi Chùa</h2>
                 <p class="section-subtitle">
-                    Tuyển tập 7 bài văn khấn chuẩn phong tục cổ truyền dân tộc, ngôn từ tôn nghiêm, giúp quý Phật tử và du khách thành tâm gửi gắm sở nguyện khi chiêm bái chốn thiền môn.
+                    Mỗi ngôi cổ tự trong Phật giáo Việt Nam đều có cấu trúc phối thờ và bài văn khấn truyền thống riêng biệt. GO FAR đã biên soạn lộ trình chiêm bái tuần tự từng ban và bài khấn chuẩn mực được tích hợp trực tiếp vào bài viết chi tiết của từng ngôi chùa.
                 </p>
             </div>
 
-            <div class="prayers-grid">
-                <!-- MENU BÀI KHẤN -->
-                <aside class="prayers-sidebar">
-                    <button class="prayer-nav-btn active" onclick="switchPrayer(0)">
-                        <span>🪷</span> 1. Văn Khấn Lễ Phật (Chính Điện)
-                    </button>
-                    <button class="prayer-nav-btn" onclick="switchPrayer(1)">
-                        <span>🏛️</span> 2. Văn Khấn Ban Tam Bảo
-                    </button>
-                    <button class="prayer-nav-btn" onclick="switchPrayer(2)">
-                        <span>⚔️</span> 3. Văn Khấn Ban Đức Ông
-                    </button>
-                    <button class="prayer-nav-btn" onclick="switchPrayer(3)">
-                        <span>💧</span> 4. Văn Khấn Bồ Tát Quán Thế Âm
-                    </button>
-                    <button class="prayer-nav-btn" onclick="switchPrayer(4)">
-                        <span>🏮</span> 5. Văn Khấn Địa Tạng Vương Bồ Tát
-                    </button>
-                    <button class="prayer-nav-btn" onclick="switchPrayer(5)">
-                        <span>🌸</span> 6. Văn Khấn Đầu Năm, Rằm & Mùng 1
-                    </button>
-                    <button class="prayer-nav-btn" onclick="switchPrayer(6)">
-                        <span>🍂</span> 7. Văn Khấn Tạ Lễ Cuối Năm
-                    </button>
-                </aside>
-
-                <!-- NỘI DUNG CHI TIẾT BÀI KHẤN -->
-                <main class="prayers-content">
-                    <!-- BÀI 1: LỄ PHẬT CHÍNH ĐIỆN -->
-                    <div class="prayer-card active" id="prayerCard0">
-                        <div class="prayer-header">
-                            <div class="prayer-title-wrap">
-                                <h3>1. Văn Khấn Lễ Phật Tại Chính Điện</h3>
-                                <p>Cầu an cho bản thân và gia quyến, sám hối tội lỗi và nguyện hướng thiện</p>
-                            </div>
-                            <button class="btn-copy-prayer" onclick="copyPrayer(0)">
-                                <span>📋</span> Sao Chép Bài Khấn
-                            </button>
+            <div class="rituals-showcase-grid">
+                <!-- SPOTLIGHT CHÙA BÁI ĐÍNH -->
+                <div class="ritual-spotlight-card">
+                    <div class="ritual-card-badge">✨ Điểm Chùa Tiêu Biểu</div>
+                    <div class="ritual-card-content">
+                        <div class="ritual-card-thumb">
+                            <img src="images/bai_dinh_ancient_temple_1785641271528.webp" alt="Quần Thể Chùa Bái Đính Ninh Bình">
                         </div>
-                        <div class="prayer-body" id="prayerText0">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
-
-Con lạy chín phương Trời, mười phương Chư Phật, Chư Phật mười phương.
-Hôm nay là ngày... tháng... năm...
-Tín chủ (chúng) con là: ...
-Ngụ tại: ...
-
-Cùng toàn thể gia quyến thành tâm kính lễ, sửa biện hương hoa phẩm vật, kim ngân đăng trà, dâng lên trước án Tam Bảo nơi thiền môn thanh tịnh.
-
-Chúng con kính cẩn cúi đầu đảnh lễ:
-- Đức Phật Thích Ca Mâu Ni giáo chủ cõi Ta Bà,
-- Đức Phật A Di Đà giáo chủ cõi Tây Phương Cực Lạc,
-- Đức Phật Dược Sư Lưu Ly Quang Vương,
-- Cùng chư vị Bồ Tát Quán Thế Âm, Đại Thế Chí, Văn Thù Sư Lợi, Phổ Hiền, chư vị Tôn giả, Hiền Thánh Tăng.
-
-Cúi xin chư Phật, chư Bồ Tát từ bi gia hộ chứng minh. Nguyện cầu gia quyến chúng con luôn được thân tâm an lạc, bệnh tật tiêu trừ, tai qua nạn khỏi, gia đạo thuận hòa, phúc lộc tăng trưởng, luôn hướng tâm về nẻo thiện.
-
-Chúng con người trần mắt thịt, nghiệp chướng sâu dày, nếu có điều chi lầm lỡ trong ý nghĩ, lời nói hay hành động, cúi xin mười phương Chư Phật từ bi hoan hỷ hỷ xả, chỉ đường soi lối cho chúng con đi trên con đường chánh đạo sáng ngời.
-
-Chúng con lễ bạc tâm thành, trước án kính lễ, cúi xin lượng cả từ bi chứng giám gia hộ độ trì.
-
-Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
-                        <div class="prayer-notes">
-                            <strong>💡 Lưu ý nghi lễ:</strong> Khi khấn tại Chính Điện Tam Bảo, tuyệt đối chỉ dâng đồ chay thanh tịnh (hoa tươi, quả ngọt, oản phẩm, chè xôi). Không dâng đồ mặn hay tiền vàng mã.
+                        <div class="ritual-card-info">
+                            <span class="ritual-card-tag">Gia Viễn, Ninh Bình • Đầy đủ 9 Ban Thờ & Bài Khấn</span>
+                            <h3>Quần Thể Chùa Bái Đính — Lộ Trình 9 Ban Thờ & Văn Khấn Chuẩn</h3>
+                            <p>
+                                Hướng dẫn chi tiết thứ tự dâng hương từ Cổng Tam Quan, Tháp Chuông, Hành Lang 500 La Hán, Điện Quán Thế Âm, Điện Giáo Chủ, Điện Tam Thế, Bảo Tháp Xá Lợi, Giếng Ngọc đến Bái Đính Cổ Tự nghìn năm thời Lý kèm toàn văn 9 bài khấn chuẩn mực.
+                            </p>
+                            <div class="ritual-card-actions">
+                                <a href="destination-bai-dinh.html#lo-trinh-hanh-le" class="btn-ritual-primary">
+                                    <span>⛩️ Xem Lộ Trình 9 Ban & Văn Khấn Bái Đính</span>
+                                    <span>→</span>
+                                </a>
+                                <button type="button" class="btn-ritual-secondary" onclick="switchTempleView('baidinh', this); document.getElementById('goc-an-nhien').scrollIntoView({behavior: 'smooth'});">
+                                    <span>🪷 Chiêm bái Bái Đính trên Chánh Điện</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- BÀI 2: BAN TAM BẢO -->
-                    <div class="prayer-card" id="prayerCard1">
-                        <div class="prayer-header">
-                            <div class="prayer-title-wrap">
-                                <h3>2. Văn Khấn Ban Tam Bảo (Phật - Pháp - Tăng)</h3>
-                                <p>Cầu nương tựa Ba Ngôi Báu, vun bồi phước đức và trí tuệ</p>
-                            </div>
-                            <button class="btn-copy-prayer" onclick="copyPrayer(1)">
-                                <span>📋</span> Sao Chép Bài Khấn
-                            </button>
-                        </div>
-                        <div class="prayer-body" id="prayerText1">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
-
-Con kính lạy Chư Phật mười phương, Chư đại Bồ Tát, Chư Hiền Thánh Tăng.
-Con quy y Phật, quy y Pháp, quy y Tăng — Ba ngôi Tam Bảo tôn quý nhất trên đời.
-
-Hôm nay ngày lành tháng tốt, tín chủ con là: ...
-Ngụ tại: ...
-Một lòng thành kính, chiêm bái thiền đường, dâng nén tâm hương cúng dường Tam Bảo.
-
-Kính nguyện Tam Bảo từ bi tiếp độ:
-Cho tâm con luôn sáng tỏ, trí tuệ mở mang, biết phân biệt phải trái thiện ác;
-Cho lòng con bớt tham lam, sân giận, si mê, biết yêu thương muôn loài;
-Cho gia đình con trên kính dưới nhường, trong ấm ngoài êm, mọi việc hanh thông tốt đẹp.
-
-Nguyện đem công đức cúng dường này hồi hướng cho khắp pháp giới chúng sinh đều được an lạc, tai ương tiêu trừ, phúc duyên trọn vẹn.
-
-Nam mô Bổn Sư Thích Ca Mâu Ni Phật! (3 lần, 3 lạy)</div>
-                        <div class="prayer-notes">
-                            <strong>💡 Ý nghĩa Tam Bảo:</strong> Phật bảo là đấng Giác ngộ, Pháp bảo là lời dạy chân lý nhiệm màu, Tăng bảo là đoàn thể thanh tịnh truyền trao chánh pháp.
-                        </div>
-                    </div>
-
-                    <!-- BÀI 3: BAN ĐỨC ÔNG -->
-                    <div class="prayer-card" id="prayerCard2">
-                        <div class="prayer-header">
-                            <div class="prayer-title-wrap">
-                                <h3>3. Văn Khấn Ban Đức Ông (Đức Già Lam Chân Tể)</h3>
-                                <p>Vị Thần bảo hộ già lam, cầu công danh tài lộc, sự nghiệp hanh thông</p>
-                            </div>
-                            <button class="btn-copy-prayer" onclick="copyPrayer(2)">
-                                <span>📋</span> Sao Chép Bài Khấn
-                            </button>
-                        </div>
-                        <div class="prayer-body" id="prayerText2">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
-
-Con lạy chín phương Trời, mười phương Chư Phật.
-Kính lạy Đức Già Lam Chân Tể, Đức Hộ Pháp Thiện Thần chư vị Tôn thần cai quản thiền môn.
-
-Hôm nay là ngày... tháng... năm...
-Tín chủ con là: ...
-Ngụ tại: ...
-
-Thành tâm sắm sửa hương hoa trà quả, kim ngân lễ vật thanh tịnh, kính cẩn dâng lên trước ban thờ Đức Ông.
-
-Cúi xin Đức Ông thương xót tín chủ, giáng lâm trước án, chứng giám lòng thành, thụ hưởng lễ vật. Phù hộ độ trì cho chúng con cùng toàn thể gia quyến:
-- Công việc hanh thông, buôn bán phát tài, sở cầu như ý, sở nguyện tòng tâm;
-- Kẻ dữ lánh xa, người lành gần gũi, quý nhân giúp đỡ, tiểu nhân lánh mặt;
-- Thân thể khỏe mạnh, gia đạo hưng long, trong ngoài êm ấm.
-
-Chúng con lễ bạc tâm thành, trước án kính lễ, cúi xin Đức Ông chứng giám độ trì.
-
-Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
-                        <div class="prayer-notes">
-                            <strong>💡 Thứ tự đi lễ:</strong> Theo phong tục cổ truyền miền Bắc, khi vào chùa thường đến lễ ban Đức Ông trước (nhập gia vấn xuất) rồi mới vào lễ Chính Điện Tam Bảo.
-                        </div>
-                    </div>
-
-                    <!-- BÀI 4: QUÁN THẾ ÂM BỒ TÁT -->
-                    <div class="prayer-card" id="prayerCard3">
-                        <div class="prayer-header">
-                            <div class="prayer-title-wrap">
-                                <h3>4. Văn Khấn Bồ Tát Quán Thế Âm</h3>
-                                <p>Cầu Mẹ Từ Bi che chở, xoa dịu khổ đau, cầu con cái, sức khỏe</p>
-                            </div>
-                            <button class="btn-copy-prayer" onclick="copyPrayer(3)">
-                                <span>📋</span> Sao Chép Bài Khấn
-                            </button>
-                        </div>
-                        <div class="prayer-body" id="prayerText3">Nam mô Đại Từ Đại Bi Tầm Thinh Cứu Khổ Cứu Nạn Linh Cảm Quán Thế Âm Bồ Tát! (3 lần, 3 lạy)
-
-Kính lạy Đức Mẹ Quán Thế Âm Bồ Tát từ bi lân mẫn, thương xót muôn loài như con đỏ.
-Hôm nay là ngày... tháng... năm...
-Con tên là: ... Ngụ tại: ...
-
-Thành tâm thắp nén tâm hương, kính dâng hoa tươi quả ngọt, một lòng hướng về Đức Từ Mẫu.
-
-Nguyện xin Đức Bồ Tát rưới giọt nước cành dương cam lộ thanh lương, dập tắt ngọn lửa phiền muộn, xoa dịu những nhọc nhằn âu lo nơi thân tâm con và gia quyến.
-
-Xin Bồ Tát chở che cho cha mẹ con được dồi dào sức khỏe, trường thọ an vui; cho con cháu học hành tiến tới, ngoan ngoãn thảo hiền; cho gia đình tai qua nạn khỏi, duyên lành hội tụ, tâm hồn hướng thiện, biết yêu thương sẻ chia.
-
-Con nguyện học theo hạnh lắng nghe và bao dung của Bồ Tát, giữ tâm bình thản trước mọi nghịch cảnh cuộc đời.
-
-Nam mô Quán Thế Âm Bồ Tát! (3 lần, 3 lạy)</div>
-                        <div class="prayer-notes">
-                            <strong>💡 Lễ vật phù hợp:</strong> Hoa sen, hoa huệ trắng, quả tươi, nước trong thanh khiết. Tránh dâng hoa quả héo úa hay đồ vàng mã.
-                        </div>
-                    </div>
-
-                    <!-- BÀI 5: ĐỊA TẠNG VƯƠNG BỒ TÁT -->
-                    <div class="prayer-card" id="prayerCard4">
-                        <div class="prayer-header">
-                            <div class="prayer-title-wrap">
-                                <h3>5. Văn Khấn Địa Tạng Vương Bồ Tát</h3>
-                                <p>Cầu siêu cửu huyền thất tổ, hóa giải nghiệp chướng, cầu bình an</p>
-                            </div>
-                            <button class="btn-copy-prayer" onclick="copyPrayer(4)">
-                                <span>📋</span> Sao Chép Bài Khấn
-                            </button>
-                        </div>
-                        <div class="prayer-body" id="prayerText4">Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát! (3 lần, 3 lạy)
-
-Kính lạy Đức Giáo Chủ cõi U Minh, Bồ Tát Địa Tạng đại bi đại nguyện, thệ nguyện cứu độ hết thảy chúng sinh khổ nạn chốn u đồ.
-
-Hôm nay là ngày... tháng... năm...
-Tín chủ con là: ...
-Ngụ tại: ...
-
-Thành tâm đốt nén tâm hương, sửa biện lễ mọn dâng lên trước toà sen Đức Bồ Tát Địa Tạng.
-
-Chúng con kính nguyện nương nhờ uy đức của Ngài, cầu xin cứu vớt hương linh Cửu Huyền Thất Tổ, ông bà cha mẹ nhiều đời nhiều kiếp, cùng chư vị anh linh, hương linh gia tiên quyến thuộc nội ngoại.
-
-Nguyện xin Bồ Tát phóng ánh hào quang xua tan tăm tối, dẫn lối cho các chân linh sớm tiêu trừ nghiệp chướng, nương nhờ phước lực Tam Bảo mà được vãng sinh về cảnh giới an vui cực lạc.
-
-Đồng thời phù hộ cho con cháu nơi trần thế luôn mạnh khỏe bình an, sống hiếu nghĩa vẹn toàn, làm nhiều điều lành tạo thêm phước đức.
-
-Nam mô Địa Tạng Vương Bồ Tát! (3 lần, 3 lạy)</div>
-                        <div class="prayer-notes">
-                            <strong>💡 Ý nghĩa đại nguyện:</strong> "Địa ngục vị không, thệ bất thành Phật" — Lòng từ bi bao la không bỏ sót một ai, nhắc nhở con người về lòng hiếu thảo thiêng liêng.
-                        </div>
-                    </div>
-
-                    <!-- BÀI 6: ĐẦU NĂM, RẰM & MÙNG 1 -->
-                    <div class="prayer-card" id="prayerCard5">
-                        <div class="prayer-header">
-                            <div class="prayer-title-wrap">
-                                <h3>6. Văn Khấn Đi Chùa Đầu Năm & Các Ngày Rằm, Mùng Một</h3>
-                                <p>Cầu quốc thái dân an, nghênh đón cát lành, vạn sự hanh thông</p>
-                            </div>
-                            <button class="btn-copy-prayer" onclick="copyPrayer(5)">
-                                <span>📋</span> Sao Chép Bài Khấn
-                            </button>
-                        </div>
-                        <div class="prayer-body" id="prayerText5">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
-
-Con lạy chín phương Trời, mười phương Chư Phật.
-Kính lạy Chư Phật, Chư Bồ Tát, Chư Hiền Thánh Tăng, Hộ Pháp Thiện Thần.
-
-Nhân tiết đầu xuân năm mới (hoặc: ngày rằm / mùng một thanh tịnh), đất trời giao hòa, vạn vật đâm chồi nảy lộc.
-Tín chủ con là: ...
-Ngụ tại: ...
-
-Một lòng thành kính bước chân vào cửa Phật, dâng nén tâm hương, phẩm vật thanh khiết, cúi đầu tạ ơn đất trời Phật Thánh.
-
-Kính nguyện cầu:
-- Quốc thái dân an, mưa thuận gió hòa, mùa màng tươi tốt;
-- Gia đình con bốn mùa không hạn ách, tám tiết có điềm lành, thân thể kiện khang, tâm hồn thanh thản;
-- Công việc hanh thông, tài lộc dồi dào, tâm nguyện hướng thiện, duyên lành kết tụ.
-
-Cúi xin mười phương Chư Phật, Chư Bồ Tát từ bi gia hộ độ trì.
-
-Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
-                        <div class="prayer-notes">
-                            <strong>💡 Phong tục đẹp:</strong> Đi chùa đầu năm hái một cành lộc nhỏ hoặc nhận lời chúc bình an, xin chữ đầu xuân để nuôi dưỡng tinh thần lạc quan, yêu đời.
-                        </div>
-                    </div>
-
-                    <!-- BÀI 7: TẠ LỄ CUỐI NĂM -->
-                    <div class="prayer-card" id="prayerCard6">
-                        <div class="prayer-header">
-                            <div class="prayer-title-wrap">
-                                <h3>7. Văn Khấn Tạ Lễ Chùa Cuối Năm</h3>
-                                <p>Tạ ơn Phật Thánh che chở suốt một năm qua, đón chào năm mới bình an</p>
-                            </div>
-                            <button class="btn-copy-prayer" onclick="copyPrayer(6)">
-                                <span>📋</span> Sao Chép Bài Khấn
-                            </button>
-                        </div>
-                        <div class="prayer-body" id="prayerText6">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
-
-Con lạy chín phương Trời, mười phương Chư Phật, Chư Phật mười phương.
-Kính lạy Chư Phật, Chư Bồ Tát, Hộ Pháp Tôn Thần.
-
-Hôm nay là những ngày cuối năm... tín chủ con là: ...
-Ngụ tại: ...
-
-Thành tâm sắm sửa hương đăng hoa quả, trở lại chốn thiền môn thanh tịnh để dâng lời tạ ơn:
-
-Tạ ơn mười phương Chư Phật, Chư vị Bồ Tát và Hộ Pháp Thiện Thần trong suốt một năm qua đã che chở, gia hộ cho gia quyến chúng con được bình an vô sự, vượt qua mọi sóng gió, khó khăn tai ách, gặp được nhiều điều may mắn tốt lành.
-
-Chúng con nhìn lại một năm đã qua, tự soi xét lỗi lầm và nguyện dốc lòng tu sửa, bước sang năm mới sống bao dung hơn, nhân hậu hơn, biết cống hiến cho đời nhiều hơn.
-
-Cúi xin Chư vị chứng giám lòng thành, tiếp tục chở che cho gia quyến chúng con bước sang năm mới an khang thịnh vượng, vạn sự cát tường.
-
-Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
-                        <div class="prayer-notes">
-                            <strong>💡 Ý nghĩa tạ lễ:</strong> "Ăn quả nhớ kẻ trồng cây" — Lễ tạ cuối năm thể hiện truyền thống biết ơn sâu sắc, khép lại năm cũ với lòng thanh thản và đón chào tương lai.
-                        </div>
-                    </div>
-                </main>
+                <!-- CARD SỔ TAY VĂN KHẤN DẠNG MODAL TRA CỨU NHANH -->
+                <div class="ritual-quick-handbook">
+                    <div class="handbook-icon">📖</div>
+                    <h3>Sổ Tay 7 Bài Văn Khấn Cổ Truyền Đi Chùa Chuẩn Mực</h3>
+                    <p>
+                        Tuyển tập 7 bài văn khấn chuẩn phong tục dân tộc (Lễ Phật Chính Điện, Tam Bảo, Đức Ông, Quán Thế Âm, Địa Tạng, Mùng 1 & Rằm, Tạ Lễ) được cô đọng trong sổ tay tra cứu nhanh, dễ dàng đọc và sao chép khi hành lễ mà không làm dài trang.
+                    </p>
+                    <button type="button" class="btn-open-handbook" onclick="openPrayerModal(0)">
+                        <span>📜 Mở Sổ Tay Văn Khấn Chuẩn (7 Bài)</span>
+                        <span>🔍</span>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- ================================================= -->
     <!-- PHẦN 3: DANH LAM CỔ TỰ 3 MIỀN (BẮC - TRUNG - NAM) -->
@@ -4013,6 +4347,695 @@ Chớ sốt ruột chi uổng tấc thần.",
             loadAndRenderWishes();
             initSmokeEngines();
         });
-    </script>
+    
+
+        // ==========================================
+        // TEMPLE DATABASE FOR SEARCH & LIVE LOOKUP
+        // ==========================================
+        const TEMPLE_DATABASE = [
+            {
+                id: 'baidinh',
+                name: 'Quần Thể Chùa Bái Đính',
+                searchTerms: 'bai dinh chua bai dinh bai dinh co tu ninh binh gia vien 9 ban tho trang an',
+                location: 'Gia Viễn, Ninh Bình • Di sản Kép UNESCO',
+                region: 'north',
+                regionName: 'Miền Bắc',
+                img: 'images/bai_dinh_ancient_temple_1785641271528.webp',
+                buddhaImg: 'images/bai_dinh_buddha_1783494499108.webp',
+                title: 'Chánh Điện Đức Phật Thích Ca Mâu Ni',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: 'destination-bai-dinh.html',
+                hasDetailedAltars: true,
+                badge: 'Di sản Kép • Lộ trình 9 Ban Thờ',
+                desc: 'Đệ nhất danh thắng tâm linh với Bảo tháp 100m, tượng đồng 100 tấn và hành lang 500 vị La Hán đá.'
+            },
+            {
+                id: 'thienmu',
+                name: 'Chùa Thiên Mụ (Linh Mụ Tự)',
+                searchTerms: 'thien mu linh mu hue dong song huong phuoc duyen ha khe',
+                location: 'Đồi Hà Khê, TP. Huế',
+                region: 'central',
+                regionName: 'Miền Trung',
+                img: 'images/hue_chua_thien_mu.webp',
+                buddhaImg: 'images/hue_chua_thien_mu.webp',
+                title: 'Đại Điện Đại Hùng — Chùa Thiên Mụ',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: 'destination-hue.html',
+                hasDetailedAltars: false,
+                badge: 'Đệ Nhất Cổ Tự Xứ Huế • Năm 1601',
+                desc: 'Biểu tượng trầm mặc bên sông Hương với Tháp Phước Duyên 7 tầng và tiếng chuông sớm chiều giải tỏa ưu phiền.'
+            },
+            {
+                id: 'linhung',
+                name: 'Chùa Linh Ứng Bãi Bụt',
+                searchTerms: 'linh ung bai but son tra da nang quan the am 67m phat ba',
+                location: 'Bán đảo Sơn Trà, TP. Đà Nẵng',
+                region: 'central',
+                regionName: 'Miền Trung',
+                img: 'images/danang_chua_linh_ung_bai_but.webp',
+                buddhaImg: 'images/danang_chua_linh_ung_bai_but.webp',
+                title: 'Chánh Điện Bồ Tát Quán Thế Âm Ngự Biển',
+                mantra: 'Nam Mô Đại Bi Quán Thế Âm Bồ Tát',
+                detailUrl: 'destination-da-nang.html',
+                hasDetailedAltars: false,
+                badge: 'Tượng Quán Thế Âm 67m ngắm vịnh biển',
+                desc: 'Tọa lạc trên bán đảo Sơn Trà tựa lưng vào núi hướng biển Đông, nơi có tượng Phật Bà Quán Thế Âm 67m.'
+            },
+            {
+                id: 'truclam',
+                name: 'Thiền Viện Trúc Lâm Phụng Hoàng',
+                searchTerms: 'truc lam da lat phung hoang tuyen lam thien vien rung thong',
+                location: 'Núi Phụng Hoàng, TP. Đà Lạt',
+                region: 'south',
+                regionName: 'Tây Nguyên & Miền Nam',
+                img: 'images/dalat_mua_ha_phuong_tim_san_may.webp',
+                buddhaImg: 'images/dalat_mua_ha_phuong_tim_san_may.webp',
+                title: 'Chánh Điện Thiền Phái Trúc Lâm Yên Tử',
+                mantra: 'Phật Tại Tâm — Phản Quan Tự Kỷ',
+                detailUrl: 'destination-da-lat.html',
+                hasDetailedAltars: false,
+                badge: 'Cửa Thiền Bên Rừng Thông & Hồ Tuyền Lâm',
+                desc: 'Thiền viện thanh tịnh giữa rừng thông ngát hương bên hồ Tuyền Lâm phẳng lặng, nuôi dưỡng tâm an nhiên.'
+            },
+            {
+                id: 'bichdong',
+                name: 'Chùa Bích Động (Động Xanh)',
+                searchTerms: 'bich dong nam thien de nhi dong ninh binh hoa lu tam coc dong xanh',
+                location: 'Ninh Hải, Hoa Lư, Ninh Bình',
+                region: 'north',
+                regionName: 'Miền Bắc',
+                img: 'images/tam_coc_river_1783441927501.webp',
+                buddhaImg: 'images/tam_coc_river_1783441927501.webp',
+                title: 'Tam Tự Ẩn Mình Trong Vách Núi Bích Động',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: 'destination-ninh-binh.html',
+                hasDetailedAltars: false,
+                badge: 'Nam Thiên Đệ Nhị Động • Cổ Tự Vách Đá',
+                desc: 'Ngôi chùa cổ kính nép mình duyên dáng giữa lòng vách đá và đầm sen ngát hương, gồm Chùa Hạ, Trung và Thượng.'
+            },
+            {
+                id: 'yentu',
+                name: 'Quần Thể Chùa Yên Tử & Chùa Đồng',
+                searchTerms: 'yen tu chua dong quang ninh uong bi tran nhan tong truc lam phu van',
+                location: 'Uông Bí, Quảng Ninh',
+                region: 'north',
+                regionName: 'Miền Bắc',
+                img: 'images/bai_dinh_ancient_temple_1785641271528.webp',
+                buddhaImg: 'images/bai_dinh_buddha_1783494499108.webp',
+                title: 'Đỉnh Thiêng Yên Tử — Chùa Đồng',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: '#danh-lam-co-tu',
+                hasDetailedAltars: false,
+                badge: 'Đất Tổ Thiền Phái Trúc Lâm Đại Việt',
+                desc: 'Đỉnh thiêng Phù Vân nơi Phật hoàng Trần Nhân Tông xuất gia tu hành, sáng lập dòng Thiền Trúc Lâm Đại Việt.'
+            },
+            {
+                id: 'chuahuong',
+                name: 'Chùa Hương (Động Hương Tích)',
+                searchTerms: 'chua huong huong son nam thien de nhat dong suoi yen my duc ha noi',
+                location: 'Mỹ Đức, Hà Nội',
+                region: 'north',
+                regionName: 'Miền Bắc',
+                img: 'images/thungui_hero_toan_canh.webp',
+                buddhaImg: 'images/bai_dinh_buddha_1783494499108.webp',
+                title: 'Động Hương Tích — Bồ Tát Quán Thế Âm',
+                mantra: 'Nam Mô Đại Bi Quán Thế Âm Bồ Tát',
+                detailUrl: '#danh-lam-co-tu',
+                hasDetailedAltars: false,
+                badge: 'Nam Thiên Đệ Nhất Động • Trẩy Hội Suối Yến',
+                desc: 'Trôi thuyền trên dòng suối Yến mơ màng vào chốn bồng lai tiên cảnh Động Hương Tích chiêm bái Quán Thế Âm.'
+            },
+            {
+                id: 'baden',
+                name: 'Chùa Bà Đen (Linh Sơn Tiên Thạch Tự)',
+                searchTerms: 'ba den chua ba tay ninh linh son tien thach noc nha nam bo tay bo da son',
+                location: 'Núi Bà Đen, TP. Tây Ninh',
+                region: 'south',
+                regionName: 'Miền Nam',
+                img: 'images/tayninh_chua_ba_den_linh_son_tien_thach.webp',
+                buddhaImg: 'images/tayninh_chua_ba_den_linh_son_tien_thach.webp',
+                title: 'Chánh Điện Núi Bà Đen Tây Ninh',
+                mantra: 'Nam Mô Linh Sơn Thánh Mẫu Bồ Tát',
+                detailUrl: 'destination-tay-ninh.html',
+                hasDetailedAltars: false,
+                badge: 'Nóc Nhà Nam Bộ • Tượng Phật Đồng Cao Nhất Châu Á',
+                desc: 'Chốn linh thiêng ngút ngàn mây trắng trên đỉnh núi 986m, nơi hội tụ tượng Phật Bà Tây Bổ Đà Sơn và Linh Sơn Thánh Mẫu.'
+            },
+            {
+                id: 'mieu_ba',
+                name: 'Miếu Bà Chúa Xứ Núi Sam',
+                searchTerms: 'mieu ba chua xu nui sam chau doc an giang chua hang tay an',
+                location: 'TP. Châu Đốc, An Giang',
+                region: 'south',
+                regionName: 'Tây Nam Bộ',
+                img: 'images/angiang_mieu_ba_chua_xu_nui_sam.webp',
+                buddhaImg: 'images/angiang_mieu_ba_chua_xu_nui_sam.webp',
+                title: 'Miếu Bà Chúa Xứ Thánh Mẫu Núi Sam',
+                mantra: 'Cầu Quốc Thái Dân An — Vạn Sự Cát Tường',
+                detailUrl: 'destination-an-giang.html',
+                hasDetailedAltars: false,
+                badge: 'Di Sản Văn Hóa Phi Vật Thể Quốc Gia',
+                desc: 'Điểm tựa tâm linh lớn nhất vùng Tây Nam Bộ, nơi hàng triệu lượt người chiêm bái cầu bình an, may mắn và thịnh vượng.'
+            },
+            {
+                id: 'bangioc',
+                name: 'Chùa Trúc Lâm Bản Giốc',
+                searchTerms: 'truc lam ban gioc cao bang trung khanh phia nhan thac ban gioc',
+                location: 'Trùng Khánh, Cao Bằng',
+                region: 'north',
+                regionName: 'Miền Bắc',
+                img: 'images/caobang_chua_truc_lam_ban_gioc.webp',
+                buddhaImg: 'images/caobang_chua_truc_lam_ban_gioc.webp',
+                title: 'Chánh Điện Trúc Lâm Bản Giốc Cương Vực',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: 'destination-cao-bang.html',
+                hasDetailedAltars: false,
+                badge: 'Cột Mốc Biên Cương • Vọng Cảnh Thác Bản Giốc',
+                desc: 'Tựa lưng núi Phia Nhằn, phóng tầm mắt ôm trọn thác Bản Giốc hùng vĩ, khẳng định cương vực thiêng liêng của Tổ quốc.'
+            },
+            {
+                id: 'truclam_cantho',
+                name: 'Thiền Viện Trúc Lâm Phương Nam',
+                searchTerms: 'truc lam phuong nam can tho phong dien go lim chua ong',
+                location: 'Phong Điền, TP. Cần Thơ',
+                region: 'south',
+                regionName: 'Tây Nam Bộ',
+                img: 'images/cantho_thien_vien_truc_lam_phuong_nam.webp',
+                buddhaImg: 'images/cantho_thien_vien_truc_lam_phuong_nam.webp',
+                title: 'Chánh Điện Gỗ Lim Trúc Lâm Phương Nam',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: 'destination-can-tho.html',
+                hasDetailedAltars: false,
+                badge: 'Thiền Viện Lớn Nhất Miền Tây Sông Nước',
+                desc: 'Công trình kiến trúc thuần Việt thời Lý - Trần với 44 cột gỗ lim quý hiếm, chốn thiền định an yên giữa sông nước miền Tây.'
+            },
+            {
+                id: 'thienhung',
+                name: 'Chùa Thiên Hưng (Bình Định)',
+                searchTerms: 'thien hung quy nhon binh dinh phuong hoang co tran dong ngo xa loi phat',
+                location: 'An Nhơn, Bình Định',
+                region: 'central',
+                regionName: 'Miền Trung',
+                img: 'images/quynhon_chua_thien_hung.webp',
+                buddhaImg: 'images/quynhon_chua_thien_hung.webp',
+                title: 'Chánh Điện Thiên Hưng Cổ Trấn',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: 'destination-quy-nhon.html',
+                hasDetailedAltars: false,
+                badge: 'Nơi Lưu Giữ Ngọc Xá Lợi Phật Thích Ca',
+                desc: 'Mệnh danh là Phượng Hoàng Cổ Trấn Bình Định với hồ sen, vườn thượng uyển và Tháp Chuông 12 tầng vươn cao thanh tịnh.'
+            },
+            {
+                id: 'nuimot',
+                name: 'Chùa Núi Một (Vân Sơn Tự)',
+                searchTerms: 'nui mot van son tu con dao ho an hai con son',
+                location: 'Côn Đảo, Bà Rịa - Vũng Tàu',
+                region: 'south',
+                regionName: 'Biển Đảo Phương Nam',
+                img: 'images/condao_chua_nui_mot_van_son_tu.webp',
+                buddhaImg: 'images/condao_chua_nui_mot_van_son_tu.webp',
+                title: 'Chánh Điện Vân Sơn Tự — Núi Một',
+                mantra: 'Nam Mô Quán Thế Âm Bồ Tát',
+                detailUrl: 'destination-con-dao.html',
+                hasDetailedAltars: false,
+                badge: 'Ngắm Trọn Vịnh Côn Sơn & Hồ Sen An Hải',
+                desc: 'Ngôi chùa duy nhất tại Côn Đảo tọa lạc trên đỉnh Núi Một, lưng tựa rừng nguyên sinh, mắt hướng trọn biển trời bao la.'
+            },
+            {
+                id: 'chuacau',
+                name: 'Chùa Cầu Hội An (Lai Viễn Kiều)',
+                searchTerms: 'chua cau lai vien kieu hoi an quang nam unesco bac de tran vu',
+                location: 'Phố cổ Hội An, Quảng Nam',
+                region: 'central',
+                regionName: 'Miền Trung',
+                img: 'images/hoian_chua_cau.webp',
+                buddhaImg: 'images/hoian_chua_cau.webp',
+                title: 'Chùa Cầu Lai Viễn Kiều 400 Năm',
+                mantra: 'Cầu Phong Điều Vũ Thuận — Nhân Khang Vật Thịnh',
+                detailUrl: 'destination-hoi-an.html',
+                hasDetailedAltars: false,
+                badge: 'Di Sản Văn Hóa Thế Giới UNESCO',
+                desc: 'Kiệt tác kiến trúc gỗ ngói âm dương 400 năm tuổi bắc qua lạch nước hoài cổ, biểu tượng của phố cổ Hội An.'
+            }
+        ];
+
+        // REMOVE VIETNAMESE DIACRITICS FOR FUZZY SEARCH
+        function removeDiacritics(str) {
+            if (!str) return '';
+            return str.normalize('NFD')
+                      .replace(/[\\u0300-\\u036f]/g, '')
+                      .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+                      .toLowerCase().trim();
+        }
+
+        function filterTemplesLive(query) {
+            const dropdown = document.getElementById('zenSearchDropdown');
+            const clearBtn = document.getElementById('zenSearchClear');
+            if (!dropdown) return;
+
+            const qClean = removeDiacritics(query);
+            if (clearBtn) {
+                clearBtn.style.display = query ? 'inline-flex' : 'none';
+            }
+
+            if (!qClean) {
+                dropdown.style.display = 'none';
+                dropdown.innerHTML = '';
+                // Reset temple grid cards visibility
+                const cards = document.querySelectorAll('#templesGrid .temple-card');
+                cards.forEach(card => card.style.display = '');
+                return;
+            }
+
+            const matches = TEMPLE_DATABASE.filter(t => {
+                const nameClean = removeDiacritics(t.name);
+                const locClean = removeDiacritics(t.location);
+                const termsClean = removeDiacritics(t.searchTerms);
+                return nameClean.includes(qClean) || locClean.includes(qClean) || termsClean.includes(qClean);
+            });
+
+            // Update Temple Grid below
+            const cards = document.querySelectorAll('#templesGrid .temple-card');
+            cards.forEach(card => {
+                const cardText = removeDiacritics(card.textContent);
+                if (cardText.includes(qClean)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Render dropdown
+            if (matches.length === 0) {
+                dropdown.innerHTML = '<div class="zen-dropdown-empty">Không tìm thấy ngôi chùa nào phù hợp. Vui lòng thử từ khóa khác (ví dụ: Bái Đính, Thiên Mụ, Trúc Lâm...)</div>';
+            } else {
+                dropdown.innerHTML = matches.map(t => `
+                    <div class="zen-search-item">
+                        <img src="${t.img}" alt="${t.name}" class="zen-search-item-thumb">
+                        <div class="zen-search-item-info">
+                            <div class="zen-search-item-name">${t.name}</div>
+                            <div class="zen-search-item-loc">📍 ${t.location}</div>
+                            <div class="zen-search-item-desc">${t.desc}</div>
+                        </div>
+                        <div class="zen-search-item-actions">
+                            <a href="${t.detailUrl}" class="btn-search-action btn-search-detail" onclick="handleSearchDetailClick('${t.detailUrl}', event)">
+                                <span>⛩️ Xem bài chi tiết</span>
+                            </a>
+                            <button type="button" class="btn-search-action btn-search-virtual" onclick="selectTempleFromSearch('${t.id}')">
+                                <span>🪷 Chiêm bái Chánh Điện</span>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            dropdown.style.display = 'block';
+        }
+
+        function handleSearchDetailClick(url, event) {
+            if (url.startsWith('#')) {
+                event.preventDefault();
+                const target = document.querySelector(url);
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+                const dropdown = document.getElementById('zenSearchDropdown');
+                if (dropdown) dropdown.style.display = 'none';
+            }
+        }
+
+        function handleQuickSearch(keyword) {
+            const input = document.getElementById('templeSearchInput');
+            if (input) {
+                input.value = keyword;
+                filterTemplesLive(keyword);
+                input.focus();
+            }
+        }
+
+        function clearTempleSearch() {
+            const input = document.getElementById('templeSearchInput');
+            if (input) {
+                input.value = '';
+                filterTemplesLive('');
+            }
+        }
+
+        function selectTempleFromSearch(templeId) {
+            // Check if temple exists in switchTempleView list
+            const found = TEMPLE_DATABASE.find(t => t.id === templeId);
+            if (!found) return;
+
+            // Hide dropdown
+            const dropdown = document.getElementById('zenSearchDropdown');
+            if (dropdown) dropdown.style.display = 'none';
+
+            // Scroll to sanctuary
+            const sanctuary = document.getElementById('goc-an-nhien');
+            if (sanctuary) sanctuary.scrollIntoView({ behavior: 'smooth' });
+
+            // Switch altar scene
+            const backdrop = document.getElementById('altarBackdrop');
+            if (backdrop) backdrop.style.backgroundImage = `url('${found.img}')`;
+            const buddhaImg = document.getElementById('altarBuddhaImg');
+            if (buddhaImg) buddhaImg.src = found.buddhaImg || found.img;
+            const titleElem = document.getElementById('altarTempleTitle');
+            if (titleElem) titleElem.textContent = found.title;
+            const mantraElem = document.getElementById('altarTempleMantra');
+            if (mantraElem) mantraElem.textContent = `"${found.mantra}"`;
+
+            // Active button state
+            document.querySelectorAll('.altar-temple-btn').forEach(btn => btn.classList.remove('active'));
+            const matchingBtn = document.querySelector(`.altar-temple-btn[onclick*="'${templeId}'"]`);
+            if (matchingBtn) matchingBtn.classList.add('active');
+
+            showToast(`Đã chuyển sang không gian chiêm bái: ${found.name}`, '🪷');
+        }
+
+        // Close search dropdown on click outside
+        document.addEventListener('click', function(e) {
+            const container = document.querySelector('.zen-search-container');
+            const dropdown = document.getElementById('zenSearchDropdown');
+            if (container && dropdown && !container.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // ==========================================
+        // PRAYER MODAL POP-UP LOGIC
+        // ==========================================
+        function openPrayerModal(idx = 0) {
+            const modal = document.getElementById('prayerModal');
+            if (!modal) return;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            if (typeof switchPrayer === 'function') {
+                switchPrayer(idx);
+            }
+        }
+
+        function closePrayerModal(e) {
+            if (e && e.target && e.target.id !== 'prayerModal' && !e.target.classList.contains('prayer-modal-close') && !e.target.closest('.prayer-modal-close')) {
+                return;
+            }
+            const modal = document.getElementById('prayerModal');
+            if (!modal) return;
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Search Input event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('templeSearchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    filterTemplesLive(this.value);
+                });
+                searchInput.addEventListener('focus', function() {
+                    if (this.value.trim()) filterTemplesLive(this.value);
+                });
+            }
+        });
+
+</script>
+
+    <!-- ================================================= -->
+    <!-- MODAL POP-UP SỔ TAY 7 BÀI VĂN KHẤN CỔ TRUYỀN       -->
+    <!-- ================================================= -->
+    <div class="prayer-modal-backdrop" id="prayerModal" onclick="closePrayerModal(event)">
+        <div class="prayer-modal-dialog">
+            <div class="prayer-modal-header">
+                <h3><span>📜</span> Sổ Tay 7 Bài Văn Khấn Cổ Truyền Chuẩn Mực</h3>
+                <button type="button" class="prayer-modal-close" onclick="closePrayerModal(event)" title="Đóng">✕</button>
+            </div>
+            <div class="prayer-modal-body">
+                <div class="prayers-grid">
+                    <!-- MENU BÀI KHẤN -->
+                <aside class="prayers-sidebar">
+                    <button class="prayer-nav-btn active" onclick="switchPrayer(0)">
+                        <span>🪷</span> 1. Văn Khấn Lễ Phật (Chính Điện)
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(1)">
+                        <span>🏛️</span> 2. Văn Khấn Ban Tam Bảo
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(2)">
+                        <span>⚔️</span> 3. Văn Khấn Ban Đức Ông
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(3)">
+                        <span>💧</span> 4. Văn Khấn Bồ Tát Quán Thế Âm
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(4)">
+                        <span>🏮</span> 5. Văn Khấn Địa Tạng Vương Bồ Tát
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(5)">
+                        <span>🌸</span> 6. Văn Khấn Đầu Năm, Rằm & Mùng 1
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(6)">
+                        <span>🍂</span> 7. Văn Khấn Tạ Lễ Cuối Năm
+                    </button>
+                </aside>
+
+                <!-- NỘI DUNG CHI TIẾT BÀI KHẤN -->
+                <main class="prayers-content">
+                    <!-- BÀI 1: LỄ PHẬT CHÍNH ĐIỆN -->
+                    <div class="prayer-card active" id="prayerCard0">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>1. Văn Khấn Lễ Phật Tại Chính Điện</h3>
+                                <p>Cầu an cho bản thân và gia quyến, sám hối tội lỗi và nguyện hướng thiện</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(0)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText0">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con lạy chín phương Trời, mười phương Chư Phật, Chư Phật mười phương.
+Hôm nay là ngày... tháng... năm...
+Tín chủ (chúng) con là: ...
+Ngụ tại: ...
+
+Cùng toàn thể gia quyến thành tâm kính lễ, sửa biện hương hoa phẩm vật, kim ngân đăng trà, dâng lên trước án Tam Bảo nơi thiền môn thanh tịnh.
+
+Chúng con kính cẩn cúi đầu đảnh lễ:
+- Đức Phật Thích Ca Mâu Ni giáo chủ cõi Ta Bà,
+- Đức Phật A Di Đà giáo chủ cõi Tây Phương Cực Lạc,
+- Đức Phật Dược Sư Lưu Ly Quang Vương,
+- Cùng chư vị Bồ Tát Quán Thế Âm, Đại Thế Chí, Văn Thù Sư Lợi, Phổ Hiền, chư vị Tôn giả, Hiền Thánh Tăng.
+
+Cúi xin chư Phật, chư Bồ Tát từ bi gia hộ chứng minh. Nguyện cầu gia quyến chúng con luôn được thân tâm an lạc, bệnh tật tiêu trừ, tai qua nạn khỏi, gia đạo thuận hòa, phúc lộc tăng trưởng, luôn hướng tâm về nẻo thiện.
+
+Chúng con người trần mắt thịt, nghiệp chướng sâu dày, nếu có điều chi lầm lỡ trong ý nghĩ, lời nói hay hành động, cúi xin mười phương Chư Phật từ bi hoan hỷ hỷ xả, chỉ đường soi lối cho chúng con đi trên con đường chánh đạo sáng ngời.
+
+Chúng con lễ bạc tâm thành, trước án kính lễ, cúi xin lượng cả từ bi chứng giám gia hộ độ trì.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Lưu ý nghi lễ:</strong> Khi khấn tại Chính Điện Tam Bảo, tuyệt đối chỉ dâng đồ chay thanh tịnh (hoa tươi, quả ngọt, oản phẩm, chè xôi). Không dâng đồ mặn hay tiền vàng mã.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 2: BAN TAM BẢO -->
+                    <div class="prayer-card" id="prayerCard1">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>2. Văn Khấn Ban Tam Bảo (Phật - Pháp - Tăng)</h3>
+                                <p>Cầu nương tựa Ba Ngôi Báu, vun bồi phước đức và trí tuệ</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(1)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText1">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con kính lạy Chư Phật mười phương, Chư đại Bồ Tát, Chư Hiền Thánh Tăng.
+Con quy y Phật, quy y Pháp, quy y Tăng — Ba ngôi Tam Bảo tôn quý nhất trên đời.
+
+Hôm nay ngày lành tháng tốt, tín chủ con là: ...
+Ngụ tại: ...
+Một lòng thành kính, chiêm bái thiền đường, dâng nén tâm hương cúng dường Tam Bảo.
+
+Kính nguyện Tam Bảo từ bi tiếp độ:
+Cho tâm con luôn sáng tỏ, trí tuệ mở mang, biết phân biệt phải trái thiện ác;
+Cho lòng con bớt tham lam, sân giận, si mê, biết yêu thương muôn loài;
+Cho gia đình con trên kính dưới nhường, trong ấm ngoài êm, mọi việc hanh thông tốt đẹp.
+
+Nguyện đem công đức cúng dường này hồi hướng cho khắp pháp giới chúng sinh đều được an lạc, tai ương tiêu trừ, phúc duyên trọn vẹn.
+
+Nam mô Bổn Sư Thích Ca Mâu Ni Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Ý nghĩa Tam Bảo:</strong> Phật bảo là đấng Giác ngộ, Pháp bảo là lời dạy chân lý nhiệm màu, Tăng bảo là đoàn thể thanh tịnh truyền trao chánh pháp.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 3: BAN ĐỨC ÔNG -->
+                    <div class="prayer-card" id="prayerCard2">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>3. Văn Khấn Ban Đức Ông (Đức Già Lam Chân Tể)</h3>
+                                <p>Vị Thần bảo hộ già lam, cầu công danh tài lộc, sự nghiệp hanh thông</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(2)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText2">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con lạy chín phương Trời, mười phương Chư Phật.
+Kính lạy Đức Già Lam Chân Tể, Đức Hộ Pháp Thiện Thần chư vị Tôn thần cai quản thiền môn.
+
+Hôm nay là ngày... tháng... năm...
+Tín chủ con là: ...
+Ngụ tại: ...
+
+Thành tâm sắm sửa hương hoa trà quả, kim ngân lễ vật thanh tịnh, kính cẩn dâng lên trước ban thờ Đức Ông.
+
+Cúi xin Đức Ông thương xót tín chủ, giáng lâm trước án, chứng giám lòng thành, thụ hưởng lễ vật. Phù hộ độ trì cho chúng con cùng toàn thể gia quyến:
+- Công việc hanh thông, buôn bán phát tài, sở cầu như ý, sở nguyện tòng tâm;
+- Kẻ dữ lánh xa, người lành gần gũi, quý nhân giúp đỡ, tiểu nhân lánh mặt;
+- Thân thể khỏe mạnh, gia đạo hưng long, trong ngoài êm ấm.
+
+Chúng con lễ bạc tâm thành, trước án kính lễ, cúi xin Đức Ông chứng giám độ trì.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Thứ tự đi lễ:</strong> Theo phong tục cổ truyền miền Bắc, khi vào chùa thường đến lễ ban Đức Ông trước (nhập gia vấn xuất) rồi mới vào lễ Chính Điện Tam Bảo.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 4: QUÁN THẾ ÂM BỒ TÁT -->
+                    <div class="prayer-card" id="prayerCard3">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>4. Văn Khấn Bồ Tát Quán Thế Âm</h3>
+                                <p>Cầu Mẹ Từ Bi che chở, xoa dịu khổ đau, cầu con cái, sức khỏe</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(3)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText3">Nam mô Đại Từ Đại Bi Tầm Thinh Cứu Khổ Cứu Nạn Linh Cảm Quán Thế Âm Bồ Tát! (3 lần, 3 lạy)
+
+Kính lạy Đức Mẹ Quán Thế Âm Bồ Tát từ bi lân mẫn, thương xót muôn loài như con đỏ.
+Hôm nay là ngày... tháng... năm...
+Con tên là: ... Ngụ tại: ...
+
+Thành tâm thắp nén tâm hương, kính dâng hoa tươi quả ngọt, một lòng hướng về Đức Từ Mẫu.
+
+Nguyện xin Đức Bồ Tát rưới giọt nước cành dương cam lộ thanh lương, dập tắt ngọn lửa phiền muộn, xoa dịu những nhọc nhằn âu lo nơi thân tâm con và gia quyến.
+
+Xin Bồ Tát chở che cho cha mẹ con được dồi dào sức khỏe, trường thọ an vui; cho con cháu học hành tiến tới, ngoan ngoãn thảo hiền; cho gia đình tai qua nạn khỏi, duyên lành hội tụ, tâm hồn hướng thiện, biết yêu thương sẻ chia.
+
+Con nguyện học theo hạnh lắng nghe và bao dung của Bồ Tát, giữ tâm bình thản trước mọi nghịch cảnh cuộc đời.
+
+Nam mô Quán Thế Âm Bồ Tát! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Lễ vật phù hợp:</strong> Hoa sen, hoa huệ trắng, quả tươi, nước trong thanh khiết. Tránh dâng hoa quả héo úa hay đồ vàng mã.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 5: ĐỊA TẠNG VƯƠNG BỒ TÁT -->
+                    <div class="prayer-card" id="prayerCard4">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>5. Văn Khấn Địa Tạng Vương Bồ Tát</h3>
+                                <p>Cầu siêu cửu huyền thất tổ, hóa giải nghiệp chướng, cầu bình an</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(4)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText4">Nam mô Đại Nguyện Địa Tạng Vương Bồ Tát! (3 lần, 3 lạy)
+
+Kính lạy Đức Giáo Chủ cõi U Minh, Bồ Tát Địa Tạng đại bi đại nguyện, thệ nguyện cứu độ hết thảy chúng sinh khổ nạn chốn u đồ.
+
+Hôm nay là ngày... tháng... năm...
+Tín chủ con là: ...
+Ngụ tại: ...
+
+Thành tâm đốt nén tâm hương, sửa biện lễ mọn dâng lên trước toà sen Đức Bồ Tát Địa Tạng.
+
+Chúng con kính nguyện nương nhờ uy đức của Ngài, cầu xin cứu vớt hương linh Cửu Huyền Thất Tổ, ông bà cha mẹ nhiều đời nhiều kiếp, cùng chư vị anh linh, hương linh gia tiên quyến thuộc nội ngoại.
+
+Nguyện xin Bồ Tát phóng ánh hào quang xua tan tăm tối, dẫn lối cho các chân linh sớm tiêu trừ nghiệp chướng, nương nhờ phước lực Tam Bảo mà được vãng sinh về cảnh giới an vui cực lạc.
+
+Đồng thời phù hộ cho con cháu nơi trần thế luôn mạnh khỏe bình an, sống hiếu nghĩa vẹn toàn, làm nhiều điều lành tạo thêm phước đức.
+
+Nam mô Địa Tạng Vương Bồ Tát! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Ý nghĩa đại nguyện:</strong> "Địa ngục vị không, thệ bất thành Phật" — Lòng từ bi bao la không bỏ sót một ai, nhắc nhở con người về lòng hiếu thảo thiêng liêng.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 6: ĐẦU NĂM, RẰM & MÙNG 1 -->
+                    <div class="prayer-card" id="prayerCard5">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>6. Văn Khấn Đi Chùa Đầu Năm & Các Ngày Rằm, Mùng Một</h3>
+                                <p>Cầu quốc thái dân an, nghênh đón cát lành, vạn sự hanh thông</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(5)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText5">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con lạy chín phương Trời, mười phương Chư Phật.
+Kính lạy Chư Phật, Chư Bồ Tát, Chư Hiền Thánh Tăng, Hộ Pháp Thiện Thần.
+
+Nhân tiết đầu xuân năm mới (hoặc: ngày rằm / mùng một thanh tịnh), đất trời giao hòa, vạn vật đâm chồi nảy lộc.
+Tín chủ con là: ...
+Ngụ tại: ...
+
+Một lòng thành kính bước chân vào cửa Phật, dâng nén tâm hương, phẩm vật thanh khiết, cúi đầu tạ ơn đất trời Phật Thánh.
+
+Kính nguyện cầu:
+- Quốc thái dân an, mưa thuận gió hòa, mùa màng tươi tốt;
+- Gia đình con bốn mùa không hạn ách, tám tiết có điềm lành, thân thể kiện khang, tâm hồn thanh thản;
+- Công việc hanh thông, tài lộc dồi dào, tâm nguyện hướng thiện, duyên lành kết tụ.
+
+Cúi xin mười phương Chư Phật, Chư Bồ Tát từ bi gia hộ độ trì.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Phong tục đẹp:</strong> Đi chùa đầu năm hái một cành lộc nhỏ hoặc nhận lời chúc bình an, xin chữ đầu xuân để nuôi dưỡng tinh thần lạc quan, yêu đời.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 7: TẠ LỄ CUỐI NĂM -->
+                    <div class="prayer-card" id="prayerCard6">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>7. Văn Khấn Tạ Lễ Chùa Cuối Năm</h3>
+                                <p>Tạ ơn Phật Thánh che chở suốt một năm qua, đón chào năm mới bình an</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(6)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText6">Nam mô A Di Đà Phật! (3 lần, 3 lạy)
+
+Con lạy chín phương Trời, mười phương Chư Phật, Chư Phật mười phương.
+Kính lạy Chư Phật, Chư Bồ Tát, Hộ Pháp Tôn Thần.
+
+Hôm nay là những ngày cuối năm... tín chủ con là: ...
+Ngụ tại: ...
+
+Thành tâm sắm sửa hương đăng hoa quả, trở lại chốn thiền môn thanh tịnh để dâng lời tạ ơn:
+
+Tạ ơn mười phương Chư Phật, Chư vị Bồ Tát và Hộ Pháp Thiện Thần trong suốt một năm qua đã che chở, gia hộ cho gia quyến chúng con được bình an vô sự, vượt qua mọi sóng gió, khó khăn tai ách, gặp được nhiều điều may mắn tốt lành.
+
+Chúng con nhìn lại một năm đã qua, tự soi xét lỗi lầm và nguyện dốc lòng tu sửa, bước sang năm mới sống bao dung hơn, nhân hậu hơn, biết cống hiến cho đời nhiều hơn.
+
+Cúi xin Chư vị chứng giám lòng thành, tiếp tục chở che cho gia quyến chúng con bước sang năm mới an khang thịnh vượng, vạn sự cát tường.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Ý nghĩa tạ lễ:</strong> "Ăn quả nhớ kẻ trồng cây" — Lễ tạ cuối năm thể hiện truyền thống biết ơn sâu sắc, khép lại năm cũ với lòng thanh thản và đón chào tương lai.
+                        </div>
+                    </div>
+                </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
