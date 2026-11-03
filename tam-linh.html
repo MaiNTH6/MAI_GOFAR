@@ -3224,51 +3224,7 @@
             setTimeout(() => { ring.remove(); }, 2200);
         }
 
-        // ==========================================
-        // VIRTUAL ALTAR (CHÁNH ĐIỆN ẢO) LOGIC
-        // ==========================================
-        const templeViewData = {
-            baidinh: {
-                title: "Chánh Điện Đức Phật Thích Ca Mâu Ni",
-                mantra: '"Nam Mô Bản Sư Thích Ca Mâu Ni Phật"',
-                img: "images/bai_dinh_buddha_1783494499108.webp"
-            },
-            thienmu: {
-                title: "Chánh Điện Chùa Thiên Mụ — Đại Tự Cố Đô Huế",
-                mantra: '"Nam Mô A Di Đà Phật"',
-                img: "images/hue_chua_thien_mu.webp"
-            },
-            linhung: {
-                title: "Tượng Quán Thế Âm Bồ Tát — Chùa Linh Ứng Bãi Bụt",
-                mantra: '"Nam Mô Đại Bi Quán Thế Âm Bồ Tát"',
-                img: "images/danang_chua_linh_ung_bai_but.webp"
-            },
-            truclam: {
-                title: "Chánh Điện Thiền Viện Trúc Lâm — Phụng Hoàng Sơn Đà Lạt",
-                mantra: '"Phật Tại Tâm — Vạn Pháp Quy Nhất"',
-                img: "images/dalat_truc_lam.webp"
-            },
-            bichdong: {
-                title: "Chùa Bích Động — Nam Thiên Đệ Nhị Động Ninh Bình",
-                mantra: '"Nam Mô Tiêu Tai Diên Thọ Dược Sư Phật"',
-                img: "images/bich_dong_pagoda_1785483683589.webp"
-            }
-        };
-
-        function switchTempleView(key, btn) {
-            state.currentTemple = key;
-            document.querySelectorAll('.altar-temple-btn').forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
-
-            const t = templeViewData[key];
-            if (t) {
-                document.getElementById('altarTempleTitle').textContent = t.title;
-                document.getElementById('altarTempleMantra').textContent = t.mantra;
-                document.getElementById('altarBuddhaImg').src = t.img;
-                document.getElementById('altarBackdrop').style.backgroundImage = `url('${t.img}')`;
-                showToast(`Đã chuyển sang viếng: ${t.title}`, '⛩️');
-            }
-        }
+        
 
         // ==========================================
         // ALTAR INTERACTIVE ACTIONS (PERFECTED)
