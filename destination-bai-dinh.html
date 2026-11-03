@@ -1267,6 +1267,113 @@
             box-shadow: 0 10px 30px rgba(251, 191, 36, 0.6);
         }
 
+    
+        /* ======================================================== */
+        /* ICON & BUTTON ĐỌC VĂN KHẤN ONLINE STYLES                 */
+        /* ======================================================== */
+        .stage-prayer-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed rgba(251, 191, 36, 0.25);
+        }
+        .prayer-head-left {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .prayer-head-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-read-prayer-online {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.25), rgba(245, 158, 11, 0.15));
+            border: 1px solid var(--accent-gold);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.84rem;
+            padding: 0.35rem 0.95rem;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
+            transition: all 0.25s ease;
+        }
+        .btn-read-prayer-online:hover {
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: #0d1f2d;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(251, 191, 36, 0.4);
+        }
+        .btn-read-prayer-online.reading {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-color: #34d399;
+            color: #ffffff;
+            box-shadow: 0 0 18px rgba(16, 185, 129, 0.5);
+            animation: pulseReadingBtn 1.8s infinite alternate;
+        }
+        @keyframes pulseReadingBtn {
+            0% { transform: scale(1); box-shadow: 0 0 12px rgba(16, 185, 129, 0.4); }
+            100% { transform: scale(1.04); box-shadow: 0 0 22px rgba(16, 185, 129, 0.8); }
+        }
+        .read-icon-pulse {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .btn-read-prayer-online.reading .read-icon-pulse {
+            animation: speakerWave 1s infinite alternate;
+        }
+        @keyframes speakerWave {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.35); }
+        }
+        .btn-prayer-copy-small {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #cbd5e1;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .btn-prayer-copy-small:hover {
+            border-color: var(--accent-gold);
+            color: #fff;
+            background: rgba(251, 191, 36, 0.15);
+        }
+        .stage-prayer-text-box.is-reading {
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 0.8rem;
+            background: rgba(251, 191, 36, 0.06);
+            border-radius: 4px;
+            box-shadow: inset 0 0 15px rgba(251, 191, 36, 0.12);
+        }
+        .btn-read-accordion {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.1));
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            margin-right: 0.4rem;
+        }
+        .btn-read-accordion:hover {
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: #0d1f2d;
+        }
+
     </style>
 </head>
 <body>
@@ -1590,16 +1697,23 @@
                                     <button type="button" class="btn-ritual-act" onclick="pilgrimActBow(event)">Đảnh Lễ (+1 Lạy)</button>
                                 </div>
 
-                                <!-- ACTION 4: SAO CHÉP & ĐỌC VĂN KHẤN -->
+                                <!-- ACTION 4: ĐỌC VĂN KHẤN ONLINE & SAO CHÉP -->
                                 <div class="ritual-action-card">
                                     <div class="ritual-card-left">
-                                        <div class="ritual-btn-icon">📜</div>
+                                        <div class="ritual-btn-icon">🔊</div>
                                         <div>
-                                            <div class="ritual-btn-title">Văn Khấn Chuẩn Ban Này</div>
-                                            <div class="ritual-btn-sub">Xem và sao chép bài khấn cổ truyền</div>
+                                            <div class="ritual-btn-title">Đọc Văn Khấn Online</div>
+                                            <div class="ritual-btn-sub">Trì tụng văn khấn kèm nhịp mõ thiền tĩnh tâm</div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn-ritual-act" onclick="copyCurrentStationPrayer()">📋 Sao Chép</button>
+                                    <div style="display: flex; gap: 0.4rem;">
+                                        <button type="button" class="btn-ritual-act" id="btnRitualReadAct" onclick="toggleReadPrayerOnline()" title="Bấm để đọc văn khấn online">
+                                            <span id="ritualReadActIcon">🔊</span> <span id="ritualReadActText">Đọc Online</span>
+                                        </button>
+                                        <button type="button" class="btn-ritual-act" onclick="copyCurrentStationPrayer()" title="Sao chép bài khấn" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(251,191,36,0.3); color: var(--accent-gold);">
+                                            📋
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1607,8 +1721,19 @@
                         <!-- TOÀN VĂN BÀI VĂN KHẤN TRỰC QUAN -->
                         <div class="stage-prayer-view">
                             <div class="stage-prayer-head">
-                                <span>📜 Bài Văn Khấn Chuẩn Tại Ban:</span>
-                                <span style="font-size: 0.8rem; color: var(--text-muted);">Trì tụng với lòng thành kính sâu sắc</span>
+                                <div class="prayer-head-left">
+                                    <span>📜 Bài Văn Khấn Chuẩn Tại Ban:</span>
+                                </div>
+                                <div class="prayer-head-actions">
+                                    <!-- ICON ĐỌC VĂN KHẤN ONLINE CHUYÊN BIỆT -->
+                                    <button type="button" class="btn-read-prayer-online" id="btnReadPrayerOnline" onclick="toggleReadPrayerOnline()" title="Lắng nghe giọng đọc văn khấn cổ truyền kết hợp nhịp mõ thiền tĩnh tâm">
+                                        <span class="read-icon-pulse" id="readPrayerIcon">🔊</span>
+                                        <span id="readPrayerText">Đọc Văn Khấn Online</span>
+                                    </button>
+                                    <button type="button" class="btn-prayer-copy-small" onclick="copyCurrentStationPrayer()" title="Sao chép bài khấn">
+                                        <span>📋</span> Sao Chép
+                                    </button>
+                                </div>
                             </div>
                             <div class="stage-prayer-text-box" id="stagePrayerTextBox">
                                 Đang tải bài khấn...
@@ -1703,6 +1828,7 @@ Tín chủ con là: ... Ngụ tại: ...
 Một lòng thành kính bước chân vào cửa Phật, cúi xin chư vị Hộ Pháp che chở, chứng giám lòng thành, trừ tà diệt ác, cho thân tâm con được thanh tịnh, chuyến hành hương chiêm bái được thập phần viên mãn.
 Nam mô A Di Đà Phật! (3 lạy)</div>
                                     <div class="prayer-accordion-actions">
+                                        <button type="button" class="btn-copy-small btn-read-accordion" onclick="readPrayerById('prayerAltar1', this)">🔊 Đọc Văn Khấn</button>
                                         <button class="btn-copy-small" onclick="copyText('prayerAltar1')">📋 Sao Chép Bài Khấn</button>
                                     </div>
                                 </div>
@@ -1852,6 +1978,7 @@ Con nguyện học theo hạnh nguyện lắng nghe và yêu thương của Bồ
 
 Nam mô Quán Thế Âm Bồ Tát! (3 lạy)</div>
                                     <div class="prayer-accordion-actions">
+                                        <button type="button" class="btn-copy-small btn-read-accordion" onclick="readPrayerById('prayerAltar4', this)">🔊 Đọc Văn Khấn</button>
                                         <button class="btn-copy-small" onclick="copyText('prayerAltar4')">📋 Sao Chép Bài Khấn</button>
                                     </div>
                                 </div>
@@ -1925,6 +2052,7 @@ Chúng con nguyện giữ gìn năm giới, làm lành lánh dữ, sống trọn
 
 Nam mô Bổn Sư Thích Ca Mâu Ni Phật! (3 lạy)</div>
                                     <div class="prayer-accordion-actions">
+                                        <button type="button" class="btn-copy-small btn-read-accordion" onclick="readPrayerById('prayerAltar5', this)">🔊 Đọc Văn Khấn</button>
                                         <button class="btn-copy-small" onclick="copyText('prayerAltar5')">📋 Sao Chép Bài Khấn</button>
                                     </div>
                                 </div>
@@ -1980,6 +2108,7 @@ Nguyện cho bản thân con và con cháu luôn giữ được hạt giống t�
 
 Nam mô Tam Thế Tam Bảo Phật! (3 lạy)</div>
                                     <div class="prayer-accordion-actions">
+                                        <button type="button" class="btn-copy-small btn-read-accordion" onclick="readPrayerById('prayerAltar6', this)">🔊 Đọc Văn Khấn</button>
                                         <button class="btn-copy-small" onclick="copyText('prayerAltar6')">📋 Sao Chép Bài Khấn</button>
                                     </div>
                                 </div>
@@ -2143,6 +2272,7 @@ Chúng con lễ bạc tâm thành, cúi xin lượng cả từ bi chứng giám 
 
 Nam mô A Di Đà Phật! (3 lạy)</div>
                                     <div class="prayer-accordion-actions">
+                                        <button type="button" class="btn-copy-small btn-read-accordion" onclick="readPrayerById('prayerAltar9', this)">🔊 Đọc Văn Khấn</button>
                                         <button class="btn-copy-small" onclick="copyText('prayerAltar9')">📋 Sao Chép Bài Khấn</button>
                                     </div>
                                 </div>
@@ -2579,6 +2709,9 @@ Nam mô A Di Đà Phật! (3 lạy)</div>
         };
 
         function navigateToStation(stationId) {
+            if (typeof isReadingPrayer !== 'undefined' && isReadingPrayer) {
+                stopReadingPrayer();
+            }
             const idx = stationId - 1;
             if (idx < 0 || idx >= BAI_DINH_STATIONS.length) return;
 
@@ -2768,6 +2901,175 @@ Nam mô A Di Đà Phật! (3 lạy)</div>
             }
         });
 
+    
+// ==========================================
+        // TEXT-TO-SPEECH & CHANTING ENGINE (ĐỌC VĂN KHẤN ONLINE)
+        // ==========================================
+        let isReadingPrayer = false;
+        let readingUtterance = null;
+        let readingMoInterval = null;
+
+        function toggleReadPrayerOnline() {
+            if (isReadingPrayer) {
+                stopReadingPrayer();
+            } else {
+                startReadingPrayer();
+            }
+        }
+
+        function startReadingPrayer() {
+            const data = BAI_DINH_STATIONS[curStationIdx];
+            if (!data) return;
+
+            const cleanText = data.prayerText.replace(/\n/g, ' ');
+            const btnOnline = document.getElementById('btnReadPrayerOnline');
+            const iconOnline = document.getElementById('readPrayerIcon');
+            const textOnline = document.getElementById('readPrayerText');
+            const btnAct = document.getElementById('btnRitualReadAct');
+            const iconAct = document.getElementById('ritualReadActIcon');
+            const textAct = document.getElementById('ritualReadActText');
+            const prayerBox = document.getElementById('stagePrayerTextBox');
+
+            isReadingPrayer = true;
+
+            // Update UI buttons
+            if (btnOnline) {
+                btnOnline.classList.add('reading');
+                if (iconOnline) iconOnline.textContent = '⏸️';
+                if (textOnline) textOnline.textContent = 'Dừng Đọc';
+            }
+            if (btnAct) {
+                btnAct.classList.add('reading');
+                if (iconAct) iconAct.textContent = '⏸️';
+                if (textAct) textAct.textContent = 'Dừng Đọc';
+            }
+            if (prayerBox) {
+                prayerBox.classList.add('is-reading');
+            }
+
+            // Start background gentle wooden fish rhythm (mõ nhịp nhàng mỗi 2.2s)
+            playMoStation();
+            if (readingMoInterval) clearInterval(readingMoInterval);
+            readingMoInterval = setInterval(() => {
+                if (isReadingPrayer) {
+                    playMoStation();
+                }
+            }, 2200);
+
+            // Web Speech API
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+
+                readingUtterance = new SpeechSynthesisUtterance(cleanText);
+                readingUtterance.lang = 'vi-VN';
+                readingUtterance.rate = 0.85; // Reverent and measured pace
+                readingUtterance.pitch = 0.95;
+
+                const voices = window.speechSynthesis.getVoices();
+                const viVoice = voices.find(v => v.lang && (v.lang.startsWith('vi') || v.lang.includes('VN')));
+                if (viVoice) {
+                    readingUtterance.voice = viVoice;
+                }
+
+                readingUtterance.onend = function() {
+                    stopReadingPrayer(true);
+                };
+
+                readingUtterance.onerror = function(err) {
+                    console.log('Speech error:', err);
+                    stopReadingPrayer();
+                };
+
+                window.speechSynthesis.speak(readingUtterance);
+                showToast(`Đang đọc văn khấn: ${data.name}`, '🔊');
+            } else {
+                showToast(`Trình duyệt không hỗ trợ đọc tự động. Mời bạn trì tụng theo nhịp mõ 🙏`, '📿');
+            }
+        }
+
+        function stopReadingPrayer(isFinished = false) {
+            isReadingPrayer = false;
+
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+
+            if (readingMoInterval) {
+                clearInterval(readingMoInterval);
+                readingMoInterval = null;
+            }
+
+            const btnOnline = document.getElementById('btnReadPrayerOnline');
+            const iconOnline = document.getElementById('readPrayerIcon');
+            const textOnline = document.getElementById('readPrayerText');
+            const btnAct = document.getElementById('btnRitualReadAct');
+            const iconAct = document.getElementById('ritualReadActIcon');
+            const textAct = document.getElementById('ritualReadActText');
+            const prayerBox = document.getElementById('stagePrayerTextBox');
+
+            if (btnOnline) {
+                btnOnline.classList.remove('reading');
+                if (iconOnline) iconOnline.textContent = '🔊';
+                if (textOnline) textOnline.textContent = 'Đọc Văn Khấn Online';
+            }
+            if (btnAct) {
+                btnAct.classList.remove('reading');
+                if (iconAct) iconAct.textContent = '🔊';
+                if (textAct) textAct.textContent = 'Đọc Online';
+            }
+            if (prayerBox) {
+                prayerBox.classList.remove('is-reading');
+            }
+
+            if (isFinished) {
+                showToast('Đã hoàn thành trì tụng bài văn khấn. A Di Đà Phật! 🙏', '✨');
+                pilgrimStats.merit += 3;
+                ringTempleBellStation();
+            } else {
+                showToast('Đã dừng đọc văn khấn', '⏹️');
+            }
+        }
+
+        // Đọc văn khấn theo ID trong các Accordion bên dưới
+        let activeAccordionBtn = null;
+        function readPrayerById(elemId, btn) {
+            const elem = document.getElementById(elemId);
+            if (!elem) return;
+            const text = elem.textContent.trim();
+
+            if ('speechSynthesis' in window) {
+                if (window.speechSynthesis.speaking) {
+                    window.speechSynthesis.cancel();
+                    if (activeAccordionBtn) activeAccordionBtn.innerHTML = '🔊 Đọc Văn Khấn';
+                    activeAccordionBtn = null;
+                    showToast('Đã dừng đọc văn khấn', '⏹️');
+                    return;
+                }
+
+                playMoStation();
+                const utter = new SpeechSynthesisUtterance(text);
+                utter.lang = 'vi-VN';
+                utter.rate = 0.85;
+
+                const voices = window.speechSynthesis.getVoices();
+                const viVoice = voices.find(v => v.lang && (v.lang.startsWith('vi') || v.lang.includes('VN')));
+                if (viVoice) utter.voice = viVoice;
+
+                activeAccordionBtn = btn;
+                if (btn) btn.innerHTML = '⏸️ Dừng Đọc';
+
+                utter.onend = function() {
+                    if (btn) btn.innerHTML = '🔊 Đọc Văn Khấn';
+                    activeAccordionBtn = null;
+                    showToast('Đã hoàn thành đọc bài văn khấn 🙏', '✨');
+                };
+
+                window.speechSynthesis.speak(utter);
+                showToast('Đang đọc bài văn khấn online...', '🔊');
+            } else {
+                showToast('Trình duyệt không hỗ trợ đọc tự động', '⚠️');
+            }
+        }
     </script>
 </body>
 </html>
