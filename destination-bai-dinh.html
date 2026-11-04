@@ -1584,7 +1584,7 @@
                         <li><a href="#lo-trinh-hanh-le" onclick="selectStationFromToc(5); return false;">05. Điện Giáo Chủ Thích Ca Mâu Ni</a></li>
                         <li><a href="#lo-trinh-hanh-le" onclick="selectStationFromToc(6); return false;">06. Điện Tam Thế Phật</a></li>
                         <li><a href="#lo-trinh-hanh-le" onclick="selectStationFromToc(7); return false;">07. Bảo Tháp Xá Lợi Phật 100m</a></li>
-                        <li><a href="#lo-trinh-hanh-le" onclick="selectStationFromToc(8); return false;">08. Giếng Ngọc Cổ & Cội Bồ Đề</a></li>
+                        <li><a href="#lo-trinh-hanh-le" onclick="selectStationFromToc(8); return false;">08. Giếng Ngọc Cổ Núi Đính</a></li>
                         <li><a href="#lo-trinh-hanh-le" onclick="selectStationFromToc(9); return false;">09. Bái Đính Cổ Tự (Động Núi Đính)</a></li>
                     </ul>
                 </div>
@@ -2034,7 +2034,7 @@
                     <div class="itinerary-step" style="border-left-color: var(--accent-green);">
                         <h4>Buổi Chiều (13h30 - 16h30): Thăm Giếng Ngọc & Leo Núi Lên Bái Đính Cổ Tự</h4>
                         <p>
-                            - 13h30: Ghé thăm Giếng Ngọc cổ hình bán nguyệt ngàn năm, chiêm ngưỡng làn nước xanh màu ngọc bích và treo dải lụa cầu an bên cội Bồ Đề.<br>
+                            - 13h30: Ghé thăm Giếng Ngọc cổ hình bán nguyệt ngàn năm, chiêm ngưỡng giếng ngọc kỷ lục lớn nhất Việt Nam và vãn cảnh hoa viên chân núi Đính.<br>
                             - 14h30: Men theo con đường rợp bóng cây cổ thụ, vượt 300 bậc đá lên Bái Đính Cổ Tự.<br>
                             - 15h00: Dâng hương tại Hang Sáng (thờ Phật), chiêm bái Hang Tối (thờ Mẫu) và dâng lễ Đức Thánh Nguyễn Minh Không.<br>
                             - 16h30: Xuống núi trở lại bãi đỗ xe trung tâm, kết thúc chuyến hành hương an lạc.
@@ -2228,23 +2228,6 @@
                     showToast('Đã hoàn thành 3 phút thiền định chánh niệm');
                 }
             }, 1000);
-        }
-
-        // TREO DẢI LỤA GIẾNG NGỌC
-        function openWishPrompt() {
-            const wish = prompt("Nhập lời nguyện ước cầu an của bạn gửi lên cội Bồ Đề Giếng Ngọc Bái Đính:", "Cầu cho cha mẹ dồi dào sức khỏe, gia đình an khang thịnh vượng.");
-            if (wish && wish.trim()) {
-                ringTempleBellStation();
-                const existing = JSON.parse(localStorage.getItem('gofar_spiritual_wishes') || '[]');
-                existing.unshift({
-                    author: "Phật tử Bái Đính",
-                    color: "gold",
-                    text: wish.trim(),
-                    time: "Vừa xong"
-                });
-                localStorage.setItem('gofar_spiritual_wishes', JSON.stringify(existing.slice(0, 20)));
-                showToast('Dải lụa ước nguyện đã được treo trang trọng lên cội Bồ Đề Giếng Ngọc');
-            }
         }
 
         // ACCORDION TOGGLE
@@ -2529,34 +2512,35 @@ Con kính lạy Xá Lợi Phật Thích Ca Mâu Ni linh thiêng tôn trí nơi �
             },
             {
                 id: 8,
-                name: "Giếng Ngọc Cổ & Cội Bồ Đề",
-                sub: "Mạch Nước Thần & Dải Lụa Cầu An Bình Hạnh",
+                name: "Giếng Ngọc Cổ Núi Đính",
+                sub: "Huyền Tích Nước Thuốc Nghìn Năm & Giếng Ngọc Kỷ Lục",
                 img: "images/bai_dinh_well_1785485541728.webp",
-                mantra: "Thanh Tịnh Thần Thủy — Vạn Sự Cát Tường",
+                mantra: "Minh Không Dược Thủy — Quốc Thái Dân An",
                 actions: [
-                    { icon: "🌊", title: "Chiêm Ngưỡng Mạch Nước Thần", sub: "Ngắm làn nước xanh ngọc bích ngàn năm phẳng lặng in mây trời", btn: "Chiêm Ngưỡng", type: "view" },
-                    { icon: "🙏", title: "Lễ Bái Hương Án Thần Giếng", sub: "Chắp tay tạ ơn chư vị Long Thần hộ trì mạch nước ngọc", btn: "Xá Chào", type: "bow" },
-                    { icon: "🎋", title: "Treo Dải Lụa Cội Bồ Đề", sub: "Gửi gắm ước nguyện bình an, sức khỏe lên cành cây thiêng", btn: "Treo Lụa", type: "ribbon" }
+                    { icon: "👁️", title: "Chiêm Ngưỡng Giếng Ngọc", sub: "Ngắm giếng ngọc lớn nhất Việt Nam quanh năm nước xanh biếc", btn: "Chiêm Ngưỡng", type: "view" },
+                    { icon: "🙏", title: "Lễ Bái Hương Án Bờ Giếng", sub: "Chắp tay tạ ơn chư vị Thần linh và Đức Thánh Nguyễn Minh Không", btn: "Lễ Bái", type: "bow" },
+                    { icon: "🍃", title: "Vãn Cảnh Chân Núi Đính", sub: "Dạo bước khuôn viên rợp bóng mát, tĩnh tâm trước khi lên Cổ Tự", btn: "Vãn Cảnh", type: "walk" }
                 ],
-                desc: "Giếng Ngọc hình mặt nguyệt có đường kính 30m, sâu 6m với làn nước xanh trong vắt chưa bao giờ cạn đáy qua cả ngàn năm lịch sử. Tương truyền, gần 1.000 năm trước, Quốc sư Nguyễn Minh Không đã nằm mộng thấy thần nhân chỉ lối lấy nước giếng này để sắc thuốc cứu chữa Vua Lý Thần Tông.",
+                desc: "Nằm dưới chân núi Đính, Giếng Ngọc hình mặt nguyệt có đường kính 30m, sâu 6m với làn nước xanh trong vắt chưa bao giờ cạn đáy qua cả ngàn năm lịch sử, đạt kỷ lục giếng ngọc lớn nhất Việt Nam. Tương truyền gần 1.000 năm trước, Quốc sư Nguyễn Minh Không đã nằm mộng thấy thần nhân chỉ lối lấy nước giếng này để sắc thuốc cứu chữa Vua Lý Thần Tông và chữa bệnh cho muôn dân.",
                 guide1: {
-                    title: "<span>🛡️</span> Quy Tắc An Toàn & Chiêm Ngưỡng Giếng Ngọc",
+                    title: "<span>🏛️</span> Huyền Tích Nước Thuốc & Kỷ Lục Giếng Ngọc",
                     items: [
-                        "<strong>Quy định an toàn & bảo tồn:</strong> Giếng Ngọc sâu 6m, rộng gần 1.000m² với bờ lan can đá kiên cố. Nhà chùa nghiêm cấm trèo qua lan can, không với tay múc nước và tuyệt đối không thả tiền xuống giếng.",
-                        "<strong>Chiêm ngưỡng cảnh sắc:</strong> Đứng bên lan can đá ngắm mặt nước xanh màu ngọc bích phẳng lặng quanh năm, in bóng núi non mây trời đại tự Bái Đính."
+                        "<strong>Huyền tích nghìn năm:</strong> Gần 1.000 năm trước, Thiền sư Nguyễn Minh Không được thần nhân báo mộng nguồn nước quý, ngài đã lấy nước giếng này sắc thuốc chữa bệnh 'hóa hổ' cho Vua Lý Thần Tông và cứu chữa dịch bệnh nhân gian.",
+                        "<strong>Kỷ lục Việt Nam:</strong> Giếng hình mặt nguyệt đường kính 30m, diện tích gần 1.000m², sâu 6m, nước trong xanh như ngọc bích chưa bao giờ cạn đáy qua hàng trăm năm lịch sử."
                     ]
                 },
                 guide2: {
-                    title: "<span>🎋</span> Lễ Bái Hương Án & Treo Dải Lụa Bồ Đề",
+                    title: "<span>🛡️</span> Quy Tắc Chiêm Bái & An Toàn Bờ Lan Can",
                     items: [
-                        "<strong>Hương án trước giếng:</strong> Du khách chắp tay cung kính xá chào trước hương án đặt bên bờ giếng, tri ân Quốc sư Nguyễn Minh Không và chư vị Long Thần.",
-                        "<strong>Cội Bồ Đề cầu an:</strong> Bên bờ giếng là cây Bồ Đề chiết từ Bồ Đề Đạo Tràng Ấn Độ rợp bóng mát, nơi du khách thành tâm treo dải lụa đỏ cầu nguyện cho gia quyến bình an, sức khỏe."
+                        "<strong>Lễ bái hương án:</strong> Du khách thành tâm xá chào trước hương án đá lộ thiên đặt trang nghiêm bên bờ giếng, tri ân công đức tổ sư và chư vị Thần linh.",
+                        "<strong>Quy định bảo tồn an toàn:</strong> Toàn bộ giếng được bao quanh bằng lan can đá kiên cố. Du khách chỉ đứng trên bờ thưởng ngoạn, tuyệt đối không trèo qua lan can, không múc nước và không thả tiền xuống giếng."
                     ]
                 },
                 prayerText: `Nam mô A Di Đà Phật! (3 lần, 3 lạy)
-Con kính lạy thần linh Giếng Ngọc và cây Bồ Đề linh thiêng chùa Bái Đính.
-Đứng bên mạch nước ngọc ngàn năm phẳng lặng, con một lòng hướng thiện, thanh tịnh thân tâm, tri ân công đức tiền nhân.
-Con thành tâm treo dải lụa đỏ lên cội Bồ Đề, gửi gắm ước nguyện: Gia đình hòa thuận, con cái ngoan ngoãn, sức khỏe dồi dào, vạn sự bình an.`
+Con kính lạy Tam Bảo, kính lạy thần linh bản thổ và Đức Thánh Nguyễn Minh Không — Tổ khai sơn Bái Đính Cổ Tự.
+Hôm nay tín chủ con thành tâm chiêm bái Giếng Ngọc cổ linh thiêng ngàn năm dưới chân núi Đính.
+Ngưỡng trông oai linh tiền nhân và thần linh mạch nước chứng giám lòng thành, gia hộ cho gia quyến con thân tâm an lạc, tật bệnh tiêu trừ, sức khỏe dồi dào, vạn sự hanh thông.
+Nam mô A Di Đà Phật! (3 lạy)`
             },
             {
                 id: 9,
@@ -2773,12 +2757,8 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
                 showToast(`Thiền hành chánh niệm tại ${station.name}`, '👣');
             } else if (action.type === 'view') {
                 ringTempleBellStation();
-                createPilgrimFlyText(event, 'Thanh Tịnh Thần Thủy 🌊');
-                showToast(`Chiêm ngưỡng mạch nước ngọc bích ngàn năm chùa Bái Đính`, '🌊');
-            } else if (action.type === 'ribbon') {
-                ringTempleBellStation();
-                createPilgrimFlyText(event, 'Vạn Sự Cát Tường 🎋');
-                showToast(`Đã treo dải lụa đỏ cầu an lên cội Bồ Đề`, '🎋');
+                createPilgrimFlyText(event, 'Chiêm Ngưỡng Giếng Ngọc Kỷ Lục 👁️');
+                showToast(`Chiêm ngưỡng giếng ngọc kỷ lục lớn nhất Việt Nam`, '👁️');
             } else if (action.type === 'meditate') {
                 ringTempleBellStation();
                 createPilgrimFlyText(event, 'Thân Tâm Tĩnh Lặng 🧘');
