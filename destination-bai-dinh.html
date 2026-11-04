@@ -1222,7 +1222,7 @@
             display: block;
             filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
         }
-        /* HÀNH GIẢ TĨNH TÂM THIỀN ĐỊNH & THỞ CHÁNH NIỆM (KHÔNG BỊ NÉN/XẸP, ĐỨNG THẲNG AN NHIÊN) */
+        /* HÀNH GIẢ TĨNH TÂM THIỀN ĐỊNH & THỞ CHÁNH NIỆM */
         .prayer-upper-body {
             transform-origin: 85px 158px;
             animation: prayerGentleBreath 4s ease-in-out infinite;
@@ -1231,35 +1231,6 @@
         @keyframes prayerGentleBreath {
             0%, 100% { transform: translateY(0) scale(1, 1); }
             50%      { transform: translateY(-1.8px) scale(1.012, 1.018); }
-        }
-        /* NGÓN TAY CÁI CỬ ĐỘNG LẦN TỪNG HẠT TRÀNG THEO CHIỀU DỌC */
-        .mala-thumb-motion {
-            transform-origin: 90px 105px;
-            animation: thumbFlick 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-            will-change: transform;
-        }
-        @keyframes thumbFlick {
-            0%   { transform: translateY(0) rotate(0deg); }
-            35%  { transform: translateY(3.5px) rotate(8deg); } /* ngón cái gạt hạt trượt xuống */
-            65%  { transform: translateY(-1px) rotate(-4deg); } /* ngón cái nhấc nhẹ đón hạt mới */
-            100% { transform: translateY(0) rotate(0deg); }
-        }
-        /* CHUỖI HẠT TRÀNG TRƯỢT DỌC QUA KẼ TAY LIÊN TỤC VÀ NHỊP NHÀNG */
-        .sliding-beads-strand {
-            animation: slideBeadsDown 2s linear infinite;
-            will-change: transform;
-        }
-        @keyframes slideBeadsDown {
-            0%   { transform: translateY(0px); }
-            100% { transform: translateY(10px); }
-        }
-        /* ÁNH SÁNG CHÁNH NIỆM TẠI ĐIỂM TIẾP XÚC NGÓN TAY VÀ HẠT TRÀNG */
-        .bead-glow-effect {
-            animation: activeBeadPulse 2s ease-in-out infinite;
-        }
-        @keyframes activeBeadPulse {
-            0%, 100% { filter: drop-shadow(0 0 1px #fbbf24); opacity: 0.75; }
-            35%      { filter: drop-shadow(0 0 4.5px #fde047); opacity: 1; }
         }
         .prayer-sim-meta {
             display: flex;
@@ -1901,7 +1872,7 @@
                             <!-- KHUNG TƯƠNG TÁC: CỘT MÔ PHỎNG HÌNH NGƯỜI CÚI LẠY & CỘT NỘI DUNG VĂN KHẤN -->
                             <div class="stage-prayer-body-grid">
                                 <!-- CỘT 1: HÌNH NGƯỜI MÔ PHỎNG CÚI LẠY THÀNH KÍNH (ÁO LAM PHẬT TỬ) -->
-                                <div class="prayer-pilgrim-sim" id="prayerPilgrimSim" onclick="triggerThreeBows(event)" title="Hành giả tĩnh tâm lần tràng hạt niệm Phật">
+                                <div class="prayer-pilgrim-sim" id="prayerPilgrimSim" onclick="triggerThreeBows(event)" title="Hành giả tĩnh tâm niệm Phật thành kính">
                                     <div class="prayer-aura-glow"></div>
                                     
                                     <!-- SVG HÀNH GIẢ ÁO LAM QUỲ TRÊN BỒ ĐOÀN SEN, CHẮP TAY BÚP SEN & CÚI LẠY -->
@@ -1920,16 +1891,6 @@
                                                 <stop offset="0%" stop-color="#b45309"/>
                                                 <stop offset="100%" stop-color="#78350f"/>
                                             </linearGradient>
-                                            <radialGradient id="woodBeadGrad" cx="35%" cy="35%" r="65%">
-                                                <stop offset="0%" stop-color="#fde047"/>
-                                                <stop offset="40%" stop-color="#d97706"/>
-                                                <stop offset="100%" stop-color="#78350f"/>
-                                            </radialGradient>
-                                            <radialGradient id="guruBeadGrad" cx="35%" cy="35%" r="65%">
-                                                <stop offset="0%" stop-color="#fef08a"/>
-                                                <stop offset="45%" stop-color="#ea580c"/>
-                                                <stop offset="100%" stop-color="#991b1b"/>
-                                            </radialGradient>
                                         </defs>
 
                                         <!-- TỌA CỤ / BỒ ĐOÀN SEN ĐỆM QUỲ HÀNH LỄ -->
@@ -1963,57 +1924,14 @@
                                             <!-- NỤ CƯỜI TỰ TẠI AN NHIÊN -->
                                             <path d="M 82 64 Q 85 66 88 64" stroke="#b45309" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 
-                                            <!-- CÁNH TAY TRÁI ĐƯA VỀ BỤNG DƯỚI ĐỠ CHUỖI TRÀNG HẠT -->
-                                            <path d="M 64 86 C 53 103, 56 128, 73 138 C 77 138, 81 128, 76 116 Z" fill="#64748b"/>
-                                            <!-- Bàn tay trái khum nhẹ đỡ đáy chuỗi tràng hạt thanh tịnh -->
-                                            <ellipse cx="78" cy="138" rx="7.5" ry="5.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.8" transform="rotate(20, 78, 138)"/>
+                                            <!-- HAI CÁNH TAY ÁO LAM & ĐÔI BÀN TAY CHẮP BÚP SEN (HIỆP CHƯỞNG) -->
+                                            <path d="M 65 86 C 54 103, 58 126, 74 128 C 77 128, 79 117, 77 107 Z" fill="#64748b"/>
+                                            <path d="M 105 86 C 116 103, 112 126, 96 128 C 93 128, 91 117, 93 107 Z" fill="#64748b"/>
 
-                                            <!-- CÁNH TAY PHẢI CO LÊN TRƯỚC NGỰC, BÀN TAY ĐẶT DỌC -->
-                                            <path d="M 106 86 C 117 101, 114 122, 100 126 C 96 126, 92 114, 94 104 Z" fill="#64748b"/>
-
-                                            <!-- SỢI DÂY CHUỖI HẠT RỦ DỌC NỐI TỪ TAY PHẢI XUỐNG TAY TRÁI -->
-                                            <path d="M 88 100 C 82 100, 74 126, 78 143 C 82 153, 91 153, 94 140 C 97 125, 95 100, 88 100" stroke="#78350f" stroke-width="1" fill="none" opacity="0.6"/>
-
-                                            <!-- HẠT CHỦ (GURU BEAD) VÀ TUA RUA Ở ĐÁY CHUỖI DƯỚI TAY TRÁI -->
-                                            <circle cx="83" cy="150" r="3.6" fill="url(#guruBeadGrad)" stroke="#78350f" stroke-width="0.6"/>
-                                            <path d="M 83 153.6 L 83 164" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round"/>
-                                            <path d="M 81.5 156 L 81 163" stroke="#f59e0b" stroke-width="0.9"/>
-                                            <path d="M 84.5 156 L 85 163" stroke="#f59e0b" stroke-width="0.9"/>
-                                            <circle cx="83" cy="154" r="1.2" fill="#fbbf24"/>
-
-                                            <!-- VÒNG CHUỖI TRÀNG HẠT: CÁC HẠT TRƯỢT DỌC QUA NGÓN TAY LIÊN TỤC -->
-                                            <!-- Nhánh phải: Các hạt trượt dọc qua tay phải xuống dưới -->
-                                            <g class="sliding-beads-strand">
-                                                <circle cx="90" cy="85" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="91" cy="95" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="91" cy="105" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="90" cy="115" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="88" cy="125" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="85" cy="135" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="81" cy="145" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                            </g>
-
-                                            <!-- Nhánh trái: Hạt chuỗi đi ngược lên tay phải -->
-                                            <g>
-                                                <circle cx="76" cy="132" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="77" cy="122" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="80" cy="112" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="84" cy="103" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                            </g>
-
-                                            <!-- BÀN TAY PHẢI ĐẶT DỌC THẲNG ĐỨNG TRƯỚC NGỰC (TAY LẦN TRÀNG HẠT ĐỂ DỌC) -->
-                                            <g id="rightHandVert">
-                                                <path d="M 87 124 C 84 116, 86 100, 89 96 C 91 96, 94 100, 93 124 Z" fill="#fcd34d" stroke="#b45309" stroke-width="0.8"/>
-                                                <line x1="89" y1="97" x2="89" y2="114" stroke="#b45309" stroke-width="0.8" opacity="0.7"/>
-                                                <line x1="91" y1="100" x2="91" y2="116" stroke="#b45309" stroke-width="0.8" opacity="0.6"/>
-                                                <path d="M 85 123 Q 90 126 95 123" stroke="#475569" stroke-width="1.2" fill="none"/>
-                                            </g>
-
-                                            <!-- NGÓN TAY CÁI CỬ ĐỘNG LẦN HẠT (GẠT HẠT TRƯỢT XUỐNG DỌC THEO CHUỖI) -->
-                                            <g class="mala-thumb-motion">
-                                                <path d="M 88 108 C 85 106, 85 102, 88 101 C 90 101, 92 104, 90 110 Z" fill="#fde68a" stroke="#b45309" stroke-width="0.7"/>
-                                                <circle class="bead-glow-effect" cx="89" cy="105" r="3.8" fill="#fbbf24" opacity="0.75"/>
-                                            </g>
+                                            <!-- BÀN TAY CHẮP HÌNH HOA SEN TRƯỚC NGỰC -->
+                                            <path d="M 81 120 C 79 111, 83 99, 85 96 C 87 99, 91 111, 89 120 Z" fill="#fcd34d" stroke="#b45309" stroke-width="0.8"/>
+                                            <line x1="85" y1="97" x2="85" y2="120" stroke="#b45309" stroke-width="1" opacity="0.6"/>
+                                            <circle cx="85" cy="96" r="3.5" fill="#fbbf24" opacity="0.85"/>
                                         </g>
 
                                         <!-- LƯ TRẦM HƯƠNG ĐỒNG BÊN CẠNH VỚI LÀN KHÓI TRẦM THƠM -->
@@ -2033,7 +1951,7 @@
                                     <!-- TRẠNG THÁI HÀNH GIẢ TĨNH TÂM -->
                                     <div class="prayer-sim-meta">
                                         <div class="prayer-sim-status" id="prayerSimStatus">
-                                            <span id="prayerSimIcon">📿</span> <span id="prayerSimText">Lần tràng hạt niệm Phật</span>
+                                            <span id="prayerSimIcon">🙏</span> <span id="prayerSimText">Tĩnh tâm niệm Phật</span>
                                         </div>
                                     </div>
                                 </div>
@@ -2924,7 +2842,7 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
 
             const statusElem = document.getElementById('prayerSimText');
             playMoStation();
-            if (statusElem) statusElem.textContent = '📿 Nam Mô A Di Đà Phật...';
+            if (statusElem) statusElem.textContent = '🙏 Nam Mô A Di Đà Phật...';
 
             setTimeout(() => {
                 isThreeBowsRunning = false;
@@ -2960,7 +2878,7 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             if (simBox) simBox.classList.add('is-bowing');
 
             const statusElem = document.getElementById('prayerSimText');
-            if (statusElem) statusElem.textContent = 'Đang lần tràng hạt niệm Phật & cầu nguyện...';
+            if (statusElem) statusElem.textContent = 'Đang thành tâm cầu nguyện...';
 
             // Chuyển động lạy Phật thành kính tự động diễn ra liên tục
 
