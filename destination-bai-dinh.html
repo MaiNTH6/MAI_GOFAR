@@ -1232,34 +1232,33 @@
             0%, 100% { transform: translateY(0) scale(1, 1); }
             50%      { transform: translateY(-1.8px) scale(1.012, 1.018); }
         }
-        /* CHUYỂN ĐỘNG NGÓN TAY CÁI LẦN TỪNG HẠT TRÀNG */
-        .mala-thumb {
-            transform-origin: 88px 122px;
-            animation: thumbRollBead 1.8s ease-in-out infinite;
+        /* CHUYỂN ĐỘNG NGÓN TAY CÁI LẦN TRÀNG HẠT ĐỂ DỌC */
+        .mala-thumb-vertical {
+            transform-origin: 87px 112px;
+            animation: thumbRollVertical 2s ease-in-out infinite;
             will-change: transform;
         }
-        @keyframes thumbRollBead {
-            0%, 100% { transform: rotate(0deg); }
-            35%      { transform: rotate(-8deg) translate(-0.8px, -1px); }
-            70%      { transform: rotate(5deg) translate(0.5px, 0.8px); }
+        @keyframes thumbRollVertical {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-2.2px); }
         }
-        /* CHUYỂN ĐỘNG VÒNG CHUỖI TRÀNG HẠT BỒ ĐỀ */
-        .mala-strand {
-            transform-origin: 85px 128px;
-            animation: malaBeadShift 3.6s ease-in-out infinite;
+        /* CHUỖI TRÀNG HẠT BỒ ĐỀ DÁNG DỌC NHẸ NHÀNG LAN TOẢ */
+        .mala-strand-vertical {
+            transform-origin: 85px 115px;
+            animation: malaBeadShiftVertical 4s ease-in-out infinite;
             will-change: transform;
         }
-        @keyframes malaBeadShift {
-            0%, 100% { transform: rotate(0deg); }
-            50%      { transform: rotate(3deg); }
+        @keyframes malaBeadShiftVertical {
+            0%, 100% { transform: scale(1, 1); }
+            50%      { transform: scale(1.015, 1.025); }
         }
         /* HẠT TRÀNG PHÁT SÁNG THEO NHỊP NIỆM PHẬT */
-        .active-bead {
-            animation: beadGlowPulse 1.8s ease-in-out infinite;
+        .active-bead-vert {
+            animation: beadGlowPulse 2s ease-in-out infinite;
         }
         @keyframes beadGlowPulse {
             0%, 100% { fill: #f59e0b; filter: drop-shadow(0 0 1px #fbbf24); }
-            50%      { fill: #fef08a; filter: drop-shadow(0 0 3.5px #fde047); }
+            50%      { fill: #fef08a; filter: drop-shadow(0 0 4px #fde047); }
         }
         .prayer-sim-meta {
             display: flex;
@@ -1963,47 +1962,60 @@
                                             <!-- NỤ CƯỜI TỰ TẠI AN NHIÊN -->
                                             <path d="M 82 64 Q 85 66 88 64" stroke="#b45309" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 
-                                            <!-- HAI TAY ÁO TRÀNG LAM NÂNG TRƯỚC BỤNG ĐỂ LẦN TRÀNG HẠT -->
-                                            <path d="M 64 86 C 53 104, 57 126, 73 131 C 77 131, 80 120, 77 110 Z" fill="#64748b"/>
-                                            <path d="M 106 86 C 117 104, 113 126, 97 131 C 93 131, 90 120, 93 110 Z" fill="#64748b"/>
+                                            <!-- HAI CÁNH TAY ÁO LAM KHÉP CHẮP TAY DỌC TRƯỚC NGỰC -->
+                                            <path d="M 65 86 C 54 103, 58 126, 74 128 C 77 128, 79 117, 77 107 Z" fill="#64748b"/>
+                                            <path d="M 105 86 C 116 103, 112 126, 96 128 C 93 128, 91 117, 93 107 Z" fill="#64748b"/>
 
-                                            <!-- HAI BÀN TAY CHẮP NHẸ NÂNG CHUỖI TRÀNG HẠT -->
-                                            <ellipse cx="79" cy="126" rx="6.5" ry="5.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.8"/>
-                                            <ellipse cx="91" cy="126" rx="6.5" ry="5.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.8"/>
-
-                                            <!-- CHUỖI TRÀNG HẠT BỒ ĐỀ (MALA BEADS STRAND) -->
-                                            <g class="mala-strand">
-                                                <!-- VÒNG DÂY CHUỖI HẠT UỐN CONG DUYÊN DÁNG TRƯỚC VẠT ÁO -->
-                                                <path d="M 77 125 C 70 133, 72 147, 85 149 C 98 147, 100 133, 93 125" stroke="#78350f" stroke-width="1.2" fill="none" stroke-dasharray="0.5 1"/>
+                                            <!-- CHUỖI TRÀNG HẠT BỒ ĐỀ THON DỌC THEO THÂN (MALA STRAND DỌC) -->
+                                            <g class="mala-strand-vertical">
+                                                <!-- DÂY CHUỖI HẠT DÁNG DỌC (OVAL DỌC) -->
+                                                <path d="M 85 96 C 74 96, 72 135, 85 146 C 98 135, 96 96, 85 96" stroke="#78350f" stroke-width="1" fill="none" stroke-dasharray="0.5 1"/>
                                                 
-                                                <!-- CÁC HẠT TRÀNG BỒ ĐỀ NÂU GỖ ẤM ÁP -->
-                                                <circle cx="75" cy="125" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="72" cy="130" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="72" cy="136" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="75" cy="142" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="80" cy="147" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <!-- CÁC HẠT TRÀNG XẾP THON DỌC HAI BÊN TAY -->
+                                                <!-- Vòng chuỗi hạt bên trái -->
+                                                <circle cx="80" cy="100" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="77" cy="108" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="75" cy="117" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="76" cy="126" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="79" cy="135" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="82" cy="141" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
 
-                                                <!-- HẠT CHỦ / HẠT MẪU (GURU BEAD) Ở TRUNG TÂM -->
-                                                <circle cx="85" cy="149" r="3.6" fill="url(#guruBeadGrad)" stroke="#78350f" stroke-width="0.6"/>
-                                                <!-- TUA RUA TƠ CÁT TƯỜNG ĐỎ VÀNG RỦ XUỐNG -->
-                                                <path d="M 85 152.5 L 85 162" stroke="#dc2626" stroke-width="1.6" stroke-linecap="round"/>
-                                                <path d="M 83.5 155 L 83 161" stroke="#f59e0b" stroke-width="0.8"/>
-                                                <path d="M 86.5 155 L 87 161" stroke="#f59e0b" stroke-width="0.8"/>
-                                                <circle cx="85" cy="153" r="1.2" fill="#fbbf24"/>
+                                                <!-- HẠT CHỦ / HẠT MẪU (GURU BEAD) Ở ĐÁY CHUỖI DỌC -->
+                                                <circle cx="85" cy="146" r="3.6" fill="url(#guruBeadGrad)" stroke="#78350f" stroke-width="0.6"/>
+                                                <!-- TUA RUA TƠ CÁT TƯỜNG ĐỎ VÀNG RỦ DỌC -->
+                                                <path d="M 85 149.6 L 85 160" stroke="#dc2626" stroke-width="1.6" stroke-linecap="round"/>
+                                                <path d="M 83.5 152 L 83 159" stroke="#f59e0b" stroke-width="0.8"/>
+                                                <path d="M 86.5 152 L 87 159" stroke="#f59e0b" stroke-width="0.8"/>
+                                                <circle cx="85" cy="150.5" r="1.2" fill="#fbbf24"/>
 
-                                                <circle cx="90" cy="147" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="95" cy="142" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="98" cy="136" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="98" cy="130" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="95" cy="125" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <!-- Vòng chuỗi hạt bên phải -->
+                                                <circle cx="88" cy="141" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="91" cy="135" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="94" cy="126" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="95" cy="117" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="93" cy="108" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="90" cy="100" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
 
-                                                <!-- HẠT TRÀNG Ở ĐIỂM TIẾP XÚC NGÓN TAY (ĐANG LẦN QUA) -->
-                                                <circle class="active-bead" cx="85" cy="124" r="3.2" fill="#f59e0b" stroke="#78350f" stroke-width="0.6"/>
+                                                <!-- HẠT ĐỈNH TRÊN CÙNG -->
+                                                <circle cx="85" cy="96" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
                                             </g>
 
-                                            <!-- NGÓN TAY CÁI LẦN HẠT CHUYỂN ĐỘNG -->
-                                            <g class="mala-thumb">
-                                                <ellipse cx="88" cy="122" rx="3.2" ry="2.2" fill="#fde68a" stroke="#b45309" stroke-width="0.6" transform="rotate(-15, 88, 122)"/>
+                                            <!-- ĐÔI BÀN TAY CHẮP DỌC HÌNH HOA SEN / BÚP SEN TRƯỚC NGỰC -->
+                                            <g id="prayerHandsVertical">
+                                                <!-- Thân hai bàn tay chắp đứng thẳng dọc -->
+                                                <path d="M 80 125 C 78 114, 82 99, 85 96 C 88 99, 92 114, 90 125 Z" fill="#fcd34d" stroke="#b45309" stroke-width="0.8"/>
+                                                <!-- Đường khép giữa hai lòng bàn tay chắp dọc -->
+                                                <line x1="85" y1="97" x2="85" y2="125" stroke="#b45309" stroke-width="1" opacity="0.6"/>
+                                                <!-- Búp sen chắp đầu ngón tay -->
+                                                <circle cx="85" cy="96" r="3.2" fill="#fbbf24" opacity="0.85"/>
+                                                <!-- Nếp gấp cổ tay áo -->
+                                                <path d="M 77 124 Q 85 128 93 124" stroke="#475569" stroke-width="1.2" fill="none"/>
+                                            </g>
+
+                                            <!-- NGÓN TAY CÁI BÊN PHẢI LẦN TỪNG HẠT TRÀNG DỌC -->
+                                            <g class="mala-thumb-vertical">
+                                                <path d="M 88 110 C 91 110, 93 115, 91 119 C 89 120, 87 117, 87 112 Z" fill="#fde68a" stroke="#b45309" stroke-width="0.7"/>
+                                                <circle class="active-bead-vert" cx="95" cy="117" r="3.2" fill="#f59e0b" stroke="#78350f" stroke-width="0.6"/>
                                             </g>
                                         </g>
 
