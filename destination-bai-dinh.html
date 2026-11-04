@@ -1005,8 +1005,9 @@
         .stage-interactive-grid {
             display: grid;
             grid-template-columns: 1.15fr 1fr;
-            gap: 1.5rem;
+            gap: 1.25rem;
             margin-bottom: 1.5rem;
+            align-items: stretch;
         }
         @media (max-width: 868px) {
             .stage-interactive-grid {
@@ -1017,14 +1018,15 @@
             position: relative;
             border-radius: var(--radius-md);
             overflow: hidden;
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-            min-height: 240px;
+            border: 1px solid rgba(251, 191, 36, 0.35);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            height: 100%;
+            min-height: 270px;
+            display: flex;
         }
         .stage-photo-img {
             width: 100%;
             height: 100%;
-            max-height: 320px;
             object-fit: cover;
             display: block;
             transition: transform 0.6s ease;
@@ -1035,42 +1037,47 @@
         .stage-photo-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 40%, rgba(8, 18, 26, 0.95) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 45%, rgba(6, 16, 26, 0.92) 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 1.2rem;
+            padding: 1.2rem 1.4rem;
+            pointer-events: none;
         }
         .stage-sub-badge {
             font-size: 0.78rem;
             color: var(--accent-gold);
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 0.25rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
         }
         .stage-mantra-quote {
             font-style: italic;
-            font-size: 0.92rem;
-            color: #fef08a;
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-weight: 500;
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
         }
 
-        /* RITUAL CONTROLS COLUMN */
         .stage-rituals-column {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            justify-content: space-between;
+            gap: 0.85rem;
         }
         .ritual-action-card {
-            background: rgba(19, 45, 66, 0.7);
-            border: 1px solid rgba(251, 191, 36, 0.25);
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(251, 191, 36, 0.22);
             border-radius: var(--radius-sm);
-            padding: 0.9rem 1.1rem;
+            padding: 0.95rem 1.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 0.8rem;
+            gap: 1rem;
             transition: all 0.25s ease;
+            flex: 1;
         }
         .ritual-action-card:hover {
             border-color: var(--accent-gold);
@@ -1841,25 +1848,7 @@
                                     <button type="button" class="btn-ritual-act" onclick="pilgrimActBow(event)">Đảnh Lễ (+1 Lạy)</button>
                                 </div>
 
-                                <!-- ACTION 4: ĐỌC VĂN KHẤN ONLINE & SAO CHÉP -->
-                                <div class="ritual-action-card">
-                                    <div class="ritual-card-left">
-                                        <div class="ritual-btn-icon">🔊</div>
-                                        <div>
-                                            <div class="ritual-btn-title">Đọc Văn Khấn Online</div>
-                                            <div class="ritual-btn-sub">Trì tụng văn khấn kèm nhịp mõ thiền tĩnh tâm</div>
-                                        </div>
-                                    </div>
-                                    <div style="display: flex; gap: 0.4rem;">
-                                        <button type="button" class="btn-ritual-act" id="btnRitualReadAct" onclick="toggleReadPrayerOnline()" title="Bấm để đọc văn khấn online">
-                                            <span id="ritualReadActIcon">🔊</span> <span id="ritualReadActText">Đọc Online</span>
-                                        </button>
-                                        <button type="button" class="btn-ritual-act" onclick="copyCurrentStationPrayer()" title="Sao chép bài khấn" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(251,191,36,0.3); color: var(--accent-gold);">
-                                            📋
-                                        </button>
-                                    </div>
                                 </div>
-                            </div>
                         </div>
 
                         <!-- KHỐI DI SẢN KIẾN TRÚC & HƯỚNG DẪN NGHI THỨC CHI TIẾT TỪNG BAN (GỘP TỪ ĐIỂM 1-9) -->
@@ -2937,9 +2926,7 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             const btnOnline = document.getElementById('btnReadPrayerOnline');
             const iconOnline = document.getElementById('readPrayerIcon');
             const textOnline = document.getElementById('readPrayerText');
-            const btnAct = document.getElementById('btnRitualReadAct');
-            const iconAct = document.getElementById('ritualReadActIcon');
-            const textAct = document.getElementById('ritualReadActText');
+
             const prayerBox = document.getElementById('stagePrayerTextBox');
 
             if (btnOnline) {
@@ -2947,11 +2934,7 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
                 if (iconOnline) iconOnline.textContent = '⏸️';
                 if (textOnline) textOnline.textContent = 'Dừng Đọc';
             }
-            if (btnAct) {
-                btnAct.classList.add('reading');
-                if (iconAct) iconAct.textContent = '⏸️';
-                if (textAct) textAct.textContent = 'Dừng Đọc';
-            }
+
             if (prayerBox) {
                 prayerBox.classList.add('is-reading');
             }
@@ -3038,9 +3021,7 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             const btnOnline = document.getElementById('btnReadPrayerOnline');
             const iconOnline = document.getElementById('readPrayerIcon');
             const textOnline = document.getElementById('readPrayerText');
-            const btnAct = document.getElementById('btnRitualReadAct');
-            const iconAct = document.getElementById('ritualReadActIcon');
-            const textAct = document.getElementById('ritualReadActText');
+
             const prayerBox = document.getElementById('stagePrayerTextBox');
 
             if (btnOnline) {
@@ -3048,11 +3029,7 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
                 if (iconOnline) iconOnline.textContent = '🔊';
                 if (textOnline) textOnline.textContent = 'Đọc Văn Khấn Online';
             }
-            if (btnAct) {
-                btnAct.classList.remove('reading');
-                if (iconAct) iconAct.textContent = '🔊';
-                if (textAct) textAct.textContent = 'Đọc Online';
-            }
+
             if (prayerBox) {
                 prayerBox.classList.remove('is-reading');
             }
