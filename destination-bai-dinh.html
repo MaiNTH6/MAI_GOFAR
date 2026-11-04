@@ -1211,8 +1211,8 @@
             animation: auraPulseAutoThreeBows 8.8s ease-in-out infinite;
         }
         @keyframes auraPulseAutoThreeBows {
-            0%, 28%, 61%, 94%, 100% { transform: scale(0.95); opacity: 0.45; }
-            17%, 48%, 81%           { transform: scale(1.35); opacity: 0.95; }
+            0%, 29%, 33%, 62%, 66%, 95%, 100% { transform: scale(0.95); opacity: 0.45; }
+            16%, 21%, 49%, 54%, 82%, 87%     { transform: scale(1.4); opacity: 0.95; }
         }
         .pilgrim-bow-svg {
             width: 155px;
@@ -1220,35 +1220,59 @@
             display: block;
             filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
         }
-        /* HÀNH ĐỘNG CÚI LẠY 3 LẦN TỰ ĐỘNG LIÊN TỤC (LẠY 1 -> LẠY 2 -> LẠY 3 -> NGHỈ -> LẶP LẠI) */
+        /* HÀNH ĐỘNG CÚI LẠY 3 LẦN TỰ ĐỘNG THÀNH KÍNH (CÚI GẬP XUỐNG BỒ ĐOÀN, KHÔNG NGHIÊNG NGƯỜI) */
         .prayer-upper-body {
-            transform-origin: 85px 150px;
+            transform-origin: 85px 158px;
             animation: autoKowtowThreeBows 8.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
             will-change: transform;
         }
+        .prayer-face {
+            animation: prayerFaceFade 8.8s ease-in-out infinite;
+            will-change: opacity;
+        }
         @keyframes autoKowtowThreeBows {
-            /* LẠY LẦN 1: Kính Phật (0s -> 2.5s) */
-            0%   { transform: rotate(0deg) translateY(0); }
-            3%   { transform: rotate(0deg) translateY(0); }
-            11%  { transform: rotate(46deg) translateY(12px); }
-            17%  { transform: rotate(50deg) translateY(14px); }
-            25%  { transform: rotate(0deg) translateY(0); }
-            28%  { transform: rotate(0deg) translateY(0); }
+            /* LẠY LẦN 1: Kính Phật (0% -> 29%) - Cúi thẳng xuống bồ đoàn đảnh lễ */
+            0%, 3%   { transform: translateY(0) scale(1, 1); }
+            11%      { transform: translateY(8px) scale(1.06, 0.72); }
+            16%, 21% { transform: translateY(16px) scale(1.15, 0.45); } /* Cúi sát trán xuống bồ đoàn */
+            26%      { transform: translateY(6px) scale(1.04, 0.84); }
+            29%      { transform: translateY(0) scale(1, 1); }
 
-            /* LẠY LẦN 2: Kính Pháp (2.9s -> 5.4s) */
-            33%  { transform: rotate(0deg) translateY(0); }
-            42%  { transform: rotate(46deg) translateY(12px); }
-            48%  { transform: rotate(50deg) translateY(14px); }
-            57%  { transform: rotate(0deg) translateY(0); }
-            61%  { transform: rotate(0deg) translateY(0); }
+            /* LẠY LẦN 2: Kính Pháp (33% -> 62%) */
+            33%, 36% { transform: translateY(0) scale(1, 1); }
+            44%      { transform: translateY(8px) scale(1.06, 0.72); }
+            49%, 54% { transform: translateY(16px) scale(1.15, 0.45); } /* Cúi sát trán xuống bồ đoàn */
+            59%      { transform: translateY(6px) scale(1.04, 0.84); }
+            62%      { transform: translateY(0) scale(1, 1); }
 
-            /* LẠY LẦN 3: Kính Tăng (6.6s -> 8.8s) */
-            66%  { transform: rotate(0deg) translateY(0); }
-            75%  { transform: rotate(50deg) translateY(13px); }
-            81%  { transform: rotate(52deg) translateY(15px); }
-            90%  { transform: rotate(0deg) translateY(0); }
-            94%  { transform: rotate(0deg) translateY(0); }
-            100% { transform: rotate(0deg) translateY(0); }
+            /* LẠY LẦN 3: Kính Tăng (66% -> 95%) */
+            66%, 69% { transform: translateY(0) scale(1, 1); }
+            77%      { transform: translateY(8px) scale(1.06, 0.72); }
+            82%, 87% { transform: translateY(16px) scale(1.15, 0.45); } /* Cúi sát trán xuống bồ đoàn */
+            92%      { transform: translateY(6px) scale(1.04, 0.84); }
+            95%, 100%{ transform: translateY(0) scale(1, 1); }
+        }
+        @keyframes prayerFaceFade {
+            /* LẠY LẦN 1 */
+            0%, 4%   { opacity: 1; }
+            11%      { opacity: 0.5; }
+            16%, 21% { opacity: 0; } /* Mặt úp sát bồ đoàn khi đảnh lễ */
+            26%      { opacity: 0.6; }
+            29%      { opacity: 1; }
+
+            /* LẠY LẦN 2 */
+            33%, 37% { opacity: 1; }
+            44%      { opacity: 0.5; }
+            49%, 54% { opacity: 0; }
+            59%      { opacity: 0.6; }
+            62%      { opacity: 1; }
+
+            /* LẠY LẦN 3 */
+            66%, 70% { opacity: 1; }
+            77%      { opacity: 0.5; }
+            82%, 87% { opacity: 0; }
+            92%      { opacity: 0.6; }
+            95%, 100%{ opacity: 1; }
         }
         .prayer-sim-meta {
             display: flex;
@@ -1931,16 +1955,18 @@
                                             <path d="M 76 77 Q 85 91 94 105" stroke="#e2e8f0" stroke-width="1.8" fill="none" opacity="0.85"/>
                                             <path d="M 94 77 Q 85 91 78 105" stroke="#cbd5e1" stroke-width="1.8" fill="none" opacity="0.85"/>
 
-                                            <!-- CỔ & KHUÔN MẶT TĨNH TÂM THÀNH KÍNH -->
-                                            <rect x="81" y="68" width="8" height="12" rx="4" fill="#fcd34d"/>
-                                            <ellipse cx="85" cy="54" rx="15" ry="18" fill="#fde68a"/>
-                                            <!-- MÁI TÓC BUỘC GỌN TRANG NGHIÊM -->
+                                            <!-- CỔ & KHUÔN MẶT TĨNH TÂM THÀNH KÍNH (ẨN KHI CÚI ĐẦU XUỐNG BỒ ĐOÀN) -->
+                                            <g class="prayer-face" id="prayerFace">
+                                                <rect x="81" y="68" width="8" height="12" rx="4" fill="#fcd34d"/>
+                                                <ellipse cx="85" cy="54" rx="15" ry="18" fill="#fde68a"/>
+                                                <!-- ĐÔI MẮT NHẮM THÀNH TÂM NIỆM PHẬT -->
+                                                <path d="M 76 54 Q 80 57 84 54" stroke="#78350f" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                                                <path d="M 86 54 Q 90 57 94 54" stroke="#78350f" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                                                <!-- NỤ CƯỜI TỰ TẠI AN NHIÊN -->
+                                                <path d="M 82 64 Q 85 66 88 64" stroke="#b45309" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                                            </g>
+                                            <!-- MÁI TÓC BUỘC GỌN TRANG NGHIÊM (ĐỈNH ĐẦU CÚI XUỐNG BỒ ĐOÀN) -->
                                             <path d="M 70 52 C 70 37, 100 37, 100 52 C 98 42, 72 42, 70 52 Z" fill="#1e293b"/>
-                                            <!-- ĐÔI MẮT NHẮM THÀNH TÂM NIỆM PHẬT -->
-                                            <path d="M 76 54 Q 80 57 84 54" stroke="#78350f" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                                            <path d="M 86 54 Q 90 57 94 54" stroke="#78350f" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                                            <!-- NỤ CƯỜI TỰ TẠI AN NHIÊN -->
-                                            <path d="M 82 64 Q 85 66 88 64" stroke="#b45309" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 
                                             <!-- HAI CÁNH TAY ÁO LAM & ĐÔI BÀN TAY CHẮP BÚP SEN (HIỆP CHƯỞNG) -->
                                             <path d="M 65 86 C 54 103, 58 126, 74 128 C 77 128, 79 117, 77 107 Z" fill="#64748b"/>
@@ -2858,73 +2884,19 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             if (isThreeBowsRunning) return;
             isThreeBowsRunning = true;
 
-            const simBox = document.getElementById('prayerPilgrimSim');
             const statusElem = document.getElementById('prayerSimText');
-            const countElem = document.getElementById('prayerBowCount');
-            const btnBow = document.getElementById('btnPrayerBowAct');
+            playMoStation();
+            if (statusElem) statusElem.textContent = '🙏 Đang thành tâm đảnh lễ Tam Bảo...';
 
-            if (simBox) {
-                simBox.classList.remove('is-bowing-3-times');
-                void simBox.offsetWidth; // trigger reflow
-                simBox.classList.add('is-bowing-3-times');
-            }
-
-            if (btnBow) {
-                btnBow.style.opacity = '0.7';
-                btnBow.style.pointerEvents = 'none';
-            }
-
-            // --- LẠY 1: Kính Phật (1.2s) ---
-            if (statusElem) statusElem.textContent = 'Đang lạy Lần 1 (Kính Phật)...';
             setTimeout(() => {
-                playMoStation();
-                totalPrayerBows++;
-                pilgrimStats.bows++;
-                pilgrimStats.merit += 1;
-                if (countElem) countElem.textContent = totalPrayerBows;
-                const rect = simBox ? simBox.getBoundingClientRect() : { left: window.innerWidth / 2, top: window.innerHeight / 2 };
-                createPilgrimFlyText(rect.left + 70, rect.top + 40, '+1 Lạy (Kính Phật) 🙏');
-            }, 1200);
-
-            // --- LẠY 2: Kính Pháp (3.9s) ---
-            setTimeout(() => {
-                if (statusElem) statusElem.textContent = 'Đang lạy Lần 2 (Kính Pháp)...';
-                playMoStation();
-                totalPrayerBows++;
-                pilgrimStats.bows++;
-                pilgrimStats.merit += 1;
-                if (countElem) countElem.textContent = totalPrayerBows;
-                const rect = simBox ? simBox.getBoundingClientRect() : { left: window.innerWidth / 2, top: window.innerHeight / 2 };
-                createPilgrimFlyText(rect.left + 70, rect.top + 40, '+1 Lạy (Kính Pháp) 🙏');
-            }, 3900);
-
-            // --- LẠY 3: Kính Tăng (6.6s) ---
-            setTimeout(() => {
-                if (statusElem) statusElem.textContent = 'Đang lạy Lần 3 (Kính Tăng)...';
                 ringTempleBellStation();
-                totalPrayerBows++;
-                pilgrimStats.bows++;
-                pilgrimStats.merit += 1;
-                if (countElem) countElem.textContent = totalPrayerBows;
-                const rect = simBox ? simBox.getBoundingClientRect() : { left: window.innerWidth / 2, top: window.innerHeight / 2 };
-                createPilgrimFlyText(rect.left + 70, rect.top + 40, '+1 Lạy (Kính Tăng) 🙏');
-            }, 6600);
+            }, 3000);
 
-            // --- HOÀN TẤT 3 LẠY (8.5s) ---
             setTimeout(() => {
-                if (simBox) simBox.classList.remove('is-bowing-3-times');
-                if (btnBow) {
-                    btnBow.style.opacity = '1';
-                    btnBow.style.pointerEvents = 'auto';
-                }
                 isThreeBowsRunning = false;
-                if (statusElem) statusElem.textContent = '✨ Đảnh lễ 3 lạy viên mãn!';
-                showToast('Đã đảnh lễ 3 lạy thành kính trước Tam Bảo (+3 Công Đức)', '✨');
-                setTimeout(() => {
-                    if (!isReadingPrayer && statusElem) {
-                        statusElem.textContent = 'Tĩnh tâm niệm Phật';
-                    }
-                }, 3000);
+                if (!isReadingPrayer && statusElem) {
+                    statusElem.textContent = 'Tĩnh tâm niệm Phật';
+                }
             }, 8500);
         }
 
@@ -2956,17 +2928,7 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             const statusElem = document.getElementById('prayerSimText');
             if (statusElem) statusElem.textContent = 'Đang thành tâm cúi lạy & cầu nguyện...';
 
-            // Tự động tích lũy số lạy theo chu kỳ cúi gập người (mỗi 4.8s một lạy)
-            if (bowCounterInterval) clearInterval(bowCounterInterval);
-            bowCounterInterval = setInterval(() => {
-                if (isReadingPrayer) {
-                    totalPrayerBows++;
-                    const countElem = document.getElementById('prayerBowCount');
-                    if (countElem) countElem.textContent = totalPrayerBows;
-                    pilgrimStats.bows++;
-                    pilgrimStats.merit += 1;
-                }
-            }, 4800);
+            // Chuyển động lạy Phật thành kính tự động diễn ra liên tục
 
             // 3. Cập nhật giao diện nút bấm
             const btnOnline = document.getElementById('btnReadPrayerOnline');
@@ -3056,7 +3018,8 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             const ub = document.getElementById('prayerUpperBody');
             if (ub) {
                 ub.style.transition = 'transform 0.6s ease';
-                ub.style.transform = 'rotate(0deg)';
+                ub.style.transform = '';
+                ub.style.transition = '';
             }
 
             const statusElem = document.getElementById('prayerSimText');
