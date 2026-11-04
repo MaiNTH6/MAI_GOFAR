@@ -1782,45 +1782,44 @@
                                 </div>
                             </div>
 
-                            <!-- RITUAL ACTIONS COLUMN -->
-                            <div class="stage-rituals-column">
-                                <!-- ACTION 1: THẮP NÉN TÂM HƯƠNG -->
+                            <!-- RITUAL ACTIONS COLUMN (DÂNG LỄ / CHIÊM BÁI ĐẶC TRƯNG TỪNG BAN) -->
+                            <div class="stage-rituals-column" id="stageRitualsColumn">
+                                <!-- ACTION 1 -->
                                 <div class="ritual-action-card">
                                     <div class="ritual-card-left">
-                                        <div class="ritual-btn-icon">🕯️</div>
+                                        <div class="ritual-btn-icon">🚪</div>
                                         <div>
-                                            <div class="ritual-btn-title">Dâng Nén Tâm Hương</div>
-                                            <div class="ritual-btn-sub">Khói trầm thơm bay lên Tam Bảo (+2 Công Đức)</div>
+                                            <div class="ritual-btn-title">Nhập Cửa Giả Quan</div>
+                                            <div class="ritual-btn-sub">Bước vào từ cửa bên phải mang tâm niệm từ bi</div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn-ritual-act" onclick="pilgrimActLightIncense(event)">Thắp Hương</button>
+                                    <button type="button" class="btn-ritual-act" onclick="pilgrimActStation(0, 0, event)">Nhập Cổng</button>
                                 </div>
 
-                                <!-- ACTION 2: DÂNG LỄ PHẨM -->
+                                <!-- ACTION 2 -->
                                 <div class="ritual-action-card">
                                     <div class="ritual-card-left">
-                                        <div class="ritual-btn-icon" id="stageOfferingIcon">🙏</div>
+                                        <div class="ritual-btn-icon">🙏</div>
                                         <div>
-                                            <div class="ritual-btn-title" id="stageOfferingTitle">Dâng Lễ Chư Hộ Pháp</div>
-                                            <div class="ritual-btn-sub" id="stageOfferingSub">Thành kính dâng lễ vật thanh tịnh (+2 Công Đức)</div>
+                                            <div class="ritual-btn-title">Xá Chào Chư Hộ Pháp</div>
+                                            <div class="ritual-btn-sub">Chắp tay cung kính trước tượng Thiện Thần 5.5m</div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn-ritual-act" onclick="pilgrimActMakeOffering(event)">Dâng Lễ</button>
+                                    <button type="button" class="btn-ritual-act" onclick="pilgrimActStation(0, 1, event)">Xá Chào</button>
                                 </div>
 
-                                <!-- ACTION 3: ĐẢNH LỄ & NIỆM PHẬT -->
+                                <!-- ACTION 3 -->
                                 <div class="ritual-action-card">
                                     <div class="ritual-card-left">
-                                        <div class="ritual-btn-icon">🙇</div>
+                                        <div class="ritual-btn-icon">✨</div>
                                         <div>
-                                            <div class="ritual-btn-title">Đảnh Lễ & Niệm Phật</div>
-                                            <div class="ritual-btn-sub">Cúi lạy 3 lạy chư Phật và Thánh Thần (+3 Công Đức)</div>
+                                            <div class="ritual-btn-title">Phát Nguyện Nhập Tự</div>
+                                            <div class="ritual-btn-sub">Giữ thân tâm thanh tịnh trước khi bái Phật</div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn-ritual-act" onclick="pilgrimActBow(event)">Đảnh Lễ (+1 Lạy)</button>
+                                    <button type="button" class="btn-ritual-act" onclick="pilgrimActStation(0, 2, event)">Phát Nguyện</button>
                                 </div>
-
-                                </div>
+                            </div>
                         </div>
 
                         <!-- KHỐI DI SẢN KIẾN TRÚC & HƯỚNG DẪN NGHI THỨC CHI TIẾT TỪNG BAN (GỘP TỪ ĐIỂM 1-9) -->
@@ -1988,16 +1987,16 @@
                         </p>
                         <div class="completion-stats-grid">
                             <div>
-                                <div class="comp-stat-num" id="compBows">9</div>
-                                <div class="comp-stat-label">Lạy Đảnh Lễ</div>
+                                <div class="comp-stat-num" id="compBows">9 / 9</div>
+                                <div class="comp-stat-label">Trạm Chiêm Bái</div>
                             </div>
                             <div>
-                                <div class="comp-stat-num" id="compIncense">9</div>
-                                <div class="comp-stat-label">Nén Tâm Hương</div>
+                                <div class="comp-stat-num" id="compIncense">Tân & Cổ</div>
+                                <div class="comp-stat-label">Hai Ngôi Đại Tự</div>
                             </div>
                             <div>
-                                <div class="comp-stat-num" id="compMerit">68</div>
-                                <div class="comp-stat-label">Điểm Phúc Đức</div>
+                                <div class="comp-stat-num" id="compMerit">Viên Mãn</div>
+                                <div class="comp-stat-label">Tâm Nguyện Hành Hương</div>
                             </div>
                         </div>
                         <button type="button" class="btn-comp-close" onclick="closeCompletionModal()">Hoàn Tất Chiêm Bái & Hồi Hướng 🙏</button>
@@ -2317,24 +2316,26 @@
                 sub: "Nhập Gia Vấn Xuất — Gột Rửa Bụi Trần",
                 img: "images/bai_dinh_tam_quan_noi.webp",
                 mantra: "Nam Mô Hộ Pháp Chư Tôn Bồ Tát",
-                offeringTitle: "Dâng Lễ Chư Hộ Pháp",
-                offeringSub: "Khuyến Thiện — Trừng Ác soi tỏ tâm can (+2 Công Đức)",
-                offeringIcon: "🚪",
+                actions: [
+                    { icon: "🚪", title: "Nhập Cửa Giả Quan", sub: "Bước vào từ cửa bên phải mang tâm niệm từ bi", btn: "Nhập Cổng", type: "gate" },
+                    { icon: "🙏", title: "Xá Chào Chư Hộ Pháp", sub: "Chắp tay cung kính trước tượng Thiện Thần 5.5m", btn: "Xá Chào", type: "bow" },
+                    { icon: "✨", title: "Phát Nguyện Hành Hương", sub: "Giữ thân tâm thanh tịnh trước khi bái Phật", btn: "Phát Nguyện", type: "vow" }
+                ],
                 desc: "Cổng Tam Quan Nội sừng sững làm hoàn toàn bằng gỗ tứ thiết, cao 16.5m với 3 tầng mái cong uy nghiêm. Đây là ranh giới phân định giữa cõi tục và cõi Phật thiêng liêng.",
                 guide1: {
-                    "title": "<span>🚪</span> Nghi Thức Vào Cổng",
-                    "items": [
-                                        "<strong>Lối đi:</strong> Đi vào cửa bên phải (Cửa Giả quan — tượng trưng cho lòng từ bi) và đi ra cửa bên trái (Cửa Không quan — tượng trưng cho trí tuệ).",
-                                        "<strong>Kiêng kỵ:</strong> Không đi cửa chính giữa (Cửa Trung quan) và tuyệt đối không giẫm chân lên bậu cửa gỗ."
+                    title: "<span>🚪</span> Nghi Thức Vào Cổng",
+                    items: [
+                        "<strong>Lối đi:</strong> Đi vào cửa bên phải (Cửa Giả quan — tượng trưng cho lòng từ bi) và đi ra cửa bên trái (Cửa Không quan — tượng trưng cho trí tuệ).",
+                        "<strong>Kiêng kỵ:</strong> Không đi cửa chính giữa (Cửa Trung quan) và tuyệt đối không giẫm chân lên bậu cửa gỗ."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>🙏</span> Lễ Bái Chư Hộ Pháp",
-                    "items": [
-                                        "Tại Tam Quan tôn trí 2 pho tượng Hộ Pháp bằng đồng cao 5.5m (Khuyến Thiện và Trừng Ác).",
-                                        "Chắp hai tay trước ngực xá chào 3 lạy để xin phép chư vị Thiện Thần cho phép nhập cảnh già lam tu tâm bái Phật."
+                    title: "<span>🙏</span> Lễ Bái Chư Hộ Pháp",
+                    items: [
+                        "Tại Tam Quan tôn trí 2 pho tượng Hộ Pháp bằng đồng cao 5.5m (Khuyến Thiện và Trừng Ác).",
+                        "Chắp hai tay trước ngực xá chào 3 lạy để xin phép chư vị Thiện Thần cho phép nhập cảnh già lam tu tâm bái Phật."
                     ]
-},
+                },
                 prayerText: `Nam mô A Di Đà Phật! (3 lần, 3 lạy)
 Con kính lạy Chư Phật mười phương, Chư đại Bồ Tát.
 Kính lạy chư vị Hộ Pháp Thiện Thần, Bát Bộ Kim Cương cai quản cửa già lam Bái Đính.
@@ -2349,24 +2350,26 @@ Nam mô A Di Đà Phật! (3 lạy)`
                 sub: "Thỉnh Đại Hồng Chung 36 Tấn Ngân Vang",
                 img: "images/bai_dinh_bell_tower_1785641285643.webp",
                 mantra: "Văn Chung Thanh — Phiền Não Khinh",
-                offeringTitle: "Thỉnh Đại Hồng Chung 36 Tấn",
-                offeringSub: "Tiếng chuông ngân ba cõi thức tỉnh u mê (+2 Công Đức)",
-                offeringIcon: "🔔",
+                actions: [
+                    { icon: "🔔", title: "Thỉnh Đại Hồng Chung 36 Tấn", sub: "Tiếng chuông ngân ba cõi, thức tỉnh u mê và phiền não", btn: "Thỉnh Chuông", type: "bell" },
+                    { icon: "🥁", title: "Chiêm Bái Trống Đồng 70 Tấn", sub: "Chiêm ngưỡng bảo vật văn hóa đồ sộ dưới sàn tháp", btn: "Chiêm Bái", type: "drum" },
+                    { icon: "🧘", title: "Lắng Nghe Kệ Chuông Tĩnh Tâm", sub: "Thầm niệm kệ chuông: Nghe chuông phiền não tan mây khói", btn: "Tĩnh Lặng", type: "meditate" }
+                ],
                 desc: "Gác chuông bát giác 3 tầng mái cong cao 22m, nơi treo quả chuông đồng Đại Hồng Chung nặng 36 tấn đạt kỷ lục lớn nhất Việt Nam. Dưới sàn tháp chuông đặt chiếc Trống đồng nặng 70 tấn.",
                 guide1: {
-                    "title": "<span>🔔</span> Ý Nghĩa & Cách Thắp Hương",
-                    "items": [
-                                        "<strong>Thắp hương:</strong> Thắp 1 nén hương tại lư đồng trước tháp chuông.",
-                                        "<strong>Ý nghĩa:</strong> Tiếng chuông chùa mang âm ba vi diệu, thức tỉnh lòng từ bi trong mỗi con người, rửa sạch bụi trần phiền não trước khi tiến bước lên chiêm bái Tam Bảo."
+                    title: "<span>🔔</span> Quy Định Bảo Tồn & Ý Nghĩa Chuông Đồng",
+                    items: [
+                        "<strong>Bảo tồn công trình gỗ:</strong> Tháp chuông là công trình toàn bộ bằng gỗ quý 3 tầng mái cong cao 22m, tuyệt đối không thắp hương bên trong hoặc xung quanh tháp để bảo vệ di sản và phòng chống cháy nổ.",
+                        "<strong>Âm vang thức tỉnh:</strong> Tiếng chuông Đại Hồng Chung mang âm ba vi diệu, thức tỉnh lòng từ bi, gột rửa muộn phiền bụi trần trước khi bước vào chiêm bái Tam Bảo."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>🧘</span> Nghi Thức Phát Nguyện",
-                    "items": [
-                                        "Đứng tĩnh lặng dưới vòm tháp chuông, nhắm mắt hít thở sâu 3 nhịp.",
-                                        "Lắng nghe tiếng chuông đồng ngân vang, thầm niệm bài kệ chuông để tâm hồn lắng đọng thảnh thơi."
+                    title: "<span>🥁</span> Chiêm Bái Trống Đồng & Niệm Kệ Chuông",
+                    items: [
+                        "<strong>Trống đồng 70 tấn:</strong> Dưới sàn tháp chuông tôn trí chiếc Trống đồng nặng 70 tấn đạt kỷ lục — biểu tượng hòa quyện văn hóa Đông Sơn ngàn năm cùng Phật giáo.",
+                        "<strong>Lắng nghe kệ chuông:</strong> Đứng tĩnh lặng dưới vòm tháp, lắng nghe tiếng chuông ngân và thầm niệm bài kệ chuông để thân tâm lắng đọng an nhiên."
                     ]
-},
+                },
                 prayerText: `Nguyện tiếng chuông này vang pháp giới
 Xa xôi tăm tối thảy đều nghe
 Kẻ nghe thanh tịnh lòng an lạc
@@ -2380,24 +2383,26 @@ Nam mô A Di Đà Phật! Con xin thỉnh Đại Hồng Chung Bái Đính, nguy�
                 sub: "Con Đường Thiền Hành Dọc Sườn Đồi",
                 img: "images/bai_dinh_corridor_1783494469447.webp",
                 mantra: "Nam Mô Ngũ Bách La Hán Tôn Giả",
-                offeringTitle: "Thiền Hành Chánh Niệm",
-                offeringSub: "Từng bước chân an lạc xua tan phiền muộn (+2 Công Đức)",
-                offeringIcon: "👣",
+                actions: [
+                    { icon: "👣", title: "Thiền Hành Chánh Niệm", sub: "Từng bước chân an lạc xua tan phiền muộn trên đường đá", btn: "Thiền Hành", type: "walk" },
+                    { icon: "🗿", title: "Chiêm Nghiệm 500 Vị Tôn Giả", sub: "Soi chiếu tâm mình qua biểu cảm hỷ nộ ái ố của tượng đá", btn: "Chiêm Nghiệm", type: "reflect" },
+                    { icon: "🙏", title: "Thầm Niệm Tôn Giả Hộ Trì", sub: "Học hạnh buông bỏ tham sân si, nuôi dưỡng lòng từ ái", btn: "Thầm Niệm", type: "bow" }
+                ],
                 desc: "Hai dãy hành lang La Hán dài tổng cộng 1.700m chạy dọc triền núi, che chở cho 500 pho tượng La Hán bằng đá xanh nguyên khối do nghệ nhân làng đá Ninh Vân đục đẽo công phu với thần thái biểu cảm không một vị nào trùng lặp.",
                 guide1: {
-                    "title": "<span>🚶</span> Nghi Thức Thiền Hành",
-                    "items": [
-                                        "<strong>Tâm thế:</strong> Bước đi chậm rãi, thư thả, mỗi bước chân chạm đất thở một nhịp nhẹ nhàng.",
-                                        "<strong>Chiêm nghiệm:</strong> Mỗi vị La Hán biểu trưng cho một trạng thái tâm lý nhân gian (hỷ, nộ, ái, ố) để nhắc nhở con người tự soi chiếu chính mình."
+                    title: "<span>🚶</span> Nghi Thức Thiền Hành",
+                    items: [
+                        "<strong>Tâm thế:</strong> Bước đi chậm rãi, thư thả, mỗi bước chân chạm đất thở một nhịp nhẹ nhàng.",
+                        "<strong>Chiêm nghiệm:</strong> Mỗi vị La Hán biểu trưng cho một trạng thái tâm lý nhân gian (hỷ, nộ, ái, ố) để nhắc nhở con người tự soi chiếu chính mình."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>⚠️</span> Lưu Ý Ứng Xử Tôn Nghiêm",
-                    "items": [
-                                        "<strong>Tuyệt đối không sờ tay:</strong> Không xoa tay vào đầu gối hay bàn chân các tượng La Hán làm mòn và biến màu đá xanh quý giá.",
-                                        "<strong>Không đặt tiền lẻ:</strong> Không nhét tiền lẻ vào tay hoặc vạt áo tượng đá."
+                    title: "<span>⚠️</span> Lưu Ý Ứng Xử Tôn Nghiêm",
+                    items: [
+                        "<strong>Tuyệt đối không sờ tay:</strong> Không xoa tay vào đầu gối hay bàn chân các tượng La Hán làm mòn và biến màu đá xanh quý giá.",
+                        "<strong>Không đặt tiền lẻ & Không thắp hương:</strong> Hành lang là nơi thiền hành, không đặt tiền lẻ lên tượng và không cắm hương vào khe đá."
                     ]
-},
+                },
                 prayerText: `Nam mô A Di Đà Phật! (3 lần, 3 lạy)
 Con kính lạy 500 vị Tôn giả A La Hán ngự tại già lam Bái Đính.
 Con thiền hành từng bước chân an lạc trên con đường đá, noi gương chư vị Tôn giả dứt trừ tham sân si, trau dồi giới định tuệ, nuôi dưỡng lòng trắc ẩn và trí tuệ sáng soi.
@@ -2409,24 +2414,26 @@ Cúi xin chư Tôn giả gia hộ cho gia quyến con thân tâm thường an l�
                 sub: "Đức Mẹ Từ Bi Cứu Khổ Cứu Nạn 90 Tấn",
                 img: "images/bai_dinh_dien_quan_am.webp",
                 mantra: "Nam Mô Đại Bi Quán Thế Âm Bồ Tát",
-                offeringTitle: "Dâng Hoa Sen Thanh Khiết",
-                offeringSub: "Đóa sen thơm dâng lên Mẹ Từ Bi (+2 Công Đức)",
-                offeringIcon: "🌸",
+                actions: [
+                    { icon: "🕯️", title: "Dâng Nén Tâm Hương", sub: "Thắp 1 nén tâm hương tại lư đồng trước sân điện Quán Âm", btn: "Thắp Hương", type: "incense" },
+                    { icon: "🌸", title: "Dâng Hoa Sen Thanh Khiết", sub: "Đóa sen thơm dâng lên Mẹ Từ Bi nghìn mắt nghìn tay 90 tấn", btn: "Dâng Hoa", type: "flower" },
+                    { icon: "🙏", title: "Đảnh Lễ Mẹ Từ Bi Cứu Khổ", sub: "Cầu xin cành dương che chở gia đạo bình an, cứu nạn", btn: "Đảnh Lễ", type: "bow" }
+                ],
                 desc: "Điện Quán Thế Âm gồm 7 gian bằng gỗ lim uy nghi. Bên trong tôn trí pho tượng Bồ Tát Quán Thế Âm nghìn mắt nghìn tay bằng đồng đúc liền khối dát vàng nặng 90 tấn, ngự trên tòa sen thanh tịnh.",
                 guide1: {
-                    "title": "<span>🕯️</span> Cách Thắp Hương & Dâng Lễ",
-                    "items": [
-                                        "<strong>Hương:</strong> Thắp 1 nén tâm hương tại lư đồng lớn trước sân điện.",
-                                        "<strong>Lễ vật:</strong> Hoa sen tươi, hoa huệ trắng, ngũ quả tươi tốt, nước trong thanh khiết. Tránh dâng lễ mặn hay vàng mã."
+                    title: "<span>🕯️</span> Cách Thắp Hương & Dâng Lễ",
+                    items: [
+                        "<strong>Hương:</strong> Thắp 1 nén tâm hương tại lư đồng lớn trước sân điện.",
+                        "<strong>Lễ vật:</strong> Hoa sen tươi, hoa huệ trắng, ngũ quả tươi tốt, nước trong thanh khiết. Tránh dâng lễ mặn hay vàng mã."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>🙏</span> Cầu Nguyện Gì Tại Điện Quan Âm?",
-                    "items": [
-                                        "Cầu xin Bồ Tát rưới nước cành dương che chở cho cha mẹ khỏe mạnh bình an.",
-                                        "Cầu xin con cái thảo hiền, giải trừ tai ương tật bệnh, gia đạo êm ấm thuận hòa."
+                    title: "<span>🙏</span> Cầu Nguyện Gì Tại Điện Quan Âm?",
+                    items: [
+                        "Cầu xin Bồ Tát rưới nước cành dương che chở cho cha mẹ khỏe mạnh bình an.",
+                        "Cầu xin con cái thảo hiền, giải trừ tai ương tật bệnh, gia đạo êm ấm thuận hòa."
                     ]
-},
+                },
                 prayerText: `Nam mô Đại Từ Đại Bi Tầm Thinh Cứu Khổ Cứu Nạn Linh Cảm Quán Thế Âm Bồ Tát! (3 lạy)
 Con kính lạy Đức Mẹ Quán Thế Âm Bồ Tát ngự tại Điện Quán Âm Bái Đính.
 Hôm nay con thành tâm dâng nén tâm hương và đóa hoa tươi thanh tịnh, cúi xin Mẹ Từ Bi che chở cho chúng con qua cơn hoạn nạn, tai qua nạn khỏi, sở cầu như ý, gia đạo thuận hòa, tâm luôn hướng thiện.`
@@ -2437,23 +2444,25 @@ Hôm nay con thành tâm dâng nén tâm hương và đóa hoa tươi thanh tị
                 sub: "Đức Phật Thích Ca Mâu Ni Dát Vàng 100 Tấn",
                 img: "images/bai_dinh_buddha_1783494499108.webp",
                 mantra: "Nam Mô Bản Sư Thích Ca Mâu Ni Phật",
-                offeringTitle: "Thắp Đèn Hoa Đăng Trí Tuệ",
-                offeringSub: "Ánh quang minh xua tan màn vô minh tăm tối (+2 Công Đức)",
-                offeringIcon: "🕯️",
+                actions: [
+                    { icon: "🕯️", title: "Dâng Nén Tâm Hương", sub: "Thắp 1 nén tâm hương tại đỉnh đồng trước cửa Đại điện", btn: "Thắp Hương", type: "incense" },
+                    { icon: "🪔", title: "Thắp Đèn Hoa Đăng Trí Tuệ", sub: "Ánh quang minh xua tan màn vô minh tăm tối trong tâm", btn: "Thắp Đèn", type: "lamp" },
+                    { icon: "🙏", title: "Đảnh Lễ Đức Thế Tôn", sub: "Nghi thức ngũ thể đầu địa quy phục Đấng Giác Ngộ dát vàng 100 tấn", btn: "Đảnh Lễ", type: "bow" }
+                ],
                 desc: "Tòa điện nguy nga gồm 5 gian cao 30m, thờ pho tượng Đức Phật Thích Ca Mâu Ni bằng đồng nguyên khối dát vàng nặng 100 tấn cao 10m đạt kỷ lục châu Á, tay bắt ấn chuyển pháp luân.",
                 guide1: {
-                    "title": "<span>🕯️</span> Cách Thắp Hương & Đảnh Lễ",
-                    "items": [
-                                        "<strong>Hương:</strong> Thắp 1 nén hương tại đỉnh đồng trước cửa điện.",
-                                        "<strong>Lễ Phật:</strong> Thực hiện nghi thức ba lạy ngũ thể đầu địa (hai bàn tay, hai đầu gối và trán chạm đất) để thể hiện sự quy phục hoàn toàn trước trí tuệ của Đấng Giác Ngộ."
+                    title: "<span>🕯️</span> Cách Thắp Hương & Đảnh Lễ",
+                    items: [
+                        "<strong>Hương:</strong> Thắp 1 nén hương tại đỉnh đồng trước cửa điện.",
+                        "<strong>Lễ Phật:</strong> Thực hiện nghi thức ba lạy ngũ thể đầu địa (hai bàn tay, hai đầu gối và trán chạm đất) để thể hiện sự quy phục hoàn toàn trước trí tuệ của Đấng Giác Ngộ."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>💡</span> Ý Nghĩa Tâm Linh",
-                    "items": [
-                                        "Cầu xin trí tuệ sáng tỏ, diệt trừ vô minh, biết nhìn nhận đúng sai, giữ cho tâm luôn ngay thẳng, thanh tịnh trước cám dỗ danh lợi."
+                    title: "<span>💡</span> Ý Nghĩa Tâm Linh",
+                    items: [
+                        "Cầu xin trí tuệ sáng tỏ, diệt trừ vô minh, biết nhìn nhận đúng sai, giữ cho tâm luôn ngay thẳng, thanh tịnh trước cám dỗ danh lợi."
                     ]
-},
+                },
                 prayerText: `Nam mô Bản Sư Thích Ca Mâu Ni Phật! (3 lần, 3 lạy)
 Con kính lạy Đức Phật Thích Ca Mâu Ni ngự tại Chính Điện Bái Đính.
 Con xin sám hối mọi lỗi lầm trong quá khứ do vô minh tạo tác. Nguyện noi theo giáo pháp vi diệu của Đức Thế Tôn, sống đời tỉnh thức, bao dung và từ ái.
@@ -2465,24 +2474,26 @@ Nguyện cầu Chư Phật mười phương gia hộ cho muôn loài an lạc, q
                 sub: "Điểm Đỉnh Cao Nhất Tân Tự (Đỉnh Đồi 76m)",
                 img: "images/bai_dinh_dien_tam_the.webp",
                 mantra: "Nam Mô Tam Thế Phật — Quá Khứ, Hiện Tại, Vị Lai",
-                offeringTitle: "Dâng Mâm Quả Cát Tường",
-                offeringSub: "Quả phúc viên mãn dâng Tam Thế Phật (+2 Công Đức)",
-                offeringIcon: "🍇",
+                actions: [
+                    { icon: "🕯️", title: "Dâng Nén Tâm Hương", sub: "Dâng nén hương thơm nơi đỉnh đồi cao lên Tam Thế Phật", btn: "Thắp Hương", type: "incense" },
+                    { icon: "🍇", title: "Dâng Mâm Quả Cát Tường", sub: "Quả phúc viên mãn dâng cúng 3 pho tượng Phật 50 tấn", btn: "Dâng Quả", type: "fruit" },
+                    { icon: "🙏", title: "Đảnh Lễ Ba Đời Chư Phật", sub: "Tri ân Quá khứ, trân quý Hiện tại, hướng tới Tương lai", btn: "Đảnh Lễ", type: "bow" }
+                ],
                 desc: "Tọa lạc trên đỉnh đồi cao 76m so với mực nước biển, Điện Tam Thế là tòa kiến trúc nguy nga nhất với 3 tầng mái cong đồ sộ. Bên trong thờ 3 pho tượng Phật Tam Thế (Quá khứ, Hiện tại, Vị lai) bằng đồng đúc liền khối, mỗi pho nặng 50 tấn.",
                 guide1: {
-                    "title": "<span>🕯️</span> Ý Nghĩa Ba Đời Chư Phật",
-                    "items": [
-                                        "<strong>Quá khứ:</strong> Phật A Di Đà (biết ơn tiền nhân, tổ tiên).",
-                                        "<strong>Hiện tại:</strong> Phật Thích Ca (trân quý từng giây phút sống).",
-                                        "<strong>Tương lai:</strong> Phật Di Lặc (hy vọng tương lai tươi sáng, an lạc)."
+                    title: "<span>🕯️</span> Ý Nghĩa Ba Đời Chư Phật",
+                    items: [
+                        "<strong>Quá khứ:</strong> Phật A Di Đà (biết ơn tiền nhân, tổ tiên).",
+                        "<strong>Hiện tại:</strong> Phật Thích Ca (trân quý từng giây phút sống).",
+                        "<strong>Tương lai:</strong> Phật Di Lặc (hy vọng tương lai tươi sáng, an lạc)."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>🙏</span> Cách Thắp Hương & Hồi Hướng",
-                    "items": [
-                                        "Dâng nén tâm hương cầu nguyện cho quốc thái dân an, hồi hướng công đức cho ông bà cửu huyền thất tổ vãng sinh tịnh độ."
+                    title: "<span>🙏</span> Cách Thắp Hương & Hồi Hướng",
+                    items: [
+                        "Dâng nén tâm hương cầu nguyện cho quốc thái dân an, hồi hướng công đức cho ông bà cửu huyền thất tổ vãng sinh tịnh độ."
                     ]
-},
+                },
                 prayerText: `Nam mô Tam Thế Phật! (3 lần, 3 lạy)
 Con kính lạy Đức Phật Quá Khứ, Đức Phật Hiện Tại và Đức Phật Vị Lai.
 Đứng trước đỉnh cao nhất của chùa Bái Đính, lòng con thanh tịnh lắng đọng. Cúi xin Tam Thế Phật từ bi minh chứng lòng thành, ban phúc lành cho ông bà tổ tiên được siêu sinh tịnh độ, cháu con hiện tiền được bình an, thịnh vượng và tinh tấn tu tập.`
@@ -2493,23 +2504,25 @@ Con kính lạy Đức Phật Quá Khứ, Đức Phật Hiện Tại và Đức 
                 sub: "Tháp 13 Tầng Cao 100m Chiêm Bái Xá Lợi",
                 img: "images/bai_dinh_pagoda_1783443686667.webp",
                 mantra: "Nam Mô Phật Đà Xá Lợi Bảo Tháp",
-                offeringTitle: "Chiêm Bái Xá Lợi Phật Phát Quang",
-                offeringSub: "Đảnh lễ bảo vật vô giá của Phật giáo (+2 Công Đức)",
-                offeringIcon: "✨",
+                actions: [
+                    { icon: "🔄", title: "Nhiễu Tháp 3 Vòng Cầu An", sub: "Kinh hành quanh bảo tháp thuận chiều kim đồng hồ", btn: "Nhiễu Tháp", type: "walk" },
+                    { icon: "✨", title: "Chiêm Bái Ngọc Xá Lợi Phật", sub: "Đảnh lễ bảo vật vô giá được tôn trí tại tầng 13", btn: "Chiêm Bái", type: "relic" },
+                    { icon: "🧘", title: "Tĩnh Tọa Đỉnh Tháp Ngắm Mây Trời", sub: "Nghe tiếng chuông gió ngân, thân tâm tĩnh tại an nhiên", btn: "Tĩnh Tọa", type: "meditate" }
+                ],
                 desc: "Bảo tháp 13 tầng cao 100m, được ốp bằng đá nung hoàn toàn của làng gốm Bát Tràng. Tầng thứ 13 là nơi tôn nghiêm tôn trí Ngọc Xá Lợi Phật Thích Ca Mâu Ni được rước từ Ấn Độ và Myanmar về Việt Nam.",
                 guide1: {
-                    "title": "<span>🗼</span> Chiêm Bái Xá Lợi",
-                    "items": [
-                                        "Du khách đi thang máy lên tầng 13, đi nhiễu quanh bảo tháp theo chiều kim đồng hồ 3 vòng để tỏ lòng thành kính tuyệt đối.",
-                                        "Từ đỉnh bảo tháp, phóng tầm mắt bao quát toàn cảnh núi non Tràng An hùng vĩ."
+                    title: "<span>🗼</span> Chiêm Bái Xá Lợi & Đi Nhiễu Tháp",
+                    items: [
+                        "Du khách đi thang máy lên tầng 13, đi nhiễu quanh bảo tháp theo chiều kim đồng hồ 3 vòng để tỏ lòng thành kính tuyệt đối.",
+                        "Từ đỉnh bảo tháp, phóng tầm mắt bao quát toàn cảnh núi non Tràng An hùng vĩ."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>🧘</span> Tĩnh Tọa Thiền Định 3 Phút",
-                    "items": [
-                                        "Đón làn gió mát lành từ đỉnh tháp cao, lắng nghe tiếng chuông gió ngân nga, giữ cho thân tâm bất động và cảm nhận sự hòa hợp giữa con người và vũ trụ."
+                    title: "<span>🧘</span> Tĩnh Tọa Thiền Định 3 Phút",
+                    items: [
+                        "Đón làn gió mát lành từ đỉnh tháp cao, lắng nghe tiếng chuông gió ngân nga, giữ cho thân tâm bất động và cảm nhận sự hòa hợp giữa con người và vũ trụ."
                     ]
-},
+                },
                 prayerText: `Nam mô Phật Đà Xá Lợi! (3 lần, 3 lạy)
 Con kính lạy Xá Lợi Phật Thích Ca Mâu Ni linh thiêng tôn trí nơi đỉnh Bảo Tháp Bái Đính.
 Được diện kiến chiêm bái Ngọc Xá Lợi là đại phước duyên nghìn năm. Con xin đảnh lễ và hồi hướng công đức này đến khắp pháp giới chúng sinh, nguyện cầu ánh sáng trí tuệ của Phật pháp soi đường chỉ lối muôn nơi.`
@@ -2520,22 +2533,26 @@ Con kính lạy Xá Lợi Phật Thích Ca Mâu Ni linh thiêng tôn trí nơi �
                 sub: "Mạch Nước Thần & Dải Lụa Cầu An Bình Hạnh",
                 img: "images/bai_dinh_well_1785485541728.webp",
                 mantra: "Thanh Tịnh Thần Thủy — Vạn Sự Cát Tường",
-                offeringTitle: "Rửa Tay Giếng Ngọc & Treo Dải Lụa",
-                offeringSub: "Nguồn nước ngọc thời Lý gột rửa ưu phiền (+2 Công Đức)",
-                offeringIcon: "🎋",
+                actions: [
+                    { icon: "💧", title: "Thanh Tẩy Nước Giếng Ngọc", sub: "Múc dòng nước mát ngàn năm thời Lý gột rửa bụi trần", btn: "Thanh Tẩy", type: "water" },
+                    { icon: "🎋", title: "Treo Dải Lụa Cầu Bình An", sub: "Gửi gắm ước nguyện thiện lành lên cành cây Bồ Đề", btn: "Treo Lụa", type: "ribbon" },
+                    { icon: "🍃", title: "Tĩnh Lặng Dưới Cội Bồ Đề", sub: "Cảm nhận linh khí ngàn năm của Quốc sư Minh Không", btn: "Tĩnh Tâm", type: "meditate" }
+                ],
                 desc: "Giếng Ngọc hình mặt nguyệt có đường kính 30m, sâu 6m với làn nước xanh trong vắt chưa bao giờ cạn đáy qua cả ngàn năm lịch sử. Tương truyền, gần 1.000 năm trước, Quốc sư Nguyễn Minh Không đã nằm mộng thấy thần nhân chỉ lối lấy nước giếng này để sắc thuốc cứu chữa Vua Lý Thần Tông.",
                 guide1: {
-                    "title": "<span>💧</span> Rửa Tay Nước Giếng Ngọc",
-                    "items": [
-                                        "Du khách dùng gáo đồng múc nước giếng rửa tay, rửa mặt để thanh tẩy bụi trần, cầu xin sức khỏe dồi dào, tâm hồn thanh sạch mát lành."
+                    title: "<span>💧</span> Rửa Tay Nước Giếng Ngọc",
+                    items: [
+                        "Du khách dùng gáo đồng múc nước giếng rửa tay, rửa mặt để thanh tẩy bụi trần, cầu xin sức khỏe dồi dào, tâm hồn thanh sạch mát lành.",
+                        "Lưu ý: Không thả tiền xu, tiền giấy hoặc xả rác xuống lòng giếng ngọc."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>🌳</span> Treo Dải Lụa Cội Bồ Đề",
-                    "items": [
-                                        "Bên bờ giếng ngọc là cội Bồ Đề chiết từ cây Bồ Đề Đạo Tràng Ấn Độ rợp bóng mát, nơi du khách treo dải lụa gửi gắm tâm nguyện bình an."
+                    title: "<span>🌳</span> Treo Dải Lụa Cội Bồ Đề",
+                    items: [
+                        "Bên bờ giếng ngọc là cội Bồ Đề chiết từ cây Bồ Đề Đạo Tràng Ấn Độ rợp bóng mát, nơi du khách treo dải lụa gửi gắm tâm nguyện bình an.",
+                        "Tĩnh tâm hít thở không khí trong lành dưới bóng cây thiêng, cảm nhận sự an yên."
                     ]
-},
+                },
                 prayerText: `Nam mô A Di Đà Phật! (3 lần, 3 lạy)
 Con kính lạy thần linh Giếng Ngọc và cây Bồ Đề linh thiêng chùa Bái Đính.
 Con xin rửa tay nguồn nước ngọc trong lành để gột rửa bụi trần, thanh tịnh thân tâm.
@@ -2547,24 +2564,26 @@ Con thành tâm treo dải lụa đỏ lên cội Bồ Đề, gửi gắm ước
                 sub: "Tổ Đình Hang Sáng, Hang Tối & Đền Thánh Nguyễn",
                 img: "images/bai_dinh_ancient_temple_1785641271528.webp",
                 mantra: "Nam Mô Đức Thánh Nguyễn Minh Không",
-                offeringTitle: "Dâng Lễ Hang Sáng & Hang Tối",
-                offeringSub: "Chiêm bái Tổ đình nghìn năm khai sơn lập tự (+2 Công Đức)",
-                offeringIcon: "🏮",
+                actions: [
+                    { icon: "🕯️", title: "Dâng Hương Hang Sáng", sub: "Dâng hương lễ Phật và Thần Cao Sơn trong lòng hang", btn: "Thắp Hương", type: "incense" },
+                    { icon: "🏮", title: "Dâng Lễ Mẫu Hang Tối", sub: "Chiêm bái Mẫu Thượng Ngàn bên thạch nhũ rủ rèm ngọc", btn: "Dâng Lễ", type: "offering" },
+                    { icon: "🙏", title: "Đảnh Lễ Đức Thánh Nguyễn", sub: "Tri ân Quốc sư lập chùa, chữa bệnh cứu nhân độ thế", btn: "Đảnh Lễ", type: "bow" }
+                ],
                 desc: "Nằm cách Tân tự khoảng 800m trên sườn núi Đính tĩnh mịch, du khách bước qua 300 bậc đá cổ kính để trở về chốn tổ sơn môn khởi dựng từ thế kỷ XII. Nơi đây gồm Hang Sáng thờ Phật và Thần Cao Sơn, Hang Tối thờ Mẫu Thượng Ngàn, và Đền thờ Quốc Sư Nguyễn Minh Không.",
                 guide1: {
-                    "title": "<span>🕯️</span> Hang Sáng (Thờ Phật & Thần Cao Sơn)",
-                    "items": [
-                                        "Hang dài 25m, rộng 15m, ánh sáng tự nhiên rọi vào vách đá lung linh.",
-                                        "Dâng hương lễ Phật cầu quốc thái dân an, lễ Thần Cao Sơn trấn giữ non nam cố đô."
+                    title: "<span>🕯️</span> Hang Sáng (Thờ Phật & Thần Cao Sơn)",
+                    items: [
+                        "Hang dài 25m, rộng 15m, ánh sáng tự nhiên rọi vào vách đá lung linh.",
+                        "Dâng hương lễ Phật cầu quốc thái dân an, lễ Thần Cao Sơn trấn giữ non nam cố đô."
                     ]
-},
+                },
                 guide2: {
-                    "title": "<span>🏮</span> Hang Tối (Thờ Mẫu Thượng Ngàn & Tiên Cô)",
-                    "items": [
-                                        "Hệ thống thạch nhũ rủ xuống như rèm ngọc, giọt nước rơi róc rách. Dâng lễ chay tịnh cầu tài lộc, bình an, con cái.",
-                                        "Lễ Đền Thánh Nguyễn Minh Không tri ân vị danh y lập chùa cứu dân."
+                    title: "<span>🏮</span> Hang Tối (Thờ Mẫu Thượng Ngàn & Tiên Cô)",
+                    items: [
+                        "Hệ thống thạch nhũ rủ xuống như rèm ngọc, giọt nước rơi róc rách. Dâng lễ chay tịnh cầu tài lộc, bình an, con cái.",
+                        "Lễ Đền Thánh Nguyễn Minh Không tri ân vị danh y lập chùa cứu dân."
                     ]
-},
+                },
                 prayerText: `Nam mô A Di Đà Phật! (3 lần, 3 lạy)
 Con kính lạy Tam Bảo, kính lạy Đức Thánh Nguyễn Minh Không — Quốc sư thời Lý, Tổ khai sơn Bái Đính Cổ Tự.
 Con kính lạy Chư Tiên, Chư Thánh ngự tại Hang Sáng và Hang Tối núi Đính.
@@ -2641,9 +2660,10 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             document.getElementById('stageSubBadge').textContent = data.sub;
             document.getElementById('stageMantraQuote').textContent = `"${data.mantra}"`;
             document.getElementById('stagePhotoImg').src = data.img;
-            document.getElementById('stageOfferingTitle').textContent = data.offeringTitle;
-            document.getElementById('stageOfferingSub').textContent = data.offeringSub;
-            document.getElementById('stageOfferingIcon').textContent = data.offeringIcon;
+
+            // Render nghi thức và hành động chi tiết tương ứng đúng với ban thờ này
+            renderRitualCards(data, idx);
+
             document.getElementById('stagePrayerTextBox').textContent = data.prayerText;
 
             // Cập nhật thuyết minh di sản & hướng dẫn nghi thức chi tiết từng trạm
@@ -2700,42 +2720,85 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
         }
 
         // ==========================================
-        // RITUAL ACTIONS AT CURRENT STATION
+        // RITUAL ACTIONS AT CURRENT STATION (CHUẨN XÁC VĂN HÓA & KHÔNG ĐIỂM ẢO)
         // ==========================================
-        function pilgrimActLightIncense(e) {
-            pilgrimStats.incense++;
-            pilgrimStats.merit += 2;
-            ringTempleBellStation();
-
-            const data = BAI_DINH_STATIONS[curStationIdx];
-            createPilgrimFlyText(e, '+2 Công Đức — Tâm Hương Thanh Tịnh');
-            showToast(`Đã dâng nén tâm hương tại ${data.name}`, '🕯️');
+        function renderRitualCards(data, idx) {
+            const col = document.getElementById('stageRitualsColumn');
+            if (!col || !data.actions) return;
+            col.innerHTML = data.actions.map((act, actIdx) => `
+                <div class="ritual-action-card">
+                    <div class="ritual-card-left">
+                        <div class="ritual-btn-icon">${act.icon}</div>
+                        <div>
+                            <div class="ritual-btn-title">${act.title}</div>
+                            <div class="ritual-btn-sub">${act.sub}</div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-ritual-act" onclick="pilgrimActStation(${idx}, ${actIdx}, event)">${act.btn}</button>
+                </div>
+            `).join('');
         }
 
-        function pilgrimActMakeOffering(e) {
-            pilgrimStats.merit += 2;
-            ringTempleBellStation();
+        function pilgrimActStation(stIdx, actIdx, event) {
+            const station = BAI_DINH_STATIONS[stIdx];
+            if (!station || !station.actions || !station.actions[actIdx]) return;
+            const action = station.actions[actIdx];
 
-            const data = BAI_DINH_STATIONS[curStationIdx];
-            createPilgrimFlyText(e, `+2 Công Đức — ${data.offeringTitle}`);
-            showToast(`Thành kính ${data.offeringTitle} lên chư Phật`, '🌸');
-        }
-
-        function pilgrimActBow(e) {
-            pilgrimStats.bows++;
-            pilgrimStats.merit += 3;
-            ringTempleBellStation();
-
-            // Avatar & Photo pulse
+            // Rung nhẹ khung ảnh tạo cảm giác tương tác linh thiêng
             const photoBox = document.querySelector('.stage-photo-box');
             if (photoBox) {
-                photoBox.style.transform = 'scale(0.98)';
-                setTimeout(() => { photoBox.style.transform = 'scale(1)'; }, 350);
+                photoBox.style.transform = 'scale(0.985)';
+                setTimeout(() => { photoBox.style.transform = 'scale(1)'; }, 300);
             }
 
-            const data = BAI_DINH_STATIONS[curStationIdx];
-            createPilgrimFlyText(e, 'Thành Tâm Đảnh Lễ (+3 Công Đức)');
-            showToast(`Đảnh lễ Tam Bảo tại ${data.name} (Lạy thứ ${pilgrimStats.bows})`, '🙏');
+            if (action.type === 'bell') {
+                ringTempleBellStation();
+                createPilgrimFlyText(event, 'Văn Chung Thanh — Phiền Não Khinh 🔔');
+                showToast(`Đã thỉnh Đại Hồng Chung 36 tấn ngân vang`, '🔔');
+            } else if (action.type === 'drum') {
+                playMoStation();
+                createPilgrimFlyText(event, 'Hào Khí Trống Đồng 70 Tấn 🥁');
+                showToast(`Chiêm bái Trống đồng 70 tấn kỷ lục`, '🥁');
+            } else if (action.type === 'incense') {
+                ringTempleBellStation();
+                createPilgrimFlyText(event, 'Tâm Hương Thanh Tịnh 🕯️');
+                showToast(`Đã dâng nén tâm hương tại ${station.name}`, '🕯️');
+            } else if (action.type === 'bow') {
+                ringTempleBellStation();
+                createPilgrimFlyText(event, 'Thành Tâm Đảnh Lễ 🙏');
+                showToast(`Đảnh lễ trang nghiêm tại ${station.name}`, '🙏');
+            } else if (action.type === 'walk') {
+                playMoStation();
+                createPilgrimFlyText(event, 'Từng Bước Chân An Lạc 👣');
+                showToast(`Thiền hành chánh niệm tại ${station.name}`, '👣');
+            } else if (action.type === 'water') {
+                playMoStation();
+                createPilgrimFlyText(event, 'Thanh Tẩy Thân Tâm 💧');
+                showToast(`Múc dòng nước Giếng Ngọc thanh tẩy bụi trần`, '💧');
+            } else if (action.type === 'ribbon') {
+                ringTempleBellStation();
+                createPilgrimFlyText(event, 'Vạn Sự Cát Tường 🎋');
+                showToast(`Đã treo dải lụa đỏ cầu an lên cội Bồ Đề`, '🎋');
+            } else if (action.type === 'meditate') {
+                ringTempleBellStation();
+                createPilgrimFlyText(event, 'Thân Tâm Tĩnh Lặng 🧘');
+                showToast(`Tĩnh tâm lắng đọng tại ${station.name}`, '🧘');
+            } else {
+                ringTempleBellStation();
+                createPilgrimFlyText(event, `${action.title} ✨`);
+                showToast(`Thành kính ${action.title} tại ${station.name}`, action.icon || '✨');
+            }
+        }
+
+        // Tương thích ngược
+        function pilgrimActLightIncense(e) {
+            pilgrimActStation(curStationIdx, 0, e);
+        }
+        function pilgrimActMakeOffering(e) {
+            pilgrimActStation(curStationIdx, 1, e);
+        }
+        function pilgrimActBow(e) {
+            pilgrimActStation(curStationIdx, 2, e);
         }
 
         function copyCurrentStationPrayer() {
@@ -2771,9 +2834,6 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
         function openCompletionModal() {
             const modal = document.getElementById('pilgrimCompletionModal');
             if (modal) {
-                document.getElementById('compBows').textContent = Math.max(9, pilgrimStats.bows);
-                document.getElementById('compIncense').textContent = Math.max(9, pilgrimStats.incense);
-                document.getElementById('compMerit').textContent = Math.max(54, pilgrimStats.merit);
                 modal.classList.add('show');
                 ringTempleBellStation();
             }
@@ -2847,7 +2907,7 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
             setTimeout(() => {
                 isThreeBowsRunning = false;
                 if (!isReadingPrayer && statusElem) {
-                    statusElem.textContent = 'Lần tràng hạt niệm Phật';
+                    statusElem.textContent = 'Tĩnh tâm niệm Phật';
                 }
             }, 3000);
         }
