@@ -1232,33 +1232,34 @@
             0%, 100% { transform: translateY(0) scale(1, 1); }
             50%      { transform: translateY(-1.8px) scale(1.012, 1.018); }
         }
-        /* CHUYỂN ĐỘNG NGÓN TAY CÁI LẦN TRÀNG HẠT ĐỂ DỌC */
-        .mala-thumb-vertical {
-            transform-origin: 87px 112px;
-            animation: thumbRollVertical 2s ease-in-out infinite;
+        /* NGÓN TAY CÁI CỬ ĐỘNG LẦN TỪNG HẠT TRÀNG THEO CHIỀU DỌC */
+        .mala-thumb-motion {
+            transform-origin: 90px 105px;
+            animation: thumbFlick 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
             will-change: transform;
         }
-        @keyframes thumbRollVertical {
-            0%, 100% { transform: translateY(0); }
-            50%      { transform: translateY(-2.2px); }
+        @keyframes thumbFlick {
+            0%   { transform: translateY(0) rotate(0deg); }
+            35%  { transform: translateY(3.5px) rotate(8deg); } /* ngón cái gạt hạt trượt xuống */
+            65%  { transform: translateY(-1px) rotate(-4deg); } /* ngón cái nhấc nhẹ đón hạt mới */
+            100% { transform: translateY(0) rotate(0deg); }
         }
-        /* CHUỖI TRÀNG HẠT BỒ ĐỀ DÁNG DỌC NHẸ NHÀNG LAN TOẢ */
-        .mala-strand-vertical {
-            transform-origin: 85px 115px;
-            animation: malaBeadShiftVertical 4s ease-in-out infinite;
+        /* CHUỖI HẠT TRÀNG TRƯỢT DỌC QUA KẼ TAY LIÊN TỤC VÀ NHỊP NHÀNG */
+        .sliding-beads-strand {
+            animation: slideBeadsDown 2s linear infinite;
             will-change: transform;
         }
-        @keyframes malaBeadShiftVertical {
-            0%, 100% { transform: scale(1, 1); }
-            50%      { transform: scale(1.015, 1.025); }
+        @keyframes slideBeadsDown {
+            0%   { transform: translateY(0px); }
+            100% { transform: translateY(10px); }
         }
-        /* HẠT TRÀNG PHÁT SÁNG THEO NHỊP NIỆM PHẬT */
-        .active-bead-vert {
-            animation: beadGlowPulse 2s ease-in-out infinite;
+        /* ÁNH SÁNG CHÁNH NIỆM TẠI ĐIỂM TIẾP XÚC NGÓN TAY VÀ HẠT TRÀNG */
+        .bead-glow-effect {
+            animation: activeBeadPulse 2s ease-in-out infinite;
         }
-        @keyframes beadGlowPulse {
-            0%, 100% { fill: #f59e0b; filter: drop-shadow(0 0 1px #fbbf24); }
-            50%      { fill: #fef08a; filter: drop-shadow(0 0 4px #fde047); }
+        @keyframes activeBeadPulse {
+            0%, 100% { filter: drop-shadow(0 0 1px #fbbf24); opacity: 0.75; }
+            35%      { filter: drop-shadow(0 0 4.5px #fde047); opacity: 1; }
         }
         .prayer-sim-meta {
             display: flex;
@@ -1962,60 +1963,56 @@
                                             <!-- NỤ CƯỜI TỰ TẠI AN NHIÊN -->
                                             <path d="M 82 64 Q 85 66 88 64" stroke="#b45309" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 
-                                            <!-- HAI CÁNH TAY ÁO LAM KHÉP CHẮP TAY DỌC TRƯỚC NGỰC -->
-                                            <path d="M 65 86 C 54 103, 58 126, 74 128 C 77 128, 79 117, 77 107 Z" fill="#64748b"/>
-                                            <path d="M 105 86 C 116 103, 112 126, 96 128 C 93 128, 91 117, 93 107 Z" fill="#64748b"/>
+                                            <!-- CÁNH TAY TRÁI ĐƯA VỀ BỤNG DƯỚI ĐỠ CHUỖI TRÀNG HẠT -->
+                                            <path d="M 64 86 C 53 103, 56 128, 73 138 C 77 138, 81 128, 76 116 Z" fill="#64748b"/>
+                                            <!-- Bàn tay trái khum nhẹ đỡ đáy chuỗi tràng hạt thanh tịnh -->
+                                            <ellipse cx="78" cy="138" rx="7.5" ry="5.5" fill="#fcd34d" stroke="#b45309" stroke-width="0.8" transform="rotate(20, 78, 138)"/>
 
-                                            <!-- CHUỖI TRÀNG HẠT BỒ ĐỀ THON DỌC THEO THÂN (MALA STRAND DỌC) -->
-                                            <g class="mala-strand-vertical">
-                                                <!-- DÂY CHUỖI HẠT DÁNG DỌC (OVAL DỌC) -->
-                                                <path d="M 85 96 C 74 96, 72 135, 85 146 C 98 135, 96 96, 85 96" stroke="#78350f" stroke-width="1" fill="none" stroke-dasharray="0.5 1"/>
-                                                
-                                                <!-- CÁC HẠT TRÀNG XẾP THON DỌC HAI BÊN TAY -->
-                                                <!-- Vòng chuỗi hạt bên trái -->
-                                                <circle cx="80" cy="100" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="77" cy="108" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="75" cy="117" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="76" cy="126" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="79" cy="135" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="82" cy="141" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                            <!-- CÁNH TAY PHẢI CO LÊN TRƯỚC NGỰC, BÀN TAY ĐẶT DỌC -->
+                                            <path d="M 106 86 C 117 101, 114 122, 100 126 C 96 126, 92 114, 94 104 Z" fill="#64748b"/>
 
-                                                <!-- HẠT CHỦ / HẠT MẪU (GURU BEAD) Ở ĐÁY CHUỖI DỌC -->
-                                                <circle cx="85" cy="146" r="3.6" fill="url(#guruBeadGrad)" stroke="#78350f" stroke-width="0.6"/>
-                                                <!-- TUA RUA TƠ CÁT TƯỜNG ĐỎ VÀNG RỦ DỌC -->
-                                                <path d="M 85 149.6 L 85 160" stroke="#dc2626" stroke-width="1.6" stroke-linecap="round"/>
-                                                <path d="M 83.5 152 L 83 159" stroke="#f59e0b" stroke-width="0.8"/>
-                                                <path d="M 86.5 152 L 87 159" stroke="#f59e0b" stroke-width="0.8"/>
-                                                <circle cx="85" cy="150.5" r="1.2" fill="#fbbf24"/>
+                                            <!-- SỢI DÂY CHUỖI HẠT RỦ DỌC NỐI TỪ TAY PHẢI XUỐNG TAY TRÁI -->
+                                            <path d="M 88 100 C 82 100, 74 126, 78 143 C 82 153, 91 153, 94 140 C 97 125, 95 100, 88 100" stroke="#78350f" stroke-width="1" fill="none" opacity="0.6"/>
 
-                                                <!-- Vòng chuỗi hạt bên phải -->
-                                                <circle cx="88" cy="141" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="91" cy="135" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="94" cy="126" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="95" cy="117" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="93" cy="108" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
-                                                <circle cx="90" cy="100" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                            <!-- HẠT CHỦ (GURU BEAD) VÀ TUA RUA Ở ĐÁY CHUỖI DƯỚI TAY TRÁI -->
+                                            <circle cx="83" cy="150" r="3.6" fill="url(#guruBeadGrad)" stroke="#78350f" stroke-width="0.6"/>
+                                            <path d="M 83 153.6 L 83 164" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round"/>
+                                            <path d="M 81.5 156 L 81 163" stroke="#f59e0b" stroke-width="0.9"/>
+                                            <path d="M 84.5 156 L 85 163" stroke="#f59e0b" stroke-width="0.9"/>
+                                            <circle cx="83" cy="154" r="1.2" fill="#fbbf24"/>
 
-                                                <!-- HẠT ĐỈNH TRÊN CÙNG -->
-                                                <circle cx="85" cy="96" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                            <!-- VÒNG CHUỖI TRÀNG HẠT: CÁC HẠT TRƯỢT DỌC QUA NGÓN TAY LIÊN TỤC -->
+                                            <!-- Nhánh phải: Các hạt trượt dọc qua tay phải xuống dưới -->
+                                            <g class="sliding-beads-strand">
+                                                <circle cx="90" cy="85" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="91" cy="95" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="91" cy="105" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="90" cy="115" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="88" cy="125" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="85" cy="135" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="81" cy="145" r="2.8" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
                                             </g>
 
-                                            <!-- ĐÔI BÀN TAY CHẮP DỌC HÌNH HOA SEN / BÚP SEN TRƯỚC NGỰC -->
-                                            <g id="prayerHandsVertical">
-                                                <!-- Thân hai bàn tay chắp đứng thẳng dọc -->
-                                                <path d="M 80 125 C 78 114, 82 99, 85 96 C 88 99, 92 114, 90 125 Z" fill="#fcd34d" stroke="#b45309" stroke-width="0.8"/>
-                                                <!-- Đường khép giữa hai lòng bàn tay chắp dọc -->
-                                                <line x1="85" y1="97" x2="85" y2="125" stroke="#b45309" stroke-width="1" opacity="0.6"/>
-                                                <!-- Búp sen chắp đầu ngón tay -->
-                                                <circle cx="85" cy="96" r="3.2" fill="#fbbf24" opacity="0.85"/>
-                                                <!-- Nếp gấp cổ tay áo -->
-                                                <path d="M 77 124 Q 85 128 93 124" stroke="#475569" stroke-width="1.2" fill="none"/>
+                                            <!-- Nhánh trái: Hạt chuỗi đi ngược lên tay phải -->
+                                            <g>
+                                                <circle cx="76" cy="132" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="77" cy="122" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="80" cy="112" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
+                                                <circle cx="84" cy="103" r="2.6" fill="url(#woodBeadGrad)" stroke="#78350f" stroke-width="0.5"/>
                                             </g>
 
-                                            <!-- NGÓN TAY CÁI BÊN PHẢI LẦN TỪNG HẠT TRÀNG DỌC -->
-                                            <g class="mala-thumb-vertical">
-                                                <path d="M 88 110 C 91 110, 93 115, 91 119 C 89 120, 87 117, 87 112 Z" fill="#fde68a" stroke="#b45309" stroke-width="0.7"/>
-                                                <circle class="active-bead-vert" cx="95" cy="117" r="3.2" fill="#f59e0b" stroke="#78350f" stroke-width="0.6"/>
+                                            <!-- BÀN TAY PHẢI ĐẶT DỌC THẲNG ĐỨNG TRƯỚC NGỰC (TAY LẦN TRÀNG HẠT ĐỂ DỌC) -->
+                                            <g id="rightHandVert">
+                                                <path d="M 87 124 C 84 116, 86 100, 89 96 C 91 96, 94 100, 93 124 Z" fill="#fcd34d" stroke="#b45309" stroke-width="0.8"/>
+                                                <line x1="89" y1="97" x2="89" y2="114" stroke="#b45309" stroke-width="0.8" opacity="0.7"/>
+                                                <line x1="91" y1="100" x2="91" y2="116" stroke="#b45309" stroke-width="0.8" opacity="0.6"/>
+                                                <path d="M 85 123 Q 90 126 95 123" stroke="#475569" stroke-width="1.2" fill="none"/>
+                                            </g>
+
+                                            <!-- NGÓN TAY CÁI CỬ ĐỘNG LẦN HẠT (GẠT HẠT TRƯỢT XUỐNG DỌC THEO CHUỖI) -->
+                                            <g class="mala-thumb-motion">
+                                                <path d="M 88 108 C 85 106, 85 102, 88 101 C 90 101, 92 104, 90 110 Z" fill="#fde68a" stroke="#b45309" stroke-width="0.7"/>
+                                                <circle class="bead-glow-effect" cx="89" cy="105" r="3.8" fill="#fbbf24" opacity="0.75"/>
                                             </g>
                                         </g>
 
