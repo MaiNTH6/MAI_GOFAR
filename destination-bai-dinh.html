@@ -1180,8 +1180,8 @@
             }
         }
         .prayer-pilgrim-sim {
-            background: radial-gradient(circle at 50% 35%, rgba(251, 191, 36, 0.12) 0%, rgba(6, 18, 30, 0.85) 75%);
-            border: 1px solid rgba(251, 191, 36, 0.3);
+            background: radial-gradient(circle at 50% 35%, rgba(251, 191, 36, 0.14) 0%, rgba(6, 18, 30, 0.9) 75%);
+            border: 1px solid rgba(251, 191, 36, 0.35);
             border-radius: var(--radius-sm);
             padding: 1.2rem 0.8rem;
             display: flex;
@@ -1193,20 +1193,26 @@
             min-height: 240px;
             height: 100%;
             user-select: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .prayer-pilgrim-sim:hover {
+            border-color: rgba(251, 191, 36, 0.6);
+            box-shadow: 0 0 25px rgba(251, 191, 36, 0.15), inset 0 0 25px rgba(0, 0, 0, 0.5);
         }
         .prayer-aura-glow {
             position: absolute;
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.35) 0%, transparent 70%);
             top: 25px;
             pointer-events: none;
-            animation: auraGlowPulse 4s ease-in-out infinite;
+            animation: auraPulseAutoThreeBows 8.8s ease-in-out infinite;
         }
-        @keyframes auraGlowPulse {
-            0%, 100% { transform: scale(0.92); opacity: 0.45; }
-            50% { transform: scale(1.18); opacity: 0.85; }
+        @keyframes auraPulseAutoThreeBows {
+            0%, 28%, 61%, 94%, 100% { transform: scale(0.95); opacity: 0.45; }
+            17%, 48%, 81%           { transform: scale(1.35); opacity: 0.95; }
         }
         .pilgrim-bow-svg {
             width: 155px;
@@ -1214,22 +1220,35 @@
             display: block;
             filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
         }
+        /* HÀNH ĐỘNG CÚI LẠY 3 LẦN TỰ ĐỘNG LIÊN TỤC (LẠY 1 -> LẠY 2 -> LẠY 3 -> NGHỈ -> LẶP LẠI) */
         .prayer-upper-body {
             transform-origin: 85px 150px;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: autoKowtowThreeBows 8.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            will-change: transform;
         }
-        /* Chu kỳ cúi lạy trang nghiêm khi đọc văn khấn */
-        .prayer-pilgrim-sim.is-bowing .prayer-upper-body {
-            animation: pilgrimKowtowCycle 4.8s ease-in-out infinite;
-        }
-        @keyframes pilgrimKowtowCycle {
-            0% { transform: rotate(0deg); }
-            15% { transform: rotate(0deg); }
-            35% { transform: rotate(40deg) translateY(6px); }
-            55% { transform: rotate(46deg) translateY(10px); }
-            75% { transform: rotate(44deg) translateY(8px); }
-            90% { transform: rotate(4deg); }
-            100% { transform: rotate(0deg); }
+        @keyframes autoKowtowThreeBows {
+            /* LẠY LẦN 1: Kính Phật (0s -> 2.5s) */
+            0%   { transform: rotate(0deg) translateY(0); }
+            3%   { transform: rotate(0deg) translateY(0); }
+            11%  { transform: rotate(46deg) translateY(12px); }
+            17%  { transform: rotate(50deg) translateY(14px); }
+            25%  { transform: rotate(0deg) translateY(0); }
+            28%  { transform: rotate(0deg) translateY(0); }
+
+            /* LẠY LẦN 2: Kính Pháp (2.9s -> 5.4s) */
+            33%  { transform: rotate(0deg) translateY(0); }
+            42%  { transform: rotate(46deg) translateY(12px); }
+            48%  { transform: rotate(50deg) translateY(14px); }
+            57%  { transform: rotate(0deg) translateY(0); }
+            61%  { transform: rotate(0deg) translateY(0); }
+
+            /* LẠY LẦN 3: Kính Tăng (6.6s -> 8.8s) */
+            66%  { transform: rotate(0deg) translateY(0); }
+            75%  { transform: rotate(50deg) translateY(13px); }
+            81%  { transform: rotate(52deg) translateY(15px); }
+            90%  { transform: rotate(0deg) translateY(0); }
+            94%  { transform: rotate(0deg) translateY(0); }
+            100% { transform: rotate(0deg) translateY(0); }
         }
         .prayer-sim-meta {
             display: flex;
@@ -1975,13 +1994,13 @@
                                     <!-- TRẠNG THÁI & CHỈ SỐ LẠY -->
                                     <div class="prayer-sim-meta">
                                         <div class="prayer-sim-status" id="prayerSimStatus">
-                                            <span id="prayerSimIcon">🙏</span> <span id="prayerSimText">Tĩnh tâm niệm Phật</span>
+                                            <span id="prayerSimIcon">🙏</span> <span id="prayerSimText">Tự động đảnh lễ 3 lạy</span>
                                         </div>
                                         <div class="prayer-bow-badge">
                                             Đã lạy: <strong id="prayerBowCount" style="color: var(--accent-gold);">0</strong> lạy
                                         </div>
-                                        <button type="button" class="btn-prayer-bow-act" id="btnPrayerBowAct" onclick="triggerThreeBows(event)" title="Hành giả thực hiện trọn vẹn 3 lạy trước Tam Bảo">
-                                            <span>🙇</span> Quỳ Lạy 3 Lần
+                                        <button type="button" class="btn-prayer-bow-act" id="btnPrayerBowAct" onclick="triggerManualPrayerBow(event)" title="Chạm để thỉnh chuông đảnh lễ Tam Bảo">
+                                            <span>🙇</span> Đảnh Lễ (+3 Lạy)
                                         </button>
                                     </div>
                                 </div>
@@ -2843,6 +2862,9 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
                 const num = parseInt(hash.replace('#ban-', ''), 10);
                 if (num >= 1 && num <= 9) initialStation = num;
             }
+            if (typeof initAutoBowingDevotion === 'function') {
+                initAutoBowingDevotion();
+            }
             if (typeof navigateToStation === 'function') {
                 navigateToStation(initialStation);
                 if (hash && hash.startsWith('#ban-')) {
@@ -2862,7 +2884,27 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
         let bowCounterInterval = null;
         let totalPrayerBows = 0;
 
+        let autoBowInterval = null;
         let isThreeBowsRunning = false;
+
+        function initAutoBowingDevotion() {
+            if (autoBowInterval) clearInterval(autoBowInterval);
+            let bowStep = 0;
+            autoBowInterval = setInterval(() => {
+                totalPrayerBows++;
+                const countElem = document.getElementById('prayerBowCount');
+                if (countElem) countElem.textContent = totalPrayerBows;
+                pilgrimStats.bows++;
+                
+                bowStep = (bowStep + 1) % 3;
+                const statusElem = document.getElementById('prayerSimText');
+                if (statusElem && !isReadingPrayer) {
+                    if (bowStep === 1) statusElem.textContent = 'Đang lạy Lần 1 (Kính Phật)...';
+                    else if (bowStep === 2) statusElem.textContent = 'Đang lạy Lần 2 (Kính Pháp)...';
+                    else statusElem.textContent = 'Đang lạy Lần 3 (Kính Tăng)...';
+                }
+            }, 2930);
+        }
 
         function triggerThreeBows(event) {
             if (event) event.stopPropagation();
