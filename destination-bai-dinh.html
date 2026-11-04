@@ -1896,7 +1896,7 @@
                             <!-- KHUNG TƯƠNG TÁC: CỘT MÔ PHỎNG HÌNH NGƯỜI CÚI LẠY & CỘT NỘI DUNG VĂN KHẤN -->
                             <div class="stage-prayer-body-grid">
                                 <!-- CỘT 1: HÌNH NGƯỜI MÔ PHỎNG CÚI LẠY THÀNH KÍNH (ÁO LAM PHẬT TỬ) -->
-                                <div class="prayer-pilgrim-sim" id="prayerPilgrimSim">
+                                <div class="prayer-pilgrim-sim" id="prayerPilgrimSim" onclick="triggerThreeBows(event)" title="Chạm để hành giả quỳ lạy 3 lần thành kính">
                                     <div class="prayer-aura-glow"></div>
                                     
                                     <!-- SVG HÀNH GIẢ ÁO LAM QUỲ TRÊN BỒ ĐOÀN SEN, CHẮP TAY BÚP SEN & CÚI LẠY -->
@@ -1980,8 +1980,8 @@
                                         <div class="prayer-bow-badge">
                                             Đã lạy: <strong id="prayerBowCount" style="color: var(--accent-gold);">0</strong> lạy
                                         </div>
-                                        <button type="button" class="btn-prayer-bow-act" onclick="triggerManualPrayerBow(event)" title="Cúi lạy thêm 1 lạy trước ban thờ">
-                                            <span>🙇</span> Cúi Lạy (+1)
+                                        <button type="button" class="btn-prayer-bow-act" id="btnPrayerBowAct" onclick="triggerThreeBows(event)" title="Hành giả thực hiện trọn vẹn 3 lạy trước Tam Bảo">
+                                            <span>🙇</span> Quỳ Lạy 3 Lần
                                         </button>
                                     </div>
                                 </div>
@@ -2862,24 +2862,85 @@ Hôm nay con đã hoàn thành trọn vẹn lộ trình 9 ban thờ chiêm bái 
         let bowCounterInterval = null;
         let totalPrayerBows = 0;
 
-        function triggerManualPrayerBow(event) {
+        let isThreeBowsRunning = false;
+
+        function triggerThreeBows(event) {
             if (event) event.stopPropagation();
-            const ub = document.getElementById('prayerUpperBody');
-            if (ub) {
-                ub.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                ub.style.transform = 'rotate(44deg) translateY(8px)';
-                setTimeout(() => {
-                    ub.style.transform = 'rotate(0deg)';
-                }, 1200);
-            }
-            totalPrayerBows++;
+            if (isThreeBowsRunning) return;
+            isThreeBowsRunning = true;
+
+            const simBox = document.getElementById('prayerPilgrimSim');
+            const statusElem = document.getElementById('prayerSimText');
             const countElem = document.getElementById('prayerBowCount');
-            if (countElem) countElem.textContent = totalPrayerBows;
-            
-            pilgrimStats.bows++;
-            pilgrimStats.merit += 1;
-            playMoStation();
-            createPilgrimFlyText(event ? event.clientX : window.innerWidth / 2, event ? event.clientY : window.innerHeight / 2, '+1 Lạy Thành Kính 🙏');
+            const btnBow = document.getElementById('btnPrayerBowAct');
+
+            if (simBox) {
+                simBox.classList.remove('is-bowing-3-times');
+                void simBox.offsetWidth; // trigger reflow
+                simBox.classList.add('is-bowing-3-times');
+            }
+
+            if (btnBow) {
+                btnBow.style.opacity = '0.7';
+                btnBow.style.pointerEvents = 'none';
+            }
+
+            // --- LẠY 1: Kính Phật (1.2s) ---
+            if (statusElem) statusElem.textContent = 'Đang lạy Lần 1 (Kính Phật)...';
+            setTimeout(() => {
+                playMoStation();
+                totalPrayerBows++;
+                pilgrimStats.bows++;
+                pilgrimStats.merit += 1;
+                if (countElem) countElem.textContent = totalPrayerBows;
+                const rect = simBox ? simBox.getBoundingClientRect() : { left: window.innerWidth / 2, top: window.innerHeight / 2 };
+                createPilgrimFlyText(rect.left + 70, rect.top + 40, '+1 Lạy (Kính Phật) 🙏');
+            }, 1200);
+
+            // --- LẠY 2: Kính Pháp (3.9s) ---
+            setTimeout(() => {
+                if (statusElem) statusElem.textContent = 'Đang lạy Lần 2 (Kính Pháp)...';
+                playMoStation();
+                totalPrayerBows++;
+                pilgrimStats.bows++;
+                pilgrimStats.merit += 1;
+                if (countElem) countElem.textContent = totalPrayerBows;
+                const rect = simBox ? simBox.getBoundingClientRect() : { left: window.innerWidth / 2, top: window.innerHeight / 2 };
+                createPilgrimFlyText(rect.left + 70, rect.top + 40, '+1 Lạy (Kính Pháp) 🙏');
+            }, 3900);
+
+            // --- LẠY 3: Kính Tăng (6.6s) ---
+            setTimeout(() => {
+                if (statusElem) statusElem.textContent = 'Đang lạy Lần 3 (Kính Tăng)...';
+                ringTempleBellStation();
+                totalPrayerBows++;
+                pilgrimStats.bows++;
+                pilgrimStats.merit += 1;
+                if (countElem) countElem.textContent = totalPrayerBows;
+                const rect = simBox ? simBox.getBoundingClientRect() : { left: window.innerWidth / 2, top: window.innerHeight / 2 };
+                createPilgrimFlyText(rect.left + 70, rect.top + 40, '+1 Lạy (Kính Tăng) 🙏');
+            }, 6600);
+
+            // --- HOÀN TẤT 3 LẠY (8.5s) ---
+            setTimeout(() => {
+                if (simBox) simBox.classList.remove('is-bowing-3-times');
+                if (btnBow) {
+                    btnBow.style.opacity = '1';
+                    btnBow.style.pointerEvents = 'auto';
+                }
+                isThreeBowsRunning = false;
+                if (statusElem) statusElem.textContent = '✨ Đảnh lễ 3 lạy viên mãn!';
+                showToast('Đã đảnh lễ 3 lạy thành kính trước Tam Bảo (+3 Công Đức)', '✨');
+                setTimeout(() => {
+                    if (!isReadingPrayer && statusElem) {
+                        statusElem.textContent = 'Tĩnh tâm niệm Phật';
+                    }
+                }, 3000);
+            }, 8500);
+        }
+
+        function triggerManualPrayerBow(event) {
+            triggerThreeBows(event);
         }
 
         function toggleReadPrayerOnline() {
