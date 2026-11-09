@@ -2347,7 +2347,59 @@
             color: #fff;
         }
 
-    </style>
+    
+        /* UNIFIED ZEN HERO & ALTAR STAGE */
+        .hero.zen-hero-unified {
+            min-height: auto;
+            padding: 3rem 0 4rem;
+            display: block;
+        }
+        .hero.zen-hero-unified .hero-container {
+            max-width: 1200px;
+            padding: 1rem 1.5rem;
+        }
+        .hero.zen-hero-unified .hero-desc {
+            max-width: 780px;
+            margin: 0 auto 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .hero.zen-hero-unified .zen-search-container {
+            margin: 1rem auto 2.2rem;
+            max-width: 760px;
+        }
+        .hero.zen-hero-unified .virtual-altar-stage {
+            background: rgba(13, 30, 46, 0.85);
+            border: 1px solid rgba(251, 191, 36, 0.35);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65), inset 0 0 60px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(16px);
+            margin-bottom: 1.5rem;
+        }
+        .altar-sample-tip {
+            margin-top: 1.5rem;
+            padding: 0.55rem 1.3rem;
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.28);
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            backdrop-filter: blur(8px);
+        }
+        @media (max-width: 768px) {
+            .hero.zen-hero-unified {
+                padding: 2rem 0 3rem;
+            }
+            .hero.zen-hero-unified h1 {
+                font-size: 2rem;
+            }
+            .hero.zen-hero-unified .hero-desc {
+                font-size: 0.95rem;
+            }
+        }
+</style>
 </head>
 <body>
 
@@ -2378,18 +2430,25 @@
     </nav>
 
     <!-- HERO HEADER -->
-    <header class="hero">
+    <!-- ================================================= -->
+    <!-- MÀN HÌNH CHÍNH: KHÔNG GIAN THIỀN MÔN & CHÁNH ĐIỆN ẢO TÍCH HỢP TÌM KIẾM -->
+    <!-- ================================================= -->
+    <header class="hero zen-hero-unified" id="goc-an-nhien">
+        <!-- NỀN PHẬT GIÁO CỔ KÍNH LINH THIÊNG -->
         <img class="hero-img" src="images/bai_dinh_ancient_temple_1785641271528.webp" alt="Chốn thiền môn thanh tịnh Bái Đính Ninh Bình">
         <div class="hero-overlay"></div>
-        <div class="hero-container">
+
+        <div class="container hero-container">
+            <!-- TIÊU ĐỀ SÚC TÍCH, KHÔNG TRÙNG LẶP -->
             <div class="hero-badge">
                 <span>🌸</span> KHÔNG GIAN TÂM LINH & CHÁNH NIỆM VIỆT NAM
             </div>
-            <h1>Chốn Thiền Môn Cổ Kính & <span class="gold">Hành Trình An Nhiên</span></h1>
+            <h1>Chốn Thiền Môn Cổ Kính & <span class="gold">Góc Chánh Điện Ảo</span></h1>
             <p class="hero-desc">
-                Trút bỏ những ồn ào vội vã của đời thường để hòa mình vào vẻ đẹp trầm mặc nghìn năm của non sông đất Việt. Lắng nghe tiếng mõ nhịp nhàng, tiếng chuông đại hồng chung ngân vang, thắp nén tâm hương và gửi gắm tâm nguyện bình an đến người thân yêu.
+                Trút bỏ những ồn ào vội vã, hòa mình vào vẻ đẹp trầm mặc ngàn năm của non sông đất Việt. Chiêm bái các ngôi đại tự linh thiêng, đảnh lễ Tam Bảo, dâng nén tâm hương và gửi gắm tâm nguyện bình an.
             </p>
-            <!-- SMART ZEN SEARCH BAR & QUICK CHIPS -->
+
+            <!-- THANH TÌM KIẾM CỔ TỰ & TRA CỨU NHANH TÍCH HỢP -->
             <div class="zen-search-container">
                 <div class="zen-search-bar">
                     <span class="zen-search-icon">🔍</span>
@@ -2409,31 +2468,7 @@
                 <div class="zen-search-dropdown" id="zenSearchDropdown"></div>
             </div>
 
-            <div class="hero-nav-pills">
-                <a href="#goc-an-nhien" class="hero-pill">🌸 Đi Chùa Online & Chánh Niệm</a>
-                <a href="#danh-lam-co-tu" class="hero-pill">🏯 Khám Phá Cổ Tự 3 Miền</a>
-                <a href="#nghi-thuc" class="hero-pill">🏮 Quy Chuẩn Đi Chùa</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- ================================================= -->
-    <!-- PHẦN 1: ĐI CHÙA ONLINE & GÓC AN NHIÊN CHÁNH NIỆM -->
-    <!-- ================================================= -->
-    <section class="zen-sanctuary" id="goc-an-nhien">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">✨ ĐI CHÙA ONLINE & CHÁNH NIỆM TẠI GIA</span>
-                <h2 class="section-title">Không Gian Chánh Điện Ảo & Góc An Nhiên</h2>
-                <p class="section-subtitle">
-                    Chiêm bái các ngôi đại tự linh thiêng của đất Việt, đảnh lễ Tam Bảo, dâng nén tâm hương và trải nghiệm các pháp cụ tu tập chánh niệm giúp thân tâm buông thư, nuôi dưỡng phúc lành.
-                </p>
-                <div style="margin-top: 1rem; background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 50px; display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.45rem 1.2rem; font-size: 0.88rem; color: var(--accent-gold);">
-                    <span>💡 <strong>Điểm chùa mẫu:</strong> Bạn có thể xem lộ trình hành lễ tuần tự từng ban, cách thắp hương & văn khấn chi tiết tại trang riêng của từng ngôi chùa — ví dụ: <a href="destination-bai-dinh.html" style="color: #fff; text-decoration: underline; font-weight: 700;">Chùa Bái Đính</a></span>
-                </div>
-            </div>
-
-            <!-- KHỐI 1: CHÁNH ĐIỆN ẢO TÔN NGHIÊM (VIRTUAL SANCTUARY) -->
+            <!-- CHÁNH ĐIỆN ẢO TÔN NGHIÊM (VIRTUAL SANCTUARY) -->
             <div class="virtual-altar-stage" id="virtualAltarStage">
                 <!-- NỀN DANH LAM CỔ TỰ MỜ ẢO -->
                 <div class="altar-backdrop" id="altarBackdrop" style="background-image: url('images/bai_dinh_buddha_1783494499108.webp');"></div>
@@ -2467,26 +2502,6 @@
                 </div>
                 <h3 class="altar-title" id="altarTempleTitle">Chánh Điện Đức Phật Thích Ca Mâu Ni</h3>
                 <div class="altar-mantra" id="altarTempleMantra">"Nam Mô Bản Sư Thích Ca Mâu Ni Phật"</div>
-
-                <!-- THỐNG KÊ CÔNG ĐỨC TU TẬP TRỰC TIẾP -->
-                <div class="merit-counter-ribbon">
-                    <div class="merit-counter-item">
-                        <span>🐟 Gõ Mõ:</span>
-                        <strong id="liveMoCount">0</strong>
-                    </div>
-                    <div class="merit-counter-item">
-                        <span>🙏 Đảnh Lễ:</span>
-                        <strong id="liveBowCount">0</strong>
-                    </div>
-                    <div class="merit-counter-item">
-                        <span>📿 Niệm Hạt:</span>
-                        <strong id="liveMalaCount">0</strong>
-                    </div>
-                    <div class="merit-counter-item">
-                        <span>✨ Công Đức:</span>
-                        <strong id="liveMeritCount">0</strong>
-                    </div>
-                </div>
 
                 <!-- BÀN THỜ TAM BẢO (PHYSICAL ALTAR TABLE) -->
                 <div class="physical-altar-table">
@@ -2525,7 +2540,7 @@
                         <div class="offering-icon-label">Hoa Sen Tươi</div>
                     </div>
 
-                    <!-- BÁT HƯƠNG ĐỒNG VỚI KHÓI CANVAS & NHANG TÀN DẦN -->
+                    <!-- BÁT HƯƠNG ĐỒNG VỚI KHÓI CANVAS -->
                     <div class="altar-censer-unit" id="altarCenserUnit" onclick="igniteAltarIncense(event)" title="Chạm để dâng nén tâm hương thanh tịnh">
                         <canvas id="altarSmokeCanvas" class="altar-smoke-canvas" width="200" height="200"></canvas>
                         <div class="altar-sticks-cluster" id="altarSticksCluster">
@@ -2541,7 +2556,7 @@
                     <!-- DÂNG MÂM NGŨ QUẢ -->
                     <div class="altar-offering-dish" id="altarDishFruit" onclick="makeFruitOffering(event)" title="Chạm để dâng mâm quả phúc lành">
                         <div class="offering-icon-large">🍇</div>
-                        <div class="offering-icon-label">Mâm Ngũ QuẢ</div>
+                        <div class="offering-icon-label">Mâm Ngũ Quả</div>
                     </div>
 
                     <!-- CHÂN NẾN HỮU (TỪ BI) -->
@@ -2556,7 +2571,7 @@
                 <!-- THANH TÁC VỤ LỄ BÁI TÂM LINH -->
                 <div class="altar-action-bar">
                     <button type="button" class="btn-altar-action" id="btnActionBow" onclick="performAltarBow(event)">
-                        <span>🙏</span> Đảnh Lễ Tam Bảo (+1 Lạy)
+                        <span>🙏</span> Đảnh Lễ Tam Bảo
                     </button>
                     <button type="button" class="btn-altar-action" id="btnActionMo" onclick="strikeMoInteractive(event)">
                         <span>🐟</span> Gõ Mõ Chánh Niệm
@@ -2565,15 +2580,26 @@
                         <span>🔔</span> Thỉnh Đại Hồng Chung
                     </button>
                     <button type="button" class="btn-altar-action" id="btnActionMala" onclick="advanceMalaInteractive(event)">
-                        <span>📿</span> Niệm Phật Lần Hạt (+1 Niệm)
+                        <span>📿</span> Niệm Phật Lần Hạt
                     </button>
                     <button type="button" class="btn-altar-action" id="btnActionAmbient" onclick="toggleAmbientSound()">
                         <span id="ambientBarIcon">🎵</span> <span id="ambientBarText">Âm Thanh Thiền Định</span>
                     </button>
                 </div>
+
+                <!-- TIP LINK ĐẾN TRANG MẪU BÁI ĐÍNH -->
+                <div class="altar-sample-tip">
+                    <span>💡 <strong>Cẩm nang chi tiết:</strong> Xem lộ trình hành lễ 9 ban, cách dâng lễ & văn khấn chuẩn mực tại <a href="destination-bai-dinh.html" style="color: #fbbf24; text-decoration: underline; font-weight: 700;">Chùa Bái Đính →</a></span>
+                </div>
+            </div>
+
+            <!-- NÚT ĐIỀU HƯỚNG NHANH XUỐNG CÁC PHẦN DƯỚI -->
+            <div class="hero-nav-pills" style="margin-top: 1.5rem;">
+                <a href="#danh-lam-co-tu" class="hero-pill">🏯 Khám Phá Cổ Tự 3 Miền</a>
+                <a href="#nghi-thuc" class="hero-pill">🏮 Quy Chuẩn Đi Chùa</a>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- ================================================= -->
     <!-- PHẦN 2: DANH LAM CỔ TỰ 3 MIỀN (BẮC - TRUNG - NAM) -->
