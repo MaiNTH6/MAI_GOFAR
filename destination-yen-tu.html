@@ -1400,10 +1400,19 @@ Nam Mô A Di Đà Phật! (3 lần, 3 lạy)`
             } catch (e) {}
         }
 
-        // ÂM THIỀN ĐỊNH 432Hz NON THIÊNG YÊN TỬ
+        // ÂM THIỀN ĐỊNH GÕ MÕ & TỤNG KINH NON THIÊNG YÊN TỬ
         let ambientRunning = false;
-        let ambientNodes = null;
-        let chimeTimer = null;
+        let chantTimer = null;
+        let chantStep = 0;
+
+        const CHANT_CYCLE = [
+            { text: "Nam", freq: 164.8, dur: 1.35, isBell: false },
+            { text: "Mô", freq: 196.0, dur: 1.35, isBell: false },
+            { text: "A", freq: 220.0, dur: 1.35, isBell: false },
+            { text: "Di", freq: 196.0, dur: 1.35, isBell: false },
+            { text: "Đà", freq: 164.8, dur: 1.35, isBell: false },
+            { text: "Phật", freq: 146.8, dur: 2.70, isBell: true }
+        ];
 
         function toggleYenTuAmbientSound() {
             ambientRunning = !ambientRunning;
@@ -1413,98 +1422,157 @@ Nam Mô A Di Đà Phật! (3 lần, 3 lạy)`
             if (ambientRunning) {
                 startYenTuAmbient();
                 icon.textContent = '⏸️';
-                text.textContent = 'Dừng Âm Thiền';
-                showToast('Không gian âm thanh thiền định non thiêng Yên Tử 432Hz', '🧘');
+                text.textContent = 'Dừng Mõ & Kinh';
+                showToast('Đang phát tiếng mõ chánh niệm & tụng kinh non thiêng Yên Tử', '📿');
             } else {
                 stopYenTuAmbient();
                 icon.textContent = '🎵';
-                text.textContent = 'Âm Thiền 432Hz';
+                text.textContent = 'Âm Mõ & Tụng Kinh';
                 showToast('Đã dừng âm thiền', '⏹️');
             }
+        }
+
+        function strikeYenTuMo(ctx, time) {
+            try {
+                const osc1 = ctx.createOscillator();
+                const g1 = ctx.createGain();
+                osc1.type = 'triangle';
+                osc1.frequency.setValueAtTime(750, time);
+                osc1.frequency.exponentialRampToValueAtTime(360, time + 0.07);
+                g1.gain.setValueAtTime(0.85, time);
+                g1.gain.exponentialRampToValueAtTime(0.001, time + 0.12);
+
+                const osc2 = ctx.createOscillator();
+                const g2 = ctx.createGain();
+                osc2.type = 'sine';
+                osc2.frequency.setValueAtTime(460, time);
+                osc2.frequency.exponentialRampToValueAtTime(390, time + 0.15);
+                g2.gain.setValueAtTime(0.70, time);
+                g2.gain.exponentialRampToValueAtTime(0.001, time + 0.16);
+
+                const filter = ctx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.setValueAtTime(580, time);
+                filter.Q.setValueAtTime(2.0, time);
+
+                osc1.connect(g1);
+                osc2.connect(g2);
+                g1.connect(filter);
+                g2.connect(filter);
+                filter.connect(ctx.destination);
+
+                osc1.start(time);
+                osc2.start(time);
+                osc1.stop(time + 0.15);
+                osc2.stop(time + 0.18);
+            } catch (e) {}
+        }
+
+        function strikeYenTuVocal(ctx, freq, dur, time) {
+            try {
+                const oscVocal = ctx.createOscillator();
+                oscVocal.type = 'sawtooth';
+                oscVocal.frequency.setValueAtTime(freq, time);
+
+                const f1 = ctx.createBiquadFilter();
+                f1.type = 'bandpass';
+                f1.frequency.setValueAtTime(450, time);
+                f1.Q.setValueAtTime(3.2, time);
+
+                const f2 = ctx.createBiquadFilter();
+                f2.type = 'bandpass';
+                f2.frequency.setValueAtTime(1050, time);
+                f2.Q.setValueAtTime(2.8, time);
+
+                const oscSub = ctx.createOscillator();
+                oscSub.type = 'sine';
+                oscSub.frequency.setValueAtTime(freq * 0.5, time);
+
+                const gVocal = ctx.createGain();
+                gVocal.gain.setValueAtTime(0.001, time);
+                gVocal.gain.linearRampToValueAtTime(0.24, time + 0.18);
+                gVocal.gain.linearRampToValueAtTime(0.20, time + dur - 0.25);
+                gVocal.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+
+                const gSub = ctx.createGain();
+                gSub.gain.setValueAtTime(0.001, time);
+                gSub.gain.linearRampToValueAtTime(0.12, time + 0.2);
+                gSub.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+
+                oscVocal.connect(f1);
+                oscVocal.connect(f2);
+                f1.connect(gVocal);
+                f2.connect(gVocal);
+                gVocal.connect(ctx.destination);
+
+                oscSub.connect(gSub);
+                gSub.connect(ctx.destination);
+
+                oscVocal.start(time);
+                oscSub.start(time);
+                oscVocal.stop(time + dur + 0.08);
+                oscSub.stop(time + dur + 0.08);
+            } catch (e) {}
+        }
+
+        function strikeYenTuBell(ctx, time) {
+            try {
+                const partials = [
+                    { f: 540, g: 0.40, d: 5.5 },
+                    { f: 864, g: 0.25, d: 4.8 },
+                    { f: 1296, g: 0.15, d: 3.5 }
+                ];
+                partials.forEach(p => {
+                    const osc = ctx.createOscillator();
+                    const g = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(p.f, time);
+                    g.gain.setValueAtTime(0.001, time);
+                    g.gain.exponentialRampToValueAtTime(p.g, time + 0.04);
+                    g.gain.exponentialRampToValueAtTime(0.0001, time + p.d);
+
+                    osc.connect(g);
+                    g.connect(ctx.destination);
+                    osc.start(time);
+                    osc.stop(time + p.d + 0.1);
+                });
+            } catch (e) {}
+        }
+
+        function playNextYenTuStep() {
+            if (!ambientRunning) return;
+            try {
+                const ctx = getAudioContext();
+                const now = ctx.currentTime;
+                const step = CHANT_CYCLE[chantStep];
+
+                strikeYenTuMo(ctx, now);
+                strikeYenTuVocal(ctx, step.freq, step.dur, now);
+                if (step.isBell) {
+                    strikeYenTuBell(ctx, now);
+                }
+
+                chantStep = (chantStep + 1) % CHANT_CYCLE.length;
+                chantTimer = setTimeout(playNextYenTuStep, step.dur * 1000);
+            } catch (e) {}
         }
 
         function startYenTuAmbient() {
             try {
                 const ctx = getAudioContext();
-                const now = ctx.currentTime;
-
-                const masterGain = ctx.createGain();
-                masterGain.gain.setValueAtTime(0.0001, now);
-                masterGain.gain.exponentialRampToValueAtTime(0.16, now + 2.5);
-                masterGain.connect(ctx.destination);
-
-                const filter = ctx.createBiquadFilter();
-                filter.type = 'lowpass';
-                filter.frequency.setValueAtTime(500, now);
-                filter.connect(masterGain);
-
-                // Harmonics of 108Hz / 432Hz
-                const freqs = [108, 216, 324, 432];
-                const oscs = [];
-                freqs.forEach((f, idx) => {
-                    const osc = ctx.createOscillator();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(f, now);
-                    const g = ctx.createGain();
-                    g.gain.setValueAtTime(0.08 / (idx + 1), now);
-                    osc.connect(g);
-                    g.connect(filter);
-                    osc.start(now);
-                    oscs.push(osc);
-                });
-
-                // Breathing LFO
-                const lfo = ctx.createOscillator();
-                lfo.frequency.setValueAtTime(0.085, now);
-                const lfoGain = ctx.createGain();
-                lfoGain.gain.setValueAtTime(0.025, now);
-                lfo.connect(lfoGain);
-                lfoGain.connect(masterGain.gain);
-                lfo.start(now);
-                oscs.push(lfo);
-
-                // Periodic Chùa Đồng bell chime every 12s
-                function ringChuaDongChime() {
-                    if (!ambientNodes) return;
-                    try {
-                        const ct = ctx.currentTime;
-                        const osc = ctx.createOscillator();
-                        osc.type = 'sine';
-                        osc.frequency.setValueAtTime(432, ct);
-                        const g = ctx.createGain();
-                        g.gain.setValueAtTime(0.0001, ct);
-                        g.gain.exponentialRampToValueAtTime(0.04, ct + 0.1);
-                        g.gain.exponentialRampToValueAtTime(0.0001, ct + 8.0);
-                        osc.connect(g);
-                        g.connect(masterGain);
-                        osc.start(ct);
-                        osc.stop(ct + 8.1);
-                    } catch (e) {}
-                }
-
-                setTimeout(ringChuaDongChime, 1500);
-                chimeTimer = setInterval(ringChuaDongChime, 12000);
-
-                ambientNodes = { ctx, masterGain, oscs };
+                if (ctx.state === 'suspended') ctx.resume();
+                chantStep = 0;
+                playNextYenTuStep();
             } catch (e) {}
         }
 
         function stopYenTuAmbient() {
             try {
-                if (chimeTimer) {
-                    clearInterval(chimeTimer);
-                    chimeTimer = null;
+                if (chantTimer) {
+                    clearTimeout(chantTimer);
+                    chantTimer = null;
                 }
-                if (ambientNodes) {
-                    const { ctx, masterGain, oscs } = ambientNodes;
-                    const now = ctx.currentTime;
-                    masterGain.gain.setValueAtTime(masterGain.gain.value, now);
-                    masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.6);
-                    setTimeout(() => {
-                        oscs.forEach(o => { try { o.stop(); } catch(e){} });
-                    }, 650);
-                    ambientNodes = null;
-                }
+                chantStep = 0;
             } catch (e) {}
         }
 

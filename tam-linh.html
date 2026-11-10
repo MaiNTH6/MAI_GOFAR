@@ -3568,11 +3568,19 @@
             showToast('Đã dâng mâm quả phúc lành lên Tam Bảo', '🍇');
         }
 
-        // 9. ÂM THANH THIỀN ĐỊNH BẬT / TẮT (432Hz CHUÔNG XOAY & CHUÔNG GIÓ BÌNH AN)
+        // 9. ÂM THANH THIỀN ĐỊNH BẬT / TẮT (GÕ MÕ NHỊP NHÀNG & TỤNG KINH NIỆM PHẬT THIỀN MÔN)
         let ambientAudioRunning = false;
-        let zenAudioNodes = null;
-        let zenChimeTimer = null;
-        let zenWindChimeTimer = null;
+        let zenChantTimer = null;
+        let zenChantStep = 0;
+
+        const CHANT_CYCLE = [
+            { text: "Nam", freq: 164.8, dur: 1.35, isBell: false },
+            { text: "Mô", freq: 196.0, dur: 1.35, isBell: false },
+            { text: "A", freq: 220.0, dur: 1.35, isBell: false },
+            { text: "Di", freq: 196.0, dur: 1.35, isBell: false },
+            { text: "Đà", freq: 164.8, dur: 1.35, isBell: false },
+            { text: "Phật", freq: 146.8, dur: 2.70, isBell: true }
+        ];
 
         function toggleAmbientSound() {
             ambientAudioRunning = !ambientAudioRunning;
@@ -3584,182 +3592,197 @@
             const textBar = document.getElementById('ambientBarText');
 
             if (ambientAudioRunning) {
-                startZenAmbientSound();
+                startZenChantEngine();
                 if (btnNav) { btnNav.classList.add('playing'); }
                 if (iconNav) { iconNav.textContent = '⏸️'; }
-                if (textNav) { textNav.textContent = 'Dừng Âm'; }
+                if (textNav) { textNav.textContent = 'Dừng Gõ Mõ'; }
                 if (btnBar) { btnBar.classList.add('playing'); }
                 if (iconBar) { iconBar.textContent = '⏸️'; }
-                if (textBar) { textBar.textContent = 'Dừng Âm Thiền'; }
-                showToast('Thanh âm chuông xoay 432Hz tĩnh tại, lắng đọng tâm hồn', '🧘');
+                if (textBar) { textBar.textContent = 'Dừng Mõ & Tụng Kinh'; }
+                showToast('Đang phát tiếng mõ chánh niệm & âm tụng kinh an lành', '📿');
             } else {
-                stopZenAmbientSound();
+                stopZenChantEngine();
                 if (btnNav) { btnNav.classList.remove('playing'); }
                 if (iconNav) { iconNav.textContent = '🎵'; }
                 if (textNav) { textNav.textContent = 'Âm Thanh Thiền'; }
                 if (btnBar) { btnBar.classList.remove('playing'); }
                 if (iconBar) { iconBar.textContent = '🎵'; }
                 if (textBar) { textBar.textContent = 'Âm Thanh Thiền Định'; }
-                showToast('Đã dừng âm thanh thiền', '⏹️');
+                showToast('Đã dừng âm thanh gõ mõ tụng kinh', '⏹️');
             }
         }
 
-        function startZenAmbientSound() {
+        // Tiếng Mõ Mộc Ngư rõ ràng, giòn ấm, không bị ù rè trên mọi thiết bị
+        function strikeChantMo(ctx, time) {
+            try {
+                // 1. Transient click
+                const osc1 = ctx.createOscillator();
+                const g1 = ctx.createGain();
+                osc1.type = 'triangle';
+                osc1.frequency.setValueAtTime(750, time);
+                osc1.frequency.exponentialRampToValueAtTime(360, time + 0.07);
+                g1.gain.setValueAtTime(0.85, time);
+                g1.gain.exponentialRampToValueAtTime(0.001, time + 0.12);
+
+                // 2. Hollow wood body resonance
+                const osc2 = ctx.createOscillator();
+                const g2 = ctx.createGain();
+                osc2.type = 'sine';
+                osc2.frequency.setValueAtTime(460, time);
+                osc2.frequency.exponentialRampToValueAtTime(390, time + 0.15);
+                g2.gain.setValueAtTime(0.70, time);
+                g2.gain.exponentialRampToValueAtTime(0.001, time + 0.16);
+
+                const filter = ctx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.setValueAtTime(580, time);
+                filter.Q.setValueAtTime(2.0, time);
+
+                osc1.connect(g1);
+                osc2.connect(g2);
+                g1.connect(filter);
+                g2.connect(filter);
+                filter.connect(ctx.destination);
+
+                osc1.start(time);
+                osc2.start(time);
+                osc1.stop(time + 0.15);
+                osc2.stop(time + 0.18);
+            } catch (e) {}
+        }
+
+        // Âm Hưởng Tụng Kinh Niệm Phật Trầm Bổng Thiền Môn
+        function strikeChantVocal(ctx, freq, dur, time) {
+            try {
+                // Sawtooth with monk vocal formants
+                const oscVocal = ctx.createOscillator();
+                oscVocal.type = 'sawtooth';
+                oscVocal.frequency.setValueAtTime(freq, time);
+
+                // Formant 1: Vowel warmth (450Hz)
+                const f1 = ctx.createBiquadFilter();
+                f1.type = 'bandpass';
+                f1.frequency.setValueAtTime(450, time);
+                f1.Q.setValueAtTime(3.2, time);
+
+                // Formant 2: Vowel clarity (1050Hz)
+                const f2 = ctx.createBiquadFilter();
+                f2.type = 'bandpass';
+                f2.frequency.setValueAtTime(1050, time);
+                f2.Q.setValueAtTime(2.8, time);
+
+                // Sub-warmth sine
+                const oscSub = ctx.createOscillator();
+                oscSub.type = 'sine';
+                oscSub.frequency.setValueAtTime(freq * 0.5, time);
+
+                const gVocal = ctx.createGain();
+                gVocal.gain.setValueAtTime(0.001, time);
+                gVocal.gain.linearRampToValueAtTime(0.24, time + 0.18);
+                gVocal.gain.linearRampToValueAtTime(0.20, time + dur - 0.25);
+                gVocal.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+
+                const gSub = ctx.createGain();
+                gSub.gain.setValueAtTime(0.001, time);
+                gSub.gain.linearRampToValueAtTime(0.12, time + 0.2);
+                gSub.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+
+                oscVocal.connect(f1);
+                oscVocal.connect(f2);
+                f1.connect(gVocal);
+                f2.connect(gVocal);
+                gVocal.connect(ctx.destination);
+
+                oscSub.connect(gSub);
+                gSub.connect(ctx.destination);
+
+                oscVocal.start(time);
+                oscSub.start(time);
+                oscVocal.stop(time + dur + 0.08);
+                oscSub.stop(time + dur + 0.08);
+            } catch (e) {}
+        }
+
+        // Tiếng Chuông Bát Điểm Kết Thúc Câu Niệm
+        function strikeChantBell(ctx, time) {
+            try {
+                const partials = [
+                    { f: 540, g: 0.40, d: 5.5 },
+                    { f: 864, g: 0.25, d: 4.8 },
+                    { f: 1296, g: 0.15, d: 3.5 }
+                ];
+                partials.forEach(p => {
+                    const osc = ctx.createOscillator();
+                    const g = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(p.f, time);
+                    g.gain.setValueAtTime(0.001, time);
+                    g.gain.exponentialRampToValueAtTime(p.g, time + 0.04);
+                    g.gain.exponentialRampToValueAtTime(0.0001, time + p.d);
+
+                    osc.connect(g);
+                    g.connect(ctx.destination);
+                    osc.start(time);
+                    osc.stop(time + p.d + 0.1);
+                });
+            } catch (e) {}
+        }
+
+        function playNextChantStep() {
+            if (!ambientAudioRunning) return;
+            try {
+                const ctx = getAudioContext();
+                const now = ctx.currentTime;
+                const step = CHANT_CYCLE[zenChantStep];
+
+                // 1. Tiếng mõ gõ rõ ràng
+                strikeChantMo(ctx, now);
+
+                // 2. Âm hưởng tụng niệm
+                strikeChantVocal(ctx, step.freq, step.dur, now);
+
+                // 3. Nếu là chữ cuối (Phật) -> Thỉnh chuông bát ngân vang
+                if (step.isBell) {
+                    strikeChantBell(ctx, now);
+                }
+
+                // Chuyển sang bước tiếp theo
+                const nextStepIdx = (zenChantStep + 1) % CHANT_CYCLE.length;
+                zenChantStep = nextStepIdx;
+
+                // Lên lịch cho nhịp tiếp theo
+                const delayMs = step.dur * 1000;
+                zenChantTimer = setTimeout(playNextChantStep, delayMs);
+            } catch (e) {
+                console.log('Chant step error:', e);
+            }
+        }
+
+        function startZenChantEngine() {
             try {
                 const ctx = getAudioContext();
                 if (ctx.state === 'suspended') {
                     ctx.resume();
                 }
-                const now = ctx.currentTime;
-
-                // Master Gain with gentle fade in
-                const masterGain = ctx.createGain();
-                masterGain.gain.setValueAtTime(0.0001, now);
-                masterGain.gain.exponentialRampToValueAtTime(0.18, now + 3);
-                masterGain.connect(ctx.destination);
-
-                // Low-pass filter for warmth and eliminating harsh high frequencies
-                const warmFilter = ctx.createBiquadFilter();
-                warmFilter.type = 'lowpass';
-                warmFilter.frequency.setValueAtTime(540, now);
-                warmFilter.Q.setValueAtTime(0.7, now);
-                warmFilter.connect(masterGain);
-
-                // Sacred Meditation Drone: 108Hz, 216Hz, 324Hz, 432Hz with natural micro-detuning
-                const partials = [
-                    { freq: 108, gain: 0.12, detune: 0 },
-                    { freq: 216, gain: 0.08, detune: 2 },
-                    { freq: 324, gain: 0.04, detune: -1.5 },
-                    { freq: 432, gain: 0.06, detune: 1.2 }
-                ];
-
-                const oscillators = [];
-                partials.forEach(p => {
-                    const osc = ctx.createOscillator();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(p.freq, now);
-                    osc.detune.setValueAtTime(p.detune, now);
-
-                    const pGain = ctx.createGain();
-                    pGain.gain.setValueAtTime(p.gain, now);
-
-                    osc.connect(pGain);
-                    pGain.connect(warmFilter);
-                    osc.start(now);
-                    oscillators.push(osc);
-                });
-
-                // Breathing LFO (0.09Hz ~ 11s deep mindful breathing cycle)
-                const lfo = ctx.createOscillator();
-                lfo.type = 'sine';
-                lfo.frequency.setValueAtTime(0.09, now);
-
-                const lfoGain = ctx.createGain();
-                lfoGain.gain.setValueAtTime(0.03, now);
-
-                lfo.connect(lfoGain);
-                lfoGain.connect(masterGain.gain);
-                lfo.start(now);
-                oscillators.push(lfo);
-
-                // Periodic Tibetan Singing Bowl chime (every 13s)
-                function triggerSingingBowlChime() {
-                    if (!zenAudioNodes) return;
-                    try {
-                        const cTime = ctx.currentTime;
-                        const bowlPartials = [
-                            { freq: 432, gain: 0.045, decay: 8.5 },
-                            { freq: 864, gain: 0.018, decay: 6.0 },
-                            { freq: 1188, gain: 0.008, decay: 4.5 }
-                        ];
-                        bowlPartials.forEach(bp => {
-                            const osc = ctx.createOscillator();
-                            osc.type = 'sine';
-                            osc.frequency.setValueAtTime(bp.freq, cTime);
-
-                            const g = ctx.createGain();
-                            g.gain.setValueAtTime(0.0001, cTime);
-                            g.gain.exponentialRampToValueAtTime(bp.gain, cTime + 0.12);
-                            g.gain.exponentialRampToValueAtTime(0.0001, cTime + bp.decay);
-
-                            osc.connect(g);
-                            g.connect(masterGain);
-                            osc.start(cTime);
-                            osc.stop(cTime + bp.decay + 0.1);
-                        });
-                    } catch (err) {}
-                }
-
-                // Periodic Temple Wind Chime (gentle pentatonic bell chime every 8.5s)
-                function triggerGentleWindChime() {
-                    if (!zenAudioNodes) return;
-                    try {
-                        const cTime = ctx.currentTime;
-                        const pentatonic = [540, 648, 720, 864, 972];
-                        const note = pentatonic[Math.floor(Math.random() * pentatonic.length)];
-
-                        const osc = ctx.createOscillator();
-                        osc.type = 'sine';
-                        osc.frequency.setValueAtTime(note, cTime);
-
-                        const g = ctx.createGain();
-                        g.gain.setValueAtTime(0.0001, cTime);
-                        g.gain.exponentialRampToValueAtTime(0.018, cTime + 0.06);
-                        g.gain.exponentialRampToValueAtTime(0.0001, cTime + 4.5);
-
-                        osc.connect(g);
-                        g.connect(masterGain);
-                        osc.start(cTime);
-                        osc.stop(cTime + 4.6);
-                    } catch (err) {}
-                }
-
-                // First subtle bowl tone after 1.2s
-                setTimeout(() => {
-                    if (zenAudioNodes) triggerSingingBowlChime();
-                }, 1200);
-
-                zenChimeTimer = setInterval(triggerSingingBowlChime, 13000);
-                zenWindChimeTimer = setInterval(triggerGentleWindChime, 8500);
-
-                zenAudioNodes = {
-                    ctx,
-                    masterGain,
-                    warmFilter,
-                    oscillators
-                };
-            } catch (e) {
-                console.log('Zen ambient audio error:', e);
-            }
-        }
-
-        function stopZenAmbientSound() {
-            try {
-                if (zenChimeTimer) {
-                    clearInterval(zenChimeTimer);
-                    zenChimeTimer = null;
-                }
-                if (zenWindChimeTimer) {
-                    clearInterval(zenWindChimeTimer);
-                    zenWindChimeTimer = null;
-                }
-                if (zenAudioNodes) {
-                    const { ctx, masterGain, oscillators } = zenAudioNodes;
-                    const now = ctx.currentTime;
-                    masterGain.gain.setValueAtTime(masterGain.gain.value, now);
-                    masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
-                    setTimeout(() => {
-                        oscillators.forEach(osc => {
-                            try { osc.stop(); } catch (e) {}
-                        });
-                    }, 850);
-                    zenAudioNodes = null;
-                }
+                zenChantStep = 0;
+                playNextChantStep();
             } catch (e) {}
         }
 
-        function startAmbientSynthesizer() { startZenAmbientSound(); }
-        function stopAmbientSynthesizer() { stopZenAmbientSound(); }
+        function stopZenChantEngine() {
+            try {
+                if (zenChantTimer) {
+                    clearTimeout(zenChantTimer);
+                    zenChantTimer = null;
+                }
+                zenChantStep = 0;
+            } catch (e) {}
+        }
+
+        function startZenAmbientSound() { startZenChantEngine(); }
+        function stopZenAmbientSound() { stopZenChantEngine(); }
+        function startAmbientSynthesizer() { startZenChantEngine(); }
+        function stopAmbientSynthesizer() { stopZenChantEngine(); }
 
         // 10. CHUYỂN BỐI CẢNH 5 CỔ TỰ
         const templeViewData = {
