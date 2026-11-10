@@ -1005,6 +1005,7 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
+            height: 100%;
             cursor: pointer;
         }
         .temple-card:hover {
@@ -1016,6 +1017,7 @@
             position: relative;
             aspect-ratio: 16/10;
             overflow: hidden;
+            flex-shrink: 0;
         }
         .temple-img-wrap img {
             width: 100%;
@@ -1047,25 +1049,29 @@
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            flex: 1;
         }
         .temple-name {
             font-family: var(--font-serif);
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             color: #fff;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.35rem;
             line-height: 1.3;
+            min-height: 2.6rem;
+            display: flex;
+            align-items: center;
         }
         .temple-location {
             font-size: 0.82rem;
             color: var(--text-muted);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.3rem;
+            min-height: 1.25rem;
         }
         .temple-desc {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-secondary);
             line-height: 1.6;
             margin-bottom: 1rem;
@@ -1073,7 +1079,48 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            flex-grow: 1;
+            height: 4.8em; /* Exact 3 lines across all cards */
+        }
+        .temple-route-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            color: #0D1F2D;
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            padding: 0.65rem 1rem;
+            border-radius: var(--radius-full);
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.25);
+            margin-top: auto; /* Aligns button to bottom */
+            margin-bottom: 0.85rem;
+            min-height: 52px;
+            height: 52px;
+            transition: all 0.3s ease;
+        }
+        .temple-route-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.45);
+            color: #0D1F2D;
+        }
+        .temple-route-btn.lotus {
+            background: linear-gradient(135deg, #f472b6, #db2777);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(244, 114, 182, 0.25);
+        }
+        .temple-route-btn.lotus:hover {
+            box-shadow: 0 6px 20px rgba(244, 114, 182, 0.45);
+            color: #fff;
+        }
+        .temple-route-btn .route-arrow {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .temple-route-btn:hover .route-arrow {
+            transform: translateX(4px);
         }
         .temple-highlights {
             display: flex;
@@ -1082,6 +1129,7 @@
             margin-top: auto;
             padding-top: 0.8rem;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
+            min-height: 38px;
         }
         .temple-pill {
             font-size: 0.72rem;
@@ -2634,10 +2682,10 @@
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-bai-dinh.html" style="color: #fff; text-decoration: none;">Quần Thể Chùa Bái Đính</a></h3>
                         <div class="temple-location">📍 Gia Viễn, Ninh Bình • Di sản Kép UNESCO</div>
-                        <p class="temple-desc">Tổ đình Bái Đính Cổ Tự nghìn năm tọa lạc trong hang đá tĩnh mịch, nơi Thiền sư Nguyễn Minh Không tu tập hái thuốc cứu dân. Bên cạnh là Bái Đính Tân Tự nguy nga với Bảo tháp Xá lợi Phật cao 100m và hành lang 500 vị La Hán bằng đá xanh nguyên khối.</p>
-                        <a href="destination-bai-dinh.html" style="display: inline-flex; align-items: center; justify-content: space-between; gap: 0.4rem; color: #0D1F2D; background: linear-gradient(135deg, #fbbf24, #d97706); font-weight: 700; font-size: 0.88rem; text-decoration: none; margin-bottom: 0.8rem; padding: 0.55rem 1rem; border-radius: var(--radius-full); box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);">
-                            <span>⛩️ Xem lộ trình 9 ban, cách thắp hương & văn khấn</span>
-                            <span style="font-size: 1.1rem;">→</span>
+                        <p class="temple-desc">Tổ đình Bái Đính Cổ Tự nghìn năm trong hang đá tĩnh mịch, nơi Thiền sư Nguyễn Minh Không tu tập. Tân Tự nguy nga với Bảo tháp 100m và hành lang 500 tượng La Hán đá xanh.</p>
+                        <a href="destination-bai-dinh.html" class="temple-route-btn">
+                            <span>⛩️ Xem lộ trình 9 ban & văn khấn chuẩn</span>
+                            <span class="route-arrow">→</span>
                         </a>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏛️ Kỷ lục châu Á</span>
@@ -2656,10 +2704,10 @@
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-yen-tu.html" style="color: #fff; text-decoration: none;">Chùa Yên Tử & Chùa Đồng</a></h3>
                         <div class="temple-location">📍 TP. Uông Bí, Quảng Ninh • Tổ Đình Trúc Lâm</div>
-                        <p class="temple-desc">Kinh đô Phật giáo thời Trần nơi Đức Vua Trần Nhân Tông rũ bỏ ngai vàng xuất gia tu hành. Điểm nhấn đỉnh cao là Chùa Đồng (Thiên Trúc Tự) đúc hoàn toàn bằng đồng nguyên khối trên đỉnh non thiêng bốn bề mây phủ vờn quanh.</p>
-                        <a href="destination-yen-tu.html" style="display: inline-flex; align-items: center; justify-content: space-between; gap: 0.4rem; color: #0D1F2D; background: linear-gradient(135deg, #fbbf24, #d97706); font-weight: 700; font-size: 0.88rem; text-decoration: none; margin-bottom: 0.8rem; padding: 0.55rem 1rem; border-radius: var(--radius-full); box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);">
-                            <span>⛩️ Xem lộ trình 9 trạm non thiêng, cách thắp hương & văn khấn</span>
-                            <span style="font-size: 1.1rem;">→</span>
+                        <p class="temple-desc">Kinh đô Phật giáo thời Trần nơi Đức Vua Trần Nhân Tông xuất gia tu hành. Điểm nhấn đỉnh cao là Chùa Đồng nguyên khối ngự trên đỉnh non thiêng bốn bề mây phủ vờn quanh.</p>
+                        <a href="destination-yen-tu.html" class="temple-route-btn">
+                            <span>⛩️ Xem lộ trình 9 trạm non thiêng & văn khấn</span>
+                            <span class="route-arrow">→</span>
                         </a>
                         <div class="temple-highlights">
                             <span class="temple-pill">👑 Phật Hoàng Trần Nhân Tông</span>
@@ -2678,10 +2726,10 @@
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-huong.html" style="color: #fff; text-decoration: none;">Chùa Hương (Động Hương Tích)</a></h3>
                         <div class="temple-location">📍 Huyện Mỹ Đức, Hà Nội • Lễ Hội Dài Nhất VN</div>
-                        <p class="temple-desc">Hành trình chèo thuyền nan trên suối Yến thanh bình dẫn vào Nam Thiên Đệ Nhất Động. Tương truyền đây là nơi Bồ Tát Quán Thế Âm đắc đạo cứu độ chúng sinh, thu hút hàng triệu lữ khách hành hương mỗi độ xuân về.</p>
-                        <a href="destination-chua-huong.html" style="display: inline-flex; align-items: center; justify-content: space-between; gap: 0.4rem; color: #fff; background: linear-gradient(135deg, #f472b6, #db2777); font-weight: 700; font-size: 0.88rem; text-decoration: none; margin-bottom: 0.8rem; padding: 0.55rem 1rem; border-radius: var(--radius-full); box-shadow: 0 4px 15px rgba(244, 114, 182, 0.3);">
-                            <span>⛩️ Xem lộ trình 8 trạm Hương Sơn, cách thắp hương & văn khấn</span>
-                            <span style="font-size: 1.1rem;">→</span>
+                        <p class="temple-desc">Hành trình chèo thuyền nan trên suối Yến thanh bình dẫn vào Nam Thiên Đệ Nhất Động. Tương truyền đây là nơi Bồ Tát Quán Thế Âm đắc đạo cứu độ chúng sinh muôn loài.</p>
+                        <a href="destination-chua-huong.html" class="temple-route-btn lotus">
+                            <span>⛩️ Xem lộ trình 8 trạm Hương Sơn & văn khấn</span>
+                            <span class="route-arrow">→</span>
                         </a>
                         <div class="temple-highlights">
                             <span class="temple-pill">🛶 Thuyền nan Suối Yến</span>
