@@ -302,7 +302,12 @@
             border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
             padding-bottom: 0.45rem;
         }
-        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .label {
+            color: var(--text-muted);
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+        }
         .quick-facts .val {
             color: var(--text-secondary);
             font-weight: 500;
@@ -350,7 +355,7 @@
 
         h2 {
             font-family: var(--font-serif);
-            font-size: 1.85rem;
+            font-size: clamp(1.3rem, 1.75vw, 1.6rem);
             font-weight: 700;
             color: #fff;
             margin-bottom: 1.2rem;
@@ -1609,7 +1614,7 @@
 
                 <!-- PHẦN 2: NGUYÊN TẮC THẮP HƯƠNG & VĂN KHẤN CHUẨN MỰC -->
                 <section id="nghi-thuc-chung">
-                    <h2><span class="icon">📜</span> 2. Hướng Dẫn Nghi Thức Thắp Hương & Đọc Văn Khấn Tại Bái Đính</h2>
+                    <h2><span class="icon">📜</span> 2. Nghi Thức Thắp Hương & Văn Khấn Bái Đính</h2>
                     <p>
                         Để chuyến chiêm bái trọn vẹn phước duyên và không phạm phải những điều kiêng kỵ nơi cửa thiền, quý Phật tử và du khách cần thấu hiểu các nguyên tắc cốt lõi:
                     </p>
@@ -1635,7 +1640,7 @@
 
                 <!-- PHẦN 3: LỘ TRÌNH 9 BAN THỜ TÍCH HỢP TƯƠNG TÁC -->
                 <section id="lo-trinh-hanh-le">
-                    <h2><span class="icon">⛩️</span> 3. Lộ Trình Hành Lễ Tuần Tự 9 Ban Thờ & Trải Nghiệm Chánh Niệm</h2>
+                    <h2><span class="icon">⛩️</span> 3. Lộ Trình 9 Ban Thờ & Chánh Niệm</h2>
                     <p>
                         Lộ trình chuẩn phong tục đi từ thấp lên cao (từ cổng Tam Quan đến đỉnh Điện Tam Thế, sang Bảo Tháp và Giếng Ngọc, kết thúc tại Bái Đính Cổ Tự):
                     </p>
@@ -2008,7 +2013,7 @@
 
                 <!-- PHẦN 4: LỊCH TRÌNH 1 NGÀY TỐI ƯU -->
                 <section id="lich-trinh">
-                    <h2><span class="icon">🧭</span> 4. Lịch Trình Chiêm Bái 1 Ngày Tối Ưu Nhất</h2>
+                    <h2><span class="icon">🧭</span> 4. Lịch Trình Chiêm Bái 1 Ngày Tối Ưu</h2>
                     <p>
                         Gợi ý lộ trình khoa học giúp tiết kiệm sức lực và chiêm bái trọn vẹn cả Tân tự và Cổ tự:
                     </p>

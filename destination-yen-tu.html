@@ -302,7 +302,12 @@
             border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
             padding-bottom: 0.45rem;
         }
-        .quick-facts .label { color: var(--text-muted); }
+        .quick-facts .label {
+            color: var(--text-muted);
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+        }
         .quick-facts .val {
             color: var(--text-secondary);
             font-weight: 500;
@@ -350,7 +355,7 @@
 
         h2 {
             font-family: var(--font-serif);
-            font-size: 1.85rem;
+            font-size: clamp(1.3rem, 1.75vw, 1.6rem);
             font-weight: 700;
             color: #fff;
             margin-bottom: 1.2rem;
@@ -1609,7 +1614,7 @@
 
                 <!-- PHẦN 2: NGUYÊN TẮC THẮP HƯƠNG & VĂN KHẤN CHUẨN MỰC -->
                 <section id="nghi-thuc-chung">
-                    <h2><span class="icon">📜</span> 2. Hướng Dẫn Nghi Thức Thắp Hương & Đọc Văn Khấn Tại Yên Tử</h2>
+                    <h2><span class="icon">📜</span> 2. Nghi Thức Thắp Hương & Văn Khấn Yên Tử</h2>
                     <p>
                         Đến với chốn thiền môn Trúc Lâm, hành lễ không cốt ở mâm cao cỗ đầy hay sắm sanh vàng mã tốn kém, mà quý ở sự thanh tịnh của ba nghiệp Thân - Khẩu - Ý và lòng thành kính tri ân công đức tiền nhân:
                     </p>
@@ -1635,7 +1640,7 @@
 
                 <!-- PHẦN 3: LỘ TRÌNH 9 BAN THỜ TÍCH HỢP TƯƠNG TÁC -->
                 <section id="lo-trinh-hanh-le">
-                    <h2><span class="icon">⛩️</span> 3. Lộ Trình Hành Lễ Tuần Tự 9 Trạm Non Thiêng & Trải Nghiệm Chánh Niệm</h2>
+                    <h2><span class="icon">⛩️</span> 3. Lộ Trình 9 Trạm Non Thiêng & Chánh Niệm</h2>
                     <p>
                         Lộ trình chuẩn phong tục vượt 6.000m leo núi từ chân non Suối Giải Oan lên đỉnh non thiêng Chùa Đồng 1.068m:
                     </p>
@@ -2008,7 +2013,7 @@
 
                 <!-- PHẦN 4: LỊCH TRÌNH 1 NGÀY TỐI ƯU -->
                 <section id="lich-trinh">
-                    <h2><span class="icon">🧭</span> 4. Lịch Trình Chiêm Bái Yên Tử 1 Ngày Tối Ưu Nhất</h2>
+                    <h2><span class="icon">🧭</span> 4. Lịch Trình Chiêm Bái Yên Tử 1 Ngày</h2>
                     <p>
                         Gợi ý lộ trình khoa học kết hợp tản bộ thiền hành và đi cáp treo ngắm toàn cảnh rừng quốc gia Yên Tử:
                     </p>
