@@ -1126,7 +1126,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.4rem;
-            margin-top: auto;
+            margin-bottom: 1rem; /* nhãn nằm trên nút; nút giữ margin-top:auto để luôn sát đáy thẻ */
             padding-top: 0.8rem;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
             min-height: 38px;
@@ -2675,337 +2675,393 @@
 
                 <!-- 1. BÁI ĐÍNH (NINH BÌNH) -->
                 <div class="temple-card" data-region="north" style="border-color: rgba(251, 191, 36, 0.4); box-shadow: 0 8px 24px rgba(251, 191, 36, 0.15);">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/bai_dinh_ancient_temple_1785641271528.webp', 'Quần Thể Chùa Bái Đính — Gia Viễn, Ninh Bình', 'Cổ tự nghìn năm trên núi Đính linh thiêng kết hợp cùng Tân tự hoành tráng sở hữu nhiều kỷ lục châu Á, nằm trọn trong Quần thể Di sản Kép Tràng An.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/bai_dinh_ancient_temple_1785641271528.webp', 'Quần Thể Chùa Bái Đính — Gia Viễn, Ninh Bình', 'Bái Đính cổ tự trên núi Đính gắn với Thiền sư Nguyễn Minh Không, cùng khu chùa mới quy mô lớn trong vùng danh thắng Tràng An.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/bai_dinh_ancient_temple_1785641271528.webp" alt="Chùa Bái Đính Ninh Bình" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-bai-dinh.html" style="color: #fff; text-decoration: none;">Quần Thể Chùa Bái Đính</a></h3>
-                        <div class="temple-location">📍 Gia Viễn, Ninh Bình • Di sản Kép UNESCO</div>
-                        <p class="temple-desc">Tổ đình Bái Đính Cổ Tự nghìn năm trong hang đá tĩnh mịch, nơi Thiền sư Nguyễn Minh Không tu tập. Tân Tự nguy nga với Bảo tháp 100m và hành lang 500 tượng La Hán đá xanh.</p>
-                        <a href="destination-bai-dinh.html" class="temple-route-btn">
-                            <span>⛩️ Xem lộ trình 9 ban & văn khấn chuẩn</span>
-                            <span class="route-arrow">→</span>
-                        </a>
+                        <div class="temple-location">📍 Gia Viễn, Ninh Bình • Vùng di sản Tràng An</div>
+                        <p class="temple-desc">Bái Đính cổ tự gắn với Thiền sư Nguyễn Minh Không thời Lý; chùa mới có Bảo tháp 13 tầng và 500 tượng La Hán.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🏛️ Kỷ lục châu Á</span>
-                            <span class="temple-pill">✨ Giếng Ngọc cổ</span>
+                            <span class="temple-pill">🗼 Bảo tháp 13 tầng</span>
+                            <span class="temple-pill">✨ Giếng Ngọc</span>
                             <span class="temple-pill">🌸 500 La Hán</span>
                         </div>
+                        <a href="destination-bai-dinh.html" class="temple-route-btn">
+                            <span>⛩️ Xem lộ trình 9 ban & văn khấn</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 2. YÊN TỬ (QUẢNG NINH) -->
-                <div class="temple-card" data-region="north">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/yentu_chua_dong_dinh_nui.webp', 'Chùa Yên Tử & Chùa Đồng — Uông Bí, Quảng Ninh', 'Cái nôi Thiền phái Trúc Lâm Yên Tử do Phật hoàng Trần Nhân Tông sáng lập, ngôi chùa đồng độc nhất vô nhị ngự trên đỉnh non thiêng cao 1.068m.')">
+                <div class="temple-card" data-region="north" style="border-color: rgba(251, 191, 36, 0.4); box-shadow: 0 8px 24px rgba(251, 191, 36, 0.15);">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/yentu_chua_dong_dinh_nui.webp', 'Chùa Yên Tử & Chùa Đồng — Uông Bí, Quảng Ninh', 'Cái nôi Thiền phái Trúc Lâm do Phật hoàng Trần Nhân Tông khai sáng; Chùa Đồng nguyên khối trên đỉnh Yên Tử cao 1.068m.')">
                         <span class="temple-region-tag">Miền Bắc</span>
-                        <img src="images/yentu_chua_dong_dinh_nui.webp" alt="Chùa Yên Tử Quảng Ninh" loading="lazy">
+                        <img src="images/yentu_chua_dong_dinh_nui.webp" alt="Chùa Đồng Yên Tử Quảng Ninh" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-yen-tu.html" style="color: #fff; text-decoration: none;">Chùa Yên Tử & Chùa Đồng</a></h3>
-                        <div class="temple-location">📍 TP. Uông Bí, Quảng Ninh • Tổ Đình Trúc Lâm</div>
-                        <p class="temple-desc">Kinh đô Phật giáo thời Trần nơi Đức Vua Trần Nhân Tông xuất gia tu hành. Điểm nhấn đỉnh cao là Chùa Đồng nguyên khối ngự trên đỉnh non thiêng bốn bề mây phủ vờn quanh.</p>
+                        <div class="temple-location">📍 Uông Bí, Quảng Ninh • Di sản thế giới UNESCO 2025</div>
+                        <p class="temple-desc">Trung tâm Thiền phái Trúc Lâm, nơi vua Trần Nhân Tông xuất gia. Hành trình 9 trạm lên Chùa Đồng trên đỉnh 1.068m.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">👑 Phật hoàng Trần Nhân Tông</span>
+                            <span class="temple-pill">☁️ Đỉnh Phù Vân</span>
+                            <span class="temple-pill">🔔 Chùa Đồng 1.068m</span>
+                        </div>
                         <a href="destination-yen-tu.html" class="temple-route-btn">
-                            <span>⛩️ Xem lộ trình 9 trạm non thiêng & văn khấn</span>
+                            <span>⛩️ Xem lộ trình 9 trạm & văn khấn</span>
                             <span class="route-arrow">→</span>
                         </a>
-                        <div class="temple-highlights">
-                            <span class="temple-pill">👑 Phật Hoàng Trần Nhân Tông</span>
-                            <span class="temple-pill">☁️ Đỉnh Phù Vân</span>
-                            <span class="temple-pill">🔔 Chùa Đồng</span>
-                        </div>
                     </div>
                 </div>
 
                 <!-- 3. CHÙA HƯƠNG (HÀ NỘI) -->
-                <div class="temple-card" data-region="north">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuahuong_suoi_yen_thuyen_hoa.webp', 'Chùa Hương — Nam Thiên Đệ Nhất Động — Mỹ Đức, Hà Nội', 'Quần thể danh thắng suối Yến, chùa Thiên Trù và Động Hương Tích linh thiêng gắn liền tín ngưỡng Bồ Tát Quán Thế Âm giáng trần.')">
+                <div class="temple-card" data-region="north" style="border-color: rgba(251, 191, 36, 0.4); box-shadow: 0 8px 24px rgba(251, 191, 36, 0.15);">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuahuong_suoi_yen_thuyen_hoa.webp', 'Chùa Hương — Nam Thiên Đệ Nhất Động — Hương Sơn, Hà Nội', 'Quần thể suối Yến, chùa Thiên Trù và Động Hương Tích, gắn với tín ngưỡng thờ Bồ Tát Quán Thế Âm.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/chuahuong_suoi_yen_thuyen_hoa.webp" alt="Chùa Hương suối Yến Hà Nội" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-huong.html" style="color: #fff; text-decoration: none;">Chùa Hương (Động Hương Tích)</a></h3>
-                        <div class="temple-location">📍 Huyện Mỹ Đức, Hà Nội • Lễ Hội Dài Nhất VN</div>
-                        <p class="temple-desc">Hành trình chèo thuyền nan trên suối Yến thanh bình dẫn vào Nam Thiên Đệ Nhất Động. Tương truyền đây là nơi Bồ Tát Quán Thế Âm đắc đạo cứu độ chúng sinh muôn loài.</p>
-                        <a href="destination-chua-huong.html" class="temple-route-btn lotus">
-                            <span>⛩️ Xem lộ trình 8 trạm Hương Sơn & văn khấn</span>
-                            <span class="route-arrow">→</span>
-                        </a>
+                        <div class="temple-location">📍 Hương Sơn, Hà Nội • Lễ hội mùa xuân lớn</div>
+                        <p class="temple-desc">Đò nan suối Yến dẫn vào Động Hương Tích — Nam Thiên Đệ Nhất Động, nơi tương truyền Bồ Tát Quán Âm tu hành.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🛶 Thuyền nan Suối Yến</span>
+                            <span class="temple-pill">🛶 Đò nan suối Yến</span>
                             <span class="temple-pill">⛰️ Động Hương Tích</span>
                             <span class="temple-pill">🌸 Lễ hội đầu xuân</span>
                         </div>
+                        <a href="destination-chua-huong.html" class="temple-route-btn">
+                            <span>⛩️ Xem lộ trình 8 trạm & văn khấn</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 4. CHÙA TRẤN QUỐC & MỘT CỘT (HÀ NỘI) -->
-                <div class="temple-card" data-region="north">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/bai_dinh_pagoda_1783443686667.webp', 'Chùa Trấn Quốc & Chùa Một Cột — Hà Nội', 'Ngôi chùa cổ nhất Thăng Long hơn 1.500 năm tuổi trấn ngự hồ Tây và biểu tượng đóa sen nghìn năm thời vua Lý Thái Tông.')">
+                <div class="temple-card" data-region="north">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/bai_dinh_pagoda_1783443686667.webp', 'Chùa Trấn Quốc & Chùa Một Cột — Hà Nội', 'Chùa Trấn Quốc bên hồ Tây có lịch sử từ thế kỷ VI; Chùa Một Cột (Diên Hựu Tự) dựng năm 1049 thời Lý.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/bai_dinh_pagoda_1783443686667.webp" alt="Chùa Trấn Quốc Hà Nội" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name">Chùa Trấn Quốc & Một Cột</h3>
-                        <div class="temple-location">📍 Ba Đình & Tây Hồ, Hà Nội • Cổ Tự 1500 Năm</div>
-                        <p class="temple-desc">Chùa Trấn Quốc được xây dựng từ thời Tiền Lý (năm 541) soi bóng mặt hồ Tây lộng gió với bảo tháp lục độ 11 tầng. Cách đó không xa là Chùa Một Cột (Diên Hựu Tự) kiến trúc độc bản như đóa sen tinh khiết vươn lên giữa hồ nước vuông.</p>
+                        <div class="temple-location">📍 Tây Hồ & Ba Đình, Hà Nội • Cổ tự gần 1.500 năm</div>
+                        <p class="temple-desc">Chùa Trấn Quốc có từ thời Tiền Lý, soi bóng hồ Tây; Chùa Một Cột dựng năm 1049 như đóa sen giữa hồ vuông.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">📜 Khởi dựng năm 541</span>
-                            <span class="temple-pill">🌸 Sen ngọc thời Lý</span>
-                            <span class="temple-pill">🌊 Trấn ngự Hồ Tây</span>
+                            <span class="temple-pill">📜 Khởi dựng thế kỷ VI</span>
+                            <span class="temple-pill">🌸 Chùa Một Cột 1049</span>
+                            <span class="temple-pill">🌊 Bên hồ Tây</span>
                         </div>
+                        <span class="temple-route-btn" style="opacity: 0.55; cursor: default; pointer-events: none;">
+                            <span>🔜 Cẩm nang chi tiết đang biên soạn</span>
+                        </span>
                     </div>
                 </div>
 
                 <!-- 5. CHÙA PHẬT TÍCH & CHÙA DÂU (BẮC NINH) -->
-                <div class="temple-card" data-region="north">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/bai_dinh_buddha_1783494499108.webp', 'Chùa Phật Tích & Chùa Dâu — Bắc Ninh', 'Khởi nguồn Phật giáo Việt Nam, lưu giữ pho tượng A Di Đà bằng đá xanh bảo vật quốc gia thời Lý và tín ngưỡng Tứ Pháp.')">
+                <div class="temple-card" data-region="north">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/bai_dinh_buddha_1783494499108.webp', 'Chùa Phật Tích & Chùa Dâu — Bắc Ninh', 'Vùng đất Phật giáo sớm của Việt Nam: Chùa Dâu gắn với tín ngưỡng Tứ Pháp, Chùa Phật Tích lưu giữ tượng A Di Đà bằng đá thời Lý.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/bai_dinh_buddha_1783494499108.webp" alt="Chùa Phật Tích Bắc Ninh" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name">Chùa Phật Tích & Chùa Dâu</h3>
-                        <div class="temple-location">📍 Thuận Thành & Tiên Du, Bắc Ninh • Đất Phật Cổ</div>
-                        <p class="temple-desc">Chùa Dâu là ngôi chùa cổ nhất Việt Nam hình thành từ đầu Công nguyên, trung tâm thiền phái Tỳ Ni Đa Lưu Chi. Chùa Phật Tích ngự trên núi Lan Kha nổi tiếng với tượng Phật A Di Đà ngồi thiền bằng đá thế kỷ XI — bảo vật vô giá của nền mỹ thuật Đại Việt.</p>
+                        <div class="temple-location">📍 Tiên Du & Thuận Thành, Bắc Ninh • Đất Phật cổ</div>
+                        <p class="temple-desc">Chùa Dâu gắn với tín ngưỡng Tứ Pháp; Chùa Phật Tích lưu giữ tượng A Di Đà bằng đá thời Lý — bảo vật quốc gia.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🏛️ Bảo vật Quốc gia</span>
+                            <span class="temple-pill">🏛️ Bảo vật quốc gia</span>
                             <span class="temple-pill">🌾 Tín ngưỡng Tứ Pháp</span>
                             <span class="temple-pill">🗿 Tượng Phật thời Lý</span>
                         </div>
+                        <span class="temple-route-btn" style="opacity: 0.55; cursor: default; pointer-events: none;">
+                            <span>🔜 Cẩm nang chi tiết đang biên soạn</span>
+                        </span>
                     </div>
                 </div>
 
                 <!-- 6. CHÙA BẢN GIỐC (CAO BẰNG) -->
-                <div class="temple-card" data-region="north">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/caobang_chua_truc_lam_ban_gioc.webp', 'Chùa Phật Tích Trúc Lâm Bản Giốc — Trùng Khánh, Cao Bằng', 'Ngôi chùa thiền môn trấn giữ biên cương Đông Bắc, hướng nhìn toàn cảnh thác Bản Giốc hùng vĩ nhất Đông Nam Á.')">
+                <div class="temple-card" data-region="north">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/caobang_chua_truc_lam_ban_gioc.webp', 'Chùa Trúc Lâm Bản Giốc — Trùng Khánh, Cao Bằng', 'Ngôi chùa trên đồi Phia Nhằn nhìn ra thác Bản Giốc, nơi biên cương phía Bắc của Tổ quốc.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/caobang_chua_truc_lam_ban_gioc.webp" alt="Chùa Trúc Lâm Bản Giốc Cao Bằng" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Chùa Trúc Lâm Bản Giốc</h3>
-                        <div class="temple-location">📍 Trùng Khánh, Cao Bằng • Cương Vực Thiêng Liêng</div>
-                        <p class="temple-desc">Ngôi chùa mang kiến trúc thuần Việt bằng gỗ lim và ngói âm dương rêu phong, tọa lạc trên núi Phia Nhằn. Tiếng chuông chùa ngân vang hòa cùng tiếng thác Bản Giốc gầm vang tạo nên bản trường ca thiêng liêng khẳng định chủ quyền biên ải.</p>
+                        <h3 class="temple-name"><a href="destination-cao-bang.html" style="color: #fff; text-decoration: none;">Chùa Trúc Lâm Bản Giốc</a></h3>
+                        <div class="temple-location">📍 Trùng Khánh, Cao Bằng • Vùng biên cương</div>
+                        <p class="temple-desc">Ngôi chùa kiến trúc truyền thống trên đồi Phia Nhằn, tiếng chuông hòa cùng tiếng thác Bản Giốc nơi biên cương.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🌊 View thác Bản Giốc</span>
-                            <span class="temple-pill">🌲 Gỗ lim cổ truyền</span>
-                            <span class="temple-pill">🚩 Cương vực Tổ quốc</span>
+                            <span class="temple-pill">🌊 Ngắm thác Bản Giốc</span>
+                            <span class="temple-pill">🏯 Kiến trúc truyền thống</span>
+                            <span class="temple-pill">🚩 Biên cương Tổ quốc</span>
                         </div>
+                        <a href="destination-cao-bang.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Cao Bằng</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 7. CHÙA THIÊN MỤ (HUẾ) -->
-                <div class="temple-card" data-region="central" onclick="openLightbox('images/hue_chua_thien_mu.webp', 'Chùa Thiên Mụ (Linh Mụ Tự) — TP. Huế', 'Đệ nhất cổ tự xứ Huế bên dòng sông Hương thơ mộng, gắn liền chúa Nguyễn Hoàng khai phá Đàng Trong và Tháp Phước Duyên 7 tầng biểu tượng.')">
-                    <div class="temple-img-wrap">
+                <div class="temple-card" data-region="central">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/hue_chua_thien_mu.webp', 'Chùa Thiên Mụ (Linh Mụ Tự) — Huế', 'Cổ tự bên sông Hương do chúa Nguyễn Hoàng cho dựng năm 1601, nổi bật với Tháp Phước Duyên 7 tầng.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/hue_chua_thien_mu.webp" alt="Chùa Thiên Mụ Huế" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Chùa Thiên Mụ (Linh Mụ Tự)</h3>
-                        <div class="temple-location">📍 Đồi Hà Khê, TP. Huế • Khởi Dựng Năm 1601</div>
-                        <p class="temple-desc">Được Chúa Tiên Nguyễn Hoàng đích thân cho khởi dựng năm 1601 sau lời tiên tri của bà tiên áo đỏ. Tháp Phước Duyên 7 tầng soi bóng dòng Hương giang êm ả cùng chuông đồng đúc năm 1710 ngân vang thấu lòng người xứ kinh kỳ.</p>
+                        <h3 class="temple-name"><a href="destination-hue.html" style="color: #fff; text-decoration: none;">Chùa Thiên Mụ (Linh Mụ Tự)</a></h3>
+                        <div class="temple-location">📍 Đồi Hà Khê, Huế • Khởi dựng năm 1601</div>
+                        <p class="temple-desc">Chúa Nguyễn Hoàng cho dựng năm 1601. Tháp Phước Duyên 7 tầng soi bóng sông Hương, đại hồng chung đúc năm 1710.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">👑 Chúa Nguyễn Hoàng</span>
                             <span class="temple-pill">🗼 Tháp Phước Duyên</span>
-                            <span class="temple-pill">🌊 Dòng Hương giang</span>
+                            <span class="temple-pill">🌊 Bên dòng sông Hương</span>
                         </div>
+                        <a href="destination-hue.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Huế</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 8. CHÙA LINH ỨNG BÃI BỤT (ĐÀ NẴNG) -->
-                <div class="temple-card" data-region="central">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/danang_chua_linh_ung_bai_but.webp', 'Chùa Linh Ứng Bãi Bụt — Bán đảo Sơn Trà, Đà Nẵng', 'Ngôi chùa sở hữu tượng Bồ Tát Quán Thế Âm cao 67m nhìn ra Biển Đông, điểm tựa tâm linh vững chãi của ngư dân miền Trung.')">
+                <div class="temple-card" data-region="central">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/danang_chua_linh_ung_bai_but.webp', 'Chùa Linh Ứng Bãi Bụt — Sơn Trà, Đà Nẵng', 'Ngôi chùa trên sườn bán đảo Sơn Trà với tượng Bồ Tát Quán Thế Âm cao 67m hướng ra biển.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/danang_chua_linh_ung_bai_but.webp" alt="Chùa Linh Ứng Bãi Bụt Đà Nẵng" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Chùa Linh Ứng Bãi Bụt</h3>
-                        <div class="temple-location">📍 Bán đảo Sơn Trà, TP. Đà Nẵng • Tựa Sơn Hướng Hải</div>
-                        <p class="temple-desc">Tọa lạc tại vị trí đắc địa trên sườn núi Sơn Trà, nơi trời biển giao thoa. Tượng Phật Bà Quán Thế Âm cao 67m tay cầm bình cam lộ mắt nhìn ra biển cả bao la, chở che sóng gió cho những chuyến tàu vượt ngàn khơi xa.</p>
+                        <h3 class="temple-name"><a href="destination-da-nang.html" style="color: #fff; text-decoration: none;">Chùa Linh Ứng Bãi Bụt</a></h3>
+                        <div class="temple-location">📍 Bán đảo Sơn Trà, Đà Nẵng • Tựa núi hướng biển</div>
+                        <p class="temple-desc">Trên sườn bán đảo Sơn Trà, tượng Bồ Tát Quán Thế Âm cao 67m hướng ra biển như che chở ngư dân ra khơi.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🗽 Tượng Phật Bà 67m</span>
-                            <span class="temple-pill">🌊 Toàn cảnh biển Đà Nẵng</span>
+                            <span class="temple-pill">🗽 Tượng Quán Âm 67m</span>
+                            <span class="temple-pill">🌊 Ngắm biển Đà Nẵng</span>
                             <span class="temple-pill">⛰️ Bán đảo Sơn Trà</span>
                         </div>
+                        <a href="destination-da-nang.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Đà Nẵng</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 9. CHÙA CẦU (HỘI AN) -->
-                <div class="temple-card" data-region="central" onclick="openLightbox('images/hoian_chua_cau.webp', 'Chùa Cầu (Lai Viễn Kiều) — Phố cổ Hội An, Quảng Nam', 'Biểu tượng di sản văn hóa thế giới UNESCO, cây cầu ngói gỗ độc nhất vô nhị thờ Bắc Đế Trấn Võ trừ phong ba thủy quái.')">
-                    <div class="temple-img-wrap">
+                <div class="temple-card" data-region="central">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/hoian_chua_cau.webp', 'Chùa Cầu (Lai Viễn Kiều) — Hội An, Đà Nẵng', 'Cây cầu mái ngói thế kỷ XVII, biểu tượng của đô thị cổ Hội An — Di sản thế giới UNESCO.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/hoian_chua_cau.webp" alt="Chùa Cầu Hội An" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Chùa Cầu (Lai Viễn Kiều)</h3>
-                        <div class="temple-location">📍 Phố cổ Hội An, Quảng Nam • Biểu Tượng Di Sản</div>
-                        <p class="temple-desc">Xây dựng vào thế kỷ XVII bởi các thương nhân Nhật Bản, bắc qua con lạch nhỏ dẫn ra sông Hoài. Gian chùa nhỏ thờ Huyền Thiên Trấn Vũ — vị thần bảo hộ cư dân thương cảng tránh khỏi bão lũ và mang lại thái bình thịnh vượng.</p>
+                        <h3 class="temple-name"><a href="destination-hoi-an.html" style="color: #fff; text-decoration: none;">Chùa Cầu (Lai Viễn Kiều)</a></h3>
+                        <div class="temple-location">📍 Phố cổ Hội An, Đà Nẵng • Di sản thế giới UNESCO</div>
+                        <p class="temple-desc">Cầu mái ngói thế kỷ XVII được cho là do thương nhân Nhật Bản dựng; gian thờ trên cầu thờ Huyền Thiên Trấn Vũ.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏮 Mái ngói âm dương</span>
                             <span class="temple-pill">🌉 Cầu gỗ 400 năm</span>
-                            <span class="temple-pill">💴 Hình in trên tiền polymer</span>
+                            <span class="temple-pill">💴 In trên tiền 20.000 đồng</span>
                         </div>
+                        <a href="destination-hoi-an.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Hội An</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 10. THIỀN VIỆN HUYỀN KHÔNG SƠN THƯỢNG (HUẾ) -->
-                <div class="temple-card" data-region="central">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/hue_mua_thu_ngo_dong_thien_mu.webp', 'Thiền Viện Huyền Không Sơn Thượng — Hương Trà, Thừa Thiên Huế', 'Chốn thiền môn tĩnh mịch ẩn mình giữa rừng thông xanh ngát, không gian thư pháp và hồ súng thanh tịnh.')">
+                <div class="temple-card" data-region="central">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/hue_mua_thu_ngo_dong_thien_mu.webp', 'Huyền Không Sơn Thượng — Hương Trà, Huế', 'Ngôi chùa Nam tông giữa rừng thông xứ Huế, nổi tiếng với không gian mộc mạc và thư pháp thiền.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/hue_mua_thu_ngo_dong_thien_mu.webp" alt="Huyền Không Sơn Thượng Huế" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Huyền Không Sơn Thượng</h3>
-                        <div class="temple-location">📍 Huyện Hương Trà, Thừa Thiên Huế • Nam Tông Theravada</div>
-                        <p class="temple-desc">Nằm lọt thỏm giữa rừng thông đại ngàn ở độ cao 300m so với mực nước biển. Không gian kiến trúc mộc mạc hòa quyện tuyệt đối cùng thiên nhiên với suối reo, hồ súng, hoa phong lan và những bức thư pháp thiền giàu triết lý sống.</p>
+                        <h3 class="temple-name"><a href="destination-hue.html" style="color: #fff; text-decoration: none;">Huyền Không Sơn Thượng</a></h3>
+                        <div class="temple-location">📍 Hương Trà, Huế • Phật giáo Nam tông</div>
+                        <p class="temple-desc">Chùa Nam tông do Thượng tọa Giới Đức khai sơn năm 1989, mộc mạc giữa rừng thông, hồ súng và thư pháp thiền.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🌲 Rừng thông đại ngàn</span>
-                            <span class="temple-pill">📜 Thư pháp Thiền</span>
-                            <span class="temple-pill">🍃 Thoát tục an yên</span>
+                            <span class="temple-pill">🌲 Rừng thông</span>
+                            <span class="temple-pill">📜 Thư pháp thiền</span>
+                            <span class="temple-pill">🍃 Không gian an yên</span>
                         </div>
+                        <a href="destination-hue.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Huế</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 11. CHÙA THIÊN HƯNG (BÌNH ĐỊNH) -->
-                <div class="temple-card" data-region="central">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/quynhon_chua_thien_hung.webp', 'Chùa Thiên Hưng — Thị xã An Nhơn, Bình Định', 'Được ví như Phượng Hoàng Cổ Trấn giữa đất võ Bình Định, nơi lưu giữ Ngọc Xá Lợi Phật Thích Ca Mâu Ni thiêng liêng.')">
+                <div class="temple-card" data-region="central">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/quynhon_chua_thien_hung.webp', 'Chùa Thiên Hưng — An Nhơn, Gia Lai', 'Ngôi chùa có hồ sen, cầu gỗ, bảo tháp Thiên Ứng 12 tầng và nơi lưu giữ ngọc xá lợi Đức Phật.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/quynhon_chua_thien_hung.webp" alt="Chùa Thiên Hưng Bình Định" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Chùa Thiên Hưng</h3>
-                        <div class="temple-location">📍 TX. An Nhơn, Bình Định • Lưu Giữ Ngọc Xá Lợi</div>
-                        <p class="temple-desc">Ngôi chùa có cảnh quan hữu tình với hào nước sen, cầu gỗ uốn cong và Tháp Chuông 12 tầng vươn cao sừng sững. Đây là nơi tôn kính lưu giữ Ngọc Xá Lợi của Đức Phật do Giáo hội Phật giáo Myanmar trao tặng đất nước Việt Nam.</p>
+                        <h3 class="temple-name"><a href="destination-quy-nhon.html" style="color: #fff; text-decoration: none;">Chùa Thiên Hưng</a></h3>
+                        <div class="temple-location">📍 An Nhơn, Gia Lai • Lưu giữ ngọc xá lợi</div>
+                        <p class="temple-desc">Hồ sen, cầu gỗ và bảo tháp Thiên Ứng 12 tầng; chùa lưu giữ ngọc xá lợi rước về từ chùa Vàng, Myanmar.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">✨ Ngọc Xá Lợi Phật</span>
-                            <span class="temple-pill">🏯 Tháp Chuông 12 tầng</span>
+                            <span class="temple-pill">✨ Ngọc xá lợi Phật</span>
+                            <span class="temple-pill">🏯 Bảo tháp 12 tầng</span>
                             <span class="temple-pill">🌾 Đất võ Bình Định</span>
                         </div>
+                        <a href="destination-quy-nhon.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Quy Nhơn</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 12. CHÙA BÀ ĐEN (TÂY NINH) -->
-                <div class="temple-card" data-region="south" onclick="openLightbox('images/tayninh_chua_ba_den_linh_son_tien_thach.webp', 'Chùa Bà Đen (Linh Sơn Tiên Thạch Tự) — Núi Bà Đen, Tây Ninh', 'Điểm tựa tâm linh lớn nhất Nam Bộ, gắn với truyền thuyết Linh Sơn Thánh Mẫu và tượng Phật Bà Tây Bổ Đà Sơn kỷ lục châu Á.')">
-                    <div class="temple-img-wrap">
+                <div class="temple-card" data-region="south">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/tayninh_chua_ba_den_linh_son_tien_thach.webp', 'Chùa Bà Đen (Linh Sơn Tiên Thạch) — Tây Ninh', 'Chùa cổ thờ Linh Sơn Thánh Mẫu trên núi Bà Đen; trên đỉnh 986m là tượng Phật Bà Tây Bổ Đà Sơn bằng đồng.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/tayninh_chua_ba_den_linh_son_tien_thach.webp" alt="Chùa Bà Đen Tây Ninh" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Chùa Bà Đen (Linh Sơn Tiên Thạch)</h3>
-                        <div class="temple-location">📍 Núi Bà Đen, Tây Ninh • Nóc Nhà Nam Bộ 986m</div>
-                        <p class="temple-desc">Ngôi chùa cổ hơn 300 năm thờ Linh Sơn Thánh Mẫu trên lưng chừng núi mây. Trên đỉnh non cao 986m là tượng Phật Bà Tây Bổ Đà Sơn bằng đồng đúc tinh xảo cao 72m ngự giữa biển mây và vườn hoa rực rỡ quanh năm.</p>
+                        <h3 class="temple-name"><a href="destination-tay-ninh.html" style="color: #fff; text-decoration: none;">Chùa Bà Đen (Linh Sơn Tiên Thạch)</a></h3>
+                        <div class="temple-location">📍 Núi Bà Đen, Tây Ninh • Nóc nhà Nam Bộ 986m</div>
+                        <p class="temple-desc">Chùa cổ hơn 300 năm thờ Linh Sơn Thánh Mẫu; trên đỉnh 986m là tượng Phật Bà Tây Bổ Đà Sơn bằng đồng cao 72m.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">☁️ Đỉnh núi 986m</span>
                             <span class="temple-pill">🗽 Phật Bà Tây Bổ Đà Sơn</span>
-                            <span class="temple-pill">🌸 Lễ Hội Chùa Bà</span>
+                            <span class="temple-pill">🌸 Lễ hội Núi Bà</span>
                         </div>
+                        <a href="destination-tay-ninh.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Tây Ninh</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 13. MIẾU BÀ CHÚA XỨ & CHÙA HANG (AN GIANG) -->
-                <div class="temple-card" data-region="south">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/angiang_mieu_ba_chua_xu_nui_sam.webp', 'Miếu Bà Chúa Xứ Núi Sam & Chùa Hang — Châu Đốc, An Giang', 'Trung tâm hành hương tâm linh lớn nhất Đồng bằng sông Cửu Long, Di sản Văn hóa Phi vật thể Quốc gia.')">
+                <div class="temple-card" data-region="south">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/angiang_mieu_ba_chua_xu_nui_sam.webp', 'Miếu Bà Chúa Xứ & Chùa Hang — Châu Đốc, An Giang', 'Lễ hội Vía Bà Chúa Xứ núi Sam được UNESCO ghi danh là Di sản văn hóa phi vật thể đại diện của nhân loại năm 2024.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/angiang_mieu_ba_chua_xu_nui_sam.webp" alt="Miếu Bà Chúa Xứ Núi Sam An Giang" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Miếu Bà Chúa Xứ & Chùa Hang</h3>
-                        <div class="temple-location">📍 Núi Sam, TP. Châu Đốc, An Giang • Di Sản Quốc Gia</div>
-                        <p class="temple-desc">Pho tượng Bà bằng đá sa thạch đỉnh núi Sam có niên đại từ thế kỷ VI mang đậm phong cách văn hóa Óc Eo. Bên cạnh là Chùa Hang (Phước Điền Tự) cheo leo trên sườn đá rêu phong, nơi chim ca thanh bình nhìn ra cánh đồng biên giới bát ngát.</p>
+                        <h3 class="temple-name"><a href="destination-an-giang.html" style="color: #fff; text-decoration: none;">Miếu Bà Chúa Xứ & Chùa Hang</a></h3>
+                        <div class="temple-location">📍 Núi Sam, Châu Đốc, An Giang • Lễ hội UNESCO 2024</div>
+                        <p class="temple-desc">Lễ hội Vía Bà Chúa Xứ núi Sam được UNESCO ghi danh năm 2024; gần đó là Chùa Hang (Phước Điền Tự) trên sườn núi.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">👑 Bà Chúa Xứ Núi Sam</span>
-                            <span class="temple-pill">🗿 Văn hóa Óc Eo</span>
-                            <span class="temple-pill">🌾 Vùng đất Thất Sơn</span>
+                            <span class="temple-pill">👑 Bà Chúa Xứ núi Sam</span>
+                            <span class="temple-pill">🎊 Lễ hội UNESCO 2024</span>
+                            <span class="temple-pill">🌾 Vùng Thất Sơn</span>
                         </div>
+                        <a href="destination-an-giang.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang An Giang</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 14. TRÚC LÂM PHƯƠNG NAM & CHÙA ÔNG (CẦN THƠ) -->
-                <div class="temple-card" data-region="south">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/cantho_thien_vien_truc_lam_phuong_nam.webp', 'Thiền Viện Trúc Lâm Phương Nam & Chùa Ông — Cần Thơ', 'Thiền viện lớn nhất miền Tây Nam Bộ với kiến trúc gỗ lim thời Lý - Trần và Chùa Ông rực rỡ sắc màu văn hóa Hoa kiều bến Ninh Kiều.')">
+                <div class="temple-card" data-region="south">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/cantho_thien_vien_truc_lam_phuong_nam.webp', 'Trúc Lâm Phương Nam & Chùa Ông — Cần Thơ', 'Thiền viện mang kiến trúc thời Lý – Trần giữa miền Tây sông nước và hội quán Chùa Ông bên bến Ninh Kiều.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/cantho_thien_vien_truc_lam_phuong_nam.webp" alt="Thiền Viện Trúc Lâm Phương Nam Cần Thơ" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Trúc Lâm Phương Nam & Chùa Ông</h3>
-                        <div class="temple-location">📍 Phong Điền & Ninh Kiều, Cần Thơ • Tây Đô Sông Nước</div>
-                        <p class="temple-desc">Thiền viện Trúc Lâm Phương Nam xây dựng từ hàng ngàn khối gỗ lim kiên cố, mái ngói cong vút soi bóng hồ sen tĩnh lặng. Tại trung tâm thành phố là Chùa Ông (Quảng Triệu Hội Quán) linh thiêng với nhang vòng cuộn khói nghi ngút quanh năm.</p>
+                        <h3 class="temple-name"><a href="destination-can-tho.html" style="color: #fff; text-decoration: none;">Trúc Lâm Phương Nam & Chùa Ông</a></h3>
+                        <div class="temple-location">📍 Phong Điền & Ninh Kiều, Cần Thơ • Tây Đô sông nước</div>
+                        <p class="temple-desc">Thiền viện kiến trúc thời Lý – Trần soi bóng hồ sen; giữa bến Ninh Kiều là Chùa Ông với nhang vòng tỏa khói.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🌲 Gỗ lim thời Lý Trần</span>
+                            <span class="temple-pill">🏯 Kiến trúc Lý – Trần</span>
                             <span class="temple-pill">🏮 Nhang vòng Chùa Ông</span>
-                            <span class="temple-pill">🛶 Đất Tây Đô êm ả</span>
+                            <span class="temple-pill">🛶 Tây Đô sông nước</span>
                         </div>
+                        <a href="destination-can-tho.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Cần Thơ</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 15. CHÙA VĨNH TRÀNG (TIỀN GIANG) -->
-                <div class="temple-card" data-region="south">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/condao_chua_nui_mot_van_son_tu.webp', 'Chùa Vĩnh Tràng — TP. Mỹ Tho, Tiền Giang', 'Tuyệt tác kiến trúc cổ giao thoa Á - Âu độc nhất vô nhị miền Tây, lưu giữ 60 pho tượng gỗ quý và tượng Phật Di Lặc khổng lồ.')">
+                <div class="temple-card" data-region="south">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/condao_chua_nui_mot_van_son_tu.webp', 'Chùa Vĩnh Tràng — Mỹ Tho, Đồng Tháp', 'Ngôi chùa cổ đầu thế kỷ XIX với lối kiến trúc giao thoa Á – Âu độc đáo.')">
                         <span class="temple-region-tag">Miền Nam</span>
-                        <img src="images/condao_chua_nui_mot_van_son_tu.webp" alt="Chùa Vĩnh Tràng Mỹ Tho Tiền Giang" loading="lazy">
+                        <img src="images/condao_chua_nui_mot_van_son_tu.webp" alt="Chùa Vĩnh Tràng Mỹ Tho" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name">Chùa Vĩnh Tràng</h3>
-                        <div class="temple-location">📍 TP. Mỹ Tho, Tiền Giang • Giao Thoa Kiến Trúc Á - Âu</div>
-                        <p class="temple-desc">Ngôi chùa cổ xây dựng từ đầu thế kỷ XIX với sự hòa quyện tinh tế giữa phong cách Phục Hưng Pháp, hoa văn La Mã và kiến trúc chùa tháp truyền thống Việt Nam. Khuôn viên rợp bóng cổ thụ với đại tượng Phật Di Lặc tươi cười hoan hỷ.</p>
+                        <div class="temple-location">📍 Mỹ Tho, Đồng Tháp • Giao thoa kiến trúc Á – Âu</div>
+                        <p class="temple-desc">Chùa cổ đầu thế kỷ XIX kết hợp kiến trúc truyền thống Việt với nét Phục Hưng châu Âu, nổi bật tượng Phật Di Lặc.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🏛️ Giao thoa Á - Âu</span>
-                            <span class="temple-pill">😃 Phật Di Lặc hoan hỷ</span>
-                            <span class="temple-pill">🗿 60 pho tượng gỗ quý</span>
+                            <span class="temple-pill">🏛️ Giao thoa Á – Âu</span>
+                            <span class="temple-pill">😃 Tượng Phật Di Lặc</span>
+                            <span class="temple-pill">🗿 60 tượng gỗ cổ</span>
                         </div>
+                        <span class="temple-route-btn" style="opacity: 0.55; cursor: default; pointer-events: none;">
+                            <span>🔜 Cẩm nang chi tiết đang biên soạn</span>
+                        </span>
                     </div>
                 </div>
 
                 <!-- 16. CHÙA GIÁC LÂM (TP. HỒ CHÍ MINH) -->
-                <div class="temple-card" data-region="south" onclick="openLightbox('images/danang_cau_rong.webp', 'Chùa Giác Lâm (Cẩm Sơn Tự) — Quận Tân Bình, TP. Hồ Chí Minh', 'Ngôi cổ tự cổ nhất Sài Gòn hơn 300 năm tuổi, lưu giữ hơn 113 pho tượng cổ bằng gỗ mít thế kỷ XVIII.')">
-                    <div class="temple-img-wrap">
+                <div class="temple-card" data-region="south">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/danang_cau_rong.webp', 'Chùa Giác Lâm (Cẩm Sơn Tự) — TP. Hồ Chí Minh', 'Tổ đình Thiền phái Lâm Tế ở đất Gia Định xưa, khởi dựng năm 1744.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/danang_cau_rong.webp" alt="Chùa Giác Lâm TP. Hồ Chí Minh" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name">Chùa Giác Lâm (Cẩm Sơn Tự)</h3>
-                        <div class="temple-location">📍 Q. Tân Bình, TP. Hồ Chí Minh • Khởi Dựng Năm 1744</div>
-                        <p class="temple-desc">Được xây dựng từ thời chúa Nguyễn Phúc Khoát (năm 1744), là tổ đình của Thiền phái Lâm Tế tông tại đất Gia Định xưa. Ngôi chùa là một bảo tàng điêu khắc gỗ cổ vô giá với 98 cột gỗ lim thếp vàng cùng tháp Xá Lợi 7 tầng vươn cao.</p>
+                        <div class="temple-location">📍 Tân Bình, TP. Hồ Chí Minh • Khởi dựng năm 1744</div>
+                        <p class="temple-desc">Khởi dựng năm 1744 thời chúa Nguyễn Phúc Khoát, là tổ đình Thiền phái Lâm Tế ở đất Gia Định xưa.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">📜 Khởi dựng năm 1744</span>
-                            <span class="temple-pill">🗿 113 pho tượng cổ</span>
+                            <span class="temple-pill">🗿 Hơn 100 tượng cổ</span>
                             <span class="temple-pill">🗼 Tháp Xá Lợi 7 tầng</span>
                         </div>
+                        <span class="temple-route-btn" style="opacity: 0.55; cursor: default; pointer-events: none;">
+                            <span>🔜 Cẩm nang chi tiết đang biên soạn</span>
+                        </span>
                     </div>
                 </div>
 
                 <!-- 17. TRÚC LÂM PHỤNG HOÀNG (ĐÀ LẠT) -->
-                <div class="temple-card" data-region="south">>
-                    <div class="temple-img-wrap" onclick="openLightbox('images/dalat_mua_ha_phuong_tim_san_may.webp', 'Thiền Viện Trúc Lâm Phụng Hoàng — Đà Lạt, Lâm Đồng', 'Thiền viện thanh tịnh ngự trên núi Phụng Hoàng, soi bóng xuống hồ Tuyền Lâm mộng mơ giữa ngàn thông xanh mát.')">
+                <div class="temple-card" data-region="south">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/dalat_mua_ha_phuong_tim_san_may.webp', 'Thiền Viện Trúc Lâm Phụng Hoàng — Đà Lạt, Lâm Đồng', 'Thiền viện Trúc Lâm trên núi Phụng Hoàng, bên hồ Tuyền Lâm giữa rừng thông cao nguyên.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/dalat_mua_ha_phuong_tim_san_may.webp" alt="Thiền Viện Trúc Lâm Đà Lạt" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Trúc Lâm Phụng Hoàng (Đà Lạt)</h3>
-                        <div class="temple-location">📍 Núi Phụng Hoàng, Đà Lạt • Soi Bóng Hồ Tuyền Lâm</div>
-                        <p class="temple-desc">Một trong những thiền viện Trúc Lâm lớn nhất nước do Hòa thượng Thích Thanh Từ sáng lập. Tiết trời se lạnh của cao nguyên, vườn hoa cẩm tú cầu thơm ngát và tiếng chuông thiền hòa cùng tiếng gió reo qua rặng thông đại ngàn đưa lòng người về chốn an tịnh.</p>
+                        <h3 class="temple-name"><a href="destination-da-lat.html" style="color: #fff; text-decoration: none;">Trúc Lâm Phụng Hoàng (Đà Lạt)</a></h3>
+                        <div class="temple-location">📍 Núi Phụng Hoàng, Đà Lạt, Lâm Đồng • Bên hồ Tuyền Lâm</div>
+                        <p class="temple-desc">Thiền viện Trúc Lâm lớn do Hòa thượng Thích Thanh Từ khai sơn năm 1993, giữa rừng thông bên hồ Tuyền Lâm.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🌲 Rừng thông ngút ngàn</span>
-                            <span class="temple-pill">🌊 Hồ Tuyền Lâm mộng mơ</span>
-                            <span class="temple-pill">🚡 Cáp treo ngắm cảnh</span>
+                            <span class="temple-pill">🌲 Rừng thông cao nguyên</span>
+                            <span class="temple-pill">🌊 Hồ Tuyền Lâm</span>
+                            <span class="temple-pill">🔔 Chuông thiền</span>
                         </div>
+                        <a href="destination-da-lat.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Đà Lạt</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 18. CHÙA NÚI MỘT (CÔN ĐẢO) -->
-                <div class="temple-card" data-region="south" onclick="openLightbox('images/condao_chua_nui_mot_van_son_tu.webp', 'Chùa Núi Một (Vân Sơn Tự) — Côn Đảo, Bà Rịa - Vũng Tàu', 'Ngôi chùa duy nhất ngự trên đỉnh non cao Côn Đảo, tựa lưng vào vách đá ngắm nhìn trọn vẹn vịnh Côn Sơn xanh ngắt.')">
-                    <div class="temple-img-wrap">
+                <div class="temple-card" data-region="south">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/condao_chua_nui_mot_van_son_tu.webp', 'Chùa Núi Một (Vân Sơn Tự) — Côn Đảo, TP. Hồ Chí Minh', 'Ngôi chùa tựa lưng vào núi Một, nhìn bao quát vịnh Côn Sơn và hồ An Hải.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/condao_chua_nui_mot_van_son_tu.webp" alt="Chùa Núi Một Côn Đảo" loading="lazy">
                     </div>
                     <div class="temple-body">
-                        <h3 class="temple-name">Chùa Núi Một (Vân Sơn Tự)</h3>
-                        <div class="temple-location">📍 Huyện Côn Đảo, Bà Rịa - Vũng Tàu • Tựa Sơn Hướng Biển</div>
-                        <p class="temple-desc">Ngôi chùa có thế phong thủy tựa lưng vào núi Một, phóng tầm mắt bao quát toàn cảnh vịnh Côn Sơn, hồ An Hải và thị trấn Côn Đảo. Nơi đây là điểm tựa tâm linh cầu siêu cho hàng vạn anh hùng liệt sĩ đã hy sinh vì nền độc lập tự do của dân tộc.</p>
+                        <h3 class="temple-name"><a href="destination-con-dao.html" style="color: #fff; text-decoration: none;">Chùa Núi Một (Vân Sơn Tự)</a></h3>
+                        <div class="temple-location">📍 Côn Đảo, TP. Hồ Chí Minh • Tựa núi hướng biển</div>
+                        <p class="temple-desc">Vân Sơn Tự tựa lưng núi Một, nhìn bao quát vịnh Côn Sơn; nơi tưởng nhớ các anh hùng liệt sĩ tại Côn Đảo.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🌊 View toàn cảnh biển Côn Đảo</span>
+                            <span class="temple-pill">🌊 Ngắm vịnh Côn Sơn</span>
                             <span class="temple-pill">🙏 Tưởng niệm anh linh</span>
                             <span class="temple-pill">🌸 Hồ sen An Hải</span>
                         </div>
+                        <a href="destination-con-dao.html" class="temple-route-btn">
+                            <span>📖 Xem cẩm nang Côn Đảo</span>
+                            <span class="route-arrow">→</span>
+                        </a>
                     </div>
                 </div>
 
@@ -3875,7 +3931,7 @@
                 id: 'baidinh',
                 name: 'Quần Thể Chùa Bái Đính',
                 searchTerms: 'bai dinh chua bai dinh bai dinh co tu ninh binh gia vien 9 ban tho trang an',
-                location: 'Gia Viễn, Ninh Bình • Di sản Kép UNESCO',
+                location: 'Gia Viễn, Ninh Bình',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/bai_dinh_ancient_temple_1785641271528.webp',
@@ -3884,14 +3940,14 @@
                 mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
                 detailUrl: 'destination-bai-dinh.html',
                 hasDetailedAltars: true,
-                badge: 'Di sản Kép • Lộ trình 9 Ban Thờ',
-                desc: 'Đệ nhất danh thắng tâm linh với Bảo tháp 100m, tượng đồng 100 tấn và hành lang 500 vị La Hán đá.'
+                badge: 'Vùng di sản Tràng An • Lộ trình 9 ban thờ',
+                desc: 'Bái Đính cổ tự gắn với Thiền sư Nguyễn Minh Không và khu chùa mới có Bảo tháp 13 tầng cao 100m, hành lang 500 tượng La Hán.'
             },
             {
                 id: 'thienmu',
                 name: 'Chùa Thiên Mụ (Linh Mụ Tự)',
                 searchTerms: 'thien mu linh mu hue dong song huong phuoc duyen ha khe',
-                location: 'Đồi Hà Khê, TP. Huế',
+                location: 'Đồi Hà Khê, Huế',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/hue_chua_thien_mu.webp',
@@ -3900,14 +3956,14 @@
                 mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
                 detailUrl: 'destination-hue.html',
                 hasDetailedAltars: false,
-                badge: 'Đệ Nhất Cổ Tự Xứ Huế • Năm 1601',
+                badge: 'Cổ tự xứ Huế • Khởi dựng năm 1601',
                 desc: 'Biểu tượng trầm mặc bên sông Hương với Tháp Phước Duyên 7 tầng và tiếng chuông sớm chiều giải tỏa ưu phiền.'
             },
             {
                 id: 'linhung',
                 name: 'Chùa Linh Ứng Bãi Bụt',
                 searchTerms: 'linh ung bai but son tra da nang quan the am 67m phat ba',
-                location: 'Bán đảo Sơn Trà, TP. Đà Nẵng',
+                location: 'Bán đảo Sơn Trà, Đà Nẵng',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/danang_chua_linh_ung_bai_but.webp',
@@ -3923,7 +3979,7 @@
                 id: 'truclam',
                 name: 'Thiền Viện Trúc Lâm Phụng Hoàng',
                 searchTerms: 'truc lam da lat phung hoang tuyen lam thien vien rung thong',
-                location: 'Núi Phụng Hoàng, TP. Đà Lạt',
+                location: 'Núi Phụng Hoàng, Đà Lạt, Lâm Đồng',
                 region: 'south',
                 regionName: 'Tây Nguyên & Miền Nam',
                 img: 'images/dalat_mua_ha_phuong_tim_san_may.webp',
@@ -3939,7 +3995,7 @@
                 id: 'bichdong',
                 name: 'Chùa Bích Động (Động Xanh)',
                 searchTerms: 'bich dong nam thien de nhi dong ninh binh hoa lu tam coc dong xanh',
-                location: 'Ninh Hải, Hoa Lư, Ninh Bình',
+                location: 'Tam Cốc – Bích Động, Ninh Bình',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/tam_coc_river_1783441927501.webp',
@@ -3958,36 +4014,36 @@
                 location: 'Uông Bí, Quảng Ninh',
                 region: 'north',
                 regionName: 'Miền Bắc',
-                img: 'images/bai_dinh_ancient_temple_1785641271528.webp',
-                buddhaImg: 'images/bai_dinh_buddha_1783494499108.webp',
+                img: 'images/yentu_chua_dong_dinh_nui.webp',
+                buddhaImg: 'images/yentu_tuong_phat_hoang.webp',
                 title: 'Đỉnh Thiêng Yên Tử — Chùa Đồng',
                 mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
-                detailUrl: '#danh-lam-co-tu',
-                hasDetailedAltars: false,
-                badge: 'Đất Tổ Thiền Phái Trúc Lâm Đại Việt',
-                desc: 'Đỉnh thiêng Phù Vân nơi Phật hoàng Trần Nhân Tông xuất gia tu hành, sáng lập dòng Thiền Trúc Lâm Đại Việt.'
+                detailUrl: 'destination-yen-tu.html',
+                hasDetailedAltars: true,
+                badge: 'Di sản thế giới UNESCO 2025 • Lộ trình 9 trạm',
+                desc: 'Đỉnh thiêng Yên Tử nơi Phật hoàng Trần Nhân Tông xuất gia tu hành, khai sáng Thiền phái Trúc Lâm; Chùa Đồng nguyên khối trên đỉnh 1.068m.'
             },
             {
                 id: 'chuahuong',
                 name: 'Chùa Hương (Động Hương Tích)',
                 searchTerms: 'chua huong huong son nam thien de nhat dong suoi yen my duc ha noi',
-                location: 'Mỹ Đức, Hà Nội',
+                location: 'Hương Sơn, Hà Nội',
                 region: 'north',
                 regionName: 'Miền Bắc',
-                img: 'images/thungui_hero_toan_canh.webp',
-                buddhaImg: 'images/bai_dinh_buddha_1783494499108.webp',
+                img: 'images/chuahuong_suoi_yen_thuyen_hoa.webp',
+                buddhaImg: 'images/chuahuong_dong_huong_tich.webp',
                 title: 'Động Hương Tích — Bồ Tát Quán Thế Âm',
                 mantra: 'Nam Mô Đại Bi Quán Thế Âm Bồ Tát',
-                detailUrl: '#danh-lam-co-tu',
-                hasDetailedAltars: false,
-                badge: 'Nam Thiên Đệ Nhất Động • Trẩy Hội Suối Yến',
-                desc: 'Trôi thuyền trên dòng suối Yến mơ màng vào chốn bồng lai tiên cảnh Động Hương Tích chiêm bái Quán Thế Âm.'
+                detailUrl: 'destination-chua-huong.html',
+                hasDetailedAltars: true,
+                badge: 'Nam Thiên Đệ Nhất Động • Lộ trình 8 trạm',
+                desc: 'Đò nan trên suối Yến dẫn vào Động Hương Tích — nơi tương truyền Bồ Tát Quán Thế Âm tu hành đắc đạo.'
             },
             {
                 id: 'baden',
                 name: 'Chùa Bà Đen (Linh Sơn Tiên Thạch Tự)',
                 searchTerms: 'ba den chua ba tay ninh linh son tien thach noc nha nam bo tay bo da son',
-                location: 'Núi Bà Đen, TP. Tây Ninh',
+                location: 'Núi Bà Đen, Tây Ninh',
                 region: 'south',
                 regionName: 'Miền Nam',
                 img: 'images/tayninh_chua_ba_den_linh_son_tien_thach.webp',
@@ -3996,14 +4052,14 @@
                 mantra: 'Nam Mô Linh Sơn Thánh Mẫu Bồ Tát',
                 detailUrl: 'destination-tay-ninh.html',
                 hasDetailedAltars: false,
-                badge: 'Nóc Nhà Nam Bộ • Tượng Phật Đồng Cao Nhất Châu Á',
+                badge: 'Nóc nhà Nam Bộ • Tượng Phật Bà Tây Bổ Đà Sơn',
                 desc: 'Chốn linh thiêng ngút ngàn mây trắng trên đỉnh núi 986m, nơi hội tụ tượng Phật Bà Tây Bổ Đà Sơn và Linh Sơn Thánh Mẫu.'
             },
             {
                 id: 'mieu_ba',
                 name: 'Miếu Bà Chúa Xứ Núi Sam',
                 searchTerms: 'mieu ba chua xu nui sam chau doc an giang chua hang tay an',
-                location: 'TP. Châu Đốc, An Giang',
+                location: 'Núi Sam, Châu Đốc, An Giang',
                 region: 'south',
                 regionName: 'Tây Nam Bộ',
                 img: 'images/angiang_mieu_ba_chua_xu_nui_sam.webp',
@@ -4012,8 +4068,8 @@
                 mantra: 'Cầu Quốc Thái Dân An — Vạn Sự Cát Tường',
                 detailUrl: 'destination-an-giang.html',
                 hasDetailedAltars: false,
-                badge: 'Di Sản Văn Hóa Phi Vật Thể Quốc Gia',
-                desc: 'Điểm tựa tâm linh lớn nhất vùng Tây Nam Bộ, nơi hàng triệu lượt người chiêm bái cầu bình an, may mắn và thịnh vượng.'
+                badge: 'Lễ hội Vía Bà được UNESCO ghi danh năm 2024',
+                desc: 'Điểm tựa tâm linh lớn của vùng Tây Nam Bộ; Lễ hội Vía Bà Chúa Xứ núi Sam là Di sản văn hóa phi vật thể đại diện của nhân loại.'
             },
             {
                 id: 'bangioc',
@@ -4028,14 +4084,14 @@
                 mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
                 detailUrl: 'destination-cao-bang.html',
                 hasDetailedAltars: false,
-                badge: 'Cột Mốc Biên Cương • Vọng Cảnh Thác Bản Giốc',
+                badge: 'Biên cương Tổ quốc • Ngắm thác Bản Giốc',
                 desc: 'Tựa lưng núi Phia Nhằn, phóng tầm mắt ôm trọn thác Bản Giốc hùng vĩ, khẳng định cương vực thiêng liêng của Tổ quốc.'
             },
             {
                 id: 'truclam_cantho',
                 name: 'Thiền Viện Trúc Lâm Phương Nam',
                 searchTerms: 'truc lam phuong nam can tho phong dien go lim chua ong',
-                location: 'Phong Điền, TP. Cần Thơ',
+                location: 'Phong Điền, Cần Thơ',
                 region: 'south',
                 regionName: 'Tây Nam Bộ',
                 img: 'images/cantho_thien_vien_truc_lam_phuong_nam.webp',
@@ -4044,14 +4100,14 @@
                 mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
                 detailUrl: 'destination-can-tho.html',
                 hasDetailedAltars: false,
-                badge: 'Thiền Viện Lớn Nhất Miền Tây Sông Nước',
-                desc: 'Công trình kiến trúc thuần Việt thời Lý - Trần với 44 cột gỗ lim quý hiếm, chốn thiền định an yên giữa sông nước miền Tây.'
+                badge: 'Thiền viện Trúc Lâm giữa miền Tây sông nước',
+                desc: 'Công trình mang kiến trúc thời Lý – Trần với nhiều cột gỗ lim, chốn thiền định an yên giữa sông nước miền Tây.'
             },
             {
                 id: 'thienhung',
                 name: 'Chùa Thiên Hưng (Bình Định)',
                 searchTerms: 'thien hung quy nhon binh dinh phuong hoang co tran dong ngo xa loi phat',
-                location: 'An Nhơn, Bình Định',
+                location: 'An Nhơn, Gia Lai',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/quynhon_chua_thien_hung.webp',
@@ -4060,14 +4116,14 @@
                 mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
                 detailUrl: 'destination-quy-nhon.html',
                 hasDetailedAltars: false,
-                badge: 'Nơi Lưu Giữ Ngọc Xá Lợi Phật Thích Ca',
-                desc: 'Mệnh danh là Phượng Hoàng Cổ Trấn Bình Định với hồ sen, vườn thượng uyển và Tháp Chuông 12 tầng vươn cao thanh tịnh.'
+                badge: 'Nơi lưu giữ ngọc xá lợi Đức Phật',
+                desc: 'Khuôn viên hữu tình với hồ sen, cầu gỗ và bảo tháp Thiên Ứng 12 tầng; lưu giữ ngọc xá lợi rước về từ chùa Vàng, Myanmar.'
             },
             {
                 id: 'nuimot',
                 name: 'Chùa Núi Một (Vân Sơn Tự)',
                 searchTerms: 'nui mot van son tu con dao ho an hai con son',
-                location: 'Côn Đảo, Bà Rịa - Vũng Tàu',
+                location: 'Côn Đảo, TP. Hồ Chí Minh',
                 region: 'south',
                 regionName: 'Biển Đảo Phương Nam',
                 img: 'images/condao_chua_nui_mot_van_son_tu.webp',
@@ -4076,14 +4132,14 @@
                 mantra: 'Nam Mô Quán Thế Âm Bồ Tát',
                 detailUrl: 'destination-con-dao.html',
                 hasDetailedAltars: false,
-                badge: 'Ngắm Trọn Vịnh Côn Sơn & Hồ Sen An Hải',
-                desc: 'Ngôi chùa duy nhất tại Côn Đảo tọa lạc trên đỉnh Núi Một, lưng tựa rừng nguyên sinh, mắt hướng trọn biển trời bao la.'
+                badge: 'Ngắm vịnh Côn Sơn & hồ sen An Hải',
+                desc: 'Ngôi chùa tựa lưng vào núi Một, nhìn bao quát vịnh Côn Sơn; nơi tưởng nhớ các anh hùng liệt sĩ đã hy sinh tại Côn Đảo.'
             },
             {
                 id: 'chuacau',
                 name: 'Chùa Cầu Hội An (Lai Viễn Kiều)',
                 searchTerms: 'chua cau lai vien kieu hoi an quang nam unesco bac de tran vu',
-                location: 'Phố cổ Hội An, Quảng Nam',
+                location: 'Phố cổ Hội An, Đà Nẵng',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/hoian_chua_cau.webp',
@@ -4092,8 +4148,88 @@
                 mantra: 'Cầu Phong Điều Vũ Thuận — Nhân Khang Vật Thịnh',
                 detailUrl: 'destination-hoi-an.html',
                 hasDetailedAltars: false,
-                badge: 'Di Sản Văn Hóa Thế Giới UNESCO',
-                desc: 'Kiệt tác kiến trúc gỗ ngói âm dương 400 năm tuổi bắc qua lạch nước hoài cổ, biểu tượng của phố cổ Hội An.'
+                badge: 'Di sản thế giới UNESCO • Đô thị cổ Hội An',
+                desc: 'Cây cầu mái ngói thế kỷ XVII bắc qua lạch nước ra sông Hoài, biểu tượng của phố cổ Hội An.'
+            },
+            {
+                id: 'tranquoc',
+                name: 'Chùa Trấn Quốc & Chùa Một Cột',
+                searchTerms: 'tran quoc mot cot dien huu ho tay ba dinh ha noi chua co',
+                location: 'Tây Hồ & Ba Đình, Hà Nội',
+                region: 'north',
+                regionName: 'Miền Bắc',
+                img: 'images/bai_dinh_pagoda_1783443686667.webp',
+                buddhaImg: 'images/bai_dinh_pagoda_1783443686667.webp',
+                title: 'Cổ Tự Trấn Quốc Bên Hồ Tây',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: '#danh-lam-co-tu',
+                hasDetailedAltars: false,
+                badge: 'Cổ tự gần 1.500 năm • Chùa Một Cột 1049',
+                desc: 'Chùa Trấn Quốc khởi dựng thời Tiền Lý bên hồ Tây; gần đó là Chùa Một Cột dựng năm 1049 như đóa sen giữa hồ vuông.'
+            },
+            {
+                id: 'phattich',
+                name: 'Chùa Phật Tích & Chùa Dâu',
+                searchTerms: 'phat tich chua dau tu phap bac ninh tien du thuan thanh lan kha a di da',
+                location: 'Tiên Du & Thuận Thành, Bắc Ninh',
+                region: 'north',
+                regionName: 'Miền Bắc',
+                img: 'images/bai_dinh_buddha_1783494499108.webp',
+                buddhaImg: 'images/bai_dinh_buddha_1783494499108.webp',
+                title: 'Đất Phật Cổ Kinh Bắc',
+                mantra: 'Nam Mô A Di Đà Phật',
+                detailUrl: '#danh-lam-co-tu',
+                hasDetailedAltars: false,
+                badge: 'Đất Phật cổ • Tượng A Di Đà thời Lý',
+                desc: 'Chùa Dâu gắn với tín ngưỡng Tứ Pháp; Chùa Phật Tích lưu giữ tượng A Di Đà bằng đá thời Lý — bảo vật quốc gia.'
+            },
+            {
+                id: 'huyenkhong',
+                name: 'Huyền Không Sơn Thượng',
+                searchTerms: 'huyen khong son thuong hue huong tra nam tong thu phap gioi duc',
+                location: 'Hương Trà, Huế',
+                region: 'central',
+                regionName: 'Miền Trung',
+                img: 'images/hue_mua_thu_ngo_dong_thien_mu.webp',
+                buddhaImg: 'images/hue_mua_thu_ngo_dong_thien_mu.webp',
+                title: 'Thiền Viện Giữa Rừng Thông Xứ Huế',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: 'destination-hue.html',
+                hasDetailedAltars: false,
+                badge: 'Phật giáo Nam tông • Thư pháp thiền',
+                desc: 'Ngôi chùa Nam tông do Thượng tọa Giới Đức khai sơn năm 1989, mộc mạc giữa rừng thông, suối reo và thư pháp thiền.'
+            },
+            {
+                id: 'vinhtrang',
+                name: 'Chùa Vĩnh Tràng',
+                searchTerms: 'vinh trang my tho tien giang dong thap phat di lac kien truc a au',
+                location: 'Mỹ Tho, Đồng Tháp',
+                region: 'south',
+                regionName: 'Miền Nam',
+                img: 'images/condao_chua_nui_mot_van_son_tu.webp',
+                buddhaImg: 'images/condao_chua_nui_mot_van_son_tu.webp',
+                title: 'Cổ Tự Giao Thoa Á – Âu',
+                mantra: 'Nam Mô Đương Lai Hạ Sanh Di Lặc Tôn Phật',
+                detailUrl: '#danh-lam-co-tu',
+                hasDetailedAltars: false,
+                badge: 'Giao thoa kiến trúc Á – Âu',
+                desc: 'Ngôi chùa cổ đầu thế kỷ XIX kết hợp kiến trúc truyền thống Việt với nét Phục Hưng châu Âu, nổi bật đại tượng Phật Di Lặc.'
+            },
+            {
+                id: 'giaclam',
+                name: 'Chùa Giác Lâm (Cẩm Sơn Tự)',
+                searchTerms: 'giac lam cam son tan binh sai gon ho chi minh lam te gia dinh 1744',
+                location: 'Tân Bình, TP. Hồ Chí Minh',
+                region: 'south',
+                regionName: 'Miền Nam',
+                img: 'images/danang_cau_rong.webp',
+                buddhaImg: 'images/danang_cau_rong.webp',
+                title: 'Tổ Đình Lâm Tế Đất Gia Định',
+                mantra: 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật',
+                detailUrl: '#danh-lam-co-tu',
+                hasDetailedAltars: false,
+                badge: 'Khởi dựng năm 1744 • Tổ đình Lâm Tế',
+                desc: 'Tổ đình Thiền phái Lâm Tế ở đất Gia Định xưa, khởi dựng năm 1744, lưu giữ nhiều cột gỗ quý và pho tượng cổ.'
             }
         ];
 
