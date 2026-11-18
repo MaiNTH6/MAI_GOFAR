@@ -1,4 +1,4 @@
-# ==========================================
+﻿# ==========================================
 # GO FAR — PRODUCTION BUILD SCRIPT
 # Tự động đóng gói dự án tĩnh vào thư mục 'dist' để sẵn sàng deploy lên hosting.
 # ==========================================
@@ -27,6 +27,8 @@ Copy-Item -Path "$sourceDir\*.js" -Destination $distDir -Force
 Copy-Item -Path "$sourceDir\styles.css" -Destination $distDir -Force
 if (Test-Path "$sourceDir\robots.txt") { Copy-Item -Path "$sourceDir\robots.txt" -Destination $distDir -Force }
 if (Test-Path "$sourceDir\sitemap.xml") { Copy-Item -Path "$sourceDir\sitemap.xml" -Destination $distDir -Force }
+if (Test-Path "$sourceDir\_headers") { Copy-Item -Path "$sourceDir\_headers" -Destination $distDir -Force }
+if (Test-Path "$sourceDir\CNAME") { Copy-Item -Path "$sourceDir\CNAME" -Destination $distDir -Force }
 
 # 4. Sao chép thư mục chứa hình ảnh đã tối ưu hóa
 Write-Host "Đang sao chép tài nguyên hình ảnh (đã được tối ưu)..." -ForegroundColor Green
