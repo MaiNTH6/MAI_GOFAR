@@ -2500,7 +2500,7 @@
             <div class="zen-search-container">
                 <div class="zen-search-bar">
                     <span class="zen-search-icon">🔍</span>
-                    <input type="text" id="templeSearchInput" class="zen-search-input" placeholder="Tìm kiếm ngôi chùa hoặc danh lam tâm linh (vd: Bái Đính, Thiên Mụ, Trúc Lâm, Yên Tử, Bà Đen...)" autocomplete="off">
+                    <input type="text" id="templeSearchInput" class="zen-search-input" oninput="filterTemplesLive(this.value)" onfocus="if(this.value.trim()) filterTemplesLive(this.value)" placeholder="Tìm kiếm ngôi chùa hoặc danh lam tâm linh (vd: Bái Đính, Thiên Mụ, Trúc Lâm, Yên Tử, Bà Đen...)" autocomplete="off">
                     <button type="button" class="zen-search-clear" id="zenSearchClear" onclick="clearTempleSearch()" style="display:none;" title="Xóa">✕</button>
                 </div>
                 <div class="zen-quick-chips">
@@ -2635,9 +2635,9 @@
                     </button>
                 </div>
 
-                <!-- TIP LINK ĐẾN TRANG MẪU BÁI ĐÍNH -->
+                <!-- TIP LINK ĐẾN TRANG CẨM NANG CỔ TỰ ĐANG VIẾNG -->
                 <div class="altar-sample-tip">
-                    <span>💡 <strong>Cẩm nang chi tiết:</strong> Xem lộ trình hành lễ 9 ban, cách dâng lễ & văn khấn chuẩn mực tại <a href="destination-bai-dinh.html" style="color: #fbbf24; text-decoration: underline; font-weight: 700;">Chùa Bái Đính →</a></span>
+                    <span id="altarSampleTipText">💡 <strong>Cẩm nang chi tiết:</strong> Xem lộ trình hành lễ, cách dâng lễ &amp; văn khấn chuẩn mực tại <a id="altarDetailTipLink" href="destination-bai-dinh.html" style="color: #fbbf24; text-decoration: underline; font-weight: 700;">Chùa Bái Đính →</a></span>
                 </div>
             </div>
 
@@ -4829,6 +4829,12 @@
                 if (mantra) mantra.textContent = `"${t.mantra}"`;
 
                 playSolfeggio174();
+                const dbItem = TEMPLE_DATABASE.find(x => x.id === key);
+                const tipLink = document.getElementById('altarDetailTipLink');
+                if (tipLink && dbItem && dbItem.detailUrl) {
+                    tipLink.href = dbItem.detailUrl;
+                    tipLink.textContent = `${dbItem.name} →`;
+                }
                 showToast(`Đã chuyển bối cảnh viếng: ${t.name}`, '⛩️');
             }
         }
@@ -5364,7 +5370,8 @@
                 mantra: 'Từ Bi Hỷ Xả — Pháp Lực Vô Biên Của Phật Thầy Sài Sơn',
                 detailUrl: 'destination-chua-thay.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QGĐB 2014 • Nhà Thủy Đình 1612 • Lộ trình 6 trạm'
+                badge: 'Di tích QGĐB 2014 • Nhà Thủy Đình 1612 • Lộ trình 6 trạm',
+                desc: 'Xứ Đoài huyền thoại — Nhà Thủy Đình 1612 múa rối nước cổ nhất Việt Nam, nhục thân Thiền sư Từ Đạo Hạnh thế kỷ XII và hang Thánh Hóa linh thiêng trên núi Sài.'
             },
             {
                 id: 'chuabutthap',
@@ -5379,7 +5386,8 @@
                 mantra: 'Namo Quan Thế Âm Bồ Tát — Pháp Nhãn Vô Lượng Từ Bi',
                 detailUrl: 'destination-chua-but-thap.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QGĐB 2013 • 4 Bảo Vật QG • Lộ trình 6 trạm'
+                badge: 'Di tích QGĐB 2013 • 4 Bảo Vật QG • Lộ trình 6 trạm',
+                desc: 'Kiệt tác Phật giáo Bắc Ninh — 4 Bảo Vật Quốc gia hiếm có: tượng Quan Âm Nghìn Mắt Nghìn Tay 1656 (Trương Công An tạc), Cửu Phẩm Liên Hoa xoay, Hương Án và Tam Thế Phật.'
             },
             {
                 id: 'chuaconson',
@@ -5394,7 +5402,8 @@
                 mantra: 'Quy Y Tam Bảo — Pháp Nhãn Trúc Lâm Chiếu Rọi Rừng Thông',
                 detailUrl: 'destination-chua-con-son.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QGĐB • UNESCO 2025 • Lộ trình 6 trạm'
+                badge: 'Di tích QGĐB • UNESCO 2025 • Lộ trình 6 trạm',
+                desc: 'Rừng thông cổ Côn Sơn — Danh lam thời Trần gắn với Huyền Quang (Trúc Lâm Tam Tổ) và Nguyễn Trãi; suối Thạch Bàn, Am Bạch Vân, cụm di tích Côn Sơn–Kiếp Bạc được UNESCO công nhận 2025.'
             },
             {
                 id: 'chualongson',
@@ -5409,7 +5418,8 @@
                 mantra: 'Namo Thích Ca Mâu Ni Phật — Kim Thân Tỏa Sáng Vịnh Biển Xanh',
                 detailUrl: 'destination-chua-long-son.html',
                 hasDetailedAltars: true,
-                badge: '1886 HT Thích Ngộ Trí • Kim Thân 24m • Lộ trình 6 trạm'
+                badge: '1886 HT Thích Ngộ Trí • Kim Thân 24m • Lộ trình 6 trạm',
+                desc: 'Biểu tượng Nha Trang — Tượng Kim Thân Phật Tổ trắng tinh khôi cao 24m nhìn ra vịnh biển xanh; 193 bậc đá, Hòa thượng Thích Ngộ Trí khai sơn 1886 và chuông đồng lớn rền khắp thành phố biển.'
             },
             {
                 id: 'chuakhaidoan',
@@ -5424,7 +5434,8 @@
                 mantra: 'Namo A Di Đà Phật — Pháp Lực Khải Đoan Tỏa Khắp Tây Nguyên',
                 detailUrl: 'destination-chua-khai-doan.html',
                 hasDetailedAltars: true,
-                badge: 'Sắc Tứ 1953 cuối phong kiến • Kiến trúc Huế–Tây Nguyên • 6 trạm'
+                badge: 'Sắc Tứ 1953 cuối phong kiến • Kiến trúc Huế–Tây Nguyên • 6 trạm',
+                desc: 'Sắc Tứ cuối cùng thời phong kiến VN — Kiến trúc nhà rường Huế hoà quyện mái nhà sàn Tây Nguyên; do Đoan Huy Hoàng thái hậu và Nam Phương Hoàng hậu hậu thuẫn 1951, trung tâm Phật giáo Tây Nguyên.'
             },
             {
                 id: 'chuahoikhanh',
@@ -5439,7 +5450,8 @@
                 mantra: 'Namo Thích Ca Mâu Ni Phật — Niết Bàn An Nhiên Thủ Dầu Một',
                 detailUrl: 'destination-chua-hoi-khanh.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1993 • Phật NB 52m kỷ lục Á • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1993 • Phật NB 52m kỷ lục Á • Lộ trình 6 trạm',
+                desc: 'Cổ tự Nam Bộ 1741 — Tượng Phật Niết Bàn 52m kỷ lục Châu Á 2013, tranh sơn mài cổ 1823, nơi lưu dấu Nguyễn Sinh Sắc (~1920) và 285 năm văn hóa Phật giáo Thủ Dầu Một.'
             },
             {
                 id: 'taythien',
@@ -5454,7 +5466,8 @@
                 mantra: 'Quy Y Tam Bảo — Phật Pháp Tăng Gia Hộ Vạn Linh Tây Thiên',
                 detailUrl: 'destination-chua-tay-thien.html',
                 hasDetailedAltars: true,
-                badge: 'Danh thắng QG • Quốc Mẫu Hùng Vương • Lộ trình 6 trạm'
+                badge: 'Danh thắng QG • Quốc Mẫu Hùng Vương • Lộ trình 6 trạm',
+                desc: 'Rừng thiêng Tam Đảo — Nơi thờ Quốc Mẫu Lăng Thị Tiêu từ thời Hùng Vương; Thiền viện Trúc Lâm hoành tráng trên sườn núi; rừng nguyên sinh bao phủ cáp treo 2.000m và Lễ hội Tây Thiên tháng 2 âm lịch.'
             },
             {
                 id: 'chuadau',
@@ -5469,7 +5482,8 @@
                 mantra: 'Namo Đại Bồ Tát Pháp Vũ — Từ Bi Mưa Pháp Thấm Khắp Chúng Sinh',
                 detailUrl: 'destination-chua-dau.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1964 • 2 Nhục thân thiền sư • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1964 • 2 Nhục thân thiền sư • Lộ trình 6 trạm',
+                desc: 'Huyền tích Tứ Pháp — Thờ Đại Bồ Tát Pháp Vũ (thần Mưa); 2 pho nhục thân thiền sư Vũ Khắc Minh và Vũ Khắc Trường bảo tồn tự nhiên 300-400 năm không phân hủy — hiếm bậc nhất Việt Nam.'
             },
             {
                 id: 'baoquoc',
@@ -5484,7 +5498,8 @@
                 mantra: 'Namo A Di Đà Phật — Hàm Long Phước Địa Âm Phù Muôn Đời',
                 detailUrl: 'destination-chua-bao-quoc.html',
                 hasDetailedAltars: true,
-                badge: 'Sắc Tứ 1747 • Giếng cổ Hàm Long • Lộ trình 6 trạm'
+                badge: 'Sắc Tứ 1747 • Giếng cổ Hàm Long • Lộ trình 6 trạm',
+                desc: 'Danh tổ đình Phật giáo Huế — Trên đồi Hàm Long linh thiêng từ 1674; chúa Nguyễn Phúc Khoát ban sắc tứ 1747; Giếng cổ nước ngọt tiến cung Triều Nguyễn; Trường Phật học Thừa Thiên Huế lâu đời nhất miền Trung.'
             },
             {
                 id: 'tudam',
@@ -5499,7 +5514,8 @@
                 mantra: 'Namo Thích Ca Mâu Ni Phật — Pháp Lực Từ Đàm Chiếu Khắp Trời Nam',
                 detailUrl: 'destination-chua-tu-dam.html',
                 hasDetailedAltars: true,
-                badge: 'Đại hội PG 1951 • An Nam Phật học hội • Lộ trình 6 trạm'
+                badge: 'Đại hội PG 1951 • An Nam Phật học hội • Lộ trình 6 trạm',
+                desc: 'Trái tim Phật giáo Việt Nam — Trụ sở An Nam Phật học hội; nơi diễn ra Đại hội Thống nhất Phật giáo toàn quốc 1951; cờ Phật giáo 5 màu tung bay và Pháp đường lịch sử trăm năm chấn hưng.'
             },
             {
                 id: 'vinhnghiemhcm',
@@ -5514,7 +5530,8 @@
                 mantra: 'Namo Quan Thế Âm Bồ Tát — Từ Bi Vô Lượng Phổ Độ Nam Bộ',
                 detailUrl: 'destination-chua-vinh-nghiem-hcm.html',
                 hasDetailedAltars: true,
-                badge: '1964 KTS Nguyễn Bá Lăng • Bảo tháp 40m • Lộ trình 6 trạm'
+                badge: '1964 KTS Nguyễn Bá Lăng • Bảo tháp 40m • Lộ trình 6 trạm',
+                desc: 'Biểu tượng Phật giáo Sài Gòn — Bảo tháp Quán Thế Âm 7 tầng cao 40m; Đại lễ Vu Lan lớn nhất miền Nam hàng năm; kiến trúc KTS Nguyễn Bá Lăng theo nguyên mẫu Chùa Vĩnh Nghiêm Bắc Giang.'
             },
             {
                 id: 'chauthoibinh',
@@ -5529,7 +5546,8 @@
                 mantra: 'Namo Thích Ca Mâu Ni Phật — Châu Thới Linh Sơn Phước Địa Nam Bộ',
                 detailUrl: 'destination-chua-chau-thoi.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1989 • Cổ tự 1612 • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1989 • Cổ tự 1612 • Lộ trình 6 trạm',
+                desc: 'Cổ tự Nam Bộ 1612 trên đỉnh núi — Mái gốm sứ chạm trổ rồng phượng độc bản; Thập bát La Hán đất nung thế kỷ XVII; Hòn đá thần huyền bí; 220 bậc đá leo lên đỉnh núi Châu Thới 82m.'
             },
             {
                 id: 'tramgian',
@@ -5544,7 +5562,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Kính Lễ Đức Thánh Bối',
                 detailUrl: 'destination-chua-tram-gian.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1962 • 104 gian 1185 • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1962 • 104 gian 1185 • Lộ trình 6 trạm',
+                desc: 'Tứ đại danh thắng xứ Đoài — 104 gian cổ tự khởi lập năm 1185 trên đồi Tiên Lữ; Gác chuông 2 tầng 8 mái năm 1693; chuông Cảnh Thịnh 1794; cặp rồng đá thời Trần và Đức Thánh Bối Nguyễn Bình An.'
             },
             {
                 id: 'longdoison',
@@ -5559,7 +5578,8 @@
                 mantra: 'Nam Mô A Di Đà Phật — Quốc Tự Triều Lý Nghìn Năm Núi Đọi',
                 detailUrl: 'destination-chua-long-doi-son.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QGĐB 2017 • Bia đá 1121 • Lộ trình 6 trạm'
+                badge: 'Di tích QGĐB 2017 • Bia đá 1121 • Lộ trình 6 trạm',
+                desc: 'Quốc tự triều Lý trên đỉnh núi Đọi (1054) — Vượt 373 bậc đá xanh chiêm bái Bảo vật Quốc gia Bia Sùng Thiện Diên Linh (1121), tượng Kim Cương đá thời Lý và chín giếng mắt rồng.'
             },
             {
                 id: 'thapthap',
@@ -5574,7 +5594,8 @@
                 mantra: 'Nam Mô Tây Phương Cực Lạc Thế Giới A Di Đà Phật',
                 detailUrl: 'destination-chua-thap-thap.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1990 • Tổ đình 1683 • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1990 • Tổ đình 1683 • Lộ trình 6 trạm',
+                desc: 'Tổ đình Lâm Tế danh tiếng bậc nhất Đàng Trong — Khai sơn 1683 từ gạch phế tích 10 tháp Chăm cổ; Sắc tứ Chúa Nguyễn 1691; kiến trúc chữ Khẩu, kho mộc bản kinh cổ và 16 đời truyền thừa.'
             },
             {
                 id: 'minhthanh',
@@ -5589,7 +5610,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — An Nhiên Phố Núi',
                 detailUrl: 'destination-chua-minh-thanh.html',
                 hasDetailedAltars: true,
-                badge: 'Bảo tháp 72m • Gỗ pơ-mu Tây Nguyên • Lộ trình 6 trạm'
+                badge: 'Bảo tháp 72m • Gỗ pơ-mu Tây Nguyên • Lộ trình 6 trạm',
+                desc: 'Tuyệt tác kiến trúc phương Đông giữa phố núi — Giao hòa tinh hoa Lý – Trần, Trung Hoa và Nhật Bản; Bảo tháp Xá Lợi 9 tầng cao 72m; Hồ Liên Trì; Chánh điện gỗ pơ-mu và Đại hồng chung 4 tấn.'
             },
             {
                 id: 'truclamchanhgiac',
@@ -5604,7 +5626,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Trúc Lâm Chánh Giác',
                 detailUrl: 'destination-truc-lam-chanh-giac.html',
                 hasDetailedAltars: true,
-                badge: '50ha Đồng Tháp Mười • Tứ Động Tâm • Lộ trình 6 trạm'
+                badge: '50ha Đồng Tháp Mười • Tứ Động Tâm • Lộ trình 6 trạm',
+                desc: 'Thiền viện Trúc Lâm lớn nhất Đồng Tháp Mười — Khuôn viên 50ha thanh tịnh; cụm Tứ Động Tâm mô phỏng 4 thánh tích Ấn Độ với Tháp Đại Giác cao 31m và tượng Phật đá ngọc nặng hơn 30 tấn.'
             },
             {
                 id: 'linhsonvungtau',
@@ -5619,7 +5642,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Bình An Biển Trời',
                 detailUrl: 'destination-chua-linh-son-vung-tau.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1991 • Cổ tự 1919 • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1991 • Cổ tự 1919 • Lộ trình 6 trạm',
+                desc: 'Ngôi chùa cổ nhất phố biển Vũng Tàu (1919) — Nép mình yên bình dưới chân Núi Nhỏ; lưu giữ bảo vật tượng Phật Thích Ca đá sa thạch thếp vàng (thế kỷ VI–VII) và tượng Di Lặc đồng (1972).'
             },
             {
                 id: 'chuadaubn',
@@ -5634,7 +5658,8 @@
                 mantra: 'Nam Mô Pháp Vân Cổ Phật — Từ Bi Hộ Quốc An Dân',
                 detailUrl: 'destination-chua-dau-bac-ninh.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QGĐB • Cổ nhất VN (TK II–III) • Lộ trình 6 trạm'
+                badge: 'Di tích QGĐB • Cổ nhất VN (TK II–III) • Lộ trình 6 trạm',
+                desc: 'Ngôi chùa cổ nhất Việt Nam (thế kỷ II–III) — Trung tâm Phật giáo Luy Lâu và tín ngưỡng Tứ Pháp; Tháp Hòa Phong gạch cổ 17m; Bảo vật Quốc gia tượng Pháp Vân và Mộc bản Chùa Dâu.'
             },
             {
                 id: 'chuamotcot',
@@ -5649,7 +5674,8 @@
                 mantra: 'Nam Mô Đại Từ Đại Bi Quán Thế Âm Bồ Tát — Diên Hựu Phúc Lành',
                 detailUrl: 'destination-chua-mot-cot.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1962 • Kỷ lục Châu Á • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1962 • Kỷ lục Châu Á • Lộ trình 6 trạm',
+                desc: 'Đóa sen nghìn năm Thăng Long — Khởi dựng năm 1049 triều Lý Thái Tông; Liên Hoa Đài vươn lên giữa Hồ Linh Chiểu; Kỷ lục Châu Á về kiến trúc độc đáo nhất và cây Bồ-đề 1958.'
             },
             {
                 id: 'thienan',
@@ -5664,7 +5690,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Thiên Ấn Niêm Hà',
                 detailUrl: 'destination-chua-thien-an.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1990 • Sắc tứ 1716 • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1990 • Sắc tứ 1716 • Lộ trình 6 trạm',
+                desc: 'Đệ nhất thắng cảnh "Thiên Ấn niêm hà" — Khai sơn 1694 trên đỉnh núi bên sông Trà Khúc; Sắc tứ Chúa Nguyễn 1716; huyền tích Chuông Thần 1845, Giếng Phật và mộ cụ Huỳnh Thúc Kháng.'
             },
             {
                 id: 'huongtichht',
@@ -5679,7 +5706,8 @@
                 mantra: 'Nam Mô Đại Từ Đại Bi Quán Thế Âm Bồ Tát — Hồng Sơn Đệ Nhất Phong',
                 detailUrl: 'destination-chua-huong-tich-ha-tinh.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1990 • Đỉnh Hồng Lĩnh 650m • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1990 • Đỉnh Hồng Lĩnh 650m • Lộ trình 6 trạm',
+                desc: '"Hoan Châu đệ nhất danh lam" — Ẩn mình ở độ cao 650m trên 99 đỉnh Hồng Lĩnh từ thời Trần (TK XIII); khắc trên Anh Đỉnh Huế 1836; gắn với truyền thuyết Công chúa Diệu Thiện hóa Phật.'
             },
             {
                 id: 'linhphuoc',
@@ -5694,7 +5722,8 @@
                 mantra: 'Nam Mô Đại Bi Quán Thế Âm Bồ Tát — Từ Bi Bất Tử',
                 detailUrl: 'destination-chua-linh-phuoc.html',
                 hasDetailedAltars: true,
-                badge: 'Linh Tháp 37m • Quan Âm hoa bất tử • Lộ trình 6 trạm'
+                badge: 'Linh Tháp 37m • Quan Âm hoa bất tử • Lộ trình 6 trạm',
+                desc: 'Kiệt tác khảm sành sứ độc nhất xứ ngàn hoa — Linh Tháp 7 tầng cao 37m treo Đại hồng chung 8,5 tấn; tượng Quan Âm kết từ 650.000 bông hoa bất tử và tượng rồng 49m khảm 12.000 vỏ chai.'
             },
             {
                 id: 'xiemcan',
@@ -5709,7 +5738,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Komphisakor',
                 detailUrl: 'destination-chua-xiem-can.html',
                 hasDetailedAltars: true,
-                badge: 'Cổ tự Khmer 1887 • 5ha Angkor • Lộ trình 6 trạm'
+                badge: 'Cổ tự Khmer 1887 • 5ha Angkor • Lộ trình 6 trạm',
+                desc: 'Kiệt tác chùa Khmer lớn bậc nhất miền Tây — Kiến trúc Angkor rực rỡ sắc vàng son trên khuôn viên 5ha ven biển; chạm khắc rắn thần Naga, tiên nữ Kinnari và nhà hội Sala truyền thống.'
             },
             {
                 id: 'chuamia',
@@ -5724,7 +5754,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Sùng Nghiêm Cổ Tự',
                 detailUrl: 'destination-chua-mia.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG • Kỷ lục 287 tượng cổ • Lộ trình 6 trạm'
+                badge: 'Di tích QG • Kỷ lục 287 tượng cổ • Lộ trình 6 trạm',
+                desc: 'Bảo tàng điêu khắc giữa làng cổ đá ong — Kỷ lục Việt Nam với 287 pho tượng Phật, Tuyết Sơn, Quan Âm Tống Tử, 18 vị La Hán; Bà Chúa Mía trùng tu năm 1632 và Tháp Cửu Phẩm 13m.'
             },
             {
                 id: 'chuacole',
@@ -5739,7 +5770,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Thần Quang Tự',
                 detailUrl: 'destination-chua-co-le.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG • Tháp 32m & Chuông 9 tấn • Lộ trình 6 trạm'
+                badge: 'Di tích QG • Tháp 32m & Chuông 9 tấn • Lộ trình 6 trạm',
+                desc: 'Tuyệt tác giao thoa kiến trúc Phật Việt & Gothic (1902) — Thờ Phật và Quốc sư Nguyễn Minh Không; Tháp Cửu Phẩm Liên Hoa 32m trên lưng rùa đá (1927) và Đại hồng chung 9 tấn (1936).'
             },
             {
                 id: 'chuacothach',
@@ -5754,7 +5786,8 @@
                 mantra: 'Nam Mô Đại Bi Quán Thế Âm Bồ Tát — Cổ Thạch Linh Sơn',
                 detailUrl: 'destination-chua-co-thach.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1993 • Chùa Hang 1835 • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1993 • Chùa Hang 1835 • Lộ trình 6 trạm',
+                desc: 'Cổ tự trong lòng đá biển từ năm 1835 — Do Thiền sư Bảo Tạng khai sơn giữa quần thể hang động đá tự nhiên trên đồi 64m, liền kề kỳ quan Bãi đá 7 màu Cà Dược và biển Cổ Thạch.'
             },
             {
                 id: 'chuaongnui',
@@ -5769,7 +5802,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Linh Phong Thiền Tự',
                 detailUrl: 'destination-chua-ong-nui.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG • Sắc tứ 1733 & Phật 69m • Lộ trình 6 trạm'
+                badge: 'Di tích QG • Sắc tứ 1733 & Phật 69m • Lộ trình 6 trạm',
+                desc: 'Huyền tích Mộc Y Sơn Ông (1702) & Sắc tứ Chúa Nguyễn (1733) — Hơn 600 bậc đá dẫn lên cổ tự, Hang Tổ Ông Núi và Đại tượng Phật Thích Ca ngồi cao 69m tựa núi Bà hướng biển Đông.'
             },
             {
                 id: 'chuaang',
@@ -5784,7 +5818,8 @@
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Angkorajaborey',
                 detailUrl: 'destination-chua-ang.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1994 • Ao Bà Om • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1994 • Ao Bà Om • Lộ trình 6 trạm',
+                desc: 'Cổ tự Khmer ngàn năm bên Ao Bà Om — Bao bọc bởi hào nước cổ và rừng sao dầu trăm tuổi trồi rễ kỳ ảo; cổng thần Bayon, Chánh điện gỗ quý năm 1842 và đêm hội Ok Om Bok.'
             },
             {
                 id: 'phuocdiennuisam',
@@ -5799,17 +5834,45 @@
                 mantra: 'Nam Mô A Di Đà Phật — Phước Điền Thanh Tịnh',
                 detailUrl: 'destination-chua-phuoc-dien-nui-sam.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QG 1980 • Cổ tự 1845 Núi Sam • Lộ trình 6 trạm'
+                badge: 'Di tích QG 1980 • Cổ tự 1845 Núi Sam • Lộ trình 6 trạm',
+                desc: 'Chốn bồng lai trên sườn Tây Núi Sam (1845) — Gần 300 bậc đá dẫn lên cổ tự cột gỗ căm xe của Sư bà Lê Thị Thơ, hang đá Thanh Xà – Bạch Xà quy y và ban công ngắm đồng lúa biên giới.'
             }
         ];
 
         // REMOVE VIETNAMESE DIACRITICS FOR FUZZY SEARCH
         function removeDiacritics(str) {
             if (!str) return '';
-            return str.normalize('NFD')
-                      .replace(/[\\u0300-\\u036f]/g, '')
-                      .replace(/đ/g, 'd').replace(/Đ/g, 'D')
-                      .toLowerCase().trim();
+            return String(str)
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/đ/g, 'd')
+                .replace(/Đ/g, 'D')
+                .replace(/[^a-zA-Z0-9\s]/g, ' ')
+                .replace(/\s+/g, ' ')
+                .toLowerCase()
+                .trim();
+        }
+
+        function scoreTempleMatch(t, qClean, qTokens, includeDesc) {
+            const nameClean = removeDiacritics(t.name);
+            const nameWords = nameClean.split(' ').filter(Boolean);
+            if (nameClean === qClean) return 120;
+            if ((' ' + nameClean + ' ').includes(' ' + qClean + ' ') || nameClean.startsWith(qClean)) return 100;
+            if (qTokens.every(tok => nameWords.some(w => w.startsWith(tok)))) return 85;
+
+            const fields = [t.name, t.location, t.searchTerms, t.title, t.regionName];
+            if (includeDesc) fields.push(t.badge, t.desc);
+            const hayClean = removeDiacritics(fields.join(' '));
+            const hayWords = hayClean.split(' ').filter(Boolean);
+
+            if ((' ' + hayClean + ' ').includes(' ' + qClean + ' ')) return 70;
+            if (qTokens.every(tok => hayWords.some(w => w.startsWith(tok)))) return 55;
+
+            if (qTokens.length === 1) {
+                const compact = (t.id + ' ' + nameClean.replace(/\s+/g, '')).toLowerCase();
+                if (compact.includes(qClean)) return 45;
+            }
+            return 0;
         }
 
         function filterTemplesLive(query) {
@@ -5819,39 +5882,55 @@
 
             const qClean = removeDiacritics(query);
             if (clearBtn) {
-                clearBtn.style.display = query ? 'inline-flex' : 'none';
+                clearBtn.style.display = (query && query.length > 0) ? 'inline-flex' : 'none';
             }
 
             if (!qClean) {
                 dropdown.style.display = 'none';
                 dropdown.innerHTML = '';
-                // Reset temple grid cards visibility
                 const cards = document.querySelectorAll('#templesGrid .temple-card');
                 cards.forEach(card => card.style.display = '');
                 return;
             }
 
-            const matches = TEMPLE_DATABASE.filter(t => {
-                const nameClean = removeDiacritics(t.name);
-                const locClean = removeDiacritics(t.location);
-                const termsClean = removeDiacritics(t.searchTerms);
-                return nameClean.includes(qClean) || locClean.includes(qClean) || termsClean.includes(qClean);
+            const qTokens = qClean.split(' ').filter(Boolean);
+
+            let scored = TEMPLE_DATABASE
+                .map(t => ({ t, score: scoreTempleMatch(t, qClean, qTokens, false) }))
+                .filter(x => x.score > 0);
+
+            if (scored.length === 0) {
+                scored = TEMPLE_DATABASE
+                    .map(t => ({ t, score: scoreTempleMatch(t, qClean, qTokens, true) }))
+                    .filter(x => x.score > 0);
+            }
+
+            scored.sort((a, b) => b.score - a.score);
+            const matches = scored.map(x => x.t);
+
+            // Activate 'all' tab visually when live-filtering so no regional cards stay hidden
+            document.querySelectorAll('.region-tab-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', idx === 0);
             });
 
-            // Update Temple Grid below
+            // Update Temple Grid below in sync with matched temples & word-prefix matching
+            const matchedUrls = new Set(matches.map(m => m.detailUrl));
             const cards = document.querySelectorAll('#templesGrid .temple-card');
             cards.forEach(card => {
-                const cardText = removeDiacritics(card.textContent);
-                if (cardText.includes(qClean)) {
+                const linkEl = card.querySelector('.temple-route-btn');
+                const href = linkEl ? linkEl.getAttribute('href') : '';
+                if (href && matchedUrls.has(href)) {
                     card.style.display = '';
-                } else {
-                    card.style.display = 'none';
+                    return;
                 }
+                const cardWords = removeDiacritics(card.textContent).split(' ').filter(Boolean);
+                const wordHit = matches.length === 0 && qTokens.every(tok => cardWords.some(w => w.startsWith(tok)));
+                card.style.display = wordHit ? '' : 'none';
             });
 
             // Render dropdown
             if (matches.length === 0) {
-                dropdown.innerHTML = '<div class="zen-dropdown-empty">Không tìm thấy ngôi chùa nào phù hợp. Vui lòng thử từ khóa khác (ví dụ: Bái Đính, Thiên Mụ, Trúc Lâm...)</div>';
+                dropdown.innerHTML = '<div class="zen-dropdown-empty">Không tìm thấy ngôi chùa nào phù hợp. Vui lòng thử từ khóa khác (ví dụ: Bái Đính, Châu Thới, Chùa Mía, Xiêm Cán...)</div>';
             } else {
                 dropdown.innerHTML = matches.map(t => `
                     <div class="zen-search-item">
@@ -5930,6 +6009,11 @@
             const matchingBtn = document.querySelector(`.altar-temple-btn[onclick*="'${templeId}'"]`);
             if (matchingBtn) matchingBtn.classList.add('active');
 
+            const tipLink = document.getElementById('altarDetailTipLink');
+            if (tipLink && found.detailUrl) {
+                tipLink.href = found.detailUrl;
+                tipLink.textContent = `${found.name} →`;
+            }
             showToast(`Đã chuyển sang không gian chiêm bái: ${found.name}`, '🌸');
         }
 
@@ -5964,19 +6048,6 @@
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
-
-        // Search Input event listener
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('templeSearchInput');
-            if (searchInput) {
-                searchInput.addEventListener('input', function() {
-                    filterTemplesLive(this.value);
-                });
-                searchInput.addEventListener('focus', function() {
-                    if (this.value.trim()) filterTemplesLive(this.value);
-                });
-            }
-        });
 
 </script>
 
