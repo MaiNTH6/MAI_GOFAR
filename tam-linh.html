@@ -2423,18 +2423,73 @@
             backdrop-filter: blur(16px);
             margin-bottom: 1.5rem;
         }
+        .altar-visiting-badge {
+            position: relative;
+            z-index: 5;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 0 auto 0.55rem;
+            padding: 0.32rem 1rem;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            border-radius: var(--radius-full);
+            font-size: 0.84rem;
+            color: #e2e8f0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+        .altar-visiting-badge strong {
+            color: #fde68a;
+            font-weight: 700;
+        }
+        .altar-temple-btn.altar-pinned-btn.active {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.38), rgba(217, 119, 6, 0.28));
+            border-color: #fbbf24;
+            color: #fef08a;
+            box-shadow: 0 0 18px rgba(251, 191, 36, 0.4);
+        }
+        .zen-search-item {
+            cursor: pointer;
+        }
         .altar-sample-tip {
+            position: relative;
+            z-index: 5;
             margin-top: 1.5rem;
-            padding: 0.55rem 1.3rem;
-            background: rgba(251, 191, 36, 0.08);
-            border: 1px solid rgba(251, 191, 36, 0.28);
+            padding: 0.7rem 1.1rem 0.7rem 1.35rem;
+            background: rgba(13, 31, 45, 0.88);
+            border: 1.5px solid rgba(251, 191, 36, 0.38);
             border-radius: var(--radius-full);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.88rem;
-            color: #cbd5e1;
-            backdrop-filter: blur(8px);
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+        .btn-altar-detail-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.48rem 1.15rem;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: #0D1F2D !important;
+            font-weight: 700;
+            font-size: 0.86rem;
+            text-decoration: none !important;
+            box-shadow: 0 4px 14px rgba(251, 191, 36, 0.35);
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+        .btn-altar-detail-cta:hover {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
         }
         @media (max-width: 768px) {
             .hero.zen-hero-unified {
@@ -2445,6 +2500,10 @@
             }
             .hero.zen-hero-unified .hero-desc {
                 font-size: 0.95rem;
+            }
+            .altar-sample-tip {
+                border-radius: var(--radius-md);
+                padding: 0.85rem 1rem;
             }
         }
 </style>
@@ -2500,17 +2559,18 @@
             <div class="zen-search-container">
                 <div class="zen-search-bar">
                     <span class="zen-search-icon">🔍</span>
-                    <input type="text" id="templeSearchInput" class="zen-search-input" oninput="filterTemplesLive(this.value)" onfocus="if(this.value.trim()) filterTemplesLive(this.value)" placeholder="Tìm kiếm ngôi chùa hoặc danh lam tâm linh (vd: Bái Đính, Thiên Mụ, Trúc Lâm, Yên Tử, Bà Đen...)" autocomplete="off">
+                    <input type="text" id="templeSearchInput" class="zen-search-input" oninput="filterTemplesLive(this.value)" onfocus="if(this.value.trim()) filterTemplesLive(this.value)" onkeydown="handleSearchKeydown(event)" placeholder="Tìm tên chùa để vào Viếng Cổ Tự &amp; thắp hương tĩnh tâm (vd: Châu Thới, Bái Đính, Chùa Mía, Xiêm Cán...)" autocomplete="off">
                     <button type="button" class="zen-search-clear" id="zenSearchClear" onclick="clearTempleSearch()" style="display:none;" title="Xóa">✕</button>
                 </div>
                 <div class="zen-quick-chips">
-                    <span class="quick-chip-label">⛩️ Tra cứu nhanh:</span>
-                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Bái Đính')">Chùa Bái Đính</button>
-                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Thiên Mụ')">Chùa Thiên Mụ</button>
-                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Linh Ứng')">Chùa Linh Ứng</button>
-                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Yên Tử')">Chùa Yên Tử</button>
-                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Bà Đen')">Chùa Bà Đen</button>
-                    <button type="button" class="quick-chip" onclick="handleQuickSearch('Trúc Lâm')">Trúc Lâm Đà Lạt</button>
+                    <span class="quick-chip-label">⛩️ Chọn nhanh cổ tự:</span>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('baidinh')">Chùa Bái Đính</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('thienmu')">Chùa Thiên Mụ</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('linhung')">Chùa Linh Ứng</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('yentu')">Chùa Yên Tử</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('baden')">Chùa Bà Đen</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('truclam')">Trúc Lâm Đà Lạt</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('chauthoibinh')">Chùa Châu Thới</button>
                 </div>
                 <!-- LIVE DROPDOWN RESULTS -->
                 <div class="zen-search-dropdown" id="zenSearchDropdown"></div>
@@ -2521,24 +2581,24 @@
                 <!-- NỀN DANH LAM CỔ TỰ MỜ ẢO -->
                 <div class="altar-backdrop" id="altarBackdrop" style="background-image: url('images/bai_dinh_buddha_1783494499108.webp');"></div>
 
-                <!-- BỘ CHỌN ĐỔI BỐI CẢNH 5 CỔ TỰ -->
-                <div class="altar-temple-bar">
-                    <span style="font-size: 0.8rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; margin-right: 0.2rem;">
+                <!-- BỘ CHỌN VIẾNG CỔ TỰ (TỰ ĐỘNG HIỂN THỊ CHÙA VỪA TÌM KIẾM) -->
+                <div class="altar-temple-bar" id="altarTempleBar">
+                    <span id="altarTempleBarLabel" style="font-size: 0.8rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; margin-right: 0.2rem;">
                         ⛩️ Viếng Cổ Tự:
                     </span>
-                    <button class="altar-temple-btn active" onclick="switchTempleView('baidinh', this)">
+                    <button type="button" class="altar-temple-btn active" data-temple-id="baidinh" onclick="switchTempleView('baidinh', this)">
                         🏛️ Chùa Bái Đính (Ninh Bình)
                     </button>
-                    <button class="altar-temple-btn" onclick="switchTempleView('thienmu', this)">
+                    <button type="button" class="altar-temple-btn" data-temple-id="thienmu" onclick="switchTempleView('thienmu', this)">
                         🔔 Chùa Thiên Mụ (Huế)
                     </button>
-                    <button class="altar-temple-btn" onclick="switchTempleView('linhung', this)">
+                    <button type="button" class="altar-temple-btn" data-temple-id="linhung" onclick="switchTempleView('linhung', this)">
                         🌊 Chùa Linh Ứng (Đà Nẵng)
                     </button>
-                    <button class="altar-temple-btn" onclick="switchTempleView('truclam', this)">
+                    <button type="button" class="altar-temple-btn" data-temple-id="truclam" onclick="switchTempleView('truclam', this)">
                         🌲 Trúc Lâm (Đà Lạt)
                     </button>
-                    <button class="altar-temple-btn" onclick="switchTempleView('yentu', this)">
+                    <button type="button" class="altar-temple-btn" data-temple-id="yentu" onclick="switchTempleView('yentu', this)">
                         👑 Chùa Yên Tử (Quảng Ninh)
                     </button>
                 </div>
@@ -2547,6 +2607,9 @@
                 <div class="buddha-statue-wrap" id="buddhaStatueWrap" onclick="performAltarBow(event)" style="cursor: pointer;" title="Chạm để thành tâm đảnh lễ Đức Phật">
                     <div class="buddha-halo-pulse"></div>
                     <img src="images/bai_dinh_buddha_1783494499108.webp" alt="Đức Phật Thích Ca Mâu Ni" class="buddha-statue-img" id="altarBuddhaImg">
+                </div>
+                <div class="altar-visiting-badge" id="altarVisitingBadge">
+                    🕯️ Đang viếng cổ tự: <strong>Quần Thể Chùa Bái Đính</strong> • Phường Tây Hoa Lư, Ninh Bình
                 </div>
                 <h3 class="altar-title" id="altarTempleTitle">Chánh Điện Đức Phật Thích Ca Mâu Ni</h3>
                 <div class="altar-mantra" id="altarTempleMantra">"Nam Mô Bản Sư Thích Ca Mâu Ni Phật"</div>
@@ -2635,9 +2698,13 @@
                     </button>
                 </div>
 
-                <!-- TIP LINK ĐẾN TRANG CẨM NANG CỔ TỰ ĐANG VIẾNG -->
-                <div class="altar-sample-tip">
-                    <span id="altarSampleTipText">💡 <strong>Cẩm nang chi tiết:</strong> Xem lộ trình hành lễ, cách dâng lễ &amp; văn khấn chuẩn mực tại <a id="altarDetailTipLink" href="destination-bai-dinh.html" style="color: #fbbf24; text-decoration: underline; font-weight: 700;">Chùa Bái Đính →</a></span>
+                <!-- NÚT XEM CẨM NANG CHI TIẾT CỔ TỰ ĐANG VIẾNG (SAU KHI THẮP HƯƠNG TĨNH TÂM) -->
+                <div class="altar-sample-tip" id="altarDetailCtaBar">
+                    <span id="altarSampleTipText">🕯️ Sau khi thắp hương &amp; tĩnh tâm tại <strong id="altarCurrentTempleInline" style="color: #fde68a;">Chùa Bái Đính</strong>, mời bạn khám phá cẩm nang &amp; lộ trình hành lễ:</span>
+                    <a id="altarDetailTipLink" href="destination-bai-dinh.html" class="btn-altar-detail-cta" onclick="handleSearchDetailClick(this.getAttribute('href'), event)">
+                        <span id="altarDetailTipBtnText">⛩️ Xem Chi Tiết Chùa Bái Đính</span>
+                        <span>→</span>
+                    </a>
                 </div>
             </div>
 
@@ -4807,36 +4874,97 @@
             }
         };
 
+        function getShortTempleName(dbItem) {
+            if (!dbItem || !dbItem.name) return 'Cổ Tự';
+            return dbItem.name.replace(/\s*\([^)]*\)\s*/g, '').trim() || dbItem.name;
+        }
+
+        function formatTempleBarLabel(dbItem) {
+            const shortName = getShortTempleName(dbItem);
+            let prov = '';
+            if (dbItem && dbItem.location) {
+                prov = dbItem.location.split(',').pop().trim()
+                    .replace(/^(Tỉnh|Thành phố|TP\.)\s+/i, '')
+                    .replace('Bà Rịa - Vũng Tàu', 'Vũng Tàu')
+                    .trim();
+            }
+            return prov ? `🕯️ ${shortName} (${prov})` : `🕯️ ${shortName}`;
+        }
+
         function switchTempleView(key, btn) {
             state.currentTemple = key;
+            const preset = templeViewData[key];
+            const dbItem = (typeof TEMPLE_DATABASE !== 'undefined')
+                ? TEMPLE_DATABASE.find(x => x.id === key)
+                : null;
+            if (!preset && !dbItem) return;
+
+            const bar = document.getElementById('altarTempleBar');
+            const barLabel = document.getElementById('altarTempleBarLabel');
             document.querySelectorAll('.altar-temple-btn').forEach(b => b.classList.remove('active'));
-            if (btn) {
-                btn.classList.add('active');
-            } else {
-                const targetBtn = document.querySelector(`.altar-temple-btn[onclick*="'${key}'"]`);
-                if (targetBtn) targetBtn.classList.add('active');
-            }
 
-            const t = templeViewData[key];
-            if (t) {
-                const backdrop = document.getElementById('altarBackdrop');
-                if (backdrop) backdrop.style.backgroundImage = `url('${t.backdrop}')`;
-                const buddha = document.getElementById('altarBuddhaImg');
-                if (buddha) buddha.src = t.buddha;
-                const title = document.getElementById('altarTempleTitle');
-                if (title) title.textContent = t.title;
-                const mantra = document.getElementById('altarTempleMantra');
-                if (mantra) mantra.textContent = `"${t.mantra}"`;
-
-                playSolfeggio174();
-                const dbItem = TEMPLE_DATABASE.find(x => x.id === key);
-                const tipLink = document.getElementById('altarDetailTipLink');
-                if (tipLink && dbItem && dbItem.detailUrl) {
-                    tipLink.href = dbItem.detailUrl;
-                    tipLink.textContent = `${dbItem.name} →`;
+            let targetBtn = btn || document.querySelector(`.altar-temple-btn[data-temple-id="${key}"]`) || document.querySelector(`.altar-temple-btn[onclick*="'${key}'"]`);
+            if (!targetBtn && bar && dbItem) {
+                // Keep at most 2 previous custom-pinned buttons so the bar stays neat
+                const pinnedBtns = Array.from(bar.querySelectorAll('.altar-pinned-btn'));
+                while (pinnedBtns.length >= 3) {
+                    const oldest = pinnedBtns.pop();
+                    if (oldest) oldest.remove();
                 }
-                showToast(`Đã chuyển bối cảnh viếng: ${t.name}`, '⛩️');
+                targetBtn = document.createElement('button');
+                targetBtn.type = 'button';
+                targetBtn.className = 'altar-temple-btn altar-pinned-btn active';
+                targetBtn.setAttribute('data-temple-id', key);
+                targetBtn.onclick = function() { switchTempleView(key, targetBtn); };
+                targetBtn.textContent = formatTempleBarLabel(dbItem);
+                if (barLabel && barLabel.nextSibling) {
+                    bar.insertBefore(targetBtn, barLabel.nextSibling);
+                } else {
+                    bar.appendChild(targetBtn);
+                }
             }
+            if (targetBtn) targetBtn.classList.add('active');
+
+            const backdropUrl = (preset && preset.backdrop) || (dbItem && dbItem.img) || '';
+            const buddhaUrl = (preset && preset.buddha) || (dbItem && (dbItem.buddhaImg || dbItem.img)) || '';
+            const titleText = (preset && preset.title) || (dbItem && (dbItem.title || dbItem.name)) || '';
+            const mantraText = (preset && preset.mantra) || (dbItem && dbItem.mantra) || 'Nam Mô Bản Sư Thích Ca Mâu Ni Phật';
+            const displayName = (dbItem && dbItem.name) || (preset && preset.name) || '';
+            const shortName = dbItem ? getShortTempleName(dbItem) : displayName;
+
+            const backdrop = document.getElementById('altarBackdrop');
+            if (backdrop && backdropUrl) backdrop.style.backgroundImage = `url('${backdropUrl}')`;
+            const buddha = document.getElementById('altarBuddhaImg');
+            if (buddha && buddhaUrl) {
+                buddha.src = buddhaUrl;
+                buddha.alt = displayName;
+            }
+            const visitingBadge = document.getElementById('altarVisitingBadge');
+            if (visitingBadge) {
+                const locPart = (dbItem && dbItem.location) ? ` • ${dbItem.location}` : '';
+                visitingBadge.innerHTML = `🕯️ Đang viếng cổ tự: <strong>${displayName}</strong>${locPart}`;
+            }
+            const title = document.getElementById('altarTempleTitle');
+            if (title) title.textContent = titleText;
+            const mantra = document.getElementById('altarTempleMantra');
+            if (mantra) mantra.textContent = `"${mantraText}"`;
+
+            const inlineName = document.getElementById('altarCurrentTempleInline');
+            if (inlineName) inlineName.textContent = shortName;
+
+            const tipLink = document.getElementById('altarDetailTipLink');
+            const tipBtnText = document.getElementById('altarDetailTipBtnText');
+            if (tipLink && dbItem && dbItem.detailUrl) {
+                tipLink.href = dbItem.detailUrl;
+                if (tipBtnText) {
+                    tipBtnText.textContent = `⛩️ Xem Chi Tiết ${shortName}`;
+                } else {
+                    tipLink.textContent = `⛩️ Xem Chi Tiết ${shortName} →`;
+                }
+            }
+
+            playSolfeggio174();
+            showToast(`Đang viếng ${shortName} — Mời bạn thắp hương tĩnh tâm rồi xem chi tiết bên dưới`, '🕯️');
         }
 
         // BURST CANVAS SMOKE ON INCENSE IGNITE
@@ -5875,6 +6003,8 @@
             return 0;
         }
 
+        let lastMatchedTempleIds = [];
+
         function filterTemplesLive(query) {
             const dropdown = document.getElementById('zenSearchDropdown');
             const clearBtn = document.getElementById('zenSearchClear');
@@ -5886,6 +6016,7 @@
             }
 
             if (!qClean) {
+                lastMatchedTempleIds = [];
                 dropdown.style.display = 'none';
                 dropdown.innerHTML = '';
                 const cards = document.querySelectorAll('#templesGrid .temple-card');
@@ -5907,6 +6038,7 @@
 
             scored.sort((a, b) => b.score - a.score);
             const matches = scored.map(x => x.t);
+            lastMatchedTempleIds = matches.map(m => m.id);
 
             // Activate 'all' tab visually when live-filtering so no regional cards stay hidden
             document.querySelectorAll('.region-tab-btn').forEach((btn, idx) => {
@@ -5928,12 +6060,12 @@
                 card.style.display = wordHit ? '' : 'none';
             });
 
-            // Render dropdown
+            // Render dropdown: primary click enters Viếng Cổ Tự to burn incense & meditate first
             if (matches.length === 0) {
                 dropdown.innerHTML = '<div class="zen-dropdown-empty">Không tìm thấy ngôi chùa nào phù hợp. Vui lòng thử từ khóa khác (ví dụ: Bái Đính, Châu Thới, Chùa Mía, Xiêm Cán...)</div>';
             } else {
                 dropdown.innerHTML = matches.map(t => `
-                    <div class="zen-search-item">
+                    <div class="zen-search-item" onclick="selectTempleFromSearch('${t.id}')" title="Chạm để vào Viếng Cổ Tự &amp; thắp hương tĩnh tâm tại ${t.name}">
                         <img src="${t.img}" alt="${t.name}" class="zen-search-item-thumb">
                         <div class="zen-search-item-info">
                             <div class="zen-search-item-name">${t.name}</div>
@@ -5941,12 +6073,12 @@
                             <div class="zen-search-item-desc">${t.desc || t.title || ""}</div>
                         </div>
                         <div class="zen-search-item-actions">
-                            <a href="${t.detailUrl}" class="btn-search-action btn-search-detail" onclick="handleSearchDetailClick('${t.detailUrl}', event)">
-                                <span>⛩️ Xem bài chi tiết</span>
-                            </a>
-                            <button type="button" class="btn-search-action btn-search-virtual" onclick="selectTempleFromSearch('${t.id}')">
-                                <span>✨ Chiêm bái Chánh Điện</span>
+                            <button type="button" class="btn-search-action btn-search-detail" onclick="event.stopPropagation(); selectTempleFromSearch('${t.id}')">
+                                <span>🕯️ Vào Viếng &amp; Thắp Hương</span>
                             </button>
+                            <a href="${t.detailUrl}" class="btn-search-action btn-search-virtual" onclick="event.stopPropagation(); handleSearchDetailClick('${t.detailUrl}', event)">
+                                <span>📖 Xem chi tiết →</span>
+                            </a>
                         </div>
                     </div>
                 `).join('');
@@ -5954,8 +6086,20 @@
             dropdown.style.display = 'block';
         }
 
+        function handleSearchKeydown(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                if (lastMatchedTempleIds && lastMatchedTempleIds.length > 0) {
+                    selectTempleFromSearch(lastMatchedTempleIds[0]);
+                }
+            } else if (event.key === 'Escape') {
+                const dropdown = document.getElementById('zenSearchDropdown');
+                if (dropdown) dropdown.style.display = 'none';
+            }
+        }
+
         function handleSearchDetailClick(url, event) {
-            if (url.startsWith('#')) {
+            if (url && url.startsWith('#')) {
                 event.preventDefault();
                 const target = document.querySelector(url);
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
@@ -5978,43 +6122,38 @@
             if (input) {
                 input.value = '';
                 filterTemplesLive('');
+                input.focus();
             }
         }
 
         function selectTempleFromSearch(templeId) {
-            // Check if temple exists in switchTempleView list
             const found = TEMPLE_DATABASE.find(t => t.id === templeId);
             if (!found) return;
 
-            // Hide dropdown
+            // Hide dropdown & show selected temple name in search box
             const dropdown = document.getElementById('zenSearchDropdown');
             if (dropdown) dropdown.style.display = 'none';
-
-            // Scroll to sanctuary
-            const sanctuary = document.getElementById('goc-an-nhien');
-            if (sanctuary) sanctuary.scrollIntoView({ behavior: 'smooth' });
-
-            // Switch altar scene
-            const backdrop = document.getElementById('altarBackdrop');
-            if (backdrop) backdrop.style.backgroundImage = `url('${found.img}')`;
-            const buddhaImg = document.getElementById('altarBuddhaImg');
-            if (buddhaImg) buddhaImg.src = found.buddhaImg || found.img;
-            const titleElem = document.getElementById('altarTempleTitle');
-            if (titleElem) titleElem.textContent = found.title;
-            const mantraElem = document.getElementById('altarTempleMantra');
-            if (mantraElem) mantraElem.textContent = `"${found.mantra}"`;
-
-            // Active button state
-            document.querySelectorAll('.altar-temple-btn').forEach(btn => btn.classList.remove('active'));
-            const matchingBtn = document.querySelector(`.altar-temple-btn[onclick*="'${templeId}'"]`);
-            if (matchingBtn) matchingBtn.classList.add('active');
-
-            const tipLink = document.getElementById('altarDetailTipLink');
-            if (tipLink && found.detailUrl) {
-                tipLink.href = found.detailUrl;
-                tipLink.textContent = `${found.name} →`;
+            const input = document.getElementById('templeSearchInput');
+            const clearBtn = document.getElementById('zenSearchClear');
+            if (input) {
+                input.value = found.name;
+                input.blur();
             }
-            showToast(`Đã chuyển sang không gian chiêm bái: ${found.name}`, '🌸');
+            if (clearBtn) clearBtn.style.display = 'inline-flex';
+
+            // Restore full temple grid below so all 60 temples remain browsable
+            document.querySelectorAll('#templesGrid .temple-card').forEach(card => {
+                card.style.display = '';
+            });
+
+            // Pin temple into "Viếng Cổ Tự" bar, switch sanctuary scene, and sync bottom Detail CTA
+            switchTempleView(templeId);
+
+            // Smoothly scroll to the Virtual Sanctuary ("Viếng Cổ Tự" + Hương Án + Nút Xem Chi Tiết)
+            const stage = document.getElementById('virtualAltarStage');
+            if (stage) {
+                stage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
         // Close search dropdown on click outside
