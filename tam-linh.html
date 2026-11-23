@@ -2681,8 +2681,8 @@
 
                 <!-- THANH TÁC VỤ LỄ BÁI TÂM LINH -->
                 <div class="altar-action-bar">
-                    <button type="button" class="btn-altar-action" id="btnActionBow" onclick="performAltarBow(event)">
-                        <span>🙏</span> Đảnh Lễ Tam Bảo
+                    <button type="button" class="btn-altar-action" id="btnActionBow" onclick="performAltarBow(event)" title="Thành tâm đảnh lễ 3 hồi kính lễ Phật Bảo • Pháp Bảo • Tăng Bảo">
+                        <span>🙏</span> <span id="bowActionText">Đảnh Lễ Tam Bảo (3 Hồi)</span>
                     </button>
                     <button type="button" class="btn-altar-action" id="btnActionMo" onclick="strikeMoInteractive(event)">
                         <span>🐟</span> Gõ Mõ Chánh Niệm
@@ -4363,42 +4363,85 @@
         // ALTAR INTERACTIVE ACTIONS (PERFECTED)
         // ==========================================
 
-        // 1. ĐẢNH LỄ TAM BẢO (+1 LẠY)
+        // 1. ĐẢNH LỄ TAM BẢO (3 HỒI TRỌN VẸN: PHẬT BẢO • PHÁP BẢO • TĂNG BẢO)
         function performAltarBow(e) {
-            state.bowCount++;
-            state.meritCount += 3;
-            saveAllCounters();
-            updateAllCounters();
+            if (state.isBowing) return;
+            state.isBowing = true;
 
-            // Buddha statue bow animation
             const wrap = document.getElementById('buddhaStatueWrap');
-            if (wrap) {
-                wrap.style.transform = 'scale(0.92) translateY(24px)';
-                wrap.style.filter = 'drop-shadow(0 0 35px rgba(251, 191, 36, 0.9))';
+            const btnBow = document.getElementById('btnActionBow');
+            const bowText = document.getElementById('bowActionText');
+            if (btnBow) btnBow.classList.add('playing');
+
+            const bowRounds = [
+                {
+                    stepLabel: 'Đảnh Lễ Hồi 1/3 (Phật Bảo)...',
+                    flyText: '🙏 Hồi 1/3: Chí Tâm Đảnh Lễ Phật Bảo',
+                    toastText: 'Hồi 1/3 — Chí tâm đảnh lễ Mười Phương Phật Bảo'
+                },
+                {
+                    stepLabel: 'Đảnh Lễ Hồi 2/3 (Pháp Bảo)...',
+                    flyText: '🙏 Hồi 2/3: Chí Tâm Đảnh Lễ Pháp Bảo',
+                    toastText: 'Hồi 2/3 — Chí tâm đảnh lễ Tôn Pháp Bảo'
+                },
+                {
+                    stepLabel: 'Đảnh Lễ Hồi 3/3 (Tăng Bảo)...',
+                    flyText: '🙏 Hồi 3/3: Chí Tâm Đảnh Lễ Hiền Thánh Tăng',
+                    toastText: 'Hồi 3/3 — Chí tâm đảnh lễ Hiền Thánh Tăng Bảo'
+                }
+            ];
+
+            bowRounds.forEach((round, idx) => {
                 setTimeout(() => {
-                    wrap.style.transform = 'scale(1) translateY(0)';
-                    wrap.style.filter = '';
-                }, 450);
-            }
+                    state.bowCount += 1;
+                    state.meritCount += 3;
+                    saveAllCounters();
+                    updateAllCounters();
 
-            // Audio: Sacred bell
-            playBellSound();
+                    if (bowText) bowText.textContent = round.stepLabel;
 
-            // Visual: Coordinate calculation
-            let x = window.innerWidth / 2;
-            let y = window.innerHeight * 0.45;
-            if (e && e.clientX) {
-                x = e.clientX;
-                y = e.clientY;
-            } else if (wrap) {
-                const rect = wrap.getBoundingClientRect();
-                x = rect.left + rect.width / 2;
-                y = rect.top + rect.height / 2;
-            }
+                    // Solemn bow animation on each round
+                    if (wrap) {
+                        wrap.style.transform = 'scale(0.91) translateY(24px)';
+                        wrap.style.filter = 'drop-shadow(0 0 38px rgba(251, 191, 36, 0.95))';
+                        setTimeout(() => {
+                            wrap.style.transform = 'scale(1) translateY(0)';
+                            wrap.style.filter = '';
+                        }, 680);
+                    }
 
-            createRippleWave(x, y);
-            createBlessingFlyText(x, y - 20, 'Thành Tâm Đảnh Lễ Tam Bảo');
-            showToast(`Thành kính đảnh lễ Tam Bảo (Lần thứ ${state.bowCount})`, '🙏');
+                    // Sacred temple bell chime per round
+                    playBellSound();
+
+                    // Compute live coordinates centered on Buddha statue
+                    let x = window.innerWidth / 2;
+                    let y = window.innerHeight * 0.45;
+                    if (wrap) {
+                        const rect = wrap.getBoundingClientRect();
+                        x = rect.left + rect.width / 2;
+                        y = rect.top + rect.height / 2;
+                    } else if (idx === 0 && e && e.clientX) {
+                        x = e.clientX;
+                        y = e.clientY;
+                    }
+
+                    createRippleWave(x, y);
+                    if (idx === 2) {
+                        setTimeout(() => createRippleWave(x, y), 320);
+                        burstAltarSmoke();
+                    }
+                    createBlessingFlyText(x, y - 24, round.flyText);
+                    showToast(round.toastText, '🙏');
+                }, idx * 1500);
+            });
+
+            // Complete 3-round ceremony
+            setTimeout(() => {
+                state.isBowing = false;
+                if (btnBow) btnBow.classList.remove('playing');
+                if (bowText) bowText.textContent = 'Đảnh Lễ Tam Bảo (3 Hồi)';
+                showToast(`Viên mãn 3 hồi Đảnh Lễ Tam Bảo (Tổng: ${state.bowCount} lạy) — Tâm an vạn sự an!`, '✨');
+            }, 3950);
         }
 
         // 2. GÕ MÕ CHÁNH NIỆM (+1 GÕ)
