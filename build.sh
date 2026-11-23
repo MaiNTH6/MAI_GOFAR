@@ -26,9 +26,13 @@ if [ -f _headers ];    then cp _headers    dist/; fi
 # CNAME: báo cho GitHub Pages biết domain tuỳ chỉnh. Bắt buộc nằm trong gói publish.
 if [ -f CNAME ];       then cp CNAME       dist/; fi
 
-# 4. Sao chép thư mục chứa hình ảnh đã tối ưu hóa
-echo "Đang sao chép tài nguyên hình ảnh (đã được tối ưu)..."
+# 4. Sao chép thư mục chứa hình ảnh & âm thanh thiền đã tối ưu hóa
+echo "Đang sao chép tài nguyên hình ảnh & âm thanh (đã được tối ưu)..."
 cp -R images/. dist/images/
+if [ -d audio ]; then
+    mkdir -p dist/audio
+    cp -R audio/. dist/audio/
+fi
 
 # 5. Đo lường kích thước gói sản phẩm
 file_count=$(find dist -type f | wc -l)

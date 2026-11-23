@@ -8,6 +8,9 @@
 /admin.html
   X-Robots-Tag: noindex, nofollow
 
-# Ảnh đã tối ưu và đặt tên cố định — cache dài ngày.
+# Ảnh & âm thanh thiền đã tối ưu và đặt tên cố định — cache dài ngày.
 /images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/audio/*
   Cache-Control: public, max-age=31536000, immutable

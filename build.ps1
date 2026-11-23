@@ -30,11 +30,16 @@ if (Test-Path "$sourceDir\sitemap.xml") { Copy-Item -Path "$sourceDir\sitemap.xm
 if (Test-Path "$sourceDir\_headers") { Copy-Item -Path "$sourceDir\_headers" -Destination $distDir -Force }
 if (Test-Path "$sourceDir\CNAME") { Copy-Item -Path "$sourceDir\CNAME" -Destination $distDir -Force }
 
-# 4. Sao chép thư mục chứa hình ảnh đã tối ưu hóa
-Write-Host "Đang sao chép tài nguyên hình ảnh (đã được tối ưu)..." -ForegroundColor Green
+# 4. Sao chép thư mục chứa hình ảnh & âm thanh thiền đã tối ưu hóa
+Write-Host "Đang sao chép tài nguyên hình ảnh & âm thanh (đã được tối ưu)..." -ForegroundColor Green
 $distImages = Join-Path $distDir "images"
 New-Item -ItemType Directory -Path $distImages | Out-Null
 Copy-Item -Path "$sourceDir\images\*" -Destination $distImages -Force
+if (Test-Path "$sourceDir\audio") {
+    $distAudio = Join-Path $distDir "audio"
+    New-Item -ItemType Directory -Path $distAudio -Force | Out-Null
+    Copy-Item -Path "$sourceDir\audio\*" -Destination $distAudio -Force
+}
 
 # 5. Đo lường kích thước gói sản phẩm
 $files = Get-ChildItem -Path $distDir -Recurse -File
