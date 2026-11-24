@@ -873,27 +873,63 @@
         /* 1. MAP SECTION */
         .pilgrimage-map-canvas-wrap {
             position: relative;
-            background: linear-gradient(180deg, rgba(8, 22, 35, 0.95) 0%, rgba(13, 31, 48, 0.9) 100%);
-            border: 1px solid rgba(251, 191, 36, 0.25);
+            background: linear-gradient(180deg, rgba(8, 22, 35, 0.96) 0%, rgba(13, 31, 48, 0.92) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.3);
             border-radius: var(--radius-md);
-            padding: 1.5rem 1rem 2rem;
+            padding: 2.3rem 1.4rem 2.4rem;
             margin-bottom: 1.8rem;
             box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.6);
             overflow-x: auto;
+            overflow-y: visible;
         }
         .pilgrimage-mountain-svg {
             width: 100%;
-            min-width: 720px;
-            height: 220px;
+            min-width: 780px;
+            height: 245px;
+            overflow: visible;
             display: block;
         }
         .map-station-node {
             cursor: pointer;
             transition: all 0.3s ease;
         }
+        .map-station-node .node-label-group {
+            transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .map-station-node .node-label-pill {
+            fill: rgba(9, 22, 36, 0.94);
+            stroke: rgba(251, 191, 36, 0.45);
+            stroke-width: 1.4px;
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.65));
+            transition: all 0.25s ease;
+        }
+        .map-station-node .node-label-text {
+            fill: #f8fafc;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            transition: fill 0.25s ease;
+        }
         .map-station-node:hover circle.node-bg {
             fill: #fbbf24;
             filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.9));
+        }
+        .map-station-node:hover .node-label-pill {
+            stroke: #fbbf24;
+            fill: rgba(20, 42, 64, 0.98);
+        }
+        .map-station-node:hover .node-label-text {
+            fill: #fef08a;
+        }
+        .map-station-node.completed circle.node-bg {
+            fill: #10b981;
+            stroke: #a7f3d0;
+        }
+        .map-station-node.completed .node-label-pill {
+            stroke: rgba(110, 231, 183, 0.65);
+        }
+        .map-station-node.completed .node-label-text {
+            fill: #a7f3d0;
         }
         .map-station-node.active circle.node-bg {
             fill: #f59e0b;
@@ -901,9 +937,17 @@
             stroke-width: 3px;
             filter: drop-shadow(0 0 14px rgba(251, 191, 36, 1));
         }
-        .map-station-node.completed circle.node-bg {
-            fill: #10b981;
-            stroke: #a7f3d0;
+        .map-station-node.active .node-label-pill {
+            fill: rgba(23, 45, 68, 0.98);
+            stroke: #fbbf24;
+            stroke-width: 2px;
+            filter: drop-shadow(0 4px 12px rgba(251, 191, 36, 0.4));
+        }
+        .map-station-node.active .node-label-text {
+            fill: #fbbf24;
+        }
+        .map-station-node.active .node-label-group.is-above {
+            transform: translateY(var(--flip-dy, 70px));
         }
 
         /* PILGRIM AVATAR (HÌNH NGƯỜI ĐI CÚNG BÁI) */
@@ -946,7 +990,7 @@
             background: rgba(13, 31, 45, 0.95);
             border: 1px solid var(--accent-gold);
             color: #fbbf24;
-            font-size: 0.68rem;
+            font-size: 0.82rem;
             font-weight: 700;
             padding: 0.15rem 0.45rem;
             border-radius: var(--radius-full);
@@ -1697,50 +1741,68 @@
 
                             <!-- STATION 1: Tam Quan Ninh Phúc Tự &amp; Tháp Báo Nghiêm Đá 5 Tầng Năm 1647 Bên Hồ Sen -->
                             <g class="map-station-node active" id="mapNode1" onclick="navigateToStation(1)">
-                                <circle cx="75" cy="176" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="75" cy="176" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="75" y="180" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">1</text>
-                                <text x="75" y="201" fill="#fbbf24" font-size="10" font-weight="600" text-anchor="middle">Tam Quan &amp; Tháp Báo Nghiêm</text>
+                                <circle cx="75" cy="176" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="75" cy="176" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="75" y="180.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">1</text>
+                                <g class="node-label-group is-below" data-orig-pos="below">
+                                    <rect x="6.0" y="197.0" width="163.6" height="51.3" rx="11" class="node-label-pill"/>
+                                    <text x="87.8" y="216.5" class="node-label-text" font-size="15.5" text-anchor="middle"><tspan x="87.8" y="216.5">Tam Quan &amp;</tspan><tspan x="87.8" y="235.4">Tháp Báo Nghiêm</tspan></text>
+                                </g>
                             </g>
 
                             <!-- STATION 2: Tượng Quan Âm Nghìn Mắt Nghìn Tay Bảo Vật Quốc Gia Đợt 1 Năm 2012 — Trương Công An Tạc 1656 -->
                             <g class="map-station-node" id="mapNode2" onclick="navigateToStation(2)">
-                                <circle cx="245" cy="162" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="245" cy="162" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="245" y="166" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">2</text>
-                                <text x="245" y="137" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Quan Âm Nghìn Tay</text>
+                                <circle cx="245" cy="162" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="245" cy="162" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="245" y="166.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">2</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 74.4px;">
+                                    <rect x="153.8" y="108.6" width="182.3" height="32.4" rx="11" class="node-label-pill"/>
+                                    <text x="245.0" y="130.2" class="node-label-text" font-size="15.5" text-anchor="middle">Quan Âm Nghìn Tay</text>
+                                </g>
                             </g>
 
                             <!-- STATION 3: Tòa Cửu Phẩm Liên Hoa — Tháp Gỗ Bát Giác Xoay 9 Tầng Bảo Vật Quốc Gia 2020 -->
                             <g class="map-station-node" id="mapNode3" onclick="navigateToStation(3)">
-                                <circle cx="415" cy="148" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="415" cy="148" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="415" y="152" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">3</text>
-                                <text x="415" y="174" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Cửu Phẩm Liên Hoa</text>
+                                <circle cx="415" cy="148" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="415" cy="148" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="415" y="152.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">3</text>
+                                <g class="node-label-group is-below" data-orig-pos="below">
+                                    <rect x="325.4" y="169.0" width="179.2" height="32.4" rx="11" class="node-label-pill"/>
+                                    <text x="415.0" y="190.6" class="node-label-text" font-size="15.5" text-anchor="middle">Cửu Phẩm Liên Hoa</text>
+                                </g>
                             </g>
 
                             <!-- STATION 4: Hương Án Thượng Điện Chạm Lộng Rồng Phượng &amp; Bộ Tam Thế Phật — Bảo Vật Quốc Gia 2020 -->
                             <g class="map-station-node" id="mapNode4" onclick="navigateToStation(4)">
-                                <circle cx="585" cy="128" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="585" cy="128" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="585" y="132" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">4</text>
-                                <text x="585" y="103" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Hương Án &amp; Tam Thế Phật</text>
+                                <circle cx="585" cy="128" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="585" cy="128" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="585" y="132.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">4</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 93.3px;">
+                                    <rect x="514.7" y="55.7" width="140.6" height="51.3" rx="11" class="node-label-pill"/>
+                                    <text x="585.0" y="75.2" class="node-label-text" font-size="15.5" text-anchor="middle"><tspan x="585.0" y="75.2">Hương Án &amp;</tspan><tspan x="585.0" y="94.1">Tam Thế Phật</tspan></text>
+                                </g>
                             </g>
 
                             <!-- STATION 5: Nhà Trung &amp; Phủ Thờ Thiền Sư Chuyết Chuyết — Lâm Tế Tổ Sư Ninh Phúc Tự -->
                             <g class="map-station-node" id="mapNode5" onclick="navigateToStation(5)">
-                                <circle cx="755" cy="112" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="755" cy="112" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="755" y="116" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">5</text>
-                                <text x="755" y="138" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Nhà Tổ Chuyết Chuyết</text>
+                                <circle cx="755" cy="112" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="755" cy="112" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="755" y="116.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">5</text>
+                                <g class="node-label-group is-below" data-orig-pos="below">
+                                    <rect x="680.8" y="133.0" width="148.5" height="51.3" rx="11" class="node-label-pill"/>
+                                    <text x="755.0" y="152.5" class="node-label-text" font-size="15.5" text-anchor="middle"><tspan x="755.0" y="152.5">Nhà Tổ</tspan><tspan x="755.0" y="171.4">Chuyết Chuyết</tspan></text>
+                                </g>
                             </g>
 
                             <!-- STATION 6: Vườn Tháp Tôn Đức &amp; Hồ Tịnh Tâm Sen Cổ — Hồi Hướng Viên Mãn Ninh Phúc -->
                             <g class="map-station-node" id="mapNode6" onclick="navigateToStation(6)">
-                                <circle cx="925" cy="158" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="925" cy="158" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="925" y="162" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">6</text>
-                                <text x="925" y="133" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Vườn Tháp &amp; Hồ Tịnh Tâm</text>
+                                <circle cx="925" cy="158" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="925" cy="158" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="925" y="162.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">6</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 93.3px;">
+                                    <rect x="859.0" y="85.7" width="131.9" height="51.3" rx="11" class="node-label-pill"/>
+                                    <text x="925.0" y="105.2" class="node-label-text" font-size="15.5" text-anchor="middle"><tspan x="925.0" y="105.2">Vườn Tháp &amp;</tspan><tspan x="925.0" y="124.1">Hồ Tịnh Tâm</tspan></text>
+                                </g>
                             </g>
                             </svg>
                         </div>

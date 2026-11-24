@@ -873,27 +873,63 @@
         /* 1. MAP SECTION */
         .pilgrimage-map-canvas-wrap {
             position: relative;
-            background: linear-gradient(180deg, rgba(8, 22, 35, 0.95) 0%, rgba(13, 31, 48, 0.9) 100%);
-            border: 1px solid rgba(251, 191, 36, 0.25);
+            background: linear-gradient(180deg, rgba(8, 22, 35, 0.96) 0%, rgba(13, 31, 48, 0.92) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.3);
             border-radius: var(--radius-md);
-            padding: 1.5rem 1rem 2rem;
+            padding: 2.3rem 1.4rem 2.4rem;
             margin-bottom: 1.8rem;
             box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.6);
             overflow-x: auto;
+            overflow-y: visible;
         }
         .pilgrimage-mountain-svg {
             width: 100%;
-            min-width: 720px;
-            height: 220px;
+            min-width: 780px;
+            height: 245px;
+            overflow: visible;
             display: block;
         }
         .map-station-node {
             cursor: pointer;
             transition: all 0.3s ease;
         }
+        .map-station-node .node-label-group {
+            transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .map-station-node .node-label-pill {
+            fill: rgba(9, 22, 36, 0.94);
+            stroke: rgba(251, 191, 36, 0.45);
+            stroke-width: 1.4px;
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.65));
+            transition: all 0.25s ease;
+        }
+        .map-station-node .node-label-text {
+            fill: #f8fafc;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            transition: fill 0.25s ease;
+        }
         .map-station-node:hover circle.node-bg {
             fill: #fbbf24;
             filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.9));
+        }
+        .map-station-node:hover .node-label-pill {
+            stroke: #fbbf24;
+            fill: rgba(20, 42, 64, 0.98);
+        }
+        .map-station-node:hover .node-label-text {
+            fill: #fef08a;
+        }
+        .map-station-node.completed circle.node-bg {
+            fill: #10b981;
+            stroke: #a7f3d0;
+        }
+        .map-station-node.completed .node-label-pill {
+            stroke: rgba(110, 231, 183, 0.65);
+        }
+        .map-station-node.completed .node-label-text {
+            fill: #a7f3d0;
         }
         .map-station-node.active circle.node-bg {
             fill: #f59e0b;
@@ -901,9 +937,17 @@
             stroke-width: 3px;
             filter: drop-shadow(0 0 14px rgba(251, 191, 36, 1));
         }
-        .map-station-node.completed circle.node-bg {
-            fill: #10b981;
-            stroke: #a7f3d0;
+        .map-station-node.active .node-label-pill {
+            fill: rgba(23, 45, 68, 0.98);
+            stroke: #fbbf24;
+            stroke-width: 2px;
+            filter: drop-shadow(0 4px 12px rgba(251, 191, 36, 0.4));
+        }
+        .map-station-node.active .node-label-text {
+            fill: #fbbf24;
+        }
+        .map-station-node.active .node-label-group.is-above {
+            transform: translateY(var(--flip-dy, 70px));
         }
 
         /* PILGRIM AVATAR (HÌNH NGƯỜI ĐI CÚNG BÁI) */
@@ -946,7 +990,7 @@
             background: rgba(13, 31, 45, 0.95);
             border: 1px solid var(--accent-gold);
             color: #fbbf24;
-            font-size: 0.68rem;
+            font-size: 0.82rem;
             font-weight: 700;
             padding: 0.15rem 0.45rem;
             border-radius: var(--radius-full);
@@ -1697,50 +1741,68 @@
 
                             <!-- STATION 1: Tuyến Cáp Treo Đồi Robin Vượt Rừng Thông Đại Ngàn -->
                             <g class="map-station-node active" id="mapNode1" onclick="navigateToStation(1)">
-                                <circle cx="75" cy="156" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="75" cy="156" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="75" y="160" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">1</text>
-                                <text x="75" y="181" fill="#fbbf24" font-size="10" font-weight="600" text-anchor="middle">Cáp Treo Thông</text>
+                                <circle cx="75" cy="156" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="75" cy="156" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="75" y="160.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">1</text>
+                                <g class="node-label-group is-below" data-orig-pos="below">
+                                    <rect x="6.0" y="177.0" width="155.5" height="32.4" rx="11" class="node-label-pill"/>
+                                    <text x="83.8" y="198.6" class="node-label-text" font-size="15.5" text-anchor="middle">Cáp Treo Thông</text>
+                                </g>
                             </g>
 
                             <!-- STATION 2: Bậc Đá Tam Quan &amp; Vườn Hoa Cẩm Tú Cầu Núi Phụng Hoàng -->
                             <g class="map-station-node" id="mapNode2" onclick="navigateToStation(2)">
-                                <circle cx="245" cy="122" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="245" cy="122" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="245" y="126" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">2</text>
-                                <text x="245" y="97" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Tam Quan Đá</text>
+                                <circle cx="245" cy="122" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="245" cy="122" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="245" y="126.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">2</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 74.4px;">
+                                    <rect x="178.5" y="68.6" width="133.0" height="32.4" rx="11" class="node-label-pill"/>
+                                    <text x="245.0" y="90.2" class="node-label-text" font-size="15.5" text-anchor="middle">Tam Quan Đá</text>
+                                </g>
                             </g>
 
                             <!-- STATION 3: Lầu Chuông Đại Hồng Chung Khắc Thơ Thiền -->
                             <g class="map-station-node" id="mapNode3" onclick="navigateToStation(3)">
-                                <circle cx="415" cy="98" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="415" cy="98" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="415" y="102" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">3</text>
-                                <text x="415" y="124" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Lầu Chuông Thiền</text>
+                                <circle cx="415" cy="98" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="415" cy="98" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="415" y="102.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">3</text>
+                                <g class="node-label-group is-below" data-orig-pos="below">
+                                    <rect x="330.1" y="119.0" width="169.8" height="32.4" rx="11" class="node-label-pill"/>
+                                    <text x="415.0" y="140.6" class="node-label-text" font-size="15.5" text-anchor="middle">Lầu Chuông Thiền</text>
+                                </g>
                             </g>
 
                             <!-- STATION 4: Chánh Điện Đức Phật Thích Ca Niêm Hoa Vi Tiếu -->
                             <g class="map-station-node" id="mapNode4" onclick="navigateToStation(4)">
-                                <circle cx="585" cy="76" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="585" cy="76" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="585" y="80" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">4</text>
-                                <text x="585" y="51" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Niêm Hoa Vi Tiếu</text>
+                                <circle cx="585" cy="76" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="585" cy="76" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="585" y="80.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">4</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 74.4px;">
+                                    <rect x="502.9" y="22.6" width="164.3" height="32.4" rx="11" class="node-label-pill"/>
+                                    <text x="585.0" y="44.2" class="node-label-text" font-size="15.5" text-anchor="middle">Niêm Hoa Vi Tiếu</text>
+                                </g>
                             </g>
 
                             <!-- STATION 5: Hoa Viên Mai Anh Đào, Phượng Tím &amp; Rừng Trúc -->
                             <g class="map-station-node" id="mapNode5" onclick="navigateToStation(5)">
-                                <circle cx="755" cy="112" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="755" cy="112" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="755" y="116" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">5</text>
-                                <text x="755" y="138" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Hoa Viên Trúc</text>
+                                <circle cx="755" cy="112" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="755" cy="112" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="755" y="116.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">5</text>
+                                <g class="node-label-group is-below" data-orig-pos="below">
+                                    <rect x="683.1" y="133.0" width="143.7" height="32.4" rx="11" class="node-label-pill"/>
+                                    <text x="755.0" y="154.6" class="node-label-text" font-size="15.5" text-anchor="middle">Hoa Viên Trúc</text>
+                                </g>
                             </g>
 
                             <!-- STATION 6: Hồ Tĩnh Tâm &amp; Bến Thuyền Hồ Tuyền Lâm -->
                             <g class="map-station-node" id="mapNode6" onclick="navigateToStation(6)">
-                                <circle cx="925" cy="162" r="18" fill="rgba(251, 191, 36, 0.2)" class="node-glow"/>
-                                <circle cx="925" cy="162" r="13" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2" class="node-bg"/>
-                                <text x="925" y="166" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">6</text>
-                                <text x="925" y="137" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">Hồ Tĩnh Tâm</text>
+                                <circle cx="925" cy="162" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
+                                <circle cx="925" cy="162" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
+                                <text x="925" y="166.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">6</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 74.4px;">
+                                    <rect x="859.0" y="108.6" width="131.9" height="32.4" rx="11" class="node-label-pill"/>
+                                    <text x="925.0" y="130.2" class="node-label-text" font-size="15.5" text-anchor="middle">Hồ Tĩnh Tâm</text>
+                                </g>
                             </g>
                             </svg>
                         </div>
