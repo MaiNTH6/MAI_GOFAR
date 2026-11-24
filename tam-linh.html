@@ -2769,6 +2769,7 @@
             <!-- NÚT ĐIỀU HƯỚNG NHANH XUỐNG CÁC PHẦN DƯỚI -->
             <div class="hero-nav-pills" style="margin-top: 1.5rem;">
                 <a href="#danh-lam-co-tu" class="hero-pill">🏯 Khám Phá Cổ Tự 3 Miền</a>
+                <a href="javascript:void(0)" onclick="openPrayerModal(0)" class="hero-pill">📜 Sổ Tay 7 Văn Khấn</a>
                 <a href="#nghi-thuc" class="hero-pill">🏮 Quy Chuẩn Đi Chùa</a>
             </div>
         </div>
@@ -3042,17 +3043,17 @@
 
                 <!-- CHÙA THẦY (HÀ NỘI) -->
                 <div class="temple-card" data-region="north">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuathay_card_thuy_dinh_roi_nuoc.webp', 'Chùa Thầy (Thiên Phúc Tự) — Xã Sài Sơn, Huyện Quốc Oai, TP. Hà Nội', 'Di tích Quốc gia đặc biệt 2014 — Nhà Thủy Đình 1612 múa rối nước cổ nhất VN trên hồ Long Trì, nhục thân Thiền sư Từ Đạo Hạnh và hang Thánh Hóa linh thiêng.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuathay_card_thuy_dinh_roi_nuoc.webp', 'Chùa Thầy (Thiên Phúc Tự) — Xã Quốc Oai (Sài Sơn), TP. Hà Nội', 'Di tích Quốc gia đặc biệt 2014 — Nhà Thủy Đình cổ (1602) giữa hồ Long Chiểu, hệ tượng thờ ba kiếp Thiền sư Từ Đạo Hạnh, Bảo vật Quốc gia bệ đá hoa sen thời Lý và hang Thánh Hóa.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/chuathay_card_thuy_dinh_roi_nuoc.webp" alt="Chùa Thầy Thiên Phúc Tự Nhà Thủy Đình Hồ Long Trì Sài Sơn Hà Nội" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-thay.html" style="color: #fff; text-decoration: none;">Chùa Thầy (Thiên Phúc Tự)</a></h3>
-                        <div class="temple-location">📍 Xã Sài Sơn, Huyện Quốc Oai, TP. Hà Nội • Di tích QGĐB 2014</div>
-                        <p class="temple-desc">Xứ Đoài huyền thoại — Nhà Thủy Đình 1612 múa rối nước cổ nhất Việt Nam, nhục thân Thiền sư Từ Đạo Hạnh thế kỷ XII và hang Thánh Hóa linh thiêng trên núi Sài.</p>
+                        <div class="temple-location">📍 Xã Quốc Oai (Sài Sơn), TP. Hà Nội • Di tích QGĐB 2014</div>
+                        <p class="temple-desc">Danh lam xứ Đoài — Nhà Thủy Đình cổ (1602) giữa hồ Long Chiểu, hệ tượng thờ ba kiếp Thiền sư Từ Đạo Hạnh, bệ đá hoa sen thời Lý và hang Thánh Hóa trên núi Sài.</p>
                         <div class="temple-highlights">
-                            <span class="temple-pill">🎭 Múa rối nước 1612</span>
-                            <span class="temple-pill">🧘 Nhục thân Từ Đạo Hạnh</span>
+                            <span class="temple-pill">🎭 Thủy Đình cổ 1602</span>
+                            <span class="temple-pill">🧘 Thiền sư Từ Đạo Hạnh</span>
                             <span class="temple-pill">⛰️ Leo núi Sài Sơn</span>
                         </div>
                         <a href="destination-chua-thay.html" class="temple-route-btn">
@@ -3064,14 +3065,14 @@
 
                 <!-- CHÙA BÚT THÁP (BẮC NINH) -->
                 <div class="temple-card" data-region="north">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/butthap_card_quan_am_nghin_tay.webp', 'Chùa Bút Tháp (Ninh Phúc Tự) — Phường Trí Quả, TX Thuận Thành, Bắc Ninh', 'Di tích QGĐB 2013 — 4 Bảo Vật Quốc gia, kiệt tác Quan Âm Nghìn Mắt Nghìn Tay 1656 và Cửu Phẩm Liên Hoa xoay.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/butthap_card_quan_am_nghin_tay.webp', 'Chùa Bút Tháp (Ninh Phúc Tự) — Phường Trí Quả, Bắc Ninh', 'Di tích QGĐB 2013 — 4 Bảo Vật Quốc gia, kiệt tác Quan Âm Nghìn Mắt Nghìn Tay 1656 và Cửu Phẩm Liên Hoa xoay.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/butthap_card_quan_am_nghin_tay.webp" alt="Chùa Bút Tháp Ninh Phúc Tự Quan Âm Nghìn Tay Bắc Ninh" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-but-thap.html" style="color: #fff; text-decoration: none;">Chùa Bút Tháp (Ninh Phúc Tự)</a></h3>
-                        <div class="temple-location">📍 Phường Trí Quả, TX Thuận Thành, Bắc Ninh • Di tích QGĐB 2013</div>
-                        <p class="temple-desc">Kiệt tác Phật giáo Bắc Ninh — 4 Bảo Vật Quốc gia hiếm có: tượng Quan Âm Nghìn Mắt Nghìn Tay 1656 (Trương Công An tạc), Cửu Phẩm Liên Hoa xoay, Hương Án và Tam Thế Phật.</p>
+                        <div class="temple-location">📍 Phường Trí Quả, Bắc Ninh • Di tích QGĐB 2013</div>
+                        <p class="temple-desc">Kiệt tác Phật giáo Bắc Ninh — 4 Bảo Vật Quốc gia hiếm có: tượng Quan Âm Nghìn Mắt Nghìn Tay 1656 (Trương tiên sinh tạc), Cửu Phẩm Liên Hoa xoay, Hương Án và Tam Thế Phật.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏺 4 Bảo Vật Quốc gia</span>
                             <span class="temple-pill">🙏 Quan Âm Nghìn Tay 1656</span>
@@ -3108,13 +3109,13 @@
 
                 <!-- THIỀN VIỆN TRÚC LÂM TÂY THIÊN (VĨNH PHÚC) -->
                 <div class="temple-card" data-region="north">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/taythien_card_cong_troi_thien_vien.webp', 'Thiền Viện Trúc Lâm Tây Thiên — Xã Đại Đình, Huyện Tam Đảo, Vĩnh Phúc', 'Danh thắng Quốc gia Tây Thiên — Thiền viện Trúc Lâm trên sườn Tam Đảo, nơi thờ Quốc Mẫu Lăng Thị Tiêu từ thời Hùng Vương và rừng nguyên sinh bao phủ.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/taythien_card_cong_troi_thien_vien.webp', 'Thiền Viện Trúc Lâm Tây Thiên — Xã Đại Đình (Tam Đảo), Phú Thọ', 'Danh thắng Quốc gia Tây Thiên — Thiền viện Trúc Lâm trên sườn Tam Đảo, nơi thờ Quốc Mẫu Lăng Thị Tiêu từ thời Hùng Vương và rừng nguyên sinh bao phủ.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/taythien_card_cong_troi_thien_vien.webp" alt="Thiền Viện Trúc Lâm Tây Thiên Vĩnh Phúc Tam Đảo rừng nguyên sinh" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-tay-thien.html" style="color: #fff; text-decoration: none;">Thiền Viện Trúc Lâm Tây Thiên</a></h3>
-                        <div class="temple-location">📍 Xã Đại Đình, Huyện Tam Đảo, Vĩnh Phúc • Danh thắng QG</div>
+                        <div class="temple-location">📍 Xã Đại Đình (Tam Đảo), Phú Thọ • Danh thắng QG</div>
                         <p class="temple-desc">Rừng thiêng Tam Đảo — Nơi thờ Quốc Mẫu Lăng Thị Tiêu từ thời Hùng Vương; Thiền viện Trúc Lâm hoành tráng trên sườn núi; rừng nguyên sinh bao phủ cáp treo 2.000m và Lễ hội Tây Thiên tháng 2 âm lịch.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏔️ Rừng nguyên sinh Tam Đảo</span>
@@ -3130,13 +3131,13 @@
 
                 <!-- CHÙA ĐẬU (PHÁP VŨ TỰ) — HÀ NỘI -->
                 <div class="temple-card" data-region="north">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuadau_card_nhuc_than_thien_su.webp', 'Chùa Đậu (Pháp Vũ Tự) — Xã Nguyễn Trãi, Huyện Thường Tín, TP. Hà Nội', 'Di tích Quốc gia 1964 — Hai pho nhục thân thiền sư Vũ Khắc Minh và Vũ Khắc Trường bảo tồn 300-400 năm, hiếm nhất Việt Nam.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuadau_card_nhuc_than_thien_su.webp', 'Chùa Đậu (Pháp Vũ Tự) — Xã Thường Tín (Nguyễn Trãi), TP. Hà Nội', 'Di tích Quốc gia 1964 — Hai pho nhục thân thiền sư Vũ Khắc Minh và Vũ Khắc Trường bảo tồn 300-400 năm, hiếm nhất Việt Nam.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/chuadau_card_nhuc_than_thien_su.webp" alt="Chùa Đậu Pháp Vũ Tự Thường Tín Hà Nội nhục thân thiền sư rêu phong" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-dau.html" style="color: #fff; text-decoration: none;">Chùa Đậu (Pháp Vũ Tự)</a></h3>
-                        <div class="temple-location">📍 Xã Nguyễn Trãi, Huyện Thường Tín, TP. Hà Nội • Di tích QG 1964</div>
+                        <div class="temple-location">📍 Xã Thường Tín (Nguyễn Trãi), TP. Hà Nội • Di tích QG 1964</div>
                         <p class="temple-desc">Huyền tích Tứ Pháp — Thờ Đại Bồ Tát Pháp Vũ (thần Mưa); 2 pho nhục thân thiền sư Vũ Khắc Minh và Vũ Khắc Trường bảo tồn tự nhiên 300-400 năm không phân hủy — hiếm bậc nhất Việt Nam.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🧘 2 Nhục thân thiền sư 300+ năm</span>
@@ -3158,7 +3159,7 @@
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-tram-gian.html" style="color: #fff; text-decoration: none;">Chùa Trăm Gian (Quảng Nghiêm Tự)</a></h3>
-                        <div class="temple-location">📍 Xã Tiên Phương, Huyện Chương Mỹ, TP. Hà Nội • Di tích QG 1962</div>
+                        <div class="temple-location">📍 Phường Chương Mỹ (Tiên Phương), TP. Hà Nội • Di tích QG 1962</div>
                         <p class="temple-desc">Tứ đại danh thắng xứ Đoài — 104 gian cổ tự khởi lập năm 1185 trên đồi Tiên Lữ; Gác chuông 2 tầng 8 mái năm 1693; chuông Cảnh Thịnh 1794; cặp rồng đá thời Trần và Đức Thánh Bối Nguyễn Bình An.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏯 104 gian cổ tự 1185</span>
@@ -3174,14 +3175,14 @@
 
                 <!-- CHÙA LONG ĐỌI SƠN (SÙNG THIỆN DIÊN LINH TỰ) — HÀ NAM -->
                 <div class="temple-card" data-region="north">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/longdoison_card_dinh_nui_doi.webp', 'Chùa Long Đọi Sơn — Xã Tiên Sơn, Thị xã Duy Tiên, Hà Nam', 'Di tích Quốc gia đặc biệt 2017 — Quốc tự khởi dựng năm 1054 thời Lý trên đỉnh núi Đọi cao 79m, lưu giữ Bảo vật Quốc gia Bia Sùng Thiện Diên Linh dựng năm 1121.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/longdoison_card_dinh_nui_doi.webp', 'Chùa Long Đọi Sơn — Phường Tiên Sơn (Duy Tiên), Ninh Bình', 'Di tích Quốc gia đặc biệt 2017 — Quốc tự khởi dựng năm 1054 thời Lý trên đỉnh núi Đọi cao 79m, lưu giữ Bảo vật Quốc gia Bia Sùng Thiện Diên Linh dựng năm 1121.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/longdoison_card_dinh_nui_doi.webp" alt="Chùa Long Đọi Sơn Duy Tiên Hà Nam đỉnh núi Đọi Bia Sùng Thiện Diên Linh 1121" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-long-doi-son.html" style="color: #fff; text-decoration: none;">Chùa Long Đọi Sơn</a></h3>
-                        <div class="temple-location">📍 Xã Tiên Sơn, TX. Duy Tiên, Hà Nam • Di tích QGĐB 2017</div>
-                        <p class="temple-desc">Quốc tự triều Lý trên đỉnh núi Đọi (1054) — Vượt 373 bậc đá xanh chiêm bái Bảo vật Quốc gia Bia Sùng Thiện Diên Linh (1121), tượng Kim Cương đá thời Lý và chín giếng mắt rồng.</p>
+                        <div class="temple-location">📍 Phường Tiên Sơn (Duy Tiên), Ninh Bình • Di tích QGĐB 2017</div>
+                        <p class="temple-desc">Quốc tự triều Lý trên đỉnh núi Đọi (khởi dựng 1054, đại hưng công 1118–1121) — Vượt 373 bậc đá xanh chiêm bái Bảo vật Quốc gia Bia Sùng Thiện Diên Linh (1121) và bộ tượng Kim Cương thời Lý.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">📜 Bảo vật QG Bia đá 1121</span>
                             <span class="temple-pill">🏔️ 373 bậc đá núi Đọi</span>
@@ -3196,13 +3197,13 @@
 
                 <!-- CHÙA DÂU (PHÁP VÂN TỰ) — BẮC NINH -->
                 <div class="temple-card" data-region="north">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuadaubn_card_thap_hoa_phong.webp', 'Chùa Dâu (Pháp Vân Tự) — TX. Thuận Thành, Bắc Ninh', 'Di tích Quốc gia đặc biệt — Ngôi chùa cổ nhất Việt Nam khởi dựng từ thế kỷ II–III vùng Luy Lâu, nổi tiếng với Tháp Hòa Phong 17m, Bảo vật Quốc gia tượng Pháp Vân và Mộc bản Chùa Dâu.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuadaubn_card_thap_hoa_phong.webp', 'Chùa Dâu (Pháp Vân Tự) — Phường Trí Quả, Bắc Ninh', 'Di tích Quốc gia đặc biệt — Ngôi chùa cổ nhất Việt Nam khởi dựng từ thế kỷ II–III vùng Luy Lâu, nổi tiếng với Tháp Hòa Phong 17m, Bảo vật Quốc gia tượng Pháp Vân và Mộc bản Chùa Dâu.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/chuadaubn_card_thap_hoa_phong.webp" alt="Chùa Dâu Pháp Vân Tự Thuận Thành Bắc Ninh Tháp Hòa Phong cổ nhất Việt Nam" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-dau-bac-ninh.html" style="color: #fff; text-decoration: none;">Chùa Dâu (Pháp Vân Tự)</a></h3>
-                        <div class="temple-location">📍 P. Thanh Khương, TX. Thuận Thành, Bắc Ninh • Di tích QGĐB</div>
+                        <div class="temple-location">📍 Phường Trí Quả (Thanh Khương), Bắc Ninh • Di tích QGĐB</div>
                         <p class="temple-desc">Ngôi chùa cổ nhất Việt Nam (thế kỷ II–III) — Trung tâm Phật giáo Luy Lâu và tín ngưỡng Tứ Pháp; Tháp Hòa Phong gạch cổ 17m; Bảo vật Quốc gia tượng Pháp Vân và Mộc bản Chùa Dâu.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏛️ Cổ nhất VN (1.800+ năm)</span>
@@ -3218,13 +3219,13 @@
 
                 <!-- CHÙA MỘT CỘT (DIÊN HỰU TỰ) — HÀ NỘI -->
                 <div class="temple-card" data-region="north">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuamotcot_card_lien_hoa_dai.webp', 'Chùa Một Cột (Diên Hựu Tự) — Quận Ba Đình, TP. Hà Nội', 'Biểu tượng kiến trúc nghìn năm Thủ đô Hà Nội — Khởi dựng năm 1049 triều vua Lý Thái Tông, Liên Hoa Đài vươn lên từ Hồ Linh Chiểu và Kỷ lục Châu Á 2012.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuamotcot_card_lien_hoa_dai.webp', 'Chùa Một Cột (Diên Hựu Tự) — Phường Ba Đình, TP. Hà Nội', 'Biểu tượng kiến trúc nghìn năm Thủ đô Hà Nội — Khởi dựng năm 1049 triều vua Lý Thái Tông, Liên Hoa Đài vươn lên từ Hồ Linh Chiểu và Kỷ lục Châu Á 2012.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/chuamotcot_card_lien_hoa_dai.webp" alt="Chùa Một Cột Diên Hựu Tự Ba Đình Hà Nội Liên Hoa Đài 1049" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-mot-cot.html" style="color: #fff; text-decoration: none;">Chùa Một Cột (Diên Hựu Tự)</a></h3>
-                        <div class="temple-location">📍 Quận Ba Đình, TP. Hà Nội • Di tích QG 1962 • Từ 1049</div>
+                        <div class="temple-location">📍 Phường Ba Đình, TP. Hà Nội • Di tích QG 1962 • Từ 1049</div>
                         <p class="temple-desc">Đóa sen nghìn năm Thăng Long — Khởi dựng năm 1049 triều Lý Thái Tông; Liên Hoa Đài vươn lên giữa Hồ Linh Chiểu; Kỷ lục Châu Á về kiến trúc độc đáo nhất và cây Bồ-đề 1958.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🪷 Liên Hoa Đài 1049</span>
@@ -3246,7 +3247,7 @@
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-mia.html" style="color: #fff; text-decoration: none;">Chùa Mía (Sùng Nghiêm Tự)</a></h3>
-                        <div class="temple-location">📍 Làng cổ Đường Lâm, TX. Sơn Tây, Hà Nội • Di tích QG</div>
+                        <div class="temple-location">📍 Làng cổ Đường Lâm, Phường Sơn Tây, Hà Nội • Di tích QG 1994</div>
                         <p class="temple-desc">Bảo tàng điêu khắc giữa làng cổ đá ong — Kỷ lục Việt Nam với 287 pho tượng Phật, Tuyết Sơn, Quan Âm Tống Tử, 18 vị La Hán; Bà Chúa Mía trùng tu năm 1632 và Tháp Cửu Phẩm 13m.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗿 Kỷ lục 287 pho tượng cổ</span>
@@ -3262,18 +3263,18 @@
 
                 <!-- CHÙA CỔ LỄ (THẦN QUANG TỰ) — NAM ĐỊNH -->
                 <div class="temple-card" data-region="north">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuacole_card_thap_cuu_pham_32m.webp', 'Chùa Cổ Lễ (Thần Quang Tự) — Huyện Trực Ninh, Nam Định', 'Di tích Quốc gia — Kỳ quan kiến trúc Nhất Thốc Lâu Đài giao thoa truyền thống Việt và mái vòm Gothic (1902), Tháp Cửu Phẩm Liên Hoa cao 32m trên lưng rùa đá và Đại hồng chung 9 tấn.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuacole_card_thap_cuu_pham_32m.webp', 'Chùa Cổ Lễ (Thần Quang Tự) — Xã Cổ Lễ, Ninh Bình', 'Di tích Quốc gia — Kỳ quan kiến trúc Nhất Thốc Lâu Đài giao thoa truyền thống Việt và mái vòm Gothic (1902), Tháp Cửu Phẩm Liên Hoa cao 32m trên lưng rùa đá và Đại hồng chung 9 tấn.')">
                         <span class="temple-region-tag">Miền Bắc</span>
                         <img src="images/chuacole_card_thap_cuu_pham_32m.webp" alt="Chùa Cổ Lễ Thần Quang Tự Trực Ninh Nam Định Tháp Cửu Phẩm Liên Hoa 32m" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-co-le.html" style="color: #fff; text-decoration: none;">Chùa Cổ Lễ (Thần Quang Tự)</a></h3>
-                        <div class="temple-location">📍 TT. Cổ Lễ, Huyện Trực Ninh, Nam Định • Di tích QG</div>
-                        <p class="temple-desc">Tuyệt tác giao thoa kiến trúc Phật Việt &amp; Gothic (1902) — Thờ Phật và Quốc sư Nguyễn Minh Không; Tháp Cửu Phẩm Liên Hoa 32m trên lưng rùa đá (1927) và Đại hồng chung 9 tấn (1936).</p>
+                        <div class="temple-location">📍 Xã Cổ Lễ, Ninh Bình (Nam Định cũ) • Di tích QG 1994</div>
+                        <p class="temple-desc">Tuyệt tác giao thoa kiến trúc Phật Việt &amp; Gothic đầu thế kỷ XX (1902–1920) — Thờ Phật và Quốc sư Nguyễn Minh Không; Tháp Cửu Phẩm Liên Hoa 32m trên lưng rùa đá (1927) và Đại hồng chung 9 tấn (1936).</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗼 Tháp Sen 32m trên rùa đá</span>
                             <span class="temple-pill">🔔 Đại hồng chung 9 tấn</span>
-                            <span class="temple-pill">🏛️ Vòm Gothic Á – Âu 1902</span>
+                            <span class="temple-pill">🏛️ Vòm Gothic Á – Âu</span>
                         </div>
                         <a href="destination-chua-co-le.html" class="temple-route-btn">
                             <span>⛩️ Xem lộ trình 6 trạm &amp; văn khấn</span>
@@ -3460,13 +3461,13 @@
 
                 <!-- CHÙA LONG SƠN (NHA TRANG) -->
                 <div class="temple-card" data-region="central">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/longson_card_193_bac_kim_than.webp', 'Chùa Long Sơn — Phường Tây Nha Trang, TP. Nha Trang, Khánh Hòa', 'Biểu tượng Nha Trang — Tượng Kim Thân Phật Tổ 24m trên 193 bậc, chuông đồng lớn và toàn cảnh vịnh Nha Trang.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/longson_card_193_bac_kim_than.webp', 'Chùa Long Sơn — Phường Tây Nha Trang, Khánh Hòa', 'Biểu tượng Nha Trang — Tượng Kim Thân Phật Tổ 24m trên 193 bậc, chuông đồng lớn và toàn cảnh vịnh Nha Trang.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/longson_card_193_bac_kim_than.webp" alt="Chùa Long Sơn 193 bậc Kim Thân Phật Tổ Nha Trang" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-long-son.html" style="color: #fff; text-decoration: none;">Chùa Long Sơn (Kim Thân Phật Tổ)</a></h3>
-                        <div class="temple-location">📍 Phường Tây Nha Trang, TP. Nha Trang, Khánh Hòa • 1886</div>
+                        <div class="temple-location">📍 Phường Tây Nha Trang, Khánh Hòa • 1886</div>
                         <p class="temple-desc">Biểu tượng Nha Trang — Tượng Kim Thân Phật Tổ trắng tinh khôi cao 24m nhìn ra vịnh biển xanh; 193 bậc đá, Hòa thượng Thích Ngộ Trí khai sơn 1886 và chuông đồng lớn rền khắp thành phố biển.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗿 Kim Thân Phật Tổ 24m</span>
@@ -3526,13 +3527,13 @@
 
                 <!-- CHÙA THẬP THÁP DI ĐÀ (BÌNH ĐỊNH) -->
                 <div class="temple-card" data-region="central">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/thapthap_card_to_dinh_1683.webp', 'Chùa Thập Tháp Di Đà — Phường Nhơn Thành, TX. An Nhơn, Bình Định', 'Tổ đình Lâm Tế Đàng Trong 1683 — Do Thiền sư Nguyên Thiều khai sơn bằng gạch phế tích 10 tháp Chăm cổ trên gò Long Bích, Chúa Nguyễn Phúc Chu ban Sắc tứ năm 1691.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/thapthap_card_to_dinh_1683.webp', 'Chùa Thập Tháp Di Đà — Phường An Nhơn Bắc (Nhơn Thành), Gia Lai', 'Tổ đình Lâm Tế Đàng Trong 1683 — Do Thiền sư Nguyên Thiều khai sơn bằng gạch phế tích 10 tháp Chăm cổ trên gò Long Bích, Chúa Nguyễn Phúc Chu ban Sắc tứ năm 1691.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/thapthap_card_to_dinh_1683.webp" alt="Chùa Thập Tháp Di Đà An Nhơn Bình Định Tổ đình Lâm Tế 1683" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-thap-thap.html" style="color: #fff; text-decoration: none;">Chùa Thập Tháp Di Đà</a></h3>
-                        <div class="temple-location">📍 Phường Nhơn Thành, TX. An Nhơn, Bình Định • Di tích QG 1990</div>
+                        <div class="temple-location">📍 Phường An Nhơn Bắc (Nhơn Thành), Gia Lai • Di tích QG 1990</div>
                         <p class="temple-desc">Tổ đình Lâm Tế danh tiếng bậc nhất Đàng Trong — Khai sơn 1683 từ gạch phế tích 10 tháp Chăm cổ; Sắc tứ Chúa Nguyễn 1691; kiến trúc chữ Khẩu, kho mộc bản kinh cổ và 16 đời truyền thừa.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏛️ Tổ đình 1683 • Sắc tứ 1691</span>
@@ -3548,13 +3549,13 @@
 
                 <!-- CHÙA THIÊN ẤN (QUẢNG NGÃI) -->
                 <div class="temple-card" data-region="central">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/thienan_card_nui_thien_an.webp', 'Chùa Thiên Ấn — Núi Thiên Ấn, TP. Quảng Ngãi', 'Đệ nhất thắng cảnh Thiên Ấn Niêm Hà — Khai sơn 1694 bởi Thiền sư Pháp Hóa, Sắc tứ Chúa Nguyễn 1716, lưu giữ Chuông Thần 1845, Giếng Phật đá ong và mộ cụ Huỳnh Thúc Kháng.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/thienan_card_nui_thien_an.webp', 'Chùa Thiên Ấn — Núi Thiên Ấn, Phường Trương Quang Trọng, Quảng Ngãi', 'Đệ nhất thắng cảnh Thiên Ấn Niêm Hà — Khai sơn 1694 bởi Thiền sư Pháp Hóa, Sắc tứ Chúa Nguyễn 1716, lưu giữ Chuông Thần 1845, Giếng Phật đá ong và mộ cụ Huỳnh Thúc Kháng.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/thienan_card_nui_thien_an.webp" alt="Chùa Thiên Ấn núi Thiên Ấn sông Trà Khúc Quảng Ngãi 1694" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-thien-an.html" style="color: #fff; text-decoration: none;">Chùa Thiên Ấn (Quảng Ngãi)</a></h3>
-                        <div class="temple-location">📍 P. Trương Quang Trọng, TP. Quảng Ngãi • Di tích QG 1990</div>
+                        <div class="temple-location">📍 Phường Trương Quang Trọng, Quảng Ngãi • Di tích QG 1990</div>
                         <p class="temple-desc">Đệ nhất thắng cảnh "Thiên Ấn niêm hà" — Khai sơn 1694 trên đỉnh núi bên sông Trà Khúc; Sắc tứ Chúa Nguyễn 1716; huyền tích Chuông Thần 1845, Giếng Phật và mộ cụ Huỳnh Thúc Kháng.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏔️ Thiên Ấn niêm hà 1694</span>
@@ -3570,13 +3571,13 @@
 
                 <!-- CHÙA HƯƠNG TÍCH (HÀ TĨNH) -->
                 <div class="temple-card" data-region="central">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/huongtichht_card_hong_linh.webp', 'Chùa Hương Tích — Núi Hồng Lĩnh, Can Lộc, Hà Tĩnh', 'Hoan Châu đệ nhất danh lam — Khởi dựng từ thế kỷ XIII thời Trần trên đỉnh Hồng Lĩnh 650m, khắc trên Anh Đỉnh Đại Nội Huế 1836 và gắn với huyền tích Công chúa Diệu Thiện.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/huongtichht_card_hong_linh.webp', 'Chùa Hương Tích — Núi Hồng Lĩnh, Xã Can Lộc, Hà Tĩnh', 'Hoan Châu đệ nhất danh lam — Khởi dựng từ thế kỷ XIII thời Trần trên đỉnh Hồng Lĩnh 650m, khắc trên Anh Đỉnh Đại Nội Huế 1836 và gắn với huyền tích Công chúa Diệu Thiện.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/huongtichht_card_hong_linh.webp" alt="Chùa Hương Tích Can Lộc Hà Tĩnh núi Hồng Lĩnh 650m Hoan Châu đệ nhất danh lam" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-huong-tich-ha-tinh.html" style="color: #fff; text-decoration: none;">Chùa Hương Tích (Hà Tĩnh)</a></h3>
-                        <div class="temple-location">📍 Xã Thiên Lộc, Huyện Can Lộc, Hà Tĩnh • Di tích QG 1990</div>
+                        <div class="temple-location">📍 Xã Can Lộc (Thiên Lộc), Hà Tĩnh • Di tích QG 1990</div>
                         <p class="temple-desc">"Hoan Châu đệ nhất danh lam" — Ẩn mình ở độ cao 650m trên 99 đỉnh Hồng Lĩnh từ thời Trần (TK XIII); khắc trên Anh Đỉnh Huế 1836; gắn với truyền thuyết Công chúa Diệu Thiện hóa Phật.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">⛰️ Đỉnh Hồng Lĩnh 650m</span>
@@ -3592,13 +3593,13 @@
 
                 <!-- CHÙA CỔ THẠCH (CHÙA HANG) — BÌNH THUẬN -->
                 <div class="temple-card" data-region="central">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuacothach_card_hang_da_7_mau.webp', 'Chùa Cổ Thạch (Chùa Hang) — Huyện Tuy Phong, Bình Thuận', 'Di tích Danh thắng Quốc gia 1993 — Cổ tự khai sơn năm 1835 bởi Thiền sư Bảo Tạng ẩn mình trong quần thể hang đá hoa cương tự nhiên trên đồi cao 64m sát bãi đá 7 màu.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuacothach_card_hang_da_7_mau.webp', 'Chùa Cổ Thạch (Chùa Hang) — Xã Liên Hương (Cổ Thạch), Lâm Đồng', 'Di tích Danh thắng Quốc gia 1993 — Cổ tự khai sơn năm 1835 bởi Thiền sư Bảo Tạng ẩn mình trong quần thể hang đá hoa cương tự nhiên trên đồi cao 64m sát bãi đá 7 màu.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/chuacothach_card_hang_da_7_mau.webp" alt="Chùa Cổ Thạch Chùa Hang Tuy Phong Bình Thuận bãi đá 7 màu 1835" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-co-thach.html" style="color: #fff; text-decoration: none;">Chùa Cổ Thạch (Chùa Hang)</a></h3>
-                        <div class="temple-location">📍 Xã Bình Thạnh, Huyện Tuy Phong, Bình Thuận • Di tích QG 1993</div>
+                        <div class="temple-location">📍 Xã Liên Hương (Cổ Thạch), Lâm Đồng • Di tích QG 1993</div>
                         <p class="temple-desc">Cổ tự trong lòng đá biển từ năm 1835 — Do Thiền sư Bảo Tạng khai sơn giữa quần thể hang động đá tự nhiên trên đồi 64m, liền kề kỳ quan Bãi đá 7 màu Cà Dược và biển Cổ Thạch.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🪨 Quần thể Chùa Hang 1835</span>
@@ -3614,13 +3615,13 @@
 
                 <!-- CHÙA ÔNG NÚI (LINH PHONG THIỀN TỰ) — BÌNH ĐỊNH -->
                 <div class="temple-card" data-region="central">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuaongnui_card_dai_phat_69m.webp', 'Chùa Ông Núi (Linh Phong Thiền Tự) — Huyện Phù Cát, Bình Định', 'Di tích Quốc gia — Khởi dựng năm 1702 gắn với huyền tích Mộc Y Sơn Ông Lê Ban mặc áo vỏ cây tu trong hang đá, Sắc tứ 1733 và Đại tượng Phật ngồi cao 69m hướng biển Đông.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuaongnui_card_dai_phat_69m.webp', 'Chùa Ông Núi (Linh Phong Thiền Tự) — Xã Cát Tiến, Gia Lai', 'Di tích Quốc gia — Khởi dựng năm 1702 gắn với huyền tích Mộc Y Sơn Ông Lê Ban mặc áo vỏ cây tu trong hang đá, Sắc tứ 1733 và Đại tượng Phật ngồi cao 69m hướng biển Đông.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/chuaongnui_card_dai_phat_69m.webp" alt="Chùa Ông Núi Linh Phong Thiền Tự Phù Cát Bình Định Đại tượng Phật 69m" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-ong-nui.html" style="color: #fff; text-decoration: none;">Chùa Ông Núi (Linh Phong Tự)</a></h3>
-                        <div class="temple-location">📍 Xã Cát Tiến, Huyện Phù Cát, Bình Định • Di tích QG</div>
+                        <div class="temple-location">📍 Xã Cát Tiến, Gia Lai (Bình Định cũ) • Di tích QG 1994</div>
                         <p class="temple-desc">Huyền tích Mộc Y Sơn Ông (1702) &amp; Sắc tứ Chúa Nguyễn (1733) — Hơn 600 bậc đá dẫn lên cổ tự, Hang Tổ Ông Núi và Đại tượng Phật Thích Ca ngồi cao 69m tựa núi Bà hướng biển Đông.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗿 Đại tượng Phật ngồi 69m</span>
@@ -3841,7 +3842,7 @@
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-buu-long.html" style="color: #fff; text-decoration: none;">Tổ Đình Bửu Long &amp; Gotama Cetiya</a></h3>
                         <div class="temple-location">📍 Phường Long Bình, TP. HCM • Phật giáo Nguyên thủy</div>
-                        <p class="temple-desc">Bảo tháp Gotama Cetiya cao 56m trắng ngà chóp vàng soi bóng hồ ngọc bích — ngôi chùa không nhang khói duy nhất tại TP. HCM được National Geographic ca ngợi.</p>
+                        <p class="temple-desc">Bảo tháp Gotama Cetiya cao 56m trắng ngà chóp vàng soi bóng hồ ngọc bích — ngôi chùa Nam tông thanh tịnh không đốt nhang khói, từng được National Geographic vinh danh kiến trúc Phật giáo đặc sắc.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">✨ Tháp 56m không nhang khói</span>
                             <span class="temple-pill">🪷 Nam tông Nguyên thủy</span>
@@ -3878,13 +3879,13 @@
 
                 <!-- CHÙA SẮC TỨ KHẢI ĐOAN (ĐẮK LẮK) -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/khaidoan_card_cong_tam_quan_bmt.webp', 'Chùa Sắc Tứ Khải Đoan — Phường Thống Nhất, TP. Buôn Ma Thuột, Đắk Lắk', 'Chùa Sắc Tứ cuối cùng thời phong kiến Việt Nam — Kiến trúc nhà rường Huế kết hợp mái nhà sàn Tây Nguyên, Đoan Huy Hoàng thái hậu và Nam Phương Hoàng hậu hậu thuẫn 1951.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/khaidoan_card_cong_tam_quan_bmt.webp', 'Chùa Sắc Tứ Khải Đoan — Phường Buôn Ma Thuột, Đắk Lắk', 'Chùa Sắc Tứ cuối cùng thời phong kiến Việt Nam — Kiến trúc nhà rường Huế kết hợp mái nhà sàn Tây Nguyên, Đoan Huy Hoàng thái hậu và Nam Phương Hoàng hậu hậu thuẫn 1951.')">
                         <span class="temple-region-tag">Tây Nguyên</span>
                         <img src="images/khaidoan_card_cong_tam_quan_bmt.webp" alt="Chùa Sắc Tứ Khải Đoan Buôn Ma Thuột Đắk Lắk kiến trúc Huế Tây Nguyên" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-khai-doan.html" style="color: #fff; text-decoration: none;">Chùa Sắc Tứ Khải Đoan</a></h3>
-                        <div class="temple-location">📍 Phường Thống Nhất, TP. Buôn Ma Thuột, Đắk Lắk • Sắc Tứ 1953</div>
+                        <div class="temple-location">📍 Phường Buôn Ma Thuột, Đắk Lắk • Sắc Tứ 1953</div>
                         <p class="temple-desc">Sắc Tứ cuối cùng thời phong kiến VN — Kiến trúc nhà rường Huế hoà quyện mái nhà sàn Tây Nguyên; do Đoan Huy Hoàng thái hậu và Nam Phương Hoàng hậu hậu thuẫn 1951, trung tâm Phật giáo Tây Nguyên.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏛️ Nhà rường Huế + Tây Nguyên</span>
@@ -3900,13 +3901,13 @@
 
                 <!-- CHÙA HỘI KHÁNH (BÌNH DƯƠNG) -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/hoikhanh_card_chanh_dien_nam_bo_co.webp', 'Chùa Hội Khánh — Phường Phú Cường, TP. Thủ Dầu Một, Bình Dương', 'Di tích Quốc gia 1993 — Phật Niết Bàn 52m kỷ lục Châu Á 2013, chùa cổ 1741 với tranh sơn mài 1823 và nhà tổ Nguyễn Sinh Sắc ~1920.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/hoikhanh_card_chanh_dien_nam_bo_co.webp', 'Chùa Hội Khánh — Phường Thủ Dầu Một, TP. Hồ Chí Minh', 'Di tích Quốc gia 1993 — Phật Niết Bàn 52m kỷ lục Châu Á 2013, chùa cổ 1741 với tranh sơn mài 1823 và nhà tổ Nguyễn Sinh Sắc ~1920.')">
                         <span class="temple-region-tag">Nam Bộ</span>
                         <img src="images/hoikhanh_card_chanh_dien_nam_bo_co.webp" alt="Chùa Hội Khánh Thủ Dầu Một Bình Dương Phật Niết Bàn 52m Nam Bộ" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-hoi-khanh.html" style="color: #fff; text-decoration: none;">Chùa Hội Khánh (1741)</a></h3>
-                        <div class="temple-location">📍 Phường Phú Cường, TP. Thủ Dầu Một, Bình Dương • Di tích QG 1993</div>
+                        <div class="temple-location">📍 Phường Thủ Dầu Một, TP. Hồ Chí Minh • Di tích QG 1993</div>
                         <p class="temple-desc">Cổ tự Nam Bộ 1741 — Tượng Phật Niết Bàn 52m kỷ lục Châu Á 2013, tranh sơn mài cổ 1823, nơi lưu dấu Nguyễn Sinh Sắc (~1920) và 285 năm văn hóa Phật giáo Thủ Dầu Một.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🛕 Phật Niết Bàn 52m (kỷ lục Á)</span>
@@ -3922,17 +3923,17 @@
 
                 <!-- CHÙA VĨNH NGHIÊM TP.HCM -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/vinhnghiemhcm_card_bao_thap_quan_am_40m.webp', 'Chùa Vĩnh Nghiêm TP.HCM — Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh', 'Trung tâm Phật giáo lớn nhất Sài Gòn — Bảo tháp Quán Thế Âm 7 tầng 40m; Đại lễ Vu Lan lớn nhất miền Nam; kiến trúc theo nguyên mẫu Chùa Vĩnh Nghiêm Bắc Giang.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/vinhnghiemhcm_card_bao_thap_quan_am_40m.webp', 'Chùa Vĩnh Nghiêm TP.HCM — Phường Xuân Hòa, TP. Hồ Chí Minh', 'Trung tâm Phật giáo lớn nhất Sài Gòn — Bảo tháp Quán Thế Âm 7 tầng 40m; Đại lễ Vu Lan lớn nhất miền Nam; kiến trúc theo nguyên mẫu Chùa Vĩnh Nghiêm Bắc Giang.')">
                         <span class="temple-region-tag">Nam Bộ</span>
                         <img src="images/vinhnghiemhcm_card_bao_thap_quan_am_40m.webp" alt="Chùa Vĩnh Nghiêm TP.HCM Quận 3 Bảo tháp Quán Thế Âm 7 tầng 40m" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-vinh-nghiem-hcm.html" style="color: #fff; text-decoration: none;">Chùa Vĩnh Nghiêm (TP.HCM)</a></h3>
-                        <div class="temple-location">📍 Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh • 1964</div>
-                        <p class="temple-desc">Biểu tượng Phật giáo Sài Gòn — Bảo tháp Quán Thế Âm 7 tầng cao 40m; Đại lễ Vu Lan lớn nhất miền Nam hàng năm; kiến trúc KTS Nguyễn Bá Lăng theo nguyên mẫu Chùa Vĩnh Nghiêm Bắc Giang.</p>
+                        <div class="temple-location">📍 Phường Xuân Hòa, TP. Hồ Chí Minh • 1964</div>
+                        <p class="temple-desc">Danh lam tiêu biểu tại TP. Hồ Chí Minh — Khởi công năm 1964 theo thiết kế KTS Nguyễn Bá Lăng lấy cảm hứng từ tổ đình Vĩnh Nghiêm Kinh Bắc; nổi bật Bảo tháp đá Quán Thế Âm 7 tầng cao 40m.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗼 Bảo tháp Quan Âm 40m 7 tầng</span>
-                            <span class="temple-pill">🪷 Đại lễ Vu Lan lớn nhất</span>
+                            <span class="temple-pill">🏛️ Thiết kế KTS Nguyễn Bá Lăng</span>
                             <span class="temple-pill">🏛️ Kiến trúc Bắc tông hiện đại</span>
                         </div>
                         <a href="destination-chua-vinh-nghiem-hcm.html" class="temple-route-btn">
@@ -3944,14 +3945,14 @@
 
                 <!-- CHÙA CHÂU THỚI (BÌNH DƯƠNG) -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chauthoibd_card_mai_gom_su_rong_phuong.webp', 'Chùa Châu Thới (Châu Thới Sơn Tự) — Phường Bình An, TP. Dĩ An, Bình Dương', 'Di tích QG 1989 — Cổ tự 1612 trên đỉnh núi Châu Thới 82m; mái gốm sứ rồng phượng độc đáo; Thập bát La Hán đất nung cổ; 220 bậc đá hành hương.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chauthoibd_card_mai_gom_su_rong_phuong.webp', 'Chùa Châu Thới (Châu Thới Sơn Tự) — Phường Đông Hòa (Dĩ An), TP. Hồ Chí Minh', 'Di tích QG 1989 — Cổ tự 1612 trên đỉnh núi Châu Thới 82m; mái gốm sứ rồng phượng độc đáo; Thập bát La Hán đất nung cổ; 220 bậc đá hành hương.')">
                         <span class="temple-region-tag">Nam Bộ</span>
                         <img src="images/chauthoibd_card_mai_gom_su_rong_phuong.webp" alt="Chùa Châu Thới Bình Dương Dĩ An mái gốm sứ rồng phượng 1612 núi Châu Thới" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-chau-thoi.html" style="color: #fff; text-decoration: none;">Chùa Châu Thới (1612)</a></h3>
-                        <div class="temple-location">📍 Phường Bình An, TP. Dĩ An, Bình Dương • Di tích QG 1989</div>
-                        <p class="temple-desc">Cổ tự Nam Bộ 1612 trên đỉnh núi — Mái gốm sứ chạm trổ rồng phượng độc bản; Thập bát La Hán đất nung thế kỷ XVII; Hòn đá thần huyền bí; 220 bậc đá leo lên đỉnh núi Châu Thới 82m.</p>
+                        <div class="temple-location">📍 Phường Đông Hòa (Dĩ An), TP. Hồ Chí Minh • Di tích QG 1989</div>
+                        <p class="temple-desc">Cổ tự Nam Bộ 1612 trên đỉnh núi — Mái gốm sứ chạm trổ rồng phượng độc bản; Thập bát La Hán đất nung thế kỷ XVII; 3 pho tượng Phật đá cổ thế kỷ XVIII; 220 bậc đá leo lên đỉnh núi Châu Thới 82m.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏔️ Cổ tự 1612 đỉnh núi 82m</span>
                             <span class="temple-pill">🐉 Mái gốm sứ rồng phượng</span>
@@ -3966,13 +3967,13 @@
 
                 <!-- CHÙA MINH THÀNH (PLEIKU, GIA LAI) -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/minhthanh_card_bao_thap_72m.webp', 'Chùa Minh Thành — Phường Hội Phú, TP. Pleiku, Gia Lai', 'Kiệt tác kiến trúc Phật giáo phương Đông giữa cao nguyên Tây Nguyên — Khởi dựng 1964, đại trùng tu từ 1997 với Bảo tháp Xá Lợi 9 tầng cao 72m, Hồ Liên Trì và Chánh điện gỗ pơ-mu.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/minhthanh_card_bao_thap_72m.webp', 'Chùa Minh Thành — Phường Hội Phú (Pleiku), Gia Lai', 'Kiệt tác kiến trúc Phật giáo phương Đông giữa cao nguyên Tây Nguyên — Khởi dựng 1964, đại trùng tu từ 1997 với Bảo tháp Xá Lợi 9 tầng cao 72m, Hồ Liên Trì và Chánh điện gỗ pơ-mu.')">
                         <span class="temple-region-tag">Tây Nguyên</span>
                         <img src="images/minhthanh_card_bao_thap_72m.webp" alt="Chùa Minh Thành Pleiku Gia Lai Bảo tháp Xá Lợi 9 tầng cao 72m" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-minh-thanh.html" style="color: #fff; text-decoration: none;">Chùa Minh Thành (Pleiku)</a></h3>
-                        <div class="temple-location">📍 Phường Hội Phú, TP. Pleiku, Gia Lai • Khởi dựng 1964</div>
+                        <div class="temple-location">📍 Phường Hội Phú (Pleiku), Gia Lai • Khởi dựng 1964</div>
                         <p class="temple-desc">Tuyệt tác kiến trúc phương Đông giữa phố núi — Giao hòa tinh hoa Lý – Trần, Trung Hoa và Nhật Bản; Bảo tháp Xá Lợi 9 tầng cao 72m; Hồ Liên Trì; Chánh điện gỗ pơ-mu và Đại hồng chung 4 tấn.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗼 Bảo tháp Xá Lợi 72m</span>
@@ -3988,13 +3989,13 @@
 
                 <!-- THIỀN VIỆN TRÚC LÂM CHÁNH GIÁC (TIỀN GIANG) -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/truclamchanhgiac_card_tu_dong_tam.webp', 'Thiền Viện Trúc Lâm Chánh Giác — Huyện Tân Phước, Tiền Giang', 'Đại thiền viện 50ha giữa vùng Đồng Tháp Mười — Khởi công năm 2012, nổi tiếng với cụm thánh tích Tứ Động Tâm, Tháp Đại Giác cao 31m và tượng Phật Thích Ca đá ngọc nặng hơn 30 tấn.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/truclamchanhgiac_card_tu_dong_tam.webp', 'Thiền Viện Trúc Lâm Chánh Giác — Xã Tân Phước, Đồng Tháp', 'Đại thiền viện 50ha giữa vùng Đồng Tháp Mười — Khởi công năm 2012, nổi tiếng với cụm thánh tích Tứ Động Tâm, Tháp Đại Giác cao 31m và tượng Phật Thích Ca đá ngọc nặng hơn 30 tấn.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/truclamchanhgiac_card_tu_dong_tam.webp" alt="Thiền Viện Trúc Lâm Chánh Giác Tiền Giang Tứ Động Tâm Tháp Đại Giác 31m" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-truc-lam-chanh-giac.html" style="color: #fff; text-decoration: none;">Thiền Viện Trúc Lâm Chánh Giác</a></h3>
-                        <div class="temple-location">📍 Xã Thạnh Tân, Huyện Tân Phước, Tiền Giang • 50 Ha</div>
+                        <div class="temple-location">📍 Xã Tân Phước, Đồng Tháp (Tiền Giang cũ) • 50 Ha</div>
                         <p class="temple-desc">Thiền viện Trúc Lâm lớn nhất Đồng Tháp Mười — Khuôn viên 50ha thanh tịnh; cụm Tứ Động Tâm mô phỏng 4 thánh tích Ấn Độ với Tháp Đại Giác cao 31m và tượng Phật đá ngọc nặng hơn 30 tấn.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗼 Tứ Động Tâm &amp; Tháp 31m</span>
@@ -4010,13 +4011,13 @@
 
                 <!-- LINH SƠN CỔ TỰ (VŨNG TÀU) -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/linhsonvungtau_card_phat_da_co.webp', 'Linh Sơn Cổ Tự — 104 Hoàng Hoa Thám, Phường 2, TP. Vũng Tàu', 'Di tích Quốc gia 1991 — Ngôi chùa lâu đời nhất TP. Vũng Tàu (1919) dưới chân Núi Nhỏ, nơi tôn thờ pho tượng Phật Thích Ca bằng đá sa thạch thếp vàng mang phong cách nghệ thuật cổ thế kỷ VI–VII.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/linhsonvungtau_card_phat_da_co.webp', 'Linh Sơn Cổ Tự — 104 Hoàng Hoa Thám, Phường Vũng Tàu, TP. Hồ Chí Minh', 'Di tích Quốc gia 1991 — Ngôi chùa lâu đời nhất TP. Vũng Tàu (1919) dưới chân Núi Nhỏ, nơi tôn thờ pho tượng Phật Thích Ca bằng đá sa thạch thếp vàng mang phong cách nghệ thuật cổ thế kỷ VI–VII.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/linhsonvungtau_card_phat_da_co.webp" alt="Linh Sơn Cổ Tự Vũng Tàu Hoàng Hoa Thám tượng Phật đá sa thạch thếp vàng" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-linh-son-vung-tau.html" style="color: #fff; text-decoration: none;">Linh Sơn Cổ Tự (Vũng Tàu)</a></h3>
-                        <div class="temple-location">📍 104 Hoàng Hoa Thám, P.2, TP. Vũng Tàu • Di tích QG 1991</div>
+                        <div class="temple-location">📍 104 Hoàng Hoa Thám, Phường Vũng Tàu, TP. Hồ Chí Minh • Di tích QG 1991</div>
                         <p class="temple-desc">Ngôi chùa cổ nhất phố biển Vũng Tàu (1919) — Nép mình yên bình dưới chân Núi Nhỏ; lưu giữ bảo vật tượng Phật Thích Ca đá sa thạch thếp vàng (thế kỷ VI–VII) và tượng Di Lặc đồng (1972).</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗿 Tượng Phật đá thế kỷ VI</span>
@@ -4032,13 +4033,13 @@
 
                 <!-- CHÙA LINH PHƯỚC (CHÙA VE CHAI) — ĐÀ LẠT -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/linhphuoc_card_linh_thap_37m.webp', 'Chùa Linh Phước (Chùa Ve Chai) — Trại Mát, TP. Đà Lạt, Lâm Đồng', 'Kiệt tác kiến trúc khảm sành sứ độc bản — Khởi dựng 1949, đại trùng tu 1990 với Linh Tháp 7 tầng cao 37m, Đại hồng chung 8,5 tấn, tượng Quan Âm hoa bất tử và rồng dài 49m.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/linhphuoc_card_linh_thap_37m.webp', 'Chùa Linh Phước (Chùa Ve Chai) — Trại Mát, Phường Xuân Trường - Đà Lạt, Lâm Đồng', 'Kiệt tác kiến trúc khảm sành sứ độc bản — Khởi dựng 1949, đại trùng tu 1990 với Linh Tháp 7 tầng cao 37m, Đại hồng chung 8,5 tấn, tượng Quan Âm hoa bất tử và rồng dài 49m.')">
                         <span class="temple-region-tag">Tây Nguyên</span>
                         <img src="images/linhphuoc_card_linh_thap_37m.webp" alt="Chùa Linh Phước Chùa Ve Chai Trại Mát Đà Lạt Linh Tháp 37m khảm sành sứ" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-linh-phuoc.html" style="color: #fff; text-decoration: none;">Chùa Linh Phước (Chùa Ve Chai)</a></h3>
-                        <div class="temple-location">📍 Trại Mát, P.11, TP. Đà Lạt, Lâm Đồng • Từ 1949</div>
+                        <div class="temple-location">📍 Trại Mát, Phường Xuân Trường - Đà Lạt, Lâm Đồng • Từ 1949</div>
                         <p class="temple-desc">Kiệt tác khảm sành sứ độc nhất xứ ngàn hoa — Linh Tháp 7 tầng cao 37m treo Đại hồng chung 8,5 tấn; tượng Quan Âm kết từ 650.000 bông hoa bất tử và tượng rồng 49m khảm 12.000 vỏ chai.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🗼 Linh Tháp 37m • Chuông 8,5 tấn</span>
@@ -4054,13 +4055,13 @@
 
                 <!-- CHÙA XIÊM CÁN (KOMPHISAKOR) — BẠC LIÊU -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/xiemcan_card_khmer_1887.webp', 'Chùa Xiêm Cán (Komphisakor) — Vĩnh Trạch Đông, TP. Bạc Liêu', 'Ngôi chùa Phật giáo Nam tông Khmer lớn và lộng lẫy bậc nhất Đồng bằng sông Cửu Long — Khởi dựng tháng 4/1887 trên khuôn viên 5ha đậm dấu ấn kiến trúc Angkor.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/xiemcan_card_khmer_1887.webp', 'Chùa Xiêm Cán (Komphisakor) — Phường Hiệp Thành (Bạc Liêu), Cà Mau', 'Ngôi chùa Phật giáo Nam tông Khmer lớn và lộng lẫy bậc nhất Đồng bằng sông Cửu Long — Khởi dựng tháng 4/1887 trên khuôn viên 5ha đậm dấu ấn kiến trúc Angkor.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/xiemcan_card_khmer_1887.webp" alt="Chùa Xiêm Cán Komphisakor Bạc Liêu kiến trúc Khmer Nam Bộ 1887" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-xiem-can.html" style="color: #fff; text-decoration: none;">Chùa Xiêm Cán (Komphisakor)</a></h3>
-                        <div class="temple-location">📍 Xã Vĩnh Trạch Đông, TP. Bạc Liêu • Khởi dựng 1887</div>
+                        <div class="temple-location">📍 Phường Hiệp Thành (Bạc Liêu), Cà Mau • Khởi dựng 1887</div>
                         <p class="temple-desc">Kiệt tác chùa Khmer lớn bậc nhất miền Tây — Kiến trúc Angkor rực rỡ sắc vàng son trên khuôn viên 5ha ven biển; chạm khắc rắn thần Naga, tiên nữ Kinnari và nhà hội Sala truyền thống.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏛️ Cổ tự Khmer 1887 • 5ha</span>
@@ -4076,13 +4077,13 @@
 
                 <!-- CHÙA ÂNG (WAT ANGKORAJABOREY) — TRÀ VINH -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/chuaang_card_ao_ba_om_khmer.webp', 'Chùa Âng (Wat Angkorajaborey) — Phường 8, TP. Trà Vinh', 'Di tích Quốc gia 1994 — Ngôi chùa Khmer cổ kính bậc nhất Nam Bộ (tương truyền từ năm 990, Chánh điện gỗ quý 1842) nằm sát thắng cảnh Ao Bà Om rợp bóng sao dầu trăm tuổi.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/chuaang_card_ao_ba_om_khmer.webp', 'Chùa Âng (Wat Angkorajaborey) — Phường Nguyệt Hóa (Trà Vinh), Vĩnh Long', 'Di tích Quốc gia 1994 — Ngôi chùa Khmer cổ kính bậc nhất Nam Bộ (tương truyền từ năm 990, Chánh điện gỗ quý 1842) nằm sát thắng cảnh Ao Bà Om rợp bóng sao dầu trăm tuổi.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/chuaang_card_ao_ba_om_khmer.webp" alt="Chùa Âng Angkorajaborey Trà Vinh Ao Bà Om cổ tự Khmer 1994" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-ang.html" style="color: #fff; text-decoration: none;">Chùa Âng (Angkorajaborey)</a></h3>
-                        <div class="temple-location">📍 Phường 8, TP. Trà Vinh, Trà Vinh • Di tích QG 1994</div>
+                        <div class="temple-location">📍 Phường Nguyệt Hóa (Trà Vinh), Vĩnh Long • Di tích QG 1994</div>
                         <p class="temple-desc">Cổ tự Khmer ngàn năm bên Ao Bà Om — Bao bọc bởi hào nước cổ và rừng sao dầu trăm tuổi trồi rễ kỳ ảo; cổng thần Bayon, Chánh điện gỗ quý năm 1842 và đêm hội Ok Om Bok.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">🏛️ Cổ tự Khmer Di tích QG</span>
@@ -4098,13 +4099,13 @@
 
                 <!-- CHÙA PHƯỚC ĐIỀN (CHÙA HANG NÚI SAM) — AN GIANG -->
                 <div class="temple-card" data-region="south">
-                    <div class="temple-img-wrap" onclick="openLightbox('images/phuocdiennuisam_card_vach_nui_sam.webp', 'Chùa Phước Điền (Chùa Hang Núi Sam) — TP. Châu Đốc, An Giang', 'Di tích Quốc gia 1980 — Cổ tự cheo leo sườn Tây Núi Sam do Sư bà Lê Thị Thơ (Bà Thợ) khai sơn năm 1845, gắn với huyền tích đôi mãng xà nghe kinh và ban công ngắm đồng lúa biên giới.')">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/phuocdiennuisam_card_vach_nui_sam.webp', 'Chùa Phước Điền (Chùa Hang Núi Sam) — Phường Vĩnh Tế (Núi Sam), An Giang', 'Di tích Quốc gia 1980 — Cổ tự cheo leo sườn Tây Núi Sam do Sư bà Lê Thị Thơ (Bà Thợ) khai sơn năm 1845, gắn với huyền tích đôi mãng xà nghe kinh và ban công ngắm đồng lúa biên giới.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/phuocdiennuisam_card_vach_nui_sam.webp" alt="Chùa Phước Điền Chùa Hang Núi Sam Châu Đốc An Giang 1845" loading="lazy">
                     </div>
                     <div class="temple-body">
                         <h3 class="temple-name"><a href="destination-chua-phuoc-dien-nui-sam.html" style="color: #fff; text-decoration: none;">Chùa Phước Điền (Chùa Hang Núi Sam)</a></h3>
-                        <div class="temple-location">📍 Sườn Tây Núi Sam, TP. Châu Đốc, An Giang • Di tích QG 1980</div>
+                        <div class="temple-location">📍 Sườn Tây Núi Sam, Phường Vĩnh Tế, An Giang • Di tích QG 1980</div>
                         <p class="temple-desc">Chốn bồng lai trên sườn Tây Núi Sam (1845) — Gần 300 bậc đá dẫn lên cổ tự cột gỗ căm xe của Sư bà Lê Thị Thơ, hang đá Thanh Xà – Bạch Xà quy y và ban công ngắm đồng lúa biên giới.</p>
                         <div class="temple-highlights">
                             <span class="temple-pill">⛰️ 300 bậc đá sườn Núi Sam</span>
@@ -4188,7 +4189,7 @@
             <div class="footer-links">
                 <a href="index.html">Trang Chủ</a>
                 <a href="#goc-an-nhien">Góc An Nhiên</a>
-                <a href="#van-khan">Cẩm Nang Văn Khấn</a>
+                <a href="javascript:void(0)" onclick="openPrayerModal(0)">Cẩm Nang Văn Khấn</a>
                 <a href="#danh-lam-co-tu">Danh Lam Cổ Tự</a>
                 <a href="#nghi-thuc">Quy Chuẩn Đi Chùa</a>
             </div>
@@ -4961,7 +4962,7 @@
             },
             'truclam': {
                 name: 'Thiền Viện Trúc Lâm (Đà Lạt)',
-                backdrop: 'images/dalat_mua_ha_phuong_tim_san_may.webp',
+                backdrop: 'images/dalat_truc_lam.webp',
                 buddha: 'images/truclam_dl_chanh_dien_niem_hoa.webp',
                 title: 'Chánh Điện Thiền Phái Trúc Lâm Yên Tử',
                 mantra: 'Phật Tại Tâm — Phản Quan Tự Kỷ'
@@ -4985,6 +4986,7 @@
             let prov = '';
             if (dbItem && dbItem.location) {
                 prov = dbItem.location.split(',').pop().trim()
+                    .replace(/\s*\([^)]*\)/g, '')
                     .replace(/^(Tỉnh|Thành phố|TP\.)\s+/i, '')
                     .replace('Bà Rịa - Vũng Tàu', 'Vũng Tàu')
                     .trim();
@@ -5647,7 +5649,7 @@
                 region: 'south',
                 regionName: 'Tây Nguyên & Miền Nam',
                 img: 'images/dalat_truc_lam.webp',
-                buddhaImg: 'images/dalat_truc_lam.webp',
+                buddhaImg: 'images/truclam_dl_chanh_dien_niem_hoa.webp',
                 title: 'Chánh Điện Thiền Phái Trúc Lâm Yên Tử',
                 mantra: 'Phật Tại Tâm — Phản Quan Tự Kỷ',
                 detailUrl: 'destination-truc-lam-da-lat.html',
@@ -5999,7 +6001,7 @@
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/boda_card_tuong_trinh_dat.webp',
-                buddhaImg: 'images/boda_st3_nha_to_lam_te.webp',
+                buddhaImg: 'images/boda_st5_vuon_100_thap_co.webp',
                 title: 'Tứ Ân Cổ Tự — Di Sản UNESCO 2025 Với 100 Tháp Cổ',
                 mantra: 'Tâm Hiếu Báo Đền Tứ Ân — Trăm Tháp Nối Mạch Lâm Tế',
                 detailUrl: 'destination-chua-bo-da.html',
@@ -6015,7 +6017,7 @@
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/phominh_card_thap_14_tang.webp',
-                buddhaImg: 'images/phominh_st5_thuong_dien_tam_to.webp',
+                buddhaImg: 'images/phominh_st1_tam_quan_ho_sen.webp',
                 title: 'Quốc Tự Thời Trần Với Tháp Vuông 14 Tầng Năm 1305',
                 mantra: 'Hào Khí Đông A — Xá Lợi Phật Hoàng Vĩnh Cửu',
                 detailUrl: 'destination-chua-pho-minh.html',
@@ -6031,7 +6033,7 @@
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/tuhieu_card_ho_ban_nguyet_rung_thong.webp',
-                buddhaImg: 'images/tuhieu_st3_chanh_dien_nha_ruong.webp',
+                buddhaImg: 'images/tuhieu_st1_tam_quan_vom_reu_phong.webp',
                 title: 'Tổ Đình Từ Hiếu — Báo Hiếu & Chánh Niệm Rừng Thông',
                 mantra: 'Tâm Hiếu Là Tâm Phật — Hạnh Hiếu Là Hạnh Phật',
                 detailUrl: 'destination-chua-tu-hieu.html',
@@ -6069,7 +6071,7 @@
                 detailUrl: 'destination-chua-buu-long.html',
                 hasDetailedAltars: true,
                 badge: 'Nam tông Nguyên thủy • Tháp 56m • Lộ trình 6 trạm',
-                desc: 'Bảo tháp Gotama Cetiya cao 56m trắng ngà chóp vàng soi bóng hồ ngọc bích; ngôi chùa không nhang khói duy nhất tại TP. HCM được National Geographic ca ngợi.'
+                desc: 'Bảo tháp Gotama Cetiya cao 56m trắng ngà chóp vàng soi bóng hồ ngọc bích; ngôi chùa Nam tông thanh tịnh không đốt nhang khói, từng được National Geographic vinh danh kiến trúc Phật giáo đặc sắc.'
             },
             {
                 id: 'chuahang',
@@ -6091,33 +6093,33 @@
                 id: 'chuathay',
                 name: 'Chùa Thầy (Thiên Phúc Tự)',
                 searchTerms: 'chua thay thien phuc tu xa sai son huyen quoc oai ha noi nui sai thuy dinh roi nuoc tu dao hanh nhuc than hang thanh hoa le hoi thang 3',
-                location: 'Xã Sài Sơn, Huyện Quốc Oai, TP. Hà Nội',
+                location: 'Xã Quốc Oai (Sài Sơn), TP. Hà Nội',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/chuathay_card_thuy_dinh_roi_nuoc.webp',
                 buddhaImg: 'images/chuathay_st2_dien_thanh_tu_dao_hanh.webp',
-                title: 'Thiên Phúc Tự — Thủy Đình 1612 & Nhục Thân Thiền Sư Từ Đạo Hạnh',
+                title: 'Thiên Phúc Tự — Thủy Đình Cổ 1602 & Thiền Sư Từ Đạo Hạnh',
                 mantra: 'Từ Bi Hỷ Xả — Pháp Lực Vô Biên Của Phật Thầy Sài Sơn',
                 detailUrl: 'destination-chua-thay.html',
                 hasDetailedAltars: true,
-                badge: 'Di tích QGĐB 2014 • Nhà Thủy Đình 1612 • Lộ trình 6 trạm',
-                desc: 'Xứ Đoài huyền thoại — Nhà Thủy Đình 1612 múa rối nước cổ nhất Việt Nam, nhục thân Thiền sư Từ Đạo Hạnh thế kỷ XII và hang Thánh Hóa linh thiêng trên núi Sài.'
+                badge: 'Di tích QGĐB 2014 • Thủy Đình cổ 1602 • Lộ trình 6 trạm',
+                desc: 'Danh lam xứ Đoài — Nhà Thủy Đình cổ (1602) giữa hồ Long Chiểu, hệ tượng thờ ba kiếp Thiền sư Từ Đạo Hạnh, bệ đá hoa sen thời Lý và hang Thánh Hóa trên núi Sài.'
             },
             {
                 id: 'chuabutthap',
                 name: 'Chùa Bút Tháp (Ninh Phúc Tự)',
-                searchTerms: 'chua but thap ninh phuc tu phuong tri qua tx thuan thanh bac ninh quan am nghin tay truong cong an cuua pham lien hoa xoay huong an tam the phat bao vat quoc gia',
-                location: 'Phường Trí Quả, TX Thuận Thành, Bắc Ninh',
+                searchTerms: 'chua but thap ninh phuc tu phuong tri qua tx thuan thanh bac ninh quan am nghin tay truong tien sinh cuua pham lien hoa xoay huong an tam the phat bao vat quoc gia',
+                location: 'Phường Trí Quả, Bắc Ninh',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/butthap_card_quan_am_nghin_tay.webp',
-                buddhaImg: 'images/butthap_st2_quan_am_nghin_mat_nghin_tay.webp',
+                buddhaImg: 'images/butthap_card_quan_am_nghin_tay.webp',
                 title: 'Ninh Phúc Tự — 4 Bảo Vật Quốc gia & Quan Âm Nghìn Mắt Nghìn Tay 1656',
                 mantra: 'Namo Quan Thế Âm Bồ Tát — Pháp Nhãn Vô Lượng Từ Bi',
                 detailUrl: 'destination-chua-but-thap.html',
                 hasDetailedAltars: true,
                 badge: 'Di tích QGĐB 2013 • 4 Bảo Vật QG • Lộ trình 6 trạm',
-                desc: 'Kiệt tác Phật giáo Bắc Ninh — 4 Bảo Vật Quốc gia hiếm có: tượng Quan Âm Nghìn Mắt Nghìn Tay 1656 (Trương Công An tạc), Cửu Phẩm Liên Hoa xoay, Hương Án và Tam Thế Phật.'
+                desc: 'Kiệt tác Phật giáo Bắc Ninh — 4 Bảo Vật Quốc gia hiếm có: tượng Quan Âm Nghìn Mắt Nghìn Tay 1656 (Trương tiên sinh tạc), Cửu Phẩm Liên Hoa xoay, Hương Án và Tam Thế Phật.'
             },
             {
                 id: 'chuaconson',
@@ -6139,7 +6141,7 @@
                 id: 'chualongson',
                 name: 'Chùa Long Sơn (Kim Thân Phật Tổ)',
                 searchTerms: 'chua long son nha trang khanh hoa phuong tay nha trang 193 bac kim than phat to 24m tuong phat trang nui vinh ho thich ngo tri 1886 chuong dong',
-                location: 'Phường Tây Nha Trang, TP. Nha Trang, Khánh Hòa',
+                location: 'Phường Tây Nha Trang, Khánh Hòa',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/longson_card_193_bac_kim_than.webp',
@@ -6155,11 +6157,11 @@
                 id: 'chuakhaidoan',
                 name: 'Chùa Sắc Tứ Khải Đoan',
                 searchTerms: 'chua sac tu khai doan phuong thong nhat tp buon ma thuot dak lak 1951 nha ruong hue mai nha san tay nguyen doan huy hoang thai hau nam phuong hoang hau',
-                location: 'Phường Thống Nhất, TP. Buôn Ma Thuột, Đắk Lắk',
+                location: 'Phường Buôn Ma Thuột, Đắk Lắk',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/khaidoan_card_cong_tam_quan_bmt.webp',
-                buddhaImg: 'images/khaidoan_st2_chanh_dien_hue_tay_nguyen.webp',
+                buddhaImg: 'images/khaidoan_st3_linh_vi_nam_phuong.webp',
                 title: 'Sắc Tứ Khải Đoan — Nhà Rường Huế & Mái Nhà Sàn Tây Nguyên',
                 mantra: 'Namo A Di Đà Phật — Pháp Lực Khải Đoan Tỏa Khắp Tây Nguyên',
                 detailUrl: 'destination-chua-khai-doan.html',
@@ -6171,7 +6173,7 @@
                 id: 'chuahoikhanh',
                 name: 'Chùa Hội Khánh (1741)',
                 searchTerms: 'chua hoi khanh phuong phu cuong tp thu dau mot binh duong 1741 thien su dai ngan lam te phat niet ban 52m ky luc chau a nguyen sinh sac tranh son mai 1823',
-                location: 'Phường Phú Cường, TP. Thủ Dầu Một, Bình Dương',
+                location: 'Phường Thủ Dầu Một, TP. Hồ Chí Minh',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/hoikhanh_card_chanh_dien_nam_bo_co.webp',
@@ -6187,7 +6189,7 @@
                 id: 'taythien',
                 name: 'Thiền Viện Trúc Lâm Tây Thiên',
                 searchTerms: 'thien vien truc lam tay thien xa dai dinh huyen tam dao vinh phuc quoc mau lang thi tieu hung vuong rung nguyen sinh cap treo le hoi thang 2',
-                location: 'Xã Đại Đình, Huyện Tam Đảo, Vĩnh Phúc',
+                location: 'Xã Đại Đình (Tam Đảo), Phú Thọ',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/taythien_card_cong_troi_thien_vien.webp',
@@ -6203,11 +6205,11 @@
                 id: 'chuadau',
                 name: 'Chùa Đậu (Pháp Vũ Tự)',
                 searchTerms: 'chua dau phap vu tu thanh dao tu xa nguyen trai huyen thuong tin ha noi tu phap phap vu nhuc than thien su vu khac minh vu khac truong rong da tran',
-                location: 'Xã Nguyễn Trãi, Huyện Thường Tín, TP. Hà Nội',
+                location: 'Xã Thường Tín (Nguyễn Trãi), TP. Hà Nội',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/chuadau_card_nhuc_than_thien_su.webp',
-                buddhaImg: 'images/chuadau_st3_nhuc_than_vu_khac_minh_vu_khac_truong.webp',
+                buddhaImg: 'images/chuadau_st1_tam_quan_ho_sen_co_kinh.webp',
                 title: 'Chùa Đậu (Pháp Vũ Tự) — 2 Nhục Thân Thiền Sư 300-400 Năm Hiếm Nhất VN',
                 mantra: 'Namo Đại Bồ Tát Pháp Vũ — Từ Bi Mưa Pháp Thấm Khắp Chúng Sinh',
                 detailUrl: 'destination-chua-dau.html',
@@ -6223,7 +6225,7 @@
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/baoquoc_card_tam_quan_doi_ham_long.webp',
-                buddhaImg: 'images/baoquoc_st2_chanh_dien_phat_tich_ca.webp',
+                buddhaImg: 'images/baoquoc_card_tam_quan_doi_ham_long.webp',
                 title: 'Sắc Tứ Báo Quốc Tự — Danh Tổ Đình 1674 & Giếng Cổ Tiến Cung Triều Nguyễn',
                 mantra: 'Namo A Di Đà Phật — Hàm Long Phước Địa Âm Phù Muôn Đời',
                 detailUrl: 'destination-chua-bao-quoc.html',
@@ -6239,7 +6241,7 @@
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/tudam_card_co_phat_giao_5_mau.webp',
-                buddhaImg: 'images/tudam_st3_phap_duong_1951.webp',
+                buddhaImg: 'images/tudam_st2_chanh_dien_phat_to.webp',
                 title: 'Chùa Từ Đàm — Trái Tim Chấn Hưng Phật Giáo Việt Nam & Đại Hội 1951',
                 mantra: 'Namo Thích Ca Mâu Ni Phật — Pháp Lực Từ Đàm Chiếu Khắp Trời Nam',
                 detailUrl: 'destination-chua-tu-dam.html',
@@ -6251,7 +6253,7 @@
                 id: 'vinhnghiemhcm',
                 name: 'Chùa Vĩnh Nghiêm (TP.HCM)',
                 searchTerms: 'chua vinh nghiem tp hcm phuong vo thi sau quan 3 1964 1971 nguyen ba lang bao thap quan am 7 tang 40m vu lan lon nhat mien nam truc lam bac giang',
-                location: 'Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh',
+                location: 'Phường Xuân Hòa, TP. Hồ Chí Minh',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/vinhnghiemhcm_card_bao_thap_quan_am_40m.webp',
@@ -6261,13 +6263,13 @@
                 detailUrl: 'destination-chua-vinh-nghiem-hcm.html',
                 hasDetailedAltars: true,
                 badge: '1964 KTS Nguyễn Bá Lăng • Bảo tháp 40m • Lộ trình 6 trạm',
-                desc: 'Biểu tượng Phật giáo Sài Gòn — Bảo tháp Quán Thế Âm 7 tầng cao 40m; Đại lễ Vu Lan lớn nhất miền Nam hàng năm; kiến trúc KTS Nguyễn Bá Lăng theo nguyên mẫu Chùa Vĩnh Nghiêm Bắc Giang.'
+                desc: 'Danh lam tiêu biểu tại TP. Hồ Chí Minh — Khởi công năm 1964 theo thiết kế KTS Nguyễn Bá Lăng lấy cảm hứng từ tổ đình Vĩnh Nghiêm Kinh Bắc; nổi bật Bảo tháp đá Quán Thế Âm 7 tầng cao 40m.'
             },
             {
                 id: 'chauthoibinh',
                 name: 'Chùa Châu Thới (Châu Thới Sơn Tự)',
                 searchTerms: 'chua chau thoi chau thoi son tu phuong binh an tp di an binh duong 1612 khanh long nam bo co nhat mai gom su rong phuong 220 bac da thap bat la han dat nung',
-                location: 'Phường Bình An, TP. Dĩ An, Bình Dương',
+                location: 'Phường Đông Hòa (Dĩ An), TP. Hồ Chí Minh',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/chauthoibd_card_mai_gom_su_rong_phuong.webp',
@@ -6277,17 +6279,17 @@
                 detailUrl: 'destination-chua-chau-thoi.html',
                 hasDetailedAltars: true,
                 badge: 'Di tích QG 1989 • Cổ tự 1612 • Lộ trình 6 trạm',
-                desc: 'Cổ tự Nam Bộ 1612 trên đỉnh núi — Mái gốm sứ chạm trổ rồng phượng độc bản; Thập bát La Hán đất nung thế kỷ XVII; Hòn đá thần huyền bí; 220 bậc đá leo lên đỉnh núi Châu Thới 82m.'
+                desc: 'Cổ tự Nam Bộ 1612 trên đỉnh núi — Mái gốm sứ chạm trổ rồng phượng độc bản; Thập bát La Hán đất nung thế kỷ XVII; 3 pho tượng Phật đá cổ thế kỷ XVIII; 220 bậc đá leo lên đỉnh núi Châu Thới 82m.'
             },
             {
                 id: 'tramgian',
                 name: 'Chùa Trăm Gian (Quảng Nghiêm Tự)',
                 searchTerms: 'chua tram gian quang nghiem tu tien lu tien phuong chuong my ha noi xu doai 104 gian 1185 gac chuong 1693 duc thanh boi nguyen binh an rong da tran',
-                location: 'Xã Tiên Phương, Huyện Chương Mỹ, TP. Hà Nội',
+                location: 'Phường Chương Mỹ (Tiên Phương), TP. Hà Nội',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/tramgian_card_gac_chuong_1693.webp',
-                buddhaImg: 'images/tramgian_st4_thuong_dien_tam_bao.webp',
+                buddhaImg: 'images/tramgian_st5_cung_thanh_boi.webp',
                 title: 'Chùa Trăm Gian — Tứ Đại Danh Thắng Xứ Đoài & 104 Gian Gỗ Cổ',
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Kính Lễ Đức Thánh Bối',
                 detailUrl: 'destination-chua-tram-gian.html',
@@ -6299,23 +6301,23 @@
                 id: 'longdoison',
                 name: 'Chùa Long Đọi Sơn',
                 searchTerms: 'chua long doi son sung thien dien linh tu xa tien son duy tien ha nam di tich quoc gia dac biet 2017 bia da 1121 bao vat quoc gia 1054 ly thanh tong 373 bac da',
-                location: 'Xã Tiên Sơn, TX. Duy Tiên, Tỉnh Hà Nam',
+                location: 'Phường Tiên Sơn (Duy Tiên), Ninh Bình',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/longdoison_card_dinh_nui_doi.webp',
-                buddhaImg: 'images/longdoison_st3_bia_sung_thien_1121.webp',
+                buddhaImg: 'images/longdoison_st4_chanh_dien_long_doi.webp',
                 title: 'Chùa Long Đọi Sơn — Di Tích QGĐB & Bảo Vật Quốc Gia Bia Đá 1121',
                 mantra: 'Nam Mô A Di Đà Phật — Quốc Tự Triều Lý Nghìn Năm Núi Đọi',
                 detailUrl: 'destination-chua-long-doi-son.html',
                 hasDetailedAltars: true,
                 badge: 'Di tích QGĐB 2017 • Bia đá 1121 • Lộ trình 6 trạm',
-                desc: 'Quốc tự triều Lý trên đỉnh núi Đọi (1054) — Vượt 373 bậc đá xanh chiêm bái Bảo vật Quốc gia Bia Sùng Thiện Diên Linh (1121), tượng Kim Cương đá thời Lý và chín giếng mắt rồng.'
+                desc: 'Quốc tự triều Lý trên đỉnh núi Đọi (khởi dựng 1054, đại hưng công 1118–1121) — Vượt 373 bậc đá xanh chiêm bái Bảo vật Quốc gia Bia Sùng Thiện Diên Linh (1121) và bộ tượng Kim Cương thời Lý.'
             },
             {
                 id: 'thapthap',
                 name: 'Chùa Thập Tháp Di Đà',
                 searchTerms: 'chua thap thap di da phuong nhon thanh an nhon binh dinh to dinh lam te nguyen thieu 1683 sac tu 1691 go long bich do ban moc ban kinh co',
-                location: 'Phường Nhơn Thành, TX. An Nhơn, Tỉnh Bình Định',
+                location: 'Phường An Nhơn Bắc (Nhơn Thành), Gia Lai',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/thapthap_card_to_dinh_1683.webp',
@@ -6331,7 +6333,7 @@
                 id: 'minhthanh',
                 name: 'Chùa Minh Thành (Pleiku)',
                 searchTerms: 'chua minh thanh pleiku gia lai 348 nguyen viet xuan hoi phu tay nguyen 1964 1997 thich tam man bao thap xa loi 72m ho lien tri kien truc nhat ban phuong dong',
-                location: 'Phường Hội Phú, TP. Pleiku, Tỉnh Gia Lai',
+                location: 'Phường Hội Phú (Pleiku), Gia Lai',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/minhthanh_card_bao_thap_72m.webp',
@@ -6347,7 +6349,7 @@
                 id: 'truclamchanhgiac',
                 name: 'Thiền Viện Trúc Lâm Chánh Giác',
                 searchTerms: 'thien vien truc lam chanh giac tan phuoc tien giang dong thap muoi 50ha tu dong tam thap dai giac 31m tuong phat da ngoc 30 tan 2012 thich thong phuong',
-                location: 'Xã Thạnh Tân, Huyện Tân Phước, Tỉnh Tiền Giang',
+                location: 'Xã Tân Phước, Đồng Tháp (Tiền Giang cũ)',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/truclamchanhgiac_card_tu_dong_tam.webp',
@@ -6363,11 +6365,11 @@
                 id: 'linhsonvungtau',
                 name: 'Linh Sơn Cổ Tự (Vũng Tàu)',
                 searchTerms: 'linh son co tu vung tau chua phat vang 104 hoang hoa tham phuong 2 nui nho 1919 1991 tuong phat da sa thach thep vang thich tri tinh',
-                location: '104 Hoàng Hoa Thám, P.2, TP. Vũng Tàu, BR-VT',
+                location: '104 Hoàng Hoa Thám, Phường Vũng Tàu, TP. Hồ Chí Minh',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/linhsonvungtau_card_phat_da_co.webp',
-                buddhaImg: 'images/linhsonvungtau_st3_tuong_phat_da_co.webp',
+                buddhaImg: 'images/linhsonvungtau_card_phat_da_co.webp',
                 title: 'Linh Sơn Cổ Tự — Ngôi Chùa Cổ Nhất Vũng Tàu & Tượng Phật Đá Cổ',
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Bình An Biển Trời',
                 detailUrl: 'destination-chua-linh-son-vung-tau.html',
@@ -6379,7 +6381,7 @@
                 id: 'chuadaubn',
                 name: 'Chùa Dâu (Pháp Vân Tự)',
                 searchTerms: 'chua dau phap van tu luy lau thanh khuong thuan thanh bac ninh co nhat viet nam di tich quoc gia dac biet thap hoa phong tu phap bao vat quoc gia moc ban',
-                location: 'P. Thanh Khương, TX. Thuận Thành, Bắc Ninh',
+                location: 'Phường Trí Quả (Thanh Khương), Bắc Ninh',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/chuadaubn_card_thap_hoa_phong.webp',
@@ -6395,7 +6397,7 @@
                 id: 'chuamotcot',
                 name: 'Chùa Một Cột (Diên Hựu Tự)',
                 searchTerms: 'chua mot cot dien huu tu ba dinh ha noi 1049 ly thai tong lien hoa dai ho linh chieu ky luc chau a cay bo de 1958 quan am',
-                location: 'Quận Ba Đình, TP. Hà Nội',
+                location: 'Phường Ba Đình, TP. Hà Nội',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/chuamotcot_card_lien_hoa_dai.webp',
@@ -6411,11 +6413,11 @@
                 id: 'thienan',
                 name: 'Chùa Thiên Ấn (Quảng Ngãi)',
                 searchTerms: 'chua thien an nui thien an niem ha song tra khuc truong quang trong quang ngai 1694 phap hoa sac tu 1716 chuong than 1845 gieng phat huynh thuc khang',
-                location: 'P. Trương Quang Trọng, TP. Quảng Ngãi',
+                location: 'Phường Trương Quang Trọng, Quảng Ngãi',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/thienan_card_nui_thien_an.webp',
-                buddhaImg: 'images/thienan_st2_chanh_dien_sac_tu.webp',
+                buddhaImg: 'images/thienan_st1_tam_quan_dinh_nui.webp',
                 title: 'Chùa Thiên Ấn — Thiên Ấn Niêm Hà, Chuông Thần 1845 & Giếng Phật',
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Thiên Ấn Niêm Hà',
                 detailUrl: 'destination-chua-thien-an.html',
@@ -6427,7 +6429,7 @@
                 id: 'huongtichht',
                 name: 'Chùa Hương Tích (Hà Tĩnh)',
                 searchTerms: 'chua huong tich ha tinh thien loc can loc nui hong linh 650m hoan chau de nhat danh lam thoi tran anh dinh 1836 cong chua dieu thien ho nha duong',
-                location: 'Xã Thiên Lộc, Huyện Can Lộc, Hà Tĩnh',
+                location: 'Xã Can Lộc (Thiên Lộc), Hà Tĩnh',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/huongtichht_card_hong_linh.webp',
@@ -6443,7 +6445,7 @@
                 id: 'linhphuoc',
                 name: 'Chùa Linh Phước (Chùa Ve Chai)',
                 searchTerms: 'chua linh phuoc chua ve chai trai mat phuong 11 da lat lam dong 1949 1990 kham sanh su linh thap 37m chuong 8.5 tan hoa bat tu long hoa vien rong 49m',
-                location: 'Trại Mát, P.11, TP. Đà Lạt, Lâm Đồng',
+                location: 'Trại Mát, Phường Xuân Trường - Đà Lạt, Lâm Đồng',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/linhphuoc_card_linh_thap_37m.webp',
@@ -6459,7 +6461,7 @@
                 id: 'xiemcan',
                 name: 'Chùa Xiêm Cán (Komphisakor)',
                 searchTerms: 'chua xiem can komphisakor vinh trach dong hiep thanh bac lieu 1887 khmer nam tong angkor naga kinnari sala vuon nhan co',
-                location: 'Xã Vĩnh Trạch Đông, TP. Bạc Liêu',
+                location: 'Phường Hiệp Thành (Bạc Liêu), Cà Mau',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/xiemcan_card_khmer_1887.webp',
@@ -6475,11 +6477,11 @@
                 id: 'chuamia',
                 name: 'Chùa Mía (Sùng Nghiêm Tự)',
                 searchTerms: 'chua mia sung nghiem tu lang co duong lam son tay ha noi da ong xu doai 287 pho tuong ba chua mia 1632 tuyet son quan am tong tu thap cuu pham 13m',
-                location: 'Làng cổ Đường Lâm, TX. Sơn Tây, Hà Nội',
+                location: 'Làng cổ Đường Lâm, Phường Sơn Tây, Hà Nội',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/chuamia_card_287_tuong_da_ong.webp',
-                buddhaImg: 'images/chuamia_st4_thuong_dien_tuyet_son.webp',
+                buddhaImg: 'images/chuamia_st2_thap_cuu_pham_13m.webp',
                 title: 'Chùa Mía Đường Lâm — Kỷ Lục 287 Pho Tượng Cổ Giữa Làng Đá Ong',
                 mantra: 'Nam Mô Bổn Sư Thích Ca Mâu Ni Phật — Sùng Nghiêm Cổ Tự',
                 detailUrl: 'destination-chua-mia.html',
@@ -6491,7 +6493,7 @@
                 id: 'chuacole',
                 name: 'Chùa Cổ Lễ (Thần Quang Tự)',
                 searchTerms: 'chua co le than quang tu truc ninh nam dinh thap cuu pham lien hoa 32m rua da dai hong chung 9 tan 1936 nhat thoc lau dai gothic nguyen minh khong',
-                location: 'TT. Cổ Lễ, Huyện Trực Ninh, Nam Định',
+                location: 'Xã Cổ Lễ, Ninh Bình (Nam Định cũ)',
                 region: 'north',
                 regionName: 'Miền Bắc',
                 img: 'images/chuacole_card_thap_cuu_pham_32m.webp',
@@ -6501,17 +6503,17 @@
                 detailUrl: 'destination-chua-co-le.html',
                 hasDetailedAltars: true,
                 badge: 'Di tích QG • Tháp 32m & Chuông 9 tấn • Lộ trình 6 trạm',
-                desc: 'Tuyệt tác giao thoa kiến trúc Phật Việt & Gothic (1902) — Thờ Phật và Quốc sư Nguyễn Minh Không; Tháp Cửu Phẩm Liên Hoa 32m trên lưng rùa đá (1927) và Đại hồng chung 9 tấn (1936).'
+                desc: 'Tuyệt tác giao thoa kiến trúc Phật Việt & Gothic đầu thế kỷ XX (1902–1920) — Thờ Phật và Quốc sư Nguyễn Minh Không; Tháp Cửu Phẩm Liên Hoa 32m trên lưng rùa đá (1927) và Đại hồng chung 9 tấn (1936).'
             },
             {
                 id: 'chuacothach',
                 name: 'Chùa Cổ Thạch (Chùa Hang)',
                 searchTerms: 'chua co thach chua hang binh thanh tuy phong binh thuan 1835 thien su bao tang bai da 7 mau ca duoc rêu xanh bien co thach',
-                location: 'Xã Bình Thạnh, Huyện Tuy Phong, Bình Thuận',
+                location: 'Xã Liên Hương (Cổ Thạch), Lâm Đồng',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/chuacothach_card_hang_da_7_mau.webp',
-                buddhaImg: 'images/chuacothach_st2_chanh_dien_vach_da.webp',
+                buddhaImg: 'images/chuacothach_st5_dai_quan_am_huong_bien.webp',
                 title: 'Chùa Cổ Thạch Bình Thuận — Cổ Tự 1835 Trong Hang Đá & Bãi Đá 7 Màu',
                 mantra: 'Nam Mô Đại Bi Quán Thế Âm Bồ Tát — Cổ Thạch Linh Sơn',
                 detailUrl: 'destination-chua-co-thach.html',
@@ -6523,7 +6525,7 @@
                 id: 'chuaongnui',
                 name: 'Chùa Ông Núi (Linh Phong Tự)',
                 searchTerms: 'chua ong nui linh phong thien tu cat tien phu cat binh dinh quy nhon moc y son ong le ban 1702 sac tu 1733 dai tuong phat ngoi 69m 600 bac da',
-                location: 'Xã Cát Tiến, Huyện Phù Cát, Bình Định',
+                location: 'Xã Cát Tiến, Gia Lai (Bình Định cũ)',
                 region: 'central',
                 regionName: 'Miền Trung',
                 img: 'images/chuaongnui_card_dai_phat_69m.webp',
@@ -6539,7 +6541,7 @@
                 id: 'chuaang',
                 name: 'Chùa Âng (Angkorajaborey)',
                 searchTerms: 'chua ang wat angkorajaborey phuong 8 tra vinh ao ba om co tu khmer 990 1842 di tich quoc gia 1994 ok om bok cay sao dau co thu',
-                location: 'Phường 8, TP. Trà Vinh, Tỉnh Trà Vinh',
+                location: 'Phường Nguyệt Hóa (Trà Vinh), Vĩnh Long',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/chuaang_card_ao_ba_om_khmer.webp',
@@ -6555,7 +6557,7 @@
                 id: 'phuocdiennuisam',
                 name: 'Chùa Phước Điền (Chùa Hang Núi Sam)',
                 searchTerms: 'chua phuoc dien chua hang nui sam chau doc an giang 1845 le thi tho ba tho thanh xa bach xa di tich quoc gia 1980 300 bac da dong lua tinh bien',
-                location: 'Sườn Tây Núi Sam, TP. Châu Đốc, An Giang',
+                location: 'Sườn Tây Núi Sam, Phường Vĩnh Tế, An Giang',
                 region: 'south',
                 regionName: 'Tây Nguyên & Nam Bộ',
                 img: 'images/phuocdiennuisam_card_vach_nui_sam.webp',
@@ -6848,7 +6850,7 @@ Hôm nay là ngày... tháng... năm...
 Tín chủ (chúng) con là: ...
 Ngụ tại: ...
 
-Cùng toàn thể gia quyến thành tâm kính lễ, sửa biện hương hoa phẩm vật, kim ngân đăng trà, dâng lên trước án Tam Bảo nơi thiền môn thanh tịnh.
+Cùng toàn thể gia quyến thành tâm kính lễ, sửa biện hương hoa phẩm vật, hương đăng trà quả thanh khiết, dâng lên trước án Tam Bảo nơi thiền môn thanh tịnh.
 
 Chúng con kính cẩn cúi đầu đảnh lễ:
 - Đức Phật Thích Ca Mâu Ni giáo chủ cõi Ta Bà,
@@ -6921,7 +6923,7 @@ Hôm nay là ngày... tháng... năm...
 Tín chủ con là: ...
 Ngụ tại: ...
 
-Thành tâm sắm sửa hương hoa trà quả, kim ngân lễ vật thanh tịnh, kính cẩn dâng lên trước ban thờ Đức Ông.
+Thành tâm sắm sửa hương đăng trà quả, phẩm vật chay tịnh, kính cẩn dâng lên trước ban thờ Đức Ông.
 
 Cúi xin Đức Ông thương xót tín chủ, giáng lâm trước án, chứng giám lòng thành, thụ hưởng lễ vật. Phù hộ độ trì cho chúng con cùng toàn thể gia quyến:
 - Công việc hanh thông, buôn bán phát tài, sở cầu như ý, sở nguyện tòng tâm;
@@ -7031,7 +7033,7 @@ Cúi xin mười phương Chư Phật, Chư Bồ Tát từ bi gia hộ độ tr�
 
 Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
                         <div class="prayer-notes">
-                            <strong>💡 Phong tục đẹp:</strong> Đi chùa đầu năm hái một cành lộc nhỏ hoặc nhận lời chúc bình an, xin chữ đầu xuân để nuôi dưỡng tinh thần lạc quan, yêu đời.
+                            <strong>💡 Phong tục đẹp:</strong> Đi chùa đầu năm nhận lộc bình an của nhà chùa hoặc xin chữ thư pháp đầu xuân để nuôi dưỡng tâm hướng thiện (không bẻ cành, hái lộc cây xanh tại di tích).
                         </div>
                     </div>
 
