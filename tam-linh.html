@@ -2611,7 +2611,7 @@
             <div class="zen-search-container">
                 <div class="zen-search-bar">
                     <span class="zen-search-icon">🔍</span>
-                    <input type="text" id="templeSearchInput" class="zen-search-input" oninput="filterTemplesLive(this.value)" onfocus="if(this.value.trim()) filterTemplesLive(this.value)" onkeydown="handleSearchKeydown(event)" placeholder="Tìm tên chùa để vào Viếng Cổ Tự &amp; thắp hương tĩnh tâm (vd: Châu Thới, Bái Đính, Chùa Mía, Xiêm Cán...)" autocomplete="off">
+                    <input type="text" id="templeSearchInput" class="zen-search-input" oninput="filterTemplesLive(this.value)" onfocus="if(this.value.trim()) filterTemplesLive(this.value)" onkeydown="handleSearchKeydown(event)" placeholder="Tìm tên chùa, đền, phủ để vào Viếng &amp; dâng hương tĩnh tâm (vd: Cô Chín Giếng, Đền Củi, Ông Hoàng Mười, Đền Cờn, Bái Đính...)" autocomplete="off">
                     <button type="button" class="zen-search-clear" id="zenSearchClear" onclick="clearTempleSearch()" style="display:none;" title="Xóa">✕</button>
                 </div>
                 <div class="zen-quick-chips">
@@ -2623,6 +2623,10 @@
                     <button type="button" class="quick-chip" onclick="selectTempleFromSearch('baden')">Chùa Bà Đen</button>
                     <button type="button" class="quick-chip" onclick="selectTempleFromSearch('truclam')">Trúc Lâm Đà Lạt</button>
                     <button type="button" class="quick-chip" onclick="selectTempleFromSearch('chauthoibinh')">Chùa Châu Thới</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('dencochingieng')">Đền Cô Chín Giếng</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('dencon')">Đền Cờn</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('denchocui')">Đền Chợ Củi</button>
+                    <button type="button" class="quick-chip" onclick="selectTempleFromSearch('denonghoangmuoi')">Đền Ông Hoàng Mười</button>
                 </div>
                 <!-- LIVE DROPDOWN RESULTS -->
                 <div class="zen-search-dropdown" id="zenSearchDropdown"></div>
@@ -2769,7 +2773,7 @@
             <!-- NÚT ĐIỀU HƯỚNG NHANH XUỐNG CÁC PHẦN DƯỚI -->
             <div class="hero-nav-pills" style="margin-top: 1.5rem;">
                 <a href="#danh-lam-co-tu" class="hero-pill">🏯 Khám Phá Cổ Tự 3 Miền</a>
-                <a href="javascript:void(0)" onclick="openPrayerModal(0)" class="hero-pill">📜 Sổ Tay 7 Văn Khấn</a>
+                <a href="javascript:void(0)" onclick="openPrayerModal(0)" class="hero-pill">📜 Sổ Tay 8 Văn Khấn</a>
                 <a href="#nghi-thuc" class="hero-pill">🏮 Quy Chuẩn Đi Chùa</a>
             </div>
         </div>
@@ -2788,12 +2792,13 @@
                 </p>
             </div>
 
-            <!-- REGION FILTER TABS -->
+            <!-- REGION & SHRINE FILTER TABS -->
             <div class="region-tabs">
-                <button class="region-tab-btn active" onclick="filterTemples('all')">📍 Tất Cả Cổ Tự (60)</button>
-                <button class="region-tab-btn" onclick="filterTemples('north')">🏔️ Miền Bắc (22)</button>
-                <button class="region-tab-btn" onclick="filterTemples('central')">🏛️ Miền Trung (16)</button>
-                <button class="region-tab-btn" onclick="filterTemples('south')">🌴 Tây Nguyên & Nam Bộ (22)</button>
+                <button class="region-tab-btn active" data-filter="all" onclick="filterTemples('all', this)">📍 Tất Cả Di Tích (64)</button>
+                <button class="region-tab-btn" data-filter="shrine" onclick="filterTemples('shrine', this)">⛩️ Đền • Phủ • Miếu (7)</button>
+                <button class="region-tab-btn" data-filter="north" onclick="filterTemples('north', this)">🏔️ Miền Bắc (22)</button>
+                <button class="region-tab-btn" data-filter="central" onclick="filterTemples('central', this)">🏛️ Miền Trung (20)</button>
+                <button class="region-tab-btn" data-filter="south" onclick="filterTemples('south', this)">🌴 Tây Nguyên &amp; Nam Bộ (22)</button>
             </div>
 
             <!-- GRID CỔ TỰ -->
@@ -3328,7 +3333,7 @@
                 </div>
 
                 <!-- 9. CHÙA CẦU (HỘI AN) -->
-                <div class="temple-card" data-region="central">
+                <div class="temple-card" data-region="central" data-type="shrine">
                     <div class="temple-img-wrap" onclick="openLightbox('images/hoian_chua_cau.webp', 'Chùa Cầu (Lai Viễn Kiều) — Hội An, Đà Nẵng', 'Cây cầu mái ngói thế kỷ XVII, biểu tượng của đô thị cổ Hội An — Di sản thế giới UNESCO.')">
                         <span class="temple-region-tag">Miền Trung</span>
                         <img src="images/hoian_chua_cau.webp" alt="Chùa Cầu Hội An" loading="lazy">
@@ -3635,6 +3640,94 @@
                     </div>
                 </div>
 
+                <!-- ĐỀN CÔ CHÍN GIẾNG (ĐỀN CHÍN GIẾNG SÒNG SƠN) — THANH HÓA -->
+                <div class="temple-card" data-region="central" data-type="shrine">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/cochingieng_card_chin_gieng_suoi_song.webp', 'Đền Cô Chín Giếng (Đền Chín Giếng) — Phường Quang Trung, Thanh Hóa', 'Di tích Lịch sử - Văn hóa cấp Quốc gia (QĐ 57/QĐ-VH năm 1993) — Khởi dựng thời Cảnh Hưng (1740–1786) bên dòng suối Sòng với 9 miệng giếng đá tự nhiên đùn mạch nước ngọc quanh năm không cạn.')">
+                        <span class="temple-region-tag">Đền Thiêng • Xứ Thanh</span>
+                        <img src="images/cochingieng_card_chin_gieng_suoi_song.webp" alt="Đền Cô Chín Giếng Sòng Sơn Phường Quang Trung Bỉm Sơn Thanh Hóa 9 miệng giếng thiêng" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name"><a href="destination-den-co-chin-gieng.html" style="color: #fff; text-decoration: none;">Đền Cô Chín Giếng (Sòng Sơn)</a></h3>
+                        <div class="temple-location">📍 Phường Quang Trung, Thanh Hóa (Bỉm Sơn cũ) • Di tích QG 1993</div>
+                        <p class="temple-desc">Linh địa Tín ngưỡng thờ Mẫu xứ Thanh khởi dựng thời Cảnh Hưng (1740–1786) thờ Đức Thánh Cô Chín Sòng Sơn, nổi tiếng với 9 miệng giếng thiêng suối Sòng và đàn cá thần.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">💧 9 miệng giếng thiêng</span>
+                            <span class="temple-pill">🌸 Cô Chín Sòng Sơn</span>
+                            <span class="temple-pill">🏛️ Di tích QG 1993</span>
+                        </div>
+                        <a href="destination-den-co-chin-gieng.html" class="temple-route-btn">
+                            <span>⛩️ Xem lộ trình 6 trạm &amp; văn khấn</span>
+                            <span class="route-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ĐỀN CỜN (QUỐC MẪU TỨ VỊ THÁNH NƯƠNG) — NGHỆ AN -->
+                <div class="temple-card" data-region="central" data-type="shrine">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/dencon_card_go_diec_lach_con.webp', 'Đền Cờn (Quốc Mẫu Tứ Vị Thánh Nương) — Phường Quỳnh Mai, Nghệ An', 'Di tích Quốc gia 1993 &amp; Lễ hội Di sản phi vật thể Quốc gia 2016 — Đứng đầu Tứ đại linh từ xứ Nghệ (Nhất Cờn, nhì Quả, tam Bạch Mã, tứ Chiêu Trưng), khởi dựng thế kỷ XIII thời Trần bên cửa biển Lạch Cờn.')">
+                        <span class="temple-region-tag">Đền Thiêng • Xứ Nghệ</span>
+                        <img src="images/dencon_card_go_diec_lach_con.webp" alt="Đền Cờn Quỳnh Phương Hoàng Mai Quỳnh Mai Nghệ An Nhất Cờn Tứ Vị Thánh Nương" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name"><a href="destination-den-con.html" style="color: #fff; text-decoration: none;">Đền Cờn (Tứ Vị Thánh Nương)</a></h3>
+                        <div class="temple-location">📍 Phường Quỳnh Mai, Nghệ An (Hoàng Mai cũ) • Di tích QG 1993</div>
+                        <p class="temple-desc">Đứng đầu "Nhất Cờn, nhì Quả, tam Bạch Mã, tứ Chiêu Trưng" — Khởi dựng thế kỷ XIII thời Trần bên cửa biển Lạch Cờn thờ Quốc Mẫu Tứ Vị Thánh Nương; Lễ hội Cầu Ngư Di sản QG 2016.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">👑 Nhất Cờn xứ Nghệ</span>
+                            <span class="temple-pill">🌊 Đền Trong &amp; Đền Ngoài</span>
+                            <span class="temple-pill">🎊 Lễ hội Di sản QG 2016</span>
+                        </div>
+                        <a href="destination-den-con.html" class="temple-route-btn">
+                            <span>⛩️ Xem lộ trình 6 trạm &amp; văn khấn</span>
+                            <span class="route-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ĐỀN CHỢ CỦI (THÁNH MẪU LINH TỪ) — HÀ TĨNH -->
+                <div class="temple-card" data-region="central" data-type="shrine">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/denchocui_card_ben_song_lam_hong_linh.webp', 'Đền Chợ Củi (Thánh Mẫu Linh Từ) — Xã Nghi Xuân, Hà Tĩnh', 'Di tích Lịch sử - Văn hóa cấp Quốc gia (QĐ 57/QĐ-VH năm 1993) — Tựa dãy Ngũ Mã Hồng Lĩnh hướng dòng Lam Giang, khởi dựng cuối thời Hậu Lê thờ Tam Tòa Thánh Mẫu, Trần Triều và Quan Hoàng Mười.')">
+                        <span class="temple-region-tag">Đền Thiêng • Hà Tĩnh</span>
+                        <img src="images/denchocui_card_ben_song_lam_hong_linh.webp" alt="Đền Chợ Củi Thánh Mẫu Linh Từ Nghi Xuân Hà Tĩnh Quan Hoàng Mười sông Lam" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name"><a href="destination-den-cho-cui.html" style="color: #fff; text-decoration: none;">Đền Chợ Củi (Thánh Mẫu Linh Từ)</a></h3>
+                        <div class="temple-location">📍 Xã Nghi Xuân, Hà Tĩnh (Xuân Hồng cũ) • Di tích QG 1993</div>
+                        <p class="temple-desc">Thế đất "lưng tựa Ngũ Mã Hồng Lĩnh, mặt hướng sông Lam" — Cổ miếu chữ Tam cuối thời Hậu Lê thờ Tam Tòa Thánh Mẫu, Đức Thánh Trần và nổi danh linh ứng Cung Quan Hoàng Mười.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">⛰️ Ngũ Mã – Sông Lam</span>
+                            <span class="temple-pill">💛 Cung Quan Hoàng Mười</span>
+                            <span class="temple-pill">🏛️ Di tích QG 1993</span>
+                        </div>
+                        <a href="destination-den-cho-cui.html" class="temple-route-btn">
+                            <span>⛩️ Xem lộ trình 6 trạm &amp; văn khấn</span>
+                            <span class="route-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ĐỀN ÔNG HOÀNG MƯỜI (MỎ HẠC LINH TỪ) — NGHỆ AN -->
+                <div class="temple-card" data-region="central" data-type="shrine">
+                    <div class="temple-img-wrap" onclick="openLightbox('images/onghoangmuoi_card_mo_hac_linh_tu.webp', 'Đền Ông Hoàng Mười (Mỏ Hạc Linh Từ) — Làng Xuân Am, Xã Hưng Nguyên, Nghệ An', 'Khởi dựng năm 1634 thời Hậu Lê trên thế đất Mỏ Hạc giao hội sông Lam và sông Cồn Mộc — Nơi thờ chính và lưu giữ Lăng mộ Đức Thánh Hoàng Mười; Lễ hội Di sản phi vật thể Quốc gia 2019.')">
+                        <span class="temple-region-tag">Đền Thiêng • Xứ Nghệ</span>
+                        <img src="images/onghoangmuoi_card_mo_hac_linh_tu.webp" alt="Đền Ông Hoàng Mười Mỏ Hạc Linh Từ Xuân Am Hưng Nguyên Nghệ An 1634" loading="lazy">
+                    </div>
+                    <div class="temple-body">
+                        <h3 class="temple-name"><a href="destination-den-ong-hoang-muoi.html" style="color: #fff; text-decoration: none;">Đền Ông Hoàng Mười (Xuân Am)</a></h3>
+                        <div class="temple-location">📍 Làng Xuân Am, Xã Hưng Nguyên, Nghệ An • Di sản QG 2019</div>
+                        <p class="temple-desc">"Mỏ Hạc Linh Từ" khởi dựng năm 1634 bên ngã ba sông Lam – Cồn Mộc; nơi thờ chính và lưu giữ Lăng mộ Đức Thánh Hoàng Mười cùng 21 đạo sắc phong cổ; Lễ hội tháng Mười Di sản QG.</p>
+                        <div class="temple-highlights">
+                            <span class="temple-pill">🦢 Mỏ Hạc Linh Từ 1634</span>
+                            <span class="temple-pill">🪦 Lăng mộ Đức Ông</span>
+                            <span class="temple-pill">🏮 Lễ hội Di sản QG 2019</span>
+                        </div>
+                        <a href="destination-den-ong-hoang-muoi.html" class="temple-route-btn">
+                            <span>⛩️ Xem lộ trình 6 trạm &amp; văn khấn</span>
+                            <span class="route-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- 12. CHÙA BÀ ĐEN (TÂY NINH) -->
                 <div class="temple-card" data-region="south">
                     <div class="temple-img-wrap" onclick="openLightbox('images/tayninh_chua_ba_den_linh_son_tien_thach.webp', 'Chùa Bà Đen (Linh Sơn Tiên Thạch) — Tây Ninh', 'Chùa cổ thờ Linh Sơn Thánh Mẫu trên núi Bà Đen; trên đỉnh 986m là tượng Phật Bà Tây Bổ Đà Sơn bằng đồng.')">
@@ -3658,7 +3751,7 @@
                 </div>
 
                 <!-- 13. MIẾU BÀ CHÚA XỨ & CHÙA HANG (AN GIANG) -->
-                <div class="temple-card" data-region="south">
+                <div class="temple-card" data-region="south" data-type="shrine">
                     <div class="temple-img-wrap" onclick="openLightbox('images/angiang_mieu_ba_chua_xu_nui_sam.webp', 'Miếu Bà Chúa Xứ & Chùa Hang — Phường Vĩnh Tế, An Giang', 'Lễ hội Vía Bà Chúa Xứ núi Sam được UNESCO ghi danh là Di sản văn hóa phi vật thể đại diện của nhân loại năm 2024.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/angiang_mieu_ba_chua_xu_nui_sam.webp" alt="Miếu Bà Chúa Xứ Núi Sam An Giang" loading="lazy">
@@ -3812,7 +3905,7 @@
                 </div>
 
                 <!-- CHÙA BÀ THIÊN HẬU — TUỆ THÀNH HỘI QUÁN (TP. HỒ CHÍ MINH) -->
-                <div class="temple-card" data-region="south">
+                <div class="temple-card" data-region="south" data-type="shrine">
                     <div class="temple-img-wrap" onclick="openLightbox('images/thienhau_card_nhang_vong_gieng_troi.webp', 'Chùa Bà Thiên Hậu (Tuệ Thành Hội Quán) — Phường Chợ Lớn, TP. Hồ Chí Minh', 'Di tích Kiến trúc Nghệ thuật Quốc gia khởi dựng khoảng năm 1760 với giếng trời nhang vòng và tiểu tượng gốm cổ 1908.')">
                         <span class="temple-region-tag">Miền Nam</span>
                         <img src="images/thienhau_card_nhang_vong_gieng_troi.webp" alt="Chùa Bà Thiên Hậu Tuệ Thành Hội Quán Chợ Lớn" loading="lazy">
@@ -5045,7 +5138,8 @@
             const visitingBadge = document.getElementById('altarVisitingBadge');
             if (visitingBadge) {
                 const locPart = (dbItem && dbItem.location) ? ` • ${dbItem.location}` : '';
-                visitingBadge.innerHTML = `🕯️ Đang viếng cổ tự: <strong>${displayName}</strong>${locPart}`;
+                const placeKind = (dbItem && (dbItem.isShrine || dbItem.id === 'mieu_ba' || dbItem.id === 'thienhau')) ? 'đền thiêng' : 'cổ tự';
+                visitingBadge.innerHTML = `🕯️ Đang viếng ${placeKind}: <strong>${displayName}</strong>${locPart}`;
             }
             const title = document.getElementById('altarTempleTitle');
             if (title) title.textContent = titleText;
@@ -6568,6 +6662,74 @@
                 hasDetailedAltars: true,
                 badge: 'Di tích QG 1980 • Cổ tự 1845 Núi Sam • Lộ trình 6 trạm',
                 desc: 'Chốn bồng lai trên sườn Tây Núi Sam (1845) — Gần 300 bậc đá dẫn lên cổ tự cột gỗ căm xe của Sư bà Lê Thị Thơ, hang đá Thanh Xà – Bạch Xà quy y và ban công ngắm đồng lúa biên giới.'
+            },
+            {
+                id: 'dencochingieng',
+                isShrine: true,
+                name: 'Đền Cô Chín Giếng (Sòng Sơn)',
+                searchTerms: 'den co chin gieng den chin gieng co chin song son bim son bac son quang trung thanh hoa cuu thien huyen nu suoi song ca than tin nguong tho mau',
+                location: 'Phường Quang Trung, Thanh Hóa (Bỉm Sơn cũ)',
+                region: 'central',
+                regionName: 'Đền Thiêng • Xứ Thanh',
+                img: 'images/cochingieng_card_chin_gieng_suoi_song.webp',
+                buddhaImg: 'images/cochingieng_st5_hau_cung_co_chin_thuong_thien.webp',
+                title: 'Hậu Cung Đức Thánh Cô Chín Giếng — Sòng Sơn Xứ Thanh',
+                mantra: 'Chín Giếng Suối Ngọc Linh Từ — Tâm Thành Gia Đạo Bình An',
+                detailUrl: 'destination-den-co-chin-gieng.html',
+                hasDetailedAltars: true,
+                badge: 'Di tích QG 1993 • 9 Miệng Giếng Thiêng • Lộ trình 6 trạm',
+                desc: 'Linh địa Tín ngưỡng thờ Mẫu khởi dựng thời Cảnh Hưng (1740–1786) bên dòng suối Sòng với 9 miệng giếng đá tự nhiên đùn nước ngọc quanh năm không cạn.'
+            },
+            {
+                id: 'dencon',
+                isShrine: true,
+                name: 'Đền Cờn (Tứ Vị Thánh Nương)',
+                searchTerms: 'den con nhat con nhi qua tam bach ma tu chieu trung quynh phuong hoang mai quynh mai nghe an tu vi thanh nuong quoc mau dai can lach con le hoi cau ngu',
+                location: 'Phường Quỳnh Mai, Nghệ An (Hoàng Mai cũ)',
+                region: 'central',
+                regionName: 'Đền Thiêng • Xứ Nghệ',
+                img: 'images/dencon_card_go_diec_lach_con.webp',
+                buddhaImg: 'images/dencon_st4_hau_cung_tu_vi_thanh_nuong.webp',
+                title: 'Thượng Điện Quốc Mẫu Đại Càn Tứ Vị Thánh Nương — Đền Cờn',
+                mantra: 'Nhất Cờn Linh Khí Ngàn Thu — Thuận Buồm Xuôi Gió Bình An',
+                detailUrl: 'destination-den-con.html',
+                hasDetailedAltars: true,
+                badge: 'Di tích QG 1993 • Lễ hội Di sản QG 2016 • Lộ trình 6 trạm',
+                desc: 'Ngôi đền đứng đầu Tứ đại linh từ xứ Nghệ khởi dựng thế kỷ XIII thời Trần bên cửa biển Lạch Cờn thờ Tứ Vị Thánh Nương, gồm Đền Cờn Trong và Đền Cờn Ngoài.'
+            },
+            {
+                id: 'denchocui',
+                isShrine: true,
+                name: 'Đền Chợ Củi (Thánh Mẫu Linh Từ)',
+                searchTerms: 'den cho cui den cui thanh mau linh tu xuan hong nghi xuan ha tinh quan hoang muoi ong hoang muoi ngu ma hong linh song lam ben giang dinh',
+                location: 'Xã Nghi Xuân, Hà Tĩnh (Xuân Hồng cũ)',
+                region: 'central',
+                regionName: 'Đền Thiêng • Hà Tĩnh',
+                img: 'images/denchocui_card_ben_song_lam_hong_linh.webp',
+                buddhaImg: 'images/denchocui_st5_cung_quan_hoang_muoi_den_cui.webp',
+                title: 'Thánh Mẫu Linh Từ & Cung Quan Hoàng Mười — Đền Chợ Củi',
+                mantra: 'Ngũ Mã Hồng Lĩnh Linh Từ — Tâm Ngay Phước Lộc Vẹn Toàn',
+                detailUrl: 'destination-den-cho-cui.html',
+                hasDetailedAltars: true,
+                badge: 'Di tích QG 1993 • Núi Hồng Sông Lam • Lộ trình 6 trạm',
+                desc: 'Di tích Quốc gia năm 1993 dưới chân dãy Ngũ Mã Hồng Lĩnh bên bờ Nam sông Lam, khởi dựng cuối thời Hậu Lê thờ Tam Tòa Thánh Mẫu, Trần Triều và Quan Hoàng Mười.'
+            },
+            {
+                id: 'denonghoangmuoi',
+                isShrine: true,
+                name: 'Đền Ông Hoàng Mười (Xuân Am)',
+                searchTerms: 'den ong hoang muoi quan hoang muoi mo hac linh tu lang xuan am hung thinh thinh my hung nguyen nghe an le khoi ly nhat quang song lam con moc 1634',
+                location: 'Làng Xuân Am, Xã Hưng Nguyên, Nghệ An',
+                region: 'central',
+                regionName: 'Đền Thiêng • Xứ Nghệ',
+                img: 'images/onghoangmuoi_card_mo_hac_linh_tu.webp',
+                buddhaImg: 'images/onghoangmuoi_st4_hau_cung_duc_thanh_hoang_muoi.webp',
+                title: 'Chính Cung Đức Thánh Hoàng Mười — Mỏ Hạc Linh Từ Xuân Am',
+                mantra: 'Văn Tài Võ Lược Xứ Nghệ — Khai Tâm Mở Trí Hanh Thông',
+                detailUrl: 'destination-den-ong-hoang-muoi.html',
+                hasDetailedAltars: true,
+                badge: 'Khởi dựng 1634 • Lễ hội Di sản QG 2019 • Lộ trình 6 trạm',
+                desc: 'Mỏ Hạc Linh Từ khởi dựng năm 1634 bên ngã ba sông Lam – Cồn Mộc tại làng Xuân Am, nơi thờ chính và lưu giữ Lăng mộ Đức Thánh Hoàng Mười cùng 21 đạo sắc phong.'
             }
         ];
 
@@ -6605,6 +6767,36 @@
                 if (compact.includes(qClean)) return 45;
             }
             return 0;
+        }
+
+
+        function filterTemples(filterKey, btnEl) {
+            const input = document.getElementById('templeSearchInput');
+            const clearBtn = document.getElementById('zenSearchClear');
+            const dropdown = document.getElementById('zenSearchDropdown');
+            if (input && input.value.trim()) {
+                input.value = '';
+                if (clearBtn) clearBtn.style.display = 'none';
+                if (dropdown) dropdown.style.display = 'none';
+            }
+
+            document.querySelectorAll('.region-tab-btn').forEach(btn => {
+                if (btnEl) {
+                    btn.classList.toggle('active', btn === btnEl);
+                } else {
+                    btn.classList.toggle('active', btn.getAttribute('data-filter') === filterKey);
+                }
+            });
+
+            document.querySelectorAll('#templesGrid .temple-card').forEach(card => {
+                if (filterKey === 'all') {
+                    card.style.display = '';
+                } else if (filterKey === 'shrine') {
+                    card.style.display = (card.getAttribute('data-type') === 'shrine') ? '' : 'none';
+                } else {
+                    card.style.display = (card.getAttribute('data-region') === filterKey) ? '' : 'none';
+                }
+            });
         }
 
         let lastMatchedTempleIds = [];
@@ -6772,6 +6964,19 @@
         // ==========================================
         // PRAYER MODAL POP-UP LOGIC
         // ==========================================
+        
+        function switchPrayer(idx) {
+            document.querySelectorAll('.prayer-nav-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+            document.querySelectorAll('.prayer-card').forEach((c, i) => c.classList.toggle('active', i === idx));
+        }
+        function copyPrayer(idx) {
+            const el = document.getElementById('prayerText' + idx);
+            if (el && navigator.clipboard) {
+                navigator.clipboard.writeText(el.innerText);
+                showToast('Đã sao chép bài văn khấn vào bộ nhớ tạm', '📋');
+            }
+        }
+
         function openPrayerModal(idx = 0) {
             const modal = document.getElementById('prayerModal');
             if (!modal) return;
@@ -6800,7 +7005,7 @@
     <div class="prayer-modal-backdrop" id="prayerModal" onclick="closePrayerModal(event)">
         <div class="prayer-modal-dialog">
             <div class="prayer-modal-header">
-                <h3><span>📜</span> Sổ Tay 7 Bài Văn Khấn Cổ Truyền Chuẩn Mực</h3>
+                <h3><span>📜</span> Sổ Tay 8 Bài Văn Khấn Chùa &amp; Đền Phủ Chuẩn Mực</h3>
                 <button type="button" class="prayer-modal-close" onclick="closePrayerModal(event)" title="Đóng">✕</button>
             </div>
             <div class="prayer-modal-body">
@@ -6827,6 +7032,9 @@
                     </button>
                     <button class="prayer-nav-btn" onclick="switchPrayer(6)">
                         <span>🍂</span> 7. Văn Khấn Tạ Lễ Cuối Năm
+                    </button>
+                    <button class="prayer-nav-btn" onclick="switchPrayer(7)">
+                        <span>⛩️</span> 8. Văn Khấn Lễ Đền, Phủ &amp; Thờ Mẫu
                     </button>
                 </aside>
 
@@ -7067,6 +7275,41 @@ Cúi xin Chư vị chứng giám lòng thành, tiếp tục chở che cho gia qu
 Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
                         <div class="prayer-notes">
                             <strong>💡 Ý nghĩa tạ lễ:</strong> "Ăn quả nhớ kẻ trồng cây" — Lễ tạ cuối năm thể hiện truyền thống biết ơn sâu sắc, khép lại năm cũ với lòng thanh thản và đón chào tương lai.
+                        </div>
+                    </div>
+
+                    <!-- BÀI 8: VĂN KHẤN LỄ ĐỀN, PHỦ & TÍN NGƯỠNG THỜ MẪU -->
+                    <div class="prayer-card" id="prayerCard7">
+                        <div class="prayer-header">
+                            <div class="prayer-title-wrap">
+                                <h3>8. Văn Khấn Lễ Đền, Phủ &amp; Tín Ngưỡng Thờ Mẫu (Tam Tòa Thánh Mẫu • Quan Hoàng • Thánh Cô)</h3>
+                                <p>Áp dụng khi dâng hương tại Đền Cờn, Đền Cô Chín Giếng, Đền Chợ Củi, Đền Ông Hoàng Mười và các đền phủ Tứ phủ</p>
+                            </div>
+                            <button class="btn-copy-prayer" onclick="copyPrayer(7)">
+                                <span>📋</span> Sao Chép Bài Khấn
+                            </button>
+                        </div>
+                        <div class="prayer-body" id="prayerText7">Nam mô A Di Đà Phật! (3 lần)
+
+Con kính lạy chín phương Trời, mười phương Chư Phật, Chư Phật mười phương.
+Con kính lạy Hoàng Thiên Hậu Thổ chư vị Tôn thần.
+Con kính lạy Tam Tòa Thánh Mẫu: Đệ Nhất Thượng Thiên Thánh Mẫu, Đệ Nhị Thượng Ngàn Thánh Mẫu, Đệ Tam Thoải Phủ Thánh Mẫu, Quốc Mẫu Tứ Vị Thánh Nương.
+Con kính lạy Đức Thánh Trần Triều Hiển Thánh, Hội đồng Ngũ Vị Tôn Ông, Tứ Phủ Quan Hoàng (Đức Ông Hoàng Mười), Tứ Phủ Chầu Bà, Tứ Phủ Thánh Cô (Đức Thánh Cô Chín Sòng Sơn) cùng chư vị Tôn thần cai quản bản đền.
+
+Hôm nay là ngày... tháng... năm...
+Tín chủ con là: ... Ngụ tại: ...
+Thành tâm tìm về bản đền linh thiêng, sửa biện hương hoa trà quả, phẩm vật thanh khiết dâng lên trước án.
+
+Chúng con kính ngưỡng ân đức hộ quốc an dân, che chở muôn họ của Thánh Mẫu và chư vị Thánh Hoàng, Thánh Cô. Cúi xin chư Thánh chứng giám lòng thành, gia hộ độ trì cho gia quyến chúng con:
+- Thân tâm khang kiện, bốn mùa bình an, tai qua nạn khỏi;
+- Cha mẹ trường thọ, gia đạo thuận hòa, con cháu hiếu thảo thông minh, học hành tấn tới;
+- Công việc chính trực hanh thông, thuận buồm xuôi gió, phúc lộc bền lâu.
+
+Chúng con nguyện sống ngay thẳng nhân nghĩa, hiếu kính tổ tiên và giữ gìn di sản văn hóa dân tộc.
+
+Nam mô A Di Đà Phật! (3 lần, 3 lạy)</div>
+                        <div class="prayer-notes">
+                            <strong>💡 Quy chuẩn văn minh lễ đền phủ:</strong> Dâng lễ cốt ở tâm thành (hoa tươi, trầu cau, oản phẩm, trái cây theo mùa); thực hiện nghiêm quy định của Bộ VHTTDL không đốt ngựa giấy, hình nhân vàng mã cỡ lớn và không cài tiền lẻ lên tượng thờ.
                         </div>
                     </div>
                 </main>
