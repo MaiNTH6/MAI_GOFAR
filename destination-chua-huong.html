@@ -878,7 +878,7 @@
         .pilgrimage-mountain-svg {
             width: 100%;
             min-width: 780px;
-            height: 245px;
+            height: 255px;
             overflow: visible;
             display: block;
         }
@@ -890,26 +890,27 @@
             transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .map-station-node .node-label-pill {
-            fill: rgba(9, 22, 36, 0.94);
-            stroke: rgba(251, 191, 36, 0.45);
-            stroke-width: 1.4px;
-            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.65));
+            fill: rgba(11, 26, 44, 0.96);
+            stroke: #fbbf24;
+            stroke-width: 2.2px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85));
             transition: all 0.25s ease;
         }
         .map-station-node .node-label-text {
-            fill: #f8fafc;
+            fill: #ffffff;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.01em;
+            font-weight: 800;
+            letter-spacing: 0.015em;
             transition: fill 0.25s ease;
         }
         .map-station-node:hover circle.node-bg {
             fill: #fbbf24;
-            filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.9));
+            filter: drop-shadow(0 0 12px rgba(251, 191, 36, 1));
         }
         .map-station-node:hover .node-label-pill {
-            stroke: #fbbf24;
-            fill: rgba(20, 42, 64, 0.98);
+            stroke: #fde047;
+            stroke-width: 2.5px;
+            fill: rgba(24, 52, 80, 0.98);
         }
         .map-station-node:hover .node-label-text {
             fill: #fef08a;
@@ -917,6 +918,34 @@
         .map-station-node.completed circle.node-bg {
             fill: #10b981;
             stroke: #a7f3d0;
+        }
+        .map-station-node.completed .node-label-pill {
+            fill: rgba(8, 42, 32, 0.96);
+            stroke: #34d399;
+            stroke-width: 2.2px;
+        }
+        .map-station-node.completed .node-label-text {
+            fill: #d1fae5;
+            font-weight: 800;
+        }
+        .map-station-node.active circle.node-bg {
+            fill: #f59e0b;
+            stroke: #ffffff;
+            stroke-width: 3px;
+            filter: drop-shadow(0 0 16px rgba(251, 191, 36, 1));
+        }
+        .map-station-node.active .node-label-pill {
+            fill: #f59e0b;
+            stroke: #ffffff;
+            stroke-width: 2.5px;
+            filter: drop-shadow(0 4px 14px rgba(251, 191, 36, 0.6));
+        }
+        .map-station-node.active .node-label-text {
+            fill: #091522 !important;
+            font-weight: 900;
+        }
+        .map-station-node.active .node-label-group.is-above {
+            transform: translateY(var(--flip-dy, 74px));
         }
         .map-station-node.completed .node-label-pill {
             stroke: rgba(110, 231, 183, 0.65);
@@ -1745,9 +1774,9 @@
                                 <circle cx="60" cy="192" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="60" cy="192" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="60" y="196.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">1</text>
-                                <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="16.6" y="213.0" width="86.8" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="60.0" y="231.1" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="60.0" y="231.1">Bến Đục</tspan><tspan x="60.0" y="247.9">Suối Yến</tspan></text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 99.8px;">
+                                    <rect x="6.0" y="114.2" width="109.0" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="60.5" y="137.2" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="60.5" y="137.2">Bến Đục</tspan><tspan x="60.5" y="159.1">Suối Yến</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 2: Đền Trình (185, 182) -->
@@ -1755,9 +1784,9 @@
                                 <circle cx="185" cy="182" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="185" cy="182" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="185" y="186.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">2</text>
-                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 72.3px;">
-                                    <rect x="135.9" y="130.7" width="98.2" height="30.3" rx="11" class="node-label-pill"/>
-                                    <text x="185.0" y="150.7" class="node-label-text" font-size="13.8" text-anchor="middle">Đền Trình</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 82.0px;">
+                                    <rect x="123.0" y="122.0" width="124.1" height="38.0" rx="13" class="node-label-pill"/>
+                                    <text x="185.0" y="147.1" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle">Đền Trình</text>
                                 </g>
                             </g>
                             <!-- STATION 3: Bến Trò (310, 172) -->
@@ -1766,8 +1795,8 @@
                                 <circle cx="310" cy="172" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="310" y="176.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">3</text>
                                 <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="269.1" y="193.0" width="81.8" height="30.3" rx="11" class="node-label-pill"/>
-                                    <text x="310.0" y="213.0" class="node-label-text" font-size="13.8" text-anchor="middle">Bến Trò</text>
+                                    <rect x="258.6" y="194.0" width="102.7" height="38.0" rx="13" class="node-label-pill"/>
+                                    <text x="310.0" y="219.1" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle">Bến Trò</text>
                                 </g>
                             </g>
                             <!-- STATION 4: Chùa Thiên Trù (435, 140) -->
@@ -1775,9 +1804,9 @@
                                 <circle cx="435" cy="140" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="435" cy="140" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="435" y="144.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">4</text>
-                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 72.3px;">
-                                    <rect x="369.2" y="88.7" width="131.6" height="30.3" rx="11" class="node-label-pill"/>
-                                    <text x="435.0" y="108.7" class="node-label-text" font-size="13.8" text-anchor="middle">Chùa Thiên Trù</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 99.8px;">
+                                    <rect x="375.4" y="62.2" width="119.2" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="435.0" y="85.2" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="435.0" y="85.2">Chùa</tspan><tspan x="435.0" y="107.1">Thiên Trù</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 5: Động Tiên Sơn (560, 110) -->
@@ -1786,8 +1815,8 @@
                                 <circle cx="560" cy="110" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="560" y="114.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">5</text>
                                 <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="497.6" y="131.0" width="124.9" height="30.3" rx="11" class="node-label-pill"/>
-                                    <text x="560.0" y="151.0" class="node-label-text" font-size="13.8" text-anchor="middle">Động Tiên Sơn</text>
+                                    <rect x="480.6" y="132.0" width="158.7" height="38.0" rx="13" class="node-label-pill"/>
+                                    <text x="560.0" y="157.1" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle">Động Tiên Sơn</text>
                                 </g>
                             </g>
                             <!-- STATION 6: Đền Cửa Võng (685, 82) -->
@@ -1795,9 +1824,9 @@
                                 <circle cx="685" cy="82" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="685" cy="82" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="685" y="86.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">6</text>
-                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 72.3px;">
-                                    <rect x="625.0" y="30.7" width="119.9" height="30.3" rx="11" class="node-label-pill"/>
-                                    <text x="685.0" y="50.7" class="node-label-text" font-size="13.8" text-anchor="middle">Đền Cửa Võng</text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 82.0px;">
+                                    <rect x="608.8" y="22.0" width="152.4" height="38.0" rx="13" class="node-label-pill"/>
+                                    <text x="685.0" y="47.1" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle">Đền Cửa Võng</text>
                                 </g>
                             </g>
                             <!-- STATION 7: Động Hương Tích (810, 54) -->
@@ -1805,9 +1834,9 @@
                                 <circle cx="810" cy="54" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="810" cy="54" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="810" y="58.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">7</text>
-                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 89.2px;">
-                                    <rect x="757.5" y="-14.2" width="105.0" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="810.0" y="3.9" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="810.0" y="3.9">Động</tspan><tspan x="810.0" y="20.7">Hương Tích</tspan></text>
+                                <g class="node-label-group is-below" data-orig-pos="below">
+                                    <rect x="743.4" y="76.0" width="133.2" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="810.0" y="99.0" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="810.0" y="99.0">Động</tspan><tspan x="810.0" y="120.9">Hương Tích</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 8: Chùa Hinh Bồng (935, 88) -->
@@ -1816,8 +1845,8 @@
                                 <circle cx="935" cy="88" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="935" y="92.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">8</text>
                                 <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="862.4" y="109.0" width="131.6" height="30.3" rx="11" class="node-label-pill"/>
-                                    <text x="928.2" y="129.0" class="node-label-text" font-size="13.8" text-anchor="middle">Chùa Hinh Bồng</text>
+                                    <rect x="874.8" y="110.0" width="119.2" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="934.4" y="133.0" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="934.4" y="133.0">Chùa</tspan><tspan x="934.4" y="154.9">Hinh Bồng</tspan></text>
                                 </g>
                             </g>
                         </svg>

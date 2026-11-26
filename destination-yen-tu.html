@@ -878,7 +878,7 @@
         .pilgrimage-mountain-svg {
             width: 100%;
             min-width: 780px;
-            height: 245px;
+            height: 255px;
             overflow: visible;
             display: block;
         }
@@ -890,26 +890,27 @@
             transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .map-station-node .node-label-pill {
-            fill: rgba(9, 22, 36, 0.94);
-            stroke: rgba(251, 191, 36, 0.45);
-            stroke-width: 1.4px;
-            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.65));
+            fill: rgba(11, 26, 44, 0.96);
+            stroke: #fbbf24;
+            stroke-width: 2.2px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85));
             transition: all 0.25s ease;
         }
         .map-station-node .node-label-text {
-            fill: #f8fafc;
+            fill: #ffffff;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.01em;
+            font-weight: 800;
+            letter-spacing: 0.015em;
             transition: fill 0.25s ease;
         }
         .map-station-node:hover circle.node-bg {
             fill: #fbbf24;
-            filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.9));
+            filter: drop-shadow(0 0 12px rgba(251, 191, 36, 1));
         }
         .map-station-node:hover .node-label-pill {
-            stroke: #fbbf24;
-            fill: rgba(20, 42, 64, 0.98);
+            stroke: #fde047;
+            stroke-width: 2.5px;
+            fill: rgba(24, 52, 80, 0.98);
         }
         .map-station-node:hover .node-label-text {
             fill: #fef08a;
@@ -917,6 +918,34 @@
         .map-station-node.completed circle.node-bg {
             fill: #10b981;
             stroke: #a7f3d0;
+        }
+        .map-station-node.completed .node-label-pill {
+            fill: rgba(8, 42, 32, 0.96);
+            stroke: #34d399;
+            stroke-width: 2.2px;
+        }
+        .map-station-node.completed .node-label-text {
+            fill: #d1fae5;
+            font-weight: 800;
+        }
+        .map-station-node.active circle.node-bg {
+            fill: #f59e0b;
+            stroke: #ffffff;
+            stroke-width: 3px;
+            filter: drop-shadow(0 0 16px rgba(251, 191, 36, 1));
+        }
+        .map-station-node.active .node-label-pill {
+            fill: #f59e0b;
+            stroke: #ffffff;
+            stroke-width: 2.5px;
+            filter: drop-shadow(0 4px 14px rgba(251, 191, 36, 0.6));
+        }
+        .map-station-node.active .node-label-text {
+            fill: #091522 !important;
+            font-weight: 900;
+        }
+        .map-station-node.active .node-label-group.is-above {
+            transform: translateY(var(--flip-dy, 74px));
         }
         .map-station-node.completed .node-label-pill {
             stroke: rgba(110, 231, 183, 0.65);
@@ -1747,9 +1776,9 @@
                                 <circle cx="55" cy="194" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="55" cy="194" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="55" y="198.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">1</text>
-                                <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="13.0" y="215.0" width="84.0" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="55.0" y="233.1" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="55.0" y="233.1">Giải Oan</tspan><tspan x="55.0" y="249.9">(~100m)</tspan></text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 99.8px;">
+                                    <rect x="6.0" y="116.2" width="105.1" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="58.5" y="139.2" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="58.5" y="139.2">Giải Oan</tspan><tspan x="58.5" y="161.1">(~100m)</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 2: Tháp Tổ (~450m) (165, 174) -->
@@ -1757,9 +1786,9 @@
                                 <circle cx="165" cy="174" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="165" cy="174" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="165" y="178.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">2</text>
-                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 89.2px;">
-                                    <rect x="124.1" y="105.8" width="81.8" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="165.0" y="123.9" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="165.0" y="123.9">Tháp Tổ</tspan><tspan x="165.0" y="140.7">(~450m)</tspan></text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 99.8px;">
+                                    <rect x="113.7" y="96.2" width="102.7" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="165.0" y="119.2" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="165.0" y="119.2">Tháp Tổ</tspan><tspan x="165.0" y="141.1">(~450m)</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 3: Hoa Yên (~534m) (275, 154) -->
@@ -1768,8 +1797,8 @@
                                 <circle cx="275" cy="154" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="275" y="158.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">3</text>
                                 <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="234.1" y="175.0" width="81.8" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="275.0" y="193.1" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="275.0" y="193.1">Hoa Yên</tspan><tspan x="275.0" y="209.9">(~534m)</tspan></text>
+                                    <rect x="223.7" y="176.0" width="102.7" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="275.0" y="199.0" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="275.0" y="199.0">Hoa Yên</tspan><tspan x="275.0" y="220.9">(~534m)</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 4: Một Mái (~600m) (385, 136) -->
@@ -1777,9 +1806,9 @@
                                 <circle cx="385" cy="136" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="385" cy="136" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="385" y="140.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">4</text>
-                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 89.2px;">
-                                    <rect x="344.5" y="67.8" width="81.0" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="385.0" y="85.9" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="385.0" y="85.9">Một Mái</tspan><tspan x="385.0" y="102.7">(~600m)</tspan></text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 99.8px;">
+                                    <rect x="334.5" y="58.2" width="101.0" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="385.0" y="81.2" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="385.0" y="81.2">Một Mái</tspan><tspan x="385.0" y="103.1">(~600m)</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 5: Bảo Sái (~724m) (495, 118) -->
@@ -1788,8 +1817,8 @@
                                 <circle cx="495" cy="118" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="495" y="122.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">5</text>
                                 <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="455.4" y="139.0" width="79.1" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="495.0" y="157.1" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="495.0" y="157.1">Bảo Sái</tspan><tspan x="495.0" y="173.9">(~724m)</tspan></text>
+                                    <rect x="445.6" y="140.0" width="98.8" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="495.0" y="163.0" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="495.0" y="163.0">Bảo Sái</tspan><tspan x="495.0" y="184.9">(~724m)</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 6: An Kỳ Sinh (~900m) (605, 100) -->
@@ -1797,9 +1826,9 @@
                                 <circle cx="605" cy="100" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="605" cy="100" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="605" y="104.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">6</text>
-                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 89.2px;">
-                                    <rect x="554.6" y="31.8" width="100.7" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="605.0" y="49.9" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="605.0" y="49.9">An Kỳ Sinh</tspan><tspan x="605.0" y="66.7">(~900m)</tspan></text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 99.8px;">
+                                    <rect x="541.4" y="22.2" width="127.2" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="605.0" y="45.2" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="605.0" y="45.2">An Kỳ Sinh</tspan><tspan x="605.0" y="67.1">(~900m)</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 7: Phật Hoàng (138T) (715, 82) -->
@@ -1808,8 +1837,8 @@
                                 <circle cx="715" cy="82" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="715" y="86.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">7</text>
                                 <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="662.5" y="103.0" width="105.0" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="715.0" y="121.1" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="715.0" y="121.1">Phật Hoàng</tspan><tspan x="715.0" y="137.9">(138T)</tspan></text>
+                                    <rect x="648.4" y="104.0" width="133.2" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="715.0" y="127.0" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="715.0" y="127.0">Phật Hoàng</tspan><tspan x="715.0" y="148.9">(138T)</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 8: Đường Đá Đỉnh Non (825, 65) -->
@@ -1817,9 +1846,9 @@
                                 <circle cx="825" cy="65" r="22" fill="rgba(251, 191, 36, 0.22)" class="node-glow"/>
                                 <circle cx="825" cy="65" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="825" y="69.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">8</text>
-                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 89.2px;">
-                                    <rect x="779.2" y="-3.2" width="91.5" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="825.0" y="14.9" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="825.0" y="14.9">Đường Đá</tspan><tspan x="825.0" y="31.7">Đỉnh Non</tspan></text>
+                                <g class="node-label-group is-above" data-orig-pos="above" style="--flip-dy: 83.0px;">
+                                    <rect x="767.5" y="4.0" width="114.9" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="825.0" y="27.0" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="825.0" y="27.0">Đường Đá</tspan><tspan x="825.0" y="48.9">Đỉnh Non</tspan></text>
                                 </g>
                             </g>
                             <!-- STATION 9: Chùa Đồng (1.068m) (935, 48) -->
@@ -1828,8 +1857,8 @@
                                 <circle cx="935" cy="48" r="15.5" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2.4" class="node-bg"/>
                                 <text x="935" y="52.8" fill="#ffffff" font-size="13.5" font-weight="800" text-anchor="middle">9</text>
                                 <g class="node-label-group is-below" data-orig-pos="below">
-                                    <rect x="885.9" y="69.0" width="98.2" height="47.2" rx="11" class="node-label-pill"/>
-                                    <text x="935.0" y="87.1" class="node-label-text" font-size="13.8" text-anchor="middle"><tspan x="935.0" y="87.1">Chùa Đồng</tspan><tspan x="935.0" y="103.9">(1.068m)</tspan></text>
+                                    <rect x="869.9" y="70.0" width="124.1" height="55.8" rx="13" class="node-label-pill"/>
+                                    <text x="932.0" y="93.0" class="node-label-text" font-size="17.5" font-weight="800" text-anchor="middle"><tspan x="932.0" y="93.0">Chùa Đồng</tspan><tspan x="932.0" y="114.9">(1.068m)</tspan></text>
                                 </g>
                             </g>
                         </svg>
